@@ -8,7 +8,11 @@ import javafx.stage.Stage;
 
 public class Gui extends Application{
 
+    private int altura=700;
+    private int ample=550;
+
     public static void main(String[] args) {
+
         launch(args);
     }
     @Override
@@ -20,21 +24,23 @@ public class Gui extends Application{
         AnchorPane topRow = new AnchorPane();
 
         TextField textField = new TextField ();
-        textField.setPromptText("Enter the name of the file");
+        textField.setPromptText("Introdueix el nom del fitxer");
 
         Button buttonFile = new Button();
-        buttonFile.setText("Click me");
+        buttonFile.setText("Carregar Fitxer");
+        double buttonSize=100.0;
+        buttonFile.setPrefSize(buttonSize,20.0);
 
         AnchorPane.setLeftAnchor(textField, 0.0);
         AnchorPane.setRightAnchor(buttonFile, 0.0);
         AnchorPane.setLeftAnchor(textField,0.0);
-        AnchorPane.setRightAnchor(textField,70.0);
+        AnchorPane.setRightAnchor(textField,buttonSize+5.0);
 
         topRow.getChildren().addAll(textField,buttonFile);
 
         //MIG
         TextArea texta = new TextArea();
-        texta.setPrefSize(700,700);
+        texta.setPrefSize(ample,ample);
 
         //BOT
         TableView<String> table = new TableView();
@@ -42,12 +48,12 @@ public class Gui extends Application{
         log.setResizable(false);log.setSortable(false);
 
         table.getColumns().addAll(log);
-        table.setPrefSize(700,130);
+        table.setPrefSize(ample,altura-ample-20);
 
 
         root.getChildren().addAll(topRow, texta, table);
 
-        Scene scene = new Scene(root, 700, 850);
+        Scene scene = new Scene(root, ample, altura);
         primaryStage.setTitle("Carcassonne");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
