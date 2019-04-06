@@ -2,9 +2,12 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import java.io.FileInputStream;
 
 public class Gui extends Application{
 
@@ -39,8 +42,15 @@ public class Gui extends Application{
         topRow.getChildren().addAll(textField,buttonFile);
 
         //MIG
-        TextArea texta = new TextArea();
-        texta.setPrefSize(ample,ample);
+        AnchorPane midRow = new AnchorPane();
+
+        Image image = new Image(new FileInputStream("doc\\images\\taulerimg.jpg"));
+        ImageView imageView = new ImageView(image);
+        imageView.setFitHeight(ample);
+        imageView.setFitWidth(ample);
+
+
+        midRow.getChildren().addAll(imageView);
 
         //BOT
         TableView<String> table = new TableView();
@@ -50,8 +60,8 @@ public class Gui extends Application{
         table.getColumns().addAll(log);
         table.setPrefSize(ample,altura-ample-20);
 
-
-        root.getChildren().addAll(topRow, texta, table);
+        //------------------
+        root.getChildren().addAll(topRow, midRow, table);
 
         Scene scene = new Scene(root, ample, altura);
         primaryStage.setTitle("Carcassonne");
