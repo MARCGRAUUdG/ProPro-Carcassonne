@@ -20,6 +20,8 @@ public class Gui extends Application{
     }
     @Override
     public void start(Stage primaryStage) throws Exception {
+        Image logo = new Image(new FileInputStream("doc\\images\\Logo.png"));
+        primaryStage.getIcons().add(logo);
         VBox root = new VBox(5);
         root.setPadding(new Insets(5));
 
