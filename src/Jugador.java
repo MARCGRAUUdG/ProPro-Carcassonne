@@ -42,9 +42,9 @@ public abstract class Jugador {
         return false;
     }
 
-    ///Pre: Llista de posicions correctes per ficar la fitxa no buida
-    ///Post: Fitxa escollida ficada al tauler a la posició corresponent
-    abstract void PosaFitxaAlTauler(List<Posicio> pos);
+    ///Pre: Posició correcta per ficar al tauler
+    ///Post: Fitxa ficada al tauler a la posició corresponent
+    abstract void PosaFitxaAlTauler(Posicio pos);
 
     //Pre: ---
     ///Post: Afegeix un seguidor a la fitxa

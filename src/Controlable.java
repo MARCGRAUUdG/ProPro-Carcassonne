@@ -2,7 +2,7 @@ import java.util.List;
 
 public class Controlable extends Jugador {
     @Override
-    void PosaFitxaAlTauler(List<Posicio> pos) {
+    void PosaFitxaAlTauler(Posicio pos) {
 
     }
 
