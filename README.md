@@ -14,13 +14,13 @@ Repartiment de les classes:
     CIUTAT
     ESGLESIA
    
-- Javi Muñoz
+- Javi Muñoz:
     POSICIO
     GUI
     JOC
     TAULER
     
-- Marc Grau
+- Marc Grau:
     BARALLA
     TIRADA
     JUGADOR
