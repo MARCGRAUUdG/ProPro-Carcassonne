@@ -45,8 +45,8 @@ public class Gui extends Application{
     private static int[] pos = { 75, 115, 155, 195, 235,  275, 315, 355, 395, 435};
     private static Text scorej1=new Text (40+20, 50, "Score: 0");
     private static Text scorej2=new Text (ample-150, 50, "Score: 0");
-    private static Text scorej3=new Text (ample-150, ample-5, "Score: 0");
-    private static Text scorej4=new Text (40+20, ample-5, "Score: 0");
+    private static Text scorej3=new Text (ample-150, ample-15, "Score: 0");
+    private static Text scorej4=new Text (40+20, ample-15, "Score: 0");
 
     //BOT
     private static Collection<String> list;
@@ -139,7 +139,7 @@ public class Gui extends Application{
 
                 Random rand = new Random();
                 int n = rand.nextInt(19)+1;
-                Gui.posaFitxa(x,y, n);
+                Gui.posaFitxa(x,y, n,0);
             }
         });
 
@@ -207,7 +207,7 @@ public class Gui extends Application{
             jug3.setFitHeight(40);
             jug3.setFitWidth(40);
             jug3.setLayoutX(ample-40-10);jug3.setLayoutY(ample-10-40);
-            Text t3 = new Text (ample-150, ample-20, n3);
+            Text t3 = new Text (ample-150, ample-30, n3);
             t3.setFont(Font.font("Arial Black",15));
             t3.setFill(Color.WHITE);
             scorej3.setFont(Font.font("Arial Black",10));
@@ -221,7 +221,7 @@ public class Gui extends Application{
                 jug4.setFitHeight(40);
                 jug4.setFitWidth(40);
                 jug4.setLayoutX(10);jug4.setLayoutY(ample-10-40);
-                Text t4 = new Text (40+20, ample-20, n4);
+                Text t4 = new Text (40+20, ample-30, n4);
                 t4.setFont(Font.font("Arial Black",15));
                 t4.setFill(Color.WHITE);
                 scorej4.setFont(Font.font("Arial Black",10));
@@ -240,12 +240,13 @@ public class Gui extends Application{
         return imgR;
     }
 
-    public static void posaFitxa(int x, int y, int id){
+    public static void posaFitxa(int x, int y, int id, double rotation){
         Image fitxaImg = getImage("src\\images\\f"+id+".jpg");
         ImageView fitxa=new ImageView(fitxaImg);
         fitxa.setLayoutX(pos[x]);fitxa.setLayoutY(pos[y]);
         fitxa.setFitHeight(40);
         fitxa.setFitWidth(40);
+        fitxa.setRotate(rotation);
         midRow.getChildren().addAll(fitxa);
     }
 
