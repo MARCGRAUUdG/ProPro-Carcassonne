@@ -4,6 +4,6 @@ public class LlegirFitxer {
     }
 
     public static void nomFitxer(String text) {
-        Gui.addRow("Fitxer '"+text+"' carregant");
+        Gui.print("Fitxer '"+text+"' carregant");
     }
 }

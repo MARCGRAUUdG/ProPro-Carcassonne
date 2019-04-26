@@ -2,11 +2,11 @@ public class Joc {
     public Joc(){
         Gui.setupJugadors(4,"Jugador1", "Jugador2", "Jugador3","Jugador4");
 
-        Gui.posaFitxa(5,5, 3);
-        Gui.posaFitxa(4,5, 10);
-        Gui.posaFitxa(4,6, 15);
-        Gui.posaFitxa(5,4, 17);
-        Gui.posaFitxa(3,5, 6);
+//        Gui.posaFitxa(5,5, 3);
+//        Gui.posaFitxa(4,5, 10);
+//        Gui.posaFitxa(4,6, 15);
+//        Gui.posaFitxa(5,4, 17);
+//        Gui.posaFitxa(3,5, 6);
 
         Gui.setScore(1,24);
         Gui.setScore(2,15);

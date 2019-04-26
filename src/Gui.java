@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -22,6 +23,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Random;
 
 public class Gui extends Application{
     //APP
@@ -40,7 +42,7 @@ public class Gui extends Application{
     private static AnchorPane midRow = new AnchorPane();
     private ImageView imageView;
 
-    private static int[] pos = { 70, 110, 150, 190, 230,  270, 310, 350, 390, 430};
+    private static int[] pos = { 75, 115, 155, 195, 235,  275, 315, 355, 395, 435};
     private static Text scorej1=new Text (40+20, 50, "Score: 0");
     private static Text scorej2=new Text (ample-150, 50, "Score: 0");
     private static Text scorej3=new Text (ample-150, ample-5, "Score: 0");
@@ -87,8 +89,8 @@ public class Gui extends Application{
     }
 
 
-    public static void addRow(String in){
-        list.add(in);
+    public static void print(String stream){
+        list.add(stream);
         details = FXCollections.observableArrayList(list);
         table.setItems(details);
     }
@@ -125,9 +127,22 @@ public class Gui extends Application{
 
         Image blackimg = getImage("src\\images\\black.png");
         ImageView blackView = new ImageView(blackimg);
-        blackView.setFitHeight(ample-140);
-        blackView.setFitWidth(ample-140);
-        blackView.setLayoutX(70);blackView.setLayoutY(70);
+        blackView.setFitHeight(ample-150);
+        blackView.setFitWidth(ample-150);
+        blackView.setLayoutX(75);blackView.setLayoutY(75);
+        blackView.setOnMouseClicked(new EventHandler<MouseEvent>()
+        {
+            @Override
+            public void handle(MouseEvent t) {
+                int x= (int) (t.getX()/40);
+                int y= (int) (t.getY()/40);
+
+                Random rand = new Random();
+                int n = rand.nextInt(19)+1;
+                Gui.posaFitxa(x,y, n);
+            }
+        });
+
         midRow.getChildren().addAll(blackView);
     }
 
