@@ -62,7 +62,7 @@ public class Gui extends Application{
         buttonFile.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                addRow("Fitxer '"+textField.getText()+"' carregant");
+                Joc.repNomFitxer(textField.getText());
             }
         });
 
@@ -114,11 +114,17 @@ public class Gui extends Application{
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
+
+        initApp();
     }
 
     public static void addRow(String in){
         list.add(in);
         details = FXCollections.observableArrayList(list);
         table.setItems(details);
+    }
+
+    private void initApp(){
+        Joc j=new Joc();
     }
 }
