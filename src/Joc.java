@@ -1,5 +1,7 @@
 public class Joc {
     public Joc(){
+        Gui.setupJugadors(4,"Jugador1", "Jugador2", "Jugador3","Jugador4");
+
         Gui.posaFitxa(5,5, 3);
         Gui.posaFitxa(4,5, 10);
         Gui.posaFitxa(4,6, 15);

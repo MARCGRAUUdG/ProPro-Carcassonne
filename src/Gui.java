@@ -123,8 +123,6 @@ public class Gui extends Application{
         imageView.setFitWidth(ample);
         midRow.getChildren().addAll(imageView);
 
-        setupJugadors(4,"Jugador1", "Jugador2", "Jugador3","Jugador4");
-
         Image blackimg = getImage("src\\images\\black.png");
         ImageView blackView = new ImageView(blackimg);
         blackView.setFitHeight(ample-140);
@@ -160,7 +158,7 @@ public class Gui extends Application{
         log.setMinWidth(ample-15);
     }
 
-    public void setupJugadors(int nJugadors, String n1, String n2, String n3, String n4) {
+    public static void setupJugadors(int nJugadors, String n1, String n2, String n3, String n4) {
         Image playerImg1 = getImage("src\\images\\p1.png");
         ImageView jug1=new ImageView();
         jug1 = new ImageView(playerImg1);
