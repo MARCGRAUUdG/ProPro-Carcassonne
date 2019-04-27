@@ -7,23 +7,29 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Random;
+
+import static javafx.geometry.Pos.CENTER;
+import static javafx.geometry.Pos.CENTER_RIGHT;
 
 public class Gui extends Application{
     //APP
@@ -41,6 +47,7 @@ public class Gui extends Application{
     //MID
     private static AnchorPane midRow = new AnchorPane();
     private ImageView imageView;
+    private static Text comenca=new Text();
 
     private static int[] pos = { 75, 115, 155, 195, 235,  275, 315, 355, 395, 435};
     private static Text scorej1=new Text (40+20, 50, "Score: 0");
@@ -93,6 +100,7 @@ public class Gui extends Application{
         list.add(stream);
         details = FXCollections.observableArrayList(list);
         table.setItems(details);
+        table.scrollTo(details.size());
     }
 
     private void initApp(){
@@ -106,6 +114,8 @@ public class Gui extends Application{
         buttonFile.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                buttonFile.setDisable(true);
+                textField.setDisable(true);
                 Joc.repNomFitxer(textField.getText());
             }
         });
@@ -123,27 +133,12 @@ public class Gui extends Application{
         imageView = new ImageView(image);
         imageView.setFitHeight(ample);
         imageView.setFitWidth(ample);
-        midRow.getChildren().addAll(imageView);
 
-        Image blackimg = getImage("src\\images\\black.png");
-        ImageView blackView = new ImageView(blackimg);
-        blackView.setFitHeight(ample-150);
-        blackView.setFitWidth(ample-150);
-        blackView.setLayoutX(75);blackView.setLayoutY(75);
-        blackView.setOnMouseClicked(new EventHandler<MouseEvent>()
-        {
-            @Override
-            public void handle(MouseEvent t) {
-                int x= (int) (t.getX()/40);
-                int y= (int) (t.getY()/40);
+        comenca=new Text(180,100,"Carrega el fitxer\n per començar");
+        comenca.setFont(Font.font("Arial Black",20));
+        comenca.setFill(Color.WHITE);comenca.setTextAlignment(TextAlignment.CENTER);
 
-                Random rand = new Random();
-                int n = rand.nextInt(19)+1;
-                Gui.posaFitxa(x,y, n,0);
-            }
-        });
-
-        midRow.getChildren().addAll(blackView);
+        midRow.getChildren().addAll(imageView,comenca);
     }
 
     private void setupMainBot(){
@@ -173,14 +168,14 @@ public class Gui extends Application{
         log.setMinWidth(ample-15);
     }
 
-    public static void setupJugadors(int nJugadors, String n1, String n2, String n3, String n4) {
+    public static void setupJugadors(int nJugadors, ArrayList<Jugador> aj) {
         Image playerImg1 = getImage("src\\images\\p1.png");
         ImageView jug1=new ImageView();
         jug1 = new ImageView(playerImg1);
         jug1.setFitHeight(40);
         jug1.setFitWidth(40);
         jug1.setLayoutX(10);jug1.setLayoutY(10);
-        Text t1 = new Text (40+20, 35, n1);
+        Text t1 = new Text (40+20, 35, "Jugador1");//TODO Falta posar el nom del jugador aj.get(3).getNom()
         t1.setFont(Font.font("Arial Black",15));
         t1.setFill(Color.WHITE);
         scorej1.setFont(Font.font("Arial Black",10));
@@ -193,7 +188,7 @@ public class Gui extends Application{
         jug2.setFitHeight(40);
         jug2.setFitWidth(40);
         jug2.setLayoutX(ample-40-10);jug2.setLayoutY(10);
-        Text t2 = new Text (ample-150, 35, n2);
+        Text t2 = new Text (ample-150, 35, "Jugador2");
         t2.setFont(Font.font("Arial Black",15));
         t2.setFill(Color.WHITE);
         scorej2.setFont(Font.font("Arial Black",10));
@@ -207,7 +202,7 @@ public class Gui extends Application{
             jug3.setFitHeight(40);
             jug3.setFitWidth(40);
             jug3.setLayoutX(ample-40-10);jug3.setLayoutY(ample-10-40);
-            Text t3 = new Text (ample-150, ample-30, n3);
+            Text t3 = new Text (ample-150, ample-30, "Jugador3");
             t3.setFont(Font.font("Arial Black",15));
             t3.setFill(Color.WHITE);
             scorej3.setFont(Font.font("Arial Black",10));
@@ -221,7 +216,7 @@ public class Gui extends Application{
                 jug4.setFitHeight(40);
                 jug4.setFitWidth(40);
                 jug4.setLayoutX(10);jug4.setLayoutY(ample-10-40);
-                Text t4 = new Text (40+20, ample-30, n4);
+                Text t4 = new Text (40+20, ample-30, "Jugador4");
                 t4.setFont(Font.font("Arial Black",15));
                 t4.setFill(Color.WHITE);
                 scorej4.setFont(Font.font("Arial Black",10));
@@ -260,5 +255,27 @@ public class Gui extends Application{
             scorej3.setText(s);
         else
             scorej4.setText(s);
+    }
+    public static void iniciaTaulerGui() {
+        Image blackimg = getImage("src\\images\\black.png");
+        ImageView blackView = new ImageView(blackimg);
+        blackView.setFitHeight(ample-150);
+        blackView.setFitWidth(ample-150);
+        blackView.setLayoutX(75);blackView.setLayoutY(75);
+        blackView.setOnMouseClicked(new EventHandler<MouseEvent>()
+        {
+            @Override
+            public void handle(MouseEvent t) {
+                int x= (int) (t.getX()/40);
+                int y= (int) (t.getY()/40);
+
+                Random rand = new Random();
+                int n = rand.nextInt(19)+1;
+                posaFitxa(x,y, n,0);
+                print("Posada fitxa f"+n);
+            }
+        });
+        midRow.getChildren().remove(comenca);
+        midRow.getChildren().addAll(blackView);
     }
 }
