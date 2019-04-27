@@ -44,7 +44,7 @@ public abstract class Jugador {
 
     ///Pre: Posició correcta per ficar al tauler
     ///Post: Fitxa ficada al tauler a la posició corresponent
-    abstract void PosaFitxaAlTauler(Posicio pos);
+    abstract void PosaFitxaAlTauler(Posicio pos, Tauler tau);
 
     //Pre: ---
     ///Post: Afegeix un seguidor a la fitxa

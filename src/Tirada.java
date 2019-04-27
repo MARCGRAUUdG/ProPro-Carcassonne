@@ -5,50 +5,57 @@ public class Tirada {
 
     private Jugador jugadorActual;
     private Baralla baralla;
+    private Tauler tauler;
 
-    List<Posicio> pos;
+    List<Posicio> posicions;
 
-    Tirada(Jugador jActual, Baralla bActual)
+    Tirada(Jugador jActual, Baralla bActual, Tauler tActual)
     {
         jugadorActual = jActual;
         baralla = bActual;
+        tauler = tActual;
     }
 
     public void gestionarTiradaHuma()
     {
-        jugadorActual.agafarFitxaBaralla(baralla);
-        /**
-         * Agafar la informació corresponent de la gui (el que vol fer l'humà
-         */
-        Posicio p = new Posicio();
-        jugadorActual.PosaFitxaAlTauler(p);
-        if (calcularPunts())
+        Fitxa f = jugadorActual.agafarFitxaBaralla(baralla);
+        posicions = tauler.getPosDisponibles(f);
+
+        Gui.addRow("A quina posició esculls?");
+        for (Posicio p : posicions)
         {
-            actualitzarPunts();
+            Gui.addRow(p.toString());
+        }
+        //Usuari entra posició p
+
+        Posicio p = new Posicio();
+        jugadorActual.PosaFitxaAlTauler(p, tauler);
+        if (calcularPunts(f))
+        {
+            actualitzarPunts(f);
         }
     }
 
     public void gestionarTiradaBot()
     {
-        jugadorActual.agafarFitxaBaralla(baralla);
-        /**
-         * La GUI ens retorna una llista de posicions disponibles
-         */
-        int aleatori = ThreadLocalRandom.current().nextInt(0, pos.size());
-        jugadorActual.PosaFitxaAlTauler(pos.get(aleatori));
-        if (calcularPunts())
+        Fitxa f = jugadorActual.agafarFitxaBaralla(baralla);
+        posicions = tauler.getPosDisponibles(f);
+
+        int aleatori = ThreadLocalRandom.current().nextInt(0, posicions.size());
+        jugadorActual.PosaFitxaAlTauler(posicions.get(aleatori), tauler);
+        if (calcularPunts(f))
         {
-            actualitzarPunts();
+            actualitzarPunts(f);
         }
     }
 
-    public boolean calcularPunts()
+    public boolean calcularPunts(Fitxa f)
     {
-        return true;
+        return tauler.tencaRegions(f);
     }
 
-    public void actualitzarPunts()
+    public void actualitzarPunts(Fitxa f)
     {
-
+        tauler.actualitzarPunts(f);
     }
 }
