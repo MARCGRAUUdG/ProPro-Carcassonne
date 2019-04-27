@@ -20,14 +20,9 @@ public class Regio {
     }
 
     //Pre:---
-    //Post: retorna el nom del jugador si existeix altrament llança excepcio de no trobat
-    String nom_jugador() throws Exception{
-        if(seguidor != null) {
-            return seguidor;
-        }
-        else{
-            throw new NoSuchElementException();
-        }
+    //Post: retorna el nom del jugador
+    String nom_jugador(){
+        return seguidor;
     }
 
     //Pre:---
