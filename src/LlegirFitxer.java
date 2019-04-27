@@ -14,6 +14,8 @@ public class LlegirFitxer {
     private static boolean _camperols;
 
 
+    ///Pre: ---
+    ///Post: lectura completa del fitxer
     public static void llegirFitxer() throws FileNotFoundException {
         Scanner input = new Scanner(fitxer);
 
@@ -22,6 +24,8 @@ public class LlegirFitxer {
         llegirDadesPartida(input);
     }
 
+    ///Pre: Scanner del fitxer d'entrada
+    ///Post: Llegeix i guarda la fitxa inicial i si hi ha camperols
     private static void llegirDadesPartida(Scanner input)
     {
         input.next("rajola_inicial"); //saltem String
@@ -42,6 +46,8 @@ public class LlegirFitxer {
         }
     }
 
+    ///Pre: Scanner del fitxer d'entrada
+    ///Post: Llegeix i guarda les diferents fitxes
     private static void llegirRajoles(Scanner input)
     {
         List<Fitxa> llistaFitxes = new ArrayList<Fitxa>();
@@ -72,6 +78,8 @@ public class LlegirFitxer {
         }*/
     }
 
+    ///Pre: Scanner del fitxer d'entrada
+    ///Post: Llegeix i guarda el nombre de jugadors i quins d'aquests són màquina
     private static void llegirJugadors(Scanner input)
     {
         List <Integer>jugadorsMaquina = new ArrayList<>();
@@ -95,6 +103,8 @@ public class LlegirFitxer {
         }*/
     }
 
+    ///Pre: Nom del fitxer d'entrada
+    ///Post: Guarda el nom del fitxer d'entrada i crida el mètode per llegir el fitxer
     public static void nomFitxer(String text) throws FileNotFoundException {
         Gui.print("Fitxer '"+text+"' carregant");
         File f = new File(text);
@@ -102,22 +112,32 @@ public class LlegirFitxer {
         llegirFitxer();
     }
 
+    ///Pre: ---
+    ///Post: Retorna el nombre de jugadors
     public static int getJugadors() {
         return _nJugadors;
     }
 
+    ///Pre: ---
+    ///Post: Retorna una llista de quins dels jugadors són controlats per màquina
     public static List<Integer> getJugadorsMaquina() {
         return _jugadorsMaquina;
     }
 
+    ///Pre: ---
+    ///Post: Retorna la llista de fitxes
     public static List<Fitxa> getLlistaFitxes() {
         return _llistaFitxes;
     }
 
+    ///Pre: ---
+    ///Post: Retorna la fitxa inicial
     public static Fitxa getInicial() {
         return _inicial;
     }
 
+    ///Pre: ---
+    ///Post: Cert si hi ha camperols
     public static boolean isCamperols() {
         return _camperols;
     }

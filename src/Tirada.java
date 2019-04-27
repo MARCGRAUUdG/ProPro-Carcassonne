@@ -16,6 +16,9 @@ public class Tirada {
         tauler = tActual;
     }
 
+
+    ///Pre: ---
+    ///Post: Gestiona la tirada d'un jugador controlat
     public void gestionarTiradaHuma()
     {
         Fitxa f = jugadorActual.agafarFitxaBaralla(baralla);
@@ -36,6 +39,8 @@ public class Tirada {
         }
     }
 
+    ///Pre: ---
+    ///Post: gestiona la tirada d'un jugador màquina (bot)
     public void gestionarTiradaBot()
     {
         Fitxa f = jugadorActual.agafarFitxaBaralla(baralla);
@@ -49,11 +54,15 @@ public class Tirada {
         }
     }
 
+    ///Pre: Fitxa f actual
+    ///Post: Cert si és necessari calcular els punts després de colocar la fitxa (s'ha completat una possessio)
     public boolean calcularPunts(Fitxa f)
     {
         return tauler.tencaRegions(f);
     }
 
+    ///Pre: Fitxa f actual
+    ///Post: Actualitza els punts de la/les regions completada/es de la fitxa actual
     public void actualitzarPunts(Fitxa f)
     {
         tauler.actualitzarPunts(f);
