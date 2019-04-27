@@ -150,7 +150,8 @@ public class Fitxa {
         rotacio = rotar;
     }
 
-
+    //Pre:---
+    //Post: retorna rotacio
     public int getRotacio() {
         return rotacio;
     }
