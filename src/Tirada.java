@@ -21,10 +21,10 @@ public class Tirada {
         Fitxa f = jugadorActual.agafarFitxaBaralla(baralla);
         posicions = tauler.getPosDisponibles(f);
 
-        Gui.addRow("A quina posició esculls?");
+        Gui.print("A quina posició esculls?");
         for (Posicio p : posicions)
         {
-            Gui.addRow(p.toString());
+            Gui.print(p.toString());
         }
         //Usuari entra posició p
 

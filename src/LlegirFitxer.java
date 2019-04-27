@@ -27,18 +27,18 @@ public class LlegirFitxer {
         input.next("rajola_inicial"); //saltem String
         _inicial = new Fitxa(input.next());
 
-        //Gui.addRow(_inicial.toString());
+        //Gui.print(_inicial.toString());
         input.next("camperols"); //saltem String
         String camperols = input.next();
         if (camperols.equals("si"))
         {
             _camperols = true;
-            //Gui.addRow("TRUE");
+            //Gui.print("TRUE");
         }
         else
         {
             _camperols = false;
-            //Gui.addRow("FALSE");
+            //Gui.print("FALSE");
         }
     }
 
@@ -68,7 +68,7 @@ public class LlegirFitxer {
 
         /*for (Fitxa f : _llistaFitxes)
         {
-            Gui.addRow(f.toString());
+            Gui.print(f.toString());
         }*/
     }
 
@@ -79,7 +79,7 @@ public class LlegirFitxer {
         input.next("nombre_jugadors"); //saltem String
         _nJugadors = input.nextInt(); //guardem el nombre de jugadors
 
-        //Gui.addRow(String.valueOf(_nJugadors));
+        //Gui.print(String.valueOf(_nJugadors));
 
         input.next("jugadors_cpu"); //saltem String
         while (input.hasNextInt())
@@ -91,34 +91,34 @@ public class LlegirFitxer {
 
         /*for (int j : _jugadorsMaquina)
         {
-            Gui.addRow(String.valueOf(j));
+            Gui.print(String.valueOf(j));
         }*/
     }
 
     public static void nomFitxer(String text) throws FileNotFoundException {
-        Gui.addRow("Fitxer '"+text+"' carregant");
+        Gui.print("Fitxer '"+text+"' carregant");
         File f = new File(text);
         fitxer = f;
         llegirFitxer();
     }
 
-    public static int get_nJugadors() {
+    public static int getJugadors() {
         return _nJugadors;
     }
 
-    public static List<Integer> get_jugadorsMaquina() {
+    public static List<Integer> getJugadorsMaquina() {
         return _jugadorsMaquina;
     }
 
-    public static List<Fitxa> get_llistaFitxes() {
+    public static List<Fitxa> getLlistaFitxes() {
         return _llistaFitxes;
     }
 
-    public static Fitxa get_inicial() {
+    public static Fitxa getInicial() {
         return _inicial;
     }
 
-    public static boolean is_camperols() {
+    public static boolean isCamperols() {
         return _camperols;
     }
 }
