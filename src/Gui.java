@@ -16,6 +16,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -62,7 +63,11 @@ public class Gui extends Application{
         buttonFile.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Joc.repNomFitxer(textField.getText());
+                try {
+                    Joc.repNomFitxer(textField.getText());
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
