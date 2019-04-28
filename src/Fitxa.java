@@ -49,16 +49,12 @@ public class Fitxa {
     }
 
     //Pre:---
-    //Post: si existeix la regio central mostra el format de la regio i si te seguidor
-    public void mostrar_regio_c(){
-
-        System.out.println("Regio tipus: " + regions.get(0).lletra());
+    //Post: retorna seguidor de la regio del centre
+    public String regio_c_seguidor(){
         if(regions.get(0).nom_jugador()==null){
-            System.out.println("No hi ha cap seguidor");
+            return null;
         }
-        else {
-            System.out.println("Propietari del seguidor:" + regions.get(0).nom_jugador());
-        }
+        return regions.get(0).nom_jugador();
     }
 
     //Pre:---
@@ -70,15 +66,12 @@ public class Fitxa {
     }
 
     //Pre:---
-    //Post: si existeix la regio del nort mostra el format de la regio i si te seguidor
-    public void mostrar_regio_n(){
-        System.out.println("Regio tipus: " + regions.get(1).lletra());
+    //Post: retorna seguidor de la regio del nort
+    public String regio_n_seguidor(){
         if(regions.get(1).nom_jugador()==null){
-            System.out.println("No hi ha cap seguidor");
+            return null;
         }
-        else {
-            System.out.println("Propietari del seguidor:" + regions.get(1).nom_jugador());
-        }
+        return regions.get(1).nom_jugador();
     }
 
     //Pre:---
@@ -89,16 +82,12 @@ public class Fitxa {
     }
 
     //Pre:---
-    //Post: si existeix la regio central mostra el format de la regio i si te seguidor
-    public void mostrar_regio_e(){
-        System.out.println("Regio tipus: " + regions.get(2).lletra());
-
+    //Post: retorna seguidor de la regio del est
+    public String regio_e_seguidor(){
         if(regions.get(2).nom_jugador()==null){
-            System.out.println("No hi ha cap seguidor");
+            return null;
         }
-        else {
-            System.out.println("Propietari del seguidor:" + regions.get(2).nom_jugador());
-        }
+        return regions.get(2).nom_jugador();
     }
     //Pre:----
     //Post:retorna el format de la regio de l'est
@@ -108,15 +97,12 @@ public class Fitxa {
     }
 
     //Pre:---
-    //Post: si existeix la regio central mostra el format de la regio i si te seguidor
-    public void mostrar_regio_s(){
-        System.out.println("Regio tipus: " + regions.get(3).lletra());
+    //Post: retorna seguidor de la regio del sud
+    public String regio_s_seguidor(){
         if(regions.get(3).nom_jugador()==null){
-            System.out.println("No hi ha cap seguidor");
+            return null;
         }
-        else {
-            System.out.println("Propietari del seguidor:" + regions.get(3).nom_jugador());
-        }
+        return regions.get(3).nom_jugador();
     }
 
     //Pre:---
@@ -126,15 +112,12 @@ public class Fitxa {
     }
 
     //Pre:---
-    //Post: si existeix la regio central mostra el format de la regio i si te seguidor
-    public void mostrar_regio_o(){
-        System.out.println("Regio tipus: " + regions.get(4).lletra());
+    //Post: retorna seguidor de la regio del oest
+    public String regio_o_seguidor(){
         if(regions.get(4).nom_jugador()==null){
-            System.out.println("No hi ha cap seguidor");
+            return null;
         }
-        else {
-            System.out.println("Propietari del seguidor:" + regions.get(4).nom_jugador());
-        }
+        return regions.get(4).nom_jugador();
     }
 
     //Pre:---
@@ -154,5 +137,33 @@ public class Fitxa {
     //Post: retorna rotacio
     public int getRotacio() {
         return rotacio;
+
+    }
+
+    //Pre:---
+    //Post:retorna el format de la fitxa si existeix altrament null
+    public String format_fitxa(){
+        String fitxa = null;
+
+        if(regions.size()>0) {
+            for (int i = 0; i < regions.size(); i++) {
+                fitxa = fitxa + regions.get(i).lletra();
+            }
+        }
+
+        return fitxa;
+    }
+
+    @Override
+    public String toString(){
+        String fitxa = "Fitxa{";
+
+        for(int i=0; i<regions.size(); i++){
+            fitxa = fitxa + regions.get(i).lletra();
+        }
+
+        fitxa = fitxa +"}";
+
+        return fitxa;
     }
 }
