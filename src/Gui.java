@@ -116,7 +116,11 @@ public class Gui extends Application{
             public void handle(ActionEvent event) {
                 buttonFile.setDisable(true);
                 textField.setDisable(true);
-                Joc.repNomFitxer(textField.getText());
+                try {
+                    Joc.repNomFitxer(textField.getText());
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
         });
 

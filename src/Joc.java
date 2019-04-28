@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Joc {
@@ -10,7 +11,7 @@ public class Joc {
 
     }
 
-    public static void repNomFitxer(String text) {
+    public static void repNomFitxer(String text) throws FileNotFoundException {
         _fitxer.nomFitxer(text);
         //_jugadors=_fitxer.getJugadors();//TODO Llegir per la clase Llegirfitxer els jugadors
         Gui.setupJugadors(4,_jugadors);//TODO jugadors.size() en comptes de 4
