@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class LlegirFitxer {
 
     private static File fitxer;
@@ -32,18 +31,18 @@ public class LlegirFitxer {
         input.next("rajola_inicial"); //saltem String
         _inicial = new Fitxa(input.next());
 
-        //Gui.addRow(_inicial.toString());
+        //Gui.print(_inicial.toString());
         input.next("camperols"); //saltem String
         String camperols = input.next();
         if (camperols.equals("si"))
         {
             _camperols = true;
-            //Gui.addRow("TRUE");
+            //Gui.print("TRUE");
         }
         else
         {
             _camperols = false;
-            //Gui.addRow("FALSE");
+            //Gui.print("FALSE");
         }
     }
 
@@ -75,7 +74,7 @@ public class LlegirFitxer {
 
         /*for (Fitxa f : _llistaFitxes)
         {
-            Gui.addRow(f.toString());
+            Gui.print(f.toString());
         }*/
     }
 
@@ -88,7 +87,7 @@ public class LlegirFitxer {
         input.next("nombre_jugadors"); //saltem String
         _nJugadors = input.nextInt(); //guardem el nombre de jugadors
 
-        //Gui.addRow(String.valueOf(_nJugadors));
+        //Gui.print(String.valueOf(_nJugadors));
 
         input.next("jugadors_cpu"); //saltem String
         while (input.hasNextInt())
@@ -100,7 +99,7 @@ public class LlegirFitxer {
 
         /*for (int j : _jugadorsMaquina)
         {
-            Gui.addRow(String.valueOf(j));
+            Gui.print(String.valueOf(j));
         }*/
     }
 
@@ -112,7 +111,6 @@ public class LlegirFitxer {
         fitxer = f;
         llegirFitxer();
     }
-
 
     ///Pre: ---
     ///Post: Retorna el nombre de jugadors
