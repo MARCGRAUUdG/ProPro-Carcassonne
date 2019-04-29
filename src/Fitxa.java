@@ -1,14 +1,169 @@
+import java.util.ArrayList;
+import java.util.NoSuchElementException;
+
 public class Fitxa {
 
-    private String _lletres;
-    public Fitxa(String lletres){
-        _lletres = lletres;
+    //Descripcio: Fitxa fromat per regions C, N, E, S i O;
+
+    private ArrayList<Regio> regions;
+    private int rotacio;
+
+    //Pre: lletres mida = 5
+    //Post: guarda a regions el format de la fitxa
+    public Fitxa(String lletres)throws Excepcio{
+        if(lletres.length()==5) {
+            regions = new ArrayList<Regio>(5);
+            for (int i = 0; i < lletres.length(); i++) {
+                char lletra = lletres.charAt(i);
+                Regio nou = new Regio(lletra);
+                regions.add(nou);
+            }
+            rotacio = 0;
+        }
+        else {
+            throw new Excepcio("La mida és incorrecta");
+        }
+    }
+
+    //Pre: regio = C, N, E, S o O
+    //Post: afegeix el jugador a la regio de la fitxa
+    public void assignar_seguidor(char regio, String jugador)throws Excepcio{
+        if(regio=='C'){
+            regions.get(0).posar_seguidor(jugador);
+        }
+        else if(regio=='N') {
+            regions.get(1).posar_seguidor(jugador);
+        }
+        else if(regio=='E') {
+            regions.get(2).posar_seguidor(jugador);
+        }
+        else if(regio=='S') {
+            regions.get(3).posar_seguidor(jugador);
+        }
+        else if(regio=='O'){
+            regions.get(4).posar_seguidor(jugador);
+        }
+        else{
+            throw new Excepcio("La regio és incorrecta");
+        }
+    }
+
+    //Pre:---
+    //Post: retorna seguidor de la regio del centre
+    public String regio_c_seguidor(){
+        if(regions.get(0).nom_jugador()==null){
+            return null;
+        }
+        return regions.get(0).nom_jugador();
+    }
+
+    //Pre:---
+    //Post:retorna el format de la regio del centre
+    public char regio_c(){
+
+        return regions.get(0).lletra();
+
+    }
+
+    //Pre:---
+    //Post: retorna seguidor de la regio del nort
+    public String regio_n_seguidor(){
+        if(regions.get(1).nom_jugador()==null){
+            return null;
+        }
+        return regions.get(1).nom_jugador();
+    }
+
+    //Pre:---
+    //Post:retorna el format dela regio del nort
+    public char regio_n(){
+
+        return regions.get(1).lletra();
+    }
+
+    //Pre:---
+    //Post: retorna seguidor de la regio del est
+    public String regio_e_seguidor(){
+        if(regions.get(2).nom_jugador()==null){
+            return null;
+        }
+        return regions.get(2).nom_jugador();
+    }
+    //Pre:----
+    //Post:retorna el format de la regio de l'est
+    public char regio_e(){
+
+        return regions.get(2).lletra();
+    }
+
+    //Pre:---
+    //Post: retorna seguidor de la regio del sud
+    public String regio_s_seguidor(){
+        if(regions.get(3).nom_jugador()==null){
+            return null;
+        }
+        return regions.get(3).nom_jugador();
+    }
+
+    //Pre:---
+    //Post:retorna el format de la regio del sud
+    public char regio_s() {
+        return regions.get(3).lletra();
+    }
+
+    //Pre:---
+    //Post: retorna seguidor de la regio del oest
+    public String regio_o_seguidor(){
+        if(regions.get(4).nom_jugador()==null){
+            return null;
+        }
+        return regions.get(4).nom_jugador();
+    }
+
+    //Pre:---
+    //Post:retorna el format de la regio de l'oest
+    public char regio_o(){
+
+        return regions.get(4).lletra();
+    }
+
+    //Pre: rotar = 0 o 90 o 180 o 270
+    //Post: rotacio = rotar
+    public void rator_fitxa(int rotar){
+        rotacio = rotar;
+    }
+
+    //Pre:---
+    //Post: retorna rotacio
+    public int getRotacio() {
+        return rotacio;
+
+    }
+
+    //Pre:---
+    //Post:retorna el format de la fitxa si existeix altrament null
+    public String format_fitxa(){
+        String fitxa = null;
+
+        if(regions.size()>0) {
+            for (int i = 0; i < regions.size(); i++) {
+                fitxa = fitxa + regions.get(i).lletra();
+            }
+        }
+
+        return fitxa;
     }
 
     @Override
-    public String toString() {
-        return "Fitxa{" +
-                "_lletres='" + _lletres + '\'' +
-                '}';
+    public String toString(){
+        String fitxa = "Fitxa{";
+
+        for(int i=0; i<regions.size(); i++){
+            fitxa = fitxa + regions.get(i).lletra();
+        }
+
+        fitxa = fitxa +"}";
+
+        return fitxa;
     }
 }
