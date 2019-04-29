@@ -1,3 +1,4 @@
+import javafx.geometry.Pos;
 
 import java.util.Collection;
 import java.util.Iterator;
