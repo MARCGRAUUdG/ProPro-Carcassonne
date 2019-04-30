@@ -29,7 +29,12 @@ public class LlegirFitxer {
     private static void llegirDadesPartida(Scanner input)
     {
         input.next("rajola_inicial"); //saltem String
-        _inicial = new Fitxa(input.next());
+
+        try {
+            _inicial = new Fitxa(input.next());
+        } catch (Excepcio excepcio) {
+            Gui.informarFitxerEntradaIncorrecte("Format de la fitxa incorrecte ("+input.next()+")");
+        }
 
         //Gui.print(_inicial.toString());
         input.next("camperols"); //saltem String
@@ -60,7 +65,12 @@ public class LlegirFitxer {
         {
             for (int i = 0; i < numFitxes; i++)
             {
-                Fitxa f = new Fitxa(valFitxa);
+                Fitxa f = null;
+                try {
+                    f = new Fitxa(valFitxa);
+                } catch (Excepcio excepcio) {
+                    Gui.informarFitxerEntradaIncorrecte("Format de la fitxa incorrecte ("+valFitxa+")");
+                }
                 llistaFitxes.add(f);
             }
 
@@ -106,7 +116,7 @@ public class LlegirFitxer {
     ///Pre: Nom del fitxer d'entrada
     ///Post: Guarda el nom del fitxer d'entrada i crida el mètode per llegir el fitxer
     public static void nomFitxer(String text) throws FileNotFoundException {
-        Gui.print("Fitxer '"+text+"' carregant");
+        Gui.print("Fitxer '"+text+"' carregant...");
         File f = new File(text);
         fitxer = f;
         llegirFitxer();
@@ -140,5 +150,9 @@ public class LlegirFitxer {
     ///Post: Cert si hi ha camperols
     public static boolean isCamperols() {
         return _camperols;
+    }
+
+    public boolean lecturaCorrecta() {
+        return true;//TODO Retorna cert si ha llegit el fitxer sense cap problema fals altrament
     }
 }
