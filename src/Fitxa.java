@@ -137,7 +137,7 @@ public class Fitxa extends Excepcio{
                 regions.add(i,regions.get(i+1));
             }
             regions.remove(4);
-            regions.add(aux);
+            regions.add(4,aux);
         }
         else if(rotar==180){
             aux = new Regio(regio_n());
@@ -161,12 +161,11 @@ public class Fitxa extends Excepcio{
                 regions.add(i,regions.get(i-1));
             }
             regions.remove(1);
-            regions.add(aux);
+            regions.add(1,aux);
         }
         else{
             throw new Excepcio("Rotació incorrecta");
         }
-
 
     }
 
