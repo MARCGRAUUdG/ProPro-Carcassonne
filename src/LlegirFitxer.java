@@ -155,4 +155,12 @@ public class LlegirFitxer {
     public boolean lecturaCorrecta() {
         return true;//TODO Retorna cert si ha llegit el fitxer sense cap problema fals altrament
     }
+
+    public Baralla getBaralla() {
+        return new Baralla(0);//TODO retorna la baralla llegida per fitxer
+    }
+
+    public Fitxa getFitxaInicial() throws Excepcio {//TODO retorna la fitxa inicial rebuda per fitxer, S'ha de treure aquet try catch no pot ser que cada cop que es crea una puta fitxa s'ha de ficar try catch
+        return new Fitxa("CCFCF");
+    }
 }
