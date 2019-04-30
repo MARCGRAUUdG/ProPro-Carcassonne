@@ -1,2 +1,2 @@
-public class Cami extends Possessio {
+public class Cami extends Estructura {
 }

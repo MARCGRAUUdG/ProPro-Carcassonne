@@ -128,12 +128,12 @@ public class Fitxa extends Excepcio{
     }
 
     //Pre: rotar = 90 o 180 o 270
-    //Post: rotacio = rotar i rotar la fitxa
+    //Post: rotacio = rotar
     public void rator_fitxa(int rotar)throws Excepcio{
 
+        Regio aux;
         if(rotar==90){
-            rotacio=rotar;
-            Regio aux = new Regio(regio_n());
+            aux = new Regio(regio_n());
             for(int i=1; i<4; i++){
                 regions.remove(i);
                 regions.add(i,regions.get(i+1));
@@ -142,8 +142,7 @@ public class Fitxa extends Excepcio{
             regions.add(aux);
         }
         else if(rotar==180){
-            rotacio=rotar;
-            Regio aux = new Regio(regio_n());
+            aux = new Regio(regio_n());
             regions.remove(1);
             regions.add(1,regions.get(3));
             regions.remove(3);
@@ -156,20 +155,12 @@ public class Fitxa extends Excepcio{
             regions.remove(4);
             regions.add(4,aux);
             aux = null;
-        }
-        else if(rotar == 270){
-            rotacio=rotar;
-            Regio aux = new Regio(regio_o());
-            for(int i=4; i>1; i--){
-                regions.remove(i);
-                regions.add(i,regions.get(i-1));
             }
-            regions.remove(1);
-            regions.add(aux);
-        }
         else{
             throw new Excepcio("Rotació incorrecta");
         }
+
+
     }
 
     //Pre:---

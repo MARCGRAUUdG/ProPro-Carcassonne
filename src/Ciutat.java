@@ -1,2 +1,2 @@
-public class Ciutat extends Possessio {
+public class Ciutat extends Estructura {
 }
