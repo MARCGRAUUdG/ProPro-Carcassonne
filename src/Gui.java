@@ -40,8 +40,8 @@ public class Gui extends Application{
 
     //TOP
     private AnchorPane topRow = new AnchorPane();
-    private TextField textField = new TextField ();
-    private Button buttonFile = new Button();
+    private static TextField textField = new TextField ();
+    private static Button buttonFile = new Button();
     private double buttonSize=100.0;
 
     //MID
@@ -116,11 +116,7 @@ public class Gui extends Application{
             public void handle(ActionEvent event) {
                 buttonFile.setDisable(true);
                 textField.setDisable(true);
-                try {
-                    Joc.repNomFitxer(textField.getText());
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+                Joc.repNomFitxer(textField.getText());
             }
         });
 
@@ -172,14 +168,14 @@ public class Gui extends Application{
         log.setMinWidth(ample-15);
     }
 
-    public static void setupJugadors(int nJugadors, ArrayList<Jugador> aj) {
+    public static void setupJugadors(int nJugadors) {
         Image playerImg1 = getImage("src\\images\\p1.png");
         ImageView jug1=new ImageView();
         jug1 = new ImageView(playerImg1);
         jug1.setFitHeight(40);
         jug1.setFitWidth(40);
         jug1.setLayoutX(10);jug1.setLayoutY(10);
-        Text t1 = new Text (40+20, 35, "Jugador1");//TODO Falta posar el nom del jugador aj.get(3).getNom()
+        Text t1 = new Text (40+20, 35, "Jugador1");
         t1.setFont(Font.font("Arial Black",15));
         t1.setFill(Color.WHITE);
         scorej1.setFont(Font.font("Arial Black",10));
@@ -281,5 +277,14 @@ public class Gui extends Application{
         });
         midRow.getChildren().remove(comenca);
         midRow.getChildren().addAll(blackView);
+    }
+
+    //Pre:--
+    //Post:Infroma per pantalla que el fitxer es incorrecte per el motiou "motiu" i torna a demana fitxer entrada
+    public static void informarFitxerEntradaIncorrecte(String motiu){
+        print("Fitxer incorrecte! Motiu: "+motiu+". Torna a introduïr el nom del fitxer.");
+        buttonFile.setDisable(false);
+        textField.setText("");
+        textField.setDisable(false);
     }
 }

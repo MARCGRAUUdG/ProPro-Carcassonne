@@ -1,4 +1,4 @@
-nombre_jugadors 5
+nombre_jugadors 4
 jugadors_cpu 2 3 5
 rajoles
 CFCVC 7
