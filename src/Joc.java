@@ -7,6 +7,7 @@ public class Joc {
     private static Tauler _tauler;
     private static Tirada _tirada;
     private static int _nJugadors;
+    private static Baralla _baralla;
 
     public Joc(){
 
@@ -34,9 +35,5 @@ public class Joc {
     private static void IniciJoc(){
         Gui.setupJugadors(_nJugadors);
         Gui.iniciaTaulerGui();
-
-        Gui.setScore(1, 24);
-        Gui.setScore(2, 15);
-        Gui.setScore(4, 3);
     }
 }

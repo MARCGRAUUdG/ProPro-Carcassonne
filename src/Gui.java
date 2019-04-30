@@ -109,14 +109,18 @@ public class Gui extends Application{
 
     private void setupMainTop(){
         textField.setPromptText("Introdueix el nom del fitxer");
+        textField.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent t) {
+                llegeigNomDelFitxer();
+            }
+        });
         buttonFile.setText("Carregar Fitxer");
         buttonFile.setPrefSize(buttonSize,20.0);
         buttonFile.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-                buttonFile.setDisable(true);
-                textField.setDisable(true);
-                Joc.repNomFitxer(textField.getText());
+            public void handle(ActionEvent t) {
+                llegeigNomDelFitxer();
             }
         });
 
@@ -126,6 +130,12 @@ public class Gui extends Application{
         AnchorPane.setRightAnchor(textField,buttonSize+5.0);
 
         topRow.getChildren().addAll(textField,buttonFile);
+    }
+
+    private void llegeigNomDelFitxer(){
+        buttonFile.setDisable(true);
+        textField.setDisable(true);
+        Joc.repNomFitxer(textField.getText());
     }
 
     private void setupMainMiddle(){
@@ -276,7 +286,6 @@ public class Gui extends Application{
                 } catch (Excepcio excepcio) {
                     excepcio.printStackTrace();
                 }
-                print(f.format_fitxa());
                 f.setPosicio(p);
                 posaFitxa(f);
             }
