@@ -5,7 +5,7 @@ public class Fitxa extends Excepcio{
     //Descripcio: Fitxa fromat per regions C, N, E, S i O;
 
     private ArrayList<Regio> regions;
-    private int rotacio;
+    public int rotacio;
     private Posicio pos;
 
     //Pre: lletres mida = 5
@@ -165,7 +165,7 @@ public class Fitxa extends Excepcio{
 
     //Pre:---
     //Post: guardar pos
-    public void guardar_Posicio(Posicio pos) {
+    public void setPosicio(Posicio pos) {
         this.pos = pos;
     }
 
@@ -173,12 +173,6 @@ public class Fitxa extends Excepcio{
     //Post: retorna posicio
     public Posicio getPosicio() {
         return pos;
-    }
-
-    //Pre:---
-    //Post: retorna rotacio
-    public int getRotacio() {
-        return rotacio;
     }
 
     //Pre:---
