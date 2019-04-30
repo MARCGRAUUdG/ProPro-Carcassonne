@@ -21,15 +21,22 @@ public class Joc {
             Gui.informarFitxerEntradaIncorrecte("No s'ha trobat el fitxer");
         }
 
-
         if(/*_fitxer.lecturaCorrecta()*/llegitOk) {//TODO Treure llegitOk posteriorment
-            _nJugadors = _fitxer.getJugadors();
-            Gui.setupJugadors(_nJugadors);
-            Gui.iniciaTaulerGui();
-
-            Gui.setScore(1, 24);
-            Gui.setScore(2, 15);
-            Gui.setScore(4, 3);
+            repDadesFitxer();
+            IniciJoc();
         }
+    }
+
+    private static void repDadesFitxer() {
+        _nJugadors = _fitxer.getJugadors();
+    }
+
+    private static void IniciJoc(){
+        Gui.setupJugadors(_nJugadors);
+        Gui.iniciaTaulerGui();
+
+        Gui.setScore(1, 24);
+        Gui.setScore(2, 15);
+        Gui.setScore(4, 3);
     }
 }
