@@ -1,6 +1,6 @@
 import java.util.NoSuchElementException;
 
-public class Regio {
+public class Regio extends Excepcio{
 
     //Descripcio: Regio d'una fitxa
 
@@ -26,8 +26,14 @@ public class Regio {
     }
 
     //Pre:---
-    //Post: posar un seguidor de jugador a la regio
-    void posar_seguidor(String jugador){
-        seguidor = jugador;
+    //Post: posar un seguidor de jugador a la regio si no és X altrament llança excepcio
+    void posar_seguidor(String jugador)throws Excepcio{
+        if(zona != 'X'){
+            seguidor = jugador;
+        }
+        else{
+            throw new Excepcio("No és pot possar seguidor a l'encreuament");
+        }
     }
+
 }

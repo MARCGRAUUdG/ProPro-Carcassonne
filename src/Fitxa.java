@@ -1,12 +1,11 @@
 import java.util.ArrayList;
-import java.util.NoSuchElementException;
 
-public class Fitxa {
+public class Fitxa extends Excepcio{
 
     //Descripcio: Fitxa fromat per regions C, N, E, S i O;
 
     private ArrayList<Regio> regions;
-    private int rotacio;
+    private Posicio pos;
 
     //Pre: lletres mida = 5
     //Post: guarda a regions el format de la fitxa
@@ -18,7 +17,6 @@ public class Fitxa {
                 Regio nou = new Regio(lletra);
                 regions.add(nou);
             }
-            rotacio = 0;
         }
         else {
             throw new Excepcio("La mida és incorrecta");
@@ -28,23 +26,23 @@ public class Fitxa {
     //Pre: regio = C, N, E, S o O
     //Post: afegeix el jugador a la regio de la fitxa
     public void assignar_seguidor(char regio, String jugador)throws Excepcio{
-        if(regio=='C'){
-            regions.get(0).posar_seguidor(jugador);
+        try {
+            if (regio == 'C') {
+                regions.get(0).posar_seguidor(jugador);
+            } else if (regio == 'N') {
+                regions.get(1).posar_seguidor(jugador);
+            } else if (regio == 'E') {
+                regions.get(2).posar_seguidor(jugador);
+            } else if (regio == 'S') {
+                regions.get(3).posar_seguidor(jugador);
+            } else if (regio == 'O') {
+                regions.get(4).posar_seguidor(jugador);
+            } else {
+                throw new Excepcio("La regio és incorrecta");
+            }
         }
-        else if(regio=='N') {
-            regions.get(1).posar_seguidor(jugador);
-        }
-        else if(regio=='E') {
-            regions.get(2).posar_seguidor(jugador);
-        }
-        else if(regio=='S') {
-            regions.get(3).posar_seguidor(jugador);
-        }
-        else if(regio=='O'){
-            regions.get(4).posar_seguidor(jugador);
-        }
-        else{
-            throw new Excepcio("La regio és incorrecta");
+        catch (Excepcio e){
+            System.err.println(e);
         }
     }
 
@@ -127,17 +125,69 @@ public class Fitxa {
         return regions.get(4).lletra();
     }
 
-    //Pre: rotar = 0 o 90 o 180 o 270
-    //Post: rotacio = rotar
-    public void rator_fitxa(int rotar){
-        rotacio = rotar;
+    //Pre: rotar = 90 o 180 o 270
+    //Post: fitxa rotat
+    public void rator_fitxa(int rotar)throws Excepcio{
+
+        Regio aux;
+        if(rotar==90){
+            aux = new Regio(regio_n());
+            for(int i=1; i<4; i++){
+                regions.remove(i);
+                regions.add(i,regions.get(i+1));
+            }
+            regions.remove(4);
+            regions.add(4,aux);
+        }
+        else if(rotar==180){
+            aux = new Regio(regio_n());
+            regions.remove(1);
+            regions.add(1,regions.get(3));
+            regions.remove(3);
+            regions.add(3,aux);
+            aux = null;
+
+            aux = new Regio(regio_e());
+            regions.remove(2);
+            regions.add(2,regions.get(4));
+            regions.remove(4);
+            regions.add(4,aux);
+            aux = null;
+            }
+        else if(rotar==270){
+            aux = new Regio(regio_o());
+            for(int i=4; i>1; i--){
+                regions.remove(i);
+                regions.add(i,regions.get(i-1));
+            }
+            regions.remove(1);
+            regions.add(1,aux);
+        }
+        else{
+            throw new Excepcio("Rotació incorrecta");
+        }
+
     }
 
     //Pre:---
-    //Post: retorna rotacio
-    public int getRotacio() {
-        return rotacio;
+    //Post: guardar pos
+    public void setPosicio(Posicio pos) {
+        this.pos = pos;
+    }
 
+    //Pre:---
+    //Post: retorna posicio
+    public Posicio getPosicio() {
+        return pos;
+    }
+
+    //Pre:---
+    //Post:retorna cert si els camps de la fitxa coincideix amb els del seu adjacent camp per camp
+    public boolean fitxa_encaixa(char nort, char est, char sud, char oest){
+        if(regio_n()==nort && regio_e()==est && regio_s()==sud && regio_o()==oest){
+            return true;
+        }
+        return false;
     }
 
     //Pre:---
