@@ -24,6 +24,8 @@ Repartiment de les classes:
     LLEGIR FITXER
     CONTROLABLE
     MAQUINA
+    
+![Distibucio](https://github.com/MARCGRAUUdG/ProPro-Carcassonne/blob/master/doc/Reparticio.jpg)
 
 -Fitxes disponibles inicialment:
     CFCVC
