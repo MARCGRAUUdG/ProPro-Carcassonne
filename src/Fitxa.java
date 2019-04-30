@@ -5,7 +5,6 @@ public class Fitxa extends Excepcio{
     //Descripcio: Fitxa fromat per regions C, N, E, S i O;
 
     private ArrayList<Regio> regions;
-    public int rotacio;
     private Posicio pos;
 
     //Pre: lletres mida = 5
@@ -18,7 +17,6 @@ public class Fitxa extends Excepcio{
                 Regio nou = new Regio(lletra);
                 regions.add(nou);
             }
-            rotacio = 0;
         }
         else {
             throw new Excepcio("La mida és incorrecta");
@@ -128,7 +126,7 @@ public class Fitxa extends Excepcio{
     }
 
     //Pre: rotar = 90 o 180 o 270
-    //Post: rotacio = rotar
+    //Post: fitxa rotat
     public void rator_fitxa(int rotar)throws Excepcio{
 
         Regio aux;
