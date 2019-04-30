@@ -154,6 +154,15 @@ public class Fitxa extends Excepcio{
             regions.add(4,aux);
             aux = null;
             }
+        else if(rotar==270){
+            aux = new Regio(regio_o());
+            for(int i=4; i>1; i--){
+                regions.remove(i);
+                regions.add(i,regions.get(i-1));
+            }
+            regions.remove(1);
+            regions.add(aux);
+        }
         else{
             throw new Excepcio("Rotació incorrecta");
         }
