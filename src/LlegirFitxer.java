@@ -1,7 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class LlegirFitxer {
@@ -12,16 +14,22 @@ public class LlegirFitxer {
     private static List<Fitxa> _llistaFitxes;
     private static Fitxa _inicial;
     private static boolean _camperols;
+    private static boolean fitxerOK = false;
 
 
     ///Pre: ---
     ///Post: lectura completa del fitxer
     public static void llegirFitxer() throws FileNotFoundException {
-        Scanner input = new Scanner(fitxer);
-
-        llegirJugadors(input);
-        llegirRajoles(input);
-        llegirDadesPartida(input);
+        try (Scanner input = new Scanner(fitxer))
+        {
+            llegirJugadors(input);
+            llegirRajoles(input);
+            llegirDadesPartida(input);
+            fitxerOK = true;
+        } catch (IOException | NoSuchElementException | IllegalArgumentException | NullPointerException ex)
+        {
+            Gui.informarFitxerEntradaIncorrecte(ex.getMessage());
+        }
     }
 
     ///Pre: Scanner del fitxer d'entrada
@@ -152,7 +160,7 @@ public class LlegirFitxer {
         return _camperols;
     }
 
-    public boolean lecturaCorrecta() {
-        return true;//TODO Retorna cert si ha llegit el fitxer sense cap problema fals altrament
+    public static boolean lecturaCorrecta() {
+        return fitxerOK;
     }
 }
