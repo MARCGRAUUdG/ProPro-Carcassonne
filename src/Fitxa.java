@@ -193,7 +193,7 @@ public class Fitxa extends Excepcio{
     //Pre:---
     //Post:retorna el format de la fitxa si existeix altrament null
     public String format_fitxa(){
-        String fitxa = null;
+        String fitxa = "";
 
         if(regions.size()>0) {
             for (int i = 0; i < regions.size(); i++) {
