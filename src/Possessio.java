@@ -10,9 +10,24 @@ public class Possessio {
     //Post: guardar fitxa i propietari
     public Possessio(int propietari, Fitxa inici){
         this.propietari = new ArrayList<>(4);
-        this.propietari.set(propietari,1);
+        this.propietari.add(propietari,1);
         conjunt = new ArrayList<>();
         conjunt.add(inici);
+    }
+
+    //Pre:---
+    //Post:afegir les fitxes i els propietaris a la possessio actual
+    public void unir_possessions(List<Integer> propietari, List<Fitxa> conjunt){
+
+        for(int i=0; i<propietari.size(); i++){
+            if(propietari.get(i)!=null) {
+                afegir_propietari(propietari.get(i));
+            }
+        }
+
+        for(int i=0; i<conjunt.size(); i++){
+            afegir_fitxa(conjunt.get(i));
+        }
     }
 
     //Pre:---
@@ -27,7 +42,13 @@ public class Possessio {
         if(propietari.get(j)!=null){
             propietari.set(j,propietari.get(j)+1);
         }
-        propietari.set(j,1);
+        propietari.add(j,1);
+    }
+
+    //Pre:---
+    //Post:treu els propietaris
+    public void eliminar_propietari(){
+        propietari.clear();
     }
 
     //Pre:---
