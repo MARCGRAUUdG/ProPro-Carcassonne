@@ -2,14 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Possessio {
-    private Jugador propietari;
+    private List<Integer> propietari;
     private List<Fitxa> conjunt;
 
 
     //Pre:---
     //Post: guardar fitxa i propietari
-    public Possessio(Jugador propietari, Fitxa inici){
-        this.propietari = propietari;
+    public Possessio(int propietari, Fitxa inici){
+        this.propietari = new ArrayList<>(4);
+        this.propietari.set(propietari,1);
         conjunt = new ArrayList<>();
         conjunt.add(inici);
     }
@@ -21,15 +22,24 @@ public class Possessio {
     }
 
     //Pre:---
-    //Post:elimina el propietari i la llista de fitxes
-    public void eliminar_possessio(){
-        conjunt.clear();
-        propietari = null;
+    //Post:guarda el nou propietari
+    public void afegir_propietari(int j){
+        if(propietari.get(j)!=null){
+            propietari.set(j,propietari.get(j)+1);
+        }
+        propietari.set(j,1);
     }
 
     //Pre:---
-    //Post:retorna el propietari
-    public Jugador getPropietari(){
+    //Post:elimina el propietari i la llista de fitxes
+    public void eliminar_possessio(){
+        conjunt.clear();
+        propietari.clear();
+    }
+
+    //Pre:---
+    //Post:retorna la llista de propietaris
+    public List<Integer> getPropietari(){
         return propietari;
     }
 

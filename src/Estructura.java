@@ -2,7 +2,7 @@
 
 public class Estructura extends Possessio {
 
-    public Estructura(Jugador propietari, Fitxa inici) {
+    public Estructura(int propietari, Fitxa inici) {
         super(propietari, inici);
     }
 
