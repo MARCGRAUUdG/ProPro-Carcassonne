@@ -109,14 +109,18 @@ public class Gui extends Application{
 
     private void setupMainTop(){
         textField.setPromptText("Introdueix el nom del fitxer");
+        textField.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent t) {
+                llegeigNomDelFitxer();
+            }
+        });
         buttonFile.setText("Carregar Fitxer");
         buttonFile.setPrefSize(buttonSize,20.0);
         buttonFile.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-                buttonFile.setDisable(true);
-                textField.setDisable(true);
-                Joc.repNomFitxer(textField.getText());
+            public void handle(ActionEvent t) {
+                llegeigNomDelFitxer();
             }
         });
 
@@ -126,6 +130,12 @@ public class Gui extends Application{
         AnchorPane.setRightAnchor(textField,buttonSize+5.0);
 
         topRow.getChildren().addAll(textField,buttonFile);
+    }
+
+    private void llegeigNomDelFitxer(){
+        buttonFile.setDisable(true);
+        textField.setDisable(true);
+        Joc.repNomFitxer(textField.getText());
     }
 
     private void setupMainMiddle(){
@@ -230,18 +240,19 @@ public class Gui extends Application{
         try {
             imgR = new Image(new FileInputStream(url));
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            print("Error amb la lecture de l'imatge "+url);
         }
         return imgR;
     }
 
-    public static void posaFitxa(int x, int y, int id, double rotation){
-        Image fitxaImg = getImage("src\\images\\f"+id+".jpg");
+    public static void posaFitxa(Fitxa f){
+        Posicio posicio=f.getPosicio();
+        Image fitxaImg = getImage("src\\images\\"+f.format_fitxa()+".jpg");
         ImageView fitxa=new ImageView(fitxaImg);
-        fitxa.setLayoutX(pos[x]);fitxa.setLayoutY(pos[y]);
+        fitxa.setLayoutX(pos[posicio.getPosicioX()]);fitxa.setLayoutY(pos[posicio.getPosicioY()]);
         fitxa.setFitHeight(40);
         fitxa.setFitWidth(40);
-        fitxa.setRotate(rotation);
+        fitxa.setRotate(posicio.getRotacio());
         midRow.getChildren().addAll(fitxa);
     }
 
@@ -268,11 +279,15 @@ public class Gui extends Application{
             public void handle(MouseEvent t) {
                 int x= (int) (t.getX()/40);
                 int y= (int) (t.getY()/40);
-
-                Random rand = new Random();
-                int n = rand.nextInt(19)+1;
-                posaFitxa(x,y, n,0);
-                print("Posada fitxa f"+n);
+                Posicio p=new Posicio(x,y,0);
+                Fitxa f= null;
+                try {
+                    f = new Fitxa("CFCVC");
+                } catch (Excepcio excepcio) {
+                    excepcio.printStackTrace();
+                }
+                f.setPosicio(p);
+                posaFitxa(f);
             }
         });
         midRow.getChildren().remove(comenca);
