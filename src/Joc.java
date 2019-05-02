@@ -38,12 +38,47 @@ public class Joc {
     private static void posaFitxaInicial(){
         Posicio pos =new Posicio(5,5,0);
         //_fInicial.setPosicio(pos); //TODO Fins que no estigui inicialitzat fitxa inicial no va
-        //Gui.posaFitxa(_fInicial); //TODO Fins que no estigui inicialitzat fitxa inicial no va
+        /*TODO TREURE*/try {
+        /*TODO TREURE*/    _fInicial=new Fitxa("CVCCF");
+        /*TODO TREURE*/    _fInicial.setPosicio(new Posicio(5,5,0));
+        /*TODO TREURE*/} catch (Excepcio excepcio) {
+        /*TODO TREURE*/    Gui.print("GÜAT");
+        /*TODO TREURE*/}
+        Gui.posaFitxa(_fInicial); //TODO Fins que no estigui inicialitzat fitxa inicial no va
     }
 
     private static void IniciJoc(){
         Gui.setupJugadors(_nJugadors);
         Gui.iniciaTaulerGui();
         posaFitxaInicial();
+        
+        ArrayList<Posicio> alp = null;//TODO S'ha de treure la llista Posicions ha de venir extern
+        mostraOpcions(alp);
+    }
+
+    public static void mostraOpcions(ArrayList<Posicio> alp){
+        alp=new ArrayList<Posicio>();//TODO treure
+        alp.add(new Posicio(5,4,0));//TODO treure es nomes per mostrar ja haurien de estar inicialitzades
+        alp.add(new Posicio(5,6,0));//TODO treure
+        alp.add(new Posicio(6,5,0));//TODO treure
+        alp.add(new Posicio(4,5,0));//TODO treure
+
+        Gui.posaQuadresVerds(alp);
+    }
+
+    public static void apretatPerPosarFitxa(int x, int y) {
+        /*TODO TREURE*/Fitxa f= null;
+        /*TODO TREURE*/try {
+        /*TODO TREURE*/    f = new Fitxa("CFCVC");
+        /*TODO TREURE*/} catch (Excepcio excepcio) {
+        /*TODO TREURE*/    excepcio.printStackTrace();
+        /*TODO TREURE*/}
+        /*TODO TREURE*/f.setPosicio(new Posicio(x,y,0));
+        Gui.posaFitxa(f);//TODO s'ha de posar la primera fitxa de la baralla
+        Gui.posaSeleccioDeSeguidors(x,y);
+    }
+
+    public static void apretatPerPosarSeguidor(int x, int y, char dir) {
+        Gui.posaSeguidor(x,y,dir,1);
     }
 }
