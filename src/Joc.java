@@ -17,15 +17,13 @@ public class Joc {
     }
 
     public static void repNomFitxer(String text){
-        boolean llegitOk=false;//TODO Treure llegitOk posteriorment quan estigui implementat _fitxer.lecturaCorrecta()
         try {
             _fitxer.nomFitxer(text);
-            llegitOk=true;//TODO Treure llegitOk posteriorment quan estigui implementat _fitxer.lecturaCorrecta()
         } catch (FileNotFoundException e) {
             Gui.informarFitxerEntradaIncorrecte("No s'ha trobat el fitxer");
         }
 
-        if(/*_fitxer.lecturaCorrecta()*/llegitOk) {//TODO Treure llegitOk posteriorment quan estigui implementat _fitxer.lecturaCorrecta()
+        if(_fitxer.lecturaCorrecta()) {
             repDadesFitxer();
             IniciJoc();
         }
