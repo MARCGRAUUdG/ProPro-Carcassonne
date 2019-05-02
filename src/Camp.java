@@ -7,10 +7,6 @@ public class Camp extends Possessio {
         return true;
     }
 
-    public void actualitzar_propietari(){
-
-    }
-
     public int punts(){
         return 0;
     }

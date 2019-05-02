@@ -14,10 +14,6 @@ public class Cami extends Estructura {
         return false;
     }
 
-    public void actualitzar_propietari(){
-
-    }
-
     public int punts(){
         return getConjunt().size();
     }

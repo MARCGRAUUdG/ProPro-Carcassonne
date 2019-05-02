@@ -8,10 +8,6 @@ public class Ciutat extends Estructura {
         return true;
     }
 
-    public void actualitzar_propietari(){
-
-    }
-
     public int punts(){
         //complet 2 punts per peça i escut, altrament 1
         return 0;
