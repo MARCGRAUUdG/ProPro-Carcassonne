@@ -54,13 +54,13 @@ public class Gui extends Application{
     private static Text scorej2=new Text (ample-150, 50, "Score: 0");
     private static Text scorej3=new Text (ample-150, ample-15, "Score: 0");
     private static Text scorej4=new Text (40+20, ample-15, "Score: 0");
+    private static int nBlocksVerdsPosats=0;
 
     //BOT
     private static Collection<String> list;
     private static ObservableList<String> details;
     private static TableView<String> table;
     private static TableColumn<String, String> log;
-
 
     public static void main(String[] args) {
         launch(args);
@@ -273,23 +273,6 @@ public class Gui extends Application{
         blackView.setFitHeight(ample-150);
         blackView.setFitWidth(ample-150);
         blackView.setLayoutX(75);blackView.setLayoutY(75);
-        blackView.setOnMouseClicked(new EventHandler<MouseEvent>()
-        {
-            @Override
-            public void handle(MouseEvent t) {
-                int x= (int) (t.getX()/40);
-                int y= (int) (t.getY()/40);
-                Posicio p=new Posicio(x,y,0);
-                Fitxa f= null;
-                try {
-                    f = new Fitxa("CFCVC");
-                } catch (Excepcio excepcio) {
-                    excepcio.printStackTrace();
-                }
-                f.setPosicio(p);
-                posaFitxa(f);
-            }
-        });
         midRow.getChildren().remove(comenca);
         midRow.getChildren().addAll(blackView);
     }
@@ -301,5 +284,104 @@ public class Gui extends Application{
         buttonFile.setDisable(false);
         textField.setText("");
         textField.setDisable(false);
+    }
+
+    private static void posaQuadreVerd(int x, int y){
+        Image fitxaImg = getImage("src\\images\\green.png");
+        ImageView quadre=new ImageView(fitxaImg);
+        quadre.setLayoutX(pos[x]);quadre.setLayoutY(pos[y]);
+        quadre.setFitHeight(40);
+        quadre.setFitWidth(40);
+        quadre.setOnMouseClicked(new EventHandler<MouseEvent>()
+        {
+            @Override
+            public void handle(MouseEvent t) {
+                int x= (int) ((t.getSceneX()-81)/40);
+                int y= (int) ((t.getSceneY()-110)/40);
+                Posicio p=new Posicio(x,y,0);
+                print(p.toString());
+                treuQuadresVerds();
+
+                Joc.apretatPerPosarFitxa(x,y);
+            }
+        });
+        midRow.getChildren().addAll(quadre);
+    }
+
+    private static void treuUltimElement() {
+        midRow.getChildren().remove(midRow.getChildren().size()-1);
+    }
+
+    public static void posaQuadresVerds(ArrayList<Posicio> alp){
+        nBlocksVerdsPosats=alp.size();
+        for(int i=0;i<alp.size();i++){
+            posaQuadreVerd(alp.get(i).getPosicioX(),alp.get(i).getPosicioY());
+        }
+    }
+
+    private static void treuQuadresVerds(){
+        for(int i=0;i<nBlocksVerdsPosats;i++)
+            treuUltimElement();
+    }
+
+    public static void posaSeleccioDeSeguidors(int x, int y) {
+        Image seguidorImg = getImage("src\\images\\pb.png");
+        ImageView seguidorC=new ImageView(seguidorImg);
+        ImageView seguidorN=new ImageView(seguidorImg);
+        ImageView seguidorE=new ImageView(seguidorImg);
+        ImageView seguidorS=new ImageView(seguidorImg);
+        ImageView seguidorO=new ImageView(seguidorImg);
+
+        configuraImgSeguidor(seguidorC,pos[x]+15,pos[y]+15,'C');
+        configuraImgSeguidor(seguidorN,pos[x]+15,pos[y],'N');
+        configuraImgSeguidor(seguidorE,pos[x]+30,pos[y]+15,'E');
+
+        configuraImgSeguidor(seguidorS,pos[x]+15,pos[y]+30, 'S');
+        configuraImgSeguidor(seguidorO,pos[x],pos[y]+15, 'O');
+
+        midRow.getChildren().addAll(seguidorC,seguidorN,seguidorE,seguidorS,seguidorO);
+    }
+
+    public static void configuraImgSeguidor(ImageView iv, int x, int y, char dir){
+        iv.setLayoutX(x);iv.setLayoutY(y);
+        iv.setFitHeight(10);
+        iv.setFitWidth(10);
+        iv.setOnMouseClicked(new EventHandler<MouseEvent>()
+        {
+            @Override
+            public void handle(MouseEvent t) {
+                int x= (int) ((t.getSceneX()-81)/40);
+                int y= (int) ((t.getSceneY()-110)/40);
+                treuSeguidors();
+                Joc.apretatPerPosarSeguidor(x, y, dir);
+            }
+        });
+    }
+
+    private static void treuSeguidors() {
+        for(int i=0;i<5;i++)
+            treuUltimElement();
+    }
+
+    public static void posaSeguidor(int x, int y, char dir, int numbJugador) {
+        Image seguidorImg = getImage("src\\images\\p"+numbJugador+".png");
+        ImageView seguidor=new ImageView(seguidorImg);
+        seguidor.setFitHeight(10);
+        seguidor.setFitWidth(10);
+
+        if(dir=='C') {
+            seguidor.setLayoutX(pos[x]+15);seguidor.setLayoutY(pos[y]+15);
+        }else if(dir=='N'){
+            seguidor.setLayoutX(pos[x]+15);seguidor.setLayoutY(pos[y]);
+        }else if(dir=='E'){
+            seguidor.setLayoutX(pos[x]+30);seguidor.setLayoutY(pos[y]+15);
+        }else if(dir=='S'){
+            seguidor.setLayoutX(pos[x]+15);seguidor.setLayoutY(pos[y]+30);
+        }else if(dir=='O'){
+            seguidor.setLayoutX(pos[x]);seguidor.setLayoutY(pos[y]+15);
+        }
+
+
+        midRow.getChildren().addAll(seguidor);
     }
 }
