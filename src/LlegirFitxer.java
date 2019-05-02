@@ -1,7 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class LlegirFitxer {
@@ -12,16 +14,22 @@ public class LlegirFitxer {
     private static List<Fitxa> _llistaFitxes;
     private static Fitxa _inicial;
     private static boolean _camperols;
+    private static boolean fitxerOK = false;
 
 
     ///Pre: ---
     ///Post: lectura completa del fitxer
     public static void llegirFitxer() throws FileNotFoundException {
-        Scanner input = new Scanner(fitxer);
-
-        llegirJugadors(input);
-        llegirRajoles(input);
-        llegirDadesPartida(input);
+        try (Scanner input = new Scanner(fitxer))
+        {
+            llegirJugadors(input);
+            llegirRajoles(input);
+            llegirDadesPartida(input);
+            fitxerOK = true;
+        } catch (IOException | NoSuchElementException | IllegalArgumentException | NullPointerException ex)
+        {
+            Gui.informarFitxerEntradaIncorrecte(ex.getMessage());
+        }
     }
 
     ///Pre: Scanner del fitxer d'entrada
@@ -29,7 +37,12 @@ public class LlegirFitxer {
     private static void llegirDadesPartida(Scanner input)
     {
         input.next("rajola_inicial"); //saltem String
-        _inicial = new Fitxa(input.next());
+
+        try {
+            _inicial = new Fitxa(input.next());
+        } catch (Excepcio excepcio) {
+            Gui.informarFitxerEntradaIncorrecte("Format de la fitxa incorrecte ("+input.next()+")");
+        }
 
         //Gui.print(_inicial.toString());
         input.next("camperols"); //saltem String
@@ -60,7 +73,12 @@ public class LlegirFitxer {
         {
             for (int i = 0; i < numFitxes; i++)
             {
-                Fitxa f = new Fitxa(valFitxa);
+                Fitxa f = null;
+                try {
+                    f = new Fitxa(valFitxa);
+                } catch (Excepcio excepcio) {
+                    Gui.informarFitxerEntradaIncorrecte("Format de la fitxa incorrecte ("+valFitxa+")");
+                }
                 llistaFitxes.add(f);
             }
 
@@ -106,7 +124,7 @@ public class LlegirFitxer {
     ///Pre: Nom del fitxer d'entrada
     ///Post: Guarda el nom del fitxer d'entrada i crida el mètode per llegir el fitxer
     public static void nomFitxer(String text) throws FileNotFoundException {
-        Gui.print("Fitxer '"+text+"' carregant");
+        Gui.print("Fitxer '"+text+"' carregant...");
         File f = new File(text);
         fitxer = f;
         llegirFitxer();
@@ -140,5 +158,17 @@ public class LlegirFitxer {
     ///Post: Cert si hi ha camperols
     public static boolean isCamperols() {
         return _camperols;
+    }
+
+    public static boolean lecturaCorrecta() {
+        return fitxerOK;
+    }
+
+    public Baralla getBaralla() {
+        return new Baralla(0);//TODO retorna la baralla llegida per fitxer
+    }
+
+    public Fitxa getFitxaInicial() throws Excepcio {//TODO retorna la fitxa inicial rebuda per fitxer, S'ha de treure aquet try catch no pot ser que cada cop que es crea una puta fitxa s'ha de ficar try catch
+        return new Fitxa("CCFCF");
     }
 }
