@@ -13,16 +13,14 @@ public class Joc {
     }
 
     public static void repNomFitxer(String text){
-        boolean llegitOk=false;//TODO Treure llegitOk posteriorment
         try {
             _fitxer.nomFitxer(text);
-            llegitOk=true;//TODO Treure llegitOk posteriorment
         } catch (FileNotFoundException e) {
             Gui.informarFitxerEntradaIncorrecte("No s'ha trobat el fitxer");
         }
 
 
-        if(/*_fitxer.lecturaCorrecta()*/llegitOk) {//TODO Treure llegitOk posteriorment
+        if(_fitxer.lecturaCorrecta()) {
             _nJugadors = _fitxer.getJugadors();
             Gui.setupJugadors(_nJugadors);
             Gui.iniciaTaulerGui();
