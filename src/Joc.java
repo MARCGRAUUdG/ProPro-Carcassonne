@@ -32,11 +32,14 @@ public class Joc {
         _jugadors = _fitxer.getJugadors();
         _baralla = _fitxer.getBaralla();
         _fInicial = _fitxer.getInicial();
+
+
     }
 
     private static void posaFitxaInicial(){
         Posicio pos =new Posicio(5,5,0);
         _fInicial.setPosicio(pos);
+        _tauler.posarFitxaTauler(_fInicial);
         Gui.posaFitxa(_fInicial);
     }
 
@@ -44,18 +47,12 @@ public class Joc {
         Gui.setupJugadors(_jugadors.size());
         Gui.iniciaTaulerGui();
         posaFitxaInicial();
-        
-        ArrayList<Posicio> alp = null;//TODO S'ha de treure la llista Posicions ha de venir extern
-        mostraOpcions(alp);
+        iniciaNouTorn();
     }
 
-    public static void mostraOpcions(ArrayList<Posicio> alp){
-        alp=new ArrayList<Posicio>();//TODO treure
-        alp.add(new Posicio(5,4,0));//TODO treure es nomes per mostrar ja haurien de estar inicialitzades
-        alp.add(new Posicio(5,6,90));//TODO treure
-        alp.add(new Posicio(6,5,0));//TODO treure
-        alp.add(new Posicio(4,5,90));//TODO treure
-
+    public static void iniciaNouTorn(){
+        ArrayList<Posicio> alp = null;
+        alp = _tauler.getPosDisponibles(_fInicial);//TODO Hauria de ser fitxa nova de baralla
         Gui.posaQuadresVerds(alp);
     }
 
