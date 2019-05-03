@@ -1,5 +1,3 @@
-import javafx.geometry.Pos;
-
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
@@ -7,9 +5,10 @@ public class Joc {
     private static LlegirFitxer _fitxer;
     private static ArrayList<Jugador> _jugadors;
     private static Tauler _tauler;
-    private static Tirada _tirada;
+    private static Tirada _tiradaActual;
     private static Baralla _baralla;
     private static Fitxa _fInicial;
+    private static int _jugadorActual=0;
 
     public Joc(){
 
@@ -32,8 +31,6 @@ public class Joc {
         _jugadors = _fitxer.getJugadors();
         _baralla = _fitxer.getBaralla();
         _fInicial = _fitxer.getInicial();
-
-
     }
 
     private static void posaFitxaInicial(){
@@ -51,9 +48,9 @@ public class Joc {
     }
 
     public static void iniciaNouTorn(){
-        ArrayList<Posicio> alp = null;
-        alp = _tauler.getPosDisponibles(_fInicial);//TODO Hauria de ser fitxa nova de baralla
-        Gui.posaQuadresVerds(alp);
+        _jugadorActual++;
+        if(_jugadorActual>=_jugadors.size())_jugadorActual=1;
+        _tiradaActual =new Tirada(_jugadors.get(_jugadorActual),_baralla,_tauler);
     }
 
     public static void apretatPerPosarFitxa(int x, int y, int rot) {
