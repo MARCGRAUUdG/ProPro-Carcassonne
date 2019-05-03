@@ -286,7 +286,7 @@ public class Gui extends Application{
         textField.setDisable(false);
     }
 
-    private static void posaQuadreVerd(int x, int y){
+    private static void posaQuadreVerd(int x, int y, int rot){
         Image fitxaImg = getImage("src\\images\\green.png");
         ImageView quadre=new ImageView(fitxaImg);
         quadre.setLayoutX(pos[x]);quadre.setLayoutY(pos[y]);
@@ -302,7 +302,7 @@ public class Gui extends Application{
                 print(p.toString());
                 treuQuadresVerds();
 
-                Joc.apretatPerPosarFitxa(x,y);
+                Joc.apretatPerPosarFitxa(x,y, rot);
             }
         });
         midRow.getChildren().addAll(quadre);
@@ -315,7 +315,7 @@ public class Gui extends Application{
     public static void posaQuadresVerds(ArrayList<Posicio> alp){
         nBlocksVerdsPosats=alp.size();
         for(int i=0;i<alp.size();i++){
-            posaQuadreVerd(alp.get(i).getPosicioX(),alp.get(i).getPosicioY());
+            posaQuadreVerd(alp.get(i).getPosicioX(),alp.get(i).getPosicioY(),alp.get(i).getRotacio());
         }
     }
 
@@ -380,8 +380,6 @@ public class Gui extends Application{
         }else if(dir=='O'){
             seguidor.setLayoutX(pos[x]);seguidor.setLayoutY(pos[y]+15);
         }
-
-
         midRow.getChildren().addAll(seguidor);
     }
 }
