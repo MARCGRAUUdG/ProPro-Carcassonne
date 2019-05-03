@@ -10,7 +10,7 @@ public class LlegirFitxer {
 
     private static File fitxer;
     private static int _nJugadors;
-    private static List<Jugador> _jugadors;
+    private static ArrayList<Jugador> _jugadors;
     private static Baralla baralla;
     private static Fitxa _inicial;
     private static boolean _camperols;
@@ -97,7 +97,7 @@ public class LlegirFitxer {
     ///Post: Llegeix i guarda el nombre de jugadors i quins d'aquests són màquina
     private static void llegirJugadors(Scanner input)
     {
-        List <Integer>jugadorsMaquina = new ArrayList<>();
+        ArrayList <Integer>jugadorsMaquina = new ArrayList<>();
 
         input.next("nombre_jugadors"); //saltem String
         _nJugadors = input.nextInt(); //guardem el nombre de jugadors
@@ -134,7 +134,7 @@ public class LlegirFitxer {
 
     ///Pre: ---
     ///Post: Retorna una llista de quins dels jugadors són controlats per màquina
-    public static List<Jugador> getJugadors() {
+    public static ArrayList<Jugador> getJugadors() {
         return _jugadors;
     }
 
