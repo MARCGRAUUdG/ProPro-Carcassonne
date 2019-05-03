@@ -10,8 +10,8 @@ public class LlegirFitxer {
 
     private static File fitxer;
     private static int _nJugadors;
-    private static List<Integer> _jugadorsMaquina;
-    private static List<Fitxa> _llistaFitxes;
+    private static List<Jugador> _jugadors;
+    private static Baralla baralla;
     private static Fitxa _inicial;
     private static boolean _camperols;
     private static boolean fitxerOK = false;
@@ -63,8 +63,6 @@ public class LlegirFitxer {
     ///Post: Llegeix i guarda les diferents fitxes
     private static void llegirRajoles(Scanner input)
     {
-        List<Fitxa> llistaFitxes = new ArrayList<Fitxa>();
-
         input.next(); //saltem "rajoles"
         String valFitxa = input.next();
 
@@ -79,7 +77,7 @@ public class LlegirFitxer {
                 } catch (Excepcio excepcio) {
                     Gui.informarFitxerEntradaIncorrecte("Format de la fitxa incorrecte ("+valFitxa+")");
                 }
-                llistaFitxes.add(f);
+                baralla.afegirFitxa(f);
             }
 
             valFitxa = input.next();
@@ -88,7 +86,6 @@ public class LlegirFitxer {
                 numFitxes = input.nextInt();
             }
         }
-        _llistaFitxes = llistaFitxes;
 
         /*for (Fitxa f : _llistaFitxes)
         {
@@ -113,7 +110,12 @@ public class LlegirFitxer {
             int element = input.nextInt();
             jugadorsMaquina.add(element);
         }
-        _jugadorsMaquina = jugadorsMaquina;
+
+        for (int i = 1; i <= _nJugadors; i++)
+        {
+            Jugador j = new Controlable(i);
+            _jugadors.add(j);
+        }
 
         /*for (int j : _jugadorsMaquina)
         {
@@ -131,21 +133,9 @@ public class LlegirFitxer {
     }
 
     ///Pre: ---
-    ///Post: Retorna el nombre de jugadors
-    public static int getJugadors() {
-        return _nJugadors;
-    }
-
-    ///Pre: ---
     ///Post: Retorna una llista de quins dels jugadors són controlats per màquina
-    public static List<Integer> getJugadorsMaquina() {
-        return _jugadorsMaquina;
-    }
-
-    ///Pre: ---
-    ///Post: Retorna la llista de fitxes
-    public static List<Fitxa> getLlistaFitxes() {
-        return _llistaFitxes;
+    public static List<Jugador> getJugadors() {
+        return _jugadors;
     }
 
     ///Pre: ---
@@ -160,15 +150,15 @@ public class LlegirFitxer {
         return _camperols;
     }
 
+    ///Pre:
+    ///Post: Cert si la lectura s'ha realitzat satisfactòriament
     public static boolean lecturaCorrecta() {
         return fitxerOK;
     }
 
+    ///Pre: ---
+    ///Post: Retorna la baralla
     public Baralla getBaralla() {
-        return new Baralla(0);//TODO retorna la baralla llegida per fitxer
-    }
-
-    public Fitxa getFitxaInicial() throws Excepcio {//TODO retorna la fitxa inicial rebuda per fitxer, S'ha de treure aquet try catch no pot ser que cada cop que es crea una puta fitxa s'ha de ficar try catch
-        return new Fitxa("CCFCF");
+        return baralla;
     }
 }
