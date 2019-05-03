@@ -19,6 +19,10 @@ public abstract class Jugador {
     private Fitxa fitxaActual;
     private int nHumanets;
 
+    public int getId() {
+        return id;
+    }
+
     Jugador(){
         nHumanets = 6;
     }

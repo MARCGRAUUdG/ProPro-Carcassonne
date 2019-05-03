@@ -7,6 +7,7 @@ public class Tirada {
     private Jugador jugadorActual;
     private Baralla baralla;
     private Tauler tauler;
+    private Fitxa fitxaActual;
 
     List<Posicio> posicions;
 
@@ -16,13 +17,29 @@ public class Tirada {
         baralla = bActual;
         tauler = tActual;
 
+        fitxaActual = baralla.agafarFitxa();
+
         ArrayList<Posicio> alp = null;
-        alp = tauler.getPosDisponibles(baralla.agafarFitxa());
+        alp = tauler.getPosDisponibles(fitxaActual);
         Gui.posaQuadresVerds(alp);
     }
 
+    public void apretatOpcionsDeFitxa(Posicio pos)
+    {
+        Gui.posaFitxa(fitxaActual);
+        tauler.posarFitxaTauler(fitxaActual);
+        Gui.posaSeleccioDeSeguidors(pos.getPosicioX(),pos.getPosicioY());
+    }
 
-    ///Pre: ---
+    public void apretatOpcionsDeSeguidor(int x, int y, char dir)
+    {
+        Gui.posaSeguidor(x,y,dir,jugadorActual.getId());
+        //TODO: falta ficar el seguidor a la possesió
+    }
+
+
+
+    /*///Pre: ---
     ///Post: Gestiona la tirada d'un jugador controlat
     public void gestionarTiradaHuma()
     {
@@ -57,7 +74,7 @@ public class Tirada {
         {
             actualitzarPunts(f);
         }
-    }
+    }*/
 
     ///Pre: Fitxa f actual
     ///Post: Cert si és necessari calcular els punts després de colocar la fitxa (s'ha completat una possessio)

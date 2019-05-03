@@ -17,7 +17,7 @@ public class LlegirFitxer {
 
     ///Pre: ---
     ///Post: lectura completa del fitxer
-    public static void llegirFitxer() throws FileNotFoundException {
+    public static void llegirFitxer() {
         try (Scanner input = new Scanner(fitxer))
         {
             llegirJugadors(input);
