@@ -8,7 +8,6 @@ public class Joc {
     private static ArrayList<Jugador> _jugadors;
     private static Tauler _tauler;
     private static Tirada _tirada;
-    private static int _nJugadors;
     private static Baralla _baralla;
     private static Fitxa _fInicial;
 
@@ -30,25 +29,19 @@ public class Joc {
     }
 
     private static void repDadesFitxer() {
-        _nJugadors = _fitxer.getJugadors();//TODO Hauria de ser Jugador no nJugador
-        //_baralla = _fitxer.getBaralla(); //TODO Falta implementar per fitxer
-        //_fInicial = _fitxer.getFitxaInicial(); //TODO Falta implementar per fitxer
+        _jugadors = _fitxer.getJugadors();
+        _baralla = _fitxer.getBaralla();
+        _fInicial = _fitxer.getInicial();
     }
 
     private static void posaFitxaInicial(){
         Posicio pos =new Posicio(5,5,0);
-        //_fInicial.setPosicio(pos); //TODO Fins que no estigui inicialitzat fitxa inicial no va
-        /*TODO TREURE*/try {
-        /*TODO TREURE*/    _fInicial=new Fitxa("CVCCF");
-        /*TODO TREURE*/    _fInicial.setPosicio(new Posicio(5,5,0));
-        /*TODO TREURE*/} catch (Excepcio excepcio) {
-        /*TODO TREURE*/    Gui.print("GÜAT");
-        /*TODO TREURE*/}
-        Gui.posaFitxa(_fInicial); //TODO Fins que no estigui inicialitzat fitxa inicial no va
+        _fInicial.setPosicio(pos);
+        Gui.posaFitxa(_fInicial);
     }
 
     private static void IniciJoc(){
-        Gui.setupJugadors(_nJugadors);
+        Gui.setupJugadors(_jugadors.size());
         Gui.iniciaTaulerGui();
         posaFitxaInicial();
         

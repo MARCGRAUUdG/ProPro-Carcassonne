@@ -380,8 +380,6 @@ public class Gui extends Application{
         }else if(dir=='O'){
             seguidor.setLayoutX(pos[x]);seguidor.setLayoutY(pos[y]+15);
         }
-
-
         midRow.getChildren().addAll(seguidor);
     }
 }
