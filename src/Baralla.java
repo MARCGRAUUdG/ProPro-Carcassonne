@@ -15,6 +15,12 @@ public class Baralla {
         buit = true;
     }
 
+    public Baralla() {
+        nFitxes=0;
+        llistaFitxes = new ArrayList<Fitxa>();
+        buit = true;
+    }
+
     ///Pre: ---
     ///Post: Agafa una fitxa de la baralla de fitxes i la retorna
     public Fitxa agafarFitxa()
