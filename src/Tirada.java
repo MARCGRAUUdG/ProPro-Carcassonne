@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -14,6 +15,10 @@ public class Tirada {
         jugadorActual = jActual;
         baralla = bActual;
         tauler = tActual;
+
+        ArrayList<Posicio> alp = null;
+        alp = tauler.getPosDisponibles(baralla.agafarFitxa());
+        Gui.posaQuadresVerds(alp);
     }
 
 

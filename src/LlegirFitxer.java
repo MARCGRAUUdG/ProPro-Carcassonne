@@ -2,7 +2,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -10,12 +9,11 @@ public class LlegirFitxer {
 
     private static File fitxer;
     private static int _nJugadors;
-    private static List<Jugador> _jugadors;
+    private static ArrayList<Jugador> _jugadors;
     private static Baralla baralla;
     private static Fitxa _inicial;
     private static boolean _camperols;
     private static boolean fitxerOK = false;
-
 
     ///Pre: ---
     ///Post: lectura completa del fitxer
@@ -97,7 +95,7 @@ public class LlegirFitxer {
     ///Post: Llegeix i guarda el nombre de jugadors i quins d'aquests són màquina
     private static void llegirJugadors(Scanner input)
     {
-        List <Integer>jugadorsMaquina = new ArrayList<>();
+        ArrayList <Integer>jugadorsMaquina = new ArrayList<>();
 
         input.next("nombre_jugadors"); //saltem String
         _nJugadors = input.nextInt(); //guardem el nombre de jugadors
@@ -134,7 +132,7 @@ public class LlegirFitxer {
 
     ///Pre: ---
     ///Post: Retorna una llista de quins dels jugadors són controlats per màquina
-    public static List<Jugador> getJugadors() {
+    public static ArrayList<Jugador> getJugadors() {
         return _jugadors;
     }
 
