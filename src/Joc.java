@@ -59,21 +59,21 @@ public class Joc {
     public static void mostraOpcions(ArrayList<Posicio> alp){
         alp=new ArrayList<Posicio>();//TODO treure
         alp.add(new Posicio(5,4,0));//TODO treure es nomes per mostrar ja haurien de estar inicialitzades
-        alp.add(new Posicio(5,6,0));//TODO treure
+        alp.add(new Posicio(5,6,90));//TODO treure
         alp.add(new Posicio(6,5,0));//TODO treure
-        alp.add(new Posicio(4,5,0));//TODO treure
+        alp.add(new Posicio(4,5,90));//TODO treure
 
         Gui.posaQuadresVerds(alp);
     }
 
-    public static void apretatPerPosarFitxa(int x, int y) {
+    public static void apretatPerPosarFitxa(int x, int y, int rot) {
         /*TODO TREURE*/Fitxa f= null;
         /*TODO TREURE*/try {
         /*TODO TREURE*/    f = new Fitxa("CFCVC");
         /*TODO TREURE*/} catch (Excepcio excepcio) {
         /*TODO TREURE*/    excepcio.printStackTrace();
         /*TODO TREURE*/}
-        /*TODO TREURE*/f.setPosicio(new Posicio(x,y,0));
+        /*TODO TREURE*/f.setPosicio(new Posicio(x,y,rot));
         Gui.posaFitxa(f);//TODO s'ha de posar la primera fitxa de la baralla
         Gui.posaSeleccioDeSeguidors(x,y);
     }
