@@ -43,7 +43,19 @@ public class Joc {
     private static void IniciJoc(){
         Gui.setupJugadors(_jugadors.size());
         Gui.iniciaTaulerGui();
+
         posaFitxaInicial();
+
+
+        ArrayList<Posicio> alp=new ArrayList<>();
+
+        alp.add(new Posicio(1,1,90));
+        alp.add(new Posicio(1,2,90));
+        alp.add(new Posicio(1,1,90));
+        Gui.print(alp.toString());
+
+        Gui.print("Conte?: "+alp.contains(new Posicio(1,2,90)));
+
         iniciaNouTorn();
     }
 

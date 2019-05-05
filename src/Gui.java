@@ -49,7 +49,7 @@ public class Gui extends Application{
     private ImageView imageView;
     private static Text comenca=new Text();
 
-    private static int[] pos = { 75, 115, 155, 195, 235,  275, 315, 355, 395, 435};
+    private static int[] pos = { 75, 115, 155, 195, 235,  275, 315, 355, 395, 435,500};//TODO TREURE EL 500 AQUET
     private static Text scorej1=new Text (40+20, 50, "Score: 0");
     private static Text scorej2=new Text (ample-150, 50, "Score: 0");
     private static Text scorej3=new Text (ample-150, ample-15, "Score: 0");
@@ -299,7 +299,6 @@ public class Gui extends Application{
                 int x= (int) ((t.getSceneX()-81)/40);
                 int y= (int) ((t.getSceneY()-110)/40);
                 Posicio p=new Posicio(x,y,0);
-                print(p.toString());
                 treuQuadresVerds();
 
                 Joc.apretatPerPosarFitxa(x,y, rot);

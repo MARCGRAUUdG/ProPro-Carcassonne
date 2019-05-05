@@ -1,4 +1,6 @@
-public class Posicio {
+import javafx.geometry.Pos;
+
+public class Posicio implements Comparable<Posicio>{
     private int _x;
     private int _y;
     private int _rotacio;
@@ -53,5 +55,21 @@ public class Posicio {
     @Override
     public String toString() {
         return "Posicio{"+"x=" + _x +", y=" + _y +"} "+_rotacio+"º";
+    }
+
+    @Override
+    public int compareTo(Posicio o)
+    {
+        int r=-1;
+        if(_x==o._x && _y==o._y && _rotacio==o._rotacio)
+            r=0;
+        else if(_x==o._x && _y==o._y)
+            r=1;
+        return r;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return (this.compareTo((Posicio)o))==0;
     }
 }

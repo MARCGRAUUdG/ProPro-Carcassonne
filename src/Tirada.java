@@ -21,7 +21,8 @@ public class Tirada {
 
         ArrayList<Posicio> alp = null;
         alp = tauler.getPosDisponibles(fitxaActual);
-        Gui.posaQuadresVerds(alp);
+        if(!alp.isEmpty())
+            Gui.posaQuadresVerds(alp);
     }
 
     public void apretatOpcionsDeFitxa(Posicio pos)

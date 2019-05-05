@@ -7,6 +7,10 @@ public class Fitxa extends Excepcio{
     private ArrayList<Regio> regions;
     private Posicio pos;
 
+    public Fitxa(){
+        pos=null;
+    }
+
     //Pre: lletres mida = 5
     //Post: guarda a regions el format de la fitxa
     public Fitxa(String lletres)throws Excepcio{
