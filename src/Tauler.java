@@ -11,42 +11,47 @@ public class Tauler
     //Pre:Hi ha  almenys una fitxa al tauler en la posicio inicial (5,5)
     //Post:Retorna llista de les posicions on es pot ficar la fitxa f
     public ArrayList<Posicio> getPosDisponibles(Fitxa f) {
-        ArrayList<Posicio> alp=new ArrayList<Posicio>();
-        alp=buscaColocacioFitxes(5,5,f,'C');
+        ArrayList<Posicio> alp=new ArrayList<>();
+        ArrayList<Posicio> posicionsVisitades=new ArrayList<>();
+        alp=buscaColocacioFitxes(5,5,f,posicionsVisitades);
 
         return alp;
     }
 
-    private ArrayList<Posicio> buscaColocacioFitxes(int x, int y, Fitxa f, char move) {
+    private ArrayList<Posicio> buscaColocacioFitxes(int x, int y, Fitxa f,ArrayList<Posicio> posicionsVisitades) {
         ArrayList<Posicio> p=new ArrayList<Posicio>();
         if(x+1>9);
         else if(getFitxa(x+1,y)==null){
             p.add(new Posicio(x+1,y,0));
-        }else if(move!='O'){
-            p.addAll(buscaColocacioFitxes(x+1,y,f,'E'));
+        }else if(!posicionsVisitades.contains(new Posicio(x+1,y))){
+            posicionsVisitades.add(new Posicio(x+1,y));
+            p.addAll(buscaColocacioFitxes(x+1,y,f,posicionsVisitades));
         }
 
         if(x-1<0);
         else if(getFitxa(x-1,y)==null){
             p.add(new Posicio(x-1,y,0));
-        }else if(move!='E'){
-            p.addAll(buscaColocacioFitxes(x-1,y,f,'O'));
+        }else if(!posicionsVisitades.contains(new Posicio(x-1,y))){
+            posicionsVisitades.add(new Posicio(x-1,y));
+            p.addAll(buscaColocacioFitxes(x-1,y,f,posicionsVisitades));
         }
 
         if(y+1>9);
         else if(getFitxa(x,y+1)==null){
             p.add(new Posicio(x,y+1,0));
-        }else if(move!='N'){
-            p.addAll(buscaColocacioFitxes(x,y+1,f,'S'));
+        }else if(!posicionsVisitades.contains(new Posicio(x,y+1))){
+            posicionsVisitades.add(new Posicio(x,y+1));
+            p.addAll(buscaColocacioFitxes(x,y+1,f,posicionsVisitades));
         }
 
         if(y-1<0);
         else if(getFitxa(x,y-1)==null){
             p.add(new Posicio(x,y-1,0));
-        }else if(move!='S'){
-            p.addAll(buscaColocacioFitxes(x,y-1,f,'N'));
+        }else if(!posicionsVisitades.contains(new Posicio(x,y-1))){
+            posicionsVisitades.add(new Posicio(x,y-1));
+            p.addAll(buscaColocacioFitxes(x,y-1,f,posicionsVisitades));
         }
-
+        //posicionsVisitades.add(new Posicio(x,y));
         return p;
     }
 

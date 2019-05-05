@@ -19,10 +19,12 @@ public class Tirada {
 
         fitxaActual = baralla.agafarFitxa();
 
-        ArrayList<Posicio> alp = null;
-        alp = tauler.getPosDisponibles(fitxaActual);
-        if(!alp.isEmpty())
-            Gui.posaQuadresVerds(alp);
+        if(fitxaActual!=null){
+            ArrayList<Posicio> alp = null;
+            alp = tauler.getPosDisponibles(fitxaActual);
+            if(!alp.isEmpty())
+                Gui.posaQuadresVerds(alp);
+        }
     }
 
     public void apretatOpcionsDeFitxa(Posicio pos)
