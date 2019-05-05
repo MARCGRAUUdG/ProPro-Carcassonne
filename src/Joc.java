@@ -4,11 +4,11 @@ import java.util.ArrayList;
 public class Joc {
     private static LlegirFitxer _fitxer;
     private static ArrayList<Jugador> _jugadors;
-    private static Tauler _tauler;
+    private static Tauler _tauler=new Tauler();
     private static Tirada _tiradaActual;
     private static Baralla _baralla;
     private static Fitxa _fInicial;
-    private static int _jugadorActual=0;
+    private static int _jugadorActual=-1;
 
     public Joc(){
 
@@ -29,7 +29,7 @@ public class Joc {
 
     private static void repDadesFitxer() {
         _jugadors = _fitxer.getJugadors();
-        _baralla = _fitxer.getBaralla();
+        _baralla = _fitxer.baralla;//TODO S'hauria de fer amb getBaralla()
         _fInicial = _fitxer.getInicial();
     }
 
@@ -54,18 +54,11 @@ public class Joc {
     }
 
     public static void apretatPerPosarFitxa(int x, int y, int rot) {
-        /*TODO TREURE*/Fitxa f= null;
-        /*TODO TREURE*/try {
-        /*TODO TREURE*/    f = new Fitxa("CFCVC");
-        /*TODO TREURE*/} catch (Excepcio excepcio) {
-        /*TODO TREURE*/    excepcio.printStackTrace();
-        /*TODO TREURE*/}
-        /*TODO TREURE*/f.setPosicio(new Posicio(x,y,rot));
-        Gui.posaFitxa(f);//TODO s'ha de posar la primera fitxa de la baralla
-        Gui.posaSeleccioDeSeguidors(x,y);
+        _tiradaActual.apretatOpcionsDeFitxa(new Posicio(x,y,rot));
     }
 
     public static void apretatPerPosarSeguidor(int x, int y, char dir) {
-        Gui.posaSeguidor(x,y,dir,1);
+        _tiradaActual.apretatOpcionsDeSeguidor(x,y,dir);
+        iniciaNouTorn();
     }
 }

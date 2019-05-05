@@ -1,8 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.temporal.JulianFields;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -10,16 +10,15 @@ public class LlegirFitxer {
 
     private static File fitxer;
     private static int _nJugadors;
-    private static ArrayList<Jugador> _jugadors;
-    private static Baralla baralla;
+    private static ArrayList<Jugador> _jugadors=new ArrayList<Jugador>();
+    public static Baralla baralla=new Baralla();//TODO Hauria de ser privat pero getBaralla no funciona ARREGLAR!
     private static Fitxa _inicial;
     private static boolean _camperols;
     private static boolean fitxerOK = false;
 
-
     ///Pre: ---
     ///Post: lectura completa del fitxer
-    public static void llegirFitxer() throws FileNotFoundException {
+    public static void llegirFitxer() {
         try (Scanner input = new Scanner(fitxer))
         {
             llegirJugadors(input);
@@ -101,7 +100,6 @@ public class LlegirFitxer {
 
         input.next("nombre_jugadors"); //saltem String
         _nJugadors = input.nextInt(); //guardem el nombre de jugadors
-
         //Gui.print(String.valueOf(_nJugadors));
 
         input.next("jugadors_cpu"); //saltem String
@@ -110,13 +108,11 @@ public class LlegirFitxer {
             int element = input.nextInt();
             jugadorsMaquina.add(element);
         }
-
         for (int i = 1; i <= _nJugadors; i++)
         {
             Jugador j = new Controlable(i);
             _jugadors.add(j);
         }
-
         /*for (int j : _jugadorsMaquina)
         {
             Gui.print(String.valueOf(j));
@@ -158,7 +154,7 @@ public class LlegirFitxer {
 
     ///Pre: ---
     ///Post: Retorna la baralla
-    public Baralla getBaralla() {
+    public Baralla getBaralla() {//TODO getBaralla no funciona ARREGLAR!
         return baralla;
     }
 }

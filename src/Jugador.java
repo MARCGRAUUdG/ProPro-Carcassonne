@@ -19,6 +19,10 @@ public abstract class Jugador {
     private Fitxa fitxaActual;
     private int nHumanets;
 
+    public int getId() {
+        return id;
+    }
+
     Jugador(){
         nHumanets = 6;
     }
@@ -49,9 +53,4 @@ public abstract class Jugador {
     //Pre: ---
     ///Post: Afegeix un seguidor a la fitxa
     abstract void PosarSeguidor(Regio r);
-
-    public String getNom() {
-        //TODO Retorna el nom del jugador
-        return "";
-    }
 }
