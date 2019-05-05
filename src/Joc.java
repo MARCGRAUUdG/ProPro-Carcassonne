@@ -29,7 +29,7 @@ public class Joc {
 
     private static void repDadesFitxer() {
         _jugadors = _fitxer.getJugadors();
-        _baralla = _fitxer.baralla;//TODO S'hauria de fer amb getBaralla()
+        _baralla = _fitxer.getBaralla();//TODO S'hauria de fer amb getBaralla()
         _fInicial = _fitxer.getInicial();
     }
 

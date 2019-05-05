@@ -72,6 +72,8 @@ public class Gui extends Application{
         initApp();
     }
 
+    //Pre:--
+    //Post:inicialitza stage
     private void initConfig(Stage primaryStage) {
         Image logo = getImage("doc\\images\\Logo.png");
         primaryStage.getIcons().add(logo);
@@ -79,6 +81,8 @@ public class Gui extends Application{
         root.setPadding(new Insets(5));
     }
 
+    //Pre:--
+    //Post:configura i mostra scene
     private void setupScene(Stage primaryStage) {
         root.getChildren().addAll(topRow, midRow, table);
 
@@ -89,7 +93,8 @@ public class Gui extends Application{
         primaryStage.show();
     }
 
-
+    //Pre:taula, stage i scene inicialitzat
+    //Post:Mostra per la taula de la gui el stream
     public static void print(String stream){
         list.add(stream);
         details = FXCollections.observableArrayList(list);
@@ -97,10 +102,14 @@ public class Gui extends Application{
         table.scrollTo(details.size());
     }
 
+    //Pre:Gui configurada
+    //Post: Comença joc
     private void initApp(){
         Joc j=new Joc();
     }
 
+    //Pre:--
+    //Post:Configura part top de la GUI
     private void setupMainTop(){
         textField.setPromptText("Introdueix el nom del fitxer");
         textField.setOnAction(new EventHandler<ActionEvent>() {
@@ -132,6 +141,8 @@ public class Gui extends Application{
         Joc.repNomFitxer(textField.getText());
     }
 
+    //Pre:--
+    //Post:Configura part mid de la GUI
     private void setupMainMiddle(){
         Image image = getImage("doc\\images\\taulerimg.jpg");
         imageView = new ImageView(image);
@@ -145,6 +156,8 @@ public class Gui extends Application{
         midRow.getChildren().addAll(imageView,comenca);
     }
 
+    //Pre:--
+    //Post:Configura part bot de la GUI
     private void setupMainBot(){
         list = new ArrayList<>();
         details = FXCollections.observableArrayList(list);
@@ -172,6 +185,8 @@ public class Gui extends Application{
         log.setMinWidth(ample-15);
     }
 
+    //Pre:Mid inicialitzat
+    //Post:Configura jugadors
     public static void setupJugadors(int nJugadors) {
         Image playerImg1 = getImage("src\\images\\p1.png");
         ImageView jug1=new ImageView();
@@ -229,6 +244,9 @@ public class Gui extends Application{
             }
         }
     }
+
+    //Pre:--
+    //Post:retorna la imatge amb una url si no es correcte mostra error i retorna null
     private static Image getImage(String url){
         Image imgR= null;
         try {
@@ -239,6 +257,8 @@ public class Gui extends Application{
         return imgR;
     }
 
+    //Pre:Mid inicialitzat, la fitxa f ha de tenir una posicio asignada correcte
+    //Post:Posa fitxa en el tauler de la Gui
     public static void posaFitxa(Fitxa f){
         Posicio posicio=f.getPosicio();
         Image fitxaImg = getImage("src\\images\\"+f.format_fitxa()+".jpg");
@@ -250,6 +270,8 @@ public class Gui extends Application{
         midRow.getChildren().addAll(fitxa);
     }
 
+    //Pre:Mid i Jugador inicialitzat
+    //Post:actualitza els punts del jugador
     public static void setScore(int jugador,int punts){
         String s="Score: "+punts;
         if(jugador==1)
@@ -261,6 +283,9 @@ public class Gui extends Application{
         else
             scorej4.setText(s);
     }
+
+    //Pre:Mid inicialitzat
+    //Post:configura el tauler
     public static void iniciaTaulerGui() {
         Image blackimg = getImage("src\\images\\black.png");
         ImageView blackView = new ImageView(blackimg);
