@@ -15,10 +15,15 @@ public class Baralla {
     ///Post: Agafa una fitxa de la baralla de fitxes i la retorna
     public Fitxa agafarFitxa()
     {
-        int aleatori = ThreadLocalRandom.current().nextInt(0, llistaFitxes.size());
-        Fitxa f = (Fitxa) llistaFitxes.get(aleatori);
-        llistaFitxes.remove(aleatori);
-        return f;
+        if(!esBuida()) {
+            int aleatori = ThreadLocalRandom.current().nextInt(0, llistaFitxes.size());
+            Fitxa f = (Fitxa) llistaFitxes.get(aleatori);
+            llistaFitxes.remove(aleatori);
+            return f;
+        }else {
+            Gui.print("Baralla Buida!");
+            return null;
+        }
     }
 
     ///Pre: f != NULL
