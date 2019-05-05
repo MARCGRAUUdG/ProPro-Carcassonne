@@ -310,23 +310,30 @@ public class Gui extends Application{
     //Pre:Mid inicialitzat
     //Post:Mostra la baralla amb un maxim de 20 cartes ocultes
     public static void MostraBaralla(int size, Fitxa f){
-        Image backFitxaImg = getImage("src\\images\\back.jpg");
-        Image frontFitxaImg = getImage("src\\images\\"+f.format_fitxa()+".jpg");
-        ImageView frontFitxa = new ImageView(frontFitxaImg);
-        baralla.getChildren().clear();
+        if(size!=0) {
+            Image backFitxaImg = getImage("src\\images\\back.jpg");
+            Image frontFitxaImg = getImage("src\\images\\" + f.format_fitxa() + ".jpg");
+            ImageView frontFitxa = new ImageView(frontFitxaImg);
+            baralla.getChildren().clear();
 
-        int x=0;
-        for(int i=0;i<size&&i<20;i++){
-            ImageView backFitxa=new ImageView(backFitxaImg);
-            backFitxa.setLayoutX(ample/2-size*6.5+x);backFitxa.setLayoutY(ample-50);
-            backFitxa.setFitHeight(40);backFitxa.setFitWidth(40);
-            baralla.getChildren().add(backFitxa);
-            x+=10;
-        }
+            int x = 0;
+            for (int i = 0; i < size && i < 20; i++) {
+                ImageView backFitxa = new ImageView(backFitxaImg);
+                backFitxa.setLayoutX(ample / 2 - size * 6.5 + x);
+                backFitxa.setLayoutY(ample - 50);
+                backFitxa.setFitHeight(40);
+                backFitxa.setFitWidth(40);
+                baralla.getChildren().add(backFitxa);
+                x += 10;
+            }
 
-        frontFitxa.setFitHeight(40);frontFitxa.setFitWidth(40);
-        frontFitxa.setLayoutX(ample/2-size*6.5+x);frontFitxa.setLayoutY(ample-50);
-        baralla.getChildren().addAll(frontFitxa);
+            frontFitxa.setFitHeight(40);
+            frontFitxa.setFitWidth(40);
+            frontFitxa.setLayoutX(ample / 2 - size * 6.5 + x);
+            frontFitxa.setLayoutY(ample - 50);
+            baralla.getChildren().addAll(frontFitxa);
+        }else
+            baralla.getChildren().clear();
     }
 
     //Pre:Mid i tauler inicialitzat
