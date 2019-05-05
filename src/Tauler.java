@@ -77,6 +77,7 @@ public class Tauler
             return null;
         }
     }
+
     public void removeDouble(ArrayList<Posicio> alp) {
         for (int i = 0; i < alp.size(); i++) {
             for (int j = i + 1; j < alp.size(); j++) {

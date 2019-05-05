@@ -194,6 +194,12 @@ public class Fitxa extends Excepcio{
         return false;
     }
 
+    //Pre:--
+    //Post:retorna cert si la fitxa actual encaixa amb la fitxa 'f' en la posicio del costat de 'direccio' ('N','E','S' o 'O')
+    public boolean fitxaActualEncaixaAmb(Fitxa f, char direccio){
+        return true;
+    }
+
     //Pre:---
     //Post:retorna el format de la fitxa si existeix altrament null
     public String format_fitxa(){
