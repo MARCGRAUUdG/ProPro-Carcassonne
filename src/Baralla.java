@@ -4,21 +4,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Baralla {
 
-    private int nFitxes;
     private List<Fitxa> llistaFitxes;
-    private boolean buit;
 
-    Baralla(int nFit)
+    Baralla()
     {
-        nFitxes = nFit;
-        llistaFitxes = new ArrayList<Fitxa>(nFitxes);
-        buit = true;
-    }
-
-    public Baralla() {
-        nFitxes=0;
         llistaFitxes = new ArrayList<Fitxa>();
-        buit = true;
     }
 
     ///Pre: ---
@@ -35,7 +25,6 @@ public class Baralla {
     ///Post: S'afageix la fitxa f de forma ALEATÒRIA
     public void afegirFitxa(Fitxa f)
     {
-        buit = false;
         llistaFitxes.add(f);
     }
 
@@ -43,13 +32,11 @@ public class Baralla {
     ///Post: Retorna si la baralla s'ha quedat sense fitxes
     public boolean esBuida()
     {
-        return buit;
+        return llistaFitxes.isEmpty();
     }
 
     @Override
     public String toString() {
-        return "Baralla{" +
-                "vectorFitxes=" + llistaFitxes +
-                '}';
+        return llistaFitxes.toString();
     }
 }

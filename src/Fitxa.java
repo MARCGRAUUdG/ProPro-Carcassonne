@@ -206,7 +206,7 @@ public class Fitxa extends Excepcio{
 
     @Override
     public String toString(){
-        String fitxa = "Fitxa{";
+        String fitxa = "{";
 
         for(int i=0; i<regions.size(); i++){
             fitxa = fitxa + regions.get(i).lletra();
