@@ -49,7 +49,7 @@ public class Joc {
 
     public static void iniciaNouTorn(){
         _jugadorActual++;
-        if(_jugadorActual>=_jugadors.size())_jugadorActual=1;
+        if(_jugadorActual>=_jugadors.size())_jugadorActual=0;
         _tiradaActual =new Tirada(_jugadors.get(_jugadorActual),_baralla,_tauler);
     }
 
