@@ -12,11 +12,18 @@ public class Posicio implements Comparable<Posicio>{
         _rotacio=0;
     }
 
-    //Constructor amb parametres definits x,y i posicio
+    //Constructor amb parametres definits x,y i rotacio
     public Posicio(int x,int y, int rotacio){
         _x=x;
         _y=y;
         _rotacio=rotacio;
+    }
+
+    //Constructor amb parametres definits x,y
+    public Posicio(int x,int y){
+        _x=x;
+        _y=y;
+        _rotacio=0;
     }
 
     //Pre: --
@@ -70,6 +77,6 @@ public class Posicio implements Comparable<Posicio>{
 
     @Override
     public boolean equals(Object o) {
-        return (this.compareTo((Posicio)o))==0;
+        return (_x==((Posicio)o)._x && _y==((Posicio)o)._y && _rotacio==((Posicio)o)._rotacio);
     }
 }
