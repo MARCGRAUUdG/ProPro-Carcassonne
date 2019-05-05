@@ -76,7 +76,7 @@ public class Gui extends Application{
     //Pre:--
     //Post:inicialitza stage
     private void initConfig(Stage primaryStage) {
-        Image logo = getImage("doc\\images\\Logo.png");
+        Image logo = getImage("src\\images\\Logo.png");
         primaryStage.getIcons().add(logo);
         root = new VBox(5);
         root.setPadding(new Insets(5));
@@ -145,7 +145,7 @@ public class Gui extends Application{
     //Pre:--
     //Post:Configura part mid de la GUI
     private void setupMainMiddle(){
-        Image image = getImage("doc\\images\\taulerimg.jpg");
+        Image image = getImage("src\\images\\taulerimg.jpg");
         imageView = new ImageView(image);
         imageView.setFitHeight(ample);
         imageView.setFitWidth(ample);
