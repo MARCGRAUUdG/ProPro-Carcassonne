@@ -11,7 +11,7 @@ public class LlegirFitxer {
     private static File fitxer;
     private static int _nJugadors;
     private static ArrayList<Jugador> _jugadors=new ArrayList<Jugador>();
-    private static Baralla baralla=new Baralla();
+    public static Baralla baralla=new Baralla();//TODO Hauria de ser privat pero getBaralla no funciona ARREGLAR!
     private static Fitxa _inicial;
     private static boolean _camperols;
     private static boolean fitxerOK = false;
@@ -154,7 +154,7 @@ public class LlegirFitxer {
 
     ///Pre: ---
     ///Post: Retorna la baralla
-    public Baralla getBaralla() {
+    public Baralla getBaralla() {//TODO getBaralla no funciona ARREGLAR!
         return baralla;
     }
 }

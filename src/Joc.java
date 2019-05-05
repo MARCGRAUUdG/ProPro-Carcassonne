@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Joc {
     private static LlegirFitxer _fitxer;
     private static ArrayList<Jugador> _jugadors;
-    private static Tauler _tauler;
+    private static Tauler _tauler=new Tauler();
     private static Tirada _tiradaActual;
     private static Baralla _baralla;
     private static Fitxa _fInicial;
@@ -29,7 +29,7 @@ public class Joc {
 
     private static void repDadesFitxer() {
         _jugadors = _fitxer.getJugadors();
-        _baralla = _fitxer.getBaralla();
+        _baralla = _fitxer.baralla;//TODO S'hauria de fer amb getBaralla()
         _fInicial = _fitxer.getInicial();
     }
 

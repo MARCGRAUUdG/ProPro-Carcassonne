@@ -26,6 +26,7 @@ public class Tirada {
 
     public void apretatOpcionsDeFitxa(Posicio pos)
     {
+        fitxaActual.setPosicio(pos);
         Gui.posaFitxa(fitxaActual);
         tauler.posarFitxaTauler(fitxaActual);
         Gui.posaSeleccioDeSeguidors(pos.getPosicioX(),pos.getPosicioY());
