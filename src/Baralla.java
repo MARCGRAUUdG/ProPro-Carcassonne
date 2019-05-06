@@ -40,6 +40,10 @@ public class Baralla {
         return llistaFitxes.isEmpty();
     }
 
+    public int size(){
+        return llistaFitxes.size();
+    }
+
     @Override
     public String toString() {
         return llistaFitxes.toString();
