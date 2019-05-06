@@ -175,9 +175,9 @@ public class Fitxa extends Excepcio{
         else{
             Gui.print("Rotacio de fitxa incorrecte");
         }
-        //int rotacio=pos.getRotacio()+rotar;
-        //if(rotacio>=360)rotacio-=360;
-        //pos.setRotacio(rotacio);
+        int rotacio=pos.getRotacio()+rotar;
+        if(rotacio>=360)rotacio-=360;
+        pos.setRotacio(rotacio);
     }
 
     //Pre:---
