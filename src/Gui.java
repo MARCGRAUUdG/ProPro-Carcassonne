@@ -7,14 +7,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -26,10 +24,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Random;
-
-import static javafx.geometry.Pos.CENTER;
-import static javafx.geometry.Pos.CENTER_RIGHT;
 
 public class Gui extends Application{
     //APP
@@ -40,8 +34,8 @@ public class Gui extends Application{
 
     //TOP
     private AnchorPane topRow = new AnchorPane();
-    private TextField textField = new TextField ();
-    private Button buttonFile = new Button();
+    private static TextField textField = new TextField ();
+    private static Button buttonFile = new Button();
     private double buttonSize=100.0;
 
     //MID
@@ -54,13 +48,13 @@ public class Gui extends Application{
     private static Text scorej2=new Text (ample-150, 50, "Score: 0");
     private static Text scorej3=new Text (ample-150, ample-15, "Score: 0");
     private static Text scorej4=new Text (40+20, ample-15, "Score: 0");
+    private static int nBlocksVerdsPosats=0;
 
     //BOT
     private static Collection<String> list;
     private static ObservableList<String> details;
     private static TableView<String> table;
     private static TableColumn<String, String> log;
-
 
     public static void main(String[] args) {
         launch(args);
@@ -78,6 +72,8 @@ public class Gui extends Application{
         initApp();
     }
 
+    //Pre:--
+    //Post:inicialitza stage
     private void initConfig(Stage primaryStage) {
         Image logo = getImage("doc\\images\\Logo.png");
         primaryStage.getIcons().add(logo);
@@ -85,6 +81,8 @@ public class Gui extends Application{
         root.setPadding(new Insets(5));
     }
 
+    //Pre:--
+    //Post:configura i mostra scene
     private void setupScene(Stage primaryStage) {
         root.getChildren().addAll(topRow, midRow, table);
 
@@ -95,7 +93,8 @@ public class Gui extends Application{
         primaryStage.show();
     }
 
-
+    //Pre:taula, stage i scene inicialitzat
+    //Post:Mostra per la taula de la gui el stream
     public static void print(String stream){
         list.add(stream);
         details = FXCollections.observableArrayList(list);
@@ -103,24 +102,28 @@ public class Gui extends Application{
         table.scrollTo(details.size());
     }
 
+    //Pre:Gui configurada
+    //Post: Comença joc
     private void initApp(){
         Joc j=new Joc();
     }
 
+    //Pre:--
+    //Post:Configura part top de la GUI
     private void setupMainTop(){
         textField.setPromptText("Introdueix el nom del fitxer");
+        textField.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent t) {
+                llegeigNomDelFitxer();
+            }
+        });
         buttonFile.setText("Carregar Fitxer");
         buttonFile.setPrefSize(buttonSize,20.0);
         buttonFile.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-                buttonFile.setDisable(true);
-                textField.setDisable(true);
-                try {
-                    Joc.repNomFitxer(textField.getText());
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+            public void handle(ActionEvent t) {
+                llegeigNomDelFitxer();
             }
         });
 
@@ -132,6 +135,14 @@ public class Gui extends Application{
         topRow.getChildren().addAll(textField,buttonFile);
     }
 
+    private void llegeigNomDelFitxer(){
+        buttonFile.setDisable(true);
+        textField.setDisable(true);
+        Joc.repNomFitxer(textField.getText());
+    }
+
+    //Pre:--
+    //Post:Configura part mid de la GUI
     private void setupMainMiddle(){
         Image image = getImage("doc\\images\\taulerimg.jpg");
         imageView = new ImageView(image);
@@ -145,6 +156,8 @@ public class Gui extends Application{
         midRow.getChildren().addAll(imageView,comenca);
     }
 
+    //Pre:--
+    //Post:Configura part bot de la GUI
     private void setupMainBot(){
         list = new ArrayList<>();
         details = FXCollections.observableArrayList(list);
@@ -172,14 +185,16 @@ public class Gui extends Application{
         log.setMinWidth(ample-15);
     }
 
-    public static void setupJugadors(int nJugadors, ArrayList<Jugador> aj) {
+    //Pre:Mid inicialitzat
+    //Post:Configura jugadors
+    public static void setupJugadors(int nJugadors) {
         Image playerImg1 = getImage("src\\images\\p1.png");
         ImageView jug1=new ImageView();
         jug1 = new ImageView(playerImg1);
         jug1.setFitHeight(40);
         jug1.setFitWidth(40);
         jug1.setLayoutX(10);jug1.setLayoutY(10);
-        Text t1 = new Text (40+20, 35, "Jugador1");//TODO Falta posar el nom del jugador aj.get(3).getNom()
+        Text t1 = new Text (40+20, 35, "Jugador1");
         t1.setFont(Font.font("Arial Black",15));
         t1.setFill(Color.WHITE);
         scorej1.setFont(Font.font("Arial Black",10));
@@ -229,26 +244,34 @@ public class Gui extends Application{
             }
         }
     }
+
+    //Pre:--
+    //Post:retorna la imatge amb una url si no es correcte mostra error i retorna null
     private static Image getImage(String url){
         Image imgR= null;
         try {
             imgR = new Image(new FileInputStream(url));
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            print("Error amb la lecture de l'imatge "+url);
         }
         return imgR;
     }
 
-    public static void posaFitxa(int x, int y, int id, double rotation){
-        Image fitxaImg = getImage("src\\images\\f"+id+".jpg");
+    //Pre:Mid inicialitzat, la fitxa f ha de tenir una posicio asignada correcte
+    //Post:Posa fitxa en el tauler de la Gui
+    public static void posaFitxa(Fitxa f){
+        Posicio posicio=f.getPosicio();
+        Image fitxaImg = getImage("src\\images\\"+f.format_fitxa()+".jpg");
         ImageView fitxa=new ImageView(fitxaImg);
-        fitxa.setLayoutX(pos[x]);fitxa.setLayoutY(pos[y]);
+        fitxa.setLayoutX(pos[posicio.getPosicioX()]);fitxa.setLayoutY(pos[posicio.getPosicioY()]);
         fitxa.setFitHeight(40);
         fitxa.setFitWidth(40);
-        fitxa.setRotate(rotation);
+        fitxa.setRotate(posicio.getRotacio());
         midRow.getChildren().addAll(fitxa);
     }
 
+    //Pre:Mid i Jugador inicialitzat
+    //Post:actualitza els punts del jugador
     public static void setScore(int jugador,int punts){
         String s="Score: "+punts;
         if(jugador==1)
@@ -260,26 +283,121 @@ public class Gui extends Application{
         else
             scorej4.setText(s);
     }
+
+    //Pre:Mid inicialitzat
+    //Post:configura el tauler
     public static void iniciaTaulerGui() {
         Image blackimg = getImage("src\\images\\black.png");
         ImageView blackView = new ImageView(blackimg);
         blackView.setFitHeight(ample-150);
         blackView.setFitWidth(ample-150);
         blackView.setLayoutX(75);blackView.setLayoutY(75);
-        blackView.setOnMouseClicked(new EventHandler<MouseEvent>()
+        midRow.getChildren().remove(comenca);
+        midRow.getChildren().addAll(blackView);
+    }
+
+    //Pre:--
+    //Post:Infroma per pantalla que el fitxer es incorrecte per el motiou "motiu" i torna a demana fitxer entrada
+    public static void informarFitxerEntradaIncorrecte(String motiu){
+        print("Fitxer incorrecte! Motiu: "+motiu+". Torna a introduïr el nom del fitxer.");
+        buttonFile.setDisable(false);
+        textField.setText("");
+        textField.setDisable(false);
+    }
+
+    private static void posaQuadreVerd(int x, int y, int rot){
+        Image fitxaImg = getImage("src\\images\\green.png");
+        ImageView quadre=new ImageView(fitxaImg);
+        quadre.setLayoutX(pos[x]);quadre.setLayoutY(pos[y]);
+        quadre.setFitHeight(40);
+        quadre.setFitWidth(40);
+        quadre.setOnMouseClicked(new EventHandler<MouseEvent>()
         {
             @Override
             public void handle(MouseEvent t) {
-                int x= (int) (t.getX()/40);
-                int y= (int) (t.getY()/40);
+                int x= (int) ((t.getSceneX()-81)/40);
+                int y= (int) ((t.getSceneY()-110)/40);
+                Posicio p=new Posicio(x,y,0);
+                treuQuadresVerds();
 
-                Random rand = new Random();
-                int n = rand.nextInt(19)+1;
-                posaFitxa(x,y, n,0);
-                print("Posada fitxa f"+n);
+                Joc.apretatPerPosarFitxa(x,y, rot);
             }
         });
-        midRow.getChildren().remove(comenca);
-        midRow.getChildren().addAll(blackView);
+        midRow.getChildren().addAll(quadre);
+    }
+
+    private static void treuUltimElement() {
+        midRow.getChildren().remove(midRow.getChildren().size()-1);
+    }
+
+    public static void posaQuadresVerds(ArrayList<Posicio> alp){
+        nBlocksVerdsPosats=alp.size();
+        for(int i=0;i<alp.size();i++){
+            posaQuadreVerd(alp.get(i).getPosicioX(),alp.get(i).getPosicioY(),alp.get(i).getRotacio());
+        }
+    }
+
+    private static void treuQuadresVerds(){
+        for(int i=0;i<nBlocksVerdsPosats;i++)
+            treuUltimElement();
+    }
+
+    public static void posaSeleccioDeSeguidors(int x, int y) {
+        Image seguidorImg = getImage("src\\images\\pb.png");
+        ImageView seguidorC=new ImageView(seguidorImg);
+        ImageView seguidorN=new ImageView(seguidorImg);
+        ImageView seguidorE=new ImageView(seguidorImg);
+        ImageView seguidorS=new ImageView(seguidorImg);
+        ImageView seguidorO=new ImageView(seguidorImg);
+
+        configuraImgSeguidor(seguidorC,pos[x]+15,pos[y]+15,'C');
+        configuraImgSeguidor(seguidorN,pos[x]+15,pos[y],'N');
+        configuraImgSeguidor(seguidorE,pos[x]+30,pos[y]+15,'E');
+
+        configuraImgSeguidor(seguidorS,pos[x]+15,pos[y]+30, 'S');
+        configuraImgSeguidor(seguidorO,pos[x],pos[y]+15, 'O');
+
+        midRow.getChildren().addAll(seguidorC,seguidorN,seguidorE,seguidorS,seguidorO);
+    }
+
+    public static void configuraImgSeguidor(ImageView iv, int x, int y, char dir){
+        iv.setLayoutX(x);iv.setLayoutY(y);
+        iv.setFitHeight(10);
+        iv.setFitWidth(10);
+        iv.setOnMouseClicked(new EventHandler<MouseEvent>()
+        {
+            @Override
+            public void handle(MouseEvent t) {
+                int x= (int) ((t.getSceneX()-81)/40);
+                int y= (int) ((t.getSceneY()-110)/40);
+                treuSeguidors();
+                Joc.apretatPerPosarSeguidor(x, y, dir);
+            }
+        });
+    }
+
+    private static void treuSeguidors() {
+        for(int i=0;i<5;i++)
+            treuUltimElement();
+    }
+
+    public static void posaSeguidor(int x, int y, char dir, int numbJugador) {
+        Image seguidorImg = getImage("src\\images\\p"+numbJugador+".png");
+        ImageView seguidor=new ImageView(seguidorImg);
+        seguidor.setFitHeight(10);
+        seguidor.setFitWidth(10);
+
+        if(dir=='C') {
+            seguidor.setLayoutX(pos[x]+15);seguidor.setLayoutY(pos[y]+15);
+        }else if(dir=='N'){
+            seguidor.setLayoutX(pos[x]+15);seguidor.setLayoutY(pos[y]);
+        }else if(dir=='E'){
+            seguidor.setLayoutX(pos[x]+30);seguidor.setLayoutY(pos[y]+15);
+        }else if(dir=='S'){
+            seguidor.setLayoutX(pos[x]+15);seguidor.setLayoutY(pos[y]+30);
+        }else if(dir=='O'){
+            seguidor.setLayoutX(pos[x]);seguidor.setLayoutY(pos[y]+15);
+        }
+        midRow.getChildren().addAll(seguidor);
     }
 }

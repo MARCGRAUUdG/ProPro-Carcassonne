@@ -1,129 +1,59 @@
 import javafx.geometry.Pos;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.stream.Collectors;
 
-public class Tauler {
-    public List<Posicio> getPosDisponibles(Fitxa f) {
-        List<Posicio> l = new List<Posicio>() {
-            @Override
-            public int size() {
-                return 0;
-            }
 
-            @Override
-            public boolean isEmpty() {
-                return false;
-            }
+public class Tauler
+{
+    private static final Fitxa[][] _tauler = new Fitxa[10][10];
 
-            @Override
-            public boolean contains(Object o) {
-                return false;
-            }
+    //Pre:Hi ha  almenys una fitxa al tauler en la posicio inicial (5,5)
+    //Post:Retorna llista de les posicions on es pot ficar la fitxa f
+    public ArrayList<Posicio> getPosDisponibles(Fitxa f) {
+        ArrayList<Posicio> alp=new ArrayList<>();
+        ArrayList<Posicio> posicionsVisitades=new ArrayList<>();
+        posicionsVisitades.add(new Posicio(5,5));
+        alp=buscaColocacioFitxes(5,5,f,posicionsVisitades);
+        removeDouble(alp);
+        return alp;
+    }
 
-            @Override
-            public Iterator<Posicio> iterator() {
-                return null;
-            }
+    private ArrayList<Posicio> buscaColocacioFitxes(int x, int y, Fitxa f,ArrayList<Posicio> posicionsVisitades) {
+        ArrayList<Posicio> p=new ArrayList<Posicio>();
+        if(x+1>9);
+        else if(getFitxa(x+1,y)==null)
+            p.add(new Posicio(x+1,y,0));
+        else if(!posicionsVisitades.contains(new Posicio(x+1,y))){
+            posicionsVisitades.add(new Posicio(x+1,y));
+            p.addAll(buscaColocacioFitxes(x+1,y,f,posicionsVisitades));
+        }
 
-            @Override
-            public Object[] toArray() {
-                return new Object[0];
-            }
+        if(x-1<0);
+        else if(getFitxa(x-1,y)==null)
+            p.add(new Posicio(x-1,y,0));
+        else if(!posicionsVisitades.contains(new Posicio(x-1,y))){
+            posicionsVisitades.add(new Posicio(x-1,y));
+            p.addAll(buscaColocacioFitxes(x-1,y,f,posicionsVisitades));
+        }
 
-            @Override
-            public <T> T[] toArray(T[] a) {
-                return null;
-            }
+        if(y+1>9);
+        else if(getFitxa(x,y+1)==null)
+            p.add(new Posicio(x,y+1,0));
+        else if(!posicionsVisitades.contains(new Posicio(x,y+1))){
+            posicionsVisitades.add(new Posicio(x,y+1));
+            p.addAll(buscaColocacioFitxes(x,y+1,f,posicionsVisitades));
+        }
 
-            @Override
-            public boolean add(Posicio posicio) {
-                return false;
-            }
-
-            @Override
-            public boolean remove(Object o) {
-                return false;
-            }
-
-            @Override
-            public boolean containsAll(Collection<?> c) {
-                return false;
-            }
-
-            @Override
-            public boolean addAll(Collection<? extends Posicio> c) {
-                return false;
-            }
-
-            @Override
-            public boolean addAll(int index, Collection<? extends Posicio> c) {
-                return false;
-            }
-
-            @Override
-            public boolean removeAll(Collection<?> c) {
-                return false;
-            }
-
-            @Override
-            public boolean retainAll(Collection<?> c) {
-                return false;
-            }
-
-            @Override
-            public void clear() {
-
-            }
-
-            @Override
-            public Posicio get(int index) {
-                return null;
-            }
-
-            @Override
-            public Posicio set(int index, Posicio element) {
-                return null;
-            }
-
-            @Override
-            public void add(int index, Posicio element) {
-
-            }
-
-            @Override
-            public Posicio remove(int index) {
-                return null;
-            }
-
-            @Override
-            public int indexOf(Object o) {
-                return 0;
-            }
-
-            @Override
-            public int lastIndexOf(Object o) {
-                return 0;
-            }
-
-            @Override
-            public ListIterator<Posicio> listIterator() {
-                return null;
-            }
-
-            @Override
-            public ListIterator<Posicio> listIterator(int index) {
-                return null;
-            }
-
-            @Override
-            public List<Posicio> subList(int fromIndex, int toIndex) {
-                return null;
-            }
-        };
-        return l;
+        if(y-1<0);
+        else if(getFitxa(x,y-1)==null)
+            p.add(new Posicio(x,y-1,0));
+        else if(!posicionsVisitades.contains(new Posicio(x,y-1))){
+            posicionsVisitades.add(new Posicio(x,y-1));
+            p.addAll(buscaColocacioFitxes(x,y-1,f,posicionsVisitades));
+        }
+        return p;
     }
 
     public boolean tencaRegions(Fitxa f) {
@@ -131,5 +61,31 @@ public class Tauler {
     }
 
     public void actualitzarPunts(Fitxa f) {
+    }
+
+    //Pre:La posicio de f es correcte in la fitxa encaixa
+    //Post:S'ha colocat la fitxa en el tauler
+    public void posarFitxaTauler(Fitxa f) {
+        Posicio p=f.getPosicio();
+        _tauler[p.getPosicioX()][p.getPosicioY()]=f;
+    }
+
+    public Fitxa getFitxa(int x, int y){
+        try {
+            return _tauler[x][y];
+        }catch(Exception e) {
+            return null;
+        }
+    }
+
+    public void removeDouble(ArrayList<Posicio> alp) {
+        for (int i = 0; i < alp.size(); i++) {
+            for (int j = i + 1; j < alp.size(); j++) {
+                if (alp.get(i).equals(alp.get(j))) {
+                    alp.remove(j);
+                    j = j - 1;
+                }
+            }
+        }
     }
 }
