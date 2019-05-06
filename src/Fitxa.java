@@ -195,11 +195,35 @@ public class Fitxa extends Excepcio{
         return false;
     }
 
-    //Pre:--
+    //Pre:---
     //Post:retorna cert si la fitxa actual encaixa amb la fitxa 'f' en la posicio del costat de 'direccio' ('N','E','S' o 'O')
-    public boolean fitxaActualEncaixaAmb(Fitxa f, char direccio){
-        return true;
+    public boolean fitxaActualEncaixaAmb(Fitxa f , char direccio) throws Excepcio{
+        if(direccio == 'N'){
+            if(f.regio_n()==this.regio_s()){
+                return true;
+            }
+        }
+        else if(direccio == 'E'){
+            if(f.regio_e()==this.regio_o()){
+                return true;
+            }
+        }
+        else if(direccio == 'S'){
+            if(f.regio_s()==this.regio_n()){
+                return true;
+            }
+        }
+        else if(direccio == 'O'){
+            if(f.regio_o()==this.regio_e()){
+                return true;
+            }
+        }
+        else{
+            throw new Excepcio("Direcció incorrecta");
+        }
+        return false;
     }
+
 
     //Pre:---
     //Post:retorna el format de la fitxa si existeix altrament null
