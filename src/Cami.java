@@ -29,7 +29,7 @@ public class Cami extends Estructura {
     }
 
     //Pre:---
-    //Post:retorna punts
+    //Post:retorna punts total de lcami
     public int punts(){
         return getConjunt().size();
     }

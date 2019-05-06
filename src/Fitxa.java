@@ -130,6 +130,30 @@ public class Fitxa extends Excepcio{
         return regions.get(4).lletra();
     }
 
+    //Pre:---
+    //Post: la fitxa actual la regio nort = a la regio sud de f
+    public boolean nort_igual_sud(Fitxa f){
+        return regio_n() == f.regio_s();
+    }
+
+    //Pre:---
+    //Post: la fitxa actual la regio sud = a la regio nort de f
+    public boolean sud_igual_nort(Fitxa f){
+        return regio_s() == f.regio_n();
+    }
+
+    //Pre:---
+    //Post: la fitxa actual la regio est = a la regio oest de f
+    public boolean est_igual_oest(Fitxa f){
+        return regio_e() == f.regio_o();
+    }
+
+    //Pre:---
+    //Post: la fitxa actual la regio oest = a la regio est de f
+    public boolean oest_igual_est(Fitxa f){
+        return regio_o() == f.regio_e();
+    }
+
     //Pre: rotar = 90 o 180 o 270
     //Post: fitxa rotat
     public void rator_fitxa(int rotar)throws Excepcio{
@@ -199,24 +223,16 @@ public class Fitxa extends Excepcio{
     //Post:retorna cert si la fitxa actual encaixa amb la fitxa 'f' en la posicio del costat de 'direccio' ('N','E','S' o 'O')
     public boolean fitxaActualEncaixaAmb(Fitxa f , char direccio) throws Excepcio{
         if(direccio == 'N'){
-            if(f.regio_n()==this.regio_s()){
-                return true;
-            }
+            sud_igual_nort(f);
         }
         else if(direccio == 'E'){
-            if(f.regio_e()==this.regio_o()){
-                return true;
-            }
+            oest_igual_est(f);
         }
         else if(direccio == 'S'){
-            if(f.regio_s()==this.regio_n()){
-                return true;
-            }
+            nort_igual_sud(f);
         }
         else if(direccio == 'O'){
-            if(f.regio_o()==this.regio_e()){
-                return true;
-            }
+            est_igual_oest(f);
         }
         else{
             throw new Excepcio("Direcció incorrecta");
@@ -239,6 +255,16 @@ public class Fitxa extends Excepcio{
     }
 
     //Pre:---
+    //Post: retorna cert si alguna regio té el format E
+    public boolean teEscut(){
+        if(regio_n()=='E' || regio_e()=='E' || regio_s()=='E' || regio_o()=='E'){
+            return true;
+        }
+        return false;
+    }
+
+
+    //Pre:---
     //Post: retorna cert si la fitxa el centre és X o V o M
     public boolean es_fi_o_inici_de_cami(){
         if(regio_c() == 'X' || regio_c() == 'V' || regio_c() == 'M'){
@@ -248,7 +274,7 @@ public class Fitxa extends Excepcio{
     }
 
     //Pre:---
-    //Post: retorna cert si la fitxa el centre és V o E
+    //Post: retorna cert si la fitxa el centre no és V i E
     public boolean es_fi_o_inici_de_ciutat(){
         if(regio_c() !='V' && regio_c()!='E'){
             return true;
