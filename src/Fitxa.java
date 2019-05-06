@@ -11,6 +11,12 @@ public class Fitxa extends Excepcio{
         pos=null;
     }
 
+    //Pre:---
+    //Post: retorna la llista de regions de la fitxa
+    public ArrayList<Regio> getRegions(){
+        return regions;
+    }
+
     //Pre: lletres mida = 5
     //Post: guarda a regions el format de la fitxa
     public Fitxa(String lletres)throws Excepcio{
@@ -169,9 +175,9 @@ public class Fitxa extends Excepcio{
         else{
             Gui.print("Rotacio de fitxa incorrecte");
         }
-        int rotacio=pos.getRotacio()+rotar;
-        if(rotacio>=360)rotacio-=360;
-        pos.setRotacio(rotacio);
+        //int rotacio=pos.getRotacio()+rotar;
+        //if(rotacio>=360)rotacio-=360;
+        //pos.setRotacio(rotacio);
     }
 
     //Pre:---
