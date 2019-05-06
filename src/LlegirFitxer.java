@@ -1,8 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.temporal.JulianFields;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -10,16 +10,15 @@ public class LlegirFitxer {
 
     private static File fitxer;
     private static int _nJugadors;
-    private static List<Integer> _jugadorsMaquina;
-    private static List<Fitxa> _llistaFitxes;
+    private static ArrayList<Jugador> _jugadors;
+    private static Baralla baralla;//TODO Hauria de ser privat pero getBaralla no funciona ARREGLAR!
     private static Fitxa _inicial;
     private static boolean _camperols;
     private static boolean fitxerOK = false;
 
-
     ///Pre: ---
     ///Post: lectura completa del fitxer
-    public static void llegirFitxer() throws FileNotFoundException {
+    public static void llegirFitxer() {
         try (Scanner input = new Scanner(fitxer))
         {
             llegirJugadors(input);
@@ -63,8 +62,7 @@ public class LlegirFitxer {
     ///Post: Llegeix i guarda les diferents fitxes
     private static void llegirRajoles(Scanner input)
     {
-        List<Fitxa> llistaFitxes = new ArrayList<Fitxa>();
-
+        baralla = new Baralla();
         input.next(); //saltem "rajoles"
         String valFitxa = input.next();
 
@@ -79,7 +77,7 @@ public class LlegirFitxer {
                 } catch (Excepcio excepcio) {
                     Gui.informarFitxerEntradaIncorrecte("Format de la fitxa incorrecte ("+valFitxa+")");
                 }
-                llistaFitxes.add(f);
+                baralla.afegirFitxa(f);
             }
 
             valFitxa = input.next();
@@ -88,7 +86,6 @@ public class LlegirFitxer {
                 numFitxes = input.nextInt();
             }
         }
-        _llistaFitxes = llistaFitxes;
 
         /*for (Fitxa f : _llistaFitxes)
         {
@@ -100,11 +97,11 @@ public class LlegirFitxer {
     ///Post: Llegeix i guarda el nombre de jugadors i quins d'aquests són màquina
     private static void llegirJugadors(Scanner input)
     {
-        List <Integer>jugadorsMaquina = new ArrayList<>();
+        _jugadors = new ArrayList();
+        ArrayList <Integer>jugadorsMaquina = new ArrayList<>();
 
         input.next("nombre_jugadors"); //saltem String
         _nJugadors = input.nextInt(); //guardem el nombre de jugadors
-
         //Gui.print(String.valueOf(_nJugadors));
 
         input.next("jugadors_cpu"); //saltem String
@@ -113,8 +110,11 @@ public class LlegirFitxer {
             int element = input.nextInt();
             jugadorsMaquina.add(element);
         }
-        _jugadorsMaquina = jugadorsMaquina;
-
+        for (int i = 1; i <= _nJugadors; i++)
+        {
+            Jugador j = new Controlable(i);
+            _jugadors.add(j);
+        }
         /*for (int j : _jugadorsMaquina)
         {
             Gui.print(String.valueOf(j));
@@ -131,21 +131,9 @@ public class LlegirFitxer {
     }
 
     ///Pre: ---
-    ///Post: Retorna el nombre de jugadors
-    public static int getJugadors() {
-        return _nJugadors;
-    }
-
-    ///Pre: ---
     ///Post: Retorna una llista de quins dels jugadors són controlats per màquina
-    public static List<Integer> getJugadorsMaquina() {
-        return _jugadorsMaquina;
-    }
-
-    ///Pre: ---
-    ///Post: Retorna la llista de fitxes
-    public static List<Fitxa> getLlistaFitxes() {
-        return _llistaFitxes;
+    public static ArrayList<Jugador> getJugadors() {
+        return _jugadors;
     }
 
     ///Pre: ---
@@ -160,15 +148,15 @@ public class LlegirFitxer {
         return _camperols;
     }
 
+    ///Pre:
+    ///Post: Cert si la lectura s'ha realitzat satisfactòriament
     public static boolean lecturaCorrecta() {
         return fitxerOK;
     }
 
-    public Baralla getBaralla() {
-        return new Baralla(0);//TODO retorna la baralla llegida per fitxer
-    }
-
-    public Fitxa getFitxaInicial() throws Excepcio {//TODO retorna la fitxa inicial rebuda per fitxer, S'ha de treure aquet try catch no pot ser que cada cop que es crea una puta fitxa s'ha de ficar try catch
-        return new Fitxa("CCFCF");
+    ///Pre: ---
+    ///Post: Retorna la baralla
+    public static Baralla getBaralla() {//TODO getBaralla no funciona ARREGLAR!
+        return baralla;
     }
 }

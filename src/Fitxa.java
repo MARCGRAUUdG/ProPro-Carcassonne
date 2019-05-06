@@ -7,6 +7,10 @@ public class Fitxa extends Excepcio{
     private ArrayList<Regio> regions;
     private Posicio pos;
 
+    public Fitxa(){
+        pos=null;
+    }
+
     //Pre: lletres mida = 5
     //Post: guarda a regions el format de la fitxa
     public Fitxa(String lletres)throws Excepcio{
@@ -191,6 +195,12 @@ public class Fitxa extends Excepcio{
         return false;
     }
 
+    //Pre:--
+    //Post:retorna cert si la fitxa actual encaixa amb la fitxa 'f' en la posicio del costat de 'direccio' ('N','E','S' o 'O')
+    public boolean fitxaActualEncaixaAmb(Fitxa f, char direccio){
+        return true;
+    }
+
     //Pre:---
     //Post:retorna cert si la fitxa actual encaixa amb la fitxa 'f' en la posicio del costat de 'direccio' ('N','E','S' o 'O')
     public boolean fitxaActualEncaixaAmb(Fitxa f , char direccio) throws Excepcio{
@@ -270,7 +280,7 @@ public class Fitxa extends Excepcio{
 
     @Override
     public String toString(){
-        String fitxa = "Fitxa{";
+        String fitxa = "{";
 
         for(int i=0; i<regions.size(); i++){
             fitxa = fitxa + regions.get(i).lletra();
