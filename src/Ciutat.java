@@ -4,10 +4,16 @@ public class Ciutat extends Estructura {
         super(propietari, inici);
     }
 
-    public boolean ciutat_acabat(){
+    //Pre:---
+    //Post:retorna cert si la possessio esta completa altrament false
+    public boolean tancat(){
         return true;
     }
 
+
+
+    //Pre:---
+    //Post:retorna punts
     public int punts(){
         //complet 2 punts per peça i escut, altrament 1
         return 0;

@@ -4,15 +4,14 @@ public class Esglesia extends Estructura {
         super(propietari, inici);
     }
 
-    public boolean esglesia_acabat(){
-
-        if(getConjunt().size()==9) {
-            return true;
-        }
-        return false;
+    public boolean tancat() {
+        return getConjunt().size()==9;
     }
 
     public int punts(){
-        return getConjunt().size();
+        if(tancat()){
+            return 9;
+        }
+        return 0;
     }
 }

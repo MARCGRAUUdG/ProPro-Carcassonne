@@ -16,6 +16,7 @@ public class Fitxa extends Excepcio{
                 char lletra = lletres.charAt(i);
                 Regio nou = new Regio(lletra);
                 regions.add(nou);
+                pos = null;
             }
         }
         else {
@@ -182,10 +183,39 @@ public class Fitxa extends Excepcio{
     }
 
     //Pre:---
-    //Post:retorna cert si els camps de la fitxa coincideix amb els del seu adjacent camp per camp
-    public boolean fitxa_encaixa(char nort, char est, char sud, char oest){
+    //Post:retorna cert si els camps de la fitxa coincideix amb els del seu adjacents camp per camp
+    public boolean fitxaEncaixaEls4Costats(char nort, char est, char sud, char oest){
         if(regio_n()==nort && regio_e()==est && regio_s()==sud && regio_o()==oest){
             return true;
+        }
+        return false;
+    }
+
+    //Pre:---
+    //Post:retorna cert si la fitxa actual encaixa amb la fitxa 'f' en la posicio del costat de 'direccio' ('N','E','S' o 'O')
+    public boolean fitxaActualEncaixaAmb(Fitxa f , char direccio) throws Excepcio{
+        if(direccio == 'N'){
+            if(f.regio_n()==this.regio_s()){
+                return true;
+            }
+        }
+        else if(direccio == 'E'){
+            if(f.regio_e()==this.regio_o()){
+                return true;
+            }
+        }
+        else if(direccio == 'S'){
+            if(f.regio_s()==this.regio_n()){
+                return true;
+            }
+        }
+        else if(direccio == 'O'){
+            if(f.regio_o()==this.regio_e()){
+                return true;
+            }
+        }
+        else{
+            throw new Excepcio("Direcció incorrecta");
         }
         return false;
     }
@@ -202,6 +232,40 @@ public class Fitxa extends Excepcio{
         }
 
         return fitxa;
+    }
+
+    //Pre:---
+    //Post: retorna cert si la fitxa el centre és X o V o M
+    public boolean es_fi_o_inici_de_cami(){
+        if(regio_c() == 'X' || regio_c() == 'V' || regio_c() == 'M'){
+            return true;
+        }
+        return false;
+    }
+
+    //Pre:---
+    //Post: retorna cert si la fitxa el centre és V o E
+    public boolean es_fi_o_inici_de_ciutat(){
+        if(regio_c() !='V' && regio_c()!='E'){
+            return true;
+        }
+        return false;
+    }
+
+    //Pre:---
+    //Post: retorna cert si la fitxa té 3 bandes que són ciutat
+    public boolean te_tres_bandes_de_ciutat(){
+        if(regio_c()=='V'){
+            int compt =0;
+            for(int i=1; i<regions.size(); i++){
+                if(regions.get(i).lletra()=='V' || regions.get(i).lletra()=='E'){
+                    compt++;
+                }
+            }
+            return compt ==3;
+
+        }
+        return false;
     }
 
     @Override

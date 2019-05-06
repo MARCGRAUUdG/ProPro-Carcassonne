@@ -3,10 +3,14 @@ public class Camp extends Possessio {
         super(propietari, inici);
     }
 
-    public boolean camp_acabat(){
+    //Pre:---
+    //Post:retorna cert si la possessio esta completa altrament false
+    public boolean tancat(){
         return true;
     }
 
+    //Pre:---
+    //Post:retorna punts
     public int punts(){
         return 0;
     }

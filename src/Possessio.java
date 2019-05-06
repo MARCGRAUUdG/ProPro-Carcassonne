@@ -1,15 +1,15 @@
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Possessio {
+public abstract class Possessio {
     private List<Integer> propietari;
     private List<Fitxa> conjunt;
-
 
     //Pre:---
     //Post: guardar fitxa i propietari
     public Possessio(int propietari, Fitxa inici){
-        this.propietari = new ArrayList<>(4);
+        this.propietari = new ArrayList<Integer>();
         this.propietari.add(propietari,1);
         conjunt = new ArrayList<>();
         conjunt.add(inici);
@@ -25,7 +25,7 @@ public class Possessio {
             }
         }
 
-        for(int i=0; i<conjunt.size(); i++){
+        for(int i=conjunt.size()-1; i>=0; i--){
             afegir_fitxa(conjunt.get(i));
         }
     }
@@ -69,4 +69,12 @@ public class Possessio {
     public List<Fitxa> getConjunt(){
         return conjunt;
     }
+
+    //Pre:---
+    //Post:retorna cert si la possessio esta completa altrament false
+    abstract public boolean tancat ();
+
+    //Pre:---
+    //Post:retorna punts
+    abstract public int punts();
 }
