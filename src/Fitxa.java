@@ -6,15 +6,11 @@ public class Fitxa extends Excepcio{
 
     private ArrayList<Regio> regions;
     private Posicio pos;
-
+    
     //Pre:---
-    //Post:copia la fitxa f a l'actual
-    public Fitxa(Fitxa f){
-        regions = new ArrayList<Regio>(5);
-        for (int i = 0; i < f.getRegions().size(); i++) {
-            regions.add(i,f.getRegions().get(i));
-        }
-        pos.setPosicio(f.getPosicio().getPosicioX(),f.getPosicio().getPosicioY());
+    //Post: retorna la llista de regions de la fitxa
+    public ArrayList<Regio> getRegions(){
+        return regions;
     }
 
     //Pre: lletres mida = 5
@@ -28,16 +24,11 @@ public class Fitxa extends Excepcio{
                 regions.add(nou);
             }
             pos = new Posicio();
+
         }
         else {
             throw new Excepcio("La mida és incorrecta");
         }
-    }
-
-    //Pre:---
-    //Post: retorna la llista de regions de la fitxa
-    public ArrayList<Regio> getRegions(){
-        return regions;
     }
 
     //Pre: regio = C, N, E, S o O
@@ -144,7 +135,7 @@ public class Fitxa extends Excepcio{
 
     //Pre: rotar = 90 o 180 o 270
     //Post: fitxa rotada
-    public void rotar_fitxa(int rotar)throws Excepcio{
+    public void rotar(int rotar){
         if(rotar == 90 || rotar == 180 || rotar == 270) {
             Regio aux;
             int dif = rotar - pos.getRotacio();
@@ -168,7 +159,7 @@ public class Fitxa extends Excepcio{
                 regions.remove(3);
                 regions.add(4, aux);
                 regions.remove(5);
-            } else{
+            } else {
                 if (dif == 270 || dif == -90) {
                     aux = new Regio(regio_o());
                     for (int i = 4; i > 1; i--) {
@@ -182,7 +173,7 @@ public class Fitxa extends Excepcio{
             pos.setRotacio(rotar);
         }
         else{
-            throw new Excepcio("Rotació incorrecta");
+            Gui.print("Rotacio de fitxa incorrecte");
         }
     }
 
@@ -209,31 +200,36 @@ public class Fitxa extends Excepcio{
 
     //Pre:---
     //Post:retorna cert si la fitxa actual encaixa amb la fitxa 'f' en la posicio del costat de 'direccio' ('N','E','S' o 'O')
-    public boolean fitxaActualEncaixaAmb(Fitxa f , char direccio) throws Excepcio{
+    public boolean fitxaActualEncaixaAmb(Fitxa f , char direccio){
+        //rotar(pos.getRotacio());
+        //f.rotar(f.getPosicio().getRotacio());
+        boolean encaixa=false;
         if(direccio == 'N'){
             if(f.regio_n()==this.regio_s()){
-                return true;
+                encaixa= true;
             }
         }
         else if(direccio == 'E'){
             if(f.regio_e()==this.regio_o()){
-                return true;
+                encaixa= true;
             }
         }
         else if(direccio == 'S'){
             if(f.regio_s()==this.regio_n()){
-                return true;
+                encaixa= true;
             }
         }
         else if(direccio == 'O'){
             if(f.regio_o()==this.regio_e()){
-                return true;
+                encaixa= true;
             }
         }
         else{
-            throw new Excepcio("Direcció incorrecta");
+            Gui.print("Posició de fitxa incorrecte");
         }
-        return false;
+        //f.rotar(360-f.getPosicio().getRotacio());
+        //rotar(360-pos.getRotacio());
+        return encaixa;
     }
 
 
