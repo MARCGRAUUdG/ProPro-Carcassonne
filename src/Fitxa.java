@@ -7,8 +7,14 @@ public class Fitxa extends Excepcio{
     private ArrayList<Regio> regions;
     private Posicio pos;
 
-    public Fitxa(){
-        pos=null;
+    //Pre:---
+    //Post:copia la fitxa f a l'actual
+    public Fitxa(Fitxa f){
+        regions = new ArrayList<Regio>(5);
+        for (int i = 0; i < f.getRegions().size(); i++) {
+            regions.add(i,f.getRegions().get(i));
+        }
+        pos.setPosicio(f.getPosicio().getPosicioX(),f.getPosicio().getPosicioY());
     }
 
     //Pre: lletres mida = 5
@@ -20,12 +26,18 @@ public class Fitxa extends Excepcio{
                 char lletra = lletres.charAt(i);
                 Regio nou = new Regio(lletra);
                 regions.add(nou);
-                pos.setRotacio(0);
             }
+            pos.setRotacio(0);
         }
         else {
             throw new Excepcio("La mida és incorrecta");
         }
+    }
+
+    //Pre:---
+    //Post: retorna la llista de regions de la fitxa
+    public ArrayList<Regio> getRegions(){
+        return regions;
     }
 
     //Pre: regio = C, N, E, S o O
@@ -131,47 +143,48 @@ public class Fitxa extends Excepcio{
     }
 
     //Pre: rotar = 90 o 180 o 270
-    //Post: fitxa rotat
-    public void rator_fitxa(int rotar)throws Excepcio{
+    //Post: retorna una fitxa rotada
+    public Fitxa rotar_fitxa(int rotar)throws Excepcio{
 
-        Regio aux;
-        if(rotar==90){
-            aux = new Regio(regio_n());
-            for(int i=1; i<4; i++){
-                regions.remove(i);
-                regions.add(i,regions.get(i+1));
-            }
-            regions.remove(4);
-            regions.add(4,aux);
-        }
-        else if(rotar==180){
-            aux = new Regio(regio_n());
-            regions.remove(1);
-            regions.add(1,regions.get(3));
-            regions.remove(3);
-            regions.add(3,aux);
-            aux = null;
+        Fitxa nou;
+        if(rotar == 90 || rotar == 180 || rotar == 270) {
+            nou = new Fitxa(this);
+            nou.pos.setRotacio(rotar);
+            Regio aux;
+            if (rotar == 90) {
+                aux = new Regio(regio_n());
+                for (int i = 1; i < 4; i++) {
+                    nou.getRegions().remove(i);
+                    nou.getRegions().add(i, nou.getRegions().get(i + 1));
+                }
+                nou.getRegions().remove(4);
+                nou.getRegions().add(4, aux);
+            } else if (rotar == 180) {
+                aux = new Regio(regio_n());
+                nou.getRegions().remove(1);
+                nou.getRegions().add(1, nou.getRegions().get(3));
+                nou.getRegions().remove(3);
+                nou.getRegions().add(3, aux);
 
-            aux = new Regio(regio_e());
-            regions.remove(2);
-            regions.add(2,regions.get(4));
-            regions.remove(4);
-            regions.add(4,aux);
-            aux = null;
+                aux = new Regio(regio_e());
+                nou.getRegions().remove(2);
+                nou.getRegions().add(2, nou.getRegions().get(4));
+                nou.getRegions().remove(4);
+                nou.getRegions().add(4, aux);
+            } else {
+                aux = new Regio(regio_o());
+                for (int i = 4; i > 1; i--) {
+                    nou.getRegions().remove(i);
+                    nou.getRegions().add(i, nou.getRegions().get(i - 1));
+                }
+                nou.getRegions().remove(1);
+                nou.getRegions().add(1, aux);
             }
-        else if(rotar==270){
-            aux = new Regio(regio_o());
-            for(int i=4; i>1; i--){
-                regions.remove(i);
-                regions.add(i,regions.get(i-1));
-            }
-            regions.remove(1);
-            regions.add(1,aux);
         }
         else{
             throw new Excepcio("Rotació incorrecta");
         }
-        pos.setRotacio(rotar);
+        return nou;
     }
 
     //Pre:---
