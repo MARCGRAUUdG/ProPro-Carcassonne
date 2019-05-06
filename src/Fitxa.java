@@ -20,6 +20,7 @@ public class Fitxa extends Excepcio{
                 char lletra = lletres.charAt(i);
                 Regio nou = new Regio(lletra);
                 regions.add(nou);
+                pos.setRotacio(0);
             }
         }
         else {
@@ -170,7 +171,7 @@ public class Fitxa extends Excepcio{
         else{
             throw new Excepcio("Rotació incorrecta");
         }
-
+        pos.setRotacio(rotar);
     }
 
     //Pre:---
