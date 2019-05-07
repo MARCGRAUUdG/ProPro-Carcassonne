@@ -179,8 +179,9 @@ public class Fitxa extends Excepcio{
 
     //Pre:---
     //Post: guardar pos
-    public void setPosicio(Posicio pos) {
-        this.pos = pos;
+    public void setPosicio(Posicio novaPos) {
+        rotar(novaPos.getRotacio());
+        this.pos = novaPos;
     }
 
     //Pre:---
@@ -244,6 +245,21 @@ public class Fitxa extends Excepcio{
             }
         }
 
+        return fitxa;
+    }
+
+    //Pre:---
+    //Post:retorna el format de la fitxa si existeix amb rotacio 0
+    public String formatNormal(){
+        String fitxa = "";
+        int rotacioOriginal=pos.getRotacio();
+        rotar(0);
+        if(regions.size()>0) {
+            for (int i = 0; i < regions.size(); i++) {
+                fitxa = fitxa + regions.get(i).lletra();
+            }
+        }
+        rotar(rotacioOriginal);
         return fitxa;
     }
 

@@ -24,7 +24,7 @@ public class Tauler
         ArrayList<Posicio> p=new ArrayList<Posicio>();
         if(x+1>9);
         else if(getFitxa(x+1,y)==null)
-            p.add(new Posicio(x+1,y,0));
+            p.add(new Posicio(x+1,y,f.getPosicio().getRotacio()));
         else if(!posicionsVisitades.contains(new Posicio(x+1,y))){
             posicionsVisitades.add(new Posicio(x+1,y));
             p.addAll(buscaColocacioFitxes(x+1,y,f,posicionsVisitades));
@@ -32,7 +32,7 @@ public class Tauler
 
         if(x-1<0);
         else if(getFitxa(x-1,y)==null)
-            p.add(new Posicio(x-1,y,0));
+            p.add(new Posicio(x-1,y,f.getPosicio().getRotacio()));
         else if(!posicionsVisitades.contains(new Posicio(x-1,y))){
             posicionsVisitades.add(new Posicio(x-1,y));
             p.addAll(buscaColocacioFitxes(x-1,y,f,posicionsVisitades));
@@ -40,7 +40,7 @@ public class Tauler
 
         if(y+1>9);
         else if(getFitxa(x,y+1)==null)
-            p.add(new Posicio(x,y+1,0));
+            p.add(new Posicio(x,y+1,f.getPosicio().getRotacio()));
         else if(!posicionsVisitades.contains(new Posicio(x,y+1))){
             posicionsVisitades.add(new Posicio(x,y+1));
             p.addAll(buscaColocacioFitxes(x,y+1,f,posicionsVisitades));
@@ -48,7 +48,7 @@ public class Tauler
 
         if(y-1<0);
         else if(getFitxa(x,y-1)==null)
-            p.add(new Posicio(x,y-1,0));
+            p.add(new Posicio(x,y-1,f.getPosicio().getRotacio()));
         else if(!posicionsVisitades.contains(new Posicio(x,y-1))){
             posicionsVisitades.add(new Posicio(x,y-1));
             p.addAll(buscaColocacioFitxes(x,y-1,f,posicionsVisitades));
