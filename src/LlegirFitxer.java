@@ -10,8 +10,8 @@ public class LlegirFitxer {
 
     private static File fitxer;
     private static int _nJugadors;
-    private static ArrayList<Jugador> _jugadors=new ArrayList<Jugador>();
-    public static Baralla baralla=new Baralla();//TODO Hauria de ser privat pero getBaralla no funciona ARREGLAR!
+    private static ArrayList<Jugador> _jugadors;
+    private static Baralla baralla;//TODO Hauria de ser privat pero getBaralla no funciona ARREGLAR!
     private static Fitxa _inicial;
     private static boolean _camperols;
     private static boolean fitxerOK = false;
@@ -62,6 +62,7 @@ public class LlegirFitxer {
     ///Post: Llegeix i guarda les diferents fitxes
     private static void llegirRajoles(Scanner input)
     {
+        baralla = new Baralla();
         input.next(); //saltem "rajoles"
         String valFitxa = input.next();
 
@@ -96,6 +97,8 @@ public class LlegirFitxer {
     ///Post: Llegeix i guarda el nombre de jugadors i quins d'aquests són màquina
     private static void llegirJugadors(Scanner input)
     {
+        _jugadors = new ArrayList<Jugador>();
+
         ArrayList <Integer>jugadorsMaquina = new ArrayList<>();
 
         input.next("nombre_jugadors"); //saltem String
@@ -154,7 +157,7 @@ public class LlegirFitxer {
 
     ///Pre: ---
     ///Post: Retorna la baralla
-    public Baralla getBaralla() {//TODO getBaralla no funciona ARREGLAR!
+    public static Baralla getBaralla() {//TODO getBaralla no funciona ARREGLAR!
         return baralla;
     }
 }
