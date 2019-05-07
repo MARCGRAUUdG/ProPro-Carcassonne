@@ -133,13 +133,13 @@ public class Fitxa extends Excepcio{
         return regions.get(4).lletra();
     }
 
-    //Pre: rotar = 90 o 180 o 270
+    //Pre: rotar = 0 o 90 o 180 o 270
     //Post: fitxa rotada
     public void rotar(int rotar){
-        if(rotar == 90 || rotar == 180 || rotar == 270) {
+        if(rotar == 0 || rotar == 90 || rotar == 180 || rotar == 270) {
             Regio aux;
             int dif = rotar - pos.getRotacio();
-            if (dif == 90) {
+            if (dif == -90 || dif == 270) {
                 aux = new Regio(regio_n());
                 for (int i = 1; i < 4; i++) {
                     regions.add(i, regions.get(i + 1));
@@ -160,7 +160,7 @@ public class Fitxa extends Excepcio{
                 regions.add(4, aux);
                 regions.remove(5);
             } else {
-                if (dif == 270 || dif == -90) {
+                if (dif == -270 || dif == 90) {
                     aux = new Regio(regio_o());
                     for (int i = 4; i > 1; i--) {
                         regions.add(i, regions.get(i - 1));
