@@ -97,8 +97,7 @@ public class LlegirFitxer {
     ///Post: Llegeix i guarda el nombre de jugadors i quins d'aquests són màquina
     private static void llegirJugadors(Scanner input)
     {
-        _jugadors = new ArrayList<Jugador>();
-
+        _jugadors = new ArrayList();
         ArrayList <Integer>jugadorsMaquina = new ArrayList<>();
 
         input.next("nombre_jugadors"); //saltem String

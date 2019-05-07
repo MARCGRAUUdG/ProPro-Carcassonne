@@ -16,12 +16,14 @@ public class Tirada {
         jugadorActual = jActual;
         baralla = bActual;
         tauler = tActual;
-
         fitxaActual = baralla.agafarFitxa();
-
-        ArrayList<Posicio> alp = null;
-        alp = tauler.getPosDisponibles(fitxaActual);
-        Gui.posaQuadresVerds(alp);
+        Gui.MostraBaralla(baralla.size(),fitxaActual);
+        if(fitxaActual!=null){
+            ArrayList<Posicio> alp = null;
+            alp = tauler.getPosDisponibles(fitxaActual);
+            if(!alp.isEmpty())
+                Gui.posaQuadresVerds(alp);
+        }
     }
 
     public void apretatOpcionsDeFitxa(Posicio pos)
