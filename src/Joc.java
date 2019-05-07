@@ -29,7 +29,7 @@ public class Joc {
 
     private static void repDadesFitxer() {
         _jugadors = _fitxer.getJugadors();
-        _baralla = _fitxer.getBaralla();//TODO S'hauria de fer amb getBaralla()
+        _baralla = _fitxer.getBaralla();
         _fInicial = _fitxer.getInicial();
     }
 
@@ -60,5 +60,9 @@ public class Joc {
     public static void apretatPerPosarSeguidor(int x, int y, char dir) {
         _tiradaActual.apretatOpcionsDeSeguidor(x,y,dir);
         iniciaNouTorn();
+    }
+
+    public static void apretatAngleFitxa(Posicio pos) {
+        _tiradaActual.apretatAngleFitxa(pos);
     }
 }
