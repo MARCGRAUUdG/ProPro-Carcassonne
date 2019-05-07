@@ -8,26 +8,46 @@ public class Tirada {
     private Baralla baralla;
     private Tauler tauler;
     private Fitxa fitxaActual;
+    private ArrayList<Posicio> posicionDisponibles;
 
     List<Posicio> posicions;
 
     Tirada(Jugador jActual, Baralla bActual, Tauler tActual)
     {
+        Gui.print("---------Torn del jugador"+jActual.getId()+"---------");
         jugadorActual = jActual;
         baralla = bActual;
         tauler = tActual;
+
         fitxaActual = baralla.agafarFitxa();
-        Gui.MostraBaralla(baralla.size(),fitxaActual);
-        if(fitxaActual!=null){
-            ArrayList<Posicio> alp = null;
-            alp = tauler.getPosDisponibles(fitxaActual);
-            if(!alp.isEmpty())
-                Gui.posaQuadresVerds(alp);
+        posicionDisponibles = tauler.getPosDisponibles(fitxaActual);
+        while(!baralla.esBuida() && posicionDisponibles.size()==0){
+            Gui.print("Fitxa: "+fitxaActual.toString()+" descartada no encaixa en el tauler");
+            fitxaActual = baralla.agafarFitxa();
+            posicionDisponibles = tauler.getPosDisponibles(fitxaActual);
         }
+        Gui.posaQuadresVerds(posicionDisponibles);
+        Gui.MostraBaralla(baralla.size(),fitxaActual);
     }
 
     public void apretatOpcionsDeFitxa(Posicio pos)
     {
+        ArrayList<Posicio> posDisp = posicionDisponibles;
+        for  (int i=posDisp.size()-1;i>=0;i--) {
+            if(posDisp.get(i).compareTo(pos)==-1)//Si coincideix x, y (rotacio no cal)
+                posDisp.remove(i);
+        }
+        if(posDisp.size()==1)//Nomes hi ha una opcio per colocar fitxa
+            posaFitxa(pos);
+        else //En la mateixa posicio es pot posar fitxa diferents rotacions
+            Gui.mostraOpcionsDeRotacioEnFitxa(posDisp,fitxaActual);
+    }
+
+    public void apretatAngleFitxa(Posicio pos){
+        posaFitxa(pos);
+    }
+
+    private void posaFitxa(Posicio pos){
         fitxaActual.setPosicio(pos);
         Gui.posaFitxa(fitxaActual);
         tauler.posarFitxaTauler(fitxaActual);
