@@ -1,11 +1,24 @@
 nombre_jugadors 4
 jugadors_cpu 2 3 4
 rajoles
-CFCVC 7
-XCCCC 4
-MFFFF 2
-VVFFV 6
-MFFCF 2
+CFCVC 9
+XCCCC 5
+CVFCC 3
+FVVFF 3
+XVCCC 3
+CVCCF 3
+VVVCV 3
+VVFVF 3
+XFCCC 3
+VVVFV 3
+FVFFF 3
+VVCCV 3
+VVFFV 8
+CCFCF 3
+CFFCC 3
+FVFVF 3
+MFFFF 3
+MFFCF 3
 #
 rajola_inicial XCCCC
 camperols si

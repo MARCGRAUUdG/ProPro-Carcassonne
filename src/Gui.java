@@ -315,11 +315,12 @@ public class Gui extends Application{
             Image frontFitxaImg = getImage("src\\images\\" + f.format_fitxa() + ".jpg");
             ImageView frontFitxa = new ImageView(frontFitxaImg);
             baralla.getChildren().clear();
-
+            int maxsize= 130;
+            if(size<20) maxsize= (int) (size*6.5);
             int x = 0;
             for (int i = 0; i < size && i < 20; i++) {
                 ImageView backFitxa = new ImageView(backFitxaImg);
-                backFitxa.setLayoutX(ample / 2 - size * 6.5 + x);
+                backFitxa.setLayoutX(ample / 2 - maxsize + x);
                 backFitxa.setLayoutY(ample - 50);
                 backFitxa.setFitHeight(40);
                 backFitxa.setFitWidth(40);
@@ -329,7 +330,7 @@ public class Gui extends Application{
 
             frontFitxa.setFitHeight(40);
             frontFitxa.setFitWidth(40);
-            frontFitxa.setLayoutX(ample / 2 - size * 6.5 + x);
+            frontFitxa.setLayoutX(ample / 2 - maxsize + x);
             frontFitxa.setLayoutY(ample - 50);
             baralla.getChildren().addAll(frontFitxa);
         }else
