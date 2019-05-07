@@ -6,9 +6,11 @@ public class Fitxa extends Excepcio{
 
     private ArrayList<Regio> regions;
     private Posicio pos;
-
-    public Fitxa(){
-        pos=null;
+    
+    //Pre:---
+    //Post: retorna la llista de regions de la fitxa
+    public ArrayList<Regio> getRegions(){
+        return regions;
     }
 
     //Pre: lletres mida = 5
@@ -22,6 +24,8 @@ public class Fitxa extends Excepcio{
                 regions.add(nou);
                 pos = null;
             }
+            pos = new Posicio();
+
         }
         else {
             throw new Excepcio("La mida és incorrecta");
@@ -154,54 +158,55 @@ public class Fitxa extends Excepcio{
         return regio_o() == f.regio_e();
     }
 
-    //Pre: rotar = 90 o 180 o 270
-    //Post: fitxa rotat
-    public void rator_fitxa(int rotar)throws Excepcio{
+    //Pre: rotar = 0 o 90 o 180 o 270
+    //Post: fitxa rotada
+    public void rotar(int rotar){
+        if(rotar == 0 || rotar == 90 || rotar == 180 || rotar == 270) {
+            Regio aux;
+            int dif = rotar - pos.getRotacio();
+            if (dif == -90 || dif == 270) {
+                aux = new Regio(regio_n());
+                for (int i = 1; i < 4; i++) {
+                    regions.add(i, regions.get(i + 1));
+                    regions.remove(i + 1);
+                }
+                regions.remove(4);
+                regions.add(4, aux);
+            } else if (dif == 180 || dif == -180) {
+                aux = new Regio(regio_n());
+                regions.add(1, regions.get(3));
+                regions.remove(2);
+                regions.add(3, aux);
+                regions.remove(4);
 
-        Regio aux;
-        if(rotar==90){
-            aux = new Regio(regio_n());
-            for(int i=1; i<4; i++){
-                regions.remove(i);
-                regions.add(i,regions.get(i+1));
+                aux = new Regio(regio_e());
+                regions.add(2, regions.get(4));
+                regions.remove(3);
+                regions.add(4, aux);
+                regions.remove(5);
+            } else {
+                if (dif == -270 || dif == 90) {
+                    aux = new Regio(regio_o());
+                    for (int i = 4; i > 1; i--) {
+                        regions.add(i, regions.get(i - 1));
+                        regions.remove(i + 1);
+                    }
+                    regions.add(1, aux);
+                    regions.remove(2);
+                }
             }
-            regions.remove(4);
-            regions.add(4,aux);
-        }
-        else if(rotar==180) {
-            aux = new Regio(regio_n());
-            regions.remove(1);
-            regions.add(1, regions.get(3));
-            regions.remove(3);
-            regions.add(3, aux);
-            aux = null;
-
-            aux = new Regio(regio_e());
-            regions.remove(2);
-            regions.add(2, regions.get(4));
-            regions.remove(4);
-            regions.add(4, aux);
-            aux = null;
-        }
-        else if(rotar==270){
-            aux = new Regio(regio_o());
-            for(int i=4; i>1; i--){
-                regions.remove(i);
-                regions.add(i,regions.get(i-1));
-            }
-            regions.remove(1);
-            regions.add(1,aux);
+            pos.setRotacio(rotar);
         }
         else{
-            throw new Excepcio("Rotació incorrecta");
+            Gui.print("Rotacio de fitxa incorrecte");
         }
-
     }
 
     //Pre:---
     //Post: guardar pos
-    public void setPosicio(Posicio pos) {
-        this.pos = pos;
+    public void setPosicio(Posicio novaPos) {
+        rotar(novaPos.getRotacio());
+        this.pos = novaPos;
     }
 
     //Pre:---
@@ -221,24 +226,33 @@ public class Fitxa extends Excepcio{
 
     //Pre:---
     //Post:retorna cert si la fitxa actual encaixa amb la fitxa 'f' en la posicio del costat de 'direccio' ('N','E','S' o 'O')
-    public boolean fitxaActualEncaixaAmb(Fitxa f , char direccio) throws Excepcio{
-        if(direccio == 'N'){
-            sud_igual_nort(f);
+    public boolean fitxaActualEncaixaAmb(Fitxa f , char direccio){
+        boolean encaixa=false;
+
+        if(f!=null){
+            if(direccio == 'N'){
+                encaixa= sud_igual_nort(f);
+            }
+            else if(direccio == 'E'){
+                encaixa= oest_igual_est(f);
+
+            }
+            else if(direccio == 'S'){
+                encaixa= nort_igual_sud(f);
+
+            }
+            else if(direccio == 'O'){
+                encaixa= est_igual_oest(f);
+            }
+            else{
+                Gui.print("Posició de fitxa incorrecte");
+            }
+        }else {
+            encaixa = true;
         }
-        else if(direccio == 'E'){
-            oest_igual_est(f);
-        }
-        else if(direccio == 'S'){
-            nort_igual_sud(f);
-        }
-        else if(direccio == 'O'){
-            est_igual_oest(f);
-        }
-        else{
-            throw new Excepcio("Direcció incorrecta");
-        }
-        return false;
+        return encaixa;
     }
+
 
     //Pre:---
     //Post:retorna el format de la fitxa si existeix altrament null
@@ -284,18 +298,32 @@ public class Fitxa extends Excepcio{
 
     //Pre:---
     //Post: retorna cert si la fitxa té 3 bandes que són ciutat
-    public boolean te_tres_bandes_de_ciutat(){
-        if(regio_c()=='V'){
-            int compt =0;
-            for(int i=1; i<regions.size(); i++){
-                if(regions.get(i).lletra()=='V' || regions.get(i).lletra()=='E'){
+    public boolean te_tres_bandes_de_ciutat() {
+        if (regio_c() == 'V') {
+            int compt = 0;
+            for (int i = 1; i < regions.size(); i++) {
+                if (regions.get(i).lletra() == 'V' || regions.get(i).lletra() == 'E') {
                     compt++;
                 }
             }
-            return compt ==3;
+            return compt == 3;
 
         }
         return false;
+    }
+    //Pre:---
+    //Post:retorna el format de la fitxa si existeix amb rotacio 0
+    public String formatNormal(){
+        String fitxa = "";
+        int rotacioOriginal=pos.getRotacio();
+        rotar(0);
+        if(regions.size()>0) {
+            for (int i = 0; i < regions.size(); i++) {
+                fitxa = fitxa + regions.get(i).lletra();
+            }
+        }
+        rotar(rotacioOriginal);
+        return fitxa;
     }
 
     @Override
