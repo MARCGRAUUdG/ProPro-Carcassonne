@@ -46,11 +46,10 @@ public abstract class Jugador {
         return false;
     }
 
-    ///Pre: Posició correcta per ficar al tauler
-    ///Post: Fitxa ficada al tauler a la posició corresponent
-    abstract void PosaFitxaAlTauler(Posicio pos, Tauler tau);
-
-    //Pre: ---
-    ///Post: Afegeix un seguidor a la fitxa
-    abstract void PosarSeguidor(Regio r);
+    @Override
+    public String toString() {
+        return "Jugador{" +
+                "id=" + id +
+                '}';
+    }
 }
