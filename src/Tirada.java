@@ -18,13 +18,16 @@ public class Tirada {
         jugadorActual = jActual;
         baralla = bActual;
         tauler = tActual;
+
         fitxaActual = baralla.agafarFitxa();
-        Gui.MostraBaralla(baralla.size(),fitxaActual);
-        if(fitxaActual!=null){
+        posicionDisponibles = tauler.getPosDisponibles(fitxaActual);
+        while(!baralla.esBuida() && posicionDisponibles.size()==0){
+            Gui.print("Fitxa: "+fitxaActual.toString()+" descartada no encaixa en el tauler");
+            fitxaActual = baralla.agafarFitxa();
             posicionDisponibles = tauler.getPosDisponibles(fitxaActual);
-            if(!posicionDisponibles.isEmpty())
-                Gui.posaQuadresVerds(posicionDisponibles);
         }
+        Gui.posaQuadresVerds(posicionDisponibles);
+        Gui.MostraBaralla(baralla.size(),fitxaActual);
     }
 
     public void apretatOpcionsDeFitxa(Posicio pos)
