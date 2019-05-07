@@ -53,27 +53,31 @@ public class Tauler
     }
 
     private void afegeixPosicioSiEncaixaFitxa(Fitxa f, int x, int y,ArrayList<Posicio> p) {
-        int rotacio=0;
-        boolean encaixa=true;
-        if(x+1<10){
-            if(!f.fitxaActualEncaixaAmb(_tauler[x+1][y],'O'))
-                encaixa=false;
+        int rotacio[]={0,90,180,270};
+        for(int i=0;i<4;i++)
+        {
+            boolean encaixa=true;
+            f.rotar(rotacio[i]);
+            if(x+1<10){
+                if(!f.fitxaActualEncaixaAmb(_tauler[x+1][y],'O'))
+                    encaixa=false;
+            }
             if(y+1<10){
                 if(!f.fitxaActualEncaixaAmb(_tauler[x][y+1],'N'))
                     encaixa=false;
-                if(x-1>=0){
-                    if(!f.fitxaActualEncaixaAmb(_tauler[x-1][y],'E'))
-                        encaixa=false;
-                    if(y-1>=0){
-                        if(!f.fitxaActualEncaixaAmb(_tauler[x][y-1],'S'))
-                            encaixa=false;
-                    }
-                }
             }
-        }
+            if(x-1>=0){
+                if(!f.fitxaActualEncaixaAmb(_tauler[x-1][y],'E'))
+                    encaixa=false;
+            }
+            if(y-1>=0){
+                if(!f.fitxaActualEncaixaAmb(_tauler[x][y-1],'S'))
+                    encaixa=false;
+            }
 
-        if(encaixa)
-            p.add(new Posicio(x, y, rotacio));
+            if(encaixa)
+                p.add(new Posicio(x, y, rotacio[i]));
+        }
     }
 
     public boolean tencaRegions(Fitxa f) {
