@@ -56,7 +56,7 @@ public class Tirada {
 
     public void apretatOpcionsDeSeguidor(int x, int y, char dir) throws Excepcio {
         //Gui.print(String.valueOf(dir));
-        fitxaActual.assignar_seguidor(dir, jugadorActual.toString());
+        fitxaActual.assignar_seguidor(dir, jugadorActual.getId());
         Gui.posaSeguidor(x,y,dir,jugadorActual.getId());
         //TODO: tauler.posar_seguidor(dir, fitxaActual);
     }
