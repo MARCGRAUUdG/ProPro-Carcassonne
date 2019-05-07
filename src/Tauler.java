@@ -1,8 +1,4 @@
-import javafx.geometry.Pos;
-
-import java.lang.reflect.Array;
 import java.util.*;
-import java.util.stream.Collectors;
 
 
 public class Tauler
@@ -24,7 +20,7 @@ public class Tauler
         ArrayList<Posicio> p=new ArrayList<Posicio>();
         if(x+1>9);
         else if(getFitxa(x+1,y)==null)
-            p.add(new Posicio(x+1,y,f.getPosicio().getRotacio()));
+            afegeixPosicioSiEncaixaFitxa(f, x + 1, y,p);
         else if(!posicionsVisitades.contains(new Posicio(x+1,y))){
             posicionsVisitades.add(new Posicio(x+1,y));
             p.addAll(buscaColocacioFitxes(x+1,y,f,posicionsVisitades));
@@ -32,7 +28,7 @@ public class Tauler
 
         if(x-1<0);
         else if(getFitxa(x-1,y)==null)
-            p.add(new Posicio(x-1,y,f.getPosicio().getRotacio()));
+            afegeixPosicioSiEncaixaFitxa(f, x - 1, y,p);
         else if(!posicionsVisitades.contains(new Posicio(x-1,y))){
             posicionsVisitades.add(new Posicio(x-1,y));
             p.addAll(buscaColocacioFitxes(x-1,y,f,posicionsVisitades));
@@ -40,7 +36,7 @@ public class Tauler
 
         if(y+1>9);
         else if(getFitxa(x,y+1)==null)
-            p.add(new Posicio(x,y+1,f.getPosicio().getRotacio()));
+            afegeixPosicioSiEncaixaFitxa(f, x, y + 1,p);
         else if(!posicionsVisitades.contains(new Posicio(x,y+1))){
             posicionsVisitades.add(new Posicio(x,y+1));
             p.addAll(buscaColocacioFitxes(x,y+1,f,posicionsVisitades));
@@ -48,12 +44,36 @@ public class Tauler
 
         if(y-1<0);
         else if(getFitxa(x,y-1)==null)
-            p.add(new Posicio(x,y-1,f.getPosicio().getRotacio()));
+            afegeixPosicioSiEncaixaFitxa(f, x, y - 1,p);
         else if(!posicionsVisitades.contains(new Posicio(x,y-1))){
             posicionsVisitades.add(new Posicio(x,y-1));
             p.addAll(buscaColocacioFitxes(x,y-1,f,posicionsVisitades));
         }
         return p;
+    }
+
+    private void afegeixPosicioSiEncaixaFitxa(Fitxa f, int x, int y,ArrayList<Posicio> p) {
+        int rotacio=0;
+        boolean encaixa=true;
+        if(x+1<10){
+            if(!f.fitxaActualEncaixaAmb(_tauler[x+1][y],'O'))
+                encaixa=false;
+            if(y+1<10){
+                if(!f.fitxaActualEncaixaAmb(_tauler[x][y+1],'N'))
+                    encaixa=false;
+                if(x-1>=0){
+                    if(!f.fitxaActualEncaixaAmb(_tauler[x-1][y],'E'))
+                        encaixa=false;
+                    if(y-1>=0){
+                        if(!f.fitxaActualEncaixaAmb(_tauler[x][y-1],'S'))
+                            encaixa=false;
+                    }
+                }
+            }
+        }
+
+        if(encaixa)
+            p.add(new Posicio(x, y, rotacio));
     }
 
     public boolean tencaRegions(Fitxa f) {
