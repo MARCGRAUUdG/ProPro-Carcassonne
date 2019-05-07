@@ -11,7 +11,6 @@ public class Regio extends Excepcio{
     //Post: zona = lletra
     Regio(char lletra){
         zona = lletra;
-        seguidor = 0;
     }
 
     //Pre:---
@@ -22,7 +21,7 @@ public class Regio extends Excepcio{
 
     //Pre:---
     //Post: retorna el nom del jugador
-    int nom_jugador(){
+    Integer nom_jugador(){
         return seguidor;
     }
 

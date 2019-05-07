@@ -58,6 +58,10 @@ public class Fitxa extends Excepcio{
     //Post: retorna seguidor de la regio del centre
     public Integer regio_c_seguidor(){
 
+        if(regions.get(0).nom_jugador()==null){
+            return null;
+        }
+
         return regions.get(0).nom_jugador();
     }
 
@@ -73,6 +77,10 @@ public class Fitxa extends Excepcio{
     //Post: retorna seguidor de la regio del nort
     public Integer regio_n_seguidor(){
 
+        if(regions.get(1).nom_jugador()==null){
+            return null;
+        }
+
         return regions.get(1).nom_jugador();
     }
 
@@ -86,6 +94,9 @@ public class Fitxa extends Excepcio{
     //Pre:---
     //Post: retorna seguidor de la regio del est
     public Integer regio_e_seguidor(){
+        if(regions.get(2).nom_jugador()==null){
+            return null;
+        }
 
         return regions.get(2).nom_jugador();
     }
@@ -99,6 +110,9 @@ public class Fitxa extends Excepcio{
     //Pre:---
     //Post: retorna seguidor de la regio del sud
     public Integer regio_s_seguidor(){
+        if(regions.get(3).nom_jugador()==null){
+            return null;
+        }
 
         return regions.get(3).nom_jugador();
     }
@@ -112,6 +126,9 @@ public class Fitxa extends Excepcio{
     //Pre:---
     //Post: retorna seguidor de la regio del oest
     public Integer regio_o_seguidor(){
+        if(regions.get(4).nom_jugador()==null){
+            return null;
+        }
 
         return regions.get(4).nom_jugador();
     }
