@@ -5,12 +5,13 @@ public class Regio extends Excepcio{
     //Descripcio: Regio d'una fitxa
 
     private char zona;
-    private String seguidor;
+    private int seguidor;
 
     //Pre:---
     //Post: zona = lletra
     Regio(char lletra){
         zona = lletra;
+        seguidor = 0;
     }
 
     //Pre:---
@@ -21,13 +22,13 @@ public class Regio extends Excepcio{
 
     //Pre:---
     //Post: retorna el nom del jugador
-    String nom_jugador(){
+    int nom_jugador(){
         return seguidor;
     }
 
     //Pre:---
     //Post: posar un seguidor de jugador a la regio si no és X altrament llança excepcio
-    void posar_seguidor(String jugador)throws Excepcio{
+    void posar_seguidor(int jugador)throws Excepcio{
         if(zona != 'X'){
             seguidor = jugador;
         }
