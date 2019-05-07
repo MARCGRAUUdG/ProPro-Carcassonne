@@ -262,7 +262,7 @@ public class Gui extends Application{
     //Post:Posa fitxa en el tauler de la Gui
     public static void posaFitxa(Fitxa f){
         Posicio posicio=f.getPosicio();
-        Image fitxaImg = getImage("src\\images\\"+f.format_fitxa()+".jpg");
+        Image fitxaImg = getImage("src\\images\\"+f.formatNormal()+".jpg");
         ImageView fitxa=new ImageView(fitxaImg);
         fitxa.setLayoutX(pos[posicio.getPosicioX()]);fitxa.setLayoutY(pos[posicio.getPosicioY()]);
         fitxa.setFitHeight(40);
@@ -312,7 +312,7 @@ public class Gui extends Application{
     public static void MostraBaralla(int size, Fitxa f){
         if(size!=0) {
             Image backFitxaImg = getImage("src\\images\\back.jpg");
-            Image frontFitxaImg = getImage("src\\images\\" + f.format_fitxa() + ".jpg");
+            Image frontFitxaImg = getImage("src\\images\\" + f.formatNormal() + ".jpg");
             ImageView frontFitxa = new ImageView(frontFitxaImg);
             baralla.getChildren().clear();
             int maxsize= 130;
