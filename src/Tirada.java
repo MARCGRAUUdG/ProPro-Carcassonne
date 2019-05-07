@@ -16,9 +16,8 @@ public class Tirada {
         jugadorActual = jActual;
         baralla = bActual;
         tauler = tActual;
-
         fitxaActual = baralla.agafarFitxa();
-
+        Gui.MostraBaralla(baralla.size(),fitxaActual);
         if(fitxaActual!=null){
             ArrayList<Posicio> alp = null;
             alp = tauler.getPosDisponibles(fitxaActual);
