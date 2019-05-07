@@ -50,6 +50,7 @@ public class Gui extends Application{
     private static Text scorej4=new Text (40+20, ample-15, "Score: 0");
     private static int nBlocksVerdsPosats=0;
     private static AnchorPane baralla = new AnchorPane();
+    private static AnchorPane opcioRotacio = new AnchorPane();
 
     //BOT
     private static Collection<String> list;
@@ -113,6 +114,7 @@ public class Gui extends Application{
     //Post:Configura part top de la GUI
     private void setupMainTop(){
         textField.setPromptText("Introdueix el nom del fitxer");
+        textField.setText("p1.txt");
         textField.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent t) {
@@ -262,7 +264,7 @@ public class Gui extends Application{
     //Post:Posa fitxa en el tauler de la Gui
     public static void posaFitxa(Fitxa f){
         Posicio posicio=f.getPosicio();
-        Image fitxaImg = getImage("src\\images\\"+f.format_fitxa()+".jpg");
+        Image fitxaImg = getImage("src\\images\\"+f.formatNormal()+".jpg");
         ImageView fitxa=new ImageView(fitxaImg);
         fitxa.setLayoutX(pos[posicio.getPosicioX()]);fitxa.setLayoutY(pos[posicio.getPosicioY()]);
         fitxa.setFitHeight(40);
@@ -296,6 +298,7 @@ public class Gui extends Application{
         midRow.getChildren().remove(comenca);
         midRow.getChildren().addAll(blackView);
         midRow.getChildren().add(baralla);
+        midRow.getChildren().add(opcioRotacio);
     }
 
     //Pre:--
@@ -310,16 +313,17 @@ public class Gui extends Application{
     //Pre:Mid inicialitzat
     //Post:Mostra la baralla amb un maxim de 20 cartes ocultes
     public static void MostraBaralla(int size, Fitxa f){
-        if(size!=0) {
+        if(f!=null) {
             Image backFitxaImg = getImage("src\\images\\back.jpg");
-            Image frontFitxaImg = getImage("src\\images\\" + f.format_fitxa() + ".jpg");
+            Image frontFitxaImg = getImage("src\\images\\" + f.formatNormal() + ".jpg");
             ImageView frontFitxa = new ImageView(frontFitxaImg);
             baralla.getChildren().clear();
-
+            int maxsize= 130;
+            if(size<20) maxsize= (int) (size*6.5);
             int x = 0;
             for (int i = 0; i < size && i < 20; i++) {
                 ImageView backFitxa = new ImageView(backFitxaImg);
-                backFitxa.setLayoutX(ample / 2 - size * 6.5 + x);
+                backFitxa.setLayoutX(ample / 2 - maxsize + x);
                 backFitxa.setLayoutY(ample - 50);
                 backFitxa.setFitHeight(40);
                 backFitxa.setFitWidth(40);
@@ -329,7 +333,7 @@ public class Gui extends Application{
 
             frontFitxa.setFitHeight(40);
             frontFitxa.setFitWidth(40);
-            frontFitxa.setLayoutX(ample / 2 - size * 6.5 + x);
+            frontFitxa.setLayoutX(ample / 2 - maxsize + x);
             frontFitxa.setLayoutY(ample - 50);
             baralla.getChildren().addAll(frontFitxa);
         }else
@@ -368,6 +372,7 @@ public class Gui extends Application{
     //Pre:Mid i tauler inicialitzat
     //Post:Posa en les posicions alp quadres verds d'opcions per ficar fitxa
     public static void posaQuadresVerds(ArrayList<Posicio> alp){
+        print("Sel·leccina col·locació de la fitxa");
         nBlocksVerdsPosats=alp.size();
         for(int i=0;i<alp.size();i++){
             posaQuadreVerd(alp.get(i).getPosicioX(),alp.get(i).getPosicioY(),alp.get(i).getRotacio());
@@ -384,6 +389,7 @@ public class Gui extends Application{
     //Pre:Mid i tauler inicialitzat, una fitxa posada en la posicio x,y
     //Post:Posa les opcions per colocar seguidor en la posicio x,y
     public static void posaSeleccioDeSeguidors(int x, int y) {
+        print("Sel·lecciona col·locació del seguidor");
         Image seguidorImg = getImage("src\\images\\pb.png");
         ImageView seguidorC=new ImageView(seguidorImg);
         ImageView seguidorN=new ImageView(seguidorImg);
@@ -450,5 +456,35 @@ public class Gui extends Application{
             seguidor.setLayoutX(pos[x]);seguidor.setLayoutY(pos[y]+15);
         }
         midRow.getChildren().addAll(seguidor);
+    }
+
+    public static void mostraOpcionsDeRotacioEnFitxa(ArrayList<Posicio> posDisp, Fitxa fitxaActual) {
+        print("Sel·lecciona rotació de la fitxa");
+        Image FitxaImg = getImage("src\\images\\"+fitxaActual.formatNormal()+".jpg");
+        for(int i=0;i<posDisp.size();i++){
+            Posicio posActual=posDisp.get(i);
+            ImageView fitxa = new ImageView(FitxaImg);
+            fitxa.setLayoutX(15);
+            fitxa.setLayoutY(ample/2-posDisp.size()*20+50*i);
+            fitxa.setFitHeight(40);
+            fitxa.setFitWidth(40);
+            fitxa.setRotate(posDisp.get(i).getRotacio());
+            fitxa.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent t) {
+                    treuUltimElement();
+                    opcioRotacio.getChildren().clear();
+                    Joc.apretatAngleFitxa(posActual);
+                }
+            });
+            Image fitxaImg = getImage("src\\images\\green.png");
+            ImageView quadre=new ImageView(fitxaImg);
+            quadre.setLayoutX(pos[posDisp.get(0).getPosicioX()]);
+            quadre.setLayoutY(pos[posDisp.get(0).getPosicioY()]);
+            quadre.setFitHeight(40);
+            quadre.setFitWidth(40);
+            midRow.getChildren().addAll(quadre);
+            opcioRotacio.getChildren().add(fitxa);
+        }
     }
 }
