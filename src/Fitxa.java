@@ -186,8 +186,9 @@ public class Fitxa extends Excepcio{
 
     //Pre:---
     //Post: guardar pos
-    public void setPosicio(Posicio pos) {
-        this.pos = pos;
+    public void setPosicio(Posicio novaPos) {
+        rotar(novaPos.getRotacio());
+        this.pos = novaPos;
     }
 
     //Pre:---
@@ -208,34 +209,33 @@ public class Fitxa extends Excepcio{
     //Pre:---
     //Post:retorna cert si la fitxa actual encaixa amb la fitxa 'f' en la posicio del costat de 'direccio' ('N','E','S' o 'O')
     public boolean fitxaActualEncaixaAmb(Fitxa f , char direccio){
-        //rotar(pos.getRotacio());
-        //f.rotar(f.getPosicio().getRotacio());
         boolean encaixa=false;
-        if(direccio == 'N'){
-            if(f.regio_n()==this.regio_s()){
-                encaixa= true;
+        if(f!=null){
+            if(direccio == 'N'){
+                if(f.regio_n()==this.regio_s()){
+                    encaixa= true;
+                }
             }
-        }
-        else if(direccio == 'E'){
-            if(f.regio_e()==this.regio_o()){
-                encaixa= true;
+            else if(direccio == 'E'){
+                if(f.regio_e()==this.regio_o()){
+                    encaixa= true;
+                }
             }
-        }
-        else if(direccio == 'S'){
-            if(f.regio_s()==this.regio_n()){
-                encaixa= true;
+            else if(direccio == 'S'){
+                if(f.regio_s()==this.regio_n()){
+                    encaixa= true;
+                }
             }
-        }
-        else if(direccio == 'O'){
-            if(f.regio_o()==this.regio_e()){
-                encaixa= true;
+            else if(direccio == 'O'){
+                if(f.regio_o()==this.regio_e()){
+                    encaixa= true;
+                }
             }
-        }
-        else{
-            Gui.print("Posició de fitxa incorrecte");
-        }
-        //f.rotar(360-f.getPosicio().getRotacio());
-        //rotar(360-pos.getRotacio());
+            else{
+                Gui.print("Posició de fitxa incorrecte");
+            }
+        }else
+            encaixa=true;
         return encaixa;
     }
 
@@ -251,6 +251,21 @@ public class Fitxa extends Excepcio{
             }
         }
 
+        return fitxa;
+    }
+
+    //Pre:---
+    //Post:retorna el format de la fitxa si existeix amb rotacio 0
+    public String formatNormal(){
+        String fitxa = "";
+        int rotacioOriginal=pos.getRotacio();
+        rotar(0);
+        if(regions.size()>0) {
+            for (int i = 0; i < regions.size(); i++) {
+                fitxa = fitxa + regions.get(i).lletra();
+            }
+        }
+        rotar(rotacioOriginal);
         return fitxa;
     }
 
