@@ -33,7 +33,7 @@ public class Fitxa extends Excepcio{
 
     //Pre: regio = C, N, E, S o O
     //Post: afegeix el jugador a la regio de la fitxa
-    public void assignar_seguidor(char regio, String jugador)throws Excepcio{
+    public void assignar_seguidor(char regio, int jugador)throws Excepcio{
         try {
             if (regio == 'C') {
                 regions.get(0).posar_seguidor(jugador);
@@ -56,10 +56,12 @@ public class Fitxa extends Excepcio{
 
     //Pre:---
     //Post: retorna seguidor de la regio del centre
-    public String regio_c_seguidor(){
+    public Integer regio_c_seguidor(){
+
         if(regions.get(0).nom_jugador()==null){
             return null;
         }
+
         return regions.get(0).nom_jugador();
     }
 
@@ -73,10 +75,12 @@ public class Fitxa extends Excepcio{
 
     //Pre:---
     //Post: retorna seguidor de la regio del nort
-    public String regio_n_seguidor(){
+    public Integer regio_n_seguidor(){
+
         if(regions.get(1).nom_jugador()==null){
             return null;
         }
+
         return regions.get(1).nom_jugador();
     }
 
@@ -89,10 +93,11 @@ public class Fitxa extends Excepcio{
 
     //Pre:---
     //Post: retorna seguidor de la regio del est
-    public String regio_e_seguidor(){
+    public Integer regio_e_seguidor(){
         if(regions.get(2).nom_jugador()==null){
             return null;
         }
+
         return regions.get(2).nom_jugador();
     }
     //Pre:----
@@ -104,10 +109,11 @@ public class Fitxa extends Excepcio{
 
     //Pre:---
     //Post: retorna seguidor de la regio del sud
-    public String regio_s_seguidor(){
+    public Integer regio_s_seguidor(){
         if(regions.get(3).nom_jugador()==null){
             return null;
         }
+
         return regions.get(3).nom_jugador();
     }
 
@@ -119,10 +125,11 @@ public class Fitxa extends Excepcio{
 
     //Pre:---
     //Post: retorna seguidor de la regio del oest
-    public String regio_o_seguidor(){
+    public Integer regio_o_seguidor(){
         if(regions.get(4).nom_jugador()==null){
             return null;
         }
+
         return regions.get(4).nom_jugador();
     }
 
