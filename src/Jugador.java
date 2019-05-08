@@ -18,6 +18,7 @@ public abstract class Jugador {
     private int id;
     private Fitxa fitxaActual;
     private int nHumanets;
+    private int _punts;
 
     public int getId() {
         return id;
@@ -25,19 +26,16 @@ public abstract class Jugador {
 
     Jugador(){
         nHumanets = 6;
+        _punts = 0;
     }
 
     Jugador(int jugador){
         id = jugador;
     }
 
-    ///Pre: Baralla b ! buida
-    ///Post: Agafa una fitxa aleatòria de la baralla
-    Fitxa agafarFitxaBaralla(Baralla b)
+    void assignarPunts(int punts)
     {
-        Fitxa f;// = b.agafarFitxa();
-        f = fitxaActual;
-        return f;
+        _punts = punts;
     }
 
     ///Pre: ---
