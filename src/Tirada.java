@@ -54,10 +54,15 @@ public class Tirada {
         Gui.posaSeleccioDeSeguidors(pos.getPosicioX(),pos.getPosicioY());
     }
 
-    public void apretatOpcionsDeSeguidor(int x, int y, char dir)
-    {
+    public void apretatOpcionsDeSeguidor(int x, int y, char dir){
+        //Gui.print(String.valueOf(dir));
+        try{
+            fitxaActual.assignar_seguidor(dir, jugadorActual.getId());
+        }catch (Excepcio e){
+            Gui.print("Posicio del seguidor incorrecte");
+        }
         Gui.posaSeguidor(x,y,dir,jugadorActual.getId());
-        //TODO: falta ficar el seguidor a la possesió
+        //TODO: tauler.posar_seguidor(dir, fitxaActual);
     }
 
 

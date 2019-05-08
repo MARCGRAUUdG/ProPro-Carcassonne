@@ -7,13 +7,5 @@ public class Controlable extends Jugador {
         super (i);
     }
 
-    @Override
-    void PosaFitxaAlTauler(Posicio pos, Tauler t) {
 
-    }
-
-    @Override
-    void PosarSeguidor(Regio r) {
-
-    }
 }
