@@ -420,11 +420,7 @@ public class Gui extends Application{
                 int x= (int) ((t.getSceneX()-81)/40);
                 int y= (int) ((t.getSceneY()-110)/40);
                 treuSeguidors();
-                try {
-                    Joc.apretatPerPosarSeguidor(x, y, dir);
-                } catch (Excepcio excepcio) {
-                    excepcio.printStackTrace();
-                }
+                Joc.apretatPerPosarSeguidor(x, y, dir);
             }
         });
     }

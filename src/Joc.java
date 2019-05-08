@@ -57,7 +57,7 @@ public class Joc {
         _tiradaActual.apretatOpcionsDeFitxa(new Posicio(x,y,rot));
     }
 
-    public static void apretatPerPosarSeguidor(int x, int y, char dir) throws Excepcio {
+    public static void apretatPerPosarSeguidor(int x, int y, char dir){
         _tiradaActual.apretatOpcionsDeSeguidor(x,y,dir);
         iniciaNouTorn();
     }
