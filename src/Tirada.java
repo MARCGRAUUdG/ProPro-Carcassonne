@@ -20,13 +20,17 @@ public class Tirada {
         tauler = tActual;
 
         fitxaActual = baralla.agafarFitxa();
-        posicionDisponibles = tauler.getPosDisponibles(fitxaActual);
-        while(!baralla.esBuida() && posicionDisponibles.size()==0){
-            Gui.print("Fitxa: "+fitxaActual.toString()+" descartada no encaixa en el tauler");
-            fitxaActual = baralla.agafarFitxa();
+        if(fitxaActual!=null) {
             posicionDisponibles = tauler.getPosDisponibles(fitxaActual);
+            while (!baralla.esBuida() && posicionDisponibles.size() == 0) {
+                Gui.print("Fitxa: " + fitxaActual.toString() + " descartada no encaixa en el tauler");
+                fitxaActual = baralla.agafarFitxa();
+                posicionDisponibles = tauler.getPosDisponibles(fitxaActual);
+            }
+            Gui.posaQuadresVerds(posicionDisponibles);
+        }else{
+            Gui.print("No hi han més fitxes a la baralla");
         }
-        Gui.posaQuadresVerds(posicionDisponibles);
         Gui.MostraBaralla(baralla.size(),fitxaActual);
     }
 

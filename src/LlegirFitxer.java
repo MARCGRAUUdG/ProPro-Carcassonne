@@ -24,6 +24,7 @@ public class LlegirFitxer {
             llegirJugadors(input);
             llegirRajoles(input);
             llegirDadesPartida(input);
+            Gui.print("S'ha llegit el fitxer correctament.");
             fitxerOK = true;
         } catch (IOException | NoSuchElementException | IllegalArgumentException | NullPointerException ex)
         {
