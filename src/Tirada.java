@@ -55,7 +55,8 @@ public class Tirada {
         fitxaActual.setPosicio(pos);
         Gui.posaFitxa(fitxaActual);
         tauler.posarFitxaTauler(fitxaActual);
-        Gui.posaSeleccioDeSeguidors(pos.getPosicioX(),pos.getPosicioY());
+        if(jugadorActual.getHumanets()>0)
+            Gui.posaSeleccioDeSeguidors(pos.getPosicioX(),pos.getPosicioY());
     }
 
     public void apretatOpcionsDeSeguidor(int x, int y, char dir){
@@ -63,9 +64,12 @@ public class Tirada {
         if (dir != 'X') {//X vol dir que l'usuari no vol ficar seguidor
             fitxaActual.assignar_seguidor(dir, jugadorActual.getId());
             Gui.posaSeguidor(x,y,dir,jugadorActual.getId());
+            jugadorActual.setHumanets(jugadorActual.getHumanets()-1);
+            Gui.setSeguidors(jugadorActual.getHumanets(),jugadorActual.getId());
+            //TODO: Possessio
         }
 
-        //TODO: tauler.posar_seguidor(dir, fitxaActual);
+
     }
 
 

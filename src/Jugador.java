@@ -24,10 +24,11 @@ public abstract class Jugador {
     }
 
     Jugador(){
-        nHumanets = 6;
+        nHumanets = 10;
     }
 
     Jugador(int jugador){
+        nHumanets = 10;
         id = jugador;
     }
 
@@ -44,6 +45,14 @@ public abstract class Jugador {
     ///Post: Indica si un personatge ha guanyat
     public boolean guanyador() {
         return false;
+    }
+
+    public int getHumanets(){
+        return nHumanets;
+    }
+
+    public void setHumanets(int n){
+        nHumanets=n;
     }
 
     @Override
