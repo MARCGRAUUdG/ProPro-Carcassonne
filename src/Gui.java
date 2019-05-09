@@ -432,7 +432,22 @@ public class Gui extends Application{
         configuraImgSeguidor(seguidorS,pos[x]+15,pos[y]+30, 'S');
         configuraImgSeguidor(seguidorO,pos[x],pos[y]+15, 'O');
 
-        midRow.getChildren().addAll(seguidorC,seguidorN,seguidorE,seguidorS,seguidorO);
+        Image crossImg = getImage("src\\images\\cross.png");
+        ImageView cross=new ImageView(crossImg);
+        cross.setLayoutX(pos[x]+30);cross.setLayoutY(pos[y]+2);
+        cross.setFitHeight(8);cross.setFitWidth(8);
+        cross.setOnMouseClicked(new EventHandler<MouseEvent>()
+        {
+            @Override
+            public void handle(MouseEvent t) {
+                int x= (int) ((t.getSceneX()-81)/40);
+                int y= (int) ((t.getSceneY()-110)/40);
+                treuSeguidors();
+                Joc.apretatPerPosarSeguidor(x, y, 'X');
+            }
+        });
+
+        midRow.getChildren().addAll(seguidorC,seguidorN,seguidorE,seguidorS,seguidorO,cross);
     }
 
     //Pre:iv esta inicialitzat
@@ -456,7 +471,7 @@ public class Gui extends Application{
     //Pre:Haver cridat correctament configuraImgSeguidor() avans
     //Post:Treu la seleccio de posicionament dels seguidors
     private static void treuSeguidors() {
-        for(int i=0;i<5;i++)
+        for(int i=0;i<6;i++)
             treuUltimElement();
     }
 

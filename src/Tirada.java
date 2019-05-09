@@ -60,12 +60,11 @@ public class Tirada {
 
     public void apretatOpcionsDeSeguidor(int x, int y, char dir){
         //Gui.print(String.valueOf(dir));
-        try{
+        if (dir != 'X') {//X vol dir que l'usuari no vol ficar seguidor
             fitxaActual.assignar_seguidor(dir, jugadorActual.getId());
-        }catch (Excepcio e){
-            Gui.print("Posicio del seguidor incorrecte");
+            Gui.posaSeguidor(x,y,dir,jugadorActual.getId());
         }
-        Gui.posaSeguidor(x,y,dir,jugadorActual.getId());
+
         //TODO: tauler.posar_seguidor(dir, fitxaActual);
     }
 
