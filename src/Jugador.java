@@ -44,6 +44,8 @@ public abstract class Jugador {
         return false;
     }
 
+    //public abstract
+
     @Override
     public String toString() {
         return "Jugador{" +
