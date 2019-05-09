@@ -20,13 +20,17 @@ public class Tirada {
         tauler = tActual;
 
         fitxaActual = baralla.agafarFitxa();
-        posicionDisponibles = tauler.getPosDisponibles(fitxaActual);
-        while(!baralla.esBuida() && posicionDisponibles.size()==0){
-            Gui.print("Fitxa: "+fitxaActual.toString()+" descartada no encaixa en el tauler");
-            fitxaActual = baralla.agafarFitxa();
+        if(fitxaActual!=null) {
             posicionDisponibles = tauler.getPosDisponibles(fitxaActual);
+            while (!baralla.esBuida() && posicionDisponibles.size() == 0) {
+                Gui.print("Fitxa: " + fitxaActual.toString() + " descartada no encaixa en el tauler");
+                fitxaActual = baralla.agafarFitxa();
+                posicionDisponibles = tauler.getPosDisponibles(fitxaActual);
+            }
+            Gui.posaQuadresVerds(posicionDisponibles);
+        }else{
+            Gui.print("No hi han més fitxes a la baralla");
         }
-        Gui.posaQuadresVerds(posicionDisponibles);
         Gui.MostraBaralla(baralla.size(),fitxaActual);
     }
 
@@ -51,18 +55,23 @@ public class Tirada {
         fitxaActual.setPosicio(pos);
         Gui.posaFitxa(fitxaActual);
         tauler.posarFitxaTauler(fitxaActual);
-        Gui.posaSeleccioDeSeguidors(pos.getPosicioX(),pos.getPosicioY());
+        if(jugadorActual.getHumanets()>0)
+            Gui.posaSeleccioDeSeguidors(pos.getPosicioX(),pos.getPosicioY());
+        else
+            Joc.iniciaNouTorn();
     }
 
     public void apretatOpcionsDeSeguidor(int x, int y, char dir){
         //Gui.print(String.valueOf(dir));
-        try{
+        if (dir != 'X') {//X vol dir que l'usuari no vol ficar seguidor
             fitxaActual.assignar_seguidor(dir, jugadorActual.getId());
-        }catch (Excepcio e){
-            Gui.print("Posicio del seguidor incorrecte");
+            Gui.posaSeguidor(x,y,dir,jugadorActual.getId());
+            jugadorActual.setHumanets(jugadorActual.getHumanets()-1);
+            Gui.setSeguidors(jugadorActual.getHumanets(),jugadorActual.getId());
+            //TODO Afegir seguidor de la fitxa del tauler
+            //TODO Assignar possesio?
         }
-        Gui.posaSeguidor(x,y,dir,jugadorActual.getId());
-        //TODO: tauler.posar_seguidor(dir, fitxaActual);
+        Joc.iniciaNouTorn();
     }
 
 
