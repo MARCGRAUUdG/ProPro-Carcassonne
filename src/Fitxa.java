@@ -61,6 +61,7 @@ public class Fitxa extends Excepcio{
         if(regions.get(0).nom_jugador()==null){
             return null;
         }
+
         return regions.get(0).nom_jugador();
     }
 
@@ -78,6 +79,7 @@ public class Fitxa extends Excepcio{
         if(regions.get(1).nom_jugador()==null){
             return null;
         }
+
         return regions.get(1).nom_jugador();
     }
 
@@ -94,6 +96,7 @@ public class Fitxa extends Excepcio{
         if(regions.get(2).nom_jugador()==null){
             return null;
         }
+
         return regions.get(2).nom_jugador();
     }
     //Pre:----
@@ -109,6 +112,7 @@ public class Fitxa extends Excepcio{
         if(regions.get(3).nom_jugador()==null){
             return null;
         }
+
         return regions.get(3).nom_jugador();
     }
 
@@ -124,6 +128,7 @@ public class Fitxa extends Excepcio{
         if(regions.get(4).nom_jugador()==null){
             return null;
         }
+
         return regions.get(4).nom_jugador();
     }
 
@@ -291,6 +296,16 @@ public class Fitxa extends Excepcio{
     //Post: retorna cert si la fitxa el centre no és V i E
     public boolean es_fi_o_inici_de_ciutat(){
         if(regio_c() !='V' && regio_c()!='E'){
+            return true;
+        }
+        return false;
+    }
+
+    //Pre:---
+    //Post:retorna cert si té una regio que és fitxa altrament fals
+    public boolean te_ciutat(){
+        if(regio_n() =='V' || regio_n()=='E' || regio_e() =='V' || regio_e()=='E' ||
+                regio_s() =='V' || regio_s()=='E' || regio_o() =='V' || regio_o()=='E'){
             return true;
         }
         return false;

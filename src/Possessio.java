@@ -59,9 +59,16 @@ public abstract class Possessio {
     }
 
     //Pre:---
-    //Post:retorna la llista de propietaris
-    public List<Integer> getPropietari(){
-        return propietari;
+    //Post:retorna el propietari de la possessio
+    public Integer getPropietari(){
+        int major =0;
+
+        for (int i =0; i<propietari.size(); i++){
+            if(propietari.get(i)>major){
+                major = propietari.get(i);
+            }
+        }
+        return major;
     }
 
     //Pre:---
@@ -70,11 +77,4 @@ public abstract class Possessio {
         return conjunt;
     }
 
-    //Pre:---
-    //Post:retorna cert si la possessio esta completa altrament false
-    abstract public boolean tancat ();
-
-    //Pre:---
-    //Post:retorna punts
-    abstract public int punts();
 }
