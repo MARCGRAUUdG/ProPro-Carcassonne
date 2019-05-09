@@ -44,6 +44,8 @@ public class Joc {
         Gui.setupJugadors(_jugadors.size());
         Gui.iniciaTaulerGui();
         posaFitxaInicial();
+        for(int i=0;i<_jugadors.size();i++)//Inicialitza el nº de seguidors de cada jugador
+            Gui.setSeguidors(_jugadors.get(i).getHumanets(),_jugadors.get(i).getId());
         iniciaNouTorn();
     }
 
@@ -59,7 +61,6 @@ public class Joc {
 
     public static void apretatPerPosarSeguidor(int x, int y, char dir){
         _tiradaActual.apretatOpcionsDeSeguidor(x,y,dir);
-        iniciaNouTorn();
     }
 
     public static void apretatAngleFitxa(Posicio pos) {

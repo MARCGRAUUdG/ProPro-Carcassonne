@@ -57,6 +57,8 @@ public class Tirada {
         tauler.posarFitxaTauler(fitxaActual);
         if(jugadorActual.getHumanets()>0)
             Gui.posaSeleccioDeSeguidors(pos.getPosicioX(),pos.getPosicioY());
+        else
+            Joc.iniciaNouTorn();
     }
 
     public void apretatOpcionsDeSeguidor(int x, int y, char dir){
@@ -66,10 +68,10 @@ public class Tirada {
             Gui.posaSeguidor(x,y,dir,jugadorActual.getId());
             jugadorActual.setHumanets(jugadorActual.getHumanets()-1);
             Gui.setSeguidors(jugadorActual.getHumanets(),jugadorActual.getId());
-            //TODO: Possessio
+            //TODO Afegir seguidor de la fitxa del tauler
+            //TODO Assignar possesio?
         }
-
-
+        Joc.iniciaNouTorn();
     }
 
 

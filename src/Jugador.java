@@ -24,11 +24,10 @@ public abstract class Jugador {
     }
 
     Jugador(){
-        nHumanets = 10;
     }
 
     Jugador(int jugador){
-        nHumanets = 10;
+        nHumanets = 6;
         id = jugador;
     }
 
