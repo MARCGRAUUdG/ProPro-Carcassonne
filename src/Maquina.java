@@ -5,4 +5,9 @@ public class Maquina extends Jugador {
     {
         super (i);
     }
+
+    @Override
+    public boolean esControlable() {
+        return false;
+    }
 }

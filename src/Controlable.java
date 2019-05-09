@@ -7,5 +7,10 @@ public class Controlable extends Jugador {
         super (i);
     }
 
+    @Override
+    public boolean esControlable() {
+        return true;
+    }
+
 
 }

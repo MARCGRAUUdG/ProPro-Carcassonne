@@ -79,4 +79,8 @@ public class Posicio implements Comparable<Posicio>{
     public boolean equals(Object o) {
         return (_x==((Posicio)o)._x && _y==((Posicio)o)._y && _rotacio==((Posicio)o)._rotacio);
     }
+
+    public int simularPunts(Fitxa fitxaActual) {
+        return 0;
+    }
 }

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,6 +20,7 @@ public abstract class Jugador {
     private Fitxa fitxaActual;
     private int nHumanets;
     private int _punts;
+    private ArrayList<Possessio> llistaPossessions = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -38,6 +40,16 @@ public abstract class Jugador {
         _punts = punts;
     }
 
+    public void afegirPossessio(Possessio p)
+    {
+        llistaPossessions.add(p);
+    }
+
+    public ArrayList<Possessio> getLlistaPossessions()
+    {
+        return llistaPossessions;
+    }
+
     ///Pre: ---
     ///Post: Indica si un personatge ha guanyat
     public boolean guanyador() {
@@ -52,4 +64,6 @@ public abstract class Jugador {
                 "id=" + id +
                 '}';
     }
+
+    public abstract boolean esControlable();
 }
