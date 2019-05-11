@@ -6,6 +6,11 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Classe encarregada de agafar les dades del fitxer d'entrada, transformar-les i enviar-les a les classes corresponents
+ * per tal d'iniciar el joc
+ */
+
 public class LlegirFitxer {
 
     private static File fitxer;
