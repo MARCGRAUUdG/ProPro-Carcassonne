@@ -27,12 +27,12 @@ public abstract class Jugador {
     }
 
     Jugador(){
-        nHumanets = 6;
-        _punts = 0;
     }
 
     Jugador(int jugador){
+        nHumanets = 6;
         id = jugador;
+        _punts = 0;
     }
 
     void assignarPunts(int punts)
@@ -56,7 +56,14 @@ public abstract class Jugador {
         return false;
     }
 
-    //public abstract
+
+    public int getHumanets(){
+        return nHumanets;
+    }
+
+    public void setHumanets(int n){
+        nHumanets=n;
+    }
 
     @Override
     public String toString() {

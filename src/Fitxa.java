@@ -33,7 +33,7 @@ public class Fitxa extends Excepcio{
 
     //Pre: regio = C, N, E, S o O
     //Post: afegeix el jugador a la regio de la fitxa
-    public void assignar_seguidor(char regio, int jugador)throws Excepcio{
+    public void assignar_seguidor(char regio, int jugador){
         try {
             if (regio == 'C') {
                 regions.get(0).posar_seguidor(jugador);
@@ -45,8 +45,6 @@ public class Fitxa extends Excepcio{
                 regions.get(3).posar_seguidor(jugador);
             } else if (regio == 'O') {
                 regions.get(4).posar_seguidor(jugador);
-            } else {
-                throw new Excepcio("La regio és incorrecta");
             }
         }
         catch (Excepcio e){

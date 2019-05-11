@@ -21,7 +21,6 @@ public class Baralla {
             llistaFitxes.remove(aleatori);
             return f;
         }else {
-            Gui.print("Baralla Buida!");
             return null;
         }
     }
