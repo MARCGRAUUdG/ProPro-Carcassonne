@@ -2,6 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * Classe encarregada de gestionar els torns dels diferents jugadors. Aquesta actua diferent segons si el jugador
+ * es controlable o es maquina.
+ *
+ * En el cas de ser controlable fa crides a Gui per deixar escollir els moviments que el jugador huma vulgui.
+ *
+ * En el cas de ser maquina fa la tirada la màquina sola amb una certa intel·ligencia per no deixar-se guanyar.
+ */
+
 public class Tirada {
 
     private Jugador jugadorActual;
@@ -12,6 +21,8 @@ public class Tirada {
 
     List<Posicio> posicions;
 
+    //Pre: Jugador actual, baralla utilitzada i el tauler per poder començar una tirada
+    //Post: Tirada començada
     Tirada(Jugador jActual, Baralla bActual, Tauler tActual)
     {
         Gui.print("---------Torn del jugador"+jActual.getId()+"---------"+jActual.esControlable());
@@ -60,10 +71,12 @@ public class Tirada {
                 Gui.print(posicio_disponible.toString());
             }
             posaFitxa(posicioPuntsMax);
-            //Gui.MostraBaralla(baralla.size(),fitxaActual);
+            Gui.MostraBaralla(baralla.size(),fitxaActual);
         }
     }
 
+    //Pre: Posicio pos != NULL
+    //Post: Coloca la fitxa a la posició passada per paràmetre a la Gui i crida el mètode per assignar la rotació
     public void apretatOpcionsDeFitxa(Posicio pos)
     {
         ArrayList<Posicio> posDisp = posicionsDisponibles;
@@ -77,10 +90,14 @@ public class Tirada {
             Gui.mostraOpcionsDeRotacioEnFitxa(posDisp,fitxaActual);
     }
 
+    //Pre: Posicio pos != NULL
+    //Post: Crida el mètode per colocar la fitxa definitivament un cop escollit l'angle desitjat
     public void apretatAngleFitxa(Posicio pos){
         posaFitxa(pos);
     }
 
+    //Pre: Posicio pos != NULL
+    //Post: Coloca la fitxa definitivament un cop escollit l'angle desitjat
     private void posaFitxa(Posicio pos){
         fitxaActual.setPosicio(pos);
         Gui.posaFitxa(fitxaActual);
@@ -101,6 +118,8 @@ public class Tirada {
         }
     }
 
+    //Pre: Posició correcta
+    //Post: Assigna el seguidor a la Regió corresponent i inicia un nou torn
     public void apretatOpcionsDeSeguidor(int x, int y, char dir){
         //Gui.print(String.valueOf(dir));
         if (dir != 'X') {//X vol dir que l'usuari no vol ficar seguidor
