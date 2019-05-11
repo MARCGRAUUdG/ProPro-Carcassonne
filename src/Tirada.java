@@ -25,7 +25,7 @@ public class Tirada {
     //Post: Tirada començada
     Tirada(Jugador jActual, Baralla bActual, Tauler tActual)
     {
-        Gui.print("---------Torn del jugador"+jActual.getId()+"---------"+jActual.esControlable());
+        Gui.print("---------Torn del jugador"+jActual.getId()+"---------");
         jugadorActual = jActual;
         baralla = bActual;
         tauler = tActual;
@@ -68,7 +68,6 @@ public class Tirada {
                     }
                     angle += 90;
                 }
-                Gui.print(posicio_disponible.toString());
             }
             posaFitxa(posicioPuntsMax);
             Gui.MostraBaralla(baralla.size(),fitxaActual);

@@ -115,14 +115,17 @@ public class LlegirFitxer {
         {
             int element = input.nextInt();
             jugadorsMaquina.add(element);
-            Jugador j = new Maquina(element);
-            _jugadors.add(j);
         }
         for (int i = 1; i <= _nJugadors; i++)
         {
             if (!jugadorsMaquina.contains(i))
             {
                 Jugador j = new Controlable(i);
+                _jugadors.add(j);
+            }
+            else
+            {
+                Jugador j = new Maquina(i);
                 _jugadors.add(j);
             }
         }
