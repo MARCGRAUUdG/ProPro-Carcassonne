@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Aquesta classe representa a un jugador de la partida. Aquest està gestionat per un
@@ -35,16 +34,22 @@ public abstract class Jugador {
         _punts = 0;
     }
 
+    //Pre: Punts per assignar != 0
+    //Post: Punts assignats al jugador correspoenet
     void assignarPunts(int punts)
     {
         _punts = punts;
     }
 
+    //Pre: Possessio p != NULL
+    //Post: Possessio p afegida a la llista de posicions
     public void afegirPossessio(Possessio p)
     {
         llistaPossessions.add(p);
     }
 
+    //Pre: ---
+    //Post: Retorna la llista de possessions del jugador actual.
     public ArrayList<Possessio> getLlistaPossessions()
     {
         return llistaPossessions;
@@ -56,11 +61,14 @@ public abstract class Jugador {
         return false;
     }
 
-
+    //Pre: ---
+    //Post: Retorna el nombre d'humanets del jugador actual
     public int getHumanets(){
         return nHumanets;
     }
 
+    //Pre: Nombre d'humanets >= 0
+    //Post: Nombre d'humanets assignat
     public void setHumanets(int n){
         nHumanets=n;
     }
@@ -72,5 +80,7 @@ public abstract class Jugador {
                 '}';
     }
 
+    //Pre: ---
+    //Post: retorna si el jugador actual es controlable
     public abstract boolean esControlable();
 }
