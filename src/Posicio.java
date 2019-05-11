@@ -1,5 +1,8 @@
 import javafx.geometry.Pos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Posicio implements Comparable<Posicio>{
     private int _x;
     private int _y;
@@ -80,7 +83,13 @@ public class Posicio implements Comparable<Posicio>{
         return (_x==((Posicio)o)._x && _y==((Posicio)o)._y && _rotacio==((Posicio)o)._rotacio);
     }
 
-    public int simularPunts(Fitxa fitxaActual) {
-        return 0;
+    public ArrayList<Integer> simularPunts(Fitxa fitxaActual) {
+        ArrayList<Integer> array = new ArrayList<>();
+        array.add(15);
+        array.add(10);
+        array.add(8);
+        array.add(2);
+
+        return array;
     }
 }

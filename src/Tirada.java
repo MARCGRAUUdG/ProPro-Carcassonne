@@ -14,17 +14,18 @@ public class Tirada {
 
     Tirada(Jugador jActual, Baralla bActual, Tauler tActual)
     {
-        Gui.print("---------Torn del jugador"+jActual.getId()+"---------");
+        Gui.print("---------Torn del jugador"+jActual.getId()+"---------"+jActual.esControlable());
         jugadorActual = jActual;
         baralla = bActual;
         tauler = tActual;
 
         fitxaActual = baralla.agafarFitxa();
 
+        posicionsDisponibles = tauler.getPosDisponibles(fitxaActual);
+
         if (jugadorActual.esControlable())
         {
             if(fitxaActual!=null) {
-                posicionsDisponibles = tauler.getPosDisponibles(fitxaActual);
                 while (!baralla.esBuida() && posicionsDisponibles.size() == 0) {
                     Gui.print("Fitxa: " + fitxaActual.toString() + " descartada no encaixa en el tauler");
                     fitxaActual = baralla.agafarFitxa();
@@ -37,18 +38,29 @@ public class Tirada {
             Gui.MostraBaralla(baralla.size(),fitxaActual);
         } else
         {
-            int puntsMax = 0, punts;
+            int puntsMax = 0;
+            ArrayList<Integer> punts = new ArrayList<>();
             Posicio posicioPuntsMax = new Posicio();
+
+            assert false; //<--?
             for (Posicio posicio_disponible : posicionsDisponibles)
             {
-                punts = posicio_disponible.simularPunts(fitxaActual);
-                if (punts >= puntsMax)
+                punts = posicio_disponible.simularPunts(fitxaActual); //Llista amb els punts corresponents a les 4 rotacions
+                int angle = 0; //angle de la fitxa a la posicio
+                for (int puntsRotacio : punts)
                 {
-                    puntsMax = punts;
-                    posicioPuntsMax = posicio_disponible;
+                    if (puntsRotacio >= puntsMax)
+                    {
+                        puntsMax = puntsRotacio;
+                        posicioPuntsMax = posicio_disponible;
+                        posicioPuntsMax.setRotacio(angle);
+                    }
+                    angle += 90;
                 }
+                Gui.print(posicio_disponible.toString());
             }
             posaFitxa(posicioPuntsMax);
+            //Gui.MostraBaralla(baralla.size(),fitxaActual);
         }
     }
 
@@ -82,6 +94,10 @@ public class Tirada {
         } else
         {
             //TODO: Asignar seguidor
+            if(jugadorActual.getHumanets()>0)
+                Gui.posaSeleccioDeSeguidors(pos.getPosicioX(),pos.getPosicioY());
+            else
+                Joc.iniciaNouTorn();
         }
     }
 
