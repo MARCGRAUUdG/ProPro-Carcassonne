@@ -1,7 +1,7 @@
 public class Cami extends Estructura {
 
-    public Cami(int propietari, Fitxa inici) {
-        super(propietari, inici);
+    public Cami(Fitxa inici) {
+        super(inici);
     }
 
     //Pre:---

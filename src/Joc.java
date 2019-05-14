@@ -37,6 +37,10 @@ public class Joc {
         Posicio pos =new Posicio(5,5,0);
         _fInicial.setPosicio(pos);
         _tauler.posarFitxaTauler(_fInicial);
+
+        //_tauler.getFitxa(5,5);
+
+
         Gui.posaFitxa(_fInicial);
     }
 

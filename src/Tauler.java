@@ -4,6 +4,10 @@ import java.util.*;
 public class Tauler
 {
     private static final Fitxa[][] _tauler = new Fitxa[10][10];
+    private static ArrayList<Possessio> _posCami= new ArrayList<>();
+    private static ArrayList<Camp> _posCamp= new ArrayList<>();
+    private static ArrayList<Esglesia> _posEsglesia= new ArrayList<>();
+    private static ArrayList<Ciutat> _posCiutat= new ArrayList<>();
 
     //Pre:Hi ha  almenys una fitxa al tauler en la posicio inicial (5,5)
     //Post:Retorna llista de les posicions on es pot ficar la fitxa f
@@ -92,6 +96,68 @@ public class Tauler
     public void posarFitxaTauler(Fitxa f) {
         Posicio p=f.getPosicio();
         _tauler[p.getPosicioX()][p.getPosicioY()]=f;
+
+        if(getFitxa(p.getPosicioX()-1,p.getPosicioY())!=null){
+            afegirPossessio(getFitxa(p.getPosicioX()-1,p.getPosicioY()),f,f.regio_o());
+        }else{
+            afegirPossessio(null,f,f.regio_o());
+        }
+        if(getFitxa(p.getPosicioX()+1,p.getPosicioY())!=null){
+            afegirPossessio(getFitxa(p.getPosicioX()+1,p.getPosicioY()),f,f.regio_e());
+        }else{
+            afegirPossessio(null,f,f.regio_e());
+        }
+        if(getFitxa(p.getPosicioX(),p.getPosicioY()-1)!=null){
+            afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()-1),f,f.regio_n());
+        }else{
+            afegirPossessio(null,f,f.regio_n());
+        }
+        if(getFitxa(p.getPosicioX(),p.getPosicioY()+1)!=null){
+            afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()+1),f,f.regio_s());
+        }else{
+            afegirPossessio(null,f,f.regio_s());
+        }
+        for(int i=0;i<_posCami.size();i++) {
+            Gui.print(_posCami.get(i).toString());
+        }
+    }
+
+    private void afegirPossessio(Fitxa fAnterior, Fitxa fNova, char reg) {
+        if (reg == 'C') {
+            if(fAnterior==null){
+                _posCami.add(new Cami(fNova));
+            }else{
+                if(_posCami.size()!=0){
+                    int i=getPossessioDeFitxa(fAnterior,_posCami);
+                    _posCami.get(i).afegir_fitxa(fNova);
+                }else {
+                    _posCami.add(new Cami(fNova));
+                }
+            }
+        }else if(reg=='F'){
+
+        }else if(reg=='V'){
+
+        }else if(reg=='M'){
+
+        }else{//TODO Falta E
+
+        }
+    }
+
+    private int getPossessioDeFitxa(Fitxa fAnterior, ArrayList<Possessio> possessio) {
+        boolean trobat=false;
+        int i=0;
+        while(!trobat && i< possessio.size()){
+            if(possessio.get(i).pertanyLaFitxa(fAnterior))
+                trobat=true;
+            else
+                i++;
+        }
+        if(!trobat)
+            return -1;
+        else
+            return i;
     }
 
     public Fitxa getFitxa(int x, int y){
