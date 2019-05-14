@@ -78,7 +78,7 @@ public class Tirada {
 
     /*///Pre: ---
     ///Post: Gestiona la tirada d'un jugador controlat
-    public void gestionarTiradaHuma()
+   public void gestionarTiradaHuma()
     {
         Fitxa f = jugadorActual.agafarFitxaBaralla(baralla);
         posicions = tauler.getPosDisponibles(f);

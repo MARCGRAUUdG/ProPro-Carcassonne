@@ -92,7 +92,7 @@ public class LlegirFitxer {
         {
             Gui.print(f.toString());
         }*/
-    }
+   }
 
     ///Pre: Scanner del fitxer d'entrada
     ///Post: Llegeix i guarda el nombre de jugadors i quins d'aquests són màquina
@@ -120,11 +120,11 @@ public class LlegirFitxer {
         {
             Gui.print(String.valueOf(j));
         }*/
-    }
+   }
 
     ///Pre: Nom del fitxer d'entrada
     ///Post: Guarda el nom del fitxer d'entrada i crida el mètode per llegir el fitxer
-    public static void nomFitxer(String text) throws FileNotFoundException {
+   public static void nomFitxer(String text) throws FileNotFoundException {
         Gui.print("Fitxer '"+text+"' carregant...");
         File f = new File(text);
         fitxer = f;
