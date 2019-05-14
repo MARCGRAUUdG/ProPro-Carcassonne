@@ -76,7 +76,7 @@ public class Tirada {
 
 
 
-    ///Pre: ---
+    /*///Pre: ---
     ///Post: Gestiona la tirada d'un jugador controlat
    public void gestionarTiradaHuma()
     {
@@ -111,7 +111,7 @@ public class Tirada {
         {
             actualitzarPunts(f);
         }
-    }
+    }*/
 
     ///Pre: Fitxa f actual
     ///Post: Cert si és necessari calcular els punts després de colocar la fitxa (s'ha completat una possessio)

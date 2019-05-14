@@ -26,7 +26,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Gui{
+public class Gui extends Application{
    //APP
     private static int altura=700;
     private static int ample=550;
