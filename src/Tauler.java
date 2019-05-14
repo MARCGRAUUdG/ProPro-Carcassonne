@@ -102,7 +102,6 @@ public class Tauler
 
     private void assignarPossessio(Fitxa f) {
         Posicio p=f.getPosicio();
-        boolean esta=false;
         if(getFitxa(p.getPosicioX()-1,p.getPosicioY())!=null){
             afegirPossessio(getFitxa(p.getPosicioX()-1,p.getPosicioY()),f,f.regio_o());
         }
@@ -116,17 +115,18 @@ public class Tauler
             afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()+1),f,f.regio_s());
         }
 
-        if(!estaEnLaLlista(f,_posCami) && conteCami(f)){
-            _posCami.add(new Cami(f));
-        }
+        posaFitxaACaminsSiNoEstaPosat(f);
+
 
         for(int i=0;i<_posCami.size();i++) {
             Gui.print(_posCami.get(i).toString());
         }
     }
 
-    private boolean conteCami(Fitxa f) {
-        return f.regio_n()=='C' || f.regio_s()=='C' || f.regio_e()=='C' || f.regio_o()=='C';
+    private void posaFitxaACaminsSiNoEstaPosat(Fitxa f) {
+        if(!estaEnLaLlista(f,_posCami) && (f.regio_n()=='C' || f.regio_s()=='C' || f.regio_e()=='C' || f.regio_o()=='C')){//Posa el cami
+            _posCami.add(new Cami(f));
+        }
     }
 
     private void afegirPossessio(Fitxa fAnterior, Fitxa fNova, char reg) {
