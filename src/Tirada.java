@@ -56,7 +56,7 @@ public class Tirada {
         Gui.posaFitxa(fitxaActual);
         tauler.posarFitxaTauler(fitxaActual);
         if(jugadorActual.getHumanets()>0)
-            Gui.posaSeleccioDeSeguidors(pos.getPosicioX(),pos.getPosicioY());
+            Gui.posaSeleccioDeSeguidors(pos.getPosicioX(),pos.getPosicioY(),fitxaActual.regio_c());
         else
             Joc.iniciaNouTorn();
     }

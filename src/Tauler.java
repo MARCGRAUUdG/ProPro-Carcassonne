@@ -97,43 +97,43 @@ public class Tauler
         Posicio p=f.getPosicio();
         _tauler[p.getPosicioX()][p.getPosicioY()]=f;
 
+        assignarPossessio(f);
+    }
+
+    private void assignarPossessio(Fitxa f) {
+        Posicio p=f.getPosicio();
+        boolean esta=false;
         if(getFitxa(p.getPosicioX()-1,p.getPosicioY())!=null){
             afegirPossessio(getFitxa(p.getPosicioX()-1,p.getPosicioY()),f,f.regio_o());
-        }else{
-            afegirPossessio(null,f,f.regio_o());
         }
         if(getFitxa(p.getPosicioX()+1,p.getPosicioY())!=null){
             afegirPossessio(getFitxa(p.getPosicioX()+1,p.getPosicioY()),f,f.regio_e());
-        }else{
-            afegirPossessio(null,f,f.regio_e());
         }
         if(getFitxa(p.getPosicioX(),p.getPosicioY()-1)!=null){
             afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()-1),f,f.regio_n());
-        }else{
-            afegirPossessio(null,f,f.regio_n());
         }
         if(getFitxa(p.getPosicioX(),p.getPosicioY()+1)!=null){
             afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()+1),f,f.regio_s());
-        }else{
-            afegirPossessio(null,f,f.regio_s());
         }
+
+        if(!estaEnLaLlista(f,_posCami) && conteCami(f)){
+            _posCami.add(new Cami(f));
+        }
+
         for(int i=0;i<_posCami.size();i++) {
             Gui.print(_posCami.get(i).toString());
         }
     }
 
+    private boolean conteCami(Fitxa f) {
+        return f.regio_n()=='C' || f.regio_s()=='C' || f.regio_e()=='C' || f.regio_o()=='C';
+    }
+
     private void afegirPossessio(Fitxa fAnterior, Fitxa fNova, char reg) {
         if (reg == 'C') {
-            if(fAnterior==null){
-                _posCami.add(new Cami(fNova));
-            }else{
-                if(_posCami.size()!=0){
-                    int i=getPossessioDeFitxa(fAnterior,_posCami);
-                    _posCami.get(i).afegir_fitxa(fNova);
-                }else {
-                    _posCami.add(new Cami(fNova));
-                }
-            }
+            //Posa la fitxa en la possessio de la fitxa del costat
+            int pin=getPossessioDeFitxa(fAnterior,_posCami);
+            _posCami.get(pin).afegir_fitxa(fNova);
         }else if(reg=='F'){
 
         }else if(reg=='V'){
@@ -145,11 +145,11 @@ public class Tauler
         }
     }
 
-    private int getPossessioDeFitxa(Fitxa fAnterior, ArrayList<Possessio> possessio) {
+    private int getPossessioDeFitxa(Fitxa f, ArrayList<Possessio> possessio) {
         boolean trobat=false;
         int i=0;
-        while(!trobat && i< possessio.size()){
-            if(possessio.get(i).pertanyLaFitxa(fAnterior))
+        while(!trobat && i<possessio.size()){
+            if(possessio.get(i).pertanyLaFitxa(f))
                 trobat=true;
             else
                 i++;
@@ -158,6 +158,18 @@ public class Tauler
             return -1;
         else
             return i;
+    }
+
+    private boolean estaEnLaLlista(Fitxa f, ArrayList<Possessio> possessio) {
+        boolean trobat=false;
+        int i=0;
+        while(i<possessio.size()&& !trobat){
+            if(possessio.get(i).pertanyLaFitxa(f))
+                trobat=true;
+            else
+                i++;
+        }
+        return trobat;
     }
 
     public Fitxa getFitxa(int x, int y){
