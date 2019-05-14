@@ -25,6 +25,7 @@ import java.io.FileNotFoundException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class Gui extends Application{
    //APP
@@ -188,6 +189,12 @@ public class Gui extends Application{
         log.setResizable(false);
         log.setSortable(false);
         log.setMinWidth(ample-15);
+    }
+
+    public static void treuSeguidorsDe(List<Fitxa> conjunt) {
+        for(int i=0;i<conjunt.size();i++){
+            posaFitxa(conjunt.get(i));
+        }
     }
 
     //Pre:Mid inicialitzat

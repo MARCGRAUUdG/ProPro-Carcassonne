@@ -6,6 +6,7 @@ public class Cami extends Estructura {
 
     //Pre:---
     //Post:retorna cert si la possessio esta completa altrament false
+    @Override
     public boolean tancat(){
         int ultim = getConjunt().size()-1;
         if (getConjunt().size()>1 && getConjunt().get(0).es_fi_o_inici_de_cami() && getConjunt().get(ultim).es_fi_o_inici_de_cami()) {

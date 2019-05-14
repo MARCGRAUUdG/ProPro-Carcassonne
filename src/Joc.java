@@ -70,4 +70,10 @@ public class Joc {
     public static void apretatAngleFitxa(Posicio pos) {
         _tiradaActual.apretatAngleFitxa(pos);
     }
+
+    public static void AfegeixSeguidorAJugador(int jugador) {
+        Gui.print("Jugador"+jugador+" +1 Seguidor");
+        _jugadors.get(jugador-1).incrementaHumanets();
+        Gui.setSeguidors(_jugadors.get(jugador-1).getHumanets(),jugador);
+    }
 }

@@ -16,6 +16,10 @@ public abstract class Possessio {
         conjunt.add(inici);
     }
 
+    public boolean tancat(){
+        return true;
+    }
+
     //Pre:---
     //Post:afegir les fitxes i els propietaris a la possessio actual
     public void unir_possessions(Possessio aux){

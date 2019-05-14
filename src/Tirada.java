@@ -54,11 +54,12 @@ public class Tirada {
     private void posaFitxa(Posicio pos){
         fitxaActual.setPosicio(pos);
         Gui.posaFitxa(fitxaActual);
-        tauler.posarFitxaTauler(fitxaActual);
-        if(jugadorActual.getHumanets()>0)
-            Gui.posaSeleccioDeSeguidors(pos.getPosicioX(),pos.getPosicioY(),fitxaActual.regio_c());
-        else
+        if(jugadorActual.getHumanets()>0) {
+            Gui.posaSeleccioDeSeguidors(pos.getPosicioX(), pos.getPosicioY(), fitxaActual.regio_c());
+        }else {
+            tauler.posarFitxaTauler(fitxaActual);
             Joc.iniciaNouTorn();
+        }
     }
 
     public void apretatOpcionsDeSeguidor(int x, int y, char dir){
@@ -68,9 +69,8 @@ public class Tirada {
             Gui.posaSeguidor(x,y,dir,jugadorActual.getId());
             jugadorActual.setHumanets(jugadorActual.getHumanets()-1);
             Gui.setSeguidors(jugadorActual.getHumanets(),jugadorActual.getId());
-            //TODO Afegir seguidor de la fitxa del tauler
-            //TODO Assignar possesio?
         }
+        tauler.posarFitxaTauler(fitxaActual);
         Joc.iniciaNouTorn();
     }
 
