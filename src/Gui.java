@@ -52,6 +52,7 @@ public class Gui{
     private static int nBlocksVerdsPosats=0;
     private static AnchorPane baralla = new AnchorPane();
     private static AnchorPane opcioRotacio = new AnchorPane();
+    private static Text nseguidors[]=new Text[4];
 
     //BOT
     private static Collection<String> list;
@@ -203,7 +204,10 @@ public class Gui{
         t1.setFill(Color.WHITE);
         scorej1.setFont(Font.font("Arial Black",10));
         scorej1.setFill(Color.WHITE);
-        midRow.getChildren().addAll(jug1,t1,scorej1);
+        nseguidors[0] = new Text (18, 35, "10");
+        nseguidors[0].setFont(Font.font("Arial Black",15));
+        nseguidors[0].setFill(Color.WHITE);
+        midRow.getChildren().addAll(jug1,t1,scorej1,nseguidors[0]);
 
         Image playerImg2 = getImage("src\\images\\p2.png");
         ImageView jug2=new ImageView();
@@ -216,7 +220,9 @@ public class Gui{
         t2.setFill(Color.WHITE);
         scorej2.setFont(Font.font("Arial Black",10));
         scorej2.setFill(Color.WHITE);
-        midRow.getChildren().addAll(jug2,t2,scorej2);
+        nseguidors[1] = new Text (ample-42, 35, "10");
+        nseguidors[1].setFont(Font.font("Arial Black",15));
+        midRow.getChildren().addAll(jug2,t2,scorej2,nseguidors[1]);
 
         if(nJugadors>2){
             Image playerImg3 = getImage("src\\images\\p3.png");
@@ -230,7 +236,10 @@ public class Gui{
             t3.setFill(Color.WHITE);
             scorej3.setFont(Font.font("Arial Black",10));
             scorej3.setFill(Color.WHITE);
-            midRow.getChildren().addAll(jug3,t3,scorej3);
+            nseguidors[2] = new Text (ample-42, ample-25, "10");
+            nseguidors[2].setFont(Font.font("Arial Black",15));
+            nseguidors[2].setFill(Color.WHITE);
+            midRow.getChildren().addAll(jug3,t3,scorej3,nseguidors[2]);
 
             if(nJugadors>3){
                 Image playerImg4 = getImage("src\\images\\p4.png");
@@ -244,7 +253,9 @@ public class Gui{
                 t4.setFill(Color.WHITE);
                 scorej4.setFont(Font.font("Arial Black",10));
                 scorej4.setFill(Color.WHITE);
-                midRow.getChildren().addAll(jug4,t4,scorej4);
+                nseguidors[3] = new Text (18, ample-25, "10");
+                nseguidors[3].setFont(Font.font("Arial Black",15));
+                midRow.getChildren().addAll(jug4,t4,scorej4,nseguidors[3]);
             }
         }
     }
@@ -300,6 +311,23 @@ public class Gui{
         midRow.getChildren().addAll(blackView);
         midRow.getChildren().add(baralla);
         midRow.getChildren().add(opcioRotacio);
+    }
+
+    //Pre:njugador>=1 && njugador<=4, Mid i Jugador inicialitzat
+    //Post:Actualitzat el nSeguidors del jugador
+    public static void setSeguidors(int nSeguidors,int jugador) {
+        if(nSeguidors<10) {
+            if (jugador == 1 || jugador == 4)
+                nseguidors[jugador - 1].setX(21);
+            else
+                nseguidors[jugador - 1].setX(ample - 38);
+        }else{
+            if (jugador == 1 || jugador == 4)
+                nseguidors[jugador - 1].setX(18);
+            else
+                nseguidors[jugador - 1].setX(ample - 42);
+        }
+        nseguidors[jugador-1].setText(""+nSeguidors);
     }
 
     //Pre:--
@@ -405,7 +433,22 @@ public class Gui{
         configuraImgSeguidor(seguidorS,pos[x]+15,pos[y]+30, 'S');
         configuraImgSeguidor(seguidorO,pos[x],pos[y]+15, 'O');
 
-        midRow.getChildren().addAll(seguidorC,seguidorN,seguidorE,seguidorS,seguidorO);
+        Image crossImg = getImage("src\\images\\cross.png");
+        ImageView cross=new ImageView(crossImg);
+        cross.setLayoutX(pos[x]+30);cross.setLayoutY(pos[y]+2);
+        cross.setFitHeight(8);cross.setFitWidth(8);
+        cross.setOnMouseClicked(new EventHandler<MouseEvent>()
+        {
+            @Override
+            public void handle(MouseEvent t) {
+                int x= (int) ((t.getSceneX()-81)/40);
+                int y= (int) ((t.getSceneY()-110)/40);
+                treuSeguidors();
+                Joc.apretatPerPosarSeguidor(x, y, 'X');
+            }
+        });
+
+        midRow.getChildren().addAll(seguidorC,seguidorN,seguidorE,seguidorS,seguidorO,cross);
     }
 
     //Pre:iv esta inicialitzat
@@ -429,7 +472,7 @@ public class Gui{
     //Pre:Haver cridat correctament configuraImgSeguidor() avans
     //Post:Treu la seleccio de posicionament dels seguidors
     private static void treuSeguidors() {
-        for(int i=0;i<5;i++)
+        for(int i=0;i<6;i++)
             treuUltimElement();
     }
 
