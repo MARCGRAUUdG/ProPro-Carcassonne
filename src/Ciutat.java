@@ -14,7 +14,7 @@ public class Ciutat extends Estructura {
             if(getConjunt().get(i).es_fi_o_inici_de_ciutat()){
                 obert++;
             }
-            else if(getConjunt().get(i).te_tres_bandes_de_ciutat()){
+            else if(getConjunt().get(i).bandes_de_ciutat()==3){
                 obert += 3;
             }
             else{
@@ -22,7 +22,7 @@ public class Ciutat extends Estructura {
             }
 
             if(i>0){
-                obert -=2;
+                obert -= 2;
             }
         }
         return obert==0;

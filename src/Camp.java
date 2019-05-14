@@ -13,14 +13,14 @@ public class Camp extends Possessio {
         int puntuacio = 0;
 
         for(int i=0; i<getConjunt().size(); i++){
-            if(getConjunt().get(i).te_ciutat()){
+            if(getConjunt().get(i).bandes_de_ciutat()>0){
                 boolean existeix = false;
                 int compt = 0;
                 while(!existeix && compt <aux.size()){
                     existeix=conteFitxa(aux.get(compt),getConjunt().get(i));
                     compt++;
                 }
-                if(existeix) {
+                if(existeix && aux.get(compt-1).tancat()) {
                     puntuacio += 3;
                     aux.remove(compt - 1);
                 }

@@ -22,11 +22,12 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Gui extends Application{
-    //APP
+public class Gui{
+   //APP
     private static int altura=700;
     private static int ample=550;
     private VBox root;

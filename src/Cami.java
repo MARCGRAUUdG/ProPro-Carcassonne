@@ -8,7 +8,7 @@ public class Cami extends Estructura {
     //Post:retorna cert si la possessio esta completa altrament false
     public boolean tancat(){
         int ultim = getConjunt().size()-1;
-        if (getConjunt().get(0).es_fi_o_inici_de_cami() && getConjunt().get(ultim).es_fi_o_inici_de_cami()) {
+        if (getConjunt().size()>1 && getConjunt().get(0).es_fi_o_inici_de_cami() && getConjunt().get(ultim).es_fi_o_inici_de_cami()) {
 
             return true;
         }
@@ -29,7 +29,7 @@ public class Cami extends Estructura {
     }
 
     //Pre:---
-    //Post:retorna punts total de lcami
+    //Post:retorna punts total del cami
     public int punts(){
         return getConjunt().size();
     }

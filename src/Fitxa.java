@@ -17,12 +17,11 @@ public class Fitxa extends Excepcio{
     //Post: guarda a regions el format de la fitxa
     public Fitxa(String lletres)throws Excepcio{
         if(lletres.length()==5) {
-            regions = new ArrayList<Regio>(5);
+            regions = new ArrayList<Regio>();
             for (int i = 0; i < lletres.length(); i++) {
                 char lletra = lletres.charAt(i);
                 Regio nou = new Regio(lletra);
                 regions.add(nou);
-                pos = null;
             }
             pos = new Posicio();
 
@@ -203,7 +202,7 @@ public class Fitxa extends Excepcio{
             pos.setRotacio(rotar);
         }
         else{
-            Gui.print("Rotacio de fitxa incorrecte");
+            //Gui.print("Rotacio de fitxa incorrecte");
         }
     }
 
@@ -250,7 +249,7 @@ public class Fitxa extends Excepcio{
                 encaixa= est_igual_oest(f);
             }
             else{
-                Gui.print("Posició de fitxa incorrecte");
+                //Gui.print("Posició de fitxa incorrecte");
             }
         }else {
             encaixa = true;
@@ -302,30 +301,17 @@ public class Fitxa extends Excepcio{
     }
 
     //Pre:---
-    //Post:retorna cert si té una regio que és fitxa altrament fals
-    public boolean te_ciutat(){
-        if(regio_n() =='V' || regio_n()=='E' || regio_e() =='V' || regio_e()=='E' ||
-                regio_s() =='V' || regio_s()=='E' || regio_o() =='V' || regio_o()=='E'){
-            return true;
-        }
-        return false;
-    }
-
-    //Pre:---
-    //Post: retorna cert si la fitxa té 3 bandes que són ciutat
-    public boolean te_tres_bandes_de_ciutat() {
-        if (regio_c() == 'V') {
-            int compt = 0;
-            for (int i = 1; i < regions.size(); i++) {
-                if (regions.get(i).lletra() == 'V' || regions.get(i).lletra() == 'E') {
-                    compt++;
-                }
+    //Post: retorna quantes el nuemro de bandes que son ciutat
+    public Integer bandes_de_ciutat(){
+        int num = 0;
+        for(int i = 1; i<regions.size(); i++){
+            if(regions.get(i).lletra()=='E' || regions.get(i).lletra()=='V'){
+                num +=1;
             }
-            return compt == 3;
-
         }
-        return false;
+        return num;
     }
+
     //Pre:---
     //Post:retorna el format de la fitxa si existeix amb rotacio 0
     public String formatNormal(){

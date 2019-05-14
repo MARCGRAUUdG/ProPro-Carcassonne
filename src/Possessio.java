@@ -1,5 +1,7 @@
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class Possessio {
@@ -9,24 +11,24 @@ public abstract class Possessio {
     //Pre:---
     //Post: guardar fitxa i propietari
     public Possessio(int propietari, Fitxa inici){
-        this.propietari = new ArrayList<Integer>();
-        this.propietari.add(propietari,1);
+        this.propietari = new ArrayList<Integer>(Arrays.asList(0,0,0,0));
+        this.propietari.set(propietari-1,1);
         conjunt = new ArrayList<>();
         conjunt.add(inici);
     }
 
     //Pre:---
     //Post:afegir les fitxes i els propietaris a la possessio actual
-    public void unir_possessions(List<Integer> propietari, List<Fitxa> conjunt){
+    public void unir_possessions(Possessio aux){
 
-        for(int i=0; i<propietari.size(); i++){
-            if(propietari.get(i)!=null) {
-                afegir_propietari(propietari.get(i));
+        for(int i=0; i<aux.tots_els_seguidors().size(); i++){
+            if(aux.tots_els_seguidors().get(i)>0) {
+                afegir_propietari(aux.tots_els_seguidors().get(i));
             }
         }
 
-        for(int i=conjunt.size()-1; i>=0; i--){
-            afegir_fitxa(conjunt.get(i));
+        for(int i=aux.getConjunt().size()-1; i>=0; i--){
+            afegir_fitxa(aux.getConjunt().get(i));
         }
     }
 
@@ -39,10 +41,7 @@ public abstract class Possessio {
     //Pre:---
     //Post:guarda el nou propietari
     public void afegir_propietari(int j){
-        if(propietari.get(j)!=null){
-            propietari.set(j,propietari.get(j)+1);
-        }
-        propietari.add(j,1);
+        propietari.set(j,propietari.get(j)+1);
     }
 
     //Pre:---
@@ -59,16 +58,30 @@ public abstract class Possessio {
     }
 
     //Pre:---
-    //Post:retorna el propietari de la possessio
-    public Integer getPropietari(){
-        int major =0;
+    //Post:retorna el/s propietari/s de la possessio
+    public List<Integer> getPropietari(){
+        List<Integer> pro = new ArrayList<>();
+        int major = 0;
 
         for (int i =0; i<propietari.size(); i++){
             if(propietari.get(i)>major){
                 major = propietari.get(i);
             }
         }
-        return major;
+
+        for (int i=0; i<propietari.size(); i++){
+            if(propietari.get(i)==major){
+                pro.add(i+1);
+            }
+        }
+
+        return pro;
+    }
+
+    //Pre:---
+    //Post:retorna el/s seguidor/s que esta/n a la possessio
+    public List<Integer> tots_els_seguidors(){
+        return propietari;
     }
 
     //Pre:---
