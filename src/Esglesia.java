@@ -13,7 +13,7 @@ public class Esglesia extends Estructura {
     }
 
     //Pre:---
-    //Post:retorna el propietari de l'esglesia
+    //Post:retorna el propietari de l'esglesia si existeix altrament -1
     public Integer propietari(){
         int i =0;
         boolean trobat = false;
@@ -27,7 +27,12 @@ public class Esglesia extends Estructura {
             }
         }
 
-        return getConjunt().get(i).regio_c_seguidor();
+        if(!trobat){
+            return -1;
+        }
+        else {
+            return getConjunt().get(i).regio_c_seguidor();
+        }
     }
 
     //Pre:---

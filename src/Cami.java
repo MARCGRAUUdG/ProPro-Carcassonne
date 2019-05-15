@@ -34,7 +34,7 @@ public class Cami extends Estructura {
     }
 
     //Pre:---
-    //Post:retorna el/s propietari/s del cami
+    //Post:retorna el/s propietari/s del cami altrament llista buida
     public List<Integer> propietari(){
         List<Integer> pro = new ArrayList<Integer>(Arrays.asList(0,0,0,0));
 
@@ -53,21 +53,8 @@ public class Cami extends Estructura {
             }
         }
 
-        int major = 0;
-        for (int i=0; i<pro.size(); i++){
-            if(pro.get(i) > major){
-                major = pro.get(i);
-            }
-        }
 
-        List<Integer> sol = new ArrayList<>();
-        for (int i =0; i<pro.size(); i++){
-            if(pro.get(i) == major){
-                sol.add(i+1);
-            }
-        }
-
-        return sol;
+        return llistaPropietari(pro);
     }
 
     //Pre:---
