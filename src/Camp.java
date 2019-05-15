@@ -46,17 +46,20 @@ public class Camp extends Possessio {
         List<Integer> pro = new ArrayList<Integer>(Arrays.asList(0,0,0,0));
 
         for (int i =0; i<getConjunt().size(); i++){
+            if(getConjunt().get(i).regio_c()=='F' && getConjunt().get(i).regio_c_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_c_seguidor()-1,pro.get(getConjunt().get(i).regio_c_seguidor()-1)+1);
+            }
             if(getConjunt().get(i).regio_n()=='F' && getConjunt().get(i).regio_n_seguidor()>0){
-                pro.set(getConjunt().get(i).regio_n_seguidor(),pro.get(getConjunt().get(i).regio_n_seguidor())+1);
+                pro.set(getConjunt().get(i).regio_n_seguidor()-1,pro.get(getConjunt().get(i).regio_n_seguidor()-1)+1);
             }
             if(getConjunt().get(i).regio_e()=='F' && getConjunt().get(i).regio_e_seguidor()>0){
-                pro.set(getConjunt().get(i).regio_e_seguidor(),pro.get(getConjunt().get(i).regio_e_seguidor())+1);
+                pro.set(getConjunt().get(i).regio_e_seguidor()-1,pro.get(getConjunt().get(i).regio_e_seguidor()-1)+1);
             }
             if(getConjunt().get(i).regio_s()=='F' && getConjunt().get(i).regio_s_seguidor()>0){
-                pro.set(getConjunt().get(i).regio_s_seguidor(),pro.get(getConjunt().get(i).regio_s_seguidor())+1);
+                pro.set(getConjunt().get(i).regio_s_seguidor()-1,pro.get(getConjunt().get(i).regio_s_seguidor()-1)+1);
             }
             if(getConjunt().get(i).regio_o()=='F' && getConjunt().get(i).regio_o_seguidor()>0){
-                pro.set(getConjunt().get(i).regio_o_seguidor(),pro.get(getConjunt().get(i).regio_o_seguidor())+1);
+                pro.set(getConjunt().get(i).regio_o_seguidor()-1,pro.get(getConjunt().get(i).regio_o_seguidor()-1)+1);
             }
         }
 
