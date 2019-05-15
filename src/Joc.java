@@ -37,10 +37,6 @@ public class Joc {
         Posicio pos =new Posicio(5,5,0);
         _fInicial.setPosicio(pos);
         _tauler.posarFitxaTauler(_fInicial);
-
-        //_tauler.getFitxa(5,5);
-
-
         Gui.posaFitxa(_fInicial);
     }
 
@@ -75,5 +71,11 @@ public class Joc {
         Gui.print("Jugador"+jugador+" +1 Seguidor");
         _jugadors.get(jugador-1).incrementaHumanets();
         Gui.setSeguidors(_jugadors.get(jugador-1).getHumanets(),jugador);
+    }
+
+    public static void AfegeixPuntuacioAJugador(int jugador, int puntuacio) {
+        _jugadors.get(jugador-1).incrementaPuntuacio(puntuacio);
+        Gui.print("Puntuacio: Jugador"+jugador+" +"+puntuacio);
+        Gui.setScore(jugador,_jugadors.get(jugador-1).getPuntuacio());
     }
 }

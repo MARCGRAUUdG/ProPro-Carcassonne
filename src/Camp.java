@@ -32,6 +32,14 @@ public class Camp extends Possessio {
         return puntuacio;
     }
 
+    public boolean tancat() {
+        return false;
+    }
+
+    public int punts() {
+        return 0;
+    }
+
     //Pre:---
     //Post:retorna el/s propietari/s del camp altrament llista buida
     public List<Integer> propietari(){

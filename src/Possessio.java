@@ -1,21 +1,19 @@
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public abstract class Possessio {
     private List<Fitxa> conjunt;
+
+    public abstract boolean tancat();
+    public abstract List<Integer> propietari();
+    public abstract int punts();
 
     //Pre:---
     //Post: guardar fitxa i propietari
     public Possessio(Fitxa inici){
         conjunt = new ArrayList<>();
         conjunt.add(inici);
-    }
-
-    public boolean tancat(){
-        return true;
     }
 
     //Pre:---
@@ -73,4 +71,5 @@ public abstract class Possessio {
     public String toString() {
         return getConjunt().toString();
     }
+
 }

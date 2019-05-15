@@ -118,40 +118,38 @@ public class Tauler
         posaFitxaAPossessioSiNoEstaPosat(f,_posCami, 'C');
         posaFitxaAPossessioSiNoEstaPosat(f,_posCiutat, 'V');
 
-        comprovaPossessionsTancades();
+        comprovaPossessionsTancades(_posCiutat);
+        comprovaPossessionsTancades(_posCami);
     }
 
-    private void comprovaPossessionsTancades() {
-        for(int i=0;i<_posCiutat.size();i++) {
+    private void comprovaPossessionsTancades(ArrayList<Possessio> p) {
+        for(int i=0;i<p.size();i++) {
             //Gui.print(_posCiutat.get(i).toString());
             //ui.print("Esta tancat: "+_posCiutat.get(i).tancat());
-            if(_posCiutat.get(i).tancat()) {
-                List<Fitxa> fitxes=_posCiutat.get(i).getConjunt();
+            if(p.get(i).tancat()) {
+                List<Fitxa> fitxes=p.get(i).getConjunt();
                 Gui.treuSeguidorsDe(fitxes);
                 for(int y=0;y<fitxes.size();y++){
                     int jugador=fitxes.get(y).jugadorTeLaSeguidor();
                     if(jugador!=-1)
                         Joc.AfegeixSeguidorAJugador(jugador);
                 }
-                //TODO Calcular Punts
-                _posCiutat.remove(i);
-            }
-        }
-        for(int i=0;i<_posCami.size();i++) {
-            //Gui.print(_posCami.get(i).toString());
-            //ui.print("Esta tancat: "+_posCami.get(i).tancat());
-            if(_posCami.get(i).tancat()) {
-                Gui.treuSeguidorsDe(_posCami.get(i).getConjunt());
-                for(int y=0;y<_posCami.get(i).getConjunt().size();y++){
-                    int jugador=_posCami.get(i).getConjunt().get(y).jugadorTeLaSeguidor();
-                    if(jugador!=-1)
-                        Joc.AfegeixSeguidorAJugador(jugador);
+                List<Integer> JugadorGuanyador = p.get(i).propietari();
+                if(JugadorGuanyador.size()>0) {
+                    int puntsTotals = p.get(i).punts();
+                    puntsTotals = puntsTotals / JugadorGuanyador.size();
+                    for (int x = 0; x < JugadorGuanyador.size(); x++) {
+                        Joc.AfegeixPuntuacioAJugador(JugadorGuanyador.get(x), puntsTotals);
+                    }
+                }else{
+                    Gui.print("Ningu dominava la possessio?");//TODO Treure
                 }
-                //TODO Calcular Punts
-                _posCami.remove(i);
+                p.remove(i);
             }
         }
     }
+
+
 
     private void posaFitxaAPossessioSiNoEstaPosat(Fitxa f, ArrayList<Possessio> p, char lletra) {
         if(!estaEnLaLlista(f,p) && (f.regio_n()==lletra || f.regio_s()==lletra || f.regio_e()==lletra || f.regio_o()==lletra)){//Posa el cami

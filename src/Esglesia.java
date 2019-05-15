@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Esglesia extends Estructura {
@@ -14,7 +15,7 @@ public class Esglesia extends Estructura {
 
     //Pre:---
     //Post:retorna el propietari de l'esglesia si existeix altrament -1
-    public Integer propietari(){
+    /*public Integer propietari(){
         int i =0;
         boolean trobat = false;
 
@@ -33,6 +34,9 @@ public class Esglesia extends Estructura {
         else {
             return getConjunt().get(i).regio_c_seguidor();
         }
+    }*/
+    public List<Integer> propietari(){
+        return new ArrayList<>();
     }
 
     //Pre:---
