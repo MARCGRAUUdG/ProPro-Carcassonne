@@ -83,12 +83,52 @@ public class Posicio implements Comparable<Posicio>{
         return (_x==((Posicio)o)._x && _y==((Posicio)o)._y && _rotacio==((Posicio)o)._rotacio);
     }
 
-    public ArrayList<Integer> simularPunts(Fitxa fitxaActual) {
+    public ArrayList<Integer> simularPunts(Fitxa fitxaActual, Baralla baralla) {
         ArrayList<Integer> array = new ArrayList<>();
-        array.add(15);
-        array.add(10);
-        array.add(8);
-        array.add(2);
+        /** Obtenir les 4 regions
+         *  Mirar si coincideixen
+         *  Si coincideix mirar si és complerta la possessio
+         *  Sumar punts o no.
+         */
+        Fitxa fitxaNord, fitxaSud, fitxaEst, fitxaOest;
+        char regioNord = 'X', regioSud = 'X', regioEst = 'X', regioOest = 'X';
+        int puntsRotacio;
+        ArrayList<Integer> punts = new ArrayList<Integer>();
+
+        fitxaNord = baralla.fitxaDesitjada(_x+1, _y);
+        fitxaSud = baralla.fitxaDesitjada(_x-1, _y);
+        fitxaEst = baralla.fitxaDesitjada(_x, _y+1);
+        fitxaOest = baralla.fitxaDesitjada(_x, _y-1);
+
+        if (fitxaNord != null) regioNord = fitxaNord.regio_s();
+        if (fitxaSud != null) regioSud = fitxaSud.regio_n();
+        if (fitxaEst != null) regioEst = fitxaEst.regio_o();
+        if (fitxaOest != null) regioOest = fitxaOest.regio_e();
+
+
+        for (int i = 0; i < 4; i++) //Recorre les 4 rotacions
+        {
+            ArrayList<Regio> regionsActual = fitxaActual.getRegions(); // N, E, S, O
+
+            if (regioNord != 'X' && regioNord == regionsActual.get(1).lletra())
+            {
+                //Mirar si possesió complerta
+            }
+            if (regioEst != 'X' && regioEst == regionsActual.get(2).lletra())
+            {
+                //Mirar si possesió complerta
+            }
+            if (regioSud != 'X' && regioSud == regionsActual.get(3).lletra())
+            {
+                //Mirar si possesió complerta
+            }
+            if (regioOest != 'X' && regioOest == regionsActual.get(4).lletra())
+            {
+                //Mirar si possesió complerta
+            }
+            fitxaActual.rotar(90);
+        }
+
 
         return array;
     }

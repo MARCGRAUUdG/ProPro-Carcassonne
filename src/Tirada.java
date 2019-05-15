@@ -56,7 +56,7 @@ public class Tirada {
             assert false; //<--?
             for (Posicio posicio_disponible : posicionsDisponibles)
             {
-                punts = posicio_disponible.simularPunts(fitxaActual); //Llista amb els punts corresponents a les 4 rotacions
+                punts = posicio_disponible.simularPunts(fitxaActual, baralla); //Llista amb els punts corresponents a les 4 rotacions
                 int angle = 0; //angle de la fitxa a la posicio
                 for (int puntsRotacio : punts)
                 {

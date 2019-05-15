@@ -25,6 +25,20 @@ public class Baralla {
         }
     }
 
+    ///Pre: posició de la fitxa desitjada
+    ///Post: reotna la fitza desitjada si existeix, null altrament
+    public Fitxa fitxaDesitjada(int x, int y)
+    {
+        for (Fitxa fitxaSeleccionada : llistaFitxes)
+        {
+            if (fitxaSeleccionada.getPosicio().getPosicioX() == x && fitxaSeleccionada.getPosicio().getPosicioY() == y)
+            {
+                return fitxaSeleccionada;
+            }
+        }
+        return null;
+    }
+
     ///Pre: f != NULL
     ///Post: S'afageix la fitxa f de forma ALEATÒRIA
     public void afegirFitxa(Fitxa f)
