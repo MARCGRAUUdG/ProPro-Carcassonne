@@ -25,6 +25,7 @@ import java.io.FileNotFoundException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class Gui extends Application{
    //APP
@@ -188,6 +189,12 @@ public class Gui extends Application{
         log.setResizable(false);
         log.setSortable(false);
         log.setMinWidth(ample-15);
+    }
+
+    public static void treuSeguidorsDe(List<Fitxa> conjunt) {
+        for(int i=0;i<conjunt.size();i++){
+            posaFitxa(conjunt.get(i));
+        }
     }
 
     //Pre:Mid inicialitzat
@@ -417,7 +424,7 @@ public class Gui extends Application{
 
     //Pre:Mid i tauler inicialitzat, una fitxa posada en la posicio x,y
     //Post:Posa les opcions per colocar seguidor en la posicio x,y
-    public static void posaSeleccioDeSeguidors(int x, int y) {
+    public static void posaSeleccioDeSeguidors(int x, int y, char regCenter) {
         print("Sel·lecciona col·locació del seguidor");
         Image seguidorImg = getImage("src\\images\\pb.png");
         ImageView seguidorC=new ImageView(seguidorImg);
@@ -426,34 +433,42 @@ public class Gui extends Application{
         ImageView seguidorS=new ImageView(seguidorImg);
         ImageView seguidorO=new ImageView(seguidorImg);
 
-        configuraImgSeguidor(seguidorC,pos[x]+15,pos[y]+15,'C');
-        configuraImgSeguidor(seguidorN,pos[x]+15,pos[y],'N');
-        configuraImgSeguidor(seguidorE,pos[x]+30,pos[y]+15,'E');
+        int possibilitats=6;
+        if(regCenter!='X')
+            configuraImgSeguidor(seguidorC, pos[x] + 15, pos[y] + 15, 'C', possibilitats);
+        else
+            possibilitats=5;
 
-        configuraImgSeguidor(seguidorS,pos[x]+15,pos[y]+30, 'S');
-        configuraImgSeguidor(seguidorO,pos[x],pos[y]+15, 'O');
+        configuraImgSeguidor(seguidorN,pos[x]+15,pos[y],'N',possibilitats);
+        configuraImgSeguidor(seguidorE,pos[x]+30,pos[y]+15,'E',possibilitats);
+
+        configuraImgSeguidor(seguidorS,pos[x]+15,pos[y]+30, 'S',possibilitats);
+        configuraImgSeguidor(seguidorO,pos[x],pos[y]+15, 'O',possibilitats);
 
         Image crossImg = getImage("src\\images\\cross.png");
         ImageView cross=new ImageView(crossImg);
         cross.setLayoutX(pos[x]+30);cross.setLayoutY(pos[y]+2);
         cross.setFitHeight(8);cross.setFitWidth(8);
+        int finalPossibilitats = possibilitats;
         cross.setOnMouseClicked(new EventHandler<MouseEvent>()
         {
             @Override
             public void handle(MouseEvent t) {
                 int x= (int) ((t.getSceneX()-81)/40);
                 int y= (int) ((t.getSceneY()-110)/40);
-                treuSeguidors();
+                treuSeguidors(finalPossibilitats);
                 Joc.apretatPerPosarSeguidor(x, y, 'X');
             }
         });
-
-        midRow.getChildren().addAll(seguidorC,seguidorN,seguidorE,seguidorS,seguidorO,cross);
+        midRow.getChildren().addAll(seguidorN,seguidorE,seguidorS,seguidorO,cross);
+        if(regCenter!='X') {
+            midRow.getChildren().add(seguidorC);
+        }
     }
 
     //Pre:iv esta inicialitzat
     //Post:configura tamany i direccio dir del seguidor en posicio x i y
-    public static void configuraImgSeguidor(ImageView iv, int x, int y, char dir){
+    public static void configuraImgSeguidor(ImageView iv, int x, int y, char dir, int possibilitats){
         iv.setLayoutX(x);iv.setLayoutY(y);
         iv.setFitHeight(10);
         iv.setFitWidth(10);
@@ -463,7 +478,7 @@ public class Gui extends Application{
             public void handle(MouseEvent t) {
                 int x= (int) ((t.getSceneX()-81)/40);
                 int y= (int) ((t.getSceneY()-110)/40);
-                treuSeguidors();
+                treuSeguidors(possibilitats);
                 Joc.apretatPerPosarSeguidor(x, y, dir);
             }
         });
@@ -471,8 +486,8 @@ public class Gui extends Application{
 
     //Pre:Haver cridat correctament configuraImgSeguidor() avans
     //Post:Treu la seleccio de posicionament dels seguidors
-    private static void treuSeguidors() {
-        for(int i=0;i<6;i++)
+    private static void treuSeguidors(int possibilitats) {
+        for(int i=0;i<possibilitats;i++)
             treuUltimElement();
     }
 

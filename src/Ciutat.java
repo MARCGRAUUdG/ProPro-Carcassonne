@@ -1,7 +1,7 @@
 public class Ciutat extends Estructura {
 
-    public Ciutat(int propietari, Fitxa inici) {
-        super(propietari, inici);
+    public Ciutat(Fitxa inici) {
+        super(inici);
     }
 
     //Pre:---

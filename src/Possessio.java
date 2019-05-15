@@ -10,11 +10,14 @@ public abstract class Possessio {
 
     //Pre:---
     //Post: guardar fitxa i propietari
-    public Possessio(int propietari, Fitxa inici){
+    public Possessio(Fitxa inici){
         this.propietari = new ArrayList<Integer>(Arrays.asList(0,0,0,0));
-        this.propietari.set(propietari-1,1);
         conjunt = new ArrayList<>();
         conjunt.add(inici);
+    }
+
+    public boolean tancat(){
+        return true;
     }
 
     //Pre:---
@@ -30,6 +33,17 @@ public abstract class Possessio {
         for(int i=aux.getConjunt().size()-1; i>=0; i--){
             afegir_fitxa(aux.getConjunt().get(i));
         }
+    }
+
+    public boolean pertanyLaFitxa(Fitxa f){
+        int i=0;
+        boolean trobat=false;
+        while(!trobat && i<conjunt.size()){
+            if(conjunt.get(i).getPosicio()==f.getPosicio())
+                trobat=true;
+            else i++;
+        }
+        return trobat;
     }
 
     //Pre:---
@@ -90,4 +104,8 @@ public abstract class Possessio {
         return conjunt;
     }
 
+    @Override
+    public String toString() {
+        return getConjunt().toString();
+    }
 }

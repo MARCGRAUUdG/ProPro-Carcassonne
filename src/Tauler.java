@@ -4,6 +4,10 @@ import java.util.*;
 public class Tauler
 {
     private static final Fitxa[][] _tauler = new Fitxa[10][10];
+    private static ArrayList<Possessio> _posCami= new ArrayList<>();
+    private static ArrayList<Camp> _posCamp= new ArrayList<>();
+    private static ArrayList<Esglesia> _posEsglesia= new ArrayList<>();
+    private static ArrayList<Possessio> _posCiutat= new ArrayList<>();
 
     //Pre:Hi ha  almenys una fitxa al tauler en la posicio inicial (5,5)
     //Post:Retorna llista de les posicions on es pot ficar la fitxa f
@@ -92,6 +96,117 @@ public class Tauler
     public void posarFitxaTauler(Fitxa f) {
         Posicio p=f.getPosicio();
         _tauler[p.getPosicioX()][p.getPosicioY()]=f;
+
+        assignarPossessio(f);
+    }
+
+    private void assignarPossessio(Fitxa f) {
+        Posicio p=f.getPosicio();
+        if(getFitxa(p.getPosicioX()-1,p.getPosicioY())!=null){
+            afegirPossessio(getFitxa(p.getPosicioX()-1,p.getPosicioY()),f,f.regio_o());
+        }
+        if(getFitxa(p.getPosicioX()+1,p.getPosicioY())!=null){
+            afegirPossessio(getFitxa(p.getPosicioX()+1,p.getPosicioY()),f,f.regio_e());
+        }
+        if(getFitxa(p.getPosicioX(),p.getPosicioY()-1)!=null){
+            afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()-1),f,f.regio_n());
+        }
+        if(getFitxa(p.getPosicioX(),p.getPosicioY()+1)!=null){
+            afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()+1),f,f.regio_s());
+        }
+
+        posaFitxaAPossessioSiNoEstaPosat(f,_posCami, 'C');
+        posaFitxaAPossessioSiNoEstaPosat(f,_posCiutat, 'V');
+
+        comprovaPossessionsTancades();
+    }
+
+    private void comprovaPossessionsTancades() {
+        for(int i=0;i<_posCiutat.size();i++) {
+            //Gui.print(_posCiutat.get(i).toString());
+            //ui.print("Esta tancat: "+_posCiutat.get(i).tancat());
+            if(_posCiutat.get(i).tancat()) {
+                List<Fitxa> fitxes=_posCiutat.get(i).getConjunt();
+                Gui.treuSeguidorsDe(fitxes);
+                for(int y=0;y<fitxes.size();y++){
+                    int jugador=fitxes.get(y).jugadorTeLaSeguidor();
+                    if(jugador!=-1)
+                        Joc.AfegeixSeguidorAJugador(jugador);
+                }
+                //TODO Calcular Punts
+                _posCiutat.remove(i);
+            }
+        }
+        for(int i=0;i<_posCami.size();i++) {
+            //Gui.print(_posCami.get(i).toString());
+            //ui.print("Esta tancat: "+_posCami.get(i).tancat());
+            if(_posCami.get(i).tancat()) {
+                Gui.treuSeguidorsDe(_posCami.get(i).getConjunt());
+                for(int y=0;y<_posCami.get(i).getConjunt().size();y++){
+                    int jugador=_posCami.get(i).getConjunt().get(y).jugadorTeLaSeguidor();
+                    if(jugador!=-1)
+                        Joc.AfegeixSeguidorAJugador(jugador);
+                }
+                //TODO Calcular Punts
+                _posCami.remove(i);
+            }
+        }
+    }
+
+    private void posaFitxaAPossessioSiNoEstaPosat(Fitxa f, ArrayList<Possessio> p, char lletra) {
+        if(!estaEnLaLlista(f,p) && (f.regio_n()==lletra || f.regio_s()==lletra || f.regio_e()==lletra || f.regio_o()==lletra)){//Posa el cami
+            if(lletra=='C')
+                p.add(new Cami(f));
+            else if(lletra=='V')
+                p.add(new Ciutat(f));
+        }
+    }
+
+    private void afegirPossessio(Fitxa fAnterior, Fitxa fNova, char reg) {
+        if (reg == 'C') {
+            //Posa la fitxa en la possessio de la fitxa del costat
+            int pin=getPossessioDeFitxa(fAnterior,_posCami);
+            if(pin!=-1)
+                _posCami.get(pin).afegir_fitxa(fNova);
+        }else if(reg=='F'){
+
+        }else if(reg=='V'){
+            int pin=getPossessioDeFitxa(fAnterior,_posCiutat);
+            if(pin!=-1)
+                _posCiutat.get(pin).afegir_fitxa(fNova);
+
+        }else if(reg=='M'){
+
+        }else{//TODO Falta E
+
+        }
+    }
+
+    private int getPossessioDeFitxa(Fitxa f, ArrayList<Possessio> possessio) {
+        boolean trobat=false;
+        int i=0;
+        while(!trobat && i<possessio.size()){
+            if(possessio.get(i).pertanyLaFitxa(f))
+                trobat=true;
+            else
+                i++;
+        }
+        if(!trobat)
+            return -1;
+        else
+            return i;
+    }
+
+    private boolean estaEnLaLlista(Fitxa f, ArrayList<Possessio> possessio) {
+        boolean trobat=false;
+        int i=0;
+        while(i<possessio.size()&& !trobat){
+            if(possessio.get(i).pertanyLaFitxa(f))
+                trobat=true;
+            else
+                i++;
+        }
+        return trobat;
     }
 
     public Fitxa getFitxa(int x, int y){

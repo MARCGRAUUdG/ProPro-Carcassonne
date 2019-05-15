@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Camp extends Possessio {
-    public Camp(int propietari, Fitxa inici) {
-        super(propietari, inici);
+    public Camp(Fitxa inici) {
+        super(inici);
     }
 
     //Pre:---

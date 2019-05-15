@@ -1,11 +1,12 @@
 public class Cami extends Estructura {
 
-    public Cami(int propietari, Fitxa inici) {
-        super(propietari, inici);
+    public Cami(Fitxa inici) {
+        super(inici);
     }
 
     //Pre:---
     //Post:retorna cert si la possessio esta completa altrament false
+    @Override
     public boolean tancat(){
         int ultim = getConjunt().size()-1;
         if (getConjunt().size()>1 && getConjunt().get(0).es_fi_o_inici_de_cami() && getConjunt().get(ultim).es_fi_o_inici_de_cami()) {

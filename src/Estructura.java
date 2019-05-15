@@ -2,8 +2,8 @@
 
 public abstract class Estructura extends Possessio {
 
-    public Estructura(int propietari, Fitxa inici) {
-        super(propietari, inici);
+    public Estructura(Fitxa inici) {
+        super(inici);
     }
 
     //Pre:---
