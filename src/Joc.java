@@ -37,6 +37,10 @@ public class Joc {
         Posicio pos =new Posicio(5,5,0);
         _fInicial.setPosicio(pos);
         _tauler.posarFitxaTauler(_fInicial);
+
+        //_tauler.getFitxa(5,5);
+
+
         Gui.posaFitxa(_fInicial);
     }
 
@@ -65,5 +69,11 @@ public class Joc {
 
     public static void apretatAngleFitxa(Posicio pos) {
         _tiradaActual.apretatAngleFitxa(pos);
+    }
+
+    public static void AfegeixSeguidorAJugador(int jugador) {
+        Gui.print("Jugador"+jugador+" +1 Seguidor");
+        _jugadors.get(jugador-1).incrementaHumanets();
+        Gui.setSeguidors(_jugadors.get(jugador-1).getHumanets(),jugador);
     }
 }

@@ -1,7 +1,7 @@
 public class Esglesia extends Estructura {
 
     public Esglesia(int propietari, Fitxa inici) {
-        super(propietari, inici);
+        super(inici);
     }
 
     //Pre:---

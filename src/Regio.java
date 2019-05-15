@@ -5,7 +5,7 @@ public class Regio extends Excepcio{
     //Descripcio: Regio d'una fitxa
 
     private char zona;
-    private int seguidor;
+    private int seguidor=-1;
 
     //Pre:---
     //Post: zona = lletra

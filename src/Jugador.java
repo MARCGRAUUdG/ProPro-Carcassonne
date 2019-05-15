@@ -54,6 +54,10 @@ public abstract class Jugador {
         nHumanets=n;
     }
 
+    public void incrementaHumanets(){
+        nHumanets++;
+    }
+
     @Override
     public String toString() {
         return "Jugador{" +
