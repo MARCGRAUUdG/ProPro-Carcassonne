@@ -134,13 +134,13 @@ public class Fitxa extends Excepcio{
 
     //Pre:---
     //Post: la fitxa actual la regio nort = a la regio sud de f
-    public boolean nort_igual_sud(Fitxa f){
+    public boolean nord_igual_sud(Fitxa f){
         return regio_n() == f.regio_s();
     }
 
     //Pre:---
     //Post: la fitxa actual la regio sud = a la regio nort de f
-    public boolean sud_igual_nort(Fitxa f){
+    public boolean sud_igual_nord(Fitxa f){
         return regio_s() == f.regio_n();
     }
 
@@ -229,14 +229,14 @@ public class Fitxa extends Excepcio{
 
         if(f!=null){
             if(direccio == 'N'){
-                encaixa= sud_igual_nort(f);
+                encaixa= sud_igual_nord(f);
             }
             else if(direccio == 'E'){
                 encaixa= oest_igual_est(f);
 
             }
             else if(direccio == 'S'){
-                encaixa= nort_igual_sud(f);
+                encaixa= nord_igual_sud(f);
 
             }
             else if(direccio == 'O'){

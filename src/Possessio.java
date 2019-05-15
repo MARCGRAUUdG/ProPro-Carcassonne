@@ -72,27 +72,6 @@ public abstract class Possessio {
     }
 
     //Pre:---
-    //Post:retorna el/s propietari/s de la possessio
-    public List<Integer> getPropietari(){
-        List<Integer> pro = new ArrayList<>();
-        int major = 0;
-
-        for (int i =0; i<propietari.size(); i++){
-            if(propietari.get(i)>major){
-                major = propietari.get(i);
-            }
-        }
-
-        for (int i=0; i<propietari.size(); i++){
-            if(propietari.get(i)==major){
-                pro.add(i+1);
-            }
-        }
-
-        return pro;
-    }
-
-    //Pre:---
     //Post:retorna el/s seguidor/s que esta/n a la possessio
     public List<Integer> tots_els_seguidors(){
         return propietari;

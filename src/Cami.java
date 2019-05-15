@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Cami extends Estructura {
 
     public Cami(Fitxa inici) {
@@ -27,6 +31,43 @@ public class Cami extends Estructura {
             getConjunt().add(getConjunt().get(0));
             getConjunt().set(0,f);
         }
+    }
+
+    //Pre:---
+    //Post:retorna el/s propietari/s del cami
+    public List<Integer> propietari(){
+        List<Integer> pro = new ArrayList<Integer>(Arrays.asList(0,0,0,0));
+
+        for (int i =0; i<getConjunt().size(); i++){
+            if(getConjunt().get(i).regio_n()=='C' && getConjunt().get(i).regio_n_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_n_seguidor(),pro.get(getConjunt().get(i).regio_n_seguidor())+1);
+            }
+            if(getConjunt().get(i).regio_e()=='C' && getConjunt().get(i).regio_e_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_e_seguidor(),pro.get(getConjunt().get(i).regio_e_seguidor())+1);
+            }
+            if(getConjunt().get(i).regio_s()=='C' && getConjunt().get(i).regio_s_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_s_seguidor(),pro.get(getConjunt().get(i).regio_s_seguidor())+1);
+            }
+            if(getConjunt().get(i).regio_o()=='C' && getConjunt().get(i).regio_o_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_o_seguidor(),pro.get(getConjunt().get(i).regio_o_seguidor())+1);
+            }
+        }
+
+        int major = 0;
+        for (int i=0; i<pro.size(); i++){
+            if(pro.get(i) > major){
+                major = pro.get(i);
+            }
+        }
+
+        List<Integer> sol = new ArrayList<>();
+        for (int i =0; i<pro.size(); i++){
+            if(pro.get(i) == major){
+                sol.add(i+1);
+            }
+        }
+
+        return sol;
     }
 
     //Pre:---

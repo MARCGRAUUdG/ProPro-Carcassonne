@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Ciutat extends Estructura {
 
     public Ciutat(Fitxa inici) {
@@ -28,6 +32,42 @@ public class Ciutat extends Estructura {
         return obert==0;
     }
 
+    //Pre:---
+    //Post:retorna el/s propietari/s de la ciutat
+    public List<Integer> propietari(){
+        List<Integer> pro = new ArrayList<Integer>(Arrays.asList(0,0,0,0));
+
+        for (int i =0; i<getConjunt().size(); i++){
+            if((getConjunt().get(i).regio_n()=='V' || getConjunt().get(i).regio_n()=='E') && getConjunt().get(i).regio_n_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_n_seguidor(),pro.get(getConjunt().get(i).regio_n_seguidor())+1);
+            }
+            if((getConjunt().get(i).regio_e()=='V' || getConjunt().get(i).regio_e()=='E') && getConjunt().get(i).regio_e_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_e_seguidor(),pro.get(getConjunt().get(i).regio_e_seguidor())+1);
+            }
+            if((getConjunt().get(i).regio_s()=='V' || getConjunt().get(i).regio_s()=='E') && getConjunt().get(i).regio_s_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_s_seguidor(),pro.get(getConjunt().get(i).regio_s_seguidor())+1);
+            }
+            if((getConjunt().get(i).regio_o()=='V' || getConjunt().get(i).regio_o()=='E') && getConjunt().get(i).regio_o_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_o_seguidor(),pro.get(getConjunt().get(i).regio_o_seguidor())+1);
+            }
+        }
+
+        int major = 0;
+        for (int i=0; i<pro.size(); i++){
+            if(pro.get(i) > major){
+                major = pro.get(i);
+            }
+        }
+
+        List<Integer> sol = new ArrayList<>();
+        for (int i =0; i<pro.size(); i++){
+            if(pro.get(i) == major){
+                sol.add(i+1);
+            }
+        }
+
+        return sol;
+    }
 
 
     //Pre:---
