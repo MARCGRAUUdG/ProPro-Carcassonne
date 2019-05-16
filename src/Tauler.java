@@ -135,7 +135,7 @@ public class Tauler
         }
         else if(f.es_fi_o_inici_de_ciutat()){
             // fitxa no te ciutats el centre nomes bandes
-            if(f.bandes_de_cami()>1){
+            if(f.regio_c()=='C'){
                 //amb cami
             }
             else if(f.bandes_de_ciutat()==2){
