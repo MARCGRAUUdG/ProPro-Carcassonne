@@ -124,7 +124,7 @@ public class Tauler
                 //sense ciutat
             }
         }
-        else if(f.es_fi_o_inici_de_cami()){
+        else if(f.es_fi_o_inici_de_cami() && f.bandes_de_cami()==1){
             //fitxa te cami units amb monestir o ciutat
 
             if(f.regio_c()=='M'){
