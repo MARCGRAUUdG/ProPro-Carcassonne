@@ -332,4 +332,14 @@ public class Fitxa extends Excepcio{
 
         return fitxa;
     }
+
+    public boolean elSeguidorEstaEnElSeuTipusDeRegio(char tipus) {
+        char regio='X';
+        if(regio_c_seguidor()!=-1)     regio=regio_c();
+        else if(regio_n_seguidor()!=-1)regio=regio_n();
+        else if(regio_e_seguidor()!=-1)regio=regio_e();
+        else if(regio_s_seguidor()!=-1)regio=regio_s();
+        else if(regio_o_seguidor()!=-1)regio=regio_o();
+        return regio==tipus;
+    }
 }

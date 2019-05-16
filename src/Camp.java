@@ -66,6 +66,10 @@ public class Camp extends Possessio {
         return llistaPropietari(pro);
     }
 
+    public char tipus(){
+        return 'F';
+    }
+
     //Pre:---
     //Post:retorna cert si la fitxa f esta a la ciutat c
     private boolean conteFitxa(Ciutat c, Fitxa f){

@@ -39,6 +39,10 @@ public class Esglesia extends Estructura {
         return new ArrayList<>();
     }
 
+    public char tipus(){
+        return 'M';
+    }
+
     //Pre:---
     //Post:retorna punts total de l'esglesia
     public int punts(){

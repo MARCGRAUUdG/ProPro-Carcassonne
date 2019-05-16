@@ -8,7 +8,7 @@ public abstract class Possessio {
     public abstract boolean tancat();
     public abstract List<Integer> propietari();
     public abstract int punts();
-
+    public abstract char tipus();
     //Pre:---
     //Post: guardar fitxa i propietari
     public Possessio(Fitxa inici){

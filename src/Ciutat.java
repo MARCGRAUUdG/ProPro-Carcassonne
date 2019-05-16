@@ -57,6 +57,9 @@ public class Ciutat extends Estructura {
         return llistaPropietari(pro);
     }
 
+    public char tipus(){
+        return 'V';
+    }
 
     //Pre:---
     //Post:retorna punts total de la ciutat

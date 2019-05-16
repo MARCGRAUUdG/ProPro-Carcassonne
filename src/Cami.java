@@ -33,6 +33,10 @@ public class Cami extends Estructura {
         }
     }
 
+    public char tipus(){
+        return 'C';
+    }
+
     //Pre:---
     //Post:retorna el/s propietari/s del cami altrament llista buida
     public List<Integer> propietari(){

@@ -175,12 +175,11 @@ public class Tauler
     }
 
     private void comprovaPossessionsTancades(ArrayList<Possessio> p) {
-        for(int i=0;i<p.size();i++) {
+        for(int i=p.size()-1;i>=0;i--) {
             //Gui.print(_posCiutat.get(i).toString());
-            //ui.print("Esta tancat: "+_posCiutat.get(i).tancat());
+            //Gui.print("Esta tancat: "+_posCiutat.get(i).tancat());
             if(p.get(i).tancat()) {
                 List<Fitxa> fitxes=p.get(i).getConjunt();
-                Gui.treuSeguidorsDe(fitxes);
                 for(int y=0;y<fitxes.size();y++){
                     int jugador=fitxes.get(y).jugadorTeLaSeguidor();
                     if(jugador!=-1)
@@ -194,8 +193,13 @@ public class Tauler
                         Joc.AfegeixPuntuacioAJugador(JugadorGuanyador.get(x), puntsTotals);
                     }
                 }else{
-                    Gui.print("Ningu dominava la possessio?");//TODO Treure
+                    Gui.print("Ningu dominava la possessio completada");
                 }
+                for (int x=(fitxes.size()-1); x>=0; x--) {//Nomes elimina els seguidors on la seva regio esta afectada
+                    if (!fitxes.get(x).elSeguidorEstaEnElSeuTipusDeRegio(p.get(i).tipus()))
+                        fitxes.remove(x);
+                }
+                Gui.treuSeguidorsDe(fitxes);
                 p.remove(i);
             }
         }
