@@ -333,4 +333,16 @@ public class Fitxa extends Excepcio{
 
         return fitxa;
     }
+
+    public boolean envoltada(Tauler tauler) {
+        return tauler.getFitxa(this.pos.getPosicioX(), this.pos.getPosicioY()) != null &&
+                tauler.getFitxa(this.pos.getPosicioX(), this.pos.getPosicioY()+1) != null &&
+                tauler.getFitxa(this.pos.getPosicioX(), this.pos.getPosicioY()-1) != null &&
+                tauler.getFitxa(this.pos.getPosicioX()+1, this.pos.getPosicioY()) != null &&
+                tauler.getFitxa(this.pos.getPosicioX()-1, this.pos.getPosicioY()) != null &&
+                tauler.getFitxa(this.pos.getPosicioX()+1, this.pos.getPosicioY()+1) != null &&
+                tauler.getFitxa(this.pos.getPosicioX()+1, this.pos.getPosicioY()-1) != null &&
+                tauler.getFitxa(this.pos.getPosicioX()-1, this.pos.getPosicioY()+1) != null &&
+                tauler.getFitxa(this.pos.getPosicioX()-1, this.pos.getPosicioY()-1) != null;
+    }
 }

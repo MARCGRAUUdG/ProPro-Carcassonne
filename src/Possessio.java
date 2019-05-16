@@ -18,6 +18,11 @@ public abstract class Possessio {
 
     public boolean tancat(){
         return true;
+    } //TODO
+
+    public boolean tancatAmbFitxaF(Fitxa fitxaNord) //TODO
+    {
+        return true;
     }
 
     //Pre:---
@@ -107,5 +112,10 @@ public abstract class Possessio {
     @Override
     public String toString() {
         return getConjunt().toString();
+    }
+
+    public int getPunts()
+    {
+        return 0;
     }
 }

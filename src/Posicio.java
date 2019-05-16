@@ -83,16 +83,12 @@ public class Posicio implements Comparable<Posicio>{
         return (_x==((Posicio)o)._x && _y==((Posicio)o)._y && _rotacio==((Posicio)o)._rotacio);
     }
 
-    public ArrayList<Integer> simularPunts(Fitxa fitxaActual, Baralla baralla) {
+    public ArrayList<Integer> simularPunts(Fitxa fitxaActual, Baralla baralla, Tauler tauler) {
         ArrayList<Integer> array = new ArrayList<>();
-        /** Obtenir les 4 regions
-         *  Mirar si coincideixen
-         *  Si coincideix mirar si és complerta la possessio
-         *  Sumar punts o no.
-         */
+
         Fitxa fitxaNord, fitxaSud, fitxaEst, fitxaOest;
         char regioNord = 'X', regioSud = 'X', regioEst = 'X', regioOest = 'X';
-        int puntsRotacio;
+        int puntsRotacio = 0;
         ArrayList<Integer> punts = new ArrayList<Integer>();
 
         fitxaNord = baralla.fitxaDesitjada(_x+1, _y);
@@ -110,26 +106,57 @@ public class Posicio implements Comparable<Posicio>{
         {
             ArrayList<Regio> regionsActual = fitxaActual.getRegions(); // N, E, S, O
 
-            if (regioNord != 'X' && regioNord == regionsActual.get(1).lletra())
+            if (fitxaActual.regio_c() == 'M')
             {
-                //Mirar si possesió complerta
+                if (fitxaActual.envoltada(tauler))
+                {
+                    puntsRotacio += 9;
+                }
             }
-            if (regioEst != 'X' && regioEst == regionsActual.get(2).lletra())
+            else
             {
-                //Mirar si possesió complerta
+                if (regioNord != 'X' && regioNord == regionsActual.get(1).lletra())
+                {
+                    puntsRotacio = getPunts(regioNord, tauler, fitxaNord);
+                }
+                if (regioEst != 'X' && regioEst == regionsActual.get(2).lletra())
+                {
+                    puntsRotacio = getPunts(regioEst, tauler, fitxaEst);
+                }
+                if (regioSud != 'X' && regioSud == regionsActual.get(3).lletra())
+                {
+                    puntsRotacio = getPunts(regioSud, tauler, fitxaSud);
+                }
+                if (regioOest != 'X' && regioOest == regionsActual.get(4).lletra())
+                {
+                    puntsRotacio = getPunts(regioOest, tauler, fitxaOest);
+                }
             }
-            if (regioSud != 'X' && regioSud == regionsActual.get(3).lletra())
-            {
-                //Mirar si possesió complerta
-            }
-            if (regioOest != 'X' && regioOest == regionsActual.get(4).lletra())
-            {
-                //Mirar si possesió complerta
-            }
+            punts.add(puntsRotacio);
             fitxaActual.rotar(90);
         }
+        return punts;
+    }
 
-
-        return array;
+    private int getPunts(char regio, Tauler tauler, Fitxa fitxa) {
+        int punts = 0;
+        Possessio actual;
+        if (regio == 'V') //Village
+        {
+            actual = tauler.get_posCiutat().get(tauler.getPossessioDeFitxa(fitxa, tauler.get_posCiutat())); //Obtenim la possessió
+            if (actual.tancatAmbFitxaF(fitxa))
+            {
+                punts += actual.getPunts();
+            }
+        }
+        else if (regio == 'C') //Cami
+        {
+            actual = tauler.get_posCami().get(tauler.getPossessioDeFitxa(fitxa, tauler.get_posCami())); //Obtenim la possessió
+            if (actual.tancatAmbFitxaF(fitxa))
+            {
+                punts += actual.getPunts();
+            }
+        }
+        return  punts;
     }
 }

@@ -182,7 +182,7 @@ public class Tauler
         }
     }
 
-    private int getPossessioDeFitxa(Fitxa f, ArrayList<Possessio> possessio) {
+    public int getPossessioDeFitxa(Fitxa f, ArrayList<Possessio> possessio) {
         boolean trobat=false;
         int i=0;
         while(!trobat && i<possessio.size()){
@@ -226,5 +226,17 @@ public class Tauler
                 }
             }
         }
+    }
+
+    public static ArrayList<Possessio> get_posCami() {
+        return _posCami;
+    }
+
+    public static ArrayList<Esglesia> get_posEsglesia() {
+        return _posEsglesia;
+    }
+
+    public static ArrayList<Possessio> get_posCiutat() {
+        return _posCiutat;
     }
 }
