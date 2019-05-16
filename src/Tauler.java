@@ -115,7 +115,7 @@ public class Tauler
             afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()+1),f,f.regio_s());
         }
 
-        if(f.es_fi_o_inici_de_cami()){
+        if(f.es_fi_o_inici_de_cami() && f.bandes_de_cami()==1){
             //fitxa te cami units amb monestir o ciutat o creuament
             if (f.regio_c()=='X'){
                 // creuament
