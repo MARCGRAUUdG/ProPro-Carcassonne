@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Camp extends Possessio {
     public Camp(Fitxa inici) {
@@ -28,6 +30,44 @@ public class Camp extends Possessio {
         }
 
         return puntuacio;
+    }
+
+    public boolean tancat() {
+        return false;
+    }
+
+    public int punts() {
+        return 0;
+    }
+
+    //Pre:---
+    //Post:retorna el/s propietari/s del camp altrament llista buida
+    public List<Integer> propietari(){
+        List<Integer> pro = new ArrayList<Integer>(Arrays.asList(0,0,0,0));
+
+        for (int i =0; i<getConjunt().size(); i++){
+            if(getConjunt().get(i).regio_c()=='F' && getConjunt().get(i).regio_c_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_c_seguidor()-1,pro.get(getConjunt().get(i).regio_c_seguidor()-1)+1);
+            }
+            if(getConjunt().get(i).regio_n()=='F' && getConjunt().get(i).regio_n_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_n_seguidor()-1,pro.get(getConjunt().get(i).regio_n_seguidor()-1)+1);
+            }
+            if(getConjunt().get(i).regio_e()=='F' && getConjunt().get(i).regio_e_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_e_seguidor()-1,pro.get(getConjunt().get(i).regio_e_seguidor()-1)+1);
+            }
+            if(getConjunt().get(i).regio_s()=='F' && getConjunt().get(i).regio_s_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_s_seguidor()-1,pro.get(getConjunt().get(i).regio_s_seguidor()-1)+1);
+            }
+            if(getConjunt().get(i).regio_o()=='F' && getConjunt().get(i).regio_o_seguidor()>0){
+                pro.set(getConjunt().get(i).regio_o_seguidor()-1,pro.get(getConjunt().get(i).regio_o_seguidor()-1)+1);
+            }
+        }
+
+        return llistaPropietari(pro);
+    }
+
+    public char tipus(){
+        return 'F';
     }
 
     //Pre:---

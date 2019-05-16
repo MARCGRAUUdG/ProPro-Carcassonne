@@ -18,6 +18,7 @@ public abstract class Jugador {
     private int id;
     private Fitxa fitxaActual;
     private int nHumanets;
+    private int puntuacio=0;
 
     public int getId() {
         return id;
@@ -63,5 +64,17 @@ public abstract class Jugador {
         return "Jugador{" +
                 "id=" + id +
                 '}';
+    }
+
+    public int getPuntuacio(){
+        return puntuacio;
+    }
+
+    public void setPuntuacio(int p){
+        puntuacio=p;
+    }
+
+    public void incrementaPuntuacio(int p){
+        setPuntuacio(puntuacio+p);
     }
 }

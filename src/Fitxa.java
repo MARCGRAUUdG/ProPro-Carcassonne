@@ -91,6 +91,8 @@ public class Fitxa extends Excepcio{
         return regions.get(2).lletra();
     }
 
+    //Pre:---
+    //Post:si hi ha seguidors en la fitxa retorna el propietari del seguidor que esta a la fitxa altrament -1
     public int jugadorTeLaSeguidor(){
         int jugador=-1;
         if(regio_s_seguidor()!=-1)
@@ -134,13 +136,13 @@ public class Fitxa extends Excepcio{
 
     //Pre:---
     //Post: la fitxa actual la regio nort = a la regio sud de f
-    public boolean nort_igual_sud(Fitxa f){
+    public boolean nord_igual_sud(Fitxa f){
         return regio_n() == f.regio_s();
     }
 
     //Pre:---
     //Post: la fitxa actual la regio sud = a la regio nort de f
-    public boolean sud_igual_nort(Fitxa f){
+    public boolean sud_igual_nord(Fitxa f){
         return regio_s() == f.regio_n();
     }
 
@@ -196,7 +198,7 @@ public class Fitxa extends Excepcio{
             pos.setRotacio(rotar);
         }
         else{
-            //Gui.print("Rotacio de fitxa incorrecte");
+            Gui.print("Rotacio de fitxa incorrecte");
         }
     }
 
@@ -229,14 +231,14 @@ public class Fitxa extends Excepcio{
 
         if(f!=null){
             if(direccio == 'N'){
-                encaixa= sud_igual_nort(f);
+                encaixa= sud_igual_nord(f);
             }
             else if(direccio == 'E'){
                 encaixa= oest_igual_est(f);
 
             }
             else if(direccio == 'S'){
-                encaixa= nort_igual_sud(f);
+                encaixa= nord_igual_sud(f);
 
             }
             else if(direccio == 'O'){
@@ -249,21 +251,6 @@ public class Fitxa extends Excepcio{
             encaixa = true;
         }
         return encaixa;
-    }
-
-
-    //Pre:---
-    //Post:retorna el format de la fitxa si existeix altrament null
-    public String format_fitxa(){
-        String fitxa = "";
-
-        if(regions.size()>0) {
-            for (int i = 0; i < regions.size(); i++) {
-                fitxa = fitxa + regions.get(i).lletra();
-            }
-        }
-
-        return fitxa;
     }
 
     //Pre:---
@@ -295,12 +282,24 @@ public class Fitxa extends Excepcio{
     }
 
     //Pre:---
-    //Post: retorna quantes el nuemro de bandes que son ciutat
+    //Post: retorna el numero de bandes que son ciutat
     public Integer bandes_de_ciutat(){
         int num = 0;
         for(int i = 1; i<regions.size(); i++){
             if(regions.get(i).lletra()=='E' || regions.get(i).lletra()=='V'){
                 num +=1;
+            }
+        }
+        return num;
+    }
+
+    //Pre:---
+    //Post: retorna el numero de bandes que son cami
+    public Integer bandes_de_cami(){
+        int num = 0;
+        for(int i = 1; i<regions.size(); i++){
+            if(regions.get(i).lletra()=='C'){
+                num++;
             }
         }
         return num;
@@ -332,5 +331,15 @@ public class Fitxa extends Excepcio{
         fitxa = fitxa +"}";
 
         return fitxa;
+    }
+
+    public boolean elSeguidorEstaEnElSeuTipusDeRegio(char tipus) {
+        char regio='X';
+        if(regio_c_seguidor()!=-1)     regio=regio_c();
+        else if(regio_n_seguidor()!=-1)regio=regio_n();
+        else if(regio_e_seguidor()!=-1)regio=regio_e();
+        else if(regio_s_seguidor()!=-1)regio=regio_s();
+        else if(regio_o_seguidor()!=-1)regio=regio_o();
+        return regio==tipus;
     }
 }
