@@ -91,6 +91,8 @@ public class Fitxa extends Excepcio{
         return regions.get(2).lletra();
     }
 
+    //Pre:---
+    //Post:si hi ha seguidors en la fitxa retorna el propietari del seguidor que esta a la fitxa altrament -1
     public int jugadorTeLaSeguidor(){
         int jugador=-1;
         if(regio_s_seguidor()!=-1)
@@ -196,7 +198,7 @@ public class Fitxa extends Excepcio{
             pos.setRotacio(rotar);
         }
         else{
-            //Gui.print("Rotacio de fitxa incorrecte");
+            Gui.print("Rotacio de fitxa incorrecte");
         }
     }
 
@@ -251,21 +253,6 @@ public class Fitxa extends Excepcio{
         return encaixa;
     }
 
-
-    //Pre:---
-    //Post:retorna el format de la fitxa si existeix altrament null
-    public String format_fitxa(){
-        String fitxa = "";
-
-        if(regions.size()>0) {
-            for (int i = 0; i < regions.size(); i++) {
-                fitxa = fitxa + regions.get(i).lletra();
-            }
-        }
-
-        return fitxa;
-    }
-
     //Pre:---
     //Post: retorna cert si alguna regio té el format E
     public boolean teEscut(){
@@ -295,12 +282,24 @@ public class Fitxa extends Excepcio{
     }
 
     //Pre:---
-    //Post: retorna quantes el nuemro de bandes que son ciutat
+    //Post: retorna el numero de bandes que son ciutat
     public Integer bandes_de_ciutat(){
         int num = 0;
         for(int i = 1; i<regions.size(); i++){
             if(regions.get(i).lletra()=='E' || regions.get(i).lletra()=='V'){
                 num +=1;
+            }
+        }
+        return num;
+    }
+
+    //Pre:---
+    //Post: retorna el numero de bandes que son cami
+    public Integer bandes_de_cami(){
+        int num = 0;
+        for(int i = 1; i<regions.size(); i++){
+            if(regions.get(i).lletra()=='C'){
+                num++;
             }
         }
         return num;

@@ -115,7 +115,58 @@ public class Tauler
             afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()+1),f,f.regio_s());
         }
 
-        posaFitxaAPossessioSiNoEstaPosat(f,_posCami, 'C');
+        if(f.es_fi_o_inici_de_cami()){
+            //fitxa te cami units amb monestir o ciutat o creuament
+            if (f.regio_c()=='X'){
+                // creuament
+                if(f.bandes_de_ciutat()>0){
+                    //amb ciutat
+                }
+                else{
+                    //sense ciutat
+                }
+            }
+            else if(f.regio_c()=='M'){
+                // monestir
+            }
+            else{
+                //ciutat
+            }
+        }
+        else if(f.es_fi_o_inici_de_ciutat()){
+            // fitxa no te ciutats el centre nomes bandes
+            if(f.bandes_de_cami()>1){
+                //amb cami
+            }
+            else if(f.bandes_de_ciutat()==2){
+                //2 ciutats separats sense cami
+            }
+            else{
+                //1 ciutat sense cami
+            }
+        }
+        else if(f.regio_c()=='V') {
+            //fitxa te un ciutat en el centre
+            if(f.bandes_de_cami()==0){
+                //sense cami
+                if(f.teEscut()){
+                    //amb escut
+                }
+                else{
+                    //sense escut
+                }
+            }
+            else{
+                //amb cami
+            }
+        }
+        else if(f.regio_c()=='C'){
+            //cami sense ciutat ni monestir ni creuament
+        }
+        else{
+            //monestir sense cami
+        }
+        posaFitxaAPossessioSiNoEstaPosat(f, _posCami, 'C');
         posaFitxaAPossessioSiNoEstaPosat(f,_posCiutat, 'V');
 
         comprovaPossessionsTancades(_posCiutat);
