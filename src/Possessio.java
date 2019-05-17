@@ -43,13 +43,7 @@ public abstract class Possessio {
     }
 
     public void eliminar_fitxa(Fitxa f){
-        for (Fitxa fitxa : conjunt)
-        {
-            if (f == fitxa)
-            {
-                conjunt.remove(f);
-            }
-        }
+        conjunt.remove(f);
     }
 
     //Pre:---

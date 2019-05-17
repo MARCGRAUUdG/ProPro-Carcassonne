@@ -49,25 +49,24 @@ public class Tirada {
             Gui.MostraBaralla(baralla.size(),fitxaActual);
         } else
         {
-            int puntsMax = 0;
-            ArrayList<Integer> punts = new ArrayList<>();
+            int puntsMax = 0, punts=0;
             Posicio posicioPuntsMax = new Posicio();
 
             assert false; //<--?
             for (Posicio posicio_disponible : posicionsDisponibles)
             {
-                punts = posicio_disponible.simularPunts(fitxaActual, baralla, tauler); //Llista amb els punts corresponents a les 4 rotacions
-                int angle = 0; //angle de la fitxa a la posicio
-                for (int puntsRotacio : punts)
+                punts = posicio_disponible.simularPunts(fitxaActual, baralla, tauler);
+                //Gui.print(String.valueOf(punts));
+                if (punts >= puntsMax)
                 {
-                    if (puntsRotacio >= puntsMax)
-                    {
-                        puntsMax = puntsRotacio;
-                        posicioPuntsMax = posicio_disponible;
-                        posicioPuntsMax.setRotacio(angle);
-                    }
-                    angle += 90;
+                    puntsMax = punts;
+                    posicioPuntsMax = posicio_disponible;
                 }
+            }
+            if (puntsMax == 0)
+            {
+                int aleatori = (int) (Math.random() * posicionsDisponibles.size()-1);
+                posicioPuntsMax = posicionsDisponibles.get(aleatori);
             }
             posaFitxa(posicioPuntsMax);
             Gui.MostraBaralla(baralla.size(),fitxaActual);

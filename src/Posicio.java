@@ -83,59 +83,51 @@ public class Posicio implements Comparable<Posicio>{
         return (_x==((Posicio)o)._x && _y==((Posicio)o)._y && _rotacio==((Posicio)o)._rotacio);
     }
 
-    public ArrayList<Integer> simularPunts(Fitxa fitxaActual, Baralla baralla, Tauler tauler) {
-        ArrayList<Integer> array = new ArrayList<>();
-
+    public int simularPunts(Fitxa fitxaActual, Baralla baralla, Tauler tauler) {
         Fitxa fitxaNord, fitxaSud, fitxaEst, fitxaOest;
         char regioNord = 'X', regioSud = 'X', regioEst = 'X', regioOest = 'X';
         int puntsRotacio = 0;
-        ArrayList<Integer> punts = new ArrayList<Integer>();
 
-        fitxaNord = baralla.fitxaDesitjada(_x+1, _y);
-        fitxaSud = baralla.fitxaDesitjada(_x-1, _y);
-        fitxaEst = baralla.fitxaDesitjada(_x, _y+1);
-        fitxaOest = baralla.fitxaDesitjada(_x, _y-1);
+        fitxaNord = tauler.getFitxa(_x+1, _y);
+        fitxaSud = tauler.getFitxa(_x-1, _y);
+        fitxaEst = tauler.getFitxa(_x, _y+1);
+        fitxaOest = tauler.getFitxa(_x, _y-1);
 
         if (fitxaNord != null) regioNord = fitxaNord.regio_s();
         if (fitxaSud != null) regioSud = fitxaSud.regio_n();
         if (fitxaEst != null) regioEst = fitxaEst.regio_o();
         if (fitxaOest != null) regioOest = fitxaOest.regio_e();
 
+        ArrayList<Regio> regionsActual = fitxaActual.getRegions(); // N, E, S, O
 
-        for (int i = 0; i < 4; i++) //Recorre les 4 rotacions
+        if (fitxaActual.regio_c() == 'M')
         {
-            ArrayList<Regio> regionsActual = fitxaActual.getRegions(); // N, E, S, O
-
-            if (fitxaActual.regio_c() == 'M')
+            if (fitxaActual.envoltada(tauler))
             {
-                if (fitxaActual.envoltada(tauler))
-                {
-                    puntsRotacio += 9;
-                }
+                puntsRotacio += 9;
             }
-            else
-            {
-                if (regioNord != 'X' && regioNord == regionsActual.get(1).lletra())
-                {
-                    puntsRotacio = getPunts(regioNord, tauler, fitxaNord, fitxaActual);
-                }
-                if (regioEst != 'X' && regioEst == regionsActual.get(2).lletra())
-                {
-                    puntsRotacio = getPunts(regioEst, tauler, fitxaEst,fitxaActual);
-                }
-                if (regioSud != 'X' && regioSud == regionsActual.get(3).lletra())
-                {
-                    puntsRotacio = getPunts(regioSud, tauler, fitxaSud, fitxaActual);
-                }
-                if (regioOest != 'X' && regioOest == regionsActual.get(4).lletra())
-                {
-                    puntsRotacio = getPunts(regioOest, tauler, fitxaOest, fitxaActual);
-                }
-            }
-            punts.add(puntsRotacio);
-            fitxaActual.rotar(90);
         }
-        return punts;
+        else
+        {
+            if (regioNord != 'X' && regioNord == regionsActual.get(1).lletra())
+            {
+                puntsRotacio += getPunts(regioNord, tauler, fitxaNord, fitxaActual);
+            }
+            if (regioEst != 'X' && regioEst == regionsActual.get(2).lletra())
+            {
+                puntsRotacio += getPunts(regioEst, tauler, fitxaEst,fitxaActual);
+            }
+            if (regioSud != 'X' && regioSud == regionsActual.get(3).lletra())
+            {
+                puntsRotacio += getPunts(regioSud, tauler, fitxaSud, fitxaActual);
+            }
+            if (regioOest != 'X' && regioOest == regionsActual.get(4).lletra())
+            {
+                puntsRotacio += getPunts(regioOest, tauler, fitxaOest, fitxaActual);
+            }
+        }
+
+        return puntsRotacio;
     }
 
     private int getPunts(char regio, Tauler tauler, Fitxa fitxa, Fitxa fitxaActual) {
@@ -144,6 +136,7 @@ public class Posicio implements Comparable<Posicio>{
         if (regio == 'V') //Village
         {
             actual = tauler.get_posCiutat().get(tauler.getPossessioDeFitxa(fitxa, tauler.get_posCiutat())); //Obtenim la possessió
+            Gui.print(actual.toString());
             actual.afegir_fitxa(fitxaActual);
             if (actual.tancat())
             {
