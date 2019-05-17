@@ -5,7 +5,7 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 public abstract class Possessio {
-    private List<Pair<Fitxa,Regio>> conjunt;
+    private List<Pair<Fitxa,Character>> conjunt;
     private List<Integer> propietari;
 
     public abstract boolean tancat();
@@ -13,10 +13,10 @@ public abstract class Possessio {
     public abstract char tipus();
     //Pre:---
     //Post: guardar fitxa i regio
-    public Possessio(Fitxa inici, Regio r){
-        this.propietari = new ArrayList<Integer>(Arrays.asList(0,0,0,0));
+    public Possessio(Fitxa inici, Character r){
+        this.propietari = new ArrayList<>(Arrays.asList(0,0,0,0));
         conjunt = new ArrayList<>();
-        conjunt.add(new Pair<Fitxa,Regio>(inici,r));
+        conjunt.add(new Pair<>(inici,r));
     }
 
     //Pre:---
@@ -30,7 +30,7 @@ public abstract class Possessio {
 
     //Pre:---
     //Post: retorna cert si la regio r de la fitxa f esta en aquesta possessio altrament fals
-    public boolean pertanyLaFitxa(Fitxa f, Regio r){
+    public boolean pertanyLaFitxa(Fitxa f, Character r){
         int i=0;
         boolean trobat=false;
         while(!trobat && i<conjunt.size()){
@@ -43,8 +43,8 @@ public abstract class Possessio {
 
     //Pre:---
     //Post:guarda una nova fitxa
-    public void afegir_fitxa(Fitxa f,Regio r){
-        conjunt.add(new Pair<Fitxa,Regio>(f,r));
+    public void afegir_fitxa(Fitxa f,Character r){
+        conjunt.add(new Pair<>(f,r));
     }
 
     //Pre:---
@@ -78,7 +78,7 @@ public abstract class Possessio {
 
     //Pre:---
     //Post:retorna la llista de fitxes
-    public List<Pair<Fitxa,Regio>> getConjunt(){
+    public List<Pair<Fitxa,Character>> getConjunt(){
         return conjunt;
     }
 

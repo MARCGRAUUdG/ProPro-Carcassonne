@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Ciutat extends Estructura {
 
-    public Ciutat(Fitxa inici, Regio r) {
+    public Ciutat(Fitxa inici, Character r) {
         super(inici,r);
     }
 

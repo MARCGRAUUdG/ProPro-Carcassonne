@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Esglesia extends Estructura {
 
-    public Esglesia(Fitxa inici, Regio r) {
+    public Esglesia(Fitxa inici, Character r) {
         super(inici,r);
     }
 
