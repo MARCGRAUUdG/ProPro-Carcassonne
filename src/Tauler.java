@@ -115,43 +115,97 @@ public class Tauler
             afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()+1),f,f.regio_s());
         }
 
-        posaFitxaAPossessioSiNoEstaPosat(f,_posCami, 'C');
+        if(f.regio_c()=='X'){
+            // creuament
+            if(f.bandes_de_ciutat()>0){
+                //amb ciutat
+            }
+            else{
+                //sense ciutat
+            }
+        }
+        else if(f.es_fi_o_inici_de_cami() && f.bandes_de_cami()==1){
+            //fitxa te cami units amb monestir o ciutat
+
+            if(f.regio_c()=='M'){
+                // monestir
+            }
+            else{
+                //ciutat
+            }
+        }
+        else if(f.es_fi_o_inici_de_ciutat()){
+            // fitxa no te ciutats el centre nomes bandes
+            if(f.regio_c()=='C'){
+                //amb cami
+            }
+            else if(f.bandes_de_ciutat()==2){
+                //2 ciutats separats sense cami
+            }
+            else{
+                //1 ciutat sense cami
+            }
+        }
+        else if(f.regio_c()=='V') {
+            //fitxa te un ciutat en el centre
+            if(f.bandes_de_cami()==0){
+                //sense cami
+                if(f.teEscut()){
+                    //amb escut
+                }
+                else{
+                    //sense escut
+                }
+            }
+            else{
+                //amb cami
+            }
+        }
+        else if(f.regio_c()=='C'){
+            //cami sense ciutat ni monestir ni creuament
+        }
+        else{
+            //monestir sense cami
+        }
+        posaFitxaAPossessioSiNoEstaPosat(f, _posCami, 'C');
         posaFitxaAPossessioSiNoEstaPosat(f,_posCiutat, 'V');
 
-        comprovaPossessionsTancades();
+        comprovaPossessionsTancades(_posCiutat);
+        comprovaPossessionsTancades(_posCami);
     }
 
-    private void comprovaPossessionsTancades() {
-        for(int i=0;i<_posCiutat.size();i++) {
+    private void comprovaPossessionsTancades(ArrayList<Possessio> p) {
+        for(int i=p.size()-1;i>=0;i--) {
             //Gui.print(_posCiutat.get(i).toString());
-            //ui.print("Esta tancat: "+_posCiutat.get(i).tancat());
-            if(_posCiutat.get(i).tancat()) {
-                List<Fitxa> fitxes=_posCiutat.get(i).getConjunt();
-                Gui.treuSeguidorsDe(fitxes);
+            //Gui.print("Esta tancat: "+_posCiutat.get(i).tancat());
+            if(p.get(i).tancat()) {
+                List<Fitxa> fitxes=p.get(i).getConjunt();
                 for(int y=0;y<fitxes.size();y++){
                     int jugador=fitxes.get(y).jugadorTeLaSeguidor();
                     if(jugador!=-1)
                         Joc.AfegeixSeguidorAJugador(jugador);
                 }
-                //TODO Calcular Punts
-                _posCiutat.remove(i);
-            }
-        }
-        for(int i=0;i<_posCami.size();i++) {
-            //Gui.print(_posCami.get(i).toString());
-            //ui.print("Esta tancat: "+_posCami.get(i).tancat());
-            if(_posCami.get(i).tancat()) {
-                Gui.treuSeguidorsDe(_posCami.get(i).getConjunt());
-                for(int y=0;y<_posCami.get(i).getConjunt().size();y++){
-                    int jugador=_posCami.get(i).getConjunt().get(y).jugadorTeLaSeguidor();
-                    if(jugador!=-1)
-                        Joc.AfegeixSeguidorAJugador(jugador);
+                List<Integer> JugadorGuanyador = p.get(i).propietari();
+                if(JugadorGuanyador.size()>0) {
+                    int puntsTotals = p.get(i).punts();
+                    puntsTotals = puntsTotals / JugadorGuanyador.size();
+                    for (int x = 0; x < JugadorGuanyador.size(); x++) {
+                        Joc.AfegeixPuntuacioAJugador(JugadorGuanyador.get(x), puntsTotals);
+                    }
+                }else{
+                    Gui.print("Ningu dominava la possessio completada");
                 }
-                //TODO Calcular Punts
-                _posCami.remove(i);
+                for (int x=(fitxes.size()-1); x>=0; x--) {//Nomes elimina els seguidors on la seva regio esta afectada
+                    if (!fitxes.get(x).elSeguidorEstaEnElSeuTipusDeRegio(p.get(i).tipus()))
+                        fitxes.remove(x);
+                }
+                Gui.treuSeguidorsDe(fitxes);
+                p.remove(i);
             }
         }
     }
+
+
 
     private void posaFitxaAPossessioSiNoEstaPosat(Fitxa f, ArrayList<Possessio> p, char lletra) {
         if(!estaEnLaLlista(f,p) && (f.regio_n()==lletra || f.regio_s()==lletra || f.regio_e()==lletra || f.regio_o()==lletra)){//Posa el cami

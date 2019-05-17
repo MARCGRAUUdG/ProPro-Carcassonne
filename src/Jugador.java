@@ -18,8 +18,11 @@ public abstract class Jugador {
     private int id;
     private Fitxa fitxaActual;
     private int nHumanets;
+
     private int _punts;
     private ArrayList<Possessio> llistaPossessions = new ArrayList<>();
+
+    private int puntuacio=0;
 
     public int getId() {
         return id;
@@ -87,4 +90,16 @@ public abstract class Jugador {
     //Pre: ---
     //Post: retorna si el jugador actual es controlable
     public abstract boolean esControlable();
+
+    public int getPuntuacio(){
+        return puntuacio;
+    }
+
+    public void setPuntuacio(int p){
+        puntuacio=p;
+    }
+
+    public void incrementaPuntuacio(int p){
+        setPuntuacio(puntuacio+p);
+    }
 }

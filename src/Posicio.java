@@ -117,19 +117,19 @@ public class Posicio implements Comparable<Posicio>{
             {
                 if (regioNord != 'X' && regioNord == regionsActual.get(1).lletra())
                 {
-                    puntsRotacio = getPunts(regioNord, tauler, fitxaNord);
+                    puntsRotacio = getPunts(regioNord, tauler, fitxaNord, fitxaActual);
                 }
                 if (regioEst != 'X' && regioEst == regionsActual.get(2).lletra())
                 {
-                    puntsRotacio = getPunts(regioEst, tauler, fitxaEst);
+                    puntsRotacio = getPunts(regioEst, tauler, fitxaEst,fitxaActual);
                 }
                 if (regioSud != 'X' && regioSud == regionsActual.get(3).lletra())
                 {
-                    puntsRotacio = getPunts(regioSud, tauler, fitxaSud);
+                    puntsRotacio = getPunts(regioSud, tauler, fitxaSud, fitxaActual);
                 }
                 if (regioOest != 'X' && regioOest == regionsActual.get(4).lletra())
                 {
-                    puntsRotacio = getPunts(regioOest, tauler, fitxaOest);
+                    puntsRotacio = getPunts(regioOest, tauler, fitxaOest, fitxaActual);
                 }
             }
             punts.add(puntsRotacio);
@@ -138,24 +138,28 @@ public class Posicio implements Comparable<Posicio>{
         return punts;
     }
 
-    private int getPunts(char regio, Tauler tauler, Fitxa fitxa) {
+    private int getPunts(char regio, Tauler tauler, Fitxa fitxa, Fitxa fitxaActual) {
         int punts = 0;
         Possessio actual;
         if (regio == 'V') //Village
         {
             actual = tauler.get_posCiutat().get(tauler.getPossessioDeFitxa(fitxa, tauler.get_posCiutat())); //Obtenim la possessió
-            if (actual.tancatAmbFitxaF(fitxa))
+            actual.afegir_fitxa(fitxaActual);
+            if (actual.tancat())
             {
-                punts += actual.getPunts();
+                punts += actual.punts();
             }
+            actual.eliminar_fitxa(fitxaActual);
         }
         else if (regio == 'C') //Cami
         {
             actual = tauler.get_posCami().get(tauler.getPossessioDeFitxa(fitxa, tauler.get_posCami())); //Obtenim la possessió
-            if (actual.tancatAmbFitxaF(fitxa))
+            actual.afegir_fitxa(fitxaActual);
+            if (actual.tancat())
             {
-                punts += actual.getPunts();
+                punts += actual.punts();
             }
+            actual.eliminar_fitxa(fitxaActual);
         }
         return  punts;
     }
