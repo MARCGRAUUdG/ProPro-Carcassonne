@@ -5,7 +5,7 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 public abstract class Possessio {
-    private List<Pair<Fitxa,Character>> conjunt;
+    private List<Pair<Fitxa,List<Character>>> conjunt;
     private List<Integer> propietari;
 
     public abstract boolean tancat();
@@ -13,7 +13,7 @@ public abstract class Possessio {
     public abstract char tipus();
     //Pre:---
     //Post: guardar fitxa i regio
-    public Possessio(Fitxa inici, Character r){
+    public Possessio(Fitxa inici, List<Character> r){
         this.propietari = new ArrayList<>(Arrays.asList(0,0,0,0));
         conjunt = new ArrayList<>();
         conjunt.add(new Pair<>(inici,r));
@@ -31,19 +31,32 @@ public abstract class Possessio {
     //Pre:---
     //Post: retorna cert si la regio r de la fitxa f esta en aquesta possessio altrament fals
     public boolean pertanyLaFitxa(Fitxa f, Character r){
-        int i=0;
-        boolean trobat=false;
-        while(!trobat && i<conjunt.size()){
-            if(conjunt.get(i).getKey().getPosicio()==f.getPosicio() && conjunt.get(i).getValue()==r)
-                trobat=true;
-            else i++;
+        int i=0, j=0;
+        boolean trobat = false, acabat = false;
+
+        while (!acabat && i<conjunt.size()) {
+            if(conjunt.get(i).getKey()== f) {
+                while (!trobat && j < conjunt.get(i).getValue().size()) {
+                    if(conjunt.get(i).getValue().get(j)== r){
+                        trobat = true;
+                    }
+                    else {
+                        j++;
+                    }
+                }
+                acabat = true;
+            }
+            else{
+                i++;
+            }
         }
+
         return trobat;
     }
 
     //Pre:---
     //Post:guarda una nova fitxa
-    public void afegir_fitxa(Fitxa f,Character r){
+    public void afegir_fitxa(Fitxa f,List<Character> r){
         conjunt.add(new Pair<>(f,r));
     }
 
@@ -78,7 +91,7 @@ public abstract class Possessio {
 
     //Pre:---
     //Post:retorna la llista de fitxes
-    public List<Pair<Fitxa,Character>> getConjunt(){
+    public List<Pair<Fitxa,List<Character>>> getConjunt(){
         return conjunt;
     }
 

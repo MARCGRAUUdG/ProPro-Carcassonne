@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Cami extends Estructura {
 
-    public Cami(Fitxa inici, Character r) {
+    public Cami(Fitxa inici, List<Character> r) {
         super(inici,r);
     }
 
@@ -24,7 +24,7 @@ public class Cami extends Estructura {
     @Override
     //Pre:---
     //Post:guarda una nova fitxa
-    public void afegir_fitxa(Fitxa f, Character r){
+    public void afegir_fitxa(Fitxa f, List<Character> r){
 
         if (getConjunt().get(0).getKey().es_fi_o_inici_de_cami() || !f.es_fi_o_inici_de_cami()) {
             getConjunt().add(new Pair<>(f,r));
@@ -44,4 +44,5 @@ public class Cami extends Estructura {
     public int punts(){
         return getConjunt().size();
     }
+
 }

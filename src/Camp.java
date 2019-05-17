@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Camp extends Possessio {
-    public Camp(Fitxa inici,Character r) {
+    public Camp(Fitxa inici,List<Character> r) {
         super(inici,r);
     }
 
@@ -46,9 +46,9 @@ public class Camp extends Possessio {
 
     //Pre:---
     //Post:retorna cert si la fitxa f esta a la ciutat c
-    private boolean conteFitxa(Ciutat c, Fitxa f, Character r){
+    private boolean conteFitxa(Ciutat c, Fitxa f, List<Character> r){
         int i =0;
-        boolean trobat = false;
+        boolean trobat = false, acabat = false;
         while (!trobat && i<c.getConjunt().size()){
             if(c.getConjunt().get(i).getKey()==f && c.getConjunt().get(i).getValue()==r){
                 trobat = true;

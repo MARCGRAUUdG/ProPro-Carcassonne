@@ -4,13 +4,15 @@ import java.util.List;
 
 public class Ciutat extends Estructura {
 
-    public Ciutat(Fitxa inici, Character r) {
+    public Ciutat(Fitxa inici, List<Character> r) {
         super(inici,r);
     }
 
     //Pre:---
     //Post:retorna cert si la possessio esta completa altrament false
     public boolean tancat(){
+
+
 
         int obert = 0;
         for(int i=0; i<getConjunt().size(); i++){

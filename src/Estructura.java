@@ -1,8 +1,10 @@
 import javafx.util.Pair;
 
+import java.util.List;
+
 public abstract class Estructura extends Possessio {
 
-    public Estructura(Fitxa inici, Character r) {
+    public Estructura(Fitxa inici, List<Character> r) {
         super(inici,r);
     }
 
