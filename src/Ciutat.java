@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Ciutat extends Estructura {
 
-    public Ciutat(Fitxa inici) {
-        super(inici);
+    public Ciutat(Fitxa inici, Regio r) {
+        super(inici,r);
     }
 
     //Pre:---
@@ -15,10 +15,10 @@ public class Ciutat extends Estructura {
         int obert = 0;
         for(int i=0; i<getConjunt().size(); i++){
 
-            if(getConjunt().get(i).es_fi_o_inici_de_ciutat()){
+            if(getConjunt().get(i).getKey().es_fi_o_inici_de_ciutat()){
                 obert++;
             }
-            else if(getConjunt().get(i).bandes_de_ciutat()==3){
+            else if(getConjunt().get(i).getKey().bandes_de_ciutat()==3){
                 obert += 3;
             }
             else{
@@ -32,31 +32,6 @@ public class Ciutat extends Estructura {
         return obert==0;
     }
 
-    //Pre:---
-    //Post:retorna el/s propietari/s de la ciutat altrament llista buida
-    public List<Integer> propietari(){
-        List<Integer> pro = new ArrayList<Integer>(Arrays.asList(0,0,0,0));
-
-        for (int i =0; i<getConjunt().size(); i++){
-            if((getConjunt().get(i).regio_c()=='V' || getConjunt().get(i).regio_c()=='E') && getConjunt().get(i).regio_c_seguidor()>0){
-                pro.set(getConjunt().get(i).regio_c_seguidor()-1,pro.get(getConjunt().get(i).regio_c_seguidor()-1)+1);
-            }
-            if((getConjunt().get(i).regio_n()=='V' || getConjunt().get(i).regio_n()=='E') && getConjunt().get(i).regio_n_seguidor()>0){
-                pro.set(getConjunt().get(i).regio_n_seguidor()-1,pro.get(getConjunt().get(i).regio_n_seguidor()-1)+1);
-            }
-            if((getConjunt().get(i).regio_e()=='V' || getConjunt().get(i).regio_e()=='E') && getConjunt().get(i).regio_e_seguidor()>0){
-                pro.set(getConjunt().get(i).regio_e_seguidor()-1,pro.get(getConjunt().get(i).regio_e_seguidor()-1)+1);
-            }
-            if((getConjunt().get(i).regio_s()=='V' || getConjunt().get(i).regio_s()=='E') && getConjunt().get(i).regio_s_seguidor()>0){
-                pro.set(getConjunt().get(i).regio_s_seguidor()-1,pro.get(getConjunt().get(i).regio_s_seguidor()-1)+1);
-            }
-            if((getConjunt().get(i).regio_o()=='V' || getConjunt().get(i).regio_o()=='E') && getConjunt().get(i).regio_o_seguidor()>0){
-                pro.set(getConjunt().get(i).regio_o_seguidor()-1,pro.get(getConjunt().get(i).regio_o_seguidor()-1)+1);
-            }
-        }
-        return llistaPropietari(pro);
-    }
-
     public char tipus(){
         return 'V';
     }
@@ -68,7 +43,7 @@ public class Ciutat extends Estructura {
         int puntuacio = 0;
 
         for(int i=0; i<getConjunt().size(); i++){
-            if(getConjunt().get(i).teEscut()){
+            if(getConjunt().get(i).getKey().teEscut()){
                 puntuacio += 2;
             }
         }

@@ -1,9 +1,9 @@
-
+import javafx.util.Pair;
 
 public abstract class Estructura extends Possessio {
 
-    public Estructura(Fitxa inici) {
-        super(inici);
+    public Estructura(Fitxa inici, Regio r) {
+        super(inici,r);
     }
 
     //Pre:---
