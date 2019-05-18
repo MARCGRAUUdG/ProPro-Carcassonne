@@ -67,7 +67,7 @@ public abstract class Possessio {
         }
 
         for(int i=0; i<propietari.size(); i++){
-            if(propietari.get(i)==major){
+            if(propietari.get(i)==major && major >0){
                 prop.add(i+1);
             }
         }
