@@ -50,7 +50,7 @@ public class Camp extends Possessio {
         int i =0;
         boolean trobat = false, acabat = false;
         while (!trobat && i<c.getConjunt().size()){
-            if(c.getConjunt().get(i).getKey()==f && c.getConjunt().get(i).getValue()==r){
+            if(c.getConjunt().get(i).getKey()==f && c.getConjunt().get(i).getValue().equals(r)){
                 trobat = true;
             }
             else {
