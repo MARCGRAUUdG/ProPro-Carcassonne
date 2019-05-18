@@ -9,8 +9,8 @@ public class Tauler
     private static ArrayList<Esglesia> _posEsglesia= new ArrayList<>();
     private static ArrayList<Possessio> _posCiutat= new ArrayList<>();
 
-    //Pre:Hi ha  almenys una fitxa al tauler en la posicio inicial (5,5)
-    //Post:Retorna llista de les posicions on es pot ficar la fitxa f
+    ///Pre:Hi ha  almenys una fitxa al tauler en la posicio inicial (5,5)
+    ///Post:Retorna llista de les posicions on es pot ficar la fitxa f
     public ArrayList<Posicio> getPosDisponibles(Fitxa f) {
         ArrayList<Posicio> alp=new ArrayList<>();
         ArrayList<Posicio> posicionsVisitades=new ArrayList<>();
@@ -20,6 +20,8 @@ public class Tauler
         return alp;
     }
 
+    ///Pre:Funcio recursiva de getPosDisponibles(), 9<=x>=0 && 9<=y>=0
+    ///Post:Retorna la llista de posicions on es pot colocar la fitxa
     private ArrayList<Posicio> buscaColocacioFitxes(int x, int y, Fitxa f,ArrayList<Posicio> posicionsVisitades) {
         ArrayList<Posicio> p=new ArrayList<Posicio>();
         if(x+1>9);
@@ -56,7 +58,9 @@ public class Tauler
         return p;
     }
 
-    private void afegeixPosicioSiEncaixaFitxa(Fitxa f, int x, int y,ArrayList<Posicio> p) {
+    ///Pre:9<=x>=0 && 9<=y>=0, f inicialitzada
+    ///Post:Si encaixa la fitxa f amb la posicio x, y en qualsevol rotacio afageix les posicions (considerant cada rotacio) a la llista p
+    private void afegeixPosicioSiEncaixaFitxa(Fitxa f, int x, int y, ArrayList<Posicio> p) {
         int rotacio[]={0,90,180,270};
         for(int i=0;i<4;i++)
         {
@@ -84,15 +88,8 @@ public class Tauler
         }
     }
 
-    public boolean tencaRegions(Fitxa f) {
-        return false;
-    }
-
-    public void actualitzarPunts(Fitxa f) {
-    }
-
-    //Pre:La posicio de f es correcte in la fitxa encaixa
-    //Post:S'ha colocat la fitxa en el tauler
+    ///Pre:La posicio de f es correcte in la fitxa encaixa
+    ///Post:S'ha colocat la fitxa en el tauler
     public void posarFitxaTauler(Fitxa f) {
         Posicio p=f.getPosicio();
         _tauler[p.getPosicioX()][p.getPosicioY()]=f;
@@ -100,6 +97,8 @@ public class Tauler
         assignarPossessio(f);
     }
 
+    ///Pre: f inicialitzada amb posicio
+    ///Post:Assigna la fitxa f en alguna/es possessio/s de la llista de tipus de possessions si cal
     private void assignarPossessio(Fitxa f) {
         Posicio p=f.getPosicio();
         if(getFitxa(p.getPosicioX()-1,p.getPosicioY())!=null){
@@ -174,6 +173,8 @@ public class Tauler
         comprovaPossessionsTancades(_posCami);
     }
 
+    ///Pre:--
+    ///Post:Si de la llista p hi ha alguna possessio tancada assigna punts als jugadors, retorna els seguidors, i l'elimina de la llista
     private void comprovaPossessionsTancades(ArrayList<Possessio> p) {
         for(int i=p.size()-1;i>=0;i--) {
             //Gui.print(_posCiutat.get(i).toString());
@@ -205,8 +206,8 @@ public class Tauler
         }
     }
 
-
-
+    ///Pre: lletra==('C' o 'V')
+    ///Post:Posa la fitxa f a la possessio p del tipus lletra si no hi es a la llista p
     private void posaFitxaAPossessioSiNoEstaPosat(Fitxa f, ArrayList<Possessio> p, char lletra) {
         if(!estaEnLaLlista(f,p) && (f.regio_n()==lletra || f.regio_s()==lletra || f.regio_e()==lletra || f.regio_o()==lletra)){//Posa el cami
             if(lletra=='C')
@@ -216,6 +217,8 @@ public class Tauler
         }
     }
 
+    ///Pre:fAnterior, fNova inicializats amb posicio, reg==('C' o 'F' o 'V' o 'M' o 'E')
+    ///Post:Afegeix la fitxa fNova a la mateixa possessio que fAnterior del tipus reg
     private void afegirPossessio(Fitxa fAnterior, Fitxa fNova, char reg) {
         if (reg == 'C') {
             //Posa la fitxa en la possessio de la fitxa del costat
@@ -236,7 +239,9 @@ public class Tauler
         }
     }
 
-    public int getPossessioDeFitxa(Fitxa f, ArrayList<Possessio> possessio) {
+    ///Pre:f inicialitzat
+    ///Post:Retorna la posicio de la llista possessio de on es troba la fitxa f, -1 si no hi es en la llista
+    private int getPossessioDeFitxa(Fitxa f, ArrayList<Possessio> possessio) {
         boolean trobat=false;
         int i=0;
         while(!trobat && i<possessio.size()){
@@ -251,6 +256,8 @@ public class Tauler
             return i;
     }
 
+    ///Pre:f inicialitzat
+    ///Post:Retorna cert si la fitxa f esta en alguna llista de possessio fals altrament
     private boolean estaEnLaLlista(Fitxa f, ArrayList<Possessio> possessio) {
         boolean trobat=false;
         int i=0;
@@ -263,6 +270,8 @@ public class Tauler
         return trobat;
     }
 
+    ///Pre:--
+    ///Post:Retorna la fitxa del tauler de posicio x,y, null si no hi ha cap fitxa o esta fora de rang
     public Fitxa getFitxa(int x, int y){
         try {
             return _tauler[x][y];
@@ -271,6 +280,8 @@ public class Tauler
         }
     }
 
+    ///Pre:--
+    ///Post:Elimina les posicions repetides de la llista alp
     public void removeDouble(ArrayList<Posicio> alp) {
         for (int i = 0; i < alp.size(); i++) {
             for (int j = i + 1; j < alp.size(); j++) {
@@ -344,16 +355,27 @@ public class Tauler
 
     private int getPuntsRegio(Fitxa fitxa, Fitxa fitxaActual, int punts, ArrayList<Possessio> posCiutat2) {
         int index = getPossessioDeFitxa(fitxa, posCiutat2);
-        if (index != -1)
-        {
+        if (index != -1) {
             Possessio pos = posCiutat2.get(index);//Obtenim la possessió
             pos.afegir_fitxa(fitxaActual);
-            if (pos.tancat())
-            {
+            if (pos.tancat()) {
                 punts += pos.punts();
             }
             pos.eliminar_fitxa(fitxaActual);
         }
         return punts;
+    }
+
+    ///Pre:
+    ///Post:
+    public ArrayList<Character> onEsPotFicarSeguidor(Fitxa f) {
+        Posicio p=f.getPosicio();
+        ArrayList<Character> loc=new ArrayList<>();
+        if(f.regio_c()!='X')
+            loc.add('C');
+        //TODO Falta implementar
+
+        loc.add('N');loc.add('E');loc.add('S');loc.add('O');
+        return loc;
     }
 }

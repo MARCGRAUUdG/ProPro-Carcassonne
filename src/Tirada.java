@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Classe encarregada de gestionar els torns dels diferents jugadors. Aquesta actua diferent segons si el jugador
@@ -18,11 +17,10 @@ public class Tirada {
     private Tauler tauler;
     private Fitxa fitxaActual;
     private ArrayList<Posicio> posicionsDisponibles;
-
     List<Posicio> posicions;
 
-    //Pre: Jugador actual, baralla utilitzada i el tauler per poder començar una tirada
-    //Post: Tirada començada
+    ///Constructor per defecte de tirada
+
     Tirada(Jugador jActual, Baralla bActual, Tauler tActual)
     {
         Gui.print("---------Torn del jugador"+jActual.getId()+"---------");
@@ -75,8 +73,9 @@ public class Tirada {
         }
     }
 
-    //Pre: Posicio pos != NULL
-    //Post: Coloca la fitxa a la posició passada per paràmetre a la Gui i crida el mètode per assignar la rotació
+
+    ///Pre:pos inicialitzat i es correcte
+    ///Post:Posa fitxaActual a gui si nomes encaixa d'una manera en la posicio pos altrament posa seleccio de rotacio
     public void apretatOpcionsDeFitxa(Posicio pos)
     {
         ArrayList<Posicio> posDisp = posicionsDisponibles;
@@ -90,39 +89,29 @@ public class Tirada {
             Gui.mostraOpcionsDeRotacioEnFitxa(posDisp,fitxaActual);
     }
 
-    //Pre: Posicio pos != NULL
-    //Post: Crida el mètode per colocar la fitxa definitivament un cop escollit l'angle desitjat
+
+    ///Pre:pos inicialitzat i es correcte
+    ///Post:Posa fitxaActual a gui en la posicio pos
     public void apretatAngleFitxa(Posicio pos){
         posaFitxa(pos);
     }
 
-    //Pre: Posicio pos != NULL
-    //Post: Coloca la fitxa definitivament un cop escollit l'angle desitjat
+    ///Pre:pos inicialitzat i es correcte
+    ///Post:Posa fitxaActual al tauler i gui en la posicio pos
     private void posaFitxa(Posicio pos){
         fitxaActual.setPosicio(pos);
         Gui.posaFitxa(fitxaActual);
-
-        if (jugadorActual.esControlable())
-        {
-            if(jugadorActual.getHumanets()>0) {
-                Gui.posaSeleccioDeSeguidors(pos.getPosicioX(), pos.getPosicioY(), fitxaActual.regio_c());
-            }else {
-                tauler.posarFitxaTauler(fitxaActual);
-                Joc.iniciaNouTorn();
-            }
-        } else
-        {
-            if(jugadorActual.getHumanets()>0) {
-                Gui.posaSeleccioDeSeguidors(pos.getPosicioX(), pos.getPosicioY(), fitxaActual.regio_c());
-            }else {
-                tauler.posarFitxaTauler(fitxaActual);
-                Joc.iniciaNouTorn();
-            }
+        if(jugadorActual.getHumanets()>0) {
+            ArrayList<Character> posicions=tauler.onEsPotFicarSeguidor(fitxaActual);
+            Gui.posaSeleccioDeSeguidors(pos.getPosicioX(), pos.getPosicioY(), posicions);
+        }else {
+            tauler.posarFitxaTauler(fitxaActual);
+            Joc.iniciaNouTorn();
         }
     }
 
-    //Pre: Posició correcta
-    //Post: Assigna el seguidor a la Regió corresponent i inicia un nou torn
+    ///Pre:9<=x>=0 && 9<=y>=0, dir==('C' o 'N' o 'E' o 'S' o 'O' o 'X')
+    ///Post:Posa fitxaActual al tauler amb el seguidor en la posicio x, y i regio dir
     public void apretatOpcionsDeSeguidor(int x, int y, char dir){
         //Gui.print(String.valueOf(dir));
         if (dir != 'X') {//X vol dir que l'usuari no vol ficar seguidor
@@ -133,56 +122,5 @@ public class Tirada {
         }
         tauler.posarFitxaTauler(fitxaActual);
         Joc.iniciaNouTorn();
-    }
-
-    /*///Pre: ---
-    ///Post: Gestiona la tirada d'un jugador controlat
-   public void gestionarTiradaHuma()
-    {
-        Fitxa f = jugadorActual.agafarFitxaBaralla(baralla);
-        posicions = tauler.getPosDisponibles(f);
-
-        Gui.print("A quina posició esculls?");
-        for (Posicio p : posicions)
-        {
-            Gui.print(p.toString());
-        }
-        //Usuari entra posició p
-
-        Posicio p = new Posicio();
-        jugadorActual.PosaFitxaAlTauler(p, tauler);
-        if (calcularPunts(f))
-        {
-            actualitzarPunts(f);
-        }
-    }
-
-    ///Pre: ---
-    ///Post: gestiona la tirada d'un jugador màquina (bot)
-    public void gestionarTiradaBot()
-    {
-        Fitxa f = jugadorActual.agafarFitxaBaralla(baralla);
-        posicions = tauler.getPosDisponibles(f);
-
-        int aleatori = ThreadLocalRandom.current().nextInt(0, posicions.size());
-        jugadorActual.PosaFitxaAlTauler(posicions.get(aleatori), tauler);
-        if (calcularPunts(f))
-        {
-            actualitzarPunts(f);
-        }
-    }*/
-
-    ///Pre: Fitxa f actual
-    ///Post: Cert si és necessari calcular els punts després de colocar la fitxa (s'ha completat una possessio)
-    public boolean calcularPunts(Fitxa f)
-    {
-        return tauler.tencaRegions(f);
-    }
-
-    ///Pre: Fitxa f actual
-    ///Post: Actualitza els punts de la/les regions completada/es de la fitxa actual
-    public void actualitzarPunts(Fitxa f)
-    {
-        tauler.actualitzarPunts(f);
     }
 }
