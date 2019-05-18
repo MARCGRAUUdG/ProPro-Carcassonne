@@ -425,9 +425,9 @@ public class Gui extends Application{
             treuUltimElement();
     }
 
-    ///Pre:Mid i tauler inicialitzat, una fitxa posada en la posicio x,y, 9<=x>=0 && 9<=y>=0
+    ///Pre:Mid i tauler inicialitzat, una fitxa posada en la posicio x,y, 9<=x>=0 && 9<=y>=0, posicions.size()>0
     ///Post:Posa les opcions per colocar seguidor en la posicio x,y
-    public static void posaSeleccioDeSeguidors(int x, int y, char regCenter) {
+    public static void posaSeleccioDeSeguidors(int x, int y, ArrayList<Character> posicions) {
         print("Sel·lecciona col·locació del seguidor");
         Image seguidorImg = getImage("src\\images\\pb.png");
         ImageView seguidorC=new ImageView(seguidorImg);
@@ -436,17 +436,12 @@ public class Gui extends Application{
         ImageView seguidorS=new ImageView(seguidorImg);
         ImageView seguidorO=new ImageView(seguidorImg);
 
-        int possibilitats=6;
-        if(regCenter!='X')
-            configuraImgSeguidor(seguidorC, pos[x] + 15, pos[y] + 15, 'C', possibilitats);
-        else
-            possibilitats=5;
-
-        configuraImgSeguidor(seguidorN,pos[x]+15,pos[y],'N',possibilitats);
-        configuraImgSeguidor(seguidorE,pos[x]+30,pos[y]+15,'E',possibilitats);
-
-        configuraImgSeguidor(seguidorS,pos[x]+15,pos[y]+30, 'S',possibilitats);
-        configuraImgSeguidor(seguidorO,pos[x],pos[y]+15, 'O',possibilitats);
+        int possibilitats=posicions.size()+1;
+        if(posicions.contains('C'))configuraImgSeguidor(seguidorC, pos[x] + 15, pos[y] + 15, 'C', possibilitats);
+        if(posicions.contains('N'))configuraImgSeguidor(seguidorN,pos[x]+15,pos[y],'N',possibilitats);
+        if(posicions.contains('E'))configuraImgSeguidor(seguidorE,pos[x]+30,pos[y]+15,'E',possibilitats);
+        if(posicions.contains('S'))configuraImgSeguidor(seguidorS,pos[x]+15,pos[y]+30, 'S',possibilitats);
+        if(posicions.contains('O'))configuraImgSeguidor(seguidorO,pos[x],pos[y]+15, 'O',possibilitats);
 
         Image crossImg = getImage("src\\images\\cross.png");
         ImageView cross=new ImageView(crossImg);
@@ -463,10 +458,12 @@ public class Gui extends Application{
                 Joc.apretatPerPosarSeguidor(x, y, 'X');
             }
         });
-        midRow.getChildren().addAll(seguidorN,seguidorE,seguidorS,seguidorO,cross);
-        if(regCenter!='X') {
-            midRow.getChildren().add(seguidorC);
-        }
+        midRow.getChildren().add(cross);
+        if(posicions.contains('C'))midRow.getChildren().add(seguidorC);
+        if(posicions.contains('N'))midRow.getChildren().add(seguidorN);
+        if(posicions.contains('E'))midRow.getChildren().add(seguidorE);
+        if(posicions.contains('S'))midRow.getChildren().add(seguidorS);
+        if(posicions.contains('O'))midRow.getChildren().add(seguidorO);
     }
 
     ///Pre:iv esta inicialitzat, 9<=x>=0 && 9<=y>=0

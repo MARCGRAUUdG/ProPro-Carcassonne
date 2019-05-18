@@ -292,4 +292,17 @@ public class Tauler
             }
         }
     }
+
+    ///Pre:
+    ///Post:
+    public ArrayList<Character> onEsPotFicarSeguidor(Fitxa f) {
+        Posicio p=f.getPosicio();
+        ArrayList<Character> loc=new ArrayList<>();
+        if(f.regio_c()!='X')
+            loc.add('C');
+        //TODO Falta implementar
+
+        loc.add('N');loc.add('E');loc.add('S');loc.add('O');
+        return loc;
+    }
 }
