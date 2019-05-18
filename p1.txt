@@ -7,5 +7,5 @@ MFFFF 2
 VVFFV 6
 MFFCF 2
 #
-rajola_inicial CVCCF
+rajola_inicial VVFFV
 camperols si

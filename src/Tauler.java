@@ -117,58 +117,6 @@ public class Tauler
             afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()+1),f,f.regio_s(),'S');
         }
 
-        if(f.regio_c()=='X'){
-            // creuament
-            if(f.bandes_de_ciutat()>0){
-                //amb ciutat
-            }
-            else{
-                //sense ciutat
-            }
-        }
-        else if(f.es_fi_o_inici_de_cami() && f.bandes_de_cami()==1){
-            //fitxa te cami units amb monestir o ciutat
-
-            if(f.regio_c()=='M'){
-                // monestir
-            }
-            else{
-                //ciutat
-            }
-        }
-        else if(f.es_fi_o_inici_de_ciutat()){
-            // fitxa no te ciutats el centre nomes bandes
-            if(f.regio_c()=='C'){
-                //amb cami
-            }
-            else if(f.bandes_de_ciutat()==2){
-                //2 ciutats separats sense cami
-            }
-            else{
-                //1 ciutat sense cami
-            }
-        }
-        else if(f.regio_c()=='V') {
-            //fitxa te un ciutat en el centre
-            if(f.bandes_de_cami()==0){
-                //sense cami
-                if(f.teEscut()){
-                    //amb escut
-                }
-                else{
-                    //sense escut
-                }
-            }
-            else{
-                //amb cami
-            }
-        }
-        else if(f.regio_c()=='C'){
-            //cami sense ciutat ni monestir ni creuament
-        }
-        else{
-            //monestir sense cami
-        }
         posaFitxaAPossessioSiNoEstaPosat(f, _posCami, 'C');
         posaFitxaAPossessioSiNoEstaPosat(f,_posCiutat, 'V');
 
@@ -178,7 +126,7 @@ public class Tauler
 
     private void comprovaPossessionsTancades(ArrayList<Possessio> p) {
         for(int i=p.size()-1;i>=0;i--) {
-            //Gui.print(_posCiutat.get(i).toString()+" Esta tancat: "+_posCiutat.get(i).tancat());
+            Gui.print("Regio "+p.get(i).tipus()+i+" "+p.get(i).toString()+" Esta tancat: "+p.get(i).tancat());
             if(p.get(i).tancat()) {
                 List<Pair<Fitxa,List<Character>>> lp=p.get(i).getConjunt();
                 for(int y=0;y<lp.size();y++){
@@ -197,11 +145,12 @@ public class Tauler
                     Gui.print("Ningu dominava la possessio completada");
                 }
                 List<Fitxa> fitxes=new ArrayList<>();
-                for (int x=(lp.size()-1); x>=0; x--) {//Nomes elimina els seguidors on la seva regio esta afectada
-                    if (lp.get(x).getKey().elSeguidorEstaEnElSeuTipusDeRegio(p.get(i).tipus()))//TODO Aquesta funcio no considera diferent possessions en una mateixa fitxa
+                for (int x=(lp.size()-1); x>=0; x--) {//Afegeix les fitxes on es te que eliminar el seguidor en la gui
+                    if (lp.get(x).getKey().elSeguidorEstaEnElSeuTipusDeRegio(p.get(i).tipus(),lp.get(x).getValue()))
                         fitxes.add(lp.get(x).getKey());
                 }
                 Gui.treuSeguidorsDe(fitxes);
+                Gui.print("Possessio tancada");
                 p.remove(i);
             }
         }
@@ -210,48 +159,62 @@ public class Tauler
 
 
     private void posaFitxaAPossessioSiNoEstaPosat(Fitxa f, ArrayList<Possessio> p, char lletra) {
-        if(lletra=='C' || lletra=='V') {
-            if(f.regio_c()==lletra){
-                List<Character> pos=new ArrayList<>();
-                pos.add('C');
-                if(f.regio_n()==lletra)pos.add('N');
-                if(f.regio_e()==lletra)pos.add('E');
-                if(f.regio_s()==lletra)pos.add('S');
-                if(f.regio_o()==lletra)pos.add('O');
-                if(lletra=='C') p.add(new Cami(f,pos));
-                else if (lletra=='V')p.add(new Ciutat(f,pos));
-            }else{
-                if(f.regio_n()==lletra){
-                    List<Character> pos=new ArrayList<>();
+        if (lletra == 'C' || lletra == 'V') {
+            if (f.regio_c() == lletra) {
+                List<Character> pos = new ArrayList<>();
+                if(getPossessioDeFitxa(f,p,'C')==-1) pos.add('C');
+                if (f.regio_n() == lletra) if(getPossessioDeFitxa(f,p,'N')==-1) pos.add('N');
+                if (f.regio_e() == lletra) if(getPossessioDeFitxa(f,p,'E')==-1) pos.add('E');
+                if (f.regio_s() == lletra) if(getPossessioDeFitxa(f,p,'S')==-1) pos.add('S');
+                if (f.regio_o() == lletra) if(getPossessioDeFitxa(f,p,'O')==-1) pos.add('O');
+                if(pos.size()>0){
+                    if (lletra == 'C') p.add(new Cami(f, pos));
+                    else if (lletra == 'V') p.add(new Ciutat(f, pos));
+                }
+            } else {
+                if (f.regio_n() == lletra) {
+                    List<Character> pos = new ArrayList<>();
                     pos.add('N');
-                    if(lletra=='C') p.add(new Cami(f,pos));
-                    else if (lletra=='V')p.add(new Ciutat(f,pos));
+                    if(getPossessioDeFitxa(f,p,'N')==-1) {
+                        if (lletra == 'C') p.add(new Cami(f, pos));
+                        else if (lletra == 'V') p.add(new Ciutat(f, pos));
+                    }
                 }
-                if(f.regio_e()==lletra){
-                    List<Character> pos=new ArrayList<>();
+                if (f.regio_e() == lletra) {
+                    List<Character> pos = new ArrayList<>();
                     pos.add('E');
-                    if(lletra=='C') p.add(new Cami(f,pos));
-                    else if (lletra=='V')p.add(new Ciutat(f,pos));
+                    if(getPossessioDeFitxa(f,p,'E')==-1) {
+                        if (lletra == 'C') p.add(new Cami(f, pos));
+                        else if (lletra == 'V') p.add(new Ciutat(f, pos));
+                    }
                 }
-                if(f.regio_s()==lletra){
-                    List<Character> pos=new ArrayList<>();
+                if (f.regio_s() == lletra) {
+                    List<Character> pos = new ArrayList<>();
                     pos.add('S');
-                    if(lletra=='C') p.add(new Cami(f,pos));
-                    else if (lletra=='V')p.add(new Ciutat(f,pos));
+                    if(getPossessioDeFitxa(f,p,'S')==-1) {
+                        if (lletra == 'C') p.add(new Cami(f, pos));
+                        else if (lletra == 'V') p.add(new Ciutat(f, pos));
+                    }
                 }
-                if(f.regio_o()==lletra){
-                    List<Character> pos=new ArrayList<>();
+                if (f.regio_o() == lletra) {
+                    List<Character> pos = new ArrayList<>();
                     pos.add('O');
-                    if(lletra=='C') p.add(new Cami(f,pos));
-                    else if (lletra=='V')p.add(new Ciutat(f,pos));
+                    if(getPossessioDeFitxa(f,p,'O')==-1) {
+                        if (lletra == 'C') p.add(new Cami(f, pos));
+                        else if (lletra == 'V') p.add(new Ciutat(f, pos));
+                    }
                 }
             }
-        }else{
+        } else {
             //TODO Falta implementar les altres possessions
         }
     }
 
     private void afegirPossessio(Fitxa fAnterior, Fitxa fNova, char reg, char loc) {
+        if(loc=='N')loc='S';
+        else if(loc=='E')loc='O';
+        else if(loc=='S')loc='N';
+        else if(loc=='O')loc='E';
         if (reg == 'C') {
             //Posa la fitxa en la possessio de la fitxa del costat
             int pin=getPossessioDeFitxa(fAnterior,_posCami,loc);
@@ -263,6 +226,7 @@ public class Tauler
 
         }else if(reg=='V'){
             int pin=getPossessioDeFitxa(fAnterior,_posCiutat,loc);
+            Gui.print("Ciutat: "+pin);
             List<Character> lPos=new ArrayList<>();
             lPos = getPosicionsDePossessio(fNova,reg,loc);
             if(pin!=-1)
@@ -303,7 +267,7 @@ public class Tauler
     }
 
     private boolean estaEnLaLlista(Fitxa f, ArrayList<Possessio> possessio, char loc) {
-        boolean trobat=false;
+        boolean trobat=false;//TODO Treure aquesta funcio no s'utilitza i esta desactualitzada
         int i=0;
         while(i<possessio.size()&& !trobat){
             if(possessio.get(i).pertanyLaFitxa(f,loc))
