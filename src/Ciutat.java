@@ -11,25 +11,31 @@ public class Ciutat extends Estructura {
     //Pre:---
     //Post:retorna cert si la possessio esta completa altrament false
     public boolean tancat(){
-
-        int obert = 0;
+        boolean t = false;
+        int simple = 0, doble = 0, triple =0;
         for(int i=0; i<getConjunt().size(); i++){
 
             if(getConjunt().get(i).getKey().es_fi_o_inici_de_ciutat()){
-                obert++;
+                simple++;
             }
             else if(getConjunt().get(i).getKey().bandes_de_ciutat()==3){
-                obert += 3;
+                triple++;
             }
             else{
-                obert += 2;
-            }
-
-            if(i>0){
-                obert -= 2;
+                doble++;
             }
         }
-        return obert==0;
+        if(doble==0 && triple==0 && simple%2==0){
+            t = true;
+        }
+        else if(doble%2==0 && (doble >2 || doble == simple)){
+            t = true;
+        }
+        else if(doble*2+triple*3-simple==0){
+            t = true;
+        }
+
+        return t;
     }
 
     //Pre:---
