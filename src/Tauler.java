@@ -311,8 +311,8 @@ public class Tauler
         }
     }
 
-    ///Pre:
-    ///Post:
+    ///Pre:f inicialitzada amb posicio
+    ///Post:retorna una llista de Caracters en les regions on es pot ficar el seguidor
     public ArrayList<Character> onEsPotFicarSeguidor(Fitxa f) {
         Posicio p=f.getPosicio();
         ArrayList<Character> loc=new ArrayList<>();
@@ -324,72 +324,46 @@ public class Tauler
         if(fVoltant!=null){//FitxaEsquerra
             ArrayList<Possessio> possessio=getLlistaTipusDePossessio(f.regio_o());
             int i=getPossessioDeFitxa(fVoltant, possessio, 'E');
-            if(i!=-1) {
-                Possessio pAct = getTipusDePossessio(possessio.get(i).tipus(), i);
-                if (pAct.propietari().size() > 0) {
-                    if (loc.contains('O')) loc.remove(loc.indexOf('O'));
-                    if (f.regio_c() == pAct.tipus()) {
-                        if (loc.contains('C')) loc.remove(loc.indexOf('C'));
-                        if (f.regio_n() == pAct.tipus() && (loc.contains('N'))) loc.remove(loc.indexOf('N'));
-                        if (f.regio_e() == pAct.tipus() && (loc.contains('E'))) loc.remove(loc.indexOf('E'));
-                        if (f.regio_s() == pAct.tipus() && (loc.contains('S'))) loc.remove(loc.indexOf('S'));
-                    }
-                }
-            }
+            eliminaPosicionsIncompatibles(possessio,i,'O', f, loc);
         }
         fVoltant=getFitxa(pos.getPosicioX()+1,pos.getPosicioY());
         if(fVoltant!=null){//FitxaDreta
             ArrayList<Possessio> possessio=getLlistaTipusDePossessio(f.regio_e());
             int i=getPossessioDeFitxa(fVoltant, possessio, 'O');
-            if(i!=-1) {
-                Possessio pAct = getTipusDePossessio(possessio.get(i).tipus(), i);
-                if (pAct.propietari().size() > 0) {
-                    if (loc.contains('E')) loc.remove(loc.indexOf('E'));
-                    if (f.regio_c() == pAct.tipus()) {
-                        if (loc.contains('C')) loc.remove(loc.indexOf('C'));
-                        if (f.regio_n() == pAct.tipus() && (loc.contains('N'))) loc.remove(loc.indexOf('N'));
-                        if (f.regio_o() == pAct.tipus() && (loc.contains('O'))) loc.remove(loc.indexOf('O'));
-                        if (f.regio_s() == pAct.tipus() && (loc.contains('S'))) loc.remove(loc.indexOf('S'));
-                    }
-                }
-            }
+            eliminaPosicionsIncompatibles(possessio,i,'E', f, loc);
         }
         fVoltant=getFitxa(pos.getPosicioX(),pos.getPosicioY()+1);
         if(fVoltant!=null){//FitxaAbaix
             ArrayList<Possessio> possessio=getLlistaTipusDePossessio(f.regio_s());
             int i=getPossessioDeFitxa(fVoltant, possessio, 'N');
-            if(i!=-1) {
-                Possessio pAct = getTipusDePossessio(possessio.get(i).tipus(), i);
-                if (pAct.propietari().size() > 0) {
-                    if (loc.contains('S')) loc.remove(loc.indexOf('S'));
-                    if (f.regio_c() == pAct.tipus()) {
-                        if (loc.contains('C')) loc.remove(loc.indexOf('C'));
-                        if (f.regio_o() == pAct.tipus() && (loc.contains('O'))) loc.remove(loc.indexOf('O'));
-                        if (f.regio_e() == pAct.tipus() && (loc.contains('E'))) loc.remove(loc.indexOf('E'));
-                        if (f.regio_n() == pAct.tipus() && (loc.contains('N'))) loc.remove(loc.indexOf('N'));
-                    }
-                }
-            }
+            eliminaPosicionsIncompatibles(possessio,i,'S', f, loc);
         }
         fVoltant=getFitxa(pos.getPosicioX(),pos.getPosicioY()-1);
         if(fVoltant!=null){//FitxaAdalt
             ArrayList<Possessio> possessio=getLlistaTipusDePossessio(f.regio_n());
             int i=getPossessioDeFitxa(fVoltant, possessio, 'S');
-            if(i!=-1) {
-                Possessio pAct = getTipusDePossessio(possessio.get(i).tipus(), i);
-                if (pAct.propietari().size() > 0) {
-                    if (loc.contains('N')) loc.remove(loc.indexOf('N'));
-                    if (f.regio_c() == pAct.tipus()) {
-                        if (loc.contains('C')) loc.remove(loc.indexOf('C'));
-                        if (f.regio_o() == pAct.tipus() && (loc.contains('O'))) loc.remove(loc.indexOf('O'));
-                        if (f.regio_e() == pAct.tipus() && (loc.contains('E'))) loc.remove(loc.indexOf('E'));
-                        if (f.regio_s() == pAct.tipus() && (loc.contains('S'))) loc.remove(loc.indexOf('S'));
-                    }
-                }
-            }
+            eliminaPosicionsIncompatibles(possessio,i,'N', f, loc);
         }
         if(f.regio_c()=='X')if(loc.contains('C'))loc.remove(loc.indexOf('C'));
         return loc;
+    }
+
+    ///Pre:f inicialitzada
+    ///Post:Elimina de loc les possibilitats de ficar seguidor en les regions regions de la fitxa f on la possessio.get(i) estan ja ocupades per un jugador
+    private void eliminaPosicionsIncompatibles(ArrayList<Possessio> possessio, int i, char e, Fitxa f, ArrayList<Character> loc) {
+        if(i!=-1) {
+            Possessio pAct = getTipusDePossessio(possessio.get(i).tipus(), i);
+            if (pAct.propietari().size() > 0) {
+                if (loc.contains(e)) loc.remove(loc.indexOf(e));
+                if (f.regio_c() == pAct.tipus()) {
+                    if (loc.contains('C')) loc.remove(loc.indexOf('C'));
+                    if (f.regio_n() == pAct.tipus() && (loc.contains('N'))) loc.remove(loc.indexOf('N'));
+                    if (f.regio_o() == pAct.tipus() && (loc.contains('O'))) loc.remove(loc.indexOf('O'));
+                    if (f.regio_s() == pAct.tipus() && (loc.contains('S'))) loc.remove(loc.indexOf('S'));
+                    if (f.regio_e() == pAct.tipus() && (loc.contains('E'))) loc.remove(loc.indexOf('E'));
+                }
+            }
+        }
     }
 
     private ArrayList<Possessio> getLlistaTipusDePossessio(char reg) {
