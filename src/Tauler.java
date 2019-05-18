@@ -173,33 +173,33 @@ public class Tauler
                 }
             } else {
                 if (f.regio_n() == lletra) {
-                    List<Character> pos = new ArrayList<>();
-                    pos.add('N');
                     if(getPossessioDeFitxa(f,p,'N')==-1) {
+                        List<Character> pos = new ArrayList<>();
+                        pos.add('N');
                         if (lletra == 'C') p.add(new Cami(f, pos));
                         else if (lletra == 'V') p.add(new Ciutat(f, pos));
                     }
                 }
                 if (f.regio_e() == lletra) {
-                    List<Character> pos = new ArrayList<>();
-                    pos.add('E');
                     if(getPossessioDeFitxa(f,p,'E')==-1) {
+                        List<Character> pos = new ArrayList<>();
+                        pos.add('E');
                         if (lletra == 'C') p.add(new Cami(f, pos));
                         else if (lletra == 'V') p.add(new Ciutat(f, pos));
                     }
                 }
                 if (f.regio_s() == lletra) {
-                    List<Character> pos = new ArrayList<>();
-                    pos.add('S');
                     if(getPossessioDeFitxa(f,p,'S')==-1) {
+                        List<Character> pos = new ArrayList<>();
+                        pos.add('S');
                         if (lletra == 'C') p.add(new Cami(f, pos));
                         else if (lletra == 'V') p.add(new Ciutat(f, pos));
                     }
                 }
                 if (f.regio_o() == lletra) {
-                    List<Character> pos = new ArrayList<>();
-                    pos.add('O');
                     if(getPossessioDeFitxa(f,p,'O')==-1) {
+                        List<Character> pos = new ArrayList<>();
+                        pos.add('O');
                         if (lletra == 'C') p.add(new Cami(f, pos));
                         else if (lletra == 'V') p.add(new Ciutat(f, pos));
                     }
@@ -211,13 +211,15 @@ public class Tauler
     }
 
     private void afegirPossessio(Fitxa fAnterior, Fitxa fNova, char reg, char loc) {
-        if(loc=='N')loc='S';
-        else if(loc=='E')loc='O';
-        else if(loc=='S')loc='N';
-        else if(loc=='O')loc='E';
+        char lletraInvertida=loc;
+        if(loc=='N')lletraInvertida='S';
+        else if(loc=='E')lletraInvertida='O';
+        else if(loc=='S')lletraInvertida='N';
+        else if(loc=='O')lletraInvertida='E';
+
         if (reg == 'C') {
             //Posa la fitxa en la possessio de la fitxa del costat
-            int pin=getPossessioDeFitxa(fAnterior,_posCami,loc);
+            int pin=getPossessioDeFitxa(fAnterior,_posCami,lletraInvertida);
             List<Character> lPos=new ArrayList<>();
             lPos = getPosicionsDePossessio(fNova,reg,loc);
             if(pin!=-1)
@@ -225,8 +227,7 @@ public class Tauler
         }else if(reg=='F'){
 
         }else if(reg=='V'){
-            int pin=getPossessioDeFitxa(fAnterior,_posCiutat,loc);
-            Gui.print("Ciutat: "+pin);
+            int pin=getPossessioDeFitxa(fAnterior,_posCiutat,lletraInvertida);
             List<Character> lPos=new ArrayList<>();
             lPos = getPosicionsDePossessio(fNova,reg,loc);
             if(pin!=-1)
@@ -243,6 +244,7 @@ public class Tauler
         List<Character> lPos=new ArrayList<>();
         if(f.regio_c()=='X')lPos.add(loc);
         else{
+            if(f.regio_c()==reg)lPos.add('C');
             if(f.regio_n()==reg)lPos.add('N');
             if(f.regio_e()==reg)lPos.add('E');
             if(f.regio_s()==reg)lPos.add('S');
