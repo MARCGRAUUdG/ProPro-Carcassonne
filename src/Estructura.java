@@ -10,10 +10,10 @@ public abstract class Estructura extends Possessio {
 
     //Pre:---
     //Post:retorna cert si la possessio esta completa altrament false
-    abstract public boolean tancat ();
+    public abstract boolean tancat ();
 
     //Pre:---
     //Post:retorna punts
-    abstract public int punts();
+    public abstract int punts();
 
 }

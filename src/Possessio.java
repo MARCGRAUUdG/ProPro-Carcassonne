@@ -6,15 +6,14 @@ import java.util.*;
 
 public abstract class Possessio {
     private List<Pair<Fitxa,List<Character>>> conjunt;
-    private List<Integer> propietari;
 
     public abstract boolean tancat();
     public abstract int punts();
     public abstract char tipus();
+    public abstract List<Integer> propietari();
     //Pre:---
     //Post: guardar fitxa i regio
     public Possessio(Fitxa inici, List<Character> r){
-        this.propietari = new ArrayList<>(Arrays.asList(0,0,0,0));
         conjunt = new ArrayList<>();
         conjunt.add(new Pair<>(inici,r));
     }
@@ -47,32 +46,24 @@ public abstract class Possessio {
         conjunt.add(new Pair<>(f,r));
     }
 
-    //Pre:---
-    //Post:guardar el propietari j
-    public void afegir_propietari(int j){
-        propietari.set(j,propietari.get(j)+1);
-    }
 
-    //Pre:---
-    //Post:retorna el/s propietari/s de la possessio
-    public List<Integer> propietari(){
-        List<Integer> prop = new ArrayList<>();
-
-        int major =0;
-
-        for(int i=0; i<propietari.size(); i++){
-            if(propietari.get(i)>major){
+    //Pre: la llista propietari a de tenir el numero de seguidor que te cada jugador a la possessio
+    //Post: retorna una llista dels propietaris de la possesio
+    public List<Integer> llistaPropietari(List<Integer> propietari){
+        int major = 0;
+        for (int i=0; i<propietari.size(); i++){
+            if(propietari.get(i) > major){
                 major = propietari.get(i);
             }
         }
 
-        for(int i=0; i<propietari.size(); i++){
-            if(propietari.get(i)==major){
-                prop.add(i+1);
+        List<Integer> sol = new ArrayList<>();
+        for (int i =0; i<propietari.size(); i++){
+            if(propietari.get(i) == major && major > 0){
+                sol.add(i+1);
             }
         }
-
-        return prop;
+        return sol;
     }
 
 

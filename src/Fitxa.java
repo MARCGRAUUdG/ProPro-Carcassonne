@@ -18,7 +18,7 @@ public class Fitxa extends Excepcio{
     //Post: guarda a regions el format de la fitxa
     public Fitxa(String lletres)throws Excepcio{
         if(lletres.length()==5) {
-            regions = new ArrayList<Regio>();
+            regions = new ArrayList<>();
             for (int i = 0; i < lletres.length(); i++) {
                 char lletra = lletres.charAt(i);
                 Regio nou = new Regio(lletra);
@@ -217,15 +217,6 @@ public class Fitxa extends Excepcio{
     }
 
     //Pre:---
-    //Post:retorna cert si els camps de la fitxa coincideix amb els del seu adjacents camp per camp
-    public boolean fitxaEncaixaEls4Costats(char nort, char est, char sud, char oest){
-        if(regio_n()==nort && regio_e()==est && regio_s()==sud && regio_o()==oest){
-            return true;
-        }
-        return false;
-    }
-
-    //Pre:---
     //Post:retorna cert si la fitxa actual encaixa amb la fitxa 'f' en la posicio del costat de 'direccio' ('N','E','S' o 'O')
     public boolean fitxaActualEncaixaAmb(Fitxa f , char direccio){
         boolean encaixa=false;
@@ -246,7 +237,7 @@ public class Fitxa extends Excepcio{
                 encaixa= est_igual_oest(f);
             }
             else{
-                //Gui.print("Posició de fitxa incorrecte");
+                Gui.print("Posició de fitxa incorrecte");
             }
         }else {
             encaixa = true;
