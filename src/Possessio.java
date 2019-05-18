@@ -31,26 +31,13 @@ public abstract class Possessio {
     //Pre:---
     //Post: retorna cert si la regio r de la fitxa f esta en aquesta possessio altrament fals
     public boolean pertanyLaFitxa(Fitxa f, Character r){
-        int i=0, j=0;
-        boolean trobat = false, acabat = false;
-
-        while (!acabat && i<conjunt.size()) {
-            if(conjunt.get(i).getKey()== f) {
-                while (!trobat && j < conjunt.get(i).getValue().size()) {
-                    if(conjunt.get(i).getValue().get(j)== r){
-                        trobat = true;
-                    }
-                    else {
-                        j++;
-                    }
-                }
-                acabat = true;
-            }
-            else{
-                i++;
-            }
+        int i=0;
+        boolean trobat=false;
+        while(!trobat && i<conjunt.size()){
+            if(conjunt.get(i).getKey().getPosicio()==f.getPosicio()&& conjunt.get(i).getValue().contains(r)) {
+                trobat = true;
+            }else i++;
         }
-
         return trobat;
     }
 
