@@ -282,15 +282,78 @@ public class Tauler
         }
     }
 
-    public static ArrayList<Possessio> get_posCami() {
-        return _posCami;
+    public int simularPunts(Posicio posicio, Fitxa fitxaActual) {
+        Fitxa fitxaNord, fitxaSud, fitxaEst, fitxaOest;
+        char regioNord = 'X', regioSud = 'X', regioEst = 'X', regioOest = 'X';
+        int puntsRotacio = 0;
+
+        fitxaNord = this.getFitxa(posicio.getPosicioX()+1, posicio.getPosicioY());
+        fitxaSud = this.getFitxa(posicio.getPosicioX()-1, posicio.getPosicioY());
+        fitxaEst = this.getFitxa(posicio.getPosicioX(), posicio.getPosicioY()+1);
+        fitxaOest = this.getFitxa(posicio.getPosicioX(), posicio.getPosicioY()-1);
+
+        if (fitxaNord != null) regioNord = fitxaNord.regio_s();
+        if (fitxaSud != null) regioSud = fitxaSud.regio_n();
+        if (fitxaEst != null) regioEst = fitxaEst.regio_o();
+        if (fitxaOest != null) regioOest = fitxaOest.regio_e();
+
+        ArrayList<Regio> regionsActual = fitxaActual.getRegions(); // N, E, S, O
+
+        if (fitxaActual.regio_c() == 'M')
+        {
+            if (fitxaActual.envoltada(this))
+            {
+                puntsRotacio += 9;
+            }
+        }
+        else
+        {
+            if (regioNord != 'X' && regioNord == regionsActual.get(0).lletra())
+            {
+                puntsRotacio += getPunts(regioNord, fitxaNord, fitxaActual);
+            }
+            if (regioEst != 'X' && regioEst == regionsActual.get(1).lletra())
+            {
+                puntsRotacio += getPunts(regioEst, fitxaEst,fitxaActual);
+            }
+            if (regioSud != 'X' && regioSud == regionsActual.get(2).lletra())
+            {
+                puntsRotacio += getPunts(regioSud, fitxaSud, fitxaActual);
+            }
+            if (regioOest != 'X' && regioOest == regionsActual.get(3).lletra())
+            {
+                puntsRotacio += getPunts(regioOest, fitxaOest, fitxaActual);
+            }
+        }
+
+        return puntsRotacio;
     }
 
-    public static ArrayList<Esglesia> get_posEsglesia() {
-        return _posEsglesia;
+    private int getPunts(char regio, Fitxa fitxa, Fitxa fitxaActual) {
+        int punts = 0;
+        if (regio == 'V') //Village
+        {
+            punts = getPuntsRegio(fitxa, fitxaActual, punts, _posCiutat);
+        }
+        else if (regio == 'C') //Cami
+        {
+            punts = getPuntsRegio(fitxa, fitxaActual, punts, _posCami);
+        }
+        return  punts;
     }
 
-    public static ArrayList<Possessio> get_posCiutat() {
-        return _posCiutat;
+    private int getPuntsRegio(Fitxa fitxa, Fitxa fitxaActual, int punts, ArrayList<Possessio> posCiutat2) {
+        int index = getPossessioDeFitxa(fitxa, posCiutat2);
+        if (index != -1)
+        {
+            Possessio pos = posCiutat2.get(index);//Obtenim la possessió
+            pos.afegir_fitxa(fitxaActual);
+            if (pos.tancat())
+            {
+                punts += pos.punts();
+            }
+            pos.eliminar_fitxa(fitxaActual);
+        }
+        return punts;
     }
 }

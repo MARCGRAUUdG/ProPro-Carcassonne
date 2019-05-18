@@ -50,13 +50,13 @@ public class Tirada {
         } else
         {
             int puntsMax = 0, punts=0;
-            Posicio posicioPuntsMax = new Posicio();
+            Posicio posicioPuntsMax = null;
 
             assert false; //<--?
             for (Posicio posicio_disponible : posicionsDisponibles)
             {
-                punts = posicio_disponible.simularPunts(fitxaActual, baralla, tauler);
-                //Gui.print(String.valueOf(punts));
+                punts = tauler.simularPunts(posicio_disponible, fitxaActual);
+                Gui.print(String.valueOf(punts));
                 if (punts >= puntsMax)
                 {
                     puntsMax = punts;
@@ -68,6 +68,8 @@ public class Tirada {
                 int aleatori = (int) (Math.random() * posicionsDisponibles.size()-1);
                 posicioPuntsMax = posicionsDisponibles.get(aleatori);
             }
+            Gui.print("PuntsMax:"+Integer.toString(puntsMax));
+            Gui.print(posicioPuntsMax.toString());
             posaFitxa(posicioPuntsMax);
             Gui.MostraBaralla(baralla.size(),fitxaActual);
         }
@@ -132,7 +134,6 @@ public class Tirada {
         tauler.posarFitxaTauler(fitxaActual);
         Joc.iniciaNouTorn();
     }
-
 
     /*///Pre: ---
     ///Post: Gestiona la tirada d'un jugador controlat
