@@ -12,8 +12,6 @@ public class Ciutat extends Estructura {
     //Post:retorna cert si la possessio esta completa altrament false
     public boolean tancat(){
 
-
-
         int obert = 0;
         for(int i=0; i<getConjunt().size(); i++){
 
