@@ -22,7 +22,6 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -77,7 +76,7 @@ public class Gui extends Application{
         initApp();
     }
 
-    //Pre:--
+    ///Pre:--
     //Post:inicialitza stage
     private void initConfig(Stage primaryStage) {
         Image logo = getImage("src\\images\\Logo.png");
@@ -86,8 +85,8 @@ public class Gui extends Application{
         root.setPadding(new Insets(5));
     }
 
-    //Pre:--
-    //Post:configura i mostra scene
+    ///Pre:--
+    ///Post:configura i mostra scene
     private void setupScene(Stage primaryStage) {
         root.getChildren().addAll(topRow, midRow, table);
 
@@ -98,8 +97,8 @@ public class Gui extends Application{
         primaryStage.show();
     }
 
-    //Pre:taula, stage i scene inicialitzat
-    //Post:Mostra per la taula de la gui el stream
+    ///Pre:taula, stage i scene inicialitzat
+    ///Post:Mostra per la taula de la gui el stream
     public static void print(String stream){
         list.add(stream);
         details = FXCollections.observableArrayList(list);
@@ -107,14 +106,14 @@ public class Gui extends Application{
         table.scrollTo(details.size());
     }
 
-    //Pre:Gui configurada
-    //Post: Comença joc
+    ///Pre:Gui configurada
+    ///Post: Comença joc
     private void initApp(){
         Joc j=new Joc();
     }
 
-    //Pre:--
-    //Post:Configura part top de la GUI
+    ///Pre:--
+    ///Post:Configura part top de la GUI
     private void setupMainTop(){
         textField.setPromptText("Introdueix el nom del fitxer");
         textField.setText("p1.txt");
@@ -141,14 +140,16 @@ public class Gui extends Application{
         topRow.getChildren().addAll(textField,buttonFile);
     }
 
+    ///Pre:--
+    ///Post:Envia el text que hi ha introduit al joc
     private void llegeigNomDelFitxer(){
         buttonFile.setDisable(true);
         textField.setDisable(true);
         Joc.repNomFitxer(textField.getText());
     }
 
-    //Pre:--
-    //Post:Configura part mid de la GUI
+    ///Pre:--
+    ///Post:Configura part mid de la GUI
     private void setupMainMiddle(){
         Image image = getImage("src\\images\\taulerimg.jpg");
         imageView = new ImageView(image);
@@ -162,8 +163,8 @@ public class Gui extends Application{
         midRow.getChildren().addAll(imageView,comenca);
     }
 
-    //Pre:--
-    //Post:Configura part bot de la GUI
+    ///Pre:--
+    ///Post:Configura part bot de la GUI
     private void setupMainBot(){
         list = new ArrayList<>();
         details = FXCollections.observableArrayList(list);
@@ -191,14 +192,16 @@ public class Gui extends Application{
         log.setMinWidth(ample-15);
     }
 
+    ///Pre:Les fitxes de la llista tenen posicio correcte
+    ///Post:Treu el seguidor on estan les fitxes del conjunt
     public static void treuSeguidorsDe(List<Fitxa> conjunt) {
         for(int i=0;i<conjunt.size();i++){
             posaFitxa(conjunt.get(i));
         }
     }
 
-    //Pre:Mid inicialitzat
-    //Post:Configura jugadors
+    ///Pre:Mid inicialitzat
+    ///Post:Configura jugadors
     public static void setupJugadors(int nJugadors) {
         Image playerImg1 = getImage("src\\images\\p1.png");
         ImageView jug1=new ImageView();
@@ -267,8 +270,8 @@ public class Gui extends Application{
         }
     }
 
-    //Pre:--
-    //Post:retorna la imatge amb una url si no es correcte mostra error i retorna null
+    ///Pre:--
+    ///Post: Retorna la imatge amb una url si no es correcte mostra error i retorna null
     private static Image getImage(String url){
         Image imgR= null;
         try {
@@ -279,8 +282,8 @@ public class Gui extends Application{
         return imgR;
     }
 
-    //Pre:Mid inicialitzat, la fitxa f ha de tenir una posicio asignada correcte
-    //Post:Posa fitxa en el tauler de la Gui
+    ///Pre:Mid inicialitzat, la fitxa f ha de tenir una posicio asignada correcte
+    ///Post:Posa fitxa en el tauler de la Gui
     public static void posaFitxa(Fitxa f){
         Posicio posicio=f.getPosicio();
         Image fitxaImg = getImage("src\\images\\"+f.formatNormal()+".jpg");
@@ -292,8 +295,8 @@ public class Gui extends Application{
         midRow.getChildren().addAll(fitxa);
     }
 
-    //Pre:Mid i Jugador inicialitzat
-    //Post:actualitza els punts del jugador
+    ///Pre:Mid i Jugador inicialitzat, jugador>=1 && jugador<=4
+    ///Post:actualitza els punts del jugador
     public static void setScore(int jugador,int punts){
         String s="Score: "+punts;
         if(jugador==1)
@@ -306,8 +309,8 @@ public class Gui extends Application{
             scorej4.setText(s);
     }
 
-    //Pre:Mid inicialitzat
-    //Post:configura el tauler
+    ///Pre:Mid inicialitzat
+    ///Post:configura el tauler
     public static void iniciaTaulerGui() {
         Image blackimg = getImage("src\\images\\black.png");
         ImageView blackView = new ImageView(blackimg);
@@ -320,8 +323,8 @@ public class Gui extends Application{
         midRow.getChildren().add(opcioRotacio);
     }
 
-    //Pre:njugador>=1 && njugador<=4, Mid i Jugador inicialitzat
-    //Post:Actualitzat el nSeguidors del jugador
+    ///Pre:njugador>=1 && njugador<=4, Mid i Jugador inicialitzat
+    ///Post:Actualitzat el nSeguidors del jugador
     public static void setSeguidors(int nSeguidors,int jugador) {
         if(nSeguidors<10) {
             if (jugador == 1 || jugador == 4)
@@ -337,8 +340,8 @@ public class Gui extends Application{
         nseguidors[jugador-1].setText(""+nSeguidors);
     }
 
-    //Pre:--
-    //Post:Infroma per pantalla que el fitxer es incorrecte per el motiou "motiu" i torna a demana fitxer entrada
+    ///Pre:--
+    ///Post:Infroma per pantalla que el fitxer es incorrecte per el motiou "motiu" i torna a demana fitxer entrada
     public static void informarFitxerEntradaIncorrecte(String motiu){
         print("Fitxer incorrecte! Motiu: "+motiu+". Torna a introduïr el nom del fitxer.");
         buttonFile.setDisable(false);
@@ -346,8 +349,8 @@ public class Gui extends Application{
         textField.setDisable(false);
     }
 
-    //Pre:Mid inicialitzat
-    //Post:Mostra la baralla amb un maxim de 20 cartes ocultes
+    ///Pre:Mid inicialitzat
+    ///Post:Mostra el tamany de baralla size ocults i la ultima carta de la baralla f destapada
     public static void MostraBaralla(int size, Fitxa f){
         if(f!=null) {
             Image backFitxaImg = getImage("src\\images\\back.jpg");
@@ -376,8 +379,8 @@ public class Gui extends Application{
             baralla.getChildren().clear();
     }
 
-    //Pre:Mid i tauler inicialitzat
-    //Post:Posa opcio de posar fitxa en el tauler de la posicio x, y amb rotacio
+    ///Pre:Mid i tauler inicialitzat 9<=x>=0 && 9<=y>=0
+    ///Post:Posa opcio de posar fitxa en el tauler de la posicio x, y amb rotacio
     private static void posaQuadreVerd(int x, int y, int rot){
         Image fitxaImg = getImage("src\\images\\green.png");
         ImageView quadre=new ImageView(fitxaImg);
@@ -399,14 +402,14 @@ public class Gui extends Application{
         midRow.getChildren().addAll(quadre);
     }
 
-    //Pre:--
-    //Post:Elimina de la gui el ultim element (Funcio perillosa Un gran poder conlleva una gran responsabilidad)
+    ///Pre:--
+    ///Post:Elimina de la gui el ultim element (Funcio perillosa Un gran poder conlleva una gran responsabilidad)
     private static void treuUltimElement() {
         midRow.getChildren().remove(midRow.getChildren().size()-1);
     }
 
-    //Pre:Mid i tauler inicialitzat
-    //Post:Posa en les posicions alp quadres verds d'opcions per ficar fitxa
+    ///Pre:Mid i tauler inicialitzat
+    ///Post:Posa en les posicions alp quadres verds d'opcions per ficar fitxa
     public static void posaQuadresVerds(ArrayList<Posicio> alp){
         print("Sel·leccina col·locació de la fitxa");
         nBlocksVerdsPosats=alp.size();
@@ -415,16 +418,16 @@ public class Gui extends Application{
         }
     }
 
-    //Pre:Mid i tauler inicialitzat i haver cridat correctament posaQuadresVerds() avans
-    //Post:Treu les opcions dels quadres verds
+    ///Pre:Mid i tauler inicialitzat i haver cridat correctament posaQuadresVerds() avans
+    ///Post:Treu les opcions dels quadres verds
     private static void treuQuadresVerds(){
         for(int i=0;i<nBlocksVerdsPosats;i++)
             treuUltimElement();
     }
 
-    //Pre:Mid i tauler inicialitzat, una fitxa posada en la posicio x,y
-    //Post:Posa les opcions per colocar seguidor en la posicio x,y
-    public static void posaSeleccioDeSeguidors(int x, int y, char regCenter) {
+    ///Pre:Mid i tauler inicialitzat, una fitxa posada en la posicio x,y, 9<=x>=0 && 9<=y>=0, posicions.size()>0
+    ///Post:Posa les opcions per colocar seguidor en la posicio x,y
+    public static void posaSeleccioDeSeguidors(int x, int y, ArrayList<Character> posicions) {
         print("Sel·lecciona col·locació del seguidor");
         Image seguidorImg = getImage("src\\images\\pb.png");
         ImageView seguidorC=new ImageView(seguidorImg);
@@ -433,17 +436,12 @@ public class Gui extends Application{
         ImageView seguidorS=new ImageView(seguidorImg);
         ImageView seguidorO=new ImageView(seguidorImg);
 
-        int possibilitats=6;
-        if(regCenter!='X')
-            configuraImgSeguidor(seguidorC, pos[x] + 15, pos[y] + 15, 'C', possibilitats);
-        else
-            possibilitats=5;
-
-        configuraImgSeguidor(seguidorN,pos[x]+15,pos[y],'N',possibilitats);
-        configuraImgSeguidor(seguidorE,pos[x]+30,pos[y]+15,'E',possibilitats);
-
-        configuraImgSeguidor(seguidorS,pos[x]+15,pos[y]+30, 'S',possibilitats);
-        configuraImgSeguidor(seguidorO,pos[x],pos[y]+15, 'O',possibilitats);
+        int possibilitats=posicions.size()+1;
+        if(posicions.contains('C'))configuraImgSeguidor(seguidorC, pos[x] + 15, pos[y] + 15, 'C', possibilitats);
+        if(posicions.contains('N'))configuraImgSeguidor(seguidorN,pos[x]+15,pos[y],'N',possibilitats);
+        if(posicions.contains('E'))configuraImgSeguidor(seguidorE,pos[x]+30,pos[y]+15,'E',possibilitats);
+        if(posicions.contains('S'))configuraImgSeguidor(seguidorS,pos[x]+15,pos[y]+30, 'S',possibilitats);
+        if(posicions.contains('O'))configuraImgSeguidor(seguidorO,pos[x],pos[y]+15, 'O',possibilitats);
 
         Image crossImg = getImage("src\\images\\cross.png");
         ImageView cross=new ImageView(crossImg);
@@ -460,14 +458,16 @@ public class Gui extends Application{
                 Joc.apretatPerPosarSeguidor(x, y, 'X');
             }
         });
-        midRow.getChildren().addAll(seguidorN,seguidorE,seguidorS,seguidorO,cross);
-        if(regCenter!='X') {
-            midRow.getChildren().add(seguidorC);
-        }
+        midRow.getChildren().add(cross);
+        if(posicions.contains('C'))midRow.getChildren().add(seguidorC);
+        if(posicions.contains('N'))midRow.getChildren().add(seguidorN);
+        if(posicions.contains('E'))midRow.getChildren().add(seguidorE);
+        if(posicions.contains('S'))midRow.getChildren().add(seguidorS);
+        if(posicions.contains('O'))midRow.getChildren().add(seguidorO);
     }
 
-    //Pre:iv esta inicialitzat
-    //Post:configura tamany i direccio dir del seguidor en posicio x i y
+    ///Pre:iv esta inicialitzat, 9<=x>=0 && 9<=y>=0
+    ///Post:configura tamany i direccio dir del seguidor en posicio x i y
     public static void configuraImgSeguidor(ImageView iv, int x, int y, char dir, int possibilitats){
         iv.setLayoutX(x);iv.setLayoutY(y);
         iv.setFitHeight(10);
@@ -484,15 +484,15 @@ public class Gui extends Application{
         });
     }
 
-    //Pre:Haver cridat correctament configuraImgSeguidor() avans
-    //Post:Treu la seleccio de posicionament dels seguidors
+    ///Pre:Haver cridat correctament configuraImgSeguidor() avans
+    ///Post:Treu la seleccio de posicionament dels seguidors, possibilitats vegades
     private static void treuSeguidors(int possibilitats) {
         for(int i=0;i<possibilitats;i++)
             treuUltimElement();
     }
 
-    //Pre:--
-    //Post:Posa el seguidor en la posicio dir del tauler x,y que pertany al jugador numbJugador
+    ///Pre:9<=x>=0, 9<=y>=0, 4<=numbJugador>=1
+    ///Post:Posa el seguidor en la posicio dir del tauler x,y que pertany al jugador numbJugador
     public static void posaSeguidor(int x, int y, char dir, int numbJugador) {
         Image seguidorImg = getImage("src\\images\\p"+numbJugador+".png");
         ImageView seguidor=new ImageView(seguidorImg);
@@ -513,6 +513,8 @@ public class Gui extends Application{
         midRow.getChildren().addAll(seguidor);
     }
 
+    ///Pre:posDisp.size()>0
+    ///Post:Posa la seleccio de rotacio 'posDisp' de la fitxaActual
     public static void mostraOpcionsDeRotacioEnFitxa(ArrayList<Posicio> posDisp, Fitxa fitxaActual) {
         print("Sel·lecciona rotació de la fitxa");
         Image FitxaImg = getImage("src\\images\\"+fitxaActual.formatNormal()+".jpg");
