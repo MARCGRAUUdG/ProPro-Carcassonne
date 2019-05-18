@@ -35,4 +35,11 @@ public class Regio extends Excepcio{
             throw new Excepcio("No és pot possar seguidor a l'encreuament");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Regio{" +
+                "zona=" + zona +
+                '}';
+    }
 }

@@ -47,15 +47,15 @@ public class Tirada {
             Gui.MostraBaralla(baralla.size(),fitxaActual);
         } else
         {
-            int puntsMax = 0, punts=0;
+            int puntsMax = 0, punts;
             Posicio posicioPuntsMax = null;
 
-            assert false; //<--?
+            //assert false; //<--?
             for (Posicio posicio_disponible : posicionsDisponibles)
             {
                 punts = tauler.simularPunts(posicio_disponible, fitxaActual);
-                Gui.print(String.valueOf(punts));
-                if (punts >= puntsMax)
+                Gui.print(String.valueOf(punts)+posicio_disponible.toString());
+                if (punts > puntsMax)
                 {
                     puntsMax = punts;
                     posicioPuntsMax = posicio_disponible;
@@ -109,11 +109,6 @@ public class Tirada {
             tauler.posarFitxaTauler(fitxaActual);
             Joc.iniciaNouTorn();
         }
-    }
-
-    private void treureFitxa(Fitxa f)
-    {
-        tauler.treureFitxaTauler(f);
     }
 
     ///Pre:9<=x>=0 && 9<=y>=0, dir==('C' o 'N' o 'E' o 'S' o 'O' o 'X')

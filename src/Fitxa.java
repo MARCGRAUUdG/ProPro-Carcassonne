@@ -353,4 +353,5 @@ public class Fitxa extends Excepcio{
         else if(regio_o_seguidor()!=-1)regio=regio_o();
         return regio==tipus;
     }
+
 }

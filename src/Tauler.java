@@ -299,22 +299,29 @@ public class Tauler
     }
 
     public int simularPunts(Posicio posicio, Fitxa fitxaActual) {
-        Gui.print(posicio.toString());
         Fitxa fitxaNord, fitxaSud, fitxaEst, fitxaOest;
-        char regioNord = 'X', regioSud = 'X', regioEst = 'X', regioOest = 'X';
+        char regioNord = 'N', regioSud = 'N', regioEst = 'N', regioOest = 'N';
         int puntsRotacio = 0;
 
-        fitxaNord = this.getFitxa(posicio.getPosicioX()+1, posicio.getPosicioY());
-        fitxaSud = this.getFitxa(posicio.getPosicioX()-1, posicio.getPosicioY());
-        fitxaEst = this.getFitxa(posicio.getPosicioX(), posicio.getPosicioY()+1);
-        fitxaOest = this.getFitxa(posicio.getPosicioX(), posicio.getPosicioY()-1);
+        fitxaNord = getFitxa(posicio.getPosicioX(), posicio.getPosicioY()-1);
+        //if (fitxaNord != null) Gui.print("Fitxa Nord"+fitxaNord.toString()+posicio.toString());
+        fitxaSud = this.getFitxa(posicio.getPosicioX(), posicio.getPosicioY()+1);
+        //if (fitxaSud != null) Gui.print("Fitxa Sud"+fitxaSud.toString()+posicio.toString());
+        fitxaEst = this.getFitxa(posicio.getPosicioX()+1, posicio.getPosicioY());
+        //if (fitxaEst != null) Gui.print("Fitxa Est"+fitxaEst.toString()+posicio.toString());
+        fitxaOest = this.getFitxa(posicio.getPosicioX()-1, posicio.getPosicioY());
+        //if (fitxaOest != null) Gui.print("FitxaOest"+fitxaOest.toString()+posicio.toString());
 
-        if (fitxaNord != null) regioNord = fitxaNord.regio_s();
-        if (fitxaSud != null) regioSud = fitxaSud.regio_n();
-        if (fitxaEst != null) regioEst = fitxaEst.regio_o();
-        if (fitxaOest != null) regioOest = fitxaOest.regio_e();
+        if (fitxaNord != null) regioNord = fitxaNord.regio_s(); //Gui.print("rN"+Character.toString(regioNord));
+        if (fitxaSud != null) regioSud = fitxaSud.regio_n(); //Gui.print("rS"+Character.toString(regioSud));
+        if (fitxaEst != null) regioEst = fitxaEst.regio_o(); //Gui.print("rE"+Character.toString(regioEst));
+        if (fitxaOest != null) regioOest = fitxaOest.regio_e(); //Gui.print("rO"+Character.toString(regioOest));
 
-        ArrayList<Regio> regionsActual = fitxaActual.getRegions(); // N, E, S, O
+        ArrayList<Regio> regionsActual = fitxaActual.getRegions(); //C, N, E, S, O
+        /*Gui.print("fN"+Character.toString(regionsActual.get(1).lletra()));
+        Gui.print("fS"+Character.toString(regionsActual.get(3).lletra()));
+        Gui.print("fE"+Character.toString(regionsActual.get(2).lletra()));
+        Gui.print("fO"+Character.toString(regionsActual.get(4).lletra()));*/
 
         if (fitxaActual.regio_c() == 'M')
         {
@@ -325,24 +332,19 @@ public class Tauler
         }
         else
         {
-            if (regioNord != 'X' && regioNord == regionsActual.get(0).lletra())
-            {
-                puntsRotacio += getPunts(regioNord, fitxaNord, fitxaActual);
-            }
-            if (regioEst != 'X' && regioEst == regionsActual.get(1).lletra())
-            {
-                puntsRotacio += getPunts(regioEst, fitxaEst,fitxaActual);
-            }
-            if (regioSud != 'X' && regioSud == regionsActual.get(2).lletra())
-            {
-                puntsRotacio += getPunts(regioSud, fitxaSud, fitxaActual);
-            }
-            if (regioOest != 'X' && regioOest == regionsActual.get(3).lletra())
-            {
-                puntsRotacio += getPunts(regioOest, fitxaOest, fitxaActual);
-            }
-        }
+            //Gui.print(Character.toString(regioNord)+regionsActual.get(4).lletra()+fitxaActual.toString());
+            puntsRotacio += getPunts(regioNord, fitxaNord, fitxaActual);
 
+            //Gui.print(Character.toString(regioEst)+regionsActual.get(1).lletra());
+            puntsRotacio += getPunts(regioEst, fitxaEst,fitxaActual);
+
+            //Gui.print(Character.toString(regioSud)+regionsActual.get(2).lletra());
+            puntsRotacio += getPunts(regioSud, fitxaSud, fitxaActual);
+
+            //Gui.print(Character.toString(regioOest)+regionsActual.get(3).lletra());
+            puntsRotacio += getPunts(regioOest, fitxaOest, fitxaActual);
+        }
+        //Gui.print(Integer.toString(puntsRotacio)+posicio.toString());
         return puntsRotacio;
     }
 
@@ -350,11 +352,11 @@ public class Tauler
         int punts = 0;
         if (regio == 'V') //Village
         {
-            punts += getPuntsRegio(fitxa, fitxaActual, _posCiutat);
+            punts = getPuntsRegio(fitxa, fitxaActual, _posCiutat);
         }
         if (regio == 'C') //Cami
         {
-            punts += getPuntsRegio(fitxa, fitxaActual, _posCami);
+            punts = getPuntsRegio(fitxa, fitxaActual, _posCami);
         }
         return  punts;
     }
@@ -366,7 +368,7 @@ public class Tauler
             Possessio pos = llistaPos.get(index);//Obtenim la possessió
             pos.afegir_fitxa(fitxaActual);
             if (pos.tancat()) {
-                punts += pos.punts();
+                punts = pos.punts();
             }
             pos.eliminar_fitxa(fitxaActual);
         }
