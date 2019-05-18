@@ -96,7 +96,7 @@ public class Joc {
     ///Post:Puntuacio actual del Jugador jugador + puntuacio
     public static void AfegeixPuntuacioAJugador(int jugador, int puntuacio) {
         _jugadors.get(jugador-1).incrementaPuntuacio(puntuacio);
-        Gui.print("Puntuacio: Jugador"+jugador+" +"+puntuacio);
+        //Gui.print("Puntuacio: Jugador"+jugador+" +"+puntuacio);
         Gui.setScore(jugador,_jugadors.get(jugador-1).getPuntuacio());
     }
 }

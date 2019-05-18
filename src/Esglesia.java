@@ -3,8 +3,8 @@ import java.util.List;
 
 public class Esglesia extends Estructura {
 
-    public Esglesia(int propietari, Fitxa inici) {
-        super(inici);
+    public Esglesia(Fitxa inici, List<Character> r) {
+        super(inici,r);
     }
 
     //Pre:---

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Fitxa extends Excepcio{
 
@@ -333,13 +334,13 @@ public class Fitxa extends Excepcio{
         return fitxa;
     }
 
-    public boolean elSeguidorEstaEnElSeuTipusDeRegio(char tipus) {
+    public boolean elSeguidorEstaEnElSeuTipusDeRegio(char tipus, List<Character> lc) {
         char regio='X';
-        if(regio_c_seguidor()!=-1)     regio=regio_c();
-        else if(regio_n_seguidor()!=-1)regio=regio_n();
-        else if(regio_e_seguidor()!=-1)regio=regio_e();
-        else if(regio_s_seguidor()!=-1)regio=regio_s();
-        else if(regio_o_seguidor()!=-1)regio=regio_o();
+        if(lc.contains('C'))if(regio_c_seguidor()!=-1)regio=regio_c();
+        if(lc.contains('N'))if(regio_n_seguidor()!=-1)regio=regio_n();
+        if(lc.contains('E'))if(regio_e_seguidor()!=-1)regio=regio_e();
+        if(lc.contains('S'))if(regio_s_seguidor()!=-1)regio=regio_s();
+        if(lc.contains('O'))if(regio_o_seguidor()!=-1)regio=regio_o();
         return regio==tipus;
     }
 }
