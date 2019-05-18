@@ -59,6 +59,7 @@ public class Tirada {
                 {
                     puntsMax = punts;
                     posicioPuntsMax = posicio_disponible;
+                    Gui.print("Posicio seleccionada="+posicioPuntsMax.toString());
                 }
             }
             if (puntsMax == 0)
@@ -108,6 +109,11 @@ public class Tirada {
             tauler.posarFitxaTauler(fitxaActual);
             Joc.iniciaNouTorn();
         }
+    }
+
+    private void treureFitxa(Fitxa f)
+    {
+        tauler.treureFitxaTauler(f);
     }
 
     ///Pre:9<=x>=0 && 9<=y>=0, dir==('C' o 'N' o 'E' o 'S' o 'O' o 'X')

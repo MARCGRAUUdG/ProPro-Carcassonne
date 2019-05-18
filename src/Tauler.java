@@ -96,6 +96,11 @@ public class Tauler
 
         assignarPossessio(f);
     }
+    public void treureFitxaTauler(Fitxa f) {
+        Posicio p=f.getPosicio();
+        _tauler[p.getPosicioX()][p.getPosicioY()]=null;
+
+    }
 
     ///Pre: f inicialitzada amb posicio
     ///Post:Assigna la fitxa f en alguna/es possessio/s de la llista de tipus de possessions si cal
@@ -294,6 +299,7 @@ public class Tauler
     }
 
     public int simularPunts(Posicio posicio, Fitxa fitxaActual) {
+        Gui.print(posicio.toString());
         Fitxa fitxaNord, fitxaSud, fitxaEst, fitxaOest;
         char regioNord = 'X', regioSud = 'X', regioEst = 'X', regioOest = 'X';
         int puntsRotacio = 0;
@@ -344,19 +350,20 @@ public class Tauler
         int punts = 0;
         if (regio == 'V') //Village
         {
-            punts = getPuntsRegio(fitxa, fitxaActual, punts, _posCiutat);
+            punts += getPuntsRegio(fitxa, fitxaActual, _posCiutat);
         }
-        else if (regio == 'C') //Cami
+        if (regio == 'C') //Cami
         {
-            punts = getPuntsRegio(fitxa, fitxaActual, punts, _posCami);
+            punts += getPuntsRegio(fitxa, fitxaActual, _posCami);
         }
         return  punts;
     }
 
-    private int getPuntsRegio(Fitxa fitxa, Fitxa fitxaActual, int punts, ArrayList<Possessio> posCiutat2) {
-        int index = getPossessioDeFitxa(fitxa, posCiutat2);
+    private int getPuntsRegio(Fitxa fitxa, Fitxa fitxaActual, ArrayList<Possessio> llistaPos) {
+        int index = getPossessioDeFitxa(fitxa, llistaPos);
+        int punts = 0;
         if (index != -1) {
-            Possessio pos = posCiutat2.get(index);//Obtenim la possessió
+            Possessio pos = llistaPos.get(index);//Obtenim la possessió
             pos.afegir_fitxa(fitxaActual);
             if (pos.tancat()) {
                 punts += pos.punts();
