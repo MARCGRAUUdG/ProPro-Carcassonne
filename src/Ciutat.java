@@ -11,8 +11,8 @@ public class Ciutat extends Estructura {
     //Pre:---
     //Post:retorna cert si la possessio esta completa altrament false
     public boolean tancat(){
-
         int obert = 0;
+        ArrayList<Fitxa> f = new ArrayList<>();
         for(int i=0; i<getConjunt().size(); i++){
 
             if(getConjunt().get(i).getKey().es_fi_o_inici_de_ciutat()){
@@ -20,13 +20,38 @@ public class Ciutat extends Estructura {
             }
             else if(getConjunt().get(i).getKey().bandes_de_ciutat()==3){
                 obert += 3;
+                f.add(getConjunt().get(i).getKey());
             }
             else{
                 obert += 2;
+                f.add(getConjunt().get(i).getKey());
             }
 
             if(i>0){
                 obert -= 2;
+            }
+        }
+        if(obert==2 && f.size()>3){
+            int rotacio0=0, rotacio90=0, rotacio180=0, rotacio270=0;
+            for (int i=0; i<f.size();i++){
+                if(f.get(i).getPosicio().getRotacio()==0){
+                    rotacio0++;
+                }
+                else if (f.get(i).getPosicio().getRotacio()==90){
+                    rotacio90++;
+                }
+                else if (f.get(i).getPosicio().getRotacio()==180){
+                    rotacio180++;
+                }
+                else{
+                    if (f.get(i).getPosicio().getRotacio()==270){
+                        rotacio270++;
+                    }
+                }
+            }
+
+            if(rotacio0==1 && rotacio90==1 && rotacio180==1 && rotacio270==1){
+                obert -=2;
             }
         }
         return obert==0;

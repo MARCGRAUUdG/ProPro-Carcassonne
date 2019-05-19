@@ -8,7 +8,7 @@ public class Camp extends Possessio {
     }
 
     //Pre:---
-    //Post:retorna punts totals de camp
+    //Post:retorna punts totals del camp
     public int punts(ArrayList<Ciutat> llista){
 
         ArrayList<Ciutat> aux = new ArrayList<>(llista);
@@ -71,7 +71,7 @@ public class Camp extends Possessio {
     }
 
     //Pre:---
-    //Post:retorna cert si la fitxa f esta a la ciutat c
+    //Post:retorna cert si la fitxa f amb les regions r esta a la ciutat c
     private boolean conteFitxa(Ciutat c, Fitxa f, List<Character> r){
         int i =0;
         boolean trobat = false, acabat = false;
