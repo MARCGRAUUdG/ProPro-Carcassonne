@@ -410,4 +410,8 @@ public class Tauler
         else if(reg=='E')return _posEsglesia.get(i);
         else return _posCamp.get(i);
     }
+
+    public void assignaPuntsAPossessionsSenseTancar(){
+
+    }
 }

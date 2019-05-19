@@ -99,4 +99,17 @@ public class Joc {
         //Gui.print("Puntuacio: Jugador"+jugador+" +"+puntuacio);
         Gui.setScore(jugador,_jugadors.get(jugador-1).getPuntuacio());
     }
+
+    //Pre:
+    //Post:
+    public static void finalitzaJoc() {
+        _tauler.assignaPuntsAPossessionsSenseTancar();
+        //TODO Mostrar ranking
+
+
+        int punts=20;
+        ArrayList<Integer> guanyadors=new ArrayList<>();
+        guanyadors.add(3);
+        Gui.mostraGuanyadors(guanyadors,punts);
+    }
 }
