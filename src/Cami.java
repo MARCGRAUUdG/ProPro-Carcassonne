@@ -49,14 +49,16 @@ public class Cami extends Estructura {
                 if (r == 'N' && getConjunt().get(i).getKey().regio_n_seguidor() > 0) {
                     pro.set(getConjunt().get(i).getKey().regio_n_seguidor() - 1, pro.get(getConjunt().get(i).getKey().regio_n_seguidor() - 1) + 1);
                 }
-                if(r == 'E' && getConjunt().get(i).getKey().regio_e_seguidor() > 0){
+                else if(r == 'E' && getConjunt().get(i).getKey().regio_e_seguidor() > 0){
                     pro.set(getConjunt().get(i).getKey().regio_e_seguidor() - 1, pro.get(getConjunt().get(i).getKey().regio_e_seguidor() - 1) + 1);
                 }
-                if (r == 'S' && getConjunt().get(i).getKey().regio_s_seguidor() > 0) {
+                else if (r == 'S' && getConjunt().get(i).getKey().regio_s_seguidor() > 0) {
                     pro.set(getConjunt().get(i).getKey().regio_s_seguidor() - 1, pro.get(getConjunt().get(i).getKey().regio_s_seguidor() - 1) + 1);
                 }
-                if (r == 'O' && getConjunt().get(i).getKey().regio_o_seguidor() > 0) {
-                    pro.set(getConjunt().get(i).getKey().regio_o_seguidor() - 1, pro.get(getConjunt().get(i).getKey().regio_o_seguidor() - 1) + 1);
+                else{
+                    if (r == 'O' && getConjunt().get(i).getKey().regio_o_seguidor() > 0) {
+                        pro.set(getConjunt().get(i).getKey().regio_o_seguidor() - 1, pro.get(getConjunt().get(i).getKey().regio_o_seguidor() - 1) + 1);
+                    }
                 }
             }
             else {
