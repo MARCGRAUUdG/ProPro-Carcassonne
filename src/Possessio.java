@@ -24,7 +24,9 @@ public abstract class Possessio {
     public void unir_possessions(Possessio aux){
 
         for(int i=aux.getConjunt().size()-1; i>=0; i--){
-            afegir_fitxa(aux.getConjunt().get(i).getKey(),aux.getConjunt().get(i).getValue());
+            Pair<Fitxa,List<Character>> p = aux.getConjunt().get(i);
+
+            afegir_fitxa(p.getKey(),p.getValue());
         }
     }
 
@@ -34,7 +36,8 @@ public abstract class Possessio {
         int i=0;
         boolean trobat=false;
         while(!trobat && i<conjunt.size()){
-            if(conjunt.get(i).getKey().getPosicio()==f.getPosicio()&& conjunt.get(i).getValue().contains(r)) {
+            Pair<Fitxa,List<Character>> p = conjunt.get(i);
+            if(p.getKey().getPosicio()==f.getPosicio()&& p.getValue().contains(r)) {
                 trobat = true;
             }else i++;
         }
@@ -47,7 +50,8 @@ public abstract class Possessio {
         int i=0;
         boolean trobat=false;
         while(!trobat && i<conjunt.size()){
-            if(conjunt.get(i).getKey().getPosicio()==f.getPosicio()&& conjunt.get(i).getValue().contains(r)) {
+            Pair<Fitxa,List<Character>> p = conjunt.get(i);
+            if(p.getKey().getPosicio()==f.getPosicio()&& p.getValue().contains(r)) {
                 conjunt.remove(i);
             }else i++;
         }

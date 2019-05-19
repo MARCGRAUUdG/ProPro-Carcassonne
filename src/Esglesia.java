@@ -1,3 +1,5 @@
+import javafx.util.Pair;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,11 +21,14 @@ public class Esglesia extends Estructura {
         int i =0;
         boolean trobat = false;
         ArrayList<Integer> s = new ArrayList<>();
-        while (!trobat && i<getConjunt().size()){
-            if(getConjunt().get(i).getKey().regio_c()=='M'){
+        List<Pair<Fitxa,List<Character>>> llista = getConjunt();
+
+        while (!trobat && i<llista.size()){
+            Fitxa f = llista.get(i).getKey();
+            if(f.regio_c()=='M'){
                 trobat = true;
-                if(getConjunt().get(i).getKey().regio_c_seguidor()>0) {
-                    s.add(getConjunt().get(i).getKey().regio_c_seguidor());
+                if(f.regio_c_seguidor()>0) {
+                    s.add(f.regio_c_seguidor());
                 }
             }
             else {
