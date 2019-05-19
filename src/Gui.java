@@ -1,3 +1,20 @@
+/**
+\mainpage Documentació del Carcassone
+@section S Pràctica final ProPro
+El programa tracta de...
+
+- @ref Entrada: ..
+- @ref Sortida: ..
+
+@section Practica Informació
+@author Javier Muñoz
+@author Teng Liu
+@author Marc Grau
+@version 1.0
+@date 20/05/2019
+*/
+/// @file
+
 import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
