@@ -324,30 +324,23 @@ public class Tauler
         }
     }
 
-    public int simularPunts(Posicio posicio, Fitxa fitxaActual) {
+    public Pair<Character, Integer> simularPunts(Posicio posicio, Fitxa fitxaActual) {
         Fitxa fitxaNord, fitxaSud, fitxaEst, fitxaOest;
         char regioNord = 'N', regioSud = 'N', regioEst = 'N', regioOest = 'N';
-        int puntsRotacio = 0;
+        int puntsRotacio = 0, puntsOrigin = 0, puntsMax = 0;
+        char regioHumanet = 'X';
 
         fitxaNord = getFitxa(posicio.getPosicioX(), posicio.getPosicioY()-1);
-        //if (fitxaNord != null) Gui.print("Fitxa Nord"+fitxaNord.toString()+posicio.toString());
         fitxaSud = this.getFitxa(posicio.getPosicioX(), posicio.getPosicioY()+1);
-        //if (fitxaSud != null) Gui.print("Fitxa Sud"+fitxaSud.toString()+posicio.toString());
         fitxaEst = this.getFitxa(posicio.getPosicioX()+1, posicio.getPosicioY());
-        //if (fitxaEst != null) Gui.print("Fitxa Est"+fitxaEst.toString()+posicio.toString());
         fitxaOest = this.getFitxa(posicio.getPosicioX()-1, posicio.getPosicioY());
-        //if (fitxaOest != null) Gui.print("FitxaOest"+fitxaOest.toString()+posicio.toString());
 
-        if (fitxaNord != null) regioNord = fitxaNord.regio_s(); //Gui.print("rN"+Character.toString(regioNord));
-        if (fitxaSud != null) regioSud = fitxaSud.regio_n(); //Gui.print("rS"+Character.toString(regioSud));
-        if (fitxaEst != null) regioEst = fitxaEst.regio_o(); //Gui.print("rE"+Character.toString(regioEst));
-        if (fitxaOest != null) regioOest = fitxaOest.regio_e(); //Gui.print("rO"+Character.toString(regioOest));
+        if (fitxaNord != null) regioNord = fitxaNord.regio_s();
+        if (fitxaSud != null) regioSud = fitxaSud.regio_n();
+        if (fitxaEst != null) regioEst = fitxaEst.regio_o();
+        if (fitxaOest != null) regioOest = fitxaOest.regio_e();
 
         ArrayList<Regio> regionsActual = fitxaActual.getRegions(); //C, N, E, S, O
-        /*Gui.print("fN"+Character.toString(regionsActual.get(1).lletra()));
-        Gui.print("fS"+Character.toString(regionsActual.get(3).lletra()));
-        Gui.print("fE"+Character.toString(regionsActual.get(2).lletra()));
-        Gui.print("fO"+Character.toString(regionsActual.get(4).lletra()));*/
 
         if (fitxaActual.regio_c() == 'M')
         {
@@ -358,44 +351,64 @@ public class Tauler
         }
         else
         {
+            ArrayList<Character> posicions=this.onEsPotFicarSeguidor(fitxaActual);
             //Gui.print(Character.toString(regioNord)+regionsActual.get(4).lletra()+fitxaActual.toString());
-            puntsRotacio += getPunts(regioNord, fitxaNord, fitxaActual, 'S');
-
+            if (posicions.contains('S')) {
+                puntsRotacio += getPunts(regioNord, fitxaNord, fitxaActual, 'S');
+                if ((puntsRotacio-puntsOrigin)>puntsMax)
+                {
+                    regioHumanet = 'N';
+                }
+                puntsOrigin = puntsRotacio;
+            }
             //Gui.print(Character.toString(regioEst)+regionsActual.get(1).lletra());
-            puntsRotacio += getPunts(regioEst, fitxaEst,fitxaActual, 'O');
-
+            if (posicions.contains('O')) {
+                puntsRotacio += getPunts(regioEst, fitxaEst,fitxaActual, 'O');
+                if ((puntsRotacio-puntsOrigin)>puntsMax)
+                {
+                    regioHumanet = 'E';
+                }
+                puntsOrigin = puntsRotacio;
+            }
             //Gui.print(Character.toString(regioSud)+regionsActual.get(2).lletra());
-            puntsRotacio += getPunts(regioSud, fitxaSud, fitxaActual, 'N');
-
+            if (posicions.contains('O')) {
+                puntsRotacio += getPunts(regioSud, fitxaSud, fitxaActual, 'N');
+                if ((puntsRotacio-puntsOrigin)>puntsMax)
+                {
+                    regioHumanet = 'S';
+                }
+                puntsOrigin = puntsRotacio;
+            }
             //Gui.print(Character.toString(regioOest)+regionsActual.get(3).lletra());
-            puntsRotacio += getPunts(regioOest, fitxaOest, fitxaActual, 'E');
+            if (posicions.contains('O')) {
+                puntsRotacio += getPunts(regioOest, fitxaOest, fitxaActual, 'E');
+                if ((puntsRotacio-puntsOrigin)>puntsMax)
+                {
+                    regioHumanet = 'O';
+                }
+            }
         }
-        //Gui.print(Integer.toString(puntsRotacio)+posicio.toString());
-        return puntsRotacio;
+        return new Pair<Character, Integer>(regioHumanet, puntsRotacio);
     }
 
     private int getPunts(char regio, Fitxa fitxa, Fitxa fitxaActual, char loc) {
         int punts = 0;
         if (regio == 'V') //Village
         {
-            punts = getPuntsRegio(fitxa, fitxaActual, _posCiutat, loc);
+            punts = getPuntsRegio(fitxa, fitxaActual, _posCiutat, loc, regio);
         }
         if (regio == 'C') //Cami
         {
-            punts = getPuntsRegio(fitxa, fitxaActual, _posCami, loc);
+            punts = getPuntsRegio(fitxa, fitxaActual, _posCami, loc, regio);
         }
         return  punts;
     }
 
-    private int getPuntsRegio(Fitxa fitxa, Fitxa fitxaActual, ArrayList<Possessio> llistaPos, char loc) {
+    private int getPuntsRegio(Fitxa fitxa, Fitxa fitxaActual, ArrayList<Possessio> llistaPos, char loc, char regio) {
         int index = getPossessioDeFitxa(fitxa, llistaPos, loc);
         if (index != -1) Gui.print(Integer.toString(index)+llistaPos.get(index).toString());
         int punts = 0;
-        List<Character> regions = new ArrayList<Character>();
-        for (Regio regio : fitxaActual.getRegions())
-        {
-            regions.add(regio.lletra());
-        }
+        List<Character> regions = getPosicionsDePossessio(fitxaActual,regio,loc);
         if (index != -1) {
             Possessio pos = llistaPos.get(index);//Obtenim la possessió
             pos.afegir_fitxa(fitxaActual, regions);

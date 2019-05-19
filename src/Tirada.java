@@ -1,3 +1,5 @@
+import javafx.util.Pair;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,17 +49,21 @@ public class Tirada {
             Gui.MostraBaralla(baralla.size(),fitxaActual);
         } else
         {
-            int puntsMax = 0, punts;
+            int puntsMax = 0, punts = 0;
+            char regioHum = 'X', regioMaxPuntsHum = 'X';
             Posicio posicioPuntsMax = null;
+            Pair<Character, Integer> parellaSim;
 
             //assert false; //<--?
             for (Posicio posicio_disponible : posicionsDisponibles)
             {
-                punts = tauler.simularPunts(posicio_disponible, fitxaActual);
-                Gui.print(String.valueOf(punts)+posicio_disponible.toString());
-                if (punts > puntsMax)
+                parellaSim = tauler.simularPunts(posicio_disponible, fitxaActual);
+
+                Gui.print(String.valueOf(parellaSim.getValue())+posicio_disponible.toString());
+                if (parellaSim.getValue() > puntsMax)
                 {
-                    puntsMax = punts;
+                    puntsMax = parellaSim.getValue();
+                    regioMaxPuntsHum = parellaSim.getKey();
                     posicioPuntsMax = posicio_disponible;
                     Gui.print("Posicio seleccionada="+posicioPuntsMax.toString());
                 }
@@ -69,7 +75,14 @@ public class Tirada {
             }
             Gui.print("PuntsMax:"+Integer.toString(puntsMax));
             Gui.print(posicioPuntsMax.toString());
-            posaFitxa(posicioPuntsMax);
+
+            fitxaActual.setPosicio(posicioPuntsMax);
+            Gui.posaFitxa(fitxaActual);
+            apretatOpcionsDeSeguidor(posicioPuntsMax.getPosicioX(), posicioPuntsMax.getPosicioY(), regioMaxPuntsHum);
+            tauler.posarFitxaTauler(fitxaActual);
+
+            if(jugadorActual.getHumanets()<=0 || tauler.onEsPotFicarSeguidor(fitxaActual).size()<=0) {Joc.iniciaNouTorn();}
+
             Gui.MostraBaralla(baralla.size(),fitxaActual);
         }
     }
