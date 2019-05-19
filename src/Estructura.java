@@ -13,7 +13,7 @@ public abstract class Estructura extends Possessio {
     public abstract boolean tancat ();
 
     //Pre:---
-    //Post:retorna punts
+    //Post:retorna punts de la possessio
     public abstract int punts();
 
 }

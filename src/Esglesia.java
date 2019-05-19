@@ -22,13 +22,14 @@ public class Esglesia extends Estructura {
         while (!trobat && i<getConjunt().size()){
             if(getConjunt().get(i).getKey().regio_c()=='M'){
                 trobat = true;
-                s.add(getConjunt().get(i).getKey().regio_c_seguidor());
+                if(getConjunt().get(i).getKey().regio_c_seguidor()>0) {
+                    s.add(getConjunt().get(i).getKey().regio_c_seguidor());
+                }
             }
             else {
                 i++;
             }
         }
-
         return s;
     }
 

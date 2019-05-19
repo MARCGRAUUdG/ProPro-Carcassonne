@@ -23,7 +23,7 @@ public class Cami extends Estructura {
 
     @Override
     //Pre:---
-    //Post:guarda una nova fitxa
+    //Post:guarda una nova fitxa f amb les regions r
     public void afegir_fitxa(Fitxa f, List<Character> r){
 
         if (getConjunt().get(0).getKey().es_fi_o_inici_de_cami() || !f.es_fi_o_inici_de_cami()) {

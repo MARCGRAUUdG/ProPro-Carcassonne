@@ -11,6 +11,7 @@ public abstract class Possessio {
     public abstract int punts();
     public abstract char tipus();
     public abstract List<Integer> propietari();
+
     //Pre:---
     //Post: guardar fitxa i regio
     public Possessio(Fitxa inici, List<Character> r){
