@@ -7,8 +7,8 @@ public class Tauler
 {
     private static final Fitxa[][] _tauler = new Fitxa[10][10];
     private static ArrayList<Possessio> _posCami= new ArrayList<>();
-    private static ArrayList<Camp> _posCamp= new ArrayList<>();
-    private static ArrayList<Esglesia> _posEsglesia= new ArrayList<>();
+    private static ArrayList<Possessio> _posCamp= new ArrayList<>();
+    private static ArrayList<Possessio> _posEsglesia= new ArrayList<>();
     private static ArrayList<Possessio> _posCiutat= new ArrayList<>();
 
     ///Pre:Hi ha  almenys una fitxa al tauler en la posicio inicial (5,5)
@@ -127,7 +127,7 @@ public class Tauler
     ///Post:Si de la llista p hi ha alguna possessio tancada assigna punts als jugadors, retorna els seguidors, i l'elimina de la llista
     private void comprovaPossessionsTancades(ArrayList<Possessio> p) {
         for(int i=p.size()-1;i>=0;i--) {
-            Gui.print("Regio "+p.get(i).tipus()+i+" "+p.get(i).toString()+" Esta tancat: "+p.get(i).tancat());
+            //Gui.print("Regio "+p.get(i).tipus()+i+" "+p.get(i).toString()+" Esta tancat: "+p.get(i).tancat());
             if(p.get(i).tancat()) {
                 List<Pair<Fitxa,List<Character>>> lp=p.get(i).getConjunt();
                 for(int y=0;y<lp.size();y++){
@@ -311,16 +311,72 @@ public class Tauler
         }
     }
 
-    ///Pre:
-    ///Post:
+    ///Pre:f inicialitzada amb posicio
+    ///Post:retorna una llista de Caracters en les regions on es pot ficar el seguidor
     public ArrayList<Character> onEsPotFicarSeguidor(Fitxa f) {
         Posicio p=f.getPosicio();
         ArrayList<Character> loc=new ArrayList<>();
-        if(f.regio_c()!='X')
-            loc.add('C');
-        //TODO Falta implementar
+        Posicio pos=f.getPosicio();
+        Fitxa fVoltant;
+        loc.add('C');loc.add('N');loc.add('E');loc.add('S');loc.add('O');
 
-        loc.add('N');loc.add('E');loc.add('S');loc.add('O');
+        fVoltant=getFitxa(pos.getPosicioX()-1,pos.getPosicioY());
+        if(fVoltant!=null){//FitxaEsquerra
+            ArrayList<Possessio> possessio=getLlistaTipusDePossessio(f.regio_o());
+            int i=getPossessioDeFitxa(fVoltant, possessio, 'E');
+            eliminaPosicionsIncompatibles(possessio,i,'O', f, loc);
+        }
+        fVoltant=getFitxa(pos.getPosicioX()+1,pos.getPosicioY());
+        if(fVoltant!=null){//FitxaDreta
+            ArrayList<Possessio> possessio=getLlistaTipusDePossessio(f.regio_e());
+            int i=getPossessioDeFitxa(fVoltant, possessio, 'O');
+            eliminaPosicionsIncompatibles(possessio,i,'E', f, loc);
+        }
+        fVoltant=getFitxa(pos.getPosicioX(),pos.getPosicioY()+1);
+        if(fVoltant!=null){//FitxaAbaix
+            ArrayList<Possessio> possessio=getLlistaTipusDePossessio(f.regio_s());
+            int i=getPossessioDeFitxa(fVoltant, possessio, 'N');
+            eliminaPosicionsIncompatibles(possessio,i,'S', f, loc);
+        }
+        fVoltant=getFitxa(pos.getPosicioX(),pos.getPosicioY()-1);
+        if(fVoltant!=null){//FitxaAdalt
+            ArrayList<Possessio> possessio=getLlistaTipusDePossessio(f.regio_n());
+            int i=getPossessioDeFitxa(fVoltant, possessio, 'S');
+            eliminaPosicionsIncompatibles(possessio,i,'N', f, loc);
+        }
+        if(f.regio_c()=='X')if(loc.contains('C'))loc.remove(loc.indexOf('C'));
         return loc;
+    }
+
+    ///Pre:f inicialitzada
+    ///Post:Elimina de loc les possibilitats de ficar seguidor en les regions regions de la fitxa f on la possessio.get(i) estan ja ocupades per un jugador
+    private void eliminaPosicionsIncompatibles(ArrayList<Possessio> possessio, int i, char e, Fitxa f, ArrayList<Character> loc) {
+        if(i!=-1) {
+            Possessio pAct = getTipusDePossessio(possessio.get(i).tipus(), i);
+            if (pAct.propietari().size() > 0) {
+                if (loc.contains(e)) loc.remove(loc.indexOf(e));
+                if (f.regio_c() == pAct.tipus()) {
+                    if (loc.contains('C')) loc.remove(loc.indexOf('C'));
+                    if (f.regio_n() == pAct.tipus() && (loc.contains('N'))) loc.remove(loc.indexOf('N'));
+                    if (f.regio_o() == pAct.tipus() && (loc.contains('O'))) loc.remove(loc.indexOf('O'));
+                    if (f.regio_s() == pAct.tipus() && (loc.contains('S'))) loc.remove(loc.indexOf('S'));
+                    if (f.regio_e() == pAct.tipus() && (loc.contains('E'))) loc.remove(loc.indexOf('E'));
+                }
+            }
+        }
+    }
+
+    private ArrayList<Possessio> getLlistaTipusDePossessio(char reg) {
+        if(reg=='V')return _posCiutat;
+        else if(reg=='C')return _posCami;
+        else if(reg=='E')return _posEsglesia;
+        else return _posCamp;
+    }
+
+    private Possessio getTipusDePossessio(char reg,int i) {
+        if(reg=='V')return _posCiutat.get(i);
+        else if(reg=='C')return _posCami.get(i);
+        else if(reg=='E')return _posEsglesia.get(i);
+        else return _posCamp.get(i);
     }
 }
