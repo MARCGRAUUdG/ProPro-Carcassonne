@@ -31,7 +31,7 @@ public class Ciutat extends Estructura {
                 obert -= 2;
             }
         }
-        if(obert==2 && f.size()>0){
+        if(obert==2 && f.size()>3){
             int rotacio0=0, rotacio90=0, rotacio180=0, rotacio270=0;
             for (int i=0; i<f.size();i++){
                 if(f.get(i).getPosicio().getRotacio()==0){
