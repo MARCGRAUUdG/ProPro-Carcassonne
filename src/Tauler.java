@@ -155,6 +155,8 @@ public class Tauler
         }
     }
 
+    ///Pre:f inicialitzada
+    ///Post:Retorna una llista de posicions de on pertany la fitxa f de la llista de possessions p
     private ArrayList<Integer> onEstaLaFitxaEnPossessions(Fitxa f, ArrayList<Possessio> p){
         ArrayList<Integer> nLoc = new ArrayList<>();
         if(p.size()>0) {
@@ -172,7 +174,6 @@ public class Tauler
     ///Post:Si de la llista p hi ha alguna possessio tancada assigna punts als jugadors, retorna els seguidors, i l'elimina de la llista
     private void comprovaPossessionsTancades(ArrayList<Possessio> p) {
         for(int i=p.size()-1;i>=0;i--) {
-            Gui.print("Regio "+p.get(i).tipus()+i+" "+p.get(i).toString()+" Esta tancat: "+p.get(i).tancat());
             if(p.get(i).tancat()) {
                 List<Pair<Fitxa,List<Character>>> lp=p.get(i).getConjunt();
                 List<Integer> JugadorGuanyador = p.get(i).propietari();
@@ -180,7 +181,7 @@ public class Tauler
                     int puntsTotals = p.get(i).punts();
                     puntsTotals = puntsTotals / JugadorGuanyador.size();
                     for (int x = 0; x < JugadorGuanyador.size(); x++) {
-                        Joc.AfegeixPuntuacioAJugador(JugadorGuanyador.get(x), puntsTotals);
+                        Joc.AfegeixPuntuacioAJugador(JugadorGuanyador.get(x), puntsTotals,p.get(i).tipus());
                     }
                 }else{
                     Gui.print("Ningu dominava la possessio completada");
@@ -397,6 +398,8 @@ public class Tauler
         }
     }
 
+    ///Pre:reg==('C' o 'F' o 'V' o 'M' o 'E')
+    ///Post:Retorna la llista de possesions del tipus reg
     private ArrayList<Possessio> getLlistaTipusDePossessio(char reg) {
         if(reg=='V')return _posCiutat;
         else if(reg=='C')return _posCami;
@@ -404,10 +407,32 @@ public class Tauler
         else return _posCamp;
     }
 
+    ///Pre:reg==('C' o 'F' o 'V' o 'M' o 'E')
+    ///Post:Retorna la possesio del tipus reg
     private Possessio getTipusDePossessio(char reg,int i) {
         if(reg=='V')return _posCiutat.get(i);
         else if(reg=='C')return _posCami.get(i);
         else if(reg=='E')return _posEsglesia.get(i);
         else return _posCamp.get(i);
+    }
+
+    ///Pre:--
+    ///Post:Reparteix els punts de les possessions sense tancar als jugadors corresponents
+    public void assignaPuntsAPossessionsSenseTancar(){
+        reparteixPuntsDePossessio(_posCami);
+        reparteixPuntsDePossessio(_posCiutat);
+        reparteixPuntsDePossessio(_posEsglesia);
+        reparteixPuntsDePossessio(_posCamp);
+    }
+
+    ///Pre:--
+    ///Post:Reparteix els punts de la llista de possessions p sense tancar als jugadors corresponents
+    private void reparteixPuntsDePossessio(ArrayList<Possessio> p){
+        for(int i=0;i<p.size();i++){
+            int punts=p.get(i).punts();
+            List<Integer> jugador=p.get(i).propietari();
+            for(int x=0;x<jugador.size();x++)
+                Joc.AfegeixPuntuacioAJugador(jugador.get(x),punts/jugador.size(),p.get(i).tipus());
+        }
     }
 }

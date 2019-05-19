@@ -27,10 +27,13 @@ public class Tirada {
                 posicionDisponibles = tauler.getPosDisponibles(fitxaActual);
             }
             Gui.posaQuadresVerds(posicionDisponibles);
+            Gui.MostraBaralla(baralla.size(),fitxaActual);
         }else{
             Gui.print("No hi han més fitxes a la baralla");
+            Gui.MostraBaralla(baralla.size(),fitxaActual);
+            Joc.finalitzaJoc();
         }
-        Gui.MostraBaralla(baralla.size(),fitxaActual);
+
     }
 
     ///Pre:pos inicialitzat i es correcte

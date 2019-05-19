@@ -544,4 +544,30 @@ public class Gui extends Application{
             opcioRotacio.getChildren().add(fitxa);
         }
     }
+
+    ///Pre:guanyadors.size()>0
+    ///Post:Mostra per pantalla el guanyador i els punts que ha fet
+    public static void mostraGuanyadors(ArrayList<Integer> guanyadors, int punts) {
+        Image winnerImg = getImage("src\\images\\winsplash.png");
+        ImageView winner = new ImageView(winnerImg);
+        winner.setFitHeight(ample);winner.setFitWidth(ample);
+
+        int div=15;
+        if(punts<10)div=10;
+
+        Text sp=new Text (ample/2-40, ample/2-65,"PUNTS");
+        Text p=new Text (ample/2-div, ample/2-40,punts+"");
+        Text sw=new Text(ample/2-66, ample/2+90,"JUGADOR/S");
+        Text jugadors=new Text();
+        sw.setFont(Font.font("Arial Black",20));p.setFont(Font.font("Arial Black",20));sp.setFont(Font.font("Arial Black",20));jugadors.setFont(Font.font("Arial Black",20));
+        sw.setFill(Color.WHITE);p.setFill(Color.WHITE);sp.setFill(Color.WHITE);jugadors.setFill(Color.WHITE);
+
+        String j="";
+        for(int i=0;i<guanyadors.size();i++)
+            j+=guanyadors.get(i)+",";
+        j=j.substring(0, j.length()-1);
+        jugadors.setText(j);
+        jugadors.setLayoutX(ample/2-5-j.length()*5);jugadors.setLayoutY(ample/2+115);
+        midRow.getChildren().addAll(winner,p,sw,sp,jugadors);
+    }
 }
