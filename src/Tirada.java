@@ -64,7 +64,7 @@ public class Tirada {
             }
             if (puntsMax == 0)
             {
-                int aleatori = (int) (Math.random() * posicionsDisponibles.size()-1);
+                int aleatori = (int) (Math.random() * posicionsDisponibles.size());
                 posicioPuntsMax = posicionsDisponibles.get(aleatori);
             }
             Gui.print("PuntsMax:"+Integer.toString(puntsMax));
@@ -104,7 +104,11 @@ public class Tirada {
         Gui.posaFitxa(fitxaActual);
         if(jugadorActual.getHumanets()>0) {
             ArrayList<Character> posicions=tauler.onEsPotFicarSeguidor(fitxaActual);
-            Gui.posaSeleccioDeSeguidors(pos.getPosicioX(), pos.getPosicioY(), posicions);
+            if(posicions.size()>0)Gui.posaSeleccioDeSeguidors(pos.getPosicioX(), pos.getPosicioY(), posicions);
+            else{
+                tauler.posarFitxaTauler(fitxaActual);
+                Joc.iniciaNouTorn();
+            }
         }else {
             tauler.posarFitxaTauler(fitxaActual);
             Joc.iniciaNouTorn();

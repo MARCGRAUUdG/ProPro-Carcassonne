@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Fitxa extends Excepcio{
 
@@ -17,7 +18,7 @@ public class Fitxa extends Excepcio{
     //Post: guarda a regions el format de la fitxa
     public Fitxa(String lletres)throws Excepcio{
         if(lletres.length()==5) {
-            regions = new ArrayList<Regio>();
+            regions = new ArrayList<>();
             for (int i = 0; i < lletres.length(); i++) {
                 char lletra = lletres.charAt(i);
                 Regio nou = new Regio(lletra);
@@ -216,15 +217,6 @@ public class Fitxa extends Excepcio{
     }
 
     //Pre:---
-    //Post:retorna cert si els camps de la fitxa coincideix amb els del seu adjacents camp per camp
-    public boolean fitxaEncaixaEls4Costats(char nort, char est, char sud, char oest){
-        if(regio_n()==nort && regio_e()==est && regio_s()==sud && regio_o()==oest){
-            return true;
-        }
-        return false;
-    }
-
-    //Pre:---
     //Post:retorna cert si la fitxa actual encaixa amb la fitxa 'f' en la posicio del costat de 'direccio' ('N','E','S' o 'O')
     public boolean fitxaActualEncaixaAmb(Fitxa f , char direccio){
         boolean encaixa=false;
@@ -245,7 +237,7 @@ public class Fitxa extends Excepcio{
                 encaixa= est_igual_oest(f);
             }
             else{
-                //Gui.print("Posició de fitxa incorrecte");
+                Gui.print("Posició de fitxa incorrecte");
             }
         }else {
             encaixa = true;
@@ -344,13 +336,13 @@ public class Fitxa extends Excepcio{
                 tauler.getFitxa(this.pos.getPosicioX()-1, this.pos.getPosicioY()+1) != null &&
                 tauler.getFitxa(this.pos.getPosicioX()-1, this.pos.getPosicioY()-1) != null;}
 
-    public boolean elSeguidorEstaEnElSeuTipusDeRegio(char tipus) {
+    public boolean elSeguidorEstaEnElSeuTipusDeRegio(char tipus, List<Character> lc) {
         char regio='X';
-        if(regio_c_seguidor()!=-1)     regio=regio_c();
-        else if(regio_n_seguidor()!=-1)regio=regio_n();
-        else if(regio_e_seguidor()!=-1)regio=regio_e();
-        else if(regio_s_seguidor()!=-1)regio=regio_s();
-        else if(regio_o_seguidor()!=-1)regio=regio_o();
+        if(lc.contains('C'))if(regio_c_seguidor()!=-1)regio=regio_c();
+        if(lc.contains('N'))if(regio_n_seguidor()!=-1)regio=regio_n();
+        if(lc.contains('E'))if(regio_e_seguidor()!=-1)regio=regio_e();
+        if(lc.contains('S'))if(regio_s_seguidor()!=-1)regio=regio_s();
+        if(lc.contains('O'))if(regio_o_seguidor()!=-1)regio=regio_o();
         return regio==tipus;
     }
 
