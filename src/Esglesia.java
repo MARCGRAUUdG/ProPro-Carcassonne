@@ -14,29 +14,22 @@ public class Esglesia extends Estructura {
     }
 
     //Pre:---
-    //Post:retorna el propietari de l'esglesia si existeix altrament -1
-    /*public Integer propietari(){
+    //Post:retorna el propietari de l'esglesia si existeix altrament llista buida
+    public List<Integer> propietari(){
         int i =0;
         boolean trobat = false;
-
+        ArrayList<Integer> s = new ArrayList<>();
         while (!trobat && i<getConjunt().size()){
-            if(getConjunt().get(i).regio_c()=='M'){
+            if(getConjunt().get(i).getKey().regio_c()=='M'){
                 trobat = true;
+                s.add(getConjunt().get(i).getKey().regio_c_seguidor());
             }
             else {
                 i++;
             }
         }
 
-        if(!trobat){
-            return -1;
-        }
-        else {
-            return getConjunt().get(i).regio_c_seguidor();
-        }
-    }*/
-    public List<Integer> propietari(){
-        return new ArrayList<>();
+        return s;
     }
 
     public char tipus(){
