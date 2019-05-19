@@ -155,6 +155,8 @@ public class Tauler
         }
     }
 
+    ///Pre:f inicialitzada
+    ///Post:Retorna una llista de posicions de on pertany la fitxa f de la llista de possessions p
     private ArrayList<Integer> onEstaLaFitxaEnPossessions(Fitxa f, ArrayList<Possessio> p){
         ArrayList<Integer> nLoc = new ArrayList<>();
         if(p.size()>0) {
@@ -396,6 +398,8 @@ public class Tauler
         }
     }
 
+    ///Pre:reg==('C' o 'F' o 'V' o 'M' o 'E')
+    ///Post:Retorna la llista de possesions del tipus reg
     private ArrayList<Possessio> getLlistaTipusDePossessio(char reg) {
         if(reg=='V')return _posCiutat;
         else if(reg=='C')return _posCami;
@@ -403,6 +407,8 @@ public class Tauler
         else return _posCamp;
     }
 
+    ///Pre:reg==('C' o 'F' o 'V' o 'M' o 'E')
+    ///Post:Retorna la possesio del tipus reg
     private Possessio getTipusDePossessio(char reg,int i) {
         if(reg=='V')return _posCiutat.get(i);
         else if(reg=='C')return _posCami.get(i);
@@ -410,13 +416,17 @@ public class Tauler
         else return _posCamp.get(i);
     }
 
+    ///Pre:--
+    ///Post:Reparteix els punts de les possessions sense tancar als jugadors corresponents
     public void assignaPuntsAPossessionsSenseTancar(){
         reparteixPuntsDePossessio(_posCami);
         reparteixPuntsDePossessio(_posCiutat);
         reparteixPuntsDePossessio(_posEsglesia);
-        //reparteixPuntsDePossessio(_posCamp);//TODO Falta implementar
+        reparteixPuntsDePossessio(_posCamp);
     }
 
+    ///Pre:--
+    ///Post:Reparteix els punts de la llista de possessions p sense tancar als jugadors corresponents
     private void reparteixPuntsDePossessio(ArrayList<Possessio> p){
         for(int i=0;i<p.size();i++){
             int punts=p.get(i).punts();
