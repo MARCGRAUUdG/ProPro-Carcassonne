@@ -1,21 +1,25 @@
 import java.util.ArrayList;
 import java.util.List;
 
+///@class Fitxa
+
+///@brief Descripcio de la clase...
+
 public class Fitxa extends Excepcio{
 
     //Descripcio: Fitxa fromat per regions C, N, E, S i O;
 
-    private ArrayList<Regio> regions;
-    private Posicio pos;
+    private ArrayList<Regio> regions;///<Descripcio...
+    private Posicio pos;///<Descripcio...
     
-    //Pre:---
-    //Post: retorna la llista de regions de la fitxa
+    ///@pre ---
+    ///@post  retorna la llista de regions de la fitxa
     public ArrayList<Regio> getRegions(){
         return regions;
     }
 
-    //Pre: lletres mida = 5
-    //Post: guarda a regions el format de la fitxa
+    ///@pre  lletres mida = 5
+    ///@post  guarda a regions el format de la fitxa
     public Fitxa(String lletres)throws Excepcio{
         if(lletres.length()==5) {
             regions = new ArrayList<>();
@@ -32,8 +36,8 @@ public class Fitxa extends Excepcio{
         }
     }
 
-    //Pre: regio = C, N, E, S o O
-    //Post: afegeix el jugador a la regio de la fitxa
+    ///@pre  regio = C, N, E, S o O
+    ///@post  afegeix el jugador a la regio de la fitxa
     public void assignar_seguidor(char regio, int jugador){
         try {
             if (regio == 'C') {
@@ -53,47 +57,47 @@ public class Fitxa extends Excepcio{
         }
     }
 
-    //Pre:---
-    //Post: retorna seguidor de la regio del centre
+    ///@pre ---
+    ///@post  retorna seguidor de la regio del centre
     public Integer regio_c_seguidor(){
         return regions.get(0).nom_jugador();
     }
 
-    //Pre:---
-    //Post:retorna el format de la regio del centre
+    ///@pre ---
+    ///@post retorna el format de la regio del centre
     public char regio_c(){
 
         return regions.get(0).lletra();
 
     }
 
-    //Pre:---
-    //Post: retorna seguidor de la regio del nort
+    ///@pre ---
+    ///@post  retorna seguidor de la regio del nort
     public Integer regio_n_seguidor(){
         return regions.get(1).nom_jugador();
     }
 
-    //Pre:---
-    //Post:retorna el format dela regio del nort
+    ///@pre ---
+    ///@post retorna el format dela regio del nort
     public char regio_n(){
 
         return regions.get(1).lletra();
     }
 
-    //Pre:---
-    //Post: retorna seguidor de la regio del est
+    ///@pre ---
+    ///@post  retorna seguidor de la regio del est
     public Integer regio_e_seguidor(){
         return regions.get(2).nom_jugador();
     }
-    //Pre:----
-    //Post:retorna el format de la regio de l'est
+    ///@pre ----
+    ///@post retorna el format de la regio de l'est
     public char regio_e(){
 
         return regions.get(2).lletra();
     }
 
-    //Pre:---
-    //Post:si hi ha seguidors en la fitxa retorna el propietari del seguidor que esta a la fitxa altrament -1
+    ///@pre ---
+    ///@post si hi ha seguidors en la fitxa retorna el propietari del seguidor que esta a la fitxa altrament -1
     public int jugadorTeLaSeguidor(){
         int jugador=-1;
         if(regio_s_seguidor()!=-1)
@@ -110,57 +114,57 @@ public class Fitxa extends Excepcio{
     }
 
 
-    //Pre:---
-    //Post: retorna seguidor de la regio del sud
+    ///@pre ---
+    ///@post  retorna seguidor de la regio del sud
     public Integer regio_s_seguidor(){
         return regions.get(3).nom_jugador();
     }
 
-    //Pre:---
-    //Post:retorna el format de la regio del sud
+    ///@pre ---
+    ///@post retorna el format de la regio del sud
     public char regio_s() {
         return regions.get(3).lletra();
     }
 
-    //Pre:---
-    //Post: retorna seguidor de la regio del oest
+    ///@pre ---
+    ///@post  retorna seguidor de la regio del oest
     public Integer regio_o_seguidor(){
         return regions.get(4).nom_jugador();
     }
 
-    //Pre:---
-    //Post:retorna el format de la regio de l'oest
+    ///@pre ---
+    ///@post retorna el format de la regio de l'oest
     public char regio_o(){
 
         return regions.get(4).lletra();
     }
 
-    //Pre:---
-    //Post: la fitxa actual la regio nort = a la regio sud de f
+    ///@pre ---
+    ///@post  la fitxa actual la regio nort = a la regio sud de f
     public boolean nord_igual_sud(Fitxa f){
         return regio_n() == f.regio_s();
     }
 
-    //Pre:---
-    //Post: la fitxa actual la regio sud = a la regio nort de f
+    ///@pre ---
+    ///@post  la fitxa actual la regio sud = a la regio nort de f
     public boolean sud_igual_nord(Fitxa f){
         return regio_s() == f.regio_n();
     }
 
-    //Pre:---
-    //Post: la fitxa actual la regio est = a la regio oest de f
+    ///@pre ---
+    ///@post  la fitxa actual la regio est = a la regio oest de f
     public boolean est_igual_oest(Fitxa f){
         return regio_e() == f.regio_o();
     }
 
-    //Pre:---
-    //Post: la fitxa actual la regio oest = a la regio est de f
+    ///@pre ---
+    ///@post  la fitxa actual la regio oest = a la regio est de f
     public boolean oest_igual_est(Fitxa f){
         return regio_o() == f.regio_e();
     }
 
-    //Pre: rotar = 0 o 90 o 180 o 270
-    //Post: fitxa rotada
+    ///@pre  rotar = 0 o 90 o 180 o 270
+    ///@post  fitxa rotada
     public void rotar(int rotar){
         if(rotar == 0 || rotar == 90 || rotar == 180 || rotar == 270) {
             Regio aux;
@@ -203,21 +207,21 @@ public class Fitxa extends Excepcio{
         }
     }
 
-    //Pre:---
-    //Post: guardar pos
+    ///@pre ---
+    ///@post  guardar pos
     public void setPosicio(Posicio novaPos) {
         rotar(novaPos.getRotacio());
         this.pos = novaPos;
     }
 
-    //Pre:---
-    //Post: retorna posicio
+    ///@pre ---
+    ///@post  retorna posicio
     public Posicio getPosicio() {
         return pos;
     }
 
-    //Pre:---
-    //Post:retorna cert si la fitxa actual encaixa amb la fitxa 'f' en la posicio del costat de 'direccio' ('N','E','S' o 'O')
+    ///@pre ---
+    ///@post retorna cert si la fitxa actual encaixa amb la fitxa 'f' en la posicio del costat de 'direccio' ('N','E','S' o 'O')
     public boolean fitxaActualEncaixaAmb(Fitxa f , char direccio){
         boolean encaixa=false;
 
@@ -245,8 +249,8 @@ public class Fitxa extends Excepcio{
         return encaixa;
     }
 
-    //Pre:---
-    //Post: retorna cert si alguna regio té el format E
+    ///@pre ---
+    ///@post  retorna cert si alguna regio té el format E
     public boolean teEscut(){
         if(regio_n()=='E' || regio_e()=='E' || regio_s()=='E' || regio_o()=='E'){
             return true;
@@ -255,8 +259,8 @@ public class Fitxa extends Excepcio{
     }
 
 
-    //Pre:---
-    //Post: retorna cert si la fitxa el centre és X o V o M
+    ///@pre ---
+    ///@post  retorna cert si la fitxa el centre és X o V o M
     public boolean es_fi_o_inici_de_cami(){
         if(regio_c() == 'X' || regio_c() == 'V' || regio_c() == 'M'){
             return true;
@@ -264,8 +268,8 @@ public class Fitxa extends Excepcio{
         return false;
     }
 
-    //Pre:---
-    //Post: retorna cert si la fitxa el centre no és V i E
+    ///@pre ---
+    ///@post  retorna cert si la fitxa el centre no és V i E
     public boolean es_fi_o_inici_de_ciutat(){
         if(regio_c() !='V' && regio_c()!='E'){
             return true;
@@ -273,8 +277,8 @@ public class Fitxa extends Excepcio{
         return false;
     }
 
-    //Pre:---
-    //Post: retorna el numero de bandes que son ciutat
+    ///@pre ---
+    ///@post  retorna el numero de bandes que son ciutat
     public Integer bandes_de_ciutat(){
         int num = 0;
         for(int i = 1; i<regions.size(); i++){
@@ -285,8 +289,8 @@ public class Fitxa extends Excepcio{
         return num;
     }
 
-    //Pre:---
-    //Post: retorna el numero de bandes que son cami
+    ///@pre ---
+    ///@post  retorna el numero de bandes que son cami
     public Integer bandes_de_cami(){
         int num = 0;
         for(int i = 1; i<regions.size(); i++){
@@ -297,8 +301,8 @@ public class Fitxa extends Excepcio{
         return num;
     }
 
-    //Pre:---
-    //Post:retorna el format de la fitxa si existeix amb rotacio 0
+    ///@pre ---
+    ///@post retorna el format de la fitxa si existeix amb rotacio 0
     public String formatNormal(){
         String fitxa = "";
         int rotacioOriginal=pos.getRotacio();

@@ -1,14 +1,16 @@
 import java.util.ArrayList;
-import java.util.List;
+
+///@class Tirada
+
+///@brief Descripcio de la clase...
 
 public class Tirada {
 
-    private Jugador jugadorActual;
-    private Baralla baralla;
-    private Tauler tauler;
-    private Fitxa fitxaActual;
-    private ArrayList<Posicio> posicionDisponibles;
-    List<Posicio> posicions;
+    private Jugador jugadorActual;///<Descripcio...
+    private Baralla baralla;///<Descripcio...
+    private Tauler tauler;///<Descripcio...
+    private Fitxa fitxaActual;///<Descripcio...
+    private ArrayList<Posicio> posicionDisponibles;///<Descripcio...
 
     ///Constructor per defecte de tirada
     Tirada(Jugador jActual, Baralla bActual, Tauler tActual)
@@ -36,8 +38,8 @@ public class Tirada {
 
     }
 
-    ///Pre:pos inicialitzat i es correcte
-    ///Post:Posa fitxaActual a gui si nomes encaixa d'una manera en la posicio pos altrament posa seleccio de rotacio
+    ///@pre pos inicialitzat i es correcte
+    ///@post Posa fitxaActual a gui si nomes encaixa d'una manera en la posicio pos altrament posa seleccio de rotacio
     public void apretatOpcionsDeFitxa(Posicio pos)
     {
         ArrayList<Posicio> posDisp = posicionDisponibles;
@@ -51,14 +53,14 @@ public class Tirada {
             Gui.mostraOpcionsDeRotacioEnFitxa(posDisp,fitxaActual);
     }
 
-    ///Pre:pos inicialitzat i es correcte
-    ///Post:Posa fitxaActual a gui en la posicio pos
+    ///@pre pos inicialitzat i es correcte
+    ///@post Posa fitxaActual a gui en la posicio pos
     public void apretatAngleFitxa(Posicio pos){
         posaFitxa(pos);
     }
 
-    ///Pre:pos inicialitzat i es correcte
-    ///Post:Posa fitxaActual al tauler i gui en la posicio pos
+    ///@pre pos inicialitzat i es correcte
+    ///@post Posa fitxaActual al tauler i gui en la posicio pos
     private void posaFitxa(Posicio pos){
         fitxaActual.setPosicio(pos);
         Gui.posaFitxa(fitxaActual);
@@ -75,8 +77,8 @@ public class Tirada {
         }
     }
 
-    ///Pre:9<=x>=0 && 9<=y>=0, dir==('C' o 'N' o 'E' o 'S' o 'O' o 'X')
-    ///Post:Posa fitxaActual al tauler amb el seguidor en la posicio x, y i regio dir
+    ///@pre 9<=x>=0 && 9<=y>=0, dir==('C' o 'N' o 'E' o 'S' o 'O' o 'X')
+    ///@post Posa fitxaActual al tauler amb el seguidor en la posicio x, y i regio dir
     public void apretatOpcionsDeSeguidor(int x, int y, char dir){
         //Gui.print(String.valueOf(dir));
         if (dir != 'X') {//X vol dir que l'usuari no vol ficar seguidor

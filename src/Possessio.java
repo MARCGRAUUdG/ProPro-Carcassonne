@@ -1,26 +1,29 @@
-
 import javafx.util.Pair;
 
 import java.lang.reflect.Array;
 import java.util.*;
 
+///@class Possessio
+
+///@brief Descripcio de la clase...
+
 public abstract class Possessio {
     private List<Pair<Fitxa,List<Character>>> conjunt;
 
-    public abstract boolean tancat();
-    public abstract int punts();
-    public abstract char tipus();
-    public abstract List<Integer> propietari();
+    public abstract boolean tancat();///<Descripcio...
+    public abstract int punts();///<Descripcio...
+    public abstract char tipus();///<Descripcio...
+    public abstract List<Integer> propietari();///<Descripcio...
 
-    //Pre:---
-    //Post: guardar fitxa i regio
+    ///@pre ---
+    ///@post  guardar fitxa i regio
     public Possessio(Fitxa inici, List<Character> r){
         conjunt = new ArrayList<>();
         conjunt.add(new Pair<>(inici,r));
     }
 
-    //Pre:---
-    //Post:afegir les fitxes amb la seva regio de aux a la possessio actual
+    ///@pre ---
+    ///@post afegir les fitxes amb la seva regio de aux a la possessio actual
     public void unir_possessions(Possessio aux){
 
         for(int i=aux.getConjunt().size()-1; i>=0; i--){
@@ -30,8 +33,8 @@ public abstract class Possessio {
         }
     }
 
-    //Pre:f te posicio
-    //Post: retorna cert si la regio r de la fitxa f esta en aquesta possessio altrament fals
+    ///@pre f te posicio
+    ///@post  retorna cert si la regio r de la fitxa f esta en aquesta possessio altrament fals
     public boolean pertanyLaFitxa(Fitxa f, Character r){
         int i=0;
         boolean trobat=false;
@@ -44,8 +47,8 @@ public abstract class Possessio {
         return trobat;
     }
 
-    //Pre:f te posicio
-    //Post:Elimina la fitxa f si esta en alguna lloc de la llista del conjunt en la regio r
+    ///@pre f te posicio
+    ///@post Elimina la fitxa f si esta en alguna lloc de la llista del conjunt en la regio r
     public void eliminar_fitxa(Fitxa f, Character r){
         int i=0;
         boolean trobat=false;
@@ -57,15 +60,15 @@ public abstract class Possessio {
         }
     }
 
-    //Pre:---
-    //Post:guarda una nova fitxa
+    ///@pre ---
+    ///@post guarda una nova fitxa
     public void afegir_fitxa(Fitxa f,List<Character> r){
         conjunt.add(new Pair<>(f,r));
     }
 
 
-    //Pre: la llista propietari a de tenir el numero de seguidor que te cada jugador a la possessio
-    //Post: retorna una llista dels propietaris de la possesio
+    ///@pre  la llista propietari a de tenir el numero de seguidor que te cada jugador a la possessio
+    ///@post  retorna una llista dels propietaris de la possesio
     public List<Integer> llistaPropietari(List<Integer> propietari){
         int major = 0;
         for (int i=0; i<propietari.size(); i++){
@@ -84,8 +87,8 @@ public abstract class Possessio {
     }
 
 
-    //Pre:---
-    //Post:retorna la llista de fitxes
+    ///@pre ---
+    ///@post retorna la llista de fitxes
     public List<Pair<Fitxa,List<Character>>> getConjunt(){
         return conjunt;
     }
