@@ -94,22 +94,30 @@ public class Joc {
 
     ///Pre:4<=jugador>=1
     ///Post:Puntuacio actual del Jugador jugador + puntuacio
-    public static void AfegeixPuntuacioAJugador(int jugador, int puntuacio) {
+    public static void AfegeixPuntuacioAJugador(int jugador, int puntuacio,char reg) {
         _jugadors.get(jugador-1).incrementaPuntuacio(puntuacio);
-        //Gui.print("Puntuacio: Jugador"+jugador+" +"+puntuacio);
+        Gui.print("Regio "+reg+ ", Jugador: "+jugador+" +"+puntuacio+" punts");
         Gui.setScore(jugador,_jugadors.get(jugador-1).getPuntuacio());
     }
 
-    //Pre:
-    //Post:
+    //Pre:Partida iniciada
+    //Post:Assigna els punts de les possessions que no han sigut tancades i imprimeix per pantalla menu de final de partida amb ranking
     public static void finalitzaJoc() {
+        Gui.print("---------Partida Finalitzada---------");
         _tauler.assignaPuntsAPossessionsSenseTancar();
-        //TODO Mostrar ranking
+        Gui.print("--------------Puntuació--------------");
+        int pmax=0;
 
-
-        int punts=20;
+        for(int i=0;i<_jugadors.size();i++){//Agafa la puntuacio maxima
+            Gui.print("Jugador"+_jugadors.get(i).getId()+" ->"+_jugadors.get(i).getPuntuacio()+" punts");
+            if(pmax<_jugadors.get(i).getPuntuacio())
+                pmax=_jugadors.get(i).getPuntuacio();
+        }
         ArrayList<Integer> guanyadors=new ArrayList<>();
-        guanyadors.add(3);
-        Gui.mostraGuanyadors(guanyadors,punts);
+        for(int i=0;i<_jugadors.size();i++){//Agafa els jugadors amb la puntuacio maxima
+            if(_jugadors.get(i).getPuntuacio()==pmax)
+                guanyadors.add(i+1);
+        }
+        Gui.mostraGuanyadors(guanyadors,pmax);
     }
 }

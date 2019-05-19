@@ -552,8 +552,11 @@ public class Gui extends Application{
         ImageView winner = new ImageView(winnerImg);
         winner.setFitHeight(ample);winner.setFitWidth(ample);
 
+        int div=15;
+        if(punts<10)div=10;
+
         Text sp=new Text (ample/2-40, ample/2-65,"PUNTS");
-        Text p=new Text (ample/2-15, ample/2-40,punts+"");
+        Text p=new Text (ample/2-div, ample/2-40,punts+"");
         Text sw=new Text(ample/2-66, ample/2+90,"JUGADOR/S");
         Text jugadors=new Text();
         sw.setFont(Font.font("Arial Black",20));p.setFont(Font.font("Arial Black",20));sp.setFont(Font.font("Arial Black",20));jugadors.setFont(Font.font("Arial Black",20));

@@ -172,7 +172,6 @@ public class Tauler
     ///Post:Si de la llista p hi ha alguna possessio tancada assigna punts als jugadors, retorna els seguidors, i l'elimina de la llista
     private void comprovaPossessionsTancades(ArrayList<Possessio> p) {
         for(int i=p.size()-1;i>=0;i--) {
-            Gui.print("Regio "+p.get(i).tipus()+i+" "+p.get(i).toString()+" Esta tancat: "+p.get(i).tancat());
             if(p.get(i).tancat()) {
                 List<Pair<Fitxa,List<Character>>> lp=p.get(i).getConjunt();
                 List<Integer> JugadorGuanyador = p.get(i).propietari();
@@ -180,7 +179,7 @@ public class Tauler
                     int puntsTotals = p.get(i).punts();
                     puntsTotals = puntsTotals / JugadorGuanyador.size();
                     for (int x = 0; x < JugadorGuanyador.size(); x++) {
-                        Joc.AfegeixPuntuacioAJugador(JugadorGuanyador.get(x), puntsTotals);
+                        Joc.AfegeixPuntuacioAJugador(JugadorGuanyador.get(x), puntsTotals,p.get(i).tipus());
                     }
                 }else{
                     Gui.print("Ningu dominava la possessio completada");
@@ -412,6 +411,18 @@ public class Tauler
     }
 
     public void assignaPuntsAPossessionsSenseTancar(){
+        reparteixPuntsDePossessio(_posCami);
+        reparteixPuntsDePossessio(_posCiutat);
+        reparteixPuntsDePossessio(_posEsglesia);
+        //reparteixPuntsDePossessio(_posCamp);//TODO Falta implementar
+    }
 
+    private void reparteixPuntsDePossessio(ArrayList<Possessio> p){
+        for(int i=0;i<p.size();i++){
+            int punts=p.get(i).punts();
+            List<Integer> jugador=p.get(i).propietari();
+            for(int x=0;x<jugador.size();x++)
+                Joc.AfegeixPuntuacioAJugador(jugador.get(x),punts/jugador.size(),p.get(i).tipus());
+        }
     }
 }
