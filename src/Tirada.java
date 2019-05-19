@@ -31,60 +31,56 @@ public class Tirada {
         tauler = tActual;
 
         fitxaActual = baralla.agafarFitxa();
-
+        Gui.print("cac2"+fitxaActual);
         posicionsDisponibles = tauler.getPosDisponibles(fitxaActual);
 
-        if (jugadorActual.esControlable())
-        {
-            if(fitxaActual!=null) {
-                while (!baralla.esBuida() && posicionsDisponibles.size() == 0) {
-                    Gui.print("Fitxa: " + fitxaActual.toString() + " descartada no encaixa en el tauler");
-                    fitxaActual = baralla.agafarFitxa();
-                    posicionsDisponibles = tauler.getPosDisponibles(fitxaActual);
-                }
+        if(fitxaActual!=null) {
+            while (!baralla.esBuida() && posicionsDisponibles.size() == 0) {
+                Gui.print("Fitxa: " + fitxaActual.toString() + " descartada no encaixa en el tauler");
+                fitxaActual = baralla.agafarFitxa();
+                posicionsDisponibles = tauler.getPosDisponibles(fitxaActual);
+            }
+            if (jugadorActual.esControlable())
                 Gui.posaQuadresVerds(posicionsDisponibles);
-            }else{
-                Gui.print("No hi han més fitxes a la baralla");
-            }
-            Gui.MostraBaralla(baralla.size(),fitxaActual);
-        } else
-        {
-            int puntsMax = 0, punts = 0;
-            char regioHum = 'X', regioMaxPuntsHum = 'X';
-            Posicio posicioPuntsMax = null;
-            Pair<Character, Integer> parellaSim;
-
-            //assert false; //<--?
-            for (Posicio posicio_disponible : posicionsDisponibles)
-            {
-                parellaSim = tauler.simularPunts(posicio_disponible, fitxaActual);
-
-                Gui.print(String.valueOf(parellaSim.getValue())+posicio_disponible.toString());
-                if (parellaSim.getValue() > puntsMax)
-                {
-                    puntsMax = parellaSim.getValue();
-                    regioMaxPuntsHum = parellaSim.getKey();
-                    posicioPuntsMax = posicio_disponible;
-                    Gui.print("Posicio seleccionada="+posicioPuntsMax.toString());
-                }
-            }
-            if (puntsMax == 0)
-            {
-                int aleatori = (int) (Math.random() * posicionsDisponibles.size());
-                posicioPuntsMax = posicionsDisponibles.get(aleatori);
-            }
-            Gui.print("PuntsMax:"+Integer.toString(puntsMax));
-            Gui.print(posicioPuntsMax.toString());
-
-            fitxaActual.setPosicio(posicioPuntsMax);
-            Gui.posaFitxa(fitxaActual);
-            apretatOpcionsDeSeguidor(posicioPuntsMax.getPosicioX(), posicioPuntsMax.getPosicioY(), regioMaxPuntsHum);
-            tauler.posarFitxaTauler(fitxaActual);
-
-            if(jugadorActual.getHumanets()<=0 || tauler.onEsPotFicarSeguidor(fitxaActual).size()<=0) {Joc.iniciaNouTorn();}
-
-            Gui.MostraBaralla(baralla.size(),fitxaActual);
+            else gestionarMaquina();
+        }else{
+            Gui.print("No hi han més fitxes a la baralla");
         }
+        Gui.MostraBaralla(baralla.size(),fitxaActual);
+    }
+
+    private void gestionarMaquina() {
+        int puntsMax = 0, punts = 0;
+        char regioHum = 'X', regioMaxPuntsHum = 'X';
+        Posicio posicioPuntsMax = null;
+        Pair<Character, Integer> parellaSim;
+
+        assert false; //<--?
+        for (Posicio posicio_disponible : posicionsDisponibles)
+        {
+            parellaSim = tauler.simularPunts(posicio_disponible, fitxaActual);
+
+            Gui.print(String.valueOf(parellaSim.getValue())+posicio_disponible.toString());
+            if (parellaSim.getValue() > puntsMax)
+            {
+                puntsMax = parellaSim.getValue();
+                regioMaxPuntsHum = parellaSim.getKey();
+                posicioPuntsMax = posicio_disponible;
+                Gui.print("Posicio seleccionada="+posicioPuntsMax.toString());
+            }
+        }
+        if (puntsMax == 0)
+        {
+            int aleatori = (int) (Math.random() * posicionsDisponibles.size());
+            posicioPuntsMax = posicionsDisponibles.get(aleatori);
+        }
+        Gui.print("PuntsMax:"+Integer.toString(puntsMax));
+        Gui.print(posicioPuntsMax.toString());
+
+        fitxaActual.setPosicio(posicioPuntsMax);
+        fitxaActual.assignar_seguidor(regioMaxPuntsHum, jugadorActual.getId());
+        Gui.posaFitxa(fitxaActual);Gui.MostraBaralla(baralla.size(),fitxaActual);
+        apretatOpcionsDeSeguidor(posicioPuntsMax.getPosicioX(), posicioPuntsMax.getPosicioY(), regioMaxPuntsHum);
     }
 
 
