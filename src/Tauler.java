@@ -104,16 +104,24 @@ public class Tauler
     private void assignarPossessio(Fitxa f) {
         Posicio p=f.getPosicio();
         if(getFitxa(p.getPosicioX()-1,p.getPosicioY())!=null){
-            afegirPossessio(getFitxa(p.getPosicioX()-1,p.getPosicioY()),f,f.regio_o(),'O');
+            int i =getPossessioDeFitxa(f,getLlistaTipusDePossessio(f.regio_o()),'O');
+            if(i==-1)
+                afegirPossessio(getFitxa(p.getPosicioX()-1,p.getPosicioY()),f,f.regio_o(),'O');
         }
         if(getFitxa(p.getPosicioX()+1,p.getPosicioY())!=null){
-            afegirPossessio(getFitxa(p.getPosicioX()+1,p.getPosicioY()),f,f.regio_e(),'E');
+            int i =getPossessioDeFitxa(f,getLlistaTipusDePossessio(f.regio_e()),'E');
+            if(i==-1)
+                afegirPossessio(getFitxa(p.getPosicioX()+1,p.getPosicioY()),f,f.regio_e(),'E');
         }
         if(getFitxa(p.getPosicioX(),p.getPosicioY()-1)!=null){
-            afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()-1),f,f.regio_n(),'N');
+            int i =getPossessioDeFitxa(f,getLlistaTipusDePossessio(f.regio_n()),'N');
+            if(i==-1)
+                afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()-1),f,f.regio_n(),'N');
         }
         if(getFitxa(p.getPosicioX(),p.getPosicioY()+1)!=null){
-            afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()+1),f,f.regio_s(),'S');
+            int i =getPossessioDeFitxa(f,getLlistaTipusDePossessio(f.regio_s()),'S');
+            if(i==-1)
+                afegirPossessio(getFitxa(p.getPosicioX(),p.getPosicioY()+1),f,f.regio_s(),'S');
         }
 
         posaFitxaAPossessioSiNoEstaPosat(f, _posCami, 'C');
@@ -130,11 +138,6 @@ public class Tauler
             Gui.print("Regio "+p.get(i).tipus()+i+" "+p.get(i).toString()+" Esta tancat: "+p.get(i).tancat());
             if(p.get(i).tancat()) {
                 List<Pair<Fitxa,List<Character>>> lp=p.get(i).getConjunt();
-                for(int y=0;y<lp.size();y++){
-                    int jugador=lp.get(y).getKey().jugadorTeLaSeguidor();
-                    if(jugador!=-1)
-                        Joc.AfegeixSeguidorAJugador(jugador);
-                }
                 List<Integer> JugadorGuanyador = p.get(i).propietari();
                 if(JugadorGuanyador.size()>0) {
                     int puntsTotals = p.get(i).punts();
@@ -149,6 +152,11 @@ public class Tauler
                 for (int x=(lp.size()-1); x>=0; x--) {//Afegeix les fitxes on es te que eliminar el seguidor en la gui
                     if (lp.get(x).getKey().elSeguidorEstaEnElSeuTipusDeRegio(p.get(i).tipus(),lp.get(x).getValue()))
                         fitxes.add(lp.get(x).getKey());
+                }
+                for(int y=0;y<fitxes.size();y++){//Retorna els seguifors amb possessio completada al jugador
+                    int jugador=fitxes.get(y).jugadorTeLaSeguidor();
+                    if(jugador!=-1)
+                        Joc.AfegeixSeguidorAJugador(jugador);
                 }
                 Gui.treuSeguidorsDe(fitxes);
                 Gui.print("Possessio tancada");
@@ -222,7 +230,7 @@ public class Tauler
         if (reg == 'C') {
             //Posa la fitxa en la possessio de la fitxa del costat
             int pin=getPossessioDeFitxa(fAnterior,_posCami,lletraInvertida);
-            List<Character> lPos=new ArrayList<>();
+            List<Character> lPos;
             lPos = getPosicionsDePossessio(fNova,reg,loc);
             if(pin!=-1)
                 _posCami.get(pin).afegir_fitxa(fNova,lPos);
@@ -230,7 +238,7 @@ public class Tauler
 
         }else if(reg=='V'){
             int pin=getPossessioDeFitxa(fAnterior,_posCiutat,lletraInvertida);
-            List<Character> lPos=new ArrayList<>();
+            List<Character> lPos;
             lPos = getPosicionsDePossessio(fNova,reg,loc);
             if(pin!=-1)
                 _posCiutat.get(pin).afegir_fitxa(fNova,lPos);
