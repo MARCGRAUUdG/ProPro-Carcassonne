@@ -1,5 +1,5 @@
-nombre_jugadors 2
-jugadors_cpu 2
+nombre_jugadors 4
+jugadors_cpu 2 3 4
 rajoles
 CFCVC 7
 XCCCC 4

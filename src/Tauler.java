@@ -430,7 +430,6 @@ public class Tauler
 
     private int getPuntsRegio(Fitxa fitxa, Fitxa fitxaActual, ArrayList<Possessio> llistaPos, char loc, char regio) {
         int index = getPossessioDeFitxa(fitxa, llistaPos, loc);
-        if (index != -1) Gui.print(Integer.toString(index)+llistaPos.get(index).toString());
         int punts = 0;
         List<Character> regions = getPosicionsDePossessio(fitxaActual,regio,loc);
         if (index != -1) {
