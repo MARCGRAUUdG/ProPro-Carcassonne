@@ -354,63 +354,36 @@ public class Tauler
         int puntsRotacio = 0, puntsOrigin = 0, puntsMax = 0;
         char regioHumanet = 'X';
 
-        fitxaNord = getFitxa(posicio.getPosicioX(), posicio.getPosicioY()-1);
-        fitxaSud = this.getFitxa(posicio.getPosicioX(), posicio.getPosicioY()+1);
-        fitxaEst = this.getFitxa(posicio.getPosicioX()+1, posicio.getPosicioY());
-        fitxaOest = this.getFitxa(posicio.getPosicioX()-1, posicio.getPosicioY());
+        fitxaNord = this.getFitxa(posicio.getPosicioX(), posicio.getPosicioY()-1); if (fitxaNord != null) regioNord = fitxaNord.regio_s();
+        fitxaSud = this.getFitxa(posicio.getPosicioX(), posicio.getPosicioY()+1); if (fitxaSud != null) regioSud = fitxaSud.regio_n();
+        fitxaEst = this.getFitxa(posicio.getPosicioX()+1, posicio.getPosicioY()); if (fitxaEst != null) regioEst = fitxaEst.regio_o();
+        fitxaOest = this.getFitxa(posicio.getPosicioX()-1, posicio.getPosicioY()); if (fitxaOest != null) regioOest = fitxaOest.regio_e();
 
-        if (fitxaNord != null) regioNord = fitxaNord.regio_s();
-        if (fitxaSud != null) regioSud = fitxaSud.regio_n();
-        if (fitxaEst != null) regioEst = fitxaEst.regio_o();
-        if (fitxaOest != null) regioOest = fitxaOest.regio_e();
-
-        ArrayList<Regio> regionsActual = fitxaActual.getRegions(); //C, N, E, S, O
-
-        if (fitxaActual.regio_c() == 'M')
-        {
-            if (fitxaActual.envoltada(this))
-            {
-                puntsRotacio += 9;
-            }
-        }
+        if (fitxaActual.regio_c() == 'M') {
+            if (fitxaActual.envoltada(this)) {
+                puntsRotacio += 9; } }
         else
         {
             ArrayList<Character> posicions=onEsPotFicarSeguidor(fitxaActual);
-            //Gui.print(Character.toString(regioNord)+regionsActual.get(4).lletra()+fitxaActual.toString());
             if (posicions.contains('N')) {
                 puntsRotacio += getPunts(regioNord, fitxaNord, fitxaActual, 'S');
-                if ((puntsRotacio-puntsOrigin)>puntsMax)
-                {
-                    regioHumanet = 'N';
-                }
-                puntsOrigin = puntsRotacio;
-            }
-            //Gui.print(Character.toString(regioEst)+regionsActual.get(1).lletra());
+                if ((puntsRotacio-puntsOrigin)>puntsMax) {
+                    regioHumanet = 'N'; }
+                puntsOrigin = puntsRotacio; }
             if (posicions.contains('E')) {
                 puntsRotacio += getPunts(regioEst, fitxaEst,fitxaActual, 'O');
-                if ((puntsRotacio-puntsOrigin)>puntsMax)
-                {
-                    regioHumanet = 'E';
-                }
-                puntsOrigin = puntsRotacio;
-            }
-            //Gui.print(Character.toString(regioSud)+regionsActual.get(2).lletra());
+                if ((puntsRotacio-puntsOrigin)>puntsMax) {
+                    regioHumanet = 'E'; }
+                puntsOrigin = puntsRotacio; }
             if (posicions.contains('S')) {
                 puntsRotacio += getPunts(regioSud, fitxaSud, fitxaActual, 'N');
-                if ((puntsRotacio-puntsOrigin)>puntsMax)
-                {
-                    regioHumanet = 'S';
-                }
-                puntsOrigin = puntsRotacio;
-            }
-            //Gui.print(Character.toString(regioOest)+regionsActual.get(3).lletra());
+                if ((puntsRotacio-puntsOrigin)>puntsMax) {
+                    regioHumanet = 'S'; }
+                puntsOrigin = puntsRotacio; }
             if (posicions.contains('O')) {
                 puntsRotacio += getPunts(regioOest, fitxaOest, fitxaActual, 'E');
-                if ((puntsRotacio-puntsOrigin)>puntsMax)
-                {
-                    regioHumanet = 'O';
-                }
-            }
+                if ((puntsRotacio-puntsOrigin)>puntsMax) {
+                    regioHumanet = 'O'; } }
         }
         return new Pair<Character, Integer>(regioHumanet, puntsRotacio);
     }

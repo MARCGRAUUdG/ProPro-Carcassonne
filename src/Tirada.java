@@ -75,8 +75,8 @@ public class Tirada {
             int aleatori = (int) (Math.random() * posicionsDisponibles.size());
             posicioPuntsMax = posicionsDisponibles.get(aleatori);
         }
-        posaFitxaMaquina(posicioPuntsMax);
-        apretatOpcionsDeSeguidor2(posicioPuntsMax.getPosicioX(),posicioPuntsMax.getPosicioY(),regioMaxPuntsHum);
+        jugadorActual.posaFitxa(posicioPuntsMax, fitxaActual, tauler);
+        apretatOpcionsDeSeguidorMaquina(posicioPuntsMax.getPosicioX(),posicioPuntsMax.getPosicioY(),regioMaxPuntsHum);
     }
 
 
@@ -92,38 +92,15 @@ public class Tirada {
             }
         }
         if(posDisp.size()==1)//Nomes hi ha una opcio per colocar fitxa
-            posaFitxa(pos);
+            jugadorActual.posaFitxa(pos, fitxaActual, tauler);
         else //En la mateixa posicio es pot posar fitxa diferents rotacions
             Gui.mostraOpcionsDeRotacioEnFitxa(posDisp,fitxaActual);
     }
 
     ///Pre:pos inicialitzat i es correcte
-    ///Post:Posa fitxaActual al tauler i gui en la posicio pos
-    private void posaFitxa(Posicio pos){
-        fitxaActual.setPosicio(pos);
-        Gui.posaFitxa(fitxaActual);
-        if(jugadorActual.getHumanets()>0) {
-            ArrayList<Character> posicions=tauler.onEsPotFicarSeguidor(fitxaActual);
-            if(posicions.size()>0)Gui.posaSeleccioDeSeguidors(pos.getPosicioX(), pos.getPosicioY(), posicions);
-            else{
-                tauler.posarFitxaTauler(fitxaActual);
-                Joc.iniciaNouTorn();
-            }
-        }else {
-            tauler.posarFitxaTauler(fitxaActual);
-            Joc.iniciaNouTorn();
-            return;
-        }
-    }
-
-    private void posaFitxaMaquina(Posicio pos){
-        fitxaActual.setPosicio(pos);
-        Gui.posaFitxa(fitxaActual);
-    }
-    ///Pre:pos inicialitzat i es correcte
     ///Post:Posa fitxaActual a gui en la posicio pos
     public void apretatAngleFitxa(Posicio pos){
-        posaFitxa(pos);
+        jugadorActual.posaFitxa(pos, fitxaActual, tauler);
     }
 
     ///Pre:9<=x>=0 && 9<=y>=0, dir==('C' o 'N' o 'E' o 'S' o 'O' o 'X')
@@ -140,7 +117,7 @@ public class Tirada {
         Joc.iniciaNouTorn();
     }
 
-    public void apretatOpcionsDeSeguidor2(int x, int y, char dir){
+    public void apretatOpcionsDeSeguidorMaquina(int x, int y, char dir){
         //Gui.print(String.valueOf(dir));
         if (dir != 'X') {//X vol dir que l'usuari no vol ficar seguidor
             fitxaActual.assignar_seguidor(dir, jugadorActual.getId());

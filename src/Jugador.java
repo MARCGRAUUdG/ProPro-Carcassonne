@@ -91,6 +91,10 @@ public abstract class Jugador {
     //Post: retorna si el jugador actual es controlable
     public abstract boolean esControlable();
 
+    ///Pre:pos inicialitzat i es correcte
+    ///Post:Posa fitxaActual al tauler i gui en la posicio pos
+    public abstract void posaFitxa(Posicio pos, Fitxa fitxaActual, Tauler tauler);
+
     public int getPuntuacio(){
         return puntuacio;
     }
