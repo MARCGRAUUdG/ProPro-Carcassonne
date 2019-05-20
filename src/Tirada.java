@@ -40,13 +40,19 @@ public class Tirada {
                 fitxaActual = baralla.agafarFitxa();
                 posicionsDisponibles = tauler.getPosDisponibles(fitxaActual);
             }
-            if (jugadorActual.esControlable())
+
+            if (jugadorActual.esControlable()){
                 Gui.posaQuadresVerds(posicionsDisponibles);
+                Gui.MostraBaralla(baralla.size(),fitxaActual);
+            }
             else gestionarMaquina();
+
         }else{
             Gui.print("No hi han més fitxes a la baralla");
+            Gui.MostraBaralla(baralla.size(),fitxaActual);
+            Joc.finalitzaJoc();
         }
-        Gui.MostraBaralla(baralla.size(),fitxaActual);
+
     }
 
     private void gestionarMaquina() {
@@ -79,7 +85,10 @@ public class Tirada {
 
         fitxaActual.setPosicio(posicioPuntsMax);
         fitxaActual.assignar_seguidor(regioMaxPuntsHum, jugadorActual.getId());
-        Gui.posaFitxa(fitxaActual);Gui.MostraBaralla(baralla.size(),fitxaActual);
+
+        Gui.posaFitxa(fitxaActual);
+        Gui.MostraBaralla(baralla.size(),fitxaActual);
+
         apretatOpcionsDeSeguidor(posicioPuntsMax.getPosicioX(), posicioPuntsMax.getPosicioY(), regioMaxPuntsHum);
     }
 

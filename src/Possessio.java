@@ -11,6 +11,7 @@ public abstract class Possessio {
     public abstract int punts();
     public abstract char tipus();
     public abstract List<Integer> propietari();
+
     //Pre:---
     //Post: guardar fitxa i regio
     public Possessio(Fitxa inici, List<Character> r){
@@ -23,21 +24,37 @@ public abstract class Possessio {
     public void unir_possessions(Possessio aux){
 
         for(int i=aux.getConjunt().size()-1; i>=0; i--){
-            afegir_fitxa(aux.getConjunt().get(i).getKey(),aux.getConjunt().get(i).getValue());
+            Pair<Fitxa,List<Character>> p = aux.getConjunt().get(i);
+
+            afegir_fitxa(p.getKey(),p.getValue());
         }
     }
 
-    //Pre:---
+    //Pre:f te posicio
     //Post: retorna cert si la regio r de la fitxa f esta en aquesta possessio altrament fals
     public boolean pertanyLaFitxa(Fitxa f, Character r){
         int i=0;
         boolean trobat=false;
         while(!trobat && i<conjunt.size()){
-            if(conjunt.get(i).getKey().getPosicio()==f.getPosicio()&& conjunt.get(i).getValue().contains(r)) {
+            Pair<Fitxa,List<Character>> p = conjunt.get(i);
+            if(p.getKey().getPosicio()==f.getPosicio()&& p.getValue().contains(r)) {
                 trobat = true;
             }else i++;
         }
         return trobat;
+    }
+
+    //Pre:f te posicio
+    //Post:Elimina la fitxa f si esta en alguna lloc de la llista del conjunt en la regio r
+    public void eliminar_fitxa(Fitxa f, Character r){
+        int i=0;
+        boolean trobat=false;
+        while(!trobat && i<conjunt.size()){
+            Pair<Fitxa,List<Character>> p = conjunt.get(i);
+            if(p.getKey().getPosicio()==f.getPosicio()&& p.getValue().contains(r)) {
+                conjunt.remove(i);
+            }else i++;
+        }
     }
 
     //Pre:---
