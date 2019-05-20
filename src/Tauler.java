@@ -375,7 +375,7 @@ public class Tauler
         }
         else
         {
-            ArrayList<Character> posicions=this.onEsPotFicarSeguidor(fitxaActual);
+            ArrayList<Character> posicions=onEsPotFicarSeguidor(fitxaActual);
             //Gui.print(Character.toString(regioNord)+regionsActual.get(4).lletra()+fitxaActual.toString());
             if (posicions.contains('N')) {
                 puntsRotacio += getPunts(regioNord, fitxaNord, fitxaActual, 'S');

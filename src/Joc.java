@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Joc {
     private static LlegirFitxer _fitxer;
@@ -61,14 +62,17 @@ public class Joc {
     ///Pre:IniciJoc() cridat anteriorment
     ///Post:Comença un nou torn
     public static void iniciaNouTorn(){
+        Gui.print("NOU TORN");
         _jugadorActual++;
         if(_jugadorActual>=_jugadors.size())_jugadorActual=0;
         _tiradaActual =new Tirada(_jugadors.get(_jugadorActual),_baralla,_tauler);
+        Gui.print("Putu marc "+_tiradaActual.hashCode()+"");
     }
 
     ///Pre:9<=x>=0 && 9<=y>=0
     ///Post:Li diu a tiradaActual la posicio on l'usuari vol colocar una fitxa
     public static void apretatPerPosarFitxa(int x, int y, int rot) {
+        Gui.print("id Joc     :"+ _tiradaActual.hashCode());
         _tiradaActual.apretatOpcionsDeFitxa(new Posicio(x,y,rot));
     }
 
