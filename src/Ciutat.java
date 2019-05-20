@@ -1,8 +1,11 @@
 import javafx.util.Pair;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+///@class Ciutat
+
+///@brief Descripcio de la clase...
 
 public class Ciutat extends Estructura {
 
@@ -10,8 +13,8 @@ public class Ciutat extends Estructura {
         super(inici,r);
     }
 
-    //Pre:---
-    //Post:retorna cert si la possessio esta completa altrament false
+    ///@pre ---
+    ///@post retorna cert si la possessio esta completa altrament false
     public boolean tancat(){
         int obert = 0;
         ArrayList<Fitxa> f = new ArrayList<>();
@@ -63,8 +66,8 @@ public class Ciutat extends Estructura {
         return obert==0;
     }
 
-    //Pre:---
-    //Post:retorna el/s propietari/s de la ciutat altrament llista buida
+    ///@pre ---
+    ///@post retorna el/s propietari/s de la ciutat altrament llista buida
     public List<Integer> propietari(){
         List<Integer> pro = new ArrayList<Integer>(Arrays.asList(0,0,0,0));
         List<Pair<Fitxa,List<Character>>> llista = getConjunt();
@@ -94,8 +97,8 @@ public class Ciutat extends Estructura {
         return 'V';
     }
 
-    //Pre:---
-    //Post:retorna punts total de la ciutat
+    ///@pre ---
+    ///@post retorna punts total de la ciutat
     public int punts(){
         List<Pair<Fitxa,List<Character>>> llista = getConjunt();
         int puntuacio = 0;

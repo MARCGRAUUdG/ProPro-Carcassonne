@@ -1,18 +1,20 @@
 import javafx.util.Pair;
-
 import java.util.*;
 
+///@class Tauler
+
+///@brief Descripcio de la clase...
 
 public class Tauler
 {
-    private static final Fitxa[][] _tauler = new Fitxa[10][10];
-    private static ArrayList<Possessio> _posCami= new ArrayList<>();
-    private static ArrayList<Possessio> _posCamp= new ArrayList<>();
-    private static ArrayList<Possessio> _posEsglesia= new ArrayList<>();
-    private static ArrayList<Possessio> _posCiutat= new ArrayList<>();
+    private static final Fitxa[][] _tauler = new Fitxa[10][10];///<Descripcio...
+    private static ArrayList<Possessio> _posCami= new ArrayList<>();///<Descripcio...
+    private static ArrayList<Possessio> _posCamp= new ArrayList<>();///<Descripcio...
+    private static ArrayList<Possessio> _posEsglesia= new ArrayList<>();///<Descripcio...
+    private static ArrayList<Possessio> _posCiutat= new ArrayList<>();///<Descripcio...
 
-    ///Pre:Hi ha  almenys una fitxa al tauler en la posicio inicial (5,5)
-    ///Post:Retorna llista de les posicions on es pot ficar la fitxa f
+    ///@pre Hi ha  almenys una fitxa al tauler en la posicio inicial (5,5)
+    ///@post Retorna llista de les posicions on es pot ficar la fitxa f
     public ArrayList<Posicio> getPosDisponibles(Fitxa f) {
         ArrayList<Posicio> alp=new ArrayList<>();
         ArrayList<Posicio> posicionsVisitades=new ArrayList<>();
@@ -22,8 +24,8 @@ public class Tauler
         return alp;
     }
 
-    ///Pre:Funcio recursiva de getPosDisponibles(), 9<=x>=0 && 9<=y>=0
-    ///Post:Retorna la llista de posicions on es pot colocar la fitxa
+    ///@pre Funcio recursiva de getPosDisponibles(), 9<=x>=0 && 9<=y>=0
+    ///@post Retorna la llista de posicions on es pot colocar la fitxa
     private ArrayList<Posicio> buscaColocacioFitxes(int x, int y, Fitxa f,ArrayList<Posicio> posicionsVisitades) {
         ArrayList<Posicio> p=new ArrayList<Posicio>();
         if(x+1>9);
@@ -60,8 +62,8 @@ public class Tauler
         return p;
     }
 
-    ///Pre:9<=x>=0 && 9<=y>=0, f inicialitzada
-    ///Post:Si encaixa la fitxa f amb la posicio x, y en qualsevol rotacio afageix les posicions (considerant cada rotacio) a la llista p
+    ///@pre 9<=x>=0 && 9<=y>=0, f inicialitzada
+    ///@post Si encaixa la fitxa f amb la posicio x, y en qualsevol rotacio afageix les posicions (considerant cada rotacio) a la llista p
     private void afegeixPosicioSiEncaixaFitxa(Fitxa f, int x, int y, ArrayList<Posicio> p) {
         int rotacio[]={0,90,180,270};
         for(int i=0;i<4;i++)
@@ -90,16 +92,16 @@ public class Tauler
         }
     }
 
-    ///Pre:La posicio de f es correcte in la fitxa encaixa
-    ///Post:S'ha colocat la fitxa en el tauler
+    ///@pre La posicio de f es correcte in la fitxa encaixa
+    ///@post S'ha colocat la fitxa en el tauler
     public void posarFitxaTauler(Fitxa f) {
         Posicio p=f.getPosicio();
         _tauler[p.getPosicioX()][p.getPosicioY()]=f;
         assignarPossessio(f);
     }
 
-    ///Pre: f inicialitzada amb posicio
-    ///Post:Assigna la fitxa f en alguna/es possessio/s de la llista de tipus de possessions si cal
+    ///@pre  f inicialitzada amb posicio
+    ///@post Assigna la fitxa f en alguna/es possessio/s de la llista de tipus de possessions si cal
     private void assignarPossessio(Fitxa f) {
         Posicio p=f.getPosicio();
         ArrayList<Boolean> esPotPosar=new ArrayList<>();
@@ -128,8 +130,8 @@ public class Tauler
         comprovaPossessionsTancades(_posCami);
     }
 
-    ///Pre:f inicialitzada
-    ///Post: Uneix les possessions si f pertany en mes d'una possessio del mateix tipus de la mateixa regio unida
+    ///@pre f inicialitzada
+    ///@post  Uneix les possessions si f pertany en mes d'una possessio del mateix tipus de la mateixa regio unida
     private void unirPossessionsSiCal(Fitxa f, ArrayList<Possessio> p) {
         if(p.size()>0) {
             ArrayList<Integer> nLoc = onEstaLaFitxaEnPossessions(f, p);
@@ -155,8 +157,8 @@ public class Tauler
         }
     }
 
-    ///Pre:f inicialitzada
-    ///Post:Retorna una llista de posicions de on pertany la fitxa f de la llista de possessions p
+    ///@pre f inicialitzada
+    ///@post Retorna una llista de posicions de on pertany la fitxa f de la llista de possessions p
     private ArrayList<Integer> onEstaLaFitxaEnPossessions(Fitxa f, ArrayList<Possessio> p){
         ArrayList<Integer> nLoc = new ArrayList<>();
         if(p.size()>0) {
@@ -170,8 +172,8 @@ public class Tauler
         return nLoc;
     }
 
-    ///Pre:--
-    ///Post:Si de la llista p hi ha alguna possessio tancada assigna punts als jugadors, retorna els seguidors, i l'elimina de la llista
+    ///@pre --
+    ///@post Si de la llista p hi ha alguna possessio tancada assigna punts als jugadors, retorna els seguidors, i l'elimina de la llista
     private void comprovaPossessionsTancades(ArrayList<Possessio> p) {
         for(int i=p.size()-1;i>=0;i--) {
             if(p.get(i).tancat()) {
@@ -203,8 +205,8 @@ public class Tauler
         }
     }
 
-    ///Pre: lletra==('C' o 'V')
-    ///Post:Posa la fitxa f a la possessio p del tipus lletra si no hi es a la llista p
+    ///@pre  lletra==('C' o 'V')
+    ///@post Posa la fitxa f a la possessio p del tipus lletra si no hi es a la llista p
     private void posaFitxaAPossessioSiNoEstaPosat(Fitxa f, ArrayList<Possessio> p, char lletra) {
         if (lletra == 'C' || lletra == 'V') {
             if (f.regio_c() == lletra) {
@@ -257,8 +259,8 @@ public class Tauler
         }
     }
 
-    ///Pre:fAnterior, fNova inicializats amb posicio, reg==('C' o 'F' o 'V' o 'M' o 'E'), loc==('C' o 'N' o 'E' o 'S' o 'O')
-    ///Post:Afegeix la fitxa fNova a la mateixa possessio que fAnterior del tipus reg en la part de regio loc
+    ///@pre fAnterior, fNova inicializats amb posicio, reg==('C' o 'F' o 'V' o 'M' o 'E'), loc==('C' o 'N' o 'E' o 'S' o 'O')
+    ///@post Afegeix la fitxa fNova a la mateixa possessio que fAnterior del tipus reg en la part de regio loc
     private void afegirPossessio(Fitxa fAnterior, Fitxa fNova, char reg, char loc) {
         char lletraInvertida=loc;
         if(loc=='N')lletraInvertida='S';
@@ -288,8 +290,8 @@ public class Tauler
         }
     }
 
-    ///Pre:f inicializat amb posicio, reg==('C' o 'F' o 'V' o 'M' o 'E'), loc==('C' o 'N' o 'E' o 'S' o 'O')
-    ///Post:Retorna una llista de posicions on la fitxa f es ve afectada per el tipus de possessio reg en la localitat loc
+    ///@pre f inicializat amb posicio, reg==('C' o 'F' o 'V' o 'M' o 'E'), loc==('C' o 'N' o 'E' o 'S' o 'O')
+    ///@post Retorna una llista de posicions on la fitxa f es ve afectada per el tipus de possessio reg en la localitat loc
     private List<Character> getPosicionsDePossessio(Fitxa f, char reg, char loc) {
         List<Character> lPos=new ArrayList<>();
         if(f.regio_c()=='X')lPos.add(loc);
@@ -303,8 +305,8 @@ public class Tauler
         return lPos;
     }
 
-    ///Pre:f inicialitzat, loc==('C' o 'N' o 'E' o 'S' o 'O')
-    ///Post:Retorna la posicio de la llista possessio de on es troba la fitxa f, -1 si no hi es en la llista
+    ///@pre f inicialitzat, loc==('C' o 'N' o 'E' o 'S' o 'O')
+    ///@post Retorna la posicio de la llista possessio de on es troba la fitxa f, -1 si no hi es en la llista
     private int getPossessioDeFitxa(Fitxa f, ArrayList<Possessio> possessio, char loc) {
         boolean trobat=false;
         int i=0;
@@ -320,8 +322,8 @@ public class Tauler
             return i;
     }
 
-    ///Pre:--
-    ///Post:Retorna la fitxa del tauler de posicio x,y, null si no hi ha cap fitxa o esta fora de rang
+    ///@pre --
+    ///@post Retorna la fitxa del tauler de posicio x,y, null si no hi ha cap fitxa o esta fora de rang
     public Fitxa getFitxa(int x, int y){
         try {
             return _tauler[x][y];
@@ -330,8 +332,8 @@ public class Tauler
         }
     }
 
-    ///Pre:--
-    ///Post:Elimina les posicions repetides de la llista alp
+    ///@pre --
+    ///@post Elimina les posicions repetides de la llista alp
     public void removeDouble(ArrayList<Posicio> alp) {
         for (int i = 0; i < alp.size(); i++) {
             for (int j = i + 1; j < alp.size(); j++) {
@@ -343,8 +345,8 @@ public class Tauler
         }
     }
 
-    ///Pre:f inicialitzada amb posicio
-    ///Post:retorna una llista de Caracters en les regions on es pot ficar el seguidor
+    ///@pre f inicialitzada amb posicio
+    ///@post retorna una llista de Caracters en les regions on es pot ficar el seguidor
     public ArrayList<Character> onEsPotFicarSeguidor(Fitxa f) {
         Posicio p=f.getPosicio();
         ArrayList<Character> loc=new ArrayList<>();
@@ -380,8 +382,8 @@ public class Tauler
         return loc;
     }
 
-    ///Pre:f inicialitzada
-    ///Post:Elimina de loc les possibilitats de ficar seguidor en les regions regions de la fitxa f on la possessio.get(i) estan ja ocupades per un jugador
+    ///@pre f inicialitzada
+    ///@post Elimina de loc les possibilitats de ficar seguidor en les regions regions de la fitxa f on la possessio.get(i) estan ja ocupades per un jugador
     private void eliminaPosicionsIncompatibles(ArrayList<Possessio> possessio, int i, char e, Fitxa f, ArrayList<Character> loc) {
         if(i!=-1) {
             Possessio pAct = getTipusDePossessio(possessio.get(i).tipus(), i);
@@ -398,8 +400,8 @@ public class Tauler
         }
     }
 
-    ///Pre:reg==('C' o 'F' o 'V' o 'M' o 'E')
-    ///Post:Retorna la llista de possesions del tipus reg
+    ///@pre reg==('C' o 'F' o 'V' o 'M' o 'E')
+    ///@post Retorna la llista de possesions del tipus reg
     private ArrayList<Possessio> getLlistaTipusDePossessio(char reg) {
         if(reg=='V')return _posCiutat;
         else if(reg=='C')return _posCami;
@@ -407,8 +409,8 @@ public class Tauler
         else return _posCamp;
     }
 
-    ///Pre:reg==('C' o 'F' o 'V' o 'M' o 'E')
-    ///Post:Retorna la possesio del tipus reg
+    ///@pre reg==('C' o 'F' o 'V' o 'M' o 'E')
+    ///@post Retorna la possesio del tipus reg
     private Possessio getTipusDePossessio(char reg,int i) {
         if(reg=='V')return _posCiutat.get(i);
         else if(reg=='C')return _posCami.get(i);
@@ -416,8 +418,8 @@ public class Tauler
         else return _posCamp.get(i);
     }
 
-    ///Pre:--
-    ///Post:Reparteix els punts de les possessions sense tancar als jugadors corresponents
+    ///@pre --
+    ///@post Reparteix els punts de les possessions sense tancar als jugadors corresponents
     public void assignaPuntsAPossessionsSenseTancar(){
         reparteixPuntsDePossessio(_posCami);
         reparteixPuntsDePossessio(_posCiutat);
@@ -425,8 +427,8 @@ public class Tauler
         reparteixPuntsDePossessio(_posCamp);
     }
 
-    ///Pre:--
-    ///Post:Reparteix els punts de la llista de possessions p sense tancar als jugadors corresponents
+    ///@pre --
+    ///@post Reparteix els punts de la llista de possessions p sense tancar als jugadors corresponents
     private void reparteixPuntsDePossessio(ArrayList<Possessio> p){
         for(int i=0;i<p.size();i++){
             int punts=p.get(i).punts();

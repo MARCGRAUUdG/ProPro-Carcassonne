@@ -1,23 +1,26 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.time.temporal.JulianFields;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+///@class LlegirFitxer
+
+///@brief Descripcio de la clase...
+
 public class LlegirFitxer {
 
-    private static File fitxer;
-    private static int _nJugadors;
-    private static ArrayList<Jugador> _jugadors;
-    private static Baralla baralla;//TODO Hauria de ser privat pero getBaralla no funciona ARREGLAR!
-    private static Fitxa _inicial;
-    private static boolean _camperols;
-    private static boolean fitxerOK = false;
+    private static File fitxer;///<Descripcio...
+    private static int _nJugadors;///<Descripcio...
+    private static ArrayList<Jugador> _jugadors;///<Descripcio...
+    private static Baralla baralla;///<Descripcio...
+    private static Fitxa _inicial;///<Descripcio...
+    private static boolean _camperols;///<Descripcio...
+    private static boolean fitxerOK = false;///<Descripcio...
 
-    ///Pre: ---
-    ///Post: lectura completa del fitxer
+    ///@pre  ---
+    ///@post  lectura completa del fitxer
     public static void llegirFitxer() {
         try (Scanner input = new Scanner(fitxer))
         {
@@ -32,8 +35,8 @@ public class LlegirFitxer {
         }
     }
 
-    ///Pre: Scanner del fitxer d'entrada
-    ///Post: Llegeix i guarda la fitxa inicial i si hi ha camperols
+    ///@pre  Scanner del fitxer d'entrada
+    ///@post  Llegeix i guarda la fitxa inicial i si hi ha camperols
     private static void llegirDadesPartida(Scanner input)
     {
         input.next("rajola_inicial"); //saltem String
@@ -59,8 +62,8 @@ public class LlegirFitxer {
         }
     }
 
-    ///Pre: Scanner del fitxer d'entrada
-    ///Post: Llegeix i guarda les diferents fitxes
+    ///@pre  Scanner del fitxer d'entrada
+    ///@post  Llegeix i guarda les diferents fitxes
     private static void llegirRajoles(Scanner input)
     {
         baralla = new Baralla();
@@ -94,8 +97,8 @@ public class LlegirFitxer {
         }*/
    }
 
-    ///Pre: Scanner del fitxer d'entrada
-    ///Post: Llegeix i guarda el nombre de jugadors i quins d'aquests són màquina
+    ///@pre  Scanner del fitxer d'entrada
+    ///@post  Llegeix i guarda el nombre de jugadors i quins d'aquests són màquina
     private static void llegirJugadors(Scanner input)
     {
         _jugadors = new ArrayList();
@@ -122,8 +125,8 @@ public class LlegirFitxer {
         }*/
    }
 
-    ///Pre: Nom del fitxer d'entrada
-    ///Post: Guarda el nom del fitxer d'entrada i crida el mètode per llegir el fitxer
+    ///@pre  Nom del fitxer d'entrada
+    ///@post  Guarda el nom del fitxer d'entrada i crida el mètode per llegir el fitxer
    public static void nomFitxer(String text) throws FileNotFoundException {
         Gui.print("Fitxer '"+text+"' carregant...");
         File f = new File(text);
@@ -131,32 +134,32 @@ public class LlegirFitxer {
         llegirFitxer();
     }
 
-    ///Pre: ---
-    ///Post: Retorna una llista de quins dels jugadors són controlats per màquina
+    ///@pre  ---
+    ///@post  Retorna una llista de quins dels jugadors són controlats per màquina
     public static ArrayList<Jugador> getJugadors() {
         return _jugadors;
     }
 
-    ///Pre: ---
-    ///Post: Retorna la fitxa inicial
+    ///@pre  ---
+    ///@post  Retorna la fitxa inicial
     public static Fitxa getInicial() {
         return _inicial;
     }
 
-    ///Pre: ---
-    ///Post: Cert si hi ha camperols
+    ///@pre  ---
+    ///@post  Cert si hi ha camperols
     public static boolean isCamperols() {
         return _camperols;
     }
 
-    ///Pre:
-    ///Post: Cert si la lectura s'ha realitzat satisfactòriament
+    ///@pre
+    ///@post  Cert si la lectura s'ha realitzat satisfactòriament
     public static boolean lecturaCorrecta() {
         return fitxerOK;
     }
 
-    ///Pre: ---
-    ///Post: Retorna la baralla
+    ///@pre  ---
+    ///@post  Retorna la baralla
     public static Baralla getBaralla() {//TODO getBaralla no funciona ARREGLAR!
         return baralla;
     }

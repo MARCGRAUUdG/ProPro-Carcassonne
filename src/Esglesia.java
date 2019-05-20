@@ -1,7 +1,10 @@
 import javafx.util.Pair;
-
 import java.util.ArrayList;
 import java.util.List;
+
+///@class Esglesia
+
+///@brief Descripcio de la clase...
 
 public class Esglesia extends Estructura {
 
@@ -9,14 +12,14 @@ public class Esglesia extends Estructura {
         super(inici,r);
     }
 
-    //Pre:---
-    //Post:retorna cert si la possessio esta completa altrament false
+    ///@pre ---
+    ///@post retorna cert si la possessio esta completa altrament false
     public boolean tancat() {
         return getConjunt().size()==9;
     }
 
-    //Pre:---
-    //Post:retorna el propietari de l'esglesia si existeix altrament llista buida
+    ///@pre ---
+    ///@post retorna el propietari de l'esglesia si existeix altrament llista buida
     public List<Integer> propietari(){
         int i =0;
         boolean trobat = false;
@@ -42,8 +45,8 @@ public class Esglesia extends Estructura {
         return 'M';
     }
 
-    //Pre:---
-    //Post:retorna punts total de l'esglesia
+    ///@pre ---
+    ///@post retorna punts total de l'esglesia
     public int punts(){
         if(tancat()){
             return 9;

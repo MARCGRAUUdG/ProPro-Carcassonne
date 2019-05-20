@@ -4,14 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+///@class Cami
+
+///@brief Descripcio de la clase...
+
 public class Cami extends Estructura {
 
     public Cami(Fitxa inici, List<Character> r) {
         super(inici,r);
     }
 
-    //Pre:---
-    //Post:retorna cert si la possessio esta completa altrament false
+    ///@pre ---
+    ///@post retorna cert si la possessio esta completa altrament false
     @Override
     public boolean tancat(){
         List<Pair<Fitxa,List<Character>>> llista = getConjunt();
@@ -24,8 +28,8 @@ public class Cami extends Estructura {
     }
 
     @Override
-    //Pre:---
-    //Post:guarda una nova fitxa f amb les regions r
+    ///@pre ---
+    ///@post guarda una nova fitxa f amb les regions r
     public void afegir_fitxa(Fitxa f, List<Character> r){
         List<Pair<Fitxa,List<Character>>> llista = getConjunt();
 
@@ -42,8 +46,8 @@ public class Cami extends Estructura {
         return 'C';
     }
 
-    //Pre: pos < getConjunt.size(), regio = C o N o E o S o O
-    //Post: propietari de la fitxa que esta a la regio r afegit a la llista p
+    ///@pre  pos < getConjunt.size(), regio = C o N o E o S o O
+    ///@post  propietari de la fitxa que esta a la regio r afegit a la llista p
     private void afegir_propietari(List<Integer> p, Fitxa f, char regio){
 
         if(regio =='C'){
@@ -63,8 +67,8 @@ public class Cami extends Estructura {
         }
     }
 
-    //Pre:---
-    //Post:retorna el/s propietari/s del cami altrament llista buida
+    ///@pre ---
+    ///@post retorna el/s propietari/s del cami altrament llista buida
     public List<Integer> propietari(){
         List<Integer> pro = new ArrayList<Integer>(Arrays.asList(0,0,0,0));
         List<Pair<Fitxa,List<Character>>> llista = getConjunt();
@@ -112,8 +116,8 @@ public class Cami extends Estructura {
         return llistaPropietari(pro);
     }
 
-    //Pre:---
-    //Post:retorna punts total del cami
+    ///@pre ---
+    ///@post retorna punts total del cami
     public int punts(){
         return getConjunt().size();
     }

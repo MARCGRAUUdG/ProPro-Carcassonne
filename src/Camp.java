@@ -1,16 +1,19 @@
 import javafx.util.Pair;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+///@class Camp
+
+///@brief Descripcio de la clase...
 
 public class Camp extends Possessio {
     public Camp(Fitxa inici,List<Character> r) {
         super(inici,r);
     }
 
-    //Pre:---
-    //Post:retorna punts totals del camp
+    ///@pre ---
+    ///@post retorna punts totals del camp
     public int punts(ArrayList<Ciutat> llista){
         List<Pair<Fitxa,List<Character>>> lista = getConjunt();
         ArrayList<Ciutat> aux = new ArrayList<>(llista);
@@ -44,8 +47,8 @@ public class Camp extends Possessio {
         return 0;
     }
 
-    //Pre:---
-    //Post:retorna el/s propietari/s del camp altrament llista buida
+    ///@pre ---
+    ///@post retorna el/s propietari/s del camp altrament llista buida
     public List<Integer> propietari(){
         List<Integer> pro = new ArrayList<Integer>(Arrays.asList(0,0,0,0));
         List<Pair<Fitxa,List<Character>>> llista = getConjunt();
@@ -77,8 +80,8 @@ public class Camp extends Possessio {
         return 'F';
     }
 
-    //Pre:---
-    //Post:retorna cert si la fitxa f amb les regions r esta a la ciutat c
+    ///@pre ---
+    ///@post retorna cert si la fitxa f amb les regions r esta a la ciutat c
     private boolean conteFitxa(Ciutat c, Fitxa f, List<Character> r){
         int i =0;
         boolean trobat = false, acabat = false;

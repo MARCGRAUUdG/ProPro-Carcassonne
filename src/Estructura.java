@@ -1,6 +1,8 @@
-import javafx.util.Pair;
-
 import java.util.List;
+
+///@class Estructura
+
+///@brief Descripcio de la clase...
 
 public abstract class Estructura extends Possessio {
 
@@ -8,12 +10,12 @@ public abstract class Estructura extends Possessio {
         super(inici,r);
     }
 
-    //Pre:---
-    //Post:retorna cert si la possessio esta completa altrament false
+    ///@pre ---
+    ///@post retorna cert si la possessio esta completa altrament false
     public abstract boolean tancat ();
 
-    //Pre:---
-    //Post:retorna punts de la possessio
+    ///@pre ---
+    ///@post retorna punts de la possessio
     public abstract int punts();
 
 }

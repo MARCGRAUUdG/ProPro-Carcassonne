@@ -2,17 +2,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+///@class Baralla
+
+///@brief Descripcio de la clase...
+
 public class Baralla {
 
-    private List<Fitxa> llistaFitxes;
+    private List<Fitxa> llistaFitxes;///<Descripcio...
 
     Baralla()
     {
         llistaFitxes = new ArrayList<Fitxa>();
     }
 
-    ///Pre: ---
-    ///Post: Agafa una fitxa de la baralla de fitxes i la retorna
+    ///@pre  ---
+    ///@post  Agafa una fitxa de la baralla de fitxes i la retorna
     public Fitxa agafarFitxa()
     {
         if(!esBuida()) {
@@ -25,15 +29,15 @@ public class Baralla {
         }
     }
 
-    ///Pre: f != NULL
-    ///Post: S'afageix la fitxa f de forma ALEATÒRIA
+    ///@pre  f != NULL
+    ///@post  S'afageix la fitxa f de forma ALEATÒRIA
     public void afegirFitxa(Fitxa f)
     {
         llistaFitxes.add(f);
     }
 
-    ///Pre: ---
-    ///Post: Retorna si la baralla s'ha quedat sense fitxes
+    ///@pre  ---
+    ///@post  Retorna si la baralla s'ha quedat sense fitxes
     public boolean esBuida()
     {
         return llistaFitxes.isEmpty();
