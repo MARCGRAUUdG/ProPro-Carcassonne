@@ -63,8 +63,8 @@ public abstract class Possessio {
         conjunt.add(new Pair<>(f,r));
     }
 
-    public void eliminar_fitxa(Fitxa f) {
-        conjunt.remove(f);
+    public void eliminar_fitxa(Fitxa f,List<Character> r) {
+        conjunt.remove(new Pair<>(f,r));
     }
 
     //Pre: la llista propietari a de tenir el numero de seguidor que te cada jugador a la possessio

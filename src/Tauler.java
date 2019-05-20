@@ -377,7 +377,7 @@ public class Tauler
         {
             ArrayList<Character> posicions=this.onEsPotFicarSeguidor(fitxaActual);
             //Gui.print(Character.toString(regioNord)+regionsActual.get(4).lletra()+fitxaActual.toString());
-            if (posicions.contains('S')) {
+            if (posicions.contains('N')) {
                 puntsRotacio += getPunts(regioNord, fitxaNord, fitxaActual, 'S');
                 if ((puntsRotacio-puntsOrigin)>puntsMax)
                 {
@@ -386,7 +386,7 @@ public class Tauler
                 puntsOrigin = puntsRotacio;
             }
             //Gui.print(Character.toString(regioEst)+regionsActual.get(1).lletra());
-            if (posicions.contains('O')) {
+            if (posicions.contains('E')) {
                 puntsRotacio += getPunts(regioEst, fitxaEst,fitxaActual, 'O');
                 if ((puntsRotacio-puntsOrigin)>puntsMax)
                 {
@@ -395,7 +395,7 @@ public class Tauler
                 puntsOrigin = puntsRotacio;
             }
             //Gui.print(Character.toString(regioSud)+regionsActual.get(2).lletra());
-            if (posicions.contains('O')) {
+            if (posicions.contains('S')) {
                 puntsRotacio += getPunts(regioSud, fitxaSud, fitxaActual, 'N');
                 if ((puntsRotacio-puntsOrigin)>puntsMax)
                 {
@@ -439,7 +439,7 @@ public class Tauler
             if (pos.tancat()) {
                 punts = pos.punts();
             }
-            pos.eliminar_fitxa(fitxaActual);
+            pos.eliminar_fitxa(fitxaActual, regions);
         }
         return punts;
     }

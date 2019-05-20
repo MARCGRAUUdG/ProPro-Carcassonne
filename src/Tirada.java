@@ -86,7 +86,9 @@ public class Tirada {
         fitxaActual.setPosicio(posicioPuntsMax);
         fitxaActual.assignar_seguidor(regioMaxPuntsHum, jugadorActual.getId());
 
-        Gui.posaFitxa(fitxaActual);
+        posaFitxaMaquina(posicioPuntsMax);
+
+        //Gui.posaFitxa(fitxaActual);
         Gui.MostraBaralla(baralla.size(),fitxaActual);
 
         apretatOpcionsDeSeguidor(posicioPuntsMax.getPosicioX(), posicioPuntsMax.getPosicioY(), regioMaxPuntsHum);
@@ -124,6 +126,23 @@ public class Tirada {
             ArrayList<Character> posicions=tauler.onEsPotFicarSeguidor(fitxaActual);
             if(posicions.size()>0)Gui.posaSeleccioDeSeguidors(pos.getPosicioX(), pos.getPosicioY(), posicions);
             else{
+                tauler.posarFitxaTauler(fitxaActual);
+                Joc.iniciaNouTorn();
+            }
+        }else {
+            tauler.posarFitxaTauler(fitxaActual);
+            Joc.iniciaNouTorn();
+        }
+    }
+
+    ///Pre:pos inicialitzat i es correcte
+    ///Post:Posa fitxaActual al tauler i gui en la posicio pos
+    private void posaFitxaMaquina(Posicio pos){
+        fitxaActual.setPosicio(pos);
+        Gui.posaFitxa(fitxaActual);
+        if(jugadorActual.getHumanets()>0) {
+            ArrayList<Character> posicions=tauler.onEsPotFicarSeguidor(fitxaActual);
+            if(posicions.size()<=0){
                 tauler.posarFitxaTauler(fitxaActual);
                 Joc.iniciaNouTorn();
             }
