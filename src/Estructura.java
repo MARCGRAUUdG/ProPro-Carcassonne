@@ -2,7 +2,7 @@ import java.util.List;
 
 ///@class Estructura
 
-///@brief Descripcio de la clase...
+///@brief Subtipus de possessio
 
 public abstract class Estructura extends Possessio {
 
@@ -17,5 +17,13 @@ public abstract class Estructura extends Possessio {
     ///@pre ---
     ///@post retorna punts de la possessio
     public abstract int punts();
+
+    ///@pre ---
+    ///@post  retorna el tipus de possessio que és
+    public abstract char tipus();
+
+    ///@pre ---
+    ///@post  retorna el/s propietari/s de la possessio altrament llista buida
+    public abstract List<Integer> propietari();
 
 }

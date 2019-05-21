@@ -4,22 +4,24 @@ import java.util.List;
 
 ///@class Esglesia
 
-///@brief Descripcio de la clase...
+///@brief Subtipus de possessio format per fitxes que tenen regions que són M
 
 public class Esglesia extends Estructura {
 
+    ///@pre ---
+    ///@post crea una possessio de tipus esglesia amb fitxa inici i regions r
     public Esglesia(Fitxa inici, List<Character> r) {
         super(inici,r);
     }
 
     ///@pre ---
-    ///@post retorna cert si la possessio esta completa altrament false
+    ///@post retorna cert si la l'esglesia esta completa altrament false
     public boolean tancat() {
         return getConjunt().size()==9;
     }
 
     ///@pre ---
-    ///@post retorna el propietari de l'esglesia si existeix altrament llista buida
+    ///@post si existeix retorna el propietari de l'esglesia altrament llista buida
     public List<Integer> propietari(){
         int i =0;
         boolean trobat = false;
@@ -41,6 +43,8 @@ public class Esglesia extends Estructura {
         return s;
     }
 
+    ///@pre ---
+    ///@post  retorna el tipus de possessio que és
     public char tipus(){
         return 'M';
     }

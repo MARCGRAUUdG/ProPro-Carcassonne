@@ -1,13 +1,12 @@
-///@class Regio
-
-///@brief Descripcio de la clase...
 
 public class Regio extends Excepcio{
 
-    //Descripcio: Regio d'una fitxa
+    ///@class Regio
 
-    private char zona;///<Descripcio...
-    private int seguidor=-1;///<Descripcio...
+    ///@brief Descripcio: Regio d'una fitxa
+
+    private char zona;/// La regio de la fitxa, pot ser C, N, E ,S o O
+    private int seguidor=-1;///Número del propietari que té seguidor a aquesta regio, -1 no té cap seguidor
 
     ///@pre ---
     ///@post  zona = lletra
@@ -38,6 +37,8 @@ public class Regio extends Excepcio{
         }
     }
 
+    ///@pre ---
+    ///@post retorna la regio en string
     @Override
     public String toString() {
         return "Regio{" +

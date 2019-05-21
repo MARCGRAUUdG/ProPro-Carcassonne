@@ -5,18 +5,29 @@ import java.util.*;
 
 ///@class Possessio
 
-///@brief Descripcio de la clase...
+///@brief Possessio que té un jugador en el tauler
 
 public abstract class Possessio {
-    private List<Pair<Fitxa,List<Character>>> conjunt;
-
-    public abstract boolean tancat();///<Descripcio...
-    public abstract int punts();///<Descripcio...
-    public abstract char tipus();///<Descripcio...
-    public abstract List<Integer> propietari();///<Descripcio...
+    private List<Pair<Fitxa,List<Character>>> conjunt; /// Llista de fitxes amb les regions corresponents de la possessio
 
     ///@pre ---
-    ///@post  guardar fitxa i regio
+    ///@post retorna cert si la possessio esta completa altrament false
+    public abstract boolean tancat();
+
+    ///@pre ---
+    ///@post retorna punts total de la possessio
+    public abstract int punts();
+
+    ///@pre ---
+    ///@post  retorna el tipus de possessio que és
+    public abstract char tipus();
+
+    ///@pre ---
+    ///@post  retorna el/s propietari/s de la possessio altrament llista buida
+    public abstract List<Integer> propietari();
+
+    ///@pre ---
+    ///@post  guardar fitxa inici i regions r
     public Possessio(Fitxa inici, List<Character> r){
         conjunt = new ArrayList<>();
         conjunt.add(new Pair<>(inici,r));
@@ -96,7 +107,8 @@ public abstract class Possessio {
         return conjunt;
     }
 
-
+    ///@pre ---
+    ///@post retora la possessio en format string
     @Override
     public String toString() {
         return getConjunt().toString();

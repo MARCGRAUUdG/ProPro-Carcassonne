@@ -5,16 +5,18 @@ import java.util.List;
 
 ///@class Ciutat
 
-///@brief Descripcio de la clase...
+///@brief Subtipus de possessio format per fitxes que tenen regions que són F o E
 
 public class Ciutat extends Estructura {
 
+    ///@pre ---
+    ///@post crea una possessio de tipus ciutat amb fitxa inici i regions r
     public Ciutat(Fitxa inici, List<Character> r) {
         super(inici,r);
     }
 
     ///@pre ---
-    ///@post retorna cert si la possessio esta completa altrament false
+    ///@post retorna cert si la ciutat esta completa altrament false
     public boolean tancat(){
         int obert = 0;
         ArrayList<Fitxa> f = new ArrayList<>();
@@ -93,6 +95,8 @@ public class Ciutat extends Estructura {
         return llistaPropietari(pro);
     }
 
+    ///@pre ---
+    ///@post  retorna el tipus de possessio que és
     public char tipus(){
         return 'V';
     }

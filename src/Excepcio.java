@@ -4,7 +4,9 @@
 
 public class Excepcio extends Exception{
 
-    //Descripcio: Checked excepction
+    ///@class Excepcio
+
+    ///@brief Descripcio: Checked excepction
 
     Excepcio(){
         super();

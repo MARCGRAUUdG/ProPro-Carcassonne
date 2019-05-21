@@ -6,17 +6,19 @@ import java.util.List;
 
 ///@class Cami
 
-///@brief Descripcio de la clase...
+///@brief Subtipus de possessio format per fitxes que tenen regions que són C
 
 public class Cami extends Estructura {
 
+    ///@pre ---
+    ///@post crea una possessio de tipus cami amb fitxa inici i regions r
     public Cami(Fitxa inici, List<Character> r) {
         super(inici,r);
     }
 
-    ///@pre ---
-    ///@post retorna cert si la possessio esta completa altrament false
     @Override
+    ///@pre ---
+    ///@post retorna cert si el cmi esta completa altrament false
     public boolean tancat(){
         List<Pair<Fitxa,List<Character>>> llista = getConjunt();
         int ultim = llista.size()-1;
@@ -42,6 +44,8 @@ public class Cami extends Estructura {
         }
     }
 
+    ///@pre ---
+    ///@post  retorna el tipus de possessio que és
     public char tipus(){
         return 'C';
     }
