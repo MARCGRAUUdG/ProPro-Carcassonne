@@ -1,28 +1,26 @@
 import java.util.ArrayList;
 
-/**
- * Aquesta classe representa a un jugador de la partida. Aquest està gestionat per un
- * sistema de torns i per a cada torn agafa una fitxa de la Baralla i la fica al tauler
- * de la manera possible que vulgui.
- *
- * Superclasse de la qual deriven per herència Controlable i Maquina.
- *
- * Controlable representa un jugador humà que indica mitjançant la GUI els moviments a
- * realitzar en tot moment.
- *
- * Maquina representa un jugador bot que de manera més intel·ligent o menys juga contra
- * un personatge Controlable.
- */
+///@class Jugador
+
+ ///@brief Aquesta classe representa a un jugador de la partida. Aquest està gestionat per un
+ ///sistema de torns i per a cada torn agafa una fitxa de la Baralla i la fica al tauler
+ ///de la manera possible que vulgui.
+ ///Superclasse de la qual deriven per herència Controlable i Maquina.
+ ///Controlable representa un jugador humà que indica mitjançant la GUI els moviments a
+ ///realitzar en tot moment.
+ ///Maquina representa un jugador bot que de manera més intel·ligent o menys juga contra
+ ///un personatge Controlable.
+
 public abstract class Jugador {
 
-    private int id;
-    private Fitxa fitxaActual;
-    private int nHumanets;
+    private int id;///<Descripcio...
+    private Fitxa fitxaActual;///<Descripcio...
+    private int nHumanets;///<Descripcio...
 
     private int _punts;
     private ArrayList<Possessio> llistaPossessions = new ArrayList<>();
 
-    private int puntuacio=0;
+    private int puntuacio=0;///<Descripcio...
 
     public int getId() {
         return id;
@@ -44,13 +42,6 @@ public abstract class Jugador {
         _punts = punts;
     }
 
-    //Pre: Possessio p != NULL
-    //Post: Possessio p afegida a la llista de posicions
-    public void afegirPossessio(Possessio p)
-    {
-        llistaPossessions.add(p);
-    }
-
     //Pre: ---
     //Post: Retorna la llista de possessions del jugador actual.
     public ArrayList<Possessio> getLlistaPossessions()
@@ -58,8 +49,8 @@ public abstract class Jugador {
         return llistaPossessions;
     }
 
-    ///Pre: ---
-    ///Post: Indica si un personatge ha guanyat
+    ///@pre  ---
+    ///@post  Indica si un personatge ha guanyat
     public boolean guanyador() {
         return false;
     }

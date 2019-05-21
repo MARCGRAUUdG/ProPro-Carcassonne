@@ -1,32 +1,34 @@
-import java.util.NoSuchElementException;
+///@class Regio
+
+///@brief Descripcio de la clase...
 
 public class Regio extends Excepcio{
 
     //Descripcio: Regio d'una fitxa
 
-    private char zona;
-    private int seguidor=-1;
+    private char zona;///<Descripcio...
+    private int seguidor=-1;///<Descripcio...
 
-    //Pre:---
-    //Post: zona = lletra
+    ///@pre ---
+    ///@post  zona = lletra
     Regio(char lletra){
         zona = lletra;
     }
 
-    //Pre:---
-    //Post: retorna la regio
+    ///@pre ---
+    ///@post  retorna la regio
     char lletra(){
         return zona;
     }
 
-    //Pre:---
-    //Post: retorna el nom del jugador
+    ///@pre ---
+    ///@post  retorna el nom del jugador
     Integer nom_jugador(){
         return seguidor;
     }
 
-    //Pre:---
-    //Post: posar un seguidor de jugador a la regio si no és X altrament llança excepcio
+    ///@pre ---
+    ///@post  posar un seguidor de jugador a la regio si no és X altrament llança excepcio
     void posar_seguidor(int jugador)throws Excepcio{
         if(zona != 'X'){
             seguidor = jugador;
