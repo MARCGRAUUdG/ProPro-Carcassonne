@@ -362,29 +362,28 @@ public class Tauler
         if (fitxaActual.regio_c() == 'M') {
             if (fitxaActual.envoltada(this)) {
                 puntsRotacio += 9; } }
-        else
-        {
-            ArrayList<Character> posicions=onEsPotFicarSeguidor(fitxaActual);
-            if (posicions.contains('N')) {
-                puntsRotacio += getPunts(regioNord, fitxaNord, fitxaActual, 'S');
-                if ((puntsRotacio-puntsOrigin)>puntsMax) {
-                    regioHumanet = 'N'; }
-                puntsOrigin = puntsRotacio; }
-            if (posicions.contains('E')) {
-                puntsRotacio += getPunts(regioEst, fitxaEst,fitxaActual, 'O');
-                if ((puntsRotacio-puntsOrigin)>puntsMax) {
-                    regioHumanet = 'E'; }
-                puntsOrigin = puntsRotacio; }
-            if (posicions.contains('S')) {
-                puntsRotacio += getPunts(regioSud, fitxaSud, fitxaActual, 'N');
-                if ((puntsRotacio-puntsOrigin)>puntsMax) {
-                    regioHumanet = 'S'; }
-                puntsOrigin = puntsRotacio; }
-            if (posicions.contains('O')) {
-                puntsRotacio += getPunts(regioOest, fitxaOest, fitxaActual, 'E');
-                if ((puntsRotacio-puntsOrigin)>puntsMax) {
-                    regioHumanet = 'O'; } }
-        }
+
+        ArrayList<Character> posicions=onEsPotFicarSeguidor(fitxaActual);
+        if (posicions.contains('N')) {
+            puntsRotacio += getPunts(regioNord, fitxaNord, fitxaActual, 'S');
+            if ((puntsRotacio-puntsOrigin)>puntsMax) {
+                regioHumanet = 'N'; }
+            puntsOrigin = puntsRotacio; }
+        if (posicions.contains('E')) {
+            puntsRotacio += getPunts(regioEst, fitxaEst,fitxaActual, 'O');
+            if ((puntsRotacio-puntsOrigin)>puntsMax) {
+                regioHumanet = 'E'; }
+            puntsOrigin = puntsRotacio; }
+        if (posicions.contains('S')) {
+            puntsRotacio += getPunts(regioSud, fitxaSud, fitxaActual, 'N');
+            if ((puntsRotacio-puntsOrigin)>puntsMax) {
+                regioHumanet = 'S'; }
+            puntsOrigin = puntsRotacio; }
+        if (posicions.contains('O')) {
+            puntsRotacio += getPunts(regioOest, fitxaOest, fitxaActual, 'E');
+            if ((puntsRotacio-puntsOrigin)>puntsMax) {
+                regioHumanet = 'O'; } }
+
         return new Pair<Character, Integer>(regioHumanet, puntsRotacio);
     }
 
