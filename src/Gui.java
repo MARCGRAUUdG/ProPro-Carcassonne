@@ -1,17 +1,20 @@
 /**
 \mainpage Documentació del Carcassone
 @section S Pràctica final ProPro
-El programa tracta de...
+El programa tracta del joc de carcassone que tracta de emplenar el tauler amb unes
+determinades fitxes que encaixin entre ells, i guanyar dominis per obtenir mes puntuació
+que la resta de jugadors.
 
-- @ref Entrada: ..
-- @ref Sortida: ..
+- @ref Entrada: Fitxer que s'introdueix per teclat amb especificacio de nº jugadors, si es cpu o controlable i les rajoles.
+Interaccio per el ratoli fent clicks a la interficio per controla el jugador actual si es humà.
+- @ref Sortida: Estat del Joc visual per pantalla, i informacio d'ell, com puntuacio, tauler, nºSeguidors...
 
 @section Practica Informació
 @author Javier Muñoz
 @author Teng Liu
 @author Marc Grau
 @version 1.0
-@date 20/05/2019
+@date 21/05/2019
 */
 /// @file
 
@@ -45,41 +48,41 @@ import java.util.List;
 
 ///@class Gui
 
-///@brief Descripcio de la clase...
+///@brief Clase main, gestió de la interficie i control del jugador actual en cas de ser controlable.
 
 public class Gui extends Application{
    //APP
-    private static int altura=700;///<Descripcio...
-    private static int ample=550;///<Descripcio...
-    private VBox root;///<Descripcio...
-    private Scene scene;///<Descripcio...
+    private static int altura=700;///<Altura total de la interficie
+    private static int ample=550;///<Ample total de la interficie
+    private VBox root;///<Finestra root de la interficie
+    private Scene scene;///<Escena de la interficie
 
     //TOP
-    private AnchorPane topRow = new AnchorPane();///<Descripcio...
-    private static TextField textField = new TextField ();///<Descripcio...
-    private static Button buttonFile = new Button();///<Descripcio...
-    private double buttonSize=100.0;///<Descripcio...
+    private AnchorPane topRow = new AnchorPane();///<Panell de la part de dalt (Entrada de fitxer)
+    private static TextField textField = new TextField ();///<Barra d'entrada del nom del fitxer d'entrada
+    private static Button buttonFile = new Button();///<Botó de carrega del fitxer d'entrada
+    private double buttonSize=100.0;///<Tamany del botó anterior
 
     //MID
-    private static AnchorPane midRow = new AnchorPane();///<Descripcio...
-    private ImageView imageView;///<Descripcio...
-    private static Text comenca=new Text();///<Descripcio...
+    private static AnchorPane midRow = new AnchorPane();///<Panell de la part del mig (tauler)
+    private ImageView imageView;///<Fons del tauler de fusta
+    private static Text comenca=new Text();///<Informacio de introduïr nom del fitxer d'entrada
 
-    private static int[] pos = { 75, 115, 155, 195, 235,  275, 315, 355, 395, 435};///<Descripcio...
-    private static Text scorej1=new Text (40+20, 50, "Score: 0");///<Descripcio...
-    private static Text scorej2=new Text (ample-150, 50, "Score: 0");///<Descripcio...
-    private static Text scorej3=new Text (ample-150, ample-15, "Score: 0");///<Descripcio...
-    private static Text scorej4=new Text (40+20, ample-15, "Score: 0");///<Descripcio...
-    private static int nBlocksVerdsPosats=0;///<Descripcio...
-    private static AnchorPane baralla = new AnchorPane();///<Descripcio...
-    private static AnchorPane opcioRotacio = new AnchorPane();///<Descripcio...
-    private static Text nseguidors[]=new Text[4];///<Descripcio...
+    private static int[] pos = { 75, 115, 155, 195, 235,  275, 315, 355, 395, 435};///<Posicions on encaixen les fitxes en el tauler
+    private static Text scorej1=new Text (40+20, 50, "Score: 0");///<Puntuacio del jugador 1
+    private static Text scorej2=new Text (ample-150, 50, "Score: 0");///<Puntuacio del jugador 2
+    private static Text scorej3=new Text (ample-150, ample-15, "Score: 0");///<Puntuacio del jugador 3
+    private static Text scorej4=new Text (40+20, ample-15, "Score: 0");///<Puntuacio del jugador 4
+    private static int nBlocksVerdsPosats=0;///<Blocks verds posats per despres eliminar el mateixnº d'elements
+    private static AnchorPane baralla = new AnchorPane();///<Panell on hi ha la baralla a mostrar
+    private static AnchorPane opcioRotacio = new AnchorPane();///<Panell on hi ha les opcions de rotació de la fitxa
+    private static Text nseguidors[]=new Text[4];///<Nº de seguidors de cada jugador
 
     //BOT
-    private static Collection<String> list;///<Descripcio...
-    private static ObservableList<String> details;///<Descripcio...
-    private static TableView<String> table;///<Descripcio...
-    private static TableColumn<String, String> log;///<Descripcio...
+    private static Collection<String> list;///<Panell de la part de baix (log)
+    private static ObservableList<String> details;///<details de la taula
+    private static TableView<String> table;///<Taula log on es registra la informació
+    private static TableColumn<String, String> log;///<Files de la taula anterior
 
     public static void main(String[] args) {
         launch(args);
@@ -512,6 +515,8 @@ public class Gui extends Application{
             treuUltimElement();
     }
 
+    ///@pre Mid configurat
+    ///@post Posa l'opcio de clickar per avançar nou torn
     public static void mostraNextTirada(){
         Image nextImg = getImage("src\\images\\next.png");
         ImageView next=new ImageView(nextImg);

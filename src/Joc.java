@@ -4,7 +4,8 @@ import java.util.concurrent.TimeUnit;
 
 ///@class Joc
 
-///@brief Descripcio de la clase...
+///@brief Gestiona el joc principal, aquet fa el control de Tirada, el Jugador que li toca tirar i del el Tauler
+///Al acabar el joc mostra informació del estat final del Joc
 
 public class Joc {
     private static LlegirFitxer _fitxer;///<Descripcio...
@@ -15,7 +16,8 @@ public class Joc {
     private static Fitxa _fInicial;///<Descripcio...
     private static int _jugadorActual=-1;///<Descripcio...
 
-    ///Constuctor per defecte de Joc
+    ///@pre --
+    ///@post Constuctor per defecte de Joc
     public Joc(){
 
     }
