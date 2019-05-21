@@ -283,7 +283,7 @@ public class Tauler
                 p.add(new Esglesia(f, pos));
             }
         }else{
-            //TODO Falta implementar possessió Cami
+            //TODO Falta implementar possessió Camp
         }
     }
 
