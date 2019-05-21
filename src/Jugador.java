@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.ArrayList;
 
 ///@class Jugador
 
@@ -16,6 +16,10 @@ public abstract class Jugador {
     private int id;///<Descripcio...
     private Fitxa fitxaActual;///<Descripcio...
     private int nHumanets;///<Descripcio...
+
+    private int _punts;
+    private ArrayList<Possessio> llistaPossessions = new ArrayList<>();
+
     private int puntuacio=0;///<Descripcio...
 
     public int getId() {
@@ -28,15 +32,21 @@ public abstract class Jugador {
     Jugador(int jugador){
         nHumanets = 6;
         id = jugador;
+        _punts = 0;
     }
 
-    ///@pre  Baralla b ! buida
-    ///@post  Agafa una fitxa aleatòria de la baralla
-    Fitxa agafarFitxaBaralla(Baralla b)
+    //Pre: Punts per assignar != 0
+    //Post: Punts assignats al jugador correspoenet
+    void assignarPunts(int punts)
     {
-        Fitxa f;// = b.agafarFitxa();
-        f = fitxaActual;
-        return f;
+        _punts = punts;
+    }
+
+    //Pre: ---
+    //Post: Retorna la llista de possessions del jugador actual.
+    public ArrayList<Possessio> getLlistaPossessions()
+    {
+        return llistaPossessions;
     }
 
     ///@pre  ---
@@ -45,10 +55,14 @@ public abstract class Jugador {
         return false;
     }
 
+    //Pre: ---
+    //Post: Retorna el nombre d'humanets del jugador actual
     public int getHumanets(){
         return nHumanets;
     }
 
+    //Pre: Nombre d'humanets >= 0
+    //Post: Nombre d'humanets assignat
     public void setHumanets(int n){
         nHumanets=n;
     }
@@ -63,6 +77,14 @@ public abstract class Jugador {
                 "id=" + id +
                 '}';
     }
+
+    //Pre: ---
+    //Post: retorna si el jugador actual es controlable
+    public abstract boolean esControlable();
+
+    ///Pre:pos inicialitzat i es correcte
+    ///Post:Posa fitxaActual al tauler i gui en la posicio pos
+    public abstract void posaFitxa(Posicio pos, Fitxa fitxaActual, Tauler tauler);
 
     public int getPuntuacio(){
         return puntuacio;

@@ -512,6 +512,22 @@ public class Gui extends Application{
             treuUltimElement();
     }
 
+    public static void mostraNextTirada(){
+        Image nextImg = getImage("src\\images\\next.png");
+        ImageView next=new ImageView(nextImg);
+        next.setFitHeight(40);
+        next.setFitWidth(40);
+        next.setLayoutX(ample/2-20);next.setLayoutY(20);
+        next.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent t) {
+                treuUltimElement();
+                Joc.iniciaNouTorn();
+            }
+        });
+        midRow.getChildren().addAll(next);
+    }
+
     ///@pre 9<=x>=0, 9<=y>=0, 4<=numbJugador>=1
     ///@post Posa el seguidor en la posicio dir del tauler x,y que pertany al jugador numbJugador
     public static void posaSeguidor(int x, int y, char dir, int numbJugador) {

@@ -116,8 +116,16 @@ public class LlegirFitxer {
         }
         for (int i = 1; i <= _nJugadors; i++)
         {
-            Jugador j = new Controlable(i);
-            _jugadors.add(j);
+            if (!jugadorsMaquina.contains(i))
+            {
+                Jugador j = new Controlable(i);
+                _jugadors.add(j);
+            }
+            else
+            {
+                Jugador j = new Maquina(i);
+                _jugadors.add(j);
+            }
         }
         /*for (int j : _jugadorsMaquina)
         {

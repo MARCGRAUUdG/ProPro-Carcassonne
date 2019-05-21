@@ -310,6 +310,18 @@ public class Fitxa extends Excepcio{
         return fitxa;
     }
 
+    public boolean envoltada(Tauler tauler) {
+        return tauler.getFitxa(this.pos.getPosicioX(), this.pos.getPosicioY()) != null &&
+                tauler.getFitxa(this.pos.getPosicioX(), this.pos.getPosicioY()+1) != null &&
+                tauler.getFitxa(this.pos.getPosicioX(), this.pos.getPosicioY()-1) != null &&
+                tauler.getFitxa(this.pos.getPosicioX()+1, this.pos.getPosicioY()) != null &&
+                tauler.getFitxa(this.pos.getPosicioX()-1, this.pos.getPosicioY()) != null &&
+                tauler.getFitxa(this.pos.getPosicioX()+1, this.pos.getPosicioY()+1) != null &&
+                tauler.getFitxa(this.pos.getPosicioX()+1, this.pos.getPosicioY()-1) != null &&
+                tauler.getFitxa(this.pos.getPosicioX()-1, this.pos.getPosicioY()+1) != null &&
+                tauler.getFitxa(this.pos.getPosicioX()-1, this.pos.getPosicioY()-1) != null;
+    }
+
     ///@pre ---
     ///@post retorna cert si el seguidor està en una regio que té el format tipus
     public boolean elSeguidorEstaEnElSeuTipusDeRegio(char tipus, List<Character> lc) {
@@ -321,4 +333,5 @@ public class Fitxa extends Excepcio{
         if(lc.contains('O'))if(regio_o_seguidor()!=-1)regio=regio_o();
         return regio==tipus;
     }
+
 }
