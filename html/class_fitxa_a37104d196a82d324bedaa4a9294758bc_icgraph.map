@@ -1,0 +1,9 @@
+<map id="Fitxa.regio_c_seguidor" name="Fitxa.regio_c_seguidor">
+<area shape="rect" id="node2" href="$class_cami.html#a768f6b93fa51199b1db2806157816685" title="Cami.afegir_propietari" alt="" coords="221,5,368,32"/>
+<area shape="rect" id="node3" href="$class_cami.html#aae88bb5689726211e87747aeeb6abad0" title="Cami.propietari" alt="" coords="431,31,540,57"/>
+<area shape="rect" id="node4" href="$class_camp.html#a24ebece7eea1aa266390b8762c0a1aa5" title="Camp.propietari" alt="" coords="238,107,351,133"/>
+<area shape="rect" id="node5" href="$class_ciutat.html#afd286f07dc54151be32b79327f8259e9" title="Ciutat.propietari" alt="" coords="238,157,351,184"/>
+<area shape="rect" id="node6" href="$class_esglesia.html#a2048c0dd48f7065274dbf4ba4983358b" title="Esglesia.propietari" alt="" coords="230,208,359,235"/>
+<area shape="rect" id="node7" href="$class_fitxa.html#a408b3191cfdbde147edea3ec0254c44d" title="Fitxa.jugadorTeLaSeguidor" alt="" coords="207,259,383,285"/>
+<area shape="rect" id="node8" href="$class_fitxa.html#a346f5ae28e00995b74b1aba8c630e30d" title="Fitxa.elSeguidorEstaEnEl\lSeuTipusDeRegio" alt="" coords="209,310,380,351"/>
+</map>

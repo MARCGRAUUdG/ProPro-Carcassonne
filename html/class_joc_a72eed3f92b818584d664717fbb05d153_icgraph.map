@@ -1,0 +1,5 @@
+<map id="Joc.apretatPerPosarSeguidor" name="Joc.apretatPerPosarSeguidor">
+<area shape="rect" id="node2" href="$class_gui.html#a34f713e45c926f57aad018e533da18cb" title="Gui.posaSeleccioDeSeguidors" alt="" coords="463,5,661,32"/>
+<area shape="rect" id="node4" href="$class_gui.html#af2be44020696cbe2bce2ff4b90d94cc1" title="Gui.configuraImgSeguidor" alt="" coords="244,31,415,57"/>
+<area shape="rect" id="node3" href="$class_controlable.html#a2b6a322638a64197501904a8a8e8fac3" title="Controlable.posaFitxa" alt="" coords="709,5,857,32"/>
+</map>

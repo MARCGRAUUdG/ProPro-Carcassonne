@@ -1,0 +1,7 @@
+<map id="Tirada" name="Tirada">
+<area shape="rect" id="node2" href="$class_tauler.html" title="Administració d&#39;un Tauler estatic de 10x10, amb gestio de les seves Fitxa/es i de les Possession/s..." alt="" coords="143,855,367,1240"/>
+<area shape="rect" id="node11" href="$class_jugador.html" title="Aquesta classe representa a un jugador de la partida. Aquest està gestionat per un sistema de torns i..." alt="" coords="391,899,558,1196"/>
+<area shape="rect" id="node5" href="$class_fitxa.html" title="Fitxa que té regions i que forma part de la baralla. " alt="" coords="471,524,633,748"/>
+<area shape="rect" id="node6" href="$class_excepcio.html" title="Descripcio de la clase... " alt="" coords="632,226,728,318"/>
+<area shape="rect" id="node9" href="$class_posicio.html" title="{Posicio\n|&#45; _x\l&#45; _y\l&#45; _rotacio\l|+ Posicio()\l+ Posicio()\l+ Posicio()\l+ setPosicio()\l+ setRotacio()\l+ getPosicioX()\l+ getPosicioY()\l+ getRotacio()\l+ toString()\l+ compareTo()\l+ equals()\l}" alt="" coords="492,145,604,399"/>
+</map>

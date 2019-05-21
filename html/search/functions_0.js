@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['afegeixposiciosiencaixafitxa',['afegeixPosicioSiEncaixaFitxa',['../class_tauler.html#ab373a984846631d85aaab3bee1da1781',1,'Tauler']]],
+  ['afegeixpuntuacioajugador',['AfegeixPuntuacioAJugador',['../class_joc.html#ae969b3e16360a36ada26dffbb184fc33',1,'Joc']]],
+  ['afegeixseguidorajugador',['AfegeixSeguidorAJugador',['../class_joc.html#a7b2aa3cddde39037414f87df367b3599',1,'Joc']]],
+  ['afegir_5ffitxa',['afegir_fitxa',['../class_cami.html#abbc38e23b41d673e78f8f9e9fef0890b',1,'Cami.afegir_fitxa()'],['../class_possessio.html#af662b46bc78afc70a7f874693d518612',1,'Possessio.afegir_fitxa()']]],
+  ['afegir_5fpropietari',['afegir_propietari',['../class_cami.html#a768f6b93fa51199b1db2806157816685',1,'Cami']]],
+  ['afegirfitxa',['afegirFitxa',['../class_baralla.html#a997d3f37894226927d02bfc4044378f2',1,'Baralla']]],
+  ['afegirpossessio',['afegirPossessio',['../class_tauler.html#a56f985c8ada16eecb5aca521ced42612',1,'Tauler']]],
+  ['agafarfitxa',['agafarFitxa',['../class_baralla.html#a08558891cafb3b18b3927fe2a4ac109a',1,'Baralla']]],
+  ['apretatanglefitxa',['apretatAngleFitxa',['../class_joc.html#a1a732f8c5fe455e04c76f38259eb00ba',1,'Joc.apretatAngleFitxa()'],['../class_tirada.html#aa56dab05d4638ad1a340f42cd514d362',1,'Tirada.apretatAngleFitxa()']]],
+  ['apretatopcionsdefitxa',['apretatOpcionsDeFitxa',['../class_tirada.html#adb40561c69d716539ea380f64872eb7b',1,'Tirada']]],
+  ['apretatopcionsdeseguidor',['apretatOpcionsDeSeguidor',['../class_tirada.html#a3c80bfbaa14b427b0221446e22fceeac',1,'Tirada']]],
+  ['apretatperposarfitxa',['apretatPerPosarFitxa',['../class_joc.html#a90b306ce9d339455a5f6e5d2decf90f1',1,'Joc']]],
+  ['apretatperposarseguidor',['apretatPerPosarSeguidor',['../class_joc.html#a72eed3f92b818584d664717fbb05d153',1,'Joc']]],
+  ['assignapuntsapossessionssensetancar',['assignaPuntsAPossessionsSenseTancar',['../class_tauler.html#aad088ac51b768b7c12b9a9862207f3fb',1,'Tauler']]],
+  ['assignar_5fseguidor',['assignar_seguidor',['../class_fitxa.html#aada7b61d86ed4703252c9a9d3ea9ce1d',1,'Fitxa']]],
+  ['assignarpossessio',['assignarPossessio',['../class_tauler.html#af7c318026f6fb05db78e0b1ed2e8d3b6',1,'Tauler']]]
+];

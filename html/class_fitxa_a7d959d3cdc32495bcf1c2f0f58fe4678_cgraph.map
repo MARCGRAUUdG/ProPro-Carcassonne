@@ -1,0 +1,11 @@
+<map id="Fitxa.fitxaActualEncaixaAmb" name="Fitxa.fitxaActualEncaixaAmb">
+<area shape="rect" id="node2" href="$class_fitxa.html#abdd6524addc5c6a7ea74363044269cae" title="Fitxa.sud_igual_nord" alt="" coords="244,56,387,83"/>
+<area shape="rect" id="node5" href="$class_fitxa.html#ac5a6f1b4d54afc479b60f24a8e0d6839" title="Fitxa.oest_igual_est" alt="" coords="246,157,385,184"/>
+<area shape="rect" id="node8" href="$class_fitxa.html#adf25d9e83a70a03961408b87f01cfdad" title="Fitxa.nord_igual_sud" alt="" coords="244,5,387,32"/>
+<area shape="rect" id="node9" href="$class_fitxa.html#a592a69fa34ca3548fc170498b3440927" title="Fitxa.est_igual_oest" alt="" coords="246,107,385,133"/>
+<area shape="rect" id="node10" href="$class_gui.html#a536efde44f03608985f04155cfb829e4" title="Gui.print" alt="" coords="280,208,351,235"/>
+<area shape="rect" id="node3" href="$class_fitxa.html#a787f09b27930fedb010afa53ed5b1a29" title="Fitxa.regio_s" alt="" coords="435,5,532,32"/>
+<area shape="rect" id="node4" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="435,56,532,83"/>
+<area shape="rect" id="node6" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="435,107,532,133"/>
+<area shape="rect" id="node7" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="435,157,532,184"/>
+</map>

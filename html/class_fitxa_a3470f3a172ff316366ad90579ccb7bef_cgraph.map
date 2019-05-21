@@ -1,0 +1,5 @@
+<map id="Fitxa.envoltada" name="Fitxa.envoltada">
+<area shape="rect" id="node2" href="$class_tauler.html#aaed75eb94f6022165789d1941aac603c" title="Tauler.getFitxa" alt="" coords="178,5,286,32"/>
+<area shape="rect" id="node3" href="$class_posicio.html#a8a1ae0a7865e6edbf0510ebcf2b97061" title="Posicio.getPosicioX" alt="" coords="163,56,301,83"/>
+<area shape="rect" id="node4" href="$class_posicio.html#ae70d63aa90b935131d122fc1e4b72969" title="Posicio.getPosicioY" alt="" coords="163,107,301,133"/>
+</map>

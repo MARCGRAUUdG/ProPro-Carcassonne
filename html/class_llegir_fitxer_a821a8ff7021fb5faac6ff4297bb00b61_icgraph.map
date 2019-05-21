@@ -1,0 +1,7 @@
+<map id="LlegirFitxer.llegirFitxer" name="LlegirFitxer.llegirFitxer">
+<area shape="rect" id="node2" href="$class_llegir_fitxer.html#a68f9ae473ab16632116b8c13ed16fff5" title="LlegirFitxer.nomFitxer" alt="" coords="204,5,352,32"/>
+<area shape="rect" id="node3" href="$class_joc.html#aa164cac0c602f63ff7e8860db7d06649" title="Joc.repNomFitxer" alt="" coords="400,5,524,32"/>
+<area shape="rect" id="node4" href="$class_gui.html#a6bc8d9bda8f813b8d6c303ae798646b5" title="Gui.llegeigNomDelFitxer" alt="" coords="572,5,735,32"/>
+<area shape="rect" id="node5" href="$class_gui.html#a9213a84890405b2cd77441b7f0654318" title="Gui.setupMainTop" alt="" coords="783,5,909,32"/>
+<area shape="rect" id="node6" href="$class_gui.html#a7997885cf723f790c4ec5b2328407023" title="Gui.start" alt="" coords="957,5,1029,32"/>
+</map>

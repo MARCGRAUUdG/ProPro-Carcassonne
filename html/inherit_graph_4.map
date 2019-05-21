@@ -1,0 +1,5 @@
+<map id="Jerarquia Gràfica de la Classe" name="Jerarquia Gràfica de la Classe">
+<area shape="rect" id="node1" href="$class_jugador.html" title="Aquesta classe representa a un jugador de la partida. Aquest està gestionat per un sistema de torns i..." alt="" coords="5,31,72,57"/>
+<area shape="rect" id="node2" href="$class_controlable.html" title="Subclasse de la superclasse Jugador. Implementa els mètodes propis d&#39;un jugador Controlable. " alt="" coords="120,5,207,32"/>
+<area shape="rect" id="node3" href="$class_maquina.html" title="Subclasse de la superclasse Jugador. Implementa els mètodes propis d&#39;un jugador no Controlable..." alt="" coords="128,56,199,83"/>
+</map>

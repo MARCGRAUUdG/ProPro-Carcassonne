@@ -1,0 +1,6 @@
+<map id="Estructura" name="Estructura">
+<area shape="rect" id="node3" href="$class_cami.html" title="Subtipus de possessio format per fitxes que tenen regions que són C. " alt="" coords="5,491,135,656"/>
+<area shape="rect" id="node4" href="$class_ciutat.html" title="Subtipus de possessio format per fitxes que tenen regions que són F o E. " alt="" coords="159,505,253,641"/>
+<area shape="rect" id="node5" href="$class_esglesia.html" title="Subtipus de possessio format per fitxes que tenen regions que són M. " alt="" coords="277,505,372,641"/>
+<area shape="rect" id="node2" href="$class_possessio.html" title="Possessio que té un jugador en el tauler. " alt="" coords="135,5,277,259"/>
+</map>

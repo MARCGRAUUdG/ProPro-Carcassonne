@@ -1,0 +1,7 @@
+<map id="Joc.apretatAngleFitxa" name="Joc.apretatAngleFitxa">
+<area shape="rect" id="node2" href="$class_gui.html#a14de8e45496b14e62ca59676d0aae3fe" title="Gui.mostraOpcionsDeRotacio\lEnFitxa" alt="" coords="201,5,396,47"/>
+<area shape="rect" id="node3" href="$class_tirada.html#adb40561c69d716539ea380f64872eb7b" title="Tirada.apretatOpcionsDeFitxa" alt="" coords="444,13,639,39"/>
+<area shape="rect" id="node4" href="$class_joc.html#a90b306ce9d339455a5f6e5d2decf90f1" title="Joc.apretatPerPosarFitxa" alt="" coords="687,13,856,39"/>
+<area shape="rect" id="node5" href="$class_gui.html#ac731f68776f8bdaf1637d5a448be4b48" title="Gui.posaQuadreVerd" alt="" coords="904,13,1047,39"/>
+<area shape="rect" id="node6" href="$class_gui.html#ad47e710172d53afbd0dfdd410a1c8126" title="Gui.posaQuadresVerds" alt="" coords="1095,13,1252,39"/>
+</map>

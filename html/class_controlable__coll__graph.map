@@ -1,0 +1,6 @@
+<map id="Controlable" name="Controlable">
+<area shape="rect" id="node2" href="$class_jugador.html" title="Aquesta classe representa a un jugador de la partida. Aquest està gestionat per un sistema de torns i..." alt="" coords="71,811,237,1108"/>
+<area shape="rect" id="node5" href="$class_fitxa.html" title="Fitxa que té regions i que forma part de la baralla. " alt="" coords="225,524,387,748"/>
+<area shape="rect" id="node6" href="$class_excepcio.html" title="Descripcio de la clase... " alt="" coords="269,226,365,318"/>
+<area shape="rect" id="node9" href="$class_posicio.html" title="{Posicio\n|&#45; _x\l&#45; _y\l&#45; _rotacio\l|+ Posicio()\l+ Posicio()\l+ Posicio()\l+ setPosicio()\l+ setRotacio()\l+ getPosicioX()\l+ getPosicioY()\l+ getRotacio()\l+ toString()\l+ compareTo()\l+ equals()\l}" alt="" coords="397,145,509,399"/>
+</map>

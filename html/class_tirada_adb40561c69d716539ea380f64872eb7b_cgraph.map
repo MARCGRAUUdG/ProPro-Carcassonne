@@ -1,0 +1,16 @@
+<map id="Tirada.apretatOpcionsDeFitxa" name="Tirada.apretatOpcionsDeFitxa">
+<area shape="rect" id="node2" href="$class_jugador.html#ae014826953f1629afbf0a19787aadfe0" title="Jugador.posaFitxa" alt="" coords="899,5,1027,32"/>
+<area shape="rect" id="node3" href="$class_gui.html#a14de8e45496b14e62ca59676d0aae3fe" title="Gui.mostraOpcionsDeRotacio\lEnFitxa" alt="" coords="248,99,443,141"/>
+<area shape="rect" id="node4" href="$class_gui.html#a536efde44f03608985f04155cfb829e4" title="Gui.print" alt="" coords="927,81,998,108"/>
+<area shape="rect" id="node5" href="$class_gui.html#a08cce94ed9a31122dadba010c4ebcb1c" title="Gui.getImage" alt="" coords="719,132,817,159"/>
+<area shape="rect" id="node6" href="$class_fitxa.html#af6e05ee97e95b46e754d73d4e6fd8d8c" title="Fitxa.formatNormal" alt="" coords="499,183,631,209"/>
+<area shape="rect" id="node13" href="$class_gui.html#af97132d72a7474397afb22594b0119c5" title="Gui.treuUltimElement" alt="" coords="491,233,638,260"/>
+<area shape="rect" id="node14" href="$class_joc.html#a1a732f8c5fe455e04c76f38259eb00ba" title="Joc.apretatAngleFitxa" alt="" coords="491,31,639,57"/>
+<area shape="rect" id="node7" href="$class_posicio.html#ad41dbf5580623be4bfa053825900c9e9" title="Posicio.getRotacio" alt="" coords="897,335,1028,361"/>
+<area shape="rect" id="node8" href="$class_fitxa.html#adeca1a2543f1ed0dbc74e7cc90169a35" title="Fitxa.rotar" alt="" coords="727,183,809,209"/>
+<area shape="rect" id="node9" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="914,284,1011,311"/>
+<area shape="rect" id="node10" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="914,132,1011,159"/>
+<area shape="rect" id="node11" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="914,183,1011,209"/>
+<area shape="rect" id="node12" href="$class_posicio.html#a74e21bbf58a371bbd77a6a9d98953de3" title="Posicio.setRotacio" alt="" coords="897,233,1028,260"/>
+<area shape="rect" id="node15" href="$class_tirada.html#aa56dab05d4638ad1a340f42cd514d362" title="Tirada.apretatAngleFitxa" alt="" coords="687,31,849,57"/>
+</map>

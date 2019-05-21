@@ -1,0 +1,16 @@
+<map id="Cami.propietari" name="Cami.propietari">
+<area shape="rect" id="node2" href="$class_possessio.html#a2e484840944b6f2c5a1fbe7219d39b9c" title="Possessio.getConjunt" alt="" coords="173,5,322,32"/>
+<area shape="rect" id="node3" href="$class_fitxa.html#a280bc89f067a6aafd918064caf88333a" title="Fitxa.regio_n_seguidor" alt="" coords="380,60,533,87"/>
+<area shape="rect" id="node4" href="$class_cami.html#a768f6b93fa51199b1db2806157816685" title="Cami.afegir_propietari" alt="" coords="174,208,321,235"/>
+<area shape="rect" id="node5" href="$class_fitxa.html#a37104d196a82d324bedaa4a9294758bc" title="Fitxa.regio_c_seguidor" alt="" coords="380,117,533,144"/>
+<area shape="rect" id="node6" href="$class_fitxa.html#a96ca7466a7c6f305f08b5ee139cd3d6d" title="Fitxa.regio_e_seguidor" alt="" coords="380,180,533,207"/>
+<area shape="rect" id="node7" href="$class_fitxa.html#aefba843b22263005650f44992144ff53" title="Fitxa.regio_s_seguidor" alt="" coords="380,256,533,283"/>
+<area shape="rect" id="node8" href="$class_fitxa.html#a9b57519dc7afcbb734a7073353e62dad" title="Fitxa.regio_o_seguidor" alt="" coords="380,308,533,335"/>
+<area shape="rect" id="node9" href="$class_fitxa.html#a7cc0281785388d498da748080c42083e" title="Fitxa.regio_c" alt="" coords="199,360,296,387"/>
+<area shape="rect" id="node10" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="199,411,296,437"/>
+<area shape="rect" id="node11" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="199,461,296,488"/>
+<area shape="rect" id="node12" href="$class_fitxa.html#a787f09b27930fedb010afa53ed5b1a29" title="Fitxa.regio_s" alt="" coords="199,512,296,539"/>
+<area shape="rect" id="node13" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="199,563,296,589"/>
+<area shape="rect" id="node14" href="$class_possessio.html#a9173269f71b9ac357c33e571f04c84c6" title="Possessio.llistaPropietari" alt="" coords="163,613,332,640"/>
+<area shape="rect" id="node15" href="$class_possessio.html#a514ceb05b8016e230eddbc7e3e43b325" title="Possessio.propietari" alt="" coords="387,613,527,640"/>
+</map>

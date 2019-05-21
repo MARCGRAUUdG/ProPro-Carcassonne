@@ -1,0 +1,7 @@
+<map id="Possessio" name="Possessio">
+<area shape="rect" id="node2" href="$class_camp.html" title="Subtipus de possessio format per fitxes que tenen regions que són F. " alt="" coords="31,307,130,472"/>
+<area shape="rect" id="node3" href="$class_estructura.html" title="Subtipus de possessio. " alt="" coords="155,321,257,457"/>
+<area shape="rect" id="node4" href="$class_cami.html" title="Subtipus de possessio format per fitxes que tenen regions que són C. " alt="" coords="5,520,135,685"/>
+<area shape="rect" id="node5" href="$class_ciutat.html" title="Subtipus de possessio format per fitxes que tenen regions que són F o E. " alt="" coords="159,535,253,671"/>
+<area shape="rect" id="node6" href="$class_esglesia.html" title="Subtipus de possessio format per fitxes que tenen regions que són M. " alt="" coords="277,535,372,671"/>
+</map>

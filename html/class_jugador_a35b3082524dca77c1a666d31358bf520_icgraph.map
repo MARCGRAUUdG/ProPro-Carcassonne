@@ -1,0 +1,8 @@
+<map id="Jugador.esControlable" name="Jugador.esControlable">
+<area shape="rect" id="node2" href="$class_tirada.html#a3c80bfbaa14b427b0221446e22fceeac" title="Tirada.apretatOpcionsDeSeguidor" alt="" coords="204,31,420,57"/>
+<area shape="rect" id="node3" href="$class_joc.html#a72eed3f92b818584d664717fbb05d153" title="Joc.apretatPerPosarSeguidor" alt="" coords="468,5,659,32"/>
+<area shape="rect" id="node7" href="$class_tirada.html#a45701d44ba8daf5236f4cf945ce81c34" title="Tirada.gestionarMaquina" alt="" coords="482,56,645,83"/>
+<area shape="rect" id="node4" href="$class_gui.html#a34f713e45c926f57aad018e533da18cb" title="Gui.posaSeleccioDeSeguidors" alt="" coords="925,5,1124,32"/>
+<area shape="rect" id="node6" href="$class_gui.html#af2be44020696cbe2bce2ff4b90d94cc1" title="Gui.configuraImgSeguidor" alt="" coords="707,31,877,57"/>
+<area shape="rect" id="node5" href="$class_controlable.html#a2b6a322638a64197501904a8a8e8fac3" title="Controlable.posaFitxa" alt="" coords="1172,5,1320,32"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Tauler.posaFitxaAPossessioSiNoEstaPosat" name="Tauler.posaFitxaAPossessioSiNoEstaPosat">
+<area shape="rect" id="node2" href="$class_fitxa.html#a7cc0281785388d498da748080c42083e" title="Fitxa.regio_c" alt="" coords="285,5,383,32"/>
+<area shape="rect" id="node3" href="$class_tauler.html#aa60647e3555961f2796381dab7c7f2f7" title="Tauler.getPossessioDeFitxa" alt="" coords="241,56,427,83"/>
+<area shape="rect" id="node4" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="285,107,383,133"/>
+<area shape="rect" id="node5" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="285,157,383,184"/>
+<area shape="rect" id="node6" href="$class_fitxa.html#a787f09b27930fedb010afa53ed5b1a29" title="Fitxa.regio_s" alt="" coords="285,208,383,235"/>
+<area shape="rect" id="node7" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="285,259,383,285"/>
+<area shape="rect" id="node8" href="$class_fitxa.html#a9f8c54c9bd9dce77ecd4fd47c58687d3" title="Fitxa.getPosicio" alt="" coords="276,309,392,336"/>
+<area shape="rect" id="node9" href="$class_posicio.html#a8a1ae0a7865e6edbf0510ebcf2b97061" title="Posicio.getPosicioX" alt="" coords="265,360,403,387"/>
+<area shape="rect" id="node10" href="$class_posicio.html#ae70d63aa90b935131d122fc1e4b72969" title="Posicio.getPosicioY" alt="" coords="265,411,403,437"/>
+</map>

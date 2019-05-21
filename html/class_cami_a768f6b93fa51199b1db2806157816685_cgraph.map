@@ -1,0 +1,7 @@
+<map id="Cami.afegir_propietari" name="Cami.afegir_propietari">
+<area shape="rect" id="node2" href="$class_fitxa.html#a37104d196a82d324bedaa4a9294758bc" title="Fitxa.regio_c_seguidor" alt="" coords="200,5,353,32"/>
+<area shape="rect" id="node3" href="$class_fitxa.html#a280bc89f067a6aafd918064caf88333a" title="Fitxa.regio_n_seguidor" alt="" coords="200,56,353,83"/>
+<area shape="rect" id="node4" href="$class_fitxa.html#a96ca7466a7c6f305f08b5ee139cd3d6d" title="Fitxa.regio_e_seguidor" alt="" coords="200,107,353,133"/>
+<area shape="rect" id="node5" href="$class_fitxa.html#aefba843b22263005650f44992144ff53" title="Fitxa.regio_s_seguidor" alt="" coords="200,157,353,184"/>
+<area shape="rect" id="node6" href="$class_fitxa.html#a9b57519dc7afcbb734a7073353e62dad" title="Fitxa.regio_o_seguidor" alt="" coords="200,208,353,235"/>
+</map>

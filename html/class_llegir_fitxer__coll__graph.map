@@ -1,0 +1,6 @@
+<map id="LlegirFitxer" name="LlegirFitxer">
+<area shape="rect" id="node4" href="$class_fitxa.html" title="Fitxa que té regions i que forma part de la baralla. " alt="" coords="219,524,382,748"/>
+<area shape="rect" id="node5" href="$class_excepcio.html" title="Descripcio de la clase... " alt="" coords="253,226,349,318"/>
+<area shape="rect" id="node8" href="$class_posicio.html" title="{Posicio\n|&#45; _x\l&#45; _y\l&#45; _rotacio\l|+ Posicio()\l+ Posicio()\l+ Posicio()\l+ setPosicio()\l+ setRotacio()\l+ getPosicioX()\l+ getPosicioY()\l+ getRotacio()\l+ toString()\l+ compareTo()\l+ equals()\l}" alt="" coords="373,145,485,399"/>
+<area shape="rect" id="node11" href="$class_baralla.html" title="Classe baralla encarregada de la gestió de les Fitxa /es. " alt="" coords="481,561,587,711"/>
+</map>

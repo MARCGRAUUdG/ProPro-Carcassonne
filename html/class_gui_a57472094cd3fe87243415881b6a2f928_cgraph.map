@@ -1,0 +1,6 @@
+<map id="Gui.mostraNextTirada" name="Gui.mostraNextTirada">
+<area shape="rect" id="node2" href="$class_gui.html#a08cce94ed9a31122dadba010c4ebcb1c" title="Gui.getImage" alt="" coords="225,5,324,32"/>
+<area shape="rect" id="node4" href="$class_gui.html#af97132d72a7474397afb22594b0119c5" title="Gui.treuUltimElement" alt="" coords="201,56,348,83"/>
+<area shape="rect" id="node5" href="$class_joc.html#aae62a162e3ae1cae45dea616914fcaba" title="Joc.iniciaNouTorn" alt="" coords="213,107,337,133"/>
+<area shape="rect" id="node3" href="$class_gui.html#a536efde44f03608985f04155cfb829e4" title="Gui.print" alt="" coords="396,5,467,32"/>
+</map>

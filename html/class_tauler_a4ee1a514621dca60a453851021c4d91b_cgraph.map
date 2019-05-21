@@ -1,0 +1,10 @@
+<map id="Tauler.eliminaPosicionsIncompatibles" name="Tauler.eliminaPosicionsIncompatibles">
+<area shape="rect" id="node2" href="$class_tauler.html#a0595f3ec2a8c32c07fb862a9e723eb99" title="Tauler.getTipusDePossessio" alt="" coords="292,5,479,32"/>
+<area shape="rect" id="node3" href="$class_possessio.html#a514ceb05b8016e230eddbc7e3e43b325" title="Possessio.propietari" alt="" coords="315,56,455,83"/>
+<area shape="rect" id="node4" href="$class_fitxa.html#a7cc0281785388d498da748080c42083e" title="Fitxa.regio_c" alt="" coords="337,107,434,133"/>
+<area shape="rect" id="node5" href="$class_possessio.html#a3fa7231e1183f1be2882d4977c6a74a7" title="Possessio.tipus" alt="" coords="328,157,443,184"/>
+<area shape="rect" id="node6" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="337,208,434,235"/>
+<area shape="rect" id="node7" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="337,259,434,285"/>
+<area shape="rect" id="node8" href="$class_fitxa.html#a787f09b27930fedb010afa53ed5b1a29" title="Fitxa.regio_s" alt="" coords="337,309,434,336"/>
+<area shape="rect" id="node9" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="337,360,434,387"/>
+</map>

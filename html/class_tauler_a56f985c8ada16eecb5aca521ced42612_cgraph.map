@@ -1,0 +1,9 @@
+<map id="Tauler.afegirPossessio" name="Tauler.afegirPossessio">
+<area shape="rect" id="node2" href="$class_tauler.html#aa60647e3555961f2796381dab7c7f2f7" title="Tauler.getPossessioDeFitxa" alt="" coords="221,56,406,83"/>
+<area shape="rect" id="node3" href="$class_tauler.html#af80e16c20bca52f2717be44a6242193e" title="Tauler.getPosicionsDePossessio" alt="" coords="207,107,420,133"/>
+<area shape="rect" id="node4" href="$class_fitxa.html#a7cc0281785388d498da748080c42083e" title="Fitxa.regio_c" alt="" coords="468,5,565,32"/>
+<area shape="rect" id="node5" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="468,56,565,83"/>
+<area shape="rect" id="node6" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="468,107,565,133"/>
+<area shape="rect" id="node7" href="$class_fitxa.html#a787f09b27930fedb010afa53ed5b1a29" title="Fitxa.regio_s" alt="" coords="468,157,565,184"/>
+<area shape="rect" id="node8" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="468,208,565,235"/>
+</map>

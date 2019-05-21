@@ -1,0 +1,37 @@
+<map id="Joc.IniciJoc" name="Joc.IniciJoc">
+<area shape="rect" id="node2" href="$class_gui.html#a122d77f189c0b53e90fbbb8810119996" title="Gui.setupJugadors" alt="" coords="340,1160,471,1187"/>
+<area shape="rect" id="node5" href="$class_gui.html#ac684b0bf06300f74e400adacc2ec22d1" title="Gui.iniciaTaulerGui" alt="" coords="552,1211,683,1238"/>
+<area shape="rect" id="node6" href="$class_joc.html#ab6a95f4790ad123e0fa5700cc984973e" title="Joc.posaFitxaInicial" alt="" coords="143,882,279,908"/>
+<area shape="rect" id="node32" href="$class_gui.html#a1a14232efb129ae4577c477395f6a09e" title="Gui.setSeguidors" alt="" coords="1295,1110,1418,1136"/>
+<area shape="rect" id="node36" href="$class_joc.html#aae62a162e3ae1cae45dea616914fcaba" title="Joc.iniciaNouTorn" alt="" coords="149,1262,273,1288"/>
+<area shape="rect" id="node3" href="$class_gui.html#a08cce94ed9a31122dadba010c4ebcb1c" title="Gui.getImage" alt="" coords="1566,1148,1665,1175"/>
+<area shape="rect" id="node4" href="$class_gui.html#a536efde44f03608985f04155cfb829e4" title="Gui.print" alt="" coords="1915,1008,1986,1035"/>
+<area shape="rect" id="node7" href="$class_fitxa.html#a63357c2ccc2b283f3b12f4a5aaf50fb0" title="Fitxa.setPosicio" alt="" coords="1557,856,1673,883"/>
+<area shape="rect" id="node14" href="$class_tauler.html#aa06ab791d1dc23451170b09f1aa4626c" title="Tauler.posarFitxaTauler" alt="" coords="327,704,484,731"/>
+<area shape="rect" id="node34" href="$class_gui.html#a01b6b7eeba0d0730c6307d58df0cc032" title="Gui.posaFitxa" alt="" coords="1305,806,1408,832"/>
+<area shape="rect" id="node8" href="$class_fitxa.html#adeca1a2543f1ed0dbc74e7cc90169a35" title="Fitxa.rotar" alt="" coords="1756,704,1837,731"/>
+<area shape="rect" id="node9" href="$class_posicio.html#ad41dbf5580623be4bfa053825900c9e9" title="Posicio.getRotacio" alt="" coords="1885,780,2016,807"/>
+<area shape="rect" id="node10" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="1902,115,1999,142"/>
+<area shape="rect" id="node11" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="1902,470,1999,496"/>
+<area shape="rect" id="node12" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="1902,559,1999,586"/>
+<area shape="rect" id="node13" href="$class_posicio.html#a74e21bbf58a371bbd77a6a9d98953de3" title="Posicio.setRotacio" alt="" coords="1885,704,2016,731"/>
+<area shape="rect" id="node15" href="$class_fitxa.html#a9f8c54c9bd9dce77ecd4fd47c58687d3" title="Fitxa.getPosicio" alt="" coords="1557,700,1673,727"/>
+<area shape="rect" id="node16" href="$class_posicio.html#a8a1ae0a7865e6edbf0510ebcf2b97061" title="Posicio.getPosicioX" alt="" coords="1547,648,1684,675"/>
+<area shape="rect" id="node17" href="$class_posicio.html#ae70d63aa90b935131d122fc1e4b72969" title="Posicio.getPosicioY" alt="" coords="1546,292,1685,319"/>
+<area shape="rect" id="node18" href="$class_tauler.html#af7c318026f6fb05db78e0b1ed2e8d3b6" title="Tauler.assignarPossessio" alt="" coords="532,451,703,478"/>
+<area shape="rect" id="node19" href="$class_tauler.html#aaed75eb94f6022165789d1941aac603c" title="Tauler.getFitxa" alt="" coords="792,603,900,630"/>
+<area shape="rect" id="node20" href="$class_tauler.html#a56f985c8ada16eecb5aca521ced42612" title="Tauler.afegirPossessio" alt="" coords="1013,267,1167,294"/>
+<area shape="rect" id="node24" href="$class_fitxa.html#a787f09b27930fedb010afa53ed5b1a29" title="Fitxa.regio_s" alt="" coords="1567,191,1664,218"/>
+<area shape="rect" id="node25" href="$class_tauler.html#ac33b81e0bbd22c04fa99fdc47e72f79e" title="Tauler.posaFitxaAPossessio\lSiNoEstaPosat" alt="" coords="1263,394,1451,436"/>
+<area shape="rect" id="node26" href="$class_tauler.html#acc18f6c54b9a7c0748a20a2090c76252" title="Tauler.unirPossessionsSiCal" alt="" coords="752,216,940,243"/>
+<area shape="rect" id="node28" href="$class_tauler.html#a24ec7ef9cbe3edc9d0dbb67d4e87245b" title="Tauler.comprovaPossessions\lTancades" alt="" coords="751,892,941,933"/>
+<area shape="rect" id="node21" href="$class_tauler.html#aa60647e3555961f2796381dab7c7f2f7" title="Tauler.getPossessioDeFitxa" alt="" coords="1523,343,1708,370"/>
+<area shape="rect" id="node22" href="$class_tauler.html#af80e16c20bca52f2717be44a6242193e" title="Tauler.getPosicionsDePossessio" alt="" coords="1250,90,1463,116"/>
+<area shape="rect" id="node23" href="$class_fitxa.html#a7cc0281785388d498da748080c42083e" title="Fitxa.regio_c" alt="" coords="1567,242,1664,268"/>
+<area shape="rect" id="node27" href="$class_tauler.html#a6281d6d8601653fa74119e9eac3103a2" title="Tauler.onEstaLaFitxaEnPossessions" alt="" coords="1239,242,1475,268"/>
+<area shape="rect" id="node29" href="$class_joc.html#ae969b3e16360a36ada26dffbb184fc33" title="Joc.AfegeixPuntuacioAJugador" alt="" coords="989,907,1191,934"/>
+<area shape="rect" id="node31" href="$class_joc.html#a7b2aa3cddde39037414f87df367b3599" title="Joc.AfegeixSeguidorAJugador" alt="" coords="993,1008,1187,1035"/>
+<area shape="rect" id="node33" href="$class_gui.html#a8e60b9f1428fae6afd4e419d52bc0723" title="Gui.treuSeguidorsDe" alt="" coords="1019,856,1161,883"/>
+<area shape="rect" id="node30" href="$class_gui.html#ab7fd6a1b1d5fa17562ceed182a64b7c8" title="Gui.setScore" alt="" coords="1307,856,1406,883"/>
+<area shape="rect" id="node35" href="$class_fitxa.html#af6e05ee97e95b46e754d73d4e6fd8d8c" title="Fitxa.formatNormal" alt="" coords="1549,755,1681,782"/>
+</map>

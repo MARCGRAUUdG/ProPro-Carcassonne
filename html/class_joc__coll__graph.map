@@ -1,0 +1,10 @@
+<map id="Joc" name="Joc">
+<area shape="rect" id="node2" href="$class_tauler.html" title="Administració d&#39;un Tauler estatic de 10x10, amb gestio de les seves Fitxa/es i de les Possession/s..." alt="" coords="382,855,606,1240"/>
+<area shape="rect" id="node11" href="$class_tirada.html" title="Classe encarregada de gestionar els torns dels diferents jugadors. Aquesta actua diferent segons si e..." alt="" coords="396,1354,593,1490"/>
+<area shape="rect" id="node12" href="$class_jugador.html" title="Aquesta classe representa a un jugador de la partida. Aquest està gestionat per un sistema de torns i..." alt="" coords="140,899,307,1196"/>
+<area shape="rect" id="node5" href="$class_fitxa.html" title="Fitxa que té regions i que forma part de la baralla. " alt="" coords="584,524,746,748"/>
+<area shape="rect" id="node15" href="$class_llegir_fitxer.html" title="Classe encarregada de llegir el fitxer i retornar la informació necessària al projecte per tal de la ..." alt="" coords="923,1303,1066,1541"/>
+<area shape="rect" id="node6" href="$class_excepcio.html" title="Descripcio de la clase... " alt="" coords="836,226,932,318"/>
+<area shape="rect" id="node9" href="$class_posicio.html" title="{Posicio\n|&#45; _x\l&#45; _y\l&#45; _rotacio\l|+ Posicio()\l+ Posicio()\l+ Posicio()\l+ setPosicio()\l+ setRotacio()\l+ getPosicioX()\l+ getPosicioY()\l+ getRotacio()\l+ toString()\l+ compareTo()\l+ equals()\l}" alt="" coords="960,145,1072,399"/>
+<area shape="rect" id="node17" href="$class_baralla.html" title="Classe baralla encarregada de la gestió de les Fitxa /es. " alt="" coords="1130,972,1237,1123"/>
+</map>

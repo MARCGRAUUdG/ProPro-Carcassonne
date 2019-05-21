@@ -1,0 +1,1057 @@
+\hypertarget{class_gui}{}\section{Referència de la Classe Gui}
+\label{class_gui}\index{Gui@{Gui}}
+
+
+Clase main, gestió de la interficie i control del jugador actual en cas de ser controlable.  
+
+
+
+
+Diagrama d\textquotesingle{}Herència per a Gui\+:
+% FIG 0
+
+
+Diagrama de col·laboració per a Gui\+:
+% FIG 1
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_gui_a7997885cf723f790c4ec5b2328407023}{start}} (Stage primary\+Stage)
+\end{DoxyCompactItemize}
+\subsection*{Mètodes Públics Estàtics}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_gui_a147fb18eb48c8635f144795b1b3f79ad}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\item 
+static void \mbox{\hyperlink{class_gui_a536efde44f03608985f04155cfb829e4}{print}} (String stream)
+\item 
+static void \mbox{\hyperlink{class_gui_a8e60b9f1428fae6afd4e419d52bc0723}{treu\+Seguidors\+De}} (List$<$ \mbox{\hyperlink{class_fitxa}{Fitxa}} $>$ conjunt)
+\item 
+static void \mbox{\hyperlink{class_gui_a122d77f189c0b53e90fbbb8810119996}{setup\+Jugadors}} (int n\+Jugadors)
+\item 
+static void \mbox{\hyperlink{class_gui_a01b6b7eeba0d0730c6307d58df0cc032}{posa\+Fitxa}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f)
+\item 
+static void \mbox{\hyperlink{class_gui_ab7fd6a1b1d5fa17562ceed182a64b7c8}{set\+Score}} (int jugador, int punts)
+\item 
+static void \mbox{\hyperlink{class_gui_ac684b0bf06300f74e400adacc2ec22d1}{inicia\+Tauler\+Gui}} ()
+\item 
+static void \mbox{\hyperlink{class_gui_a1a14232efb129ae4577c477395f6a09e}{set\+Seguidors}} (int n\+Seguidors, int jugador)
+\item 
+static void \mbox{\hyperlink{class_gui_a8b9b8f9acdd74b7126e53ac95f3cccb8}{informar\+Fitxer\+Entrada\+Incorrecte}} (String motiu)
+\item 
+static void \mbox{\hyperlink{class_gui_a6d292368ff728ae4d4b50d90273bf14c}{Mostra\+Baralla}} (int size, \mbox{\hyperlink{class_fitxa}{Fitxa}} f)
+\item 
+static void \mbox{\hyperlink{class_gui_ad47e710172d53afbd0dfdd410a1c8126}{posa\+Quadres\+Verds}} (Array\+List$<$ \mbox{\hyperlink{class_posicio}{Posicio}} $>$ alp)
+\item 
+static void \mbox{\hyperlink{class_gui_a34f713e45c926f57aad018e533da18cb}{posa\+Seleccio\+De\+Seguidors}} (int x, int y, Array\+List$<$ Character $>$ posicions)
+\item 
+static void \mbox{\hyperlink{class_gui_af2be44020696cbe2bce2ff4b90d94cc1}{configura\+Img\+Seguidor}} (Image\+View iv, int x, int y, char dir, int possibilitats)
+\item 
+static void \mbox{\hyperlink{class_gui_a57472094cd3fe87243415881b6a2f928}{mostra\+Next\+Tirada}} ()
+\item 
+static void \mbox{\hyperlink{class_gui_abc7c9d2b0581636190ecc53bfc4b29fb}{posa\+Seguidor}} (int x, int y, char dir, int numb\+Jugador)
+\item 
+static void \mbox{\hyperlink{class_gui_a14de8e45496b14e62ca59676d0aae3fe}{mostra\+Opcions\+De\+Rotacio\+En\+Fitxa}} (Array\+List$<$ \mbox{\hyperlink{class_posicio}{Posicio}} $>$ pos\+Disp, \mbox{\hyperlink{class_fitxa}{Fitxa}} fitxa\+Actual)
+\item 
+static void \mbox{\hyperlink{class_gui_a561f8d0d185d5dcb133ea83385380d6c}{mostra\+Guanyadors}} (Array\+List$<$ Integer $>$ guanyadors, int punts)
+\end{DoxyCompactItemize}
+\subsection*{Mètodes Privats}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_gui_ad63939d05f3eea6931bcc16234afe330}{init\+Config}} (Stage primary\+Stage)
+\item 
+void \mbox{\hyperlink{class_gui_a5d68899327d6f647d058ccc57b78634d}{setup\+Scene}} (Stage primary\+Stage)
+\item 
+void \mbox{\hyperlink{class_gui_a419d7993c3c961fd4e102ec5644b5bd6}{init\+App}} ()
+\item 
+void \mbox{\hyperlink{class_gui_a9213a84890405b2cd77441b7f0654318}{setup\+Main\+Top}} ()
+\item 
+void \mbox{\hyperlink{class_gui_a6bc8d9bda8f813b8d6c303ae798646b5}{llegeig\+Nom\+Del\+Fitxer}} ()
+\item 
+void \mbox{\hyperlink{class_gui_a0487820e6936c7fe1f38acf0d0ad1d8a}{setup\+Main\+Middle}} ()
+\item 
+void \mbox{\hyperlink{class_gui_a53da74ae8290c1e419b6e5e4994acf0a}{setup\+Main\+Bot}} ()
+\end{DoxyCompactItemize}
+\subsection*{Mètodes Privats Estàtics}
+\begin{DoxyCompactItemize}
+\item 
+static Image \mbox{\hyperlink{class_gui_a08cce94ed9a31122dadba010c4ebcb1c}{get\+Image}} (String url)
+\item 
+static void \mbox{\hyperlink{class_gui_ac731f68776f8bdaf1637d5a448be4b48}{posa\+Quadre\+Verd}} (int x, int y, int rot)
+\item 
+static void \mbox{\hyperlink{class_gui_af97132d72a7474397afb22594b0119c5}{treu\+Ultim\+Element}} ()
+\item 
+static void \mbox{\hyperlink{class_gui_a6364d40f472084c5d50859159b8c46d4}{treu\+Quadres\+Verds}} ()
+\item 
+static void \mbox{\hyperlink{class_gui_a3887b907e40f86fddd2ff2f182342b7c}{treu\+Seguidors}} (int possibilitats)
+\end{DoxyCompactItemize}
+\subsection*{Atributs Privats}
+\begin{DoxyCompactItemize}
+\item 
+V\+Box \mbox{\hyperlink{class_gui_aa5fb03ea111e17f7ff7ae3d4ce32782a}{root}}
+\begin{DoxyCompactList}\small\item\em Finestra root de la interficie. \end{DoxyCompactList}\item 
+Scene \mbox{\hyperlink{class_gui_a0864db089f17216fd1901603a662e9d2}{scene}}
+\begin{DoxyCompactList}\small\item\em Escena de la interficie. \end{DoxyCompactList}\item 
+Anchor\+Pane \mbox{\hyperlink{class_gui_ab46ede23c79d98785ce4482e11c6f19e}{top\+Row}} = new Anchor\+Pane()
+\begin{DoxyCompactList}\small\item\em Panell de la part de dalt (Entrada de fitxer) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_gui_af49145c30968bfd148efa7e77df8082e}{button\+Size}} =100.\+0
+\begin{DoxyCompactList}\small\item\em Tamany del botó anterior. \end{DoxyCompactList}\item 
+Image\+View \mbox{\hyperlink{class_gui_afdcd258194a961c45a4bf50d67cc3486}{image\+View}}
+\begin{DoxyCompactList}\small\item\em Fons del tauler de fusta. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributs Privats Estàtics}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_gui_ad7509c136ef1dcfbc543aa3329ddfd9d}{altura}} =700
+\begin{DoxyCompactList}\small\item\em Altura total de la interficie. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_gui_a872c30141e879159a1c3d9958918fecd}{ample}} =550
+\begin{DoxyCompactList}\small\item\em Ample total de la interficie. \end{DoxyCompactList}\item 
+static Text\+Field \mbox{\hyperlink{class_gui_aea36e0a7ecf10d53fa60708f54f36015}{text\+Field}} = new Text\+Field ()
+\begin{DoxyCompactList}\small\item\em Barra d\textquotesingle{}entrada del nom del fitxer d\textquotesingle{}entrada. \end{DoxyCompactList}\item 
+static Button \mbox{\hyperlink{class_gui_a2f3232db85811350d923ff914cc0ac27}{button\+File}} = new Button()
+\begin{DoxyCompactList}\small\item\em Botó de carrega del fitxer d\textquotesingle{}entrada. \end{DoxyCompactList}\item 
+static Anchor\+Pane \mbox{\hyperlink{class_gui_adc1aff892600f520ce657dbf0d50d641}{mid\+Row}} = new Anchor\+Pane()
+\begin{DoxyCompactList}\small\item\em Panell de la part del mig (tauler) \end{DoxyCompactList}\item 
+static Text \mbox{\hyperlink{class_gui_ac9724d96aa5ea5830fefb2a29e6193d5}{comenca}} =new Text()
+\begin{DoxyCompactList}\small\item\em Informacio de introduïr nom del fitxer d\textquotesingle{}entrada. \end{DoxyCompactList}\item 
+static int \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_gui_abed40e74a4b6d812ce886e19e652df89}{pos}} = \{ 75, 115, 155, 195, 235, 275, 315, 355, 395, 435\}
+\begin{DoxyCompactList}\small\item\em Posicions on encaixen les fitxes en el tauler. \end{DoxyCompactList}\item 
+static Text \mbox{\hyperlink{class_gui_af2f35c2a3421b4d76fc232f854903312}{scorej1}} =new Text (40+20, 50, \char`\"{}Score\+: 0\char`\"{})
+\begin{DoxyCompactList}\small\item\em Puntuacio del jugador 1. \end{DoxyCompactList}\item 
+static Text \mbox{\hyperlink{class_gui_a2bb8d906be16f4e53c1aa393c1750608}{scorej2}} =new Text (\mbox{\hyperlink{class_gui_a872c30141e879159a1c3d9958918fecd}{ample}}-\/150, 50, \char`\"{}Score\+: 0\char`\"{})
+\begin{DoxyCompactList}\small\item\em Puntuacio del jugador 2. \end{DoxyCompactList}\item 
+static Text \mbox{\hyperlink{class_gui_a691917c172b8ab9888a4fbe6075c8c54}{scorej3}} =new Text (\mbox{\hyperlink{class_gui_a872c30141e879159a1c3d9958918fecd}{ample}}-\/150, \mbox{\hyperlink{class_gui_a872c30141e879159a1c3d9958918fecd}{ample}}-\/15, \char`\"{}Score\+: 0\char`\"{})
+\begin{DoxyCompactList}\small\item\em Puntuacio del jugador 3. \end{DoxyCompactList}\item 
+static Text \mbox{\hyperlink{class_gui_ad8a03b9034810c4c580403c2c1efa1b7}{scorej4}} =new Text (40+20, \mbox{\hyperlink{class_gui_a872c30141e879159a1c3d9958918fecd}{ample}}-\/15, \char`\"{}Score\+: 0\char`\"{})
+\begin{DoxyCompactList}\small\item\em Puntuacio del jugador 4. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_gui_aadfe303c299579e97ce672d60a7f1cdb}{n\+Blocks\+Verds\+Posats}} =0
+\begin{DoxyCompactList}\small\item\em Blocks verds posats per despres eliminar el mateixnº d\textquotesingle{}elements. \end{DoxyCompactList}\item 
+static Anchor\+Pane \mbox{\hyperlink{class_gui_a6f0b7608a67268ba19c503871178428e}{baralla}} = new Anchor\+Pane()
+\begin{DoxyCompactList}\small\item\em Panell on hi ha la baralla a mostrar. \end{DoxyCompactList}\item 
+static Anchor\+Pane \mbox{\hyperlink{class_gui_a3db6ceba3ef9bd93f4133cfe53780a6e}{opcio\+Rotacio}} = new Anchor\+Pane()
+\begin{DoxyCompactList}\small\item\em Panell on hi ha les opcions de rotació de la fitxa. \end{DoxyCompactList}\item 
+static Text \mbox{\hyperlink{class_gui_a2ada5459adcc1ecae5c95fbebaebba23}{nseguidors}} \mbox{[}$\,$\mbox{]} =new Text\mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em Nº de seguidors de cada jugador. \end{DoxyCompactList}\item 
+static Collection$<$ String $>$ \mbox{\hyperlink{class_gui_a96cd26aa3620f84f675a677f50ab41ac}{list}}
+\begin{DoxyCompactList}\small\item\em Panell de la part de baix (log) \end{DoxyCompactList}\item 
+static Observable\+List$<$ String $>$ \mbox{\hyperlink{class_gui_a76ab837fe79bf857f48dfe94448b67e5}{details}}
+\begin{DoxyCompactList}\small\item\em details de la taula \end{DoxyCompactList}\item 
+static Table\+View$<$ String $>$ \mbox{\hyperlink{class_gui_a7c14044a11ed6ac6b484cdc0d1a090ee}{table}}
+\begin{DoxyCompactList}\small\item\em Taula log on es registra la informació \end{DoxyCompactList}\item 
+static Table\+Column$<$ String, String $>$ \mbox{\hyperlink{class_gui_aa2adf41c77e0946975bc9107dd5712f6}{log}}
+\begin{DoxyCompactList}\small\item\em Files de la taula anterior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+Clase main, gestió de la interficie i control del jugador actual en cas de ser controlable. 
+
+Definició a la línia 53 del fitxer Gui.\+java.
+
+
+
+\subsection{Documentació de les Funcions Membre}
+\mbox{\Hypertarget{class_gui_af2be44020696cbe2bce2ff4b90d94cc1}\label{class_gui_af2be44020696cbe2bce2ff4b90d94cc1}} 
+\index{Gui@{Gui}!configura\+Img\+Seguidor@{configura\+Img\+Seguidor}}
+\index{configura\+Img\+Seguidor@{configura\+Img\+Seguidor}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{configura\+Img\+Seguidor()}{configuraImgSeguidor()}}
+{\footnotesize\ttfamily static void Gui.\+configura\+Img\+Seguidor (\begin{DoxyParamCaption}\item[{Image\+View}]{iv,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{char}]{dir,  }\item[{int}]{possibilitats }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+iv esta inicialitzat, 9$<$=x$>$=0 \&\& 9$<$=y$>$=0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+configura tamany i direccio dir del seguidor en posicio x i y 
+\end{DoxyPostcond}
+
+
+Definició a la línia 495 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 2
+Gràfic de crides a aquesta funció\+:
+% FIG 3
+\mbox{\Hypertarget{class_gui_a08cce94ed9a31122dadba010c4ebcb1c}\label{class_gui_a08cce94ed9a31122dadba010c4ebcb1c}} 
+\index{Gui@{Gui}!get\+Image@{get\+Image}}
+\index{get\+Image@{get\+Image}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{get\+Image()}{getImage()}}
+{\footnotesize\ttfamily static Image Gui.\+get\+Image (\begin{DoxyParamCaption}\item[{String}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retorna la imatge amb una url si no es correcte mostra error i retorna null 
+\end{DoxyPostcond}
+
+
+Definició a la línia 299 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 4
+Gràfic de crides a aquesta funció\+:
+% FIG 5
+\mbox{\Hypertarget{class_gui_a8b9b8f9acdd74b7126e53ac95f3cccb8}\label{class_gui_a8b9b8f9acdd74b7126e53ac95f3cccb8}} 
+\index{Gui@{Gui}!informar\+Fitxer\+Entrada\+Incorrecte@{informar\+Fitxer\+Entrada\+Incorrecte}}
+\index{informar\+Fitxer\+Entrada\+Incorrecte@{informar\+Fitxer\+Entrada\+Incorrecte}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{informar\+Fitxer\+Entrada\+Incorrecte()}{informarFitxerEntradaIncorrecte()}}
+{\footnotesize\ttfamily static void Gui.\+informar\+Fitxer\+Entrada\+Incorrecte (\begin{DoxyParamCaption}\item[{String}]{motiu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Infroma per pantalla que el fitxer es incorrecte per el motiou \char`\"{}motiu\char`\"{} i torna a demana fitxer entrada 
+\end{DoxyPostcond}
+
+
+Definició a la línia 369 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 6
+Gràfic de crides a aquesta funció\+:
+% FIG 7
+\mbox{\Hypertarget{class_gui_ac684b0bf06300f74e400adacc2ec22d1}\label{class_gui_ac684b0bf06300f74e400adacc2ec22d1}} 
+\index{Gui@{Gui}!inicia\+Tauler\+Gui@{inicia\+Tauler\+Gui}}
+\index{inicia\+Tauler\+Gui@{inicia\+Tauler\+Gui}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{inicia\+Tauler\+Gui()}{iniciaTaulerGui()}}
+{\footnotesize\ttfamily static void Gui.\+inicia\+Tauler\+Gui (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+Mid inicialitzat 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+configura el tauler 
+\end{DoxyPostcond}
+
+
+Definició a la línia 338 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 8
+Gràfic de crides a aquesta funció\+:
+% FIG 9
+\mbox{\Hypertarget{class_gui_a419d7993c3c961fd4e102ec5644b5bd6}\label{class_gui_a419d7993c3c961fd4e102ec5644b5bd6}} 
+\index{Gui@{Gui}!init\+App@{init\+App}}
+\index{init\+App@{init\+App}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{init\+App()}{initApp()}}
+{\footnotesize\ttfamily void Gui.\+init\+App (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+\mbox{\hyperlink{class_gui}{Gui}} configurada 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Comença joc 
+\end{DoxyPostcond}
+
+
+Definició a la línia 135 del fitxer Gui.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 10
+\mbox{\Hypertarget{class_gui_ad63939d05f3eea6931bcc16234afe330}\label{class_gui_ad63939d05f3eea6931bcc16234afe330}} 
+\index{Gui@{Gui}!init\+Config@{init\+Config}}
+\index{init\+Config@{init\+Config}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{init\+Config()}{initConfig()}}
+{\footnotesize\ttfamily void Gui.\+init\+Config (\begin{DoxyParamCaption}\item[{Stage}]{primary\+Stage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+inicialitza stage 
+\end{DoxyPostcond}
+
+
+Definició a la línia 105 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 11
+Gràfic de crides a aquesta funció\+:
+% FIG 12
+\mbox{\Hypertarget{class_gui_a6bc8d9bda8f813b8d6c303ae798646b5}\label{class_gui_a6bc8d9bda8f813b8d6c303ae798646b5}} 
+\index{Gui@{Gui}!llegeig\+Nom\+Del\+Fitxer@{llegeig\+Nom\+Del\+Fitxer}}
+\index{llegeig\+Nom\+Del\+Fitxer@{llegeig\+Nom\+Del\+Fitxer}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{llegeig\+Nom\+Del\+Fitxer()}{llegeigNomDelFitxer()}}
+{\footnotesize\ttfamily void Gui.\+llegeig\+Nom\+Del\+Fitxer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Envia el text que hi ha introduit al joc 
+\end{DoxyPostcond}
+
+
+Definició a la línia 169 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 13
+Gràfic de crides a aquesta funció\+:
+% FIG 14
+\mbox{\Hypertarget{class_gui_a147fb18eb48c8635f144795b1b3f79ad}\label{class_gui_a147fb18eb48c8635f144795b1b3f79ad}} 
+\index{Gui@{Gui}!main@{main}}
+\index{main@{main}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void Gui.\+main (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definició a la línia 87 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_a6d292368ff728ae4d4b50d90273bf14c}\label{class_gui_a6d292368ff728ae4d4b50d90273bf14c}} 
+\index{Gui@{Gui}!Mostra\+Baralla@{Mostra\+Baralla}}
+\index{Mostra\+Baralla@{Mostra\+Baralla}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{Mostra\+Baralla()}{MostraBaralla()}}
+{\footnotesize\ttfamily static void Gui.\+Mostra\+Baralla (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+Mid inicialitzat 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Mostra el tamany de baralla size ocults i la ultima carta de la baralla f destapada 
+\end{DoxyPostcond}
+
+
+Definició a la línia 378 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 15
+\mbox{\Hypertarget{class_gui_a561f8d0d185d5dcb133ea83385380d6c}\label{class_gui_a561f8d0d185d5dcb133ea83385380d6c}} 
+\index{Gui@{Gui}!mostra\+Guanyadors@{mostra\+Guanyadors}}
+\index{mostra\+Guanyadors@{mostra\+Guanyadors}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{mostra\+Guanyadors()}{mostraGuanyadors()}}
+{\footnotesize\ttfamily static void Gui.\+mostra\+Guanyadors (\begin{DoxyParamCaption}\item[{Array\+List$<$ Integer $>$}]{guanyadors,  }\item[{int}]{punts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+guanyadors.\+size()$>$0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Mostra per pantalla el guanyador i els punts que ha fet 
+\end{DoxyPostcond}
+
+
+Definició a la línia 592 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 16
+Gràfic de crides a aquesta funció\+:
+% FIG 17
+\mbox{\Hypertarget{class_gui_a57472094cd3fe87243415881b6a2f928}\label{class_gui_a57472094cd3fe87243415881b6a2f928}} 
+\index{Gui@{Gui}!mostra\+Next\+Tirada@{mostra\+Next\+Tirada}}
+\index{mostra\+Next\+Tirada@{mostra\+Next\+Tirada}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{mostra\+Next\+Tirada()}{mostraNextTirada()}}
+{\footnotesize\ttfamily static void Gui.\+mostra\+Next\+Tirada (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+Mid configurat 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Posa l\textquotesingle{}opcio de clickar per avançar nou torn 
+\end{DoxyPostcond}
+
+
+Definició a la línia 520 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 18
+\mbox{\Hypertarget{class_gui_a14de8e45496b14e62ca59676d0aae3fe}\label{class_gui_a14de8e45496b14e62ca59676d0aae3fe}} 
+\index{Gui@{Gui}!mostra\+Opcions\+De\+Rotacio\+En\+Fitxa@{mostra\+Opcions\+De\+Rotacio\+En\+Fitxa}}
+\index{mostra\+Opcions\+De\+Rotacio\+En\+Fitxa@{mostra\+Opcions\+De\+Rotacio\+En\+Fitxa}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{mostra\+Opcions\+De\+Rotacio\+En\+Fitxa()}{mostraOpcionsDeRotacioEnFitxa()}}
+{\footnotesize\ttfamily static void Gui.\+mostra\+Opcions\+De\+Rotacio\+En\+Fitxa (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{class_posicio}{Posicio}} $>$}]{pos\+Disp,  }\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{fitxa\+Actual }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+pos\+Disp.\+size()$>$0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Posa la seleccio de rotacio \textquotesingle{}pos\+Disp\textquotesingle{} de la fitxa\+Actual 
+\end{DoxyPostcond}
+
+
+Definició a la línia 560 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 19
+Gràfic de crides a aquesta funció\+:
+% FIG 20
+\mbox{\Hypertarget{class_gui_a01b6b7eeba0d0730c6307d58df0cc032}\label{class_gui_a01b6b7eeba0d0730c6307d58df0cc032}} 
+\index{Gui@{Gui}!posa\+Fitxa@{posa\+Fitxa}}
+\index{posa\+Fitxa@{posa\+Fitxa}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{posa\+Fitxa()}{posaFitxa()}}
+{\footnotesize\ttfamily static void Gui.\+posa\+Fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+Mid inicialitzat, la fitxa f ha de tenir una posicio asignada correcte 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Posa fitxa en el tauler de la \mbox{\hyperlink{class_gui}{Gui}} 
+\end{DoxyPostcond}
+
+
+Definició a la línia 311 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 21
+Gràfic de crides a aquesta funció\+:
+% FIG 22
+\mbox{\Hypertarget{class_gui_ad47e710172d53afbd0dfdd410a1c8126}\label{class_gui_ad47e710172d53afbd0dfdd410a1c8126}} 
+\index{Gui@{Gui}!posa\+Quadres\+Verds@{posa\+Quadres\+Verds}}
+\index{posa\+Quadres\+Verds@{posa\+Quadres\+Verds}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{posa\+Quadres\+Verds()}{posaQuadresVerds()}}
+{\footnotesize\ttfamily static void Gui.\+posa\+Quadres\+Verds (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{class_posicio}{Posicio}} $>$}]{alp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+Mid i tauler inicialitzat 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Posa en les posicions alp quadres verds d\textquotesingle{}opcions per ficar fitxa 
+\end{DoxyPostcond}
+
+
+Definició a la línia 437 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 23
+\mbox{\Hypertarget{class_gui_ac731f68776f8bdaf1637d5a448be4b48}\label{class_gui_ac731f68776f8bdaf1637d5a448be4b48}} 
+\index{Gui@{Gui}!posa\+Quadre\+Verd@{posa\+Quadre\+Verd}}
+\index{posa\+Quadre\+Verd@{posa\+Quadre\+Verd}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{posa\+Quadre\+Verd()}{posaQuadreVerd()}}
+{\footnotesize\ttfamily static void Gui.\+posa\+Quadre\+Verd (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{rot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+Mid i tauler inicialitzat 9$<$=x$>$=0 \&\& 9$<$=y$>$=0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Posa opcio de posar fitxa en el tauler de la posicio x, y amb rotacio 
+\end{DoxyPostcond}
+
+
+Definició a la línia 408 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 24
+Gràfic de crides a aquesta funció\+:
+% FIG 25
+\mbox{\Hypertarget{class_gui_abc7c9d2b0581636190ecc53bfc4b29fb}\label{class_gui_abc7c9d2b0581636190ecc53bfc4b29fb}} 
+\index{Gui@{Gui}!posa\+Seguidor@{posa\+Seguidor}}
+\index{posa\+Seguidor@{posa\+Seguidor}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{posa\+Seguidor()}{posaSeguidor()}}
+{\footnotesize\ttfamily static void Gui.\+posa\+Seguidor (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{char}]{dir,  }\item[{int}]{numb\+Jugador }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+9$<$=x$>$=0, 9$<$=y$>$=0, 4$<$=numb\+Jugador$>$=1 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Posa el seguidor en la posicio dir del tauler x,y que pertany al jugador numb\+Jugador 
+\end{DoxyPostcond}
+
+
+Definició a la línia 538 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 26
+Gràfic de crides a aquesta funció\+:
+% FIG 27
+\mbox{\Hypertarget{class_gui_a34f713e45c926f57aad018e533da18cb}\label{class_gui_a34f713e45c926f57aad018e533da18cb}} 
+\index{Gui@{Gui}!posa\+Seleccio\+De\+Seguidors@{posa\+Seleccio\+De\+Seguidors}}
+\index{posa\+Seleccio\+De\+Seguidors@{posa\+Seleccio\+De\+Seguidors}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{posa\+Seleccio\+De\+Seguidors()}{posaSeleccioDeSeguidors()}}
+{\footnotesize\ttfamily static void Gui.\+posa\+Seleccio\+De\+Seguidors (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{Array\+List$<$ Character $>$}]{posicions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+Mid i tauler inicialitzat, una fitxa posada en la posicio x,y, 9$<$=x$>$=0 \&\& 9$<$=y$>$=0, posicions.\+size()$>$0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Posa les opcions per colocar seguidor en la posicio x,y 
+\end{DoxyPostcond}
+
+
+Definició a la línia 454 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 28
+Gràfic de crides a aquesta funció\+:
+% FIG 29
+\mbox{\Hypertarget{class_gui_a536efde44f03608985f04155cfb829e4}\label{class_gui_a536efde44f03608985f04155cfb829e4}} 
+\index{Gui@{Gui}!print@{print}}
+\index{print@{print}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily static void Gui.\+print (\begin{DoxyParamCaption}\item[{String}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+taula, stage i scene inicialitzat 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Mostra per la taula de la gui el stream 
+\end{DoxyPostcond}
+
+
+Definició a la línia 126 del fitxer Gui.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 30
+\mbox{\Hypertarget{class_gui_ab7fd6a1b1d5fa17562ceed182a64b7c8}\label{class_gui_ab7fd6a1b1d5fa17562ceed182a64b7c8}} 
+\index{Gui@{Gui}!set\+Score@{set\+Score}}
+\index{set\+Score@{set\+Score}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{set\+Score()}{setScore()}}
+{\footnotesize\ttfamily static void Gui.\+set\+Score (\begin{DoxyParamCaption}\item[{int}]{jugador,  }\item[{int}]{punts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+Mid i \mbox{\hyperlink{class_jugador}{Jugador}} inicialitzat, jugador$>$=1 \&\& jugador$<$=4 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+actualitza els punts del jugador 
+\end{DoxyPostcond}
+
+
+Definició a la línia 324 del fitxer Gui.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 31
+\mbox{\Hypertarget{class_gui_a1a14232efb129ae4577c477395f6a09e}\label{class_gui_a1a14232efb129ae4577c477395f6a09e}} 
+\index{Gui@{Gui}!set\+Seguidors@{set\+Seguidors}}
+\index{set\+Seguidors@{set\+Seguidors}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{set\+Seguidors()}{setSeguidors()}}
+{\footnotesize\ttfamily static void Gui.\+set\+Seguidors (\begin{DoxyParamCaption}\item[{int}]{n\+Seguidors,  }\item[{int}]{jugador }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+njugador$>$=1 \&\& njugador$<$=4, Mid i \mbox{\hyperlink{class_jugador}{Jugador}} inicialitzat 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Actualitzat el n\+Seguidors del jugador 
+\end{DoxyPostcond}
+
+
+Definició a la línia 352 del fitxer Gui.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 32
+\mbox{\Hypertarget{class_gui_a122d77f189c0b53e90fbbb8810119996}\label{class_gui_a122d77f189c0b53e90fbbb8810119996}} 
+\index{Gui@{Gui}!setup\+Jugadors@{setup\+Jugadors}}
+\index{setup\+Jugadors@{setup\+Jugadors}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{setup\+Jugadors()}{setupJugadors()}}
+{\footnotesize\ttfamily static void Gui.\+setup\+Jugadors (\begin{DoxyParamCaption}\item[{int}]{n\+Jugadors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+Mid inicialitzat 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Configura jugadors 
+\end{DoxyPostcond}
+
+
+Definició a la línia 229 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 33
+Gràfic de crides a aquesta funció\+:
+% FIG 34
+\mbox{\Hypertarget{class_gui_a53da74ae8290c1e419b6e5e4994acf0a}\label{class_gui_a53da74ae8290c1e419b6e5e4994acf0a}} 
+\index{Gui@{Gui}!setup\+Main\+Bot@{setup\+Main\+Bot}}
+\index{setup\+Main\+Bot@{setup\+Main\+Bot}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{setup\+Main\+Bot()}{setupMainBot()}}
+{\footnotesize\ttfamily void Gui.\+setup\+Main\+Bot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Configura part bot de la G\+UI 
+\end{DoxyPostcond}
+
+
+Definició a la línia 192 del fitxer Gui.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 35
+\mbox{\Hypertarget{class_gui_a0487820e6936c7fe1f38acf0d0ad1d8a}\label{class_gui_a0487820e6936c7fe1f38acf0d0ad1d8a}} 
+\index{Gui@{Gui}!setup\+Main\+Middle@{setup\+Main\+Middle}}
+\index{setup\+Main\+Middle@{setup\+Main\+Middle}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{setup\+Main\+Middle()}{setupMainMiddle()}}
+{\footnotesize\ttfamily void Gui.\+setup\+Main\+Middle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Configura part mid de la G\+UI 
+\end{DoxyPostcond}
+
+
+Definició a la línia 177 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 36
+Gràfic de crides a aquesta funció\+:
+% FIG 37
+\mbox{\Hypertarget{class_gui_a9213a84890405b2cd77441b7f0654318}\label{class_gui_a9213a84890405b2cd77441b7f0654318}} 
+\index{Gui@{Gui}!setup\+Main\+Top@{setup\+Main\+Top}}
+\index{setup\+Main\+Top@{setup\+Main\+Top}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{setup\+Main\+Top()}{setupMainTop()}}
+{\footnotesize\ttfamily void Gui.\+setup\+Main\+Top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Configura part top de la G\+UI 
+\end{DoxyPostcond}
+
+
+Definició a la línia 141 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 38
+Gràfic de crides a aquesta funció\+:
+% FIG 39
+\mbox{\Hypertarget{class_gui_a5d68899327d6f647d058ccc57b78634d}\label{class_gui_a5d68899327d6f647d058ccc57b78634d}} 
+\index{Gui@{Gui}!setup\+Scene@{setup\+Scene}}
+\index{setup\+Scene@{setup\+Scene}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{setup\+Scene()}{setupScene()}}
+{\footnotesize\ttfamily void Gui.\+setup\+Scene (\begin{DoxyParamCaption}\item[{Stage}]{primary\+Stage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+configura i mostra scene 
+\end{DoxyPostcond}
+
+
+Definició a la línia 114 del fitxer Gui.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 40
+\mbox{\Hypertarget{class_gui_a7997885cf723f790c4ec5b2328407023}\label{class_gui_a7997885cf723f790c4ec5b2328407023}} 
+\index{Gui@{Gui}!start@{start}}
+\index{start@{start}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Gui.\+start (\begin{DoxyParamCaption}\item[{Stage}]{primary\+Stage }\end{DoxyParamCaption})}
+
+
+
+Definició a la línia 92 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 41
+\mbox{\Hypertarget{class_gui_a6364d40f472084c5d50859159b8c46d4}\label{class_gui_a6364d40f472084c5d50859159b8c46d4}} 
+\index{Gui@{Gui}!treu\+Quadres\+Verds@{treu\+Quadres\+Verds}}
+\index{treu\+Quadres\+Verds@{treu\+Quadres\+Verds}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{treu\+Quadres\+Verds()}{treuQuadresVerds()}}
+{\footnotesize\ttfamily static void Gui.\+treu\+Quadres\+Verds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+Mid i tauler inicialitzat i haver cridat correctament \mbox{\hyperlink{class_gui_ad47e710172d53afbd0dfdd410a1c8126}{posa\+Quadres\+Verds()}} avans 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Treu les opcions dels quadres verds 
+\end{DoxyPostcond}
+
+
+Definició a la línia 447 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 42
+Gràfic de crides a aquesta funció\+:
+% FIG 43
+\mbox{\Hypertarget{class_gui_a3887b907e40f86fddd2ff2f182342b7c}\label{class_gui_a3887b907e40f86fddd2ff2f182342b7c}} 
+\index{Gui@{Gui}!treu\+Seguidors@{treu\+Seguidors}}
+\index{treu\+Seguidors@{treu\+Seguidors}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{treu\+Seguidors()}{treuSeguidors()}}
+{\footnotesize\ttfamily static void Gui.\+treu\+Seguidors (\begin{DoxyParamCaption}\item[{int}]{possibilitats }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+Haver cridat correctament \mbox{\hyperlink{class_gui_af2be44020696cbe2bce2ff4b90d94cc1}{configura\+Img\+Seguidor()}} avans 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Treu la seleccio de posicionament dels seguidors, possibilitats vegades 
+\end{DoxyPostcond}
+
+
+Definició a la línia 513 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 44
+Gràfic de crides a aquesta funció\+:
+% FIG 45
+\mbox{\Hypertarget{class_gui_a8e60b9f1428fae6afd4e419d52bc0723}\label{class_gui_a8e60b9f1428fae6afd4e419d52bc0723}} 
+\index{Gui@{Gui}!treu\+Seguidors\+De@{treu\+Seguidors\+De}}
+\index{treu\+Seguidors\+De@{treu\+Seguidors\+De}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{treu\+Seguidors\+De()}{treuSeguidorsDe()}}
+{\footnotesize\ttfamily static void Gui.\+treu\+Seguidors\+De (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_fitxa}{Fitxa}} $>$}]{conjunt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+Les fitxes de la llista tenen posicio correcte 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Treu el seguidor on estan les fitxes del conjunt 
+\end{DoxyPostcond}
+
+
+Definició a la línia 221 del fitxer Gui.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 46
+Gràfic de crides a aquesta funció\+:
+% FIG 47
+\mbox{\Hypertarget{class_gui_af97132d72a7474397afb22594b0119c5}\label{class_gui_af97132d72a7474397afb22594b0119c5}} 
+\index{Gui@{Gui}!treu\+Ultim\+Element@{treu\+Ultim\+Element}}
+\index{treu\+Ultim\+Element@{treu\+Ultim\+Element}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{treu\+Ultim\+Element()}{treuUltimElement()}}
+{\footnotesize\ttfamily static void Gui.\+treu\+Ultim\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Elimina de la gui el ultim element (Funcio perillosa Un gran poder conlleva una gran responsabilidad) 
+\end{DoxyPostcond}
+
+
+Definició a la línia 431 del fitxer Gui.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 48
+
+
+\subsection{Documentació de les Dades Membre}
+\mbox{\Hypertarget{class_gui_ad7509c136ef1dcfbc543aa3329ddfd9d}\label{class_gui_ad7509c136ef1dcfbc543aa3329ddfd9d}} 
+\index{Gui@{Gui}!altura@{altura}}
+\index{altura@{altura}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{altura}{altura}}
+{\footnotesize\ttfamily int Gui.\+altura =700\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Altura total de la interficie. 
+
+
+
+Definició a la línia 55 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_a872c30141e879159a1c3d9958918fecd}\label{class_gui_a872c30141e879159a1c3d9958918fecd}} 
+\index{Gui@{Gui}!ample@{ample}}
+\index{ample@{ample}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{ample}{ample}}
+{\footnotesize\ttfamily int Gui.\+ample =550\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Ample total de la interficie. 
+
+
+
+Definició a la línia 56 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_a6f0b7608a67268ba19c503871178428e}\label{class_gui_a6f0b7608a67268ba19c503871178428e}} 
+\index{Gui@{Gui}!baralla@{baralla}}
+\index{baralla@{baralla}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{baralla}{baralla}}
+{\footnotesize\ttfamily Anchor\+Pane Gui.\+baralla = new Anchor\+Pane()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Panell on hi ha la baralla a mostrar. 
+
+
+
+Definició a la línia 77 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_a2f3232db85811350d923ff914cc0ac27}\label{class_gui_a2f3232db85811350d923ff914cc0ac27}} 
+\index{Gui@{Gui}!button\+File@{button\+File}}
+\index{button\+File@{button\+File}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{button\+File}{buttonFile}}
+{\footnotesize\ttfamily Button Gui.\+button\+File = new Button()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Botó de carrega del fitxer d\textquotesingle{}entrada. 
+
+
+
+Definició a la línia 63 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_af49145c30968bfd148efa7e77df8082e}\label{class_gui_af49145c30968bfd148efa7e77df8082e}} 
+\index{Gui@{Gui}!button\+Size@{button\+Size}}
+\index{button\+Size@{button\+Size}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{button\+Size}{buttonSize}}
+{\footnotesize\ttfamily double Gui.\+button\+Size =100.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tamany del botó anterior. 
+
+
+
+Definició a la línia 64 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_ac9724d96aa5ea5830fefb2a29e6193d5}\label{class_gui_ac9724d96aa5ea5830fefb2a29e6193d5}} 
+\index{Gui@{Gui}!comenca@{comenca}}
+\index{comenca@{comenca}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{comenca}{comenca}}
+{\footnotesize\ttfamily Text Gui.\+comenca =new Text()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Informacio de introduïr nom del fitxer d\textquotesingle{}entrada. 
+
+
+
+Definició a la línia 69 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_a76ab837fe79bf857f48dfe94448b67e5}\label{class_gui_a76ab837fe79bf857f48dfe94448b67e5}} 
+\index{Gui@{Gui}!details@{details}}
+\index{details@{details}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{details}{details}}
+{\footnotesize\ttfamily Observable\+List$<$String$>$ Gui.\+details\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+details de la taula 
+
+
+
+Definició a la línia 83 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_afdcd258194a961c45a4bf50d67cc3486}\label{class_gui_afdcd258194a961c45a4bf50d67cc3486}} 
+\index{Gui@{Gui}!image\+View@{image\+View}}
+\index{image\+View@{image\+View}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{image\+View}{imageView}}
+{\footnotesize\ttfamily Image\+View Gui.\+image\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fons del tauler de fusta. 
+
+
+
+Definició a la línia 68 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_a96cd26aa3620f84f675a677f50ab41ac}\label{class_gui_a96cd26aa3620f84f675a677f50ab41ac}} 
+\index{Gui@{Gui}!list@{list}}
+\index{list@{list}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{list}{list}}
+{\footnotesize\ttfamily Collection$<$String$>$ Gui.\+list\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Panell de la part de baix (log) 
+
+
+
+Definició a la línia 82 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_aa2adf41c77e0946975bc9107dd5712f6}\label{class_gui_aa2adf41c77e0946975bc9107dd5712f6}} 
+\index{Gui@{Gui}!log@{log}}
+\index{log@{log}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily Table\+Column$<$String, String$>$ Gui.\+log\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Files de la taula anterior. 
+
+
+
+Definició a la línia 85 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_adc1aff892600f520ce657dbf0d50d641}\label{class_gui_adc1aff892600f520ce657dbf0d50d641}} 
+\index{Gui@{Gui}!mid\+Row@{mid\+Row}}
+\index{mid\+Row@{mid\+Row}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{mid\+Row}{midRow}}
+{\footnotesize\ttfamily Anchor\+Pane Gui.\+mid\+Row = new Anchor\+Pane()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Panell de la part del mig (tauler) 
+
+
+
+Definició a la línia 67 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_aadfe303c299579e97ce672d60a7f1cdb}\label{class_gui_aadfe303c299579e97ce672d60a7f1cdb}} 
+\index{Gui@{Gui}!n\+Blocks\+Verds\+Posats@{n\+Blocks\+Verds\+Posats}}
+\index{n\+Blocks\+Verds\+Posats@{n\+Blocks\+Verds\+Posats}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{n\+Blocks\+Verds\+Posats}{nBlocksVerdsPosats}}
+{\footnotesize\ttfamily int Gui.\+n\+Blocks\+Verds\+Posats =0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Blocks verds posats per despres eliminar el mateixnº d\textquotesingle{}elements. 
+
+
+
+Definició a la línia 76 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_a2ada5459adcc1ecae5c95fbebaebba23}\label{class_gui_a2ada5459adcc1ecae5c95fbebaebba23}} 
+\index{Gui@{Gui}!nseguidors@{nseguidors}}
+\index{nseguidors@{nseguidors}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{nseguidors}{nseguidors}}
+{\footnotesize\ttfamily Text Gui.\+nseguidors\mbox{[}$\,$\mbox{]} =new Text\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Nº de seguidors de cada jugador. 
+
+
+
+Definició a la línia 79 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_a3db6ceba3ef9bd93f4133cfe53780a6e}\label{class_gui_a3db6ceba3ef9bd93f4133cfe53780a6e}} 
+\index{Gui@{Gui}!opcio\+Rotacio@{opcio\+Rotacio}}
+\index{opcio\+Rotacio@{opcio\+Rotacio}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{opcio\+Rotacio}{opcioRotacio}}
+{\footnotesize\ttfamily Anchor\+Pane Gui.\+opcio\+Rotacio = new Anchor\+Pane()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Panell on hi ha les opcions de rotació de la fitxa. 
+
+
+
+Definició a la línia 78 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_abed40e74a4b6d812ce886e19e652df89}\label{class_gui_abed40e74a4b6d812ce886e19e652df89}} 
+\index{Gui@{Gui}!pos@{pos}}
+\index{pos@{pos}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} Gui.\+pos = \{ 75, 115, 155, 195, 235, 275, 315, 355, 395, 435\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Posicions on encaixen les fitxes en el tauler. 
+
+
+
+Definició a la línia 71 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_aa5fb03ea111e17f7ff7ae3d4ce32782a}\label{class_gui_aa5fb03ea111e17f7ff7ae3d4ce32782a}} 
+\index{Gui@{Gui}!root@{root}}
+\index{root@{root}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily V\+Box Gui.\+root\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Finestra root de la interficie. 
+
+
+
+Definició a la línia 57 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_a0864db089f17216fd1901603a662e9d2}\label{class_gui_a0864db089f17216fd1901603a662e9d2}} 
+\index{Gui@{Gui}!scene@{scene}}
+\index{scene@{scene}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{scene}{scene}}
+{\footnotesize\ttfamily Scene Gui.\+scene\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Escena de la interficie. 
+
+
+
+Definició a la línia 58 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_af2f35c2a3421b4d76fc232f854903312}\label{class_gui_af2f35c2a3421b4d76fc232f854903312}} 
+\index{Gui@{Gui}!scorej1@{scorej1}}
+\index{scorej1@{scorej1}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{scorej1}{scorej1}}
+{\footnotesize\ttfamily Text Gui.\+scorej1 =new Text (40+20, 50, \char`\"{}Score\+: 0\char`\"{})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Puntuacio del jugador 1. 
+
+
+
+Definició a la línia 72 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_a2bb8d906be16f4e53c1aa393c1750608}\label{class_gui_a2bb8d906be16f4e53c1aa393c1750608}} 
+\index{Gui@{Gui}!scorej2@{scorej2}}
+\index{scorej2@{scorej2}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{scorej2}{scorej2}}
+{\footnotesize\ttfamily Text Gui.\+scorej2 =new Text (\mbox{\hyperlink{class_gui_a872c30141e879159a1c3d9958918fecd}{ample}}-\/150, 50, \char`\"{}Score\+: 0\char`\"{})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Puntuacio del jugador 2. 
+
+
+
+Definició a la línia 73 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_a691917c172b8ab9888a4fbe6075c8c54}\label{class_gui_a691917c172b8ab9888a4fbe6075c8c54}} 
+\index{Gui@{Gui}!scorej3@{scorej3}}
+\index{scorej3@{scorej3}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{scorej3}{scorej3}}
+{\footnotesize\ttfamily Text Gui.\+scorej3 =new Text (\mbox{\hyperlink{class_gui_a872c30141e879159a1c3d9958918fecd}{ample}}-\/150, \mbox{\hyperlink{class_gui_a872c30141e879159a1c3d9958918fecd}{ample}}-\/15, \char`\"{}Score\+: 0\char`\"{})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Puntuacio del jugador 3. 
+
+
+
+Definició a la línia 74 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_ad8a03b9034810c4c580403c2c1efa1b7}\label{class_gui_ad8a03b9034810c4c580403c2c1efa1b7}} 
+\index{Gui@{Gui}!scorej4@{scorej4}}
+\index{scorej4@{scorej4}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{scorej4}{scorej4}}
+{\footnotesize\ttfamily Text Gui.\+scorej4 =new Text (40+20, \mbox{\hyperlink{class_gui_a872c30141e879159a1c3d9958918fecd}{ample}}-\/15, \char`\"{}Score\+: 0\char`\"{})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Puntuacio del jugador 4. 
+
+
+
+Definició a la línia 75 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_a7c14044a11ed6ac6b484cdc0d1a090ee}\label{class_gui_a7c14044a11ed6ac6b484cdc0d1a090ee}} 
+\index{Gui@{Gui}!table@{table}}
+\index{table@{table}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{table}{table}}
+{\footnotesize\ttfamily Table\+View$<$String$>$ Gui.\+table\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Taula log on es registra la informació 
+
+
+
+Definició a la línia 84 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_aea36e0a7ecf10d53fa60708f54f36015}\label{class_gui_aea36e0a7ecf10d53fa60708f54f36015}} 
+\index{Gui@{Gui}!text\+Field@{text\+Field}}
+\index{text\+Field@{text\+Field}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{text\+Field}{textField}}
+{\footnotesize\ttfamily Text\+Field Gui.\+text\+Field = new Text\+Field ()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Barra d\textquotesingle{}entrada del nom del fitxer d\textquotesingle{}entrada. 
+
+
+
+Definició a la línia 62 del fitxer Gui.\+java.
+
+\mbox{\Hypertarget{class_gui_ab46ede23c79d98785ce4482e11c6f19e}\label{class_gui_ab46ede23c79d98785ce4482e11c6f19e}} 
+\index{Gui@{Gui}!top\+Row@{top\+Row}}
+\index{top\+Row@{top\+Row}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{top\+Row}{topRow}}
+{\footnotesize\ttfamily Anchor\+Pane Gui.\+top\+Row = new Anchor\+Pane()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Panell de la part de dalt (Entrada de fitxer) 
+
+
+
+Definició a la línia 61 del fitxer Gui.\+java.
+
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+carcassonne/src/\mbox{\hyperlink{_gui_8java}{Gui.\+java}}\end{DoxyCompactItemize}

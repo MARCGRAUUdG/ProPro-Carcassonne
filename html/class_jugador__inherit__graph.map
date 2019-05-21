@@ -1,0 +1,4 @@
+<map id="Jugador" name="Jugador">
+<area shape="rect" id="node2" href="$class_controlable.html" title="Subclasse de la superclasse Jugador. Implementa els mètodes propis d&#39;un jugador Controlable. " alt="" coords="5,380,127,487"/>
+<area shape="rect" id="node3" href="$class_maquina.html" title="Subclasse de la superclasse Jugador. Implementa els mètodes propis d&#39;un jugador no Controlable..." alt="" coords="151,380,272,487"/>
+</map>

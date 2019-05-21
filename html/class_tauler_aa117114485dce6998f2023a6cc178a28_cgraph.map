@@ -1,0 +1,5 @@
+<map id="Tauler.reparteixPuntsDePossessio" name="Tauler.reparteixPuntsDePossessio">
+<area shape="rect" id="node2" href="$class_joc.html#ae969b3e16360a36ada26dffbb184fc33" title="Joc.AfegeixPuntuacioAJugador" alt="" coords="276,31,477,57"/>
+<area shape="rect" id="node3" href="$class_gui.html#a536efde44f03608985f04155cfb829e4" title="Gui.print" alt="" coords="539,5,610,32"/>
+<area shape="rect" id="node4" href="$class_gui.html#ab7fd6a1b1d5fa17562ceed182a64b7c8" title="Gui.setScore" alt="" coords="525,56,624,83"/>
+</map>

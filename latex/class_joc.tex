@@ -1,0 +1,412 @@
+\hypertarget{class_joc}{}\section{Referència de la Classe Joc}
+\label{class_joc}\index{Joc@{Joc}}
+
+
+Gestiona el joc principal, aquet fa el control de \mbox{\hyperlink{class_tirada}{Tirada}}, el \mbox{\hyperlink{class_jugador}{Jugador}} que li toca tirar i del el \mbox{\hyperlink{class_tauler}{Tauler}} Al acabar el joc mostra informació del estat final del \mbox{\hyperlink{class_joc}{Joc}}.  
+
+
+
+
+Diagrama de col·laboració per a Joc\+:
+% FIG 0
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_joc_a22b2f8a3a689e97aa5245060187504e7}{Joc}} ()
+\end{DoxyCompactItemize}
+\subsection*{Mètodes Públics Estàtics}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_joc_aa164cac0c602f63ff7e8860db7d06649}{rep\+Nom\+Fitxer}} (String text)
+\item 
+static void \mbox{\hyperlink{class_joc_aae62a162e3ae1cae45dea616914fcaba}{inicia\+Nou\+Torn}} ()
+\item 
+static void \mbox{\hyperlink{class_joc_a90b306ce9d339455a5f6e5d2decf90f1}{apretat\+Per\+Posar\+Fitxa}} (int x, int y, int rot)
+\item 
+static void \mbox{\hyperlink{class_joc_a72eed3f92b818584d664717fbb05d153}{apretat\+Per\+Posar\+Seguidor}} (int x, int y, char dir)
+\item 
+static void \mbox{\hyperlink{class_joc_a1a732f8c5fe455e04c76f38259eb00ba}{apretat\+Angle\+Fitxa}} (\mbox{\hyperlink{class_posicio}{Posicio}} pos)
+\item 
+static void \mbox{\hyperlink{class_joc_a7b2aa3cddde39037414f87df367b3599}{Afegeix\+Seguidor\+A\+Jugador}} (int jugador)
+\item 
+static void \mbox{\hyperlink{class_joc_ae969b3e16360a36ada26dffbb184fc33}{Afegeix\+Puntuacio\+A\+Jugador}} (int jugador, int puntuacio, char reg)
+\item 
+static void \mbox{\hyperlink{class_joc_a98725350a7727b56245c526c405c7629}{finalitza\+Joc}} ()
+\end{DoxyCompactItemize}
+\subsection*{Mètodes Privats Estàtics}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_joc_afc0eb31677985cd98be8ed2debc31efa}{rep\+Dades\+Fitxer}} ()
+\item 
+static void \mbox{\hyperlink{class_joc_ab6a95f4790ad123e0fa5700cc984973e}{posa\+Fitxa\+Inicial}} ()
+\item 
+static void \mbox{\hyperlink{class_joc_ac38319889956e19c22ffd289ebd39824}{Inici\+Joc}} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributs Privats Estàtics}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_llegir_fitxer}{Llegir\+Fitxer}} \mbox{\hyperlink{class_joc_af07590c09ae2ebda3bf6ca1a4171063b}{\+\_\+fitxer}}
+\begin{DoxyCompactList}\small\item\em Descripcio... \end{DoxyCompactList}\item 
+static Array\+List$<$ \mbox{\hyperlink{class_jugador}{Jugador}} $>$ \mbox{\hyperlink{class_joc_a30a9ea3f0be1aee222a22fede9130cb8}{\+\_\+jugadors}}
+\begin{DoxyCompactList}\small\item\em Descripcio... \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_tauler}{Tauler}} \mbox{\hyperlink{class_joc_a0e45f68f18198669176e3f46b05a41ac}{\+\_\+tauler}} =new \mbox{\hyperlink{class_tauler}{Tauler}}()
+\begin{DoxyCompactList}\small\item\em Descripcio... \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_tirada}{Tirada}} \mbox{\hyperlink{class_joc_a6713774e2d5d01daaef695af3cb55474}{\+\_\+tirada\+Actual}}
+\begin{DoxyCompactList}\small\item\em Descripcio... \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_baralla}{Baralla}} \mbox{\hyperlink{class_joc_a9d7c9ceefbdca067a0d82fa5f6806aaa}{\+\_\+baralla}}
+\begin{DoxyCompactList}\small\item\em Descripcio... \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_fitxa}{Fitxa}} \mbox{\hyperlink{class_joc_a9118adfa2c6c65ce5b759ed914801950}{\+\_\+f\+Inicial}}
+\begin{DoxyCompactList}\small\item\em Descripcio... \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_joc_a58dad008aa898ed0af6827ef7da50083}{\+\_\+jugador\+Actual}} =-\/1
+\begin{DoxyCompactList}\small\item\em Descripcio... \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+Gestiona el joc principal, aquet fa el control de \mbox{\hyperlink{class_tirada}{Tirada}}, el \mbox{\hyperlink{class_jugador}{Jugador}} que li toca tirar i del el \mbox{\hyperlink{class_tauler}{Tauler}} Al acabar el joc mostra informació del estat final del \mbox{\hyperlink{class_joc}{Joc}}. 
+
+Definició a la línia 10 del fitxer Joc.\+java.
+
+
+
+\subsection{Documentació del Constructor i el Destructor}
+\mbox{\Hypertarget{class_joc_a22b2f8a3a689e97aa5245060187504e7}\label{class_joc_a22b2f8a3a689e97aa5245060187504e7}} 
+\index{Joc@{Joc}!Joc@{Joc}}
+\index{Joc@{Joc}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{Joc()}{Joc()}}
+{\footnotesize\ttfamily Joc.\+Joc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Constuctor per defecte de \mbox{\hyperlink{class_joc}{Joc}} 
+\end{DoxyPostcond}
+
+
+Definició a la línia 21 del fitxer Joc.\+java.
+
+
+
+\subsection{Documentació de les Funcions Membre}
+\mbox{\Hypertarget{class_joc_ae969b3e16360a36ada26dffbb184fc33}\label{class_joc_ae969b3e16360a36ada26dffbb184fc33}} 
+\index{Joc@{Joc}!Afegeix\+Puntuacio\+A\+Jugador@{Afegeix\+Puntuacio\+A\+Jugador}}
+\index{Afegeix\+Puntuacio\+A\+Jugador@{Afegeix\+Puntuacio\+A\+Jugador}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{Afegeix\+Puntuacio\+A\+Jugador()}{AfegeixPuntuacioAJugador()}}
+{\footnotesize\ttfamily static void Joc.\+Afegeix\+Puntuacio\+A\+Jugador (\begin{DoxyParamCaption}\item[{int}]{jugador,  }\item[{int}]{puntuacio,  }\item[{char}]{reg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+4$<$=jugador$>$=1 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Puntuacio actual del \mbox{\hyperlink{class_jugador}{Jugador}} jugador + puntuacio 
+\end{DoxyPostcond}
+
+
+Definició a la línia 104 del fitxer Joc.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 1
+Gràfic de crides a aquesta funció\+:
+% FIG 2
+\mbox{\Hypertarget{class_joc_a7b2aa3cddde39037414f87df367b3599}\label{class_joc_a7b2aa3cddde39037414f87df367b3599}} 
+\index{Joc@{Joc}!Afegeix\+Seguidor\+A\+Jugador@{Afegeix\+Seguidor\+A\+Jugador}}
+\index{Afegeix\+Seguidor\+A\+Jugador@{Afegeix\+Seguidor\+A\+Jugador}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{Afegeix\+Seguidor\+A\+Jugador()}{AfegeixSeguidorAJugador()}}
+{\footnotesize\ttfamily static void Joc.\+Afegeix\+Seguidor\+A\+Jugador (\begin{DoxyParamCaption}\item[{int}]{jugador }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+4$<$=jugador$>$=1 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Incrementa el nº de seguidors del \mbox{\hyperlink{class_jugador}{Jugador}} jugador +1 
+\end{DoxyPostcond}
+
+
+Definició a la línia 96 del fitxer Joc.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 3
+Gràfic de crides a aquesta funció\+:
+% FIG 4
+\mbox{\Hypertarget{class_joc_a1a732f8c5fe455e04c76f38259eb00ba}\label{class_joc_a1a732f8c5fe455e04c76f38259eb00ba}} 
+\index{Joc@{Joc}!apretat\+Angle\+Fitxa@{apretat\+Angle\+Fitxa}}
+\index{apretat\+Angle\+Fitxa@{apretat\+Angle\+Fitxa}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{apretat\+Angle\+Fitxa()}{apretatAngleFitxa()}}
+{\footnotesize\ttfamily static void Joc.\+apretat\+Angle\+Fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_posicio}{Posicio}}}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+pos inicialitzat i es correcte 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Li diu a tirada\+Actual la posicio on l\textquotesingle{}usuari vol colocar la fitxa especificant la rotacio dintre de pos 
+\end{DoxyPostcond}
+
+
+Definició a la línia 90 del fitxer Joc.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 5
+Gràfic de crides a aquesta funció\+:
+% FIG 6
+\mbox{\Hypertarget{class_joc_a90b306ce9d339455a5f6e5d2decf90f1}\label{class_joc_a90b306ce9d339455a5f6e5d2decf90f1}} 
+\index{Joc@{Joc}!apretat\+Per\+Posar\+Fitxa@{apretat\+Per\+Posar\+Fitxa}}
+\index{apretat\+Per\+Posar\+Fitxa@{apretat\+Per\+Posar\+Fitxa}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{apretat\+Per\+Posar\+Fitxa()}{apretatPerPosarFitxa()}}
+{\footnotesize\ttfamily static void Joc.\+apretat\+Per\+Posar\+Fitxa (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{rot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+9$<$=x$>$=0 \&\& 9$<$=y$>$=0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Li diu a tirada\+Actual la posicio on l\textquotesingle{}usuari vol colocar una fitxa 
+\end{DoxyPostcond}
+
+
+Definició a la línia 78 del fitxer Joc.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 7
+Gràfic de crides a aquesta funció\+:
+% FIG 8
+\mbox{\Hypertarget{class_joc_a72eed3f92b818584d664717fbb05d153}\label{class_joc_a72eed3f92b818584d664717fbb05d153}} 
+\index{Joc@{Joc}!apretat\+Per\+Posar\+Seguidor@{apretat\+Per\+Posar\+Seguidor}}
+\index{apretat\+Per\+Posar\+Seguidor@{apretat\+Per\+Posar\+Seguidor}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{apretat\+Per\+Posar\+Seguidor()}{apretatPerPosarSeguidor()}}
+{\footnotesize\ttfamily static void Joc.\+apretat\+Per\+Posar\+Seguidor (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{char}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+9$<$=x$>$=0 \&\& 9$<$=y$>$=0, dir==(\textquotesingle{}C\textquotesingle{} o \textquotesingle{}N\textquotesingle{} o \textquotesingle{}E\textquotesingle{} o \textquotesingle{}S\textquotesingle{} o \textquotesingle{}O\textquotesingle{} o \textquotesingle{}X\textquotesingle{}) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Li diu a tirada\+Actual la posicio on l\textquotesingle{}usuari vol colocar el seguidor 
+\end{DoxyPostcond}
+
+
+Definició a la línia 84 del fitxer Joc.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 9
+Gràfic de crides a aquesta funció\+:
+% FIG 10
+\mbox{\Hypertarget{class_joc_a98725350a7727b56245c526c405c7629}\label{class_joc_a98725350a7727b56245c526c405c7629}} 
+\index{Joc@{Joc}!finalitza\+Joc@{finalitza\+Joc}}
+\index{finalitza\+Joc@{finalitza\+Joc}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{finalitza\+Joc()}{finalitzaJoc()}}
+{\footnotesize\ttfamily static void Joc.\+finalitza\+Joc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+Partida iniciada 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Assigna els punts de les possessions que no han sigut tancades i imprimeix per pantalla menu de final de partida amb ranking 
+\end{DoxyPostcond}
+
+
+Definició a la línia 112 del fitxer Joc.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 11
+\mbox{\Hypertarget{class_joc_aae62a162e3ae1cae45dea616914fcaba}\label{class_joc_aae62a162e3ae1cae45dea616914fcaba}} 
+\index{Joc@{Joc}!inicia\+Nou\+Torn@{inicia\+Nou\+Torn}}
+\index{inicia\+Nou\+Torn@{inicia\+Nou\+Torn}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{inicia\+Nou\+Torn()}{iniciaNouTorn()}}
+{\footnotesize\ttfamily static void Joc.\+inicia\+Nou\+Torn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+\mbox{\hyperlink{class_joc_ac38319889956e19c22ffd289ebd39824}{Inici\+Joc()}} cridat anteriorment 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Comença un nou torn 
+\end{DoxyPostcond}
+
+
+Definició a la línia 70 del fitxer Joc.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 12
+\mbox{\Hypertarget{class_joc_ac38319889956e19c22ffd289ebd39824}\label{class_joc_ac38319889956e19c22ffd289ebd39824}} 
+\index{Joc@{Joc}!Inici\+Joc@{Inici\+Joc}}
+\index{Inici\+Joc@{Inici\+Joc}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{Inici\+Joc()}{IniciJoc()}}
+{\footnotesize\ttfamily static void Joc.\+Inici\+Joc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+\mbox{\hyperlink{class_joc}{Joc}} inicialitzat, \mbox{\hyperlink{class_joc_afc0eb31677985cd98be8ed2debc31efa}{rep\+Dades\+Fitxer()}} cridat, \mbox{\hyperlink{class_joc_ab6a95f4790ad123e0fa5700cc984973e}{posa\+Fitxa\+Inicial()}} cridat anteriorment 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Inicialitza el \mbox{\hyperlink{class_joc}{Joc}} per començar a jugar 
+\end{DoxyPostcond}
+
+
+Definició a la línia 59 del fitxer Joc.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 13
+Gràfic de crides a aquesta funció\+:
+% FIG 14
+\mbox{\Hypertarget{class_joc_ab6a95f4790ad123e0fa5700cc984973e}\label{class_joc_ab6a95f4790ad123e0fa5700cc984973e}} 
+\index{Joc@{Joc}!posa\+Fitxa\+Inicial@{posa\+Fitxa\+Inicial}}
+\index{posa\+Fitxa\+Inicial@{posa\+Fitxa\+Inicial}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{posa\+Fitxa\+Inicial()}{posaFitxaInicial()}}
+{\footnotesize\ttfamily static void Joc.\+posa\+Fitxa\+Inicial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+\+\_\+f\+Inicial iniciada i valor correcte, tauler a gui inicialitzat, tauler es buit 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+posa la fitxa inicial al tauler i la gui 
+\end{DoxyPostcond}
+
+
+Definició a la línia 50 del fitxer Joc.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 15
+Gràfic de crides a aquesta funció\+:
+% FIG 16
+\mbox{\Hypertarget{class_joc_afc0eb31677985cd98be8ed2debc31efa}\label{class_joc_afc0eb31677985cd98be8ed2debc31efa}} 
+\index{Joc@{Joc}!rep\+Dades\+Fitxer@{rep\+Dades\+Fitxer}}
+\index{rep\+Dades\+Fitxer@{rep\+Dades\+Fitxer}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{rep\+Dades\+Fitxer()}{repDadesFitxer()}}
+{\footnotesize\ttfamily static void Joc.\+rep\+Dades\+Fitxer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+Fitxer inicialitzat correctament 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Rep els jugadors, baralla i fitxa inicial del fitxer 
+\end{DoxyPostcond}
+
+
+Definició a la línia 42 del fitxer Joc.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 17
+Gràfic de crides a aquesta funció\+:
+% FIG 18
+\mbox{\Hypertarget{class_joc_aa164cac0c602f63ff7e8860db7d06649}\label{class_joc_aa164cac0c602f63ff7e8860db7d06649}} 
+\index{Joc@{Joc}!rep\+Nom\+Fitxer@{rep\+Nom\+Fitxer}}
+\index{rep\+Nom\+Fitxer@{rep\+Nom\+Fitxer}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{rep\+Nom\+Fitxer()}{repNomFitxer()}}
+{\footnotesize\ttfamily static void Joc.\+rep\+Nom\+Fitxer (\begin{DoxyParamCaption}\item[{String}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Inicia variables rebudes per el fitxer amb nom text i inicia el \mbox{\hyperlink{class_joc}{Joc}} si el fitxer es correcte 
+\end{DoxyPostcond}
+
+
+Definició a la línia 27 del fitxer Joc.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 19
+Gràfic de crides a aquesta funció\+:
+% FIG 20
+
+
+\subsection{Documentació de les Dades Membre}
+\mbox{\Hypertarget{class_joc_a9d7c9ceefbdca067a0d82fa5f6806aaa}\label{class_joc_a9d7c9ceefbdca067a0d82fa5f6806aaa}} 
+\index{Joc@{Joc}!\+\_\+baralla@{\+\_\+baralla}}
+\index{\+\_\+baralla@{\+\_\+baralla}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{\+\_\+baralla}{\_baralla}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_baralla}{Baralla}} Joc.\+\_\+baralla\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Descripcio... 
+
+
+
+Definició a la línia 15 del fitxer Joc.\+java.
+
+\mbox{\Hypertarget{class_joc_a9118adfa2c6c65ce5b759ed914801950}\label{class_joc_a9118adfa2c6c65ce5b759ed914801950}} 
+\index{Joc@{Joc}!\+\_\+f\+Inicial@{\+\_\+f\+Inicial}}
+\index{\+\_\+f\+Inicial@{\+\_\+f\+Inicial}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{\+\_\+f\+Inicial}{\_fInicial}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_fitxa}{Fitxa}} Joc.\+\_\+f\+Inicial\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Descripcio... 
+
+
+
+Definició a la línia 16 del fitxer Joc.\+java.
+
+\mbox{\Hypertarget{class_joc_af07590c09ae2ebda3bf6ca1a4171063b}\label{class_joc_af07590c09ae2ebda3bf6ca1a4171063b}} 
+\index{Joc@{Joc}!\+\_\+fitxer@{\+\_\+fitxer}}
+\index{\+\_\+fitxer@{\+\_\+fitxer}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{\+\_\+fitxer}{\_fitxer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_llegir_fitxer}{Llegir\+Fitxer}} Joc.\+\_\+fitxer\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Descripcio... 
+
+
+
+Definició a la línia 11 del fitxer Joc.\+java.
+
+\mbox{\Hypertarget{class_joc_a58dad008aa898ed0af6827ef7da50083}\label{class_joc_a58dad008aa898ed0af6827ef7da50083}} 
+\index{Joc@{Joc}!\+\_\+jugador\+Actual@{\+\_\+jugador\+Actual}}
+\index{\+\_\+jugador\+Actual@{\+\_\+jugador\+Actual}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{\+\_\+jugador\+Actual}{\_jugadorActual}}
+{\footnotesize\ttfamily int Joc.\+\_\+jugador\+Actual =-\/1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Descripcio... 
+
+
+
+Definició a la línia 17 del fitxer Joc.\+java.
+
+\mbox{\Hypertarget{class_joc_a30a9ea3f0be1aee222a22fede9130cb8}\label{class_joc_a30a9ea3f0be1aee222a22fede9130cb8}} 
+\index{Joc@{Joc}!\+\_\+jugadors@{\+\_\+jugadors}}
+\index{\+\_\+jugadors@{\+\_\+jugadors}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{\+\_\+jugadors}{\_jugadors}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_jugador}{Jugador}}$>$ Joc.\+\_\+jugadors\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Descripcio... 
+
+
+
+Definició a la línia 12 del fitxer Joc.\+java.
+
+\mbox{\Hypertarget{class_joc_a0e45f68f18198669176e3f46b05a41ac}\label{class_joc_a0e45f68f18198669176e3f46b05a41ac}} 
+\index{Joc@{Joc}!\+\_\+tauler@{\+\_\+tauler}}
+\index{\+\_\+tauler@{\+\_\+tauler}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{\+\_\+tauler}{\_tauler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tauler}{Tauler}} Joc.\+\_\+tauler =new \mbox{\hyperlink{class_tauler}{Tauler}}()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Descripcio... 
+
+
+
+Definició a la línia 13 del fitxer Joc.\+java.
+
+\mbox{\Hypertarget{class_joc_a6713774e2d5d01daaef695af3cb55474}\label{class_joc_a6713774e2d5d01daaef695af3cb55474}} 
+\index{Joc@{Joc}!\+\_\+tirada\+Actual@{\+\_\+tirada\+Actual}}
+\index{\+\_\+tirada\+Actual@{\+\_\+tirada\+Actual}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{\+\_\+tirada\+Actual}{\_tiradaActual}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tirada}{Tirada}} Joc.\+\_\+tirada\+Actual\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Descripcio... 
+
+
+
+Definició a la línia 14 del fitxer Joc.\+java.
+
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+carcassonne/src/\mbox{\hyperlink{_joc_8java}{Joc.\+java}}\end{DoxyCompactItemize}

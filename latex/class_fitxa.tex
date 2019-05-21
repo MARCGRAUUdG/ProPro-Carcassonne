@@ -1,0 +1,672 @@
+\hypertarget{class_fitxa}{}\section{Referència de la Classe Fitxa}
+\label{class_fitxa}\index{Fitxa@{Fitxa}}
+
+
+\mbox{\hyperlink{class_fitxa}{Fitxa}} que té regions i que forma part de la baralla.  
+
+
+
+
+Diagrama d\textquotesingle{}Herència per a Fitxa\+:
+% FIG 0
+
+
+Diagrama de col·laboració per a Fitxa\+:
+% FIG 1
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_fitxa_a053ca7bf82da62ef589a1ef08aa835a3}{Fitxa}} (String lletres)  throws Excepcio
+\begin{DoxyCompactList}\small\item\em Posició que té la fitxa en el tauler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fitxa_aada7b61d86ed4703252c9a9d3ea9ce1d}{assignar\+\_\+seguidor}} (char regio, int jugador)
+\item 
+Integer \mbox{\hyperlink{class_fitxa_a37104d196a82d324bedaa4a9294758bc}{regio\+\_\+c\+\_\+seguidor}} ()
+\item 
+char \mbox{\hyperlink{class_fitxa_a7cc0281785388d498da748080c42083e}{regio\+\_\+c}} ()
+\item 
+Integer \mbox{\hyperlink{class_fitxa_a280bc89f067a6aafd918064caf88333a}{regio\+\_\+n\+\_\+seguidor}} ()
+\item 
+char \mbox{\hyperlink{class_fitxa_a624bc5406355ecd57d98a8f88b919d7d}{regio\+\_\+n}} ()
+\item 
+Integer \mbox{\hyperlink{class_fitxa_a96ca7466a7c6f305f08b5ee139cd3d6d}{regio\+\_\+e\+\_\+seguidor}} ()
+\item 
+char \mbox{\hyperlink{class_fitxa_a929a959f9c3d8f263a44763f404c1f0d}{regio\+\_\+e}} ()
+\item 
+int \mbox{\hyperlink{class_fitxa_a408b3191cfdbde147edea3ec0254c44d}{jugador\+Te\+La\+Seguidor}} ()
+\item 
+Integer \mbox{\hyperlink{class_fitxa_aefba843b22263005650f44992144ff53}{regio\+\_\+s\+\_\+seguidor}} ()
+\item 
+char \mbox{\hyperlink{class_fitxa_a787f09b27930fedb010afa53ed5b1a29}{regio\+\_\+s}} ()
+\item 
+Integer \mbox{\hyperlink{class_fitxa_a9b57519dc7afcbb734a7073353e62dad}{regio\+\_\+o\+\_\+seguidor}} ()
+\item 
+char \mbox{\hyperlink{class_fitxa_a821a56526407eb83f0d83ae091de0474}{regio\+\_\+o}} ()
+\item 
+boolean \mbox{\hyperlink{class_fitxa_adf25d9e83a70a03961408b87f01cfdad}{nord\+\_\+igual\+\_\+sud}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f)
+\item 
+boolean \mbox{\hyperlink{class_fitxa_abdd6524addc5c6a7ea74363044269cae}{sud\+\_\+igual\+\_\+nord}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f)
+\item 
+boolean \mbox{\hyperlink{class_fitxa_a592a69fa34ca3548fc170498b3440927}{est\+\_\+igual\+\_\+oest}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f)
+\item 
+boolean \mbox{\hyperlink{class_fitxa_ac5a6f1b4d54afc479b60f24a8e0d6839}{oest\+\_\+igual\+\_\+est}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f)
+\item 
+void \mbox{\hyperlink{class_fitxa_adeca1a2543f1ed0dbc74e7cc90169a35}{rotar}} (int rotar)
+\item 
+void \mbox{\hyperlink{class_fitxa_a63357c2ccc2b283f3b12f4a5aaf50fb0}{set\+Posicio}} (\mbox{\hyperlink{class_posicio}{Posicio}} nova\+Pos)
+\item 
+\mbox{\hyperlink{class_posicio}{Posicio}} \mbox{\hyperlink{class_fitxa_a9f8c54c9bd9dce77ecd4fd47c58687d3}{get\+Posicio}} ()
+\item 
+boolean \mbox{\hyperlink{class_fitxa_a7d959d3cdc32495bcf1c2f0f58fe4678}{fitxa\+Actual\+Encaixa\+Amb}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f, char direccio)
+\item 
+boolean \mbox{\hyperlink{class_fitxa_a0eacd16882fa0f48bae001b559d3dd13}{te\+Escut}} ()
+\item 
+boolean \mbox{\hyperlink{class_fitxa_a93e5e168dbfe15afb009c0fbfdc1554a}{es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+cami}} ()
+\item 
+boolean \mbox{\hyperlink{class_fitxa_aa8a2753d03291193ef0bb30b5b8839a9}{es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+ciutat}} ()
+\item 
+Integer \mbox{\hyperlink{class_fitxa_a8fd756e25d359b4e2b2f4c09138f2219}{bandes\+\_\+de\+\_\+ciutat}} ()
+\item 
+String \mbox{\hyperlink{class_fitxa_af6e05ee97e95b46e754d73d4e6fd8d8c}{format\+Normal}} ()
+\item 
+String \mbox{\hyperlink{class_fitxa_aa6b287700281102d846e2522d34074fe}{to\+String}} ()
+\item 
+boolean \mbox{\hyperlink{class_fitxa_a3470f3a172ff316366ad90579ccb7bef}{envoltada}} (\mbox{\hyperlink{class_tauler}{Tauler}} tauler)
+\item 
+boolean \mbox{\hyperlink{class_fitxa_a346f5ae28e00995b74b1aba8c630e30d}{el\+Seguidor\+Esta\+En\+El\+Seu\+Tipus\+De\+Regio}} (char tipus, List$<$ Character $>$ lc)
+\end{DoxyCompactItemize}
+\subsection*{Atributs Privats}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ \mbox{\hyperlink{class_regio}{Regio}} $>$ \mbox{\hyperlink{class_fitxa_ad58813fa3873ce12e3c7960058701195}{regions}}
+\item 
+\mbox{\hyperlink{class_posicio}{Posicio}} \mbox{\hyperlink{class_fitxa_a660ca2f91a04c1ca58020858d58750a5}{pos}}
+\begin{DoxyCompactList}\small\item\em Llista de regions que té la fitxa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+\mbox{\hyperlink{class_fitxa}{Fitxa}} que té regions i que forma part de la baralla. 
+
+Definició a la línia 8 del fitxer Fitxa.\+java.
+
+
+
+\subsection{Documentació del Constructor i el Destructor}
+\mbox{\Hypertarget{class_fitxa_a053ca7bf82da62ef589a1ef08aa835a3}\label{class_fitxa_a053ca7bf82da62ef589a1ef08aa835a3}} 
+\index{Fitxa@{Fitxa}!Fitxa@{Fitxa}}
+\index{Fitxa@{Fitxa}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{Fitxa()}{Fitxa()}}
+{\footnotesize\ttfamily Fitxa.\+Fitxa (\begin{DoxyParamCaption}\item[{String}]{lletres }\end{DoxyParamCaption}) throws \mbox{\hyperlink{class_excepcio}{Excepcio}}}
+
+
+
+Posició que té la fitxa en el tauler. 
+
+\begin{DoxyPrecond}{Precondició}
+lletres mida = 5 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+guarda a regions el format de la fitxa i posicio inicialitzat per defecte 
+\end{DoxyPostcond}
+
+
+Definició a la línia 17 del fitxer Fitxa.\+java.
+
+
+
+\subsection{Documentació de les Funcions Membre}
+\mbox{\Hypertarget{class_fitxa_aada7b61d86ed4703252c9a9d3ea9ce1d}\label{class_fitxa_aada7b61d86ed4703252c9a9d3ea9ce1d}} 
+\index{Fitxa@{Fitxa}!assignar\+\_\+seguidor@{assignar\+\_\+seguidor}}
+\index{assignar\+\_\+seguidor@{assignar\+\_\+seguidor}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{assignar\+\_\+seguidor()}{assignar\_seguidor()}}
+{\footnotesize\ttfamily void Fitxa.\+assignar\+\_\+seguidor (\begin{DoxyParamCaption}\item[{char}]{regio,  }\item[{int}]{jugador }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+regio = C, N, E, S o O 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+afegeix el jugador a la regio de la fitxa 
+\end{DoxyPostcond}
+
+
+Definició a la línia 35 del fitxer Fitxa.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 2
+\mbox{\Hypertarget{class_fitxa_a8fd756e25d359b4e2b2f4c09138f2219}\label{class_fitxa_a8fd756e25d359b4e2b2f4c09138f2219}} 
+\index{Fitxa@{Fitxa}!bandes\+\_\+de\+\_\+ciutat@{bandes\+\_\+de\+\_\+ciutat}}
+\index{bandes\+\_\+de\+\_\+ciutat@{bandes\+\_\+de\+\_\+ciutat}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{bandes\+\_\+de\+\_\+ciutat()}{bandes\_de\_ciutat()}}
+{\footnotesize\ttfamily Integer Fitxa.\+bandes\+\_\+de\+\_\+ciutat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el numero de bandes que son ciutat 
+\end{DoxyPostcond}
+
+
+Definició a la línia 276 del fitxer Fitxa.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 3
+\mbox{\Hypertarget{class_fitxa_a346f5ae28e00995b74b1aba8c630e30d}\label{class_fitxa_a346f5ae28e00995b74b1aba8c630e30d}} 
+\index{Fitxa@{Fitxa}!el\+Seguidor\+Esta\+En\+El\+Seu\+Tipus\+De\+Regio@{el\+Seguidor\+Esta\+En\+El\+Seu\+Tipus\+De\+Regio}}
+\index{el\+Seguidor\+Esta\+En\+El\+Seu\+Tipus\+De\+Regio@{el\+Seguidor\+Esta\+En\+El\+Seu\+Tipus\+De\+Regio}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{el\+Seguidor\+Esta\+En\+El\+Seu\+Tipus\+De\+Regio()}{elSeguidorEstaEnElSeuTipusDeRegio()}}
+{\footnotesize\ttfamily boolean Fitxa.\+el\+Seguidor\+Esta\+En\+El\+Seu\+Tipus\+De\+Regio (\begin{DoxyParamCaption}\item[{char}]{tipus,  }\item[{List$<$ Character $>$}]{lc }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna cert si el seguidor està en una regio que té el format tipus 
+\end{DoxyPostcond}
+
+
+Definició a la línia 330 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 4
+\mbox{\Hypertarget{class_fitxa_a3470f3a172ff316366ad90579ccb7bef}\label{class_fitxa_a3470f3a172ff316366ad90579ccb7bef}} 
+\index{Fitxa@{Fitxa}!envoltada@{envoltada}}
+\index{envoltada@{envoltada}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{envoltada()}{envoltada()}}
+{\footnotesize\ttfamily boolean Fitxa.\+envoltada (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_tauler}{Tauler}}}]{tauler }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna cert si el voltant de la fitxa actual hi ha fitxes altrament fals 
+\end{DoxyPostcond}
+
+
+Definició a la línia 317 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 5
+Gràfic de crides a aquesta funció\+:
+% FIG 6
+\mbox{\Hypertarget{class_fitxa_a93e5e168dbfe15afb009c0fbfdc1554a}\label{class_fitxa_a93e5e168dbfe15afb009c0fbfdc1554a}} 
+\index{Fitxa@{Fitxa}!es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+cami@{es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+cami}}
+\index{es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+cami@{es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+cami}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+cami()}{es\_fi\_o\_inici\_de\_cami()}}
+{\footnotesize\ttfamily boolean Fitxa.\+es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+cami (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna cert si la fitxa el centre és X o V o M 
+\end{DoxyPostcond}
+
+
+Definició a la línia 258 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 7
+Gràfic de crides a aquesta funció\+:
+% FIG 8
+\mbox{\Hypertarget{class_fitxa_aa8a2753d03291193ef0bb30b5b8839a9}\label{class_fitxa_aa8a2753d03291193ef0bb30b5b8839a9}} 
+\index{Fitxa@{Fitxa}!es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+ciutat@{es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+ciutat}}
+\index{es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+ciutat@{es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+ciutat}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+ciutat()}{es\_fi\_o\_inici\_de\_ciutat()}}
+{\footnotesize\ttfamily boolean Fitxa.\+es\+\_\+fi\+\_\+o\+\_\+inici\+\_\+de\+\_\+ciutat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna cert si la fitxa el centre no és V i E 
+\end{DoxyPostcond}
+
+
+Definició a la línia 267 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 9
+Gràfic de crides a aquesta funció\+:
+% FIG 10
+\mbox{\Hypertarget{class_fitxa_a592a69fa34ca3548fc170498b3440927}\label{class_fitxa_a592a69fa34ca3548fc170498b3440927}} 
+\index{Fitxa@{Fitxa}!est\+\_\+igual\+\_\+oest@{est\+\_\+igual\+\_\+oest}}
+\index{est\+\_\+igual\+\_\+oest@{est\+\_\+igual\+\_\+oest}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{est\+\_\+igual\+\_\+oest()}{est\_igual\_oest()}}
+{\footnotesize\ttfamily boolean Fitxa.\+est\+\_\+igual\+\_\+oest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+la fitxa actual la regio est = a la regio oest de f 
+\end{DoxyPostcond}
+
+
+Definició a la línia 150 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 11
+Gràfic de crides a aquesta funció\+:
+% FIG 12
+\mbox{\Hypertarget{class_fitxa_a7d959d3cdc32495bcf1c2f0f58fe4678}\label{class_fitxa_a7d959d3cdc32495bcf1c2f0f58fe4678}} 
+\index{Fitxa@{Fitxa}!fitxa\+Actual\+Encaixa\+Amb@{fitxa\+Actual\+Encaixa\+Amb}}
+\index{fitxa\+Actual\+Encaixa\+Amb@{fitxa\+Actual\+Encaixa\+Amb}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{fitxa\+Actual\+Encaixa\+Amb()}{fitxaActualEncaixaAmb()}}
+{\footnotesize\ttfamily boolean Fitxa.\+fitxa\+Actual\+Encaixa\+Amb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{char}]{direccio }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna cert si la fitxa actual encaixa amb la fitxa \textquotesingle{}f\textquotesingle{} en la posicio del costat de \textquotesingle{}direccio\textquotesingle{} (\textquotesingle{}N\textquotesingle{},\textquotesingle{}E\textquotesingle{},\textquotesingle{}S\textquotesingle{} o \textquotesingle{}O\textquotesingle{}) 
+\end{DoxyPostcond}
+
+
+Definició a la línia 219 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 13
+Gràfic de crides a aquesta funció\+:
+% FIG 14
+\mbox{\Hypertarget{class_fitxa_af6e05ee97e95b46e754d73d4e6fd8d8c}\label{class_fitxa_af6e05ee97e95b46e754d73d4e6fd8d8c}} 
+\index{Fitxa@{Fitxa}!format\+Normal@{format\+Normal}}
+\index{format\+Normal@{format\+Normal}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{format\+Normal()}{formatNormal()}}
+{\footnotesize\ttfamily String Fitxa.\+format\+Normal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el format de la fitxa si existeix amb rotacio 0 
+\end{DoxyPostcond}
+
+
+Definició a la línia 287 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 15
+Gràfic de crides a aquesta funció\+:
+% FIG 16
+\mbox{\Hypertarget{class_fitxa_a9f8c54c9bd9dce77ecd4fd47c58687d3}\label{class_fitxa_a9f8c54c9bd9dce77ecd4fd47c58687d3}} 
+\index{Fitxa@{Fitxa}!get\+Posicio@{get\+Posicio}}
+\index{get\+Posicio@{get\+Posicio}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{get\+Posicio()}{getPosicio()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_posicio}{Posicio}} Fitxa.\+get\+Posicio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna posicio 
+\end{DoxyPostcond}
+
+
+Definició a la línia 213 del fitxer Fitxa.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 17
+\mbox{\Hypertarget{class_fitxa_a408b3191cfdbde147edea3ec0254c44d}\label{class_fitxa_a408b3191cfdbde147edea3ec0254c44d}} 
+\index{Fitxa@{Fitxa}!jugador\+Te\+La\+Seguidor@{jugador\+Te\+La\+Seguidor}}
+\index{jugador\+Te\+La\+Seguidor@{jugador\+Te\+La\+Seguidor}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{jugador\+Te\+La\+Seguidor()}{jugadorTeLaSeguidor()}}
+{\footnotesize\ttfamily int Fitxa.\+jugador\+Te\+La\+Seguidor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+si hi ha seguidors en la fitxa retorna el propietari del seguidor que esta a la fitxa altrament -\/1 
+\end{DoxyPostcond}
+
+
+Definició a la línia 95 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 18
+\mbox{\Hypertarget{class_fitxa_adf25d9e83a70a03961408b87f01cfdad}\label{class_fitxa_adf25d9e83a70a03961408b87f01cfdad}} 
+\index{Fitxa@{Fitxa}!nord\+\_\+igual\+\_\+sud@{nord\+\_\+igual\+\_\+sud}}
+\index{nord\+\_\+igual\+\_\+sud@{nord\+\_\+igual\+\_\+sud}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{nord\+\_\+igual\+\_\+sud()}{nord\_igual\_sud()}}
+{\footnotesize\ttfamily boolean Fitxa.\+nord\+\_\+igual\+\_\+sud (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+la fitxa actual la regio nort = a la regio sud de f 
+\end{DoxyPostcond}
+
+
+Definició a la línia 138 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 19
+Gràfic de crides a aquesta funció\+:
+% FIG 20
+\mbox{\Hypertarget{class_fitxa_ac5a6f1b4d54afc479b60f24a8e0d6839}\label{class_fitxa_ac5a6f1b4d54afc479b60f24a8e0d6839}} 
+\index{Fitxa@{Fitxa}!oest\+\_\+igual\+\_\+est@{oest\+\_\+igual\+\_\+est}}
+\index{oest\+\_\+igual\+\_\+est@{oest\+\_\+igual\+\_\+est}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{oest\+\_\+igual\+\_\+est()}{oest\_igual\_est()}}
+{\footnotesize\ttfamily boolean Fitxa.\+oest\+\_\+igual\+\_\+est (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+la fitxa actual la regio oest = a la regio est de f 
+\end{DoxyPostcond}
+
+
+Definició a la línia 156 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 21
+Gràfic de crides a aquesta funció\+:
+% FIG 22
+\mbox{\Hypertarget{class_fitxa_a7cc0281785388d498da748080c42083e}\label{class_fitxa_a7cc0281785388d498da748080c42083e}} 
+\index{Fitxa@{Fitxa}!regio\+\_\+c@{regio\+\_\+c}}
+\index{regio\+\_\+c@{regio\+\_\+c}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{regio\+\_\+c()}{regio\_c()}}
+{\footnotesize\ttfamily char Fitxa.\+regio\+\_\+c (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el format de la regio del centre 
+\end{DoxyPostcond}
+
+
+Definició a la línia 62 del fitxer Fitxa.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 23
+\mbox{\Hypertarget{class_fitxa_a37104d196a82d324bedaa4a9294758bc}\label{class_fitxa_a37104d196a82d324bedaa4a9294758bc}} 
+\index{Fitxa@{Fitxa}!regio\+\_\+c\+\_\+seguidor@{regio\+\_\+c\+\_\+seguidor}}
+\index{regio\+\_\+c\+\_\+seguidor@{regio\+\_\+c\+\_\+seguidor}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{regio\+\_\+c\+\_\+seguidor()}{regio\_c\_seguidor()}}
+{\footnotesize\ttfamily Integer Fitxa.\+regio\+\_\+c\+\_\+seguidor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna seguidor de la regio del centre 
+\end{DoxyPostcond}
+
+
+Definició a la línia 56 del fitxer Fitxa.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 24
+\mbox{\Hypertarget{class_fitxa_a929a959f9c3d8f263a44763f404c1f0d}\label{class_fitxa_a929a959f9c3d8f263a44763f404c1f0d}} 
+\index{Fitxa@{Fitxa}!regio\+\_\+e@{regio\+\_\+e}}
+\index{regio\+\_\+e@{regio\+\_\+e}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{regio\+\_\+e()}{regio\_e()}}
+{\footnotesize\ttfamily char Fitxa.\+regio\+\_\+e (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-\/--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el format de la regio de l\textquotesingle{}est 
+\end{DoxyPostcond}
+
+
+Definició a la línia 88 del fitxer Fitxa.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 25
+\mbox{\Hypertarget{class_fitxa_a96ca7466a7c6f305f08b5ee139cd3d6d}\label{class_fitxa_a96ca7466a7c6f305f08b5ee139cd3d6d}} 
+\index{Fitxa@{Fitxa}!regio\+\_\+e\+\_\+seguidor@{regio\+\_\+e\+\_\+seguidor}}
+\index{regio\+\_\+e\+\_\+seguidor@{regio\+\_\+e\+\_\+seguidor}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{regio\+\_\+e\+\_\+seguidor()}{regio\_e\_seguidor()}}
+{\footnotesize\ttfamily Integer Fitxa.\+regio\+\_\+e\+\_\+seguidor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna seguidor de la regio del est 
+\end{DoxyPostcond}
+
+
+Definició a la línia 83 del fitxer Fitxa.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 26
+\mbox{\Hypertarget{class_fitxa_a624bc5406355ecd57d98a8f88b919d7d}\label{class_fitxa_a624bc5406355ecd57d98a8f88b919d7d}} 
+\index{Fitxa@{Fitxa}!regio\+\_\+n@{regio\+\_\+n}}
+\index{regio\+\_\+n@{regio\+\_\+n}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{regio\+\_\+n()}{regio\_n()}}
+{\footnotesize\ttfamily char Fitxa.\+regio\+\_\+n (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el format dela regio del nort 
+\end{DoxyPostcond}
+
+
+Definició a la línia 76 del fitxer Fitxa.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 27
+\mbox{\Hypertarget{class_fitxa_a280bc89f067a6aafd918064caf88333a}\label{class_fitxa_a280bc89f067a6aafd918064caf88333a}} 
+\index{Fitxa@{Fitxa}!regio\+\_\+n\+\_\+seguidor@{regio\+\_\+n\+\_\+seguidor}}
+\index{regio\+\_\+n\+\_\+seguidor@{regio\+\_\+n\+\_\+seguidor}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{regio\+\_\+n\+\_\+seguidor()}{regio\_n\_seguidor()}}
+{\footnotesize\ttfamily Integer Fitxa.\+regio\+\_\+n\+\_\+seguidor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna seguidor de la regio del nort 
+\end{DoxyPostcond}
+
+
+Definició a la línia 70 del fitxer Fitxa.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 28
+\mbox{\Hypertarget{class_fitxa_a821a56526407eb83f0d83ae091de0474}\label{class_fitxa_a821a56526407eb83f0d83ae091de0474}} 
+\index{Fitxa@{Fitxa}!regio\+\_\+o@{regio\+\_\+o}}
+\index{regio\+\_\+o@{regio\+\_\+o}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{regio\+\_\+o()}{regio\_o()}}
+{\footnotesize\ttfamily char Fitxa.\+regio\+\_\+o (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el format de la regio de l\textquotesingle{}oest 
+\end{DoxyPostcond}
+
+
+Definició a la línia 131 del fitxer Fitxa.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 29
+\mbox{\Hypertarget{class_fitxa_a9b57519dc7afcbb734a7073353e62dad}\label{class_fitxa_a9b57519dc7afcbb734a7073353e62dad}} 
+\index{Fitxa@{Fitxa}!regio\+\_\+o\+\_\+seguidor@{regio\+\_\+o\+\_\+seguidor}}
+\index{regio\+\_\+o\+\_\+seguidor@{regio\+\_\+o\+\_\+seguidor}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{regio\+\_\+o\+\_\+seguidor()}{regio\_o\_seguidor()}}
+{\footnotesize\ttfamily Integer Fitxa.\+regio\+\_\+o\+\_\+seguidor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna seguidor de la regio del oest 
+\end{DoxyPostcond}
+
+
+Definició a la línia 125 del fitxer Fitxa.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 30
+\mbox{\Hypertarget{class_fitxa_a787f09b27930fedb010afa53ed5b1a29}\label{class_fitxa_a787f09b27930fedb010afa53ed5b1a29}} 
+\index{Fitxa@{Fitxa}!regio\+\_\+s@{regio\+\_\+s}}
+\index{regio\+\_\+s@{regio\+\_\+s}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{regio\+\_\+s()}{regio\_s()}}
+{\footnotesize\ttfamily char Fitxa.\+regio\+\_\+s (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el format de la regio del sud 
+\end{DoxyPostcond}
+
+
+Definició a la línia 119 del fitxer Fitxa.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 31
+\mbox{\Hypertarget{class_fitxa_aefba843b22263005650f44992144ff53}\label{class_fitxa_aefba843b22263005650f44992144ff53}} 
+\index{Fitxa@{Fitxa}!regio\+\_\+s\+\_\+seguidor@{regio\+\_\+s\+\_\+seguidor}}
+\index{regio\+\_\+s\+\_\+seguidor@{regio\+\_\+s\+\_\+seguidor}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{regio\+\_\+s\+\_\+seguidor()}{regio\_s\_seguidor()}}
+{\footnotesize\ttfamily Integer Fitxa.\+regio\+\_\+s\+\_\+seguidor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna seguidor de la regio del sud 
+\end{DoxyPostcond}
+
+
+Definició a la línia 113 del fitxer Fitxa.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 32
+\mbox{\Hypertarget{class_fitxa_adeca1a2543f1ed0dbc74e7cc90169a35}\label{class_fitxa_adeca1a2543f1ed0dbc74e7cc90169a35}} 
+\index{Fitxa@{Fitxa}!rotar@{rotar}}
+\index{rotar@{rotar}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{rotar()}{rotar()}}
+{\footnotesize\ttfamily void Fitxa.\+rotar (\begin{DoxyParamCaption}\item[{int}]{rotar }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+rotar = 0 o 90 o 180 o 270 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+fitxa rotada 
+\end{DoxyPostcond}
+
+
+Definició a la línia 162 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 33
+Gràfic de crides a aquesta funció\+:
+% FIG 34
+\mbox{\Hypertarget{class_fitxa_a63357c2ccc2b283f3b12f4a5aaf50fb0}\label{class_fitxa_a63357c2ccc2b283f3b12f4a5aaf50fb0}} 
+\index{Fitxa@{Fitxa}!set\+Posicio@{set\+Posicio}}
+\index{set\+Posicio@{set\+Posicio}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{set\+Posicio()}{setPosicio()}}
+{\footnotesize\ttfamily void Fitxa.\+set\+Posicio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_posicio}{Posicio}}}]{nova\+Pos }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+guardar pos 
+\end{DoxyPostcond}
+
+
+Definició a la línia 206 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 35
+Gràfic de crides a aquesta funció\+:
+% FIG 36
+\mbox{\Hypertarget{class_fitxa_abdd6524addc5c6a7ea74363044269cae}\label{class_fitxa_abdd6524addc5c6a7ea74363044269cae}} 
+\index{Fitxa@{Fitxa}!sud\+\_\+igual\+\_\+nord@{sud\+\_\+igual\+\_\+nord}}
+\index{sud\+\_\+igual\+\_\+nord@{sud\+\_\+igual\+\_\+nord}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{sud\+\_\+igual\+\_\+nord()}{sud\_igual\_nord()}}
+{\footnotesize\ttfamily boolean Fitxa.\+sud\+\_\+igual\+\_\+nord (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+la fitxa actual la regio sud = a la regio nort de f 
+\end{DoxyPostcond}
+
+
+Definició a la línia 144 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 37
+Gràfic de crides a aquesta funció\+:
+% FIG 38
+\mbox{\Hypertarget{class_fitxa_a0eacd16882fa0f48bae001b559d3dd13}\label{class_fitxa_a0eacd16882fa0f48bae001b559d3dd13}} 
+\index{Fitxa@{Fitxa}!te\+Escut@{te\+Escut}}
+\index{te\+Escut@{te\+Escut}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{te\+Escut()}{teEscut()}}
+{\footnotesize\ttfamily boolean Fitxa.\+te\+Escut (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna cert si alguna regio té el format E 
+\end{DoxyPostcond}
+
+
+Definició a la línia 248 del fitxer Fitxa.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 39
+\mbox{\Hypertarget{class_fitxa_aa6b287700281102d846e2522d34074fe}\label{class_fitxa_aa6b287700281102d846e2522d34074fe}} 
+\index{Fitxa@{Fitxa}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String Fitxa.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el format de la fitxa en format string 
+\end{DoxyPostcond}
+
+
+Definició a la línia 303 del fitxer Fitxa.\+java.
+
+
+
+\subsection{Documentació de les Dades Membre}
+\mbox{\Hypertarget{class_fitxa_a660ca2f91a04c1ca58020858d58750a5}\label{class_fitxa_a660ca2f91a04c1ca58020858d58750a5}} 
+\index{Fitxa@{Fitxa}!pos@{pos}}
+\index{pos@{pos}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_posicio}{Posicio}} Fitxa.\+pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Llista de regions que té la fitxa. 
+
+
+
+Definició a la línia 13 del fitxer Fitxa.\+java.
+
+\mbox{\Hypertarget{class_fitxa_ad58813fa3873ce12e3c7960058701195}\label{class_fitxa_ad58813fa3873ce12e3c7960058701195}} 
+\index{Fitxa@{Fitxa}!regions@{regions}}
+\index{regions@{regions}!Fitxa@{Fitxa}}
+\subsubsection{\texorpdfstring{regions}{regions}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_regio}{Regio}}$>$ Fitxa.\+regions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definició a la línia 12 del fitxer Fitxa.\+java.
+
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+carcassonne/src/\mbox{\hyperlink{_fitxa_8java}{Fitxa.\+java}}\end{DoxyCompactItemize}

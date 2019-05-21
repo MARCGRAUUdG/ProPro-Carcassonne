@@ -1,0 +1,10 @@
+<map id="Gui.informarFitxerEntradaIncorrecte" name="Gui.informarFitxerEntradaIncorrecte">
+<area shape="rect" id="node2" href="$class_joc.html#aa164cac0c602f63ff7e8860db7d06649" title="Joc.repNomFitxer" alt="" coords="827,5,951,32"/>
+<area shape="rect" id="node6" href="$class_llegir_fitxer.html#a821a8ff7021fb5faac6ff4297bb00b61" title="LlegirFitxer.llegirFitxer" alt="" coords="432,87,583,113"/>
+<area shape="rect" id="node8" href="$class_llegir_fitxer.html#adeec6b2bd6754481b94c815b82e5bbce" title="LlegirFitxer.llegirDades\lPartida" alt="" coords="227,93,381,134"/>
+<area shape="rect" id="node9" href="$class_llegir_fitxer.html#ac73d2ac3cbe198bd2ab5c6e1f5b4ead2" title="LlegirFitxer.llegirRajoles" alt="" coords="224,159,384,185"/>
+<area shape="rect" id="node3" href="$class_gui.html#a6bc8d9bda8f813b8d6c303ae798646b5" title="Gui.llegeigNomDelFitxer" alt="" coords="999,5,1161,32"/>
+<area shape="rect" id="node4" href="$class_gui.html#a9213a84890405b2cd77441b7f0654318" title="Gui.setupMainTop" alt="" coords="1209,5,1336,32"/>
+<area shape="rect" id="node5" href="$class_gui.html#a7997885cf723f790c4ec5b2328407023" title="Gui.start" alt="" coords="1384,5,1456,32"/>
+<area shape="rect" id="node7" href="$class_llegir_fitxer.html#a68f9ae473ab16632116b8c13ed16fff5" title="LlegirFitxer.nomFitxer" alt="" coords="631,60,779,87"/>
+</map>

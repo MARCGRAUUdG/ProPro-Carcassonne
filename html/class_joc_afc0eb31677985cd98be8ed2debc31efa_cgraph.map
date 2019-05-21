@@ -1,0 +1,5 @@
+<map id="Joc.repDadesFitxer" name="Joc.repDadesFitxer">
+<area shape="rect" id="node2" href="$class_llegir_fitxer.html#a0917d49b907c21ed5a904ddd818372b9" title="LlegirFitxer.getJugadors" alt="" coords="188,5,348,32"/>
+<area shape="rect" id="node3" href="$class_llegir_fitxer.html#a931dfb14e0ddc1fd9b3db85d085ebceb" title="LlegirFitxer.getBaralla" alt="" coords="194,56,342,83"/>
+<area shape="rect" id="node4" href="$class_llegir_fitxer.html#afce4c62bf6cf65bf2e719edee92b15b2" title="LlegirFitxer.getInicial" alt="" coords="197,107,339,133"/>
+</map>

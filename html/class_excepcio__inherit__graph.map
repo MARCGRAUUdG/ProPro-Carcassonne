@@ -1,0 +1,4 @@
+<map id="Excepcio" name="Excepcio">
+<area shape="rect" id="node3" href="$class_fitxa.html" title="Fitxa que té regions i que forma part de la baralla. " alt="" coords="5,271,168,509"/>
+<area shape="rect" id="node4" href="$class_regio.html" title="{Regio\n|&#45; zona\l&#45; seguidor\l|+ toString()\l~ Regio()\l~ lletra()\l~ nom_jugador()\l~ posar_seguidor()\l}" alt="" coords="192,315,323,465"/>
+</map>

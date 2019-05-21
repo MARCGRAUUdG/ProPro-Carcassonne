@@ -1,0 +1,8 @@
+<map id="Jerarquia Gràfica de la Classe" name="Jerarquia Gràfica de la Classe">
+<area shape="rect" id="node1" href="$class_possessio.html" title="Possessio que té un jugador en el tauler. " alt="" coords="5,31,88,57"/>
+<area shape="rect" id="node2" href="$class_camp.html" title="Subtipus de possessio format per fitxes que tenen regions que són F. " alt="" coords="149,5,205,32"/>
+<area shape="rect" id="node3" href="$class_estructura.html" title="Subtipus de possessio. " alt="" coords="136,56,219,83"/>
+<area shape="rect" id="node4" href="$class_cami.html" title="Subtipus de possessio format per fitxes que tenen regions que són C. " alt="" coords="277,5,329,32"/>
+<area shape="rect" id="node5" href="$class_ciutat.html" title="Subtipus de possessio format per fitxes que tenen regions que són F o E. " alt="" coords="275,56,331,83"/>
+<area shape="rect" id="node6" href="$class_esglesia.html" title="Subtipus de possessio format per fitxes que tenen regions que són M. " alt="" coords="267,107,339,133"/>
+</map>

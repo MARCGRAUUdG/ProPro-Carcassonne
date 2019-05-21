@@ -1,0 +1,6 @@
+<map id="Gui.mostraOpcionsDeRotacioEnFitxa" name="Gui.mostraOpcionsDeRotacioEnFitxa">
+<area shape="rect" id="node2" href="$class_tirada.html#adb40561c69d716539ea380f64872eb7b" title="Tirada.apretatOpcionsDeFitxa" alt="" coords="248,13,443,39"/>
+<area shape="rect" id="node3" href="$class_joc.html#a90b306ce9d339455a5f6e5d2decf90f1" title="Joc.apretatPerPosarFitxa" alt="" coords="491,13,660,39"/>
+<area shape="rect" id="node4" href="$class_gui.html#ac731f68776f8bdaf1637d5a448be4b48" title="Gui.posaQuadreVerd" alt="" coords="708,13,851,39"/>
+<area shape="rect" id="node5" href="$class_gui.html#ad47e710172d53afbd0dfdd410a1c8126" title="Gui.posaQuadresVerds" alt="" coords="899,13,1056,39"/>
+</map>

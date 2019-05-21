@@ -1,0 +1,7 @@
+<map id="Gui.setupJugadors" name="Gui.setupJugadors">
+<area shape="rect" id="node2" href="$class_joc.html#ac38319889956e19c22ffd289ebd39824" title="Joc.IniciJoc" alt="" coords="184,5,273,32"/>
+<area shape="rect" id="node3" href="$class_joc.html#aa164cac0c602f63ff7e8860db7d06649" title="Joc.repNomFitxer" alt="" coords="321,5,445,32"/>
+<area shape="rect" id="node4" href="$class_gui.html#a6bc8d9bda8f813b8d6c303ae798646b5" title="Gui.llegeigNomDelFitxer" alt="" coords="493,5,656,32"/>
+<area shape="rect" id="node5" href="$class_gui.html#a9213a84890405b2cd77441b7f0654318" title="Gui.setupMainTop" alt="" coords="704,5,831,32"/>
+<area shape="rect" id="node6" href="$class_gui.html#a7997885cf723f790c4ec5b2328407023" title="Gui.start" alt="" coords="879,5,951,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Possessio.tipus" name="Possessio.tipus">
+<area shape="rect" id="node2" href="$class_tauler.html#a4ee1a514621dca60a453851021c4d91b" title="Tauler.eliminaPosicionsIncompatibles" alt="" coords="168,5,407,32"/>
+<area shape="rect" id="node3" href="$class_tauler.html#a936880dfa43da6f75cdad1edd82495c2" title="Tauler.onEsPotFicarSeguidor" alt="" coords="455,5,645,32"/>
+<area shape="rect" id="node4" href="$class_controlable.html#a2b6a322638a64197501904a8a8e8fac3" title="Controlable.posaFitxa" alt="" coords="693,5,841,32"/>
+</map>

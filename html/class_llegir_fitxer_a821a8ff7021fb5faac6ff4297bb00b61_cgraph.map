@@ -1,0 +1,8 @@
+<map id="LlegirFitxer.llegirFitxer" name="LlegirFitxer.llegirFitxer">
+<area shape="rect" id="node2" href="$class_llegir_fitxer.html#addb0fed99c782e84a9b670f89c3eecd2" title="LlegirFitxer.llegirJugadors" alt="" coords="204,5,373,32"/>
+<area shape="rect" id="node3" href="$class_llegir_fitxer.html#ac73d2ac3cbe198bd2ab5c6e1f5b4ead2" title="LlegirFitxer.llegirRajoles" alt="" coords="209,173,369,200"/>
+<area shape="rect" id="node4" href="$class_gui.html#a8b9b8f9acdd74b7126e53ac95f3cccb8" title="Gui.informarFitxerEntrada\lIncorrecte" alt="" coords="421,107,592,149"/>
+<area shape="rect" id="node5" href="$class_gui.html#a536efde44f03608985f04155cfb829e4" title="Gui.print" alt="" coords="640,169,711,196"/>
+<area shape="rect" id="node7" href="$class_llegir_fitxer.html#adeec6b2bd6754481b94c815b82e5bbce" title="LlegirFitxer.llegirDades\lPartida" alt="" coords="211,107,366,149"/>
+<area shape="rect" id="node6" href="$class_baralla.html#a997d3f37894226927d02bfc4044378f2" title="Baralla.afegirFitxa" alt="" coords="443,173,570,200"/>
+</map>

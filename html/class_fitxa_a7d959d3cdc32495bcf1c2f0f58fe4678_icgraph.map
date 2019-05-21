@@ -1,0 +1,5 @@
+<map id="Fitxa.fitxaActualEncaixaAmb" name="Fitxa.fitxaActualEncaixaAmb">
+<area shape="rect" id="node2" href="$class_tauler.html#ab373a984846631d85aaab3bee1da1781" title="Tauler.afegeixPosicioSiEncaixa\lFitxa" alt="" coords="244,5,448,47"/>
+<area shape="rect" id="node3" href="$class_tauler.html#a80439ab819e497bca329ee0ac1b0f298" title="Tauler.buscaColocacioFitxes" alt="" coords="496,13,685,39"/>
+<area shape="rect" id="node4" href="$class_tauler.html#af4c6190c83c0a48f83b08f8892fd3413" title="Tauler.getPosDisponibles" alt="" coords="733,13,903,39"/>
+</map>

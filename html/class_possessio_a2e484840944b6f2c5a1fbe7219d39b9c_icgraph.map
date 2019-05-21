@@ -1,0 +1,21 @@
+<map id="Possessio.getConjunt" name="Possessio.getConjunt">
+<area shape="rect" id="node2" href="$class_cami.html#a52921b82d752559596aab860d75e6077" title="Cami.tancat" alt="" coords="251,5,343,32"/>
+<area shape="rect" id="node3" href="$class_cami.html#abbc38e23b41d673e78f8f9e9fef0890b" title="Cami.afegir_fitxa" alt="" coords="237,56,356,83"/>
+<area shape="rect" id="node4" href="$class_cami.html#aae88bb5689726211e87747aeeb6abad0" title="Cami.propietari" alt="" coords="242,107,351,133"/>
+<area shape="rect" id="node5" href="$class_cami.html#a8d0a4b74b03239864c2d55217c99ed20" title="Cami.punts" alt="" coords="253,157,341,184"/>
+<area shape="rect" id="node6" href="$class_camp.html#aa62c5e5ffa6084bb8363c5efba469068" title="Camp.punts" alt="" coords="449,259,541,285"/>
+<area shape="rect" id="node7" href="$class_camp.html#a24ebece7eea1aa266390b8762c0a1aa5" title="Camp.propietari" alt="" coords="240,259,353,285"/>
+<area shape="rect" id="node8" href="$class_camp.html#a2bd097873f0c20f7e1ca04cb455ca114" title="Camp.conteFitxa" alt="" coords="236,309,357,336"/>
+<area shape="rect" id="node9" href="$class_ciutat.html#a427646d0239bb076543505a4d52772c2" title="Ciutat.tancat" alt="" coords="249,360,345,387"/>
+<area shape="rect" id="node10" href="$class_ciutat.html#a47eb8c10d3a938b85050a1620c4d05ea" title="Ciutat.punts" alt="" coords="449,385,541,412"/>
+<area shape="rect" id="node11" href="$class_ciutat.html#afd286f07dc54151be32b79327f8259e9" title="Ciutat.propietari" alt="" coords="240,461,353,488"/>
+<area shape="rect" id="node12" href="$class_esglesia.html#a9e2478307777515b1bf7a3d138c55e92" title="Esglesia.tancat" alt="" coords="241,512,353,539"/>
+<area shape="rect" id="node13" href="$class_esglesia.html#ae5bce92364b7865d9683b2cba97b34a8" title="Esglesia.punts" alt="" coords="441,537,549,564"/>
+<area shape="rect" id="node14" href="$class_esglesia.html#a2048c0dd48f7065274dbf4ba4983358b" title="Esglesia.propietari" alt="" coords="232,613,361,640"/>
+<area shape="rect" id="node15" href="$class_possessio.html#ac733be14dd5608eef86b00a5bce3a13f" title="Possessio.unir_possessions" alt="" coords="203,664,391,691"/>
+<area shape="rect" id="node16" href="$class_possessio.html#a7e75c5f8c1bfa87d1f22049f1109f855" title="Possessio.toString" alt="" coords="231,715,363,741"/>
+<area shape="rect" id="node17" href="$class_tauler.html#a6e0887ae8dedc793bace05d8b75dfd98" title="Tauler.getPuntsRegio" alt="" coords="223,765,370,792"/>
+<area shape="rect" id="node18" href="$class_tauler.html#a39fe2ad5d190905b65b8d86440062ce6" title="Tauler.getPunts" alt="" coords="439,765,552,792"/>
+<area shape="rect" id="node19" href="$class_tauler.html#a0a7e35375e0863e69cbb531232fcc3ce" title="Tauler.simularPunts" alt="" coords="600,765,737,792"/>
+<area shape="rect" id="node20" href="$class_tirada.html#a45701d44ba8daf5236f4cf945ce81c34" title="Tirada.gestionarMaquina" alt="" coords="785,765,948,792"/>
+</map>

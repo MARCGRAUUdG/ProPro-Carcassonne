@@ -1,0 +1,19 @@
+<map id="Tauler.getPosDisponibles" name="Tauler.getPosDisponibles">
+<area shape="rect" id="node2" href="$class_tauler.html#a80439ab819e497bca329ee0ac1b0f298" title="Tauler.buscaColocacioFitxes" alt="" coords="223,153,412,180"/>
+<area shape="rect" id="node18" href="$class_tauler.html#acf7a86eabba38a184bb227e41d1ec447" title="Tauler.removeDouble" alt="" coords="246,204,389,231"/>
+<area shape="rect" id="node3" href="$class_tauler.html#aaed75eb94f6022165789d1941aac603c" title="Tauler.getFitxa" alt="" coords="508,124,616,151"/>
+<area shape="rect" id="node4" href="$class_tauler.html#ab373a984846631d85aaab3bee1da1781" title="Tauler.afegeixPosicioSiEncaixa\lFitxa" alt="" coords="460,175,664,217"/>
+<area shape="rect" id="node5" href="$class_fitxa.html#adeca1a2543f1ed0dbc74e7cc90169a35" title="Fitxa.rotar" alt="" coords="981,157,1063,184"/>
+<area shape="rect" id="node12" href="$class_fitxa.html#a7d959d3cdc32495bcf1c2f0f58fe4678" title="Fitxa.fitxaActualEncaixaAmb" alt="" coords="712,208,903,235"/>
+<area shape="rect" id="node6" href="$class_posicio.html#ad41dbf5580623be4bfa053825900c9e9" title="Posicio.getRotacio" alt="" coords="1141,157,1272,184"/>
+<area shape="rect" id="node7" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="1158,56,1255,83"/>
+<area shape="rect" id="node8" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="1158,259,1255,285"/>
+<area shape="rect" id="node9" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="1158,309,1255,336"/>
+<area shape="rect" id="node10" href="$class_posicio.html#a74e21bbf58a371bbd77a6a9d98953de3" title="Posicio.setRotacio" alt="" coords="1141,107,1272,133"/>
+<area shape="rect" id="node11" href="$class_gui.html#a536efde44f03608985f04155cfb829e4" title="Gui.print" alt="" coords="1171,208,1242,235"/>
+<area shape="rect" id="node13" href="$class_fitxa.html#abdd6524addc5c6a7ea74363044269cae" title="Fitxa.sud_igual_nord" alt="" coords="951,81,1093,108"/>
+<area shape="rect" id="node15" href="$class_fitxa.html#ac5a6f1b4d54afc479b60f24a8e0d6839" title="Fitxa.oest_igual_est" alt="" coords="953,259,1091,285"/>
+<area shape="rect" id="node16" href="$class_fitxa.html#adf25d9e83a70a03961408b87f01cfdad" title="Fitxa.nord_igual_sud" alt="" coords="951,31,1093,57"/>
+<area shape="rect" id="node17" href="$class_fitxa.html#a592a69fa34ca3548fc170498b3440927" title="Fitxa.est_igual_oest" alt="" coords="953,309,1091,336"/>
+<area shape="rect" id="node14" href="$class_fitxa.html#a787f09b27930fedb010afa53ed5b1a29" title="Fitxa.regio_s" alt="" coords="1158,5,1255,32"/>
+</map>

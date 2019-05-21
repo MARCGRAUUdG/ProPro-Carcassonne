@@ -1,0 +1,188 @@
+\hypertarget{class_tirada}{}\section{Referència de la Classe Tirada}
+\label{class_tirada}\index{Tirada@{Tirada}}
+
+
+Classe encarregada de gestionar els torns dels diferents jugadors. Aquesta actua diferent segons si el jugador.  
+
+
+
+
+Diagrama de col·laboració per a Tirada\+:
+% FIG 0
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_tirada_adb40561c69d716539ea380f64872eb7b}{apretat\+Opcions\+De\+Fitxa}} (\mbox{\hyperlink{class_posicio}{Posicio}} pos)
+\item 
+void \mbox{\hyperlink{class_tirada_aa56dab05d4638ad1a340f42cd514d362}{apretat\+Angle\+Fitxa}} (\mbox{\hyperlink{class_posicio}{Posicio}} pos)
+\item 
+void \mbox{\hyperlink{class_tirada_a3c80bfbaa14b427b0221446e22fceeac}{apretat\+Opcions\+De\+Seguidor}} (int x, int y, char dir)
+\end{DoxyCompactItemize}
+\subsection*{Mètodes Privats}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_tirada_a45701d44ba8daf5236f4cf945ce81c34}{gestionar\+Maquina}} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributs Privats}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_jugador}{Jugador}} \mbox{\hyperlink{class_tirada_a73b6b0d485f45af265828f0d1db8070d}{jugador\+Actual}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_jugador}{Jugador}} actual de la \mbox{\hyperlink{class_tirada}{Tirada}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_tauler}{Tauler}} \mbox{\hyperlink{class_tirada_a861054c4b90f8b27698610e0e3b5ad46}{tauler}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_tauler}{Tauler}} utilitzat per la \mbox{\hyperlink{class_tirada}{Tirada}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_fitxa}{Fitxa}} \mbox{\hyperlink{class_tirada_a22a1439b7888810b998f1f6a30990a36}{fitxa\+Actual}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_fitxa}{Fitxa}} actual colocada. \end{DoxyCompactList}\item 
+Array\+List$<$ \mbox{\hyperlink{class_posicio}{Posicio}} $>$ \mbox{\hyperlink{class_tirada_aaccd3106612026e374b9c2cb769aca12}{posicions\+Disponibles}}
+\begin{DoxyCompactList}\small\item\em Llista de posicions on es pot ficar la fitxa\+Actual al \mbox{\hyperlink{class_tauler}{Tauler}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+Classe encarregada de gestionar els torns dels diferents jugadors. Aquesta actua diferent segons si el jugador. 
+
+Definició a la línia 12 del fitxer Tirada.\+java.
+
+
+
+\subsection{Documentació de les Funcions Membre}
+\mbox{\Hypertarget{class_tirada_aa56dab05d4638ad1a340f42cd514d362}\label{class_tirada_aa56dab05d4638ad1a340f42cd514d362}} 
+\index{Tirada@{Tirada}!apretat\+Angle\+Fitxa@{apretat\+Angle\+Fitxa}}
+\index{apretat\+Angle\+Fitxa@{apretat\+Angle\+Fitxa}!Tirada@{Tirada}}
+\subsubsection{\texorpdfstring{apretat\+Angle\+Fitxa()}{apretatAngleFitxa()}}
+{\footnotesize\ttfamily void Tirada.\+apretat\+Angle\+Fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_posicio}{Posicio}}}]{pos }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+pos inicialitzat i es correcte 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Posa fitxa\+Actual a gui en la posicio pos 
+\end{DoxyPostcond}
+
+
+Definició a la línia 98 del fitxer Tirada.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 1
+Gràfic de crides a aquesta funció\+:
+% FIG 2
+\mbox{\Hypertarget{class_tirada_adb40561c69d716539ea380f64872eb7b}\label{class_tirada_adb40561c69d716539ea380f64872eb7b}} 
+\index{Tirada@{Tirada}!apretat\+Opcions\+De\+Fitxa@{apretat\+Opcions\+De\+Fitxa}}
+\index{apretat\+Opcions\+De\+Fitxa@{apretat\+Opcions\+De\+Fitxa}!Tirada@{Tirada}}
+\subsubsection{\texorpdfstring{apretat\+Opcions\+De\+Fitxa()}{apretatOpcionsDeFitxa()}}
+{\footnotesize\ttfamily void Tirada.\+apretat\+Opcions\+De\+Fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_posicio}{Posicio}}}]{pos }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+pos inicialitzat i es correcte 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Posa fitxa\+Actual a gui si nomes encaixa d\textquotesingle{}una manera en la posicio pos altrament posa seleccio de rotacio 
+\end{DoxyPostcond}
+
+
+Definició a la línia 82 del fitxer Tirada.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 3
+Gràfic de crides a aquesta funció\+:
+% FIG 4
+\mbox{\Hypertarget{class_tirada_a3c80bfbaa14b427b0221446e22fceeac}\label{class_tirada_a3c80bfbaa14b427b0221446e22fceeac}} 
+\index{Tirada@{Tirada}!apretat\+Opcions\+De\+Seguidor@{apretat\+Opcions\+De\+Seguidor}}
+\index{apretat\+Opcions\+De\+Seguidor@{apretat\+Opcions\+De\+Seguidor}!Tirada@{Tirada}}
+\subsubsection{\texorpdfstring{apretat\+Opcions\+De\+Seguidor()}{apretatOpcionsDeSeguidor()}}
+{\footnotesize\ttfamily void Tirada.\+apretat\+Opcions\+De\+Seguidor (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{char}]{dir }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+9$<$=x$>$=0 \&\& 9$<$=y$>$=0, dir==(\textquotesingle{}C\textquotesingle{} o \textquotesingle{}N\textquotesingle{} o \textquotesingle{}E\textquotesingle{} o \textquotesingle{}S\textquotesingle{} o \textquotesingle{}O\textquotesingle{} o \textquotesingle{}X\textquotesingle{}) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Posa fitxa\+Actual al tauler amb el seguidor en la posicio x, y i regio dir 
+\end{DoxyPostcond}
+
+
+Definició a la línia 104 del fitxer Tirada.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 5
+Gràfic de crides a aquesta funció\+:
+% FIG 6
+\mbox{\Hypertarget{class_tirada_a45701d44ba8daf5236f4cf945ce81c34}\label{class_tirada_a45701d44ba8daf5236f4cf945ce81c34}} 
+\index{Tirada@{Tirada}!gestionar\+Maquina@{gestionar\+Maquina}}
+\index{gestionar\+Maquina@{gestionar\+Maquina}!Tirada@{Tirada}}
+\subsubsection{\texorpdfstring{gestionar\+Maquina()}{gestionarMaquina()}}
+{\footnotesize\ttfamily void Tirada.\+gestionar\+Maquina (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+gestiona la tirada d\textquotesingle{}un \mbox{\hyperlink{class_jugador}{Jugador}} \mbox{\hyperlink{class_maquina}{Maquina}} 
+\end{DoxyPostcond}
+
+
+Definició a la línia 54 del fitxer Tirada.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 7
+
+
+\subsection{Documentació de les Dades Membre}
+\mbox{\Hypertarget{class_tirada_a22a1439b7888810b998f1f6a30990a36}\label{class_tirada_a22a1439b7888810b998f1f6a30990a36}} 
+\index{Tirada@{Tirada}!fitxa\+Actual@{fitxa\+Actual}}
+\index{fitxa\+Actual@{fitxa\+Actual}!Tirada@{Tirada}}
+\subsubsection{\texorpdfstring{fitxa\+Actual}{fitxaActual}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_fitxa}{Fitxa}} Tirada.\+fitxa\+Actual\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_fitxa}{Fitxa}} actual colocada. 
+
+
+
+Definició a la línia 16 del fitxer Tirada.\+java.
+
+\mbox{\Hypertarget{class_tirada_a73b6b0d485f45af265828f0d1db8070d}\label{class_tirada_a73b6b0d485f45af265828f0d1db8070d}} 
+\index{Tirada@{Tirada}!jugador\+Actual@{jugador\+Actual}}
+\index{jugador\+Actual@{jugador\+Actual}!Tirada@{Tirada}}
+\subsubsection{\texorpdfstring{jugador\+Actual}{jugadorActual}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_jugador}{Jugador}} Tirada.\+jugador\+Actual\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_jugador}{Jugador}} actual de la \mbox{\hyperlink{class_tirada}{Tirada}}. 
+
+
+
+Definició a la línia 14 del fitxer Tirada.\+java.
+
+\mbox{\Hypertarget{class_tirada_aaccd3106612026e374b9c2cb769aca12}\label{class_tirada_aaccd3106612026e374b9c2cb769aca12}} 
+\index{Tirada@{Tirada}!posicions\+Disponibles@{posicions\+Disponibles}}
+\index{posicions\+Disponibles@{posicions\+Disponibles}!Tirada@{Tirada}}
+\subsubsection{\texorpdfstring{posicions\+Disponibles}{posicionsDisponibles}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_posicio}{Posicio}}$>$ Tirada.\+posicions\+Disponibles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Llista de posicions on es pot ficar la fitxa\+Actual al \mbox{\hyperlink{class_tauler}{Tauler}}. 
+
+
+
+Definició a la línia 17 del fitxer Tirada.\+java.
+
+\mbox{\Hypertarget{class_tirada_a861054c4b90f8b27698610e0e3b5ad46}\label{class_tirada_a861054c4b90f8b27698610e0e3b5ad46}} 
+\index{Tirada@{Tirada}!tauler@{tauler}}
+\index{tauler@{tauler}!Tirada@{Tirada}}
+\subsubsection{\texorpdfstring{tauler}{tauler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tauler}{Tauler}} Tirada.\+tauler\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_tauler}{Tauler}} utilitzat per la \mbox{\hyperlink{class_tirada}{Tirada}}. 
+
+
+
+Definició a la línia 15 del fitxer Tirada.\+java.
+
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+carcassonne/src/\mbox{\hyperlink{_tirada_8java}{Tirada.\+java}}\end{DoxyCompactItemize}

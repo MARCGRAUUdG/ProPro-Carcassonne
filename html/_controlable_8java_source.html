@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Carcassonne: Fitxer de Codi carcassonne/src/Controlable.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Carcassonne.gif"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Carcassonne
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Documentació del joc</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generat per Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c137a8bb86006a89d6edcf77ec0fe4d3.html">carcassonne</a></li><li class="navelem"><a class="el" href="dir_d589812e90967f32cd63330a28f24451.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Controlable.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_controlable_8java.html">Veure la documentació d'aquest fitxer.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> java.util.List;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_controlable.html">    8</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_controlable.html">Controlable</a> <span class="keyword">extends</span> <a class="code" href="class_jugador.html">Jugador</a> {</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_controlable.html">Controlable</a>(<span class="keywordtype">int</span> i)</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        super (i);</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_controlable.html#a17cb7e66755a66f96ab9da07c7e7b0e3">   19</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code" href="class_controlable.html#a17cb7e66755a66f96ab9da07c7e7b0e3">esControlable</a>() {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_controlable.html#a2b6a322638a64197501904a8a8e8fac3">   25</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_controlable.html#a2b6a322638a64197501904a8a8e8fac3">posaFitxa</a>(<a class="code" href="class_posicio.html">Posicio</a> pos, <a class="code" href="class_fitxa.html">Fitxa</a> <a class="code" href="class_jugador.html#a221c891bd7f14049abe513c2705ac5bc">fitxaActual</a>, <a class="code" href="class_tauler.html">Tauler</a> tauler){</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_jugador.html#a221c891bd7f14049abe513c2705ac5bc">fitxaActual</a>.<a class="code" href="class_fitxa.html#a63357c2ccc2b283f3b12f4a5aaf50fb0">setPosicio</a>(pos);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_gui.html">Gui</a>.<a class="code" href="class_gui.html#a01b6b7eeba0d0730c6307d58df0cc032">posaFitxa</a>(<a class="code" href="class_jugador.html#a221c891bd7f14049abe513c2705ac5bc">fitxaActual</a>);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span>(super.getHumanets()&gt;0) {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            ArrayList&lt;Character&gt; posicions=tauler.<a class="code" href="class_tauler.html#a936880dfa43da6f75cdad1edd82495c2">onEsPotFicarSeguidor</a>(<a class="code" href="class_jugador.html#a221c891bd7f14049abe513c2705ac5bc">fitxaActual</a>);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">if</span>(posicions.size()&gt;0)<a class="code" href="class_gui.html">Gui</a>.<a class="code" href="class_gui.html#a34f713e45c926f57aad018e533da18cb">posaSeleccioDeSeguidors</a>(pos.<a class="code" href="class_posicio.html#a8a1ae0a7865e6edbf0510ebcf2b97061">getPosicioX</a>(), pos.<a class="code" href="class_posicio.html#ae70d63aa90b935131d122fc1e4b72969">getPosicioY</a>(), posicions);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">else</span>{</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                tauler.<a class="code" href="class_tauler.html#aa06ab791d1dc23451170b09f1aa4626c">posarFitxaTauler</a>(<a class="code" href="class_jugador.html#a221c891bd7f14049abe513c2705ac5bc">fitxaActual</a>);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <a class="code" href="class_joc.html">Joc</a>.<a class="code" href="class_joc.html#aae62a162e3ae1cae45dea616914fcaba">iniciaNouTorn</a>();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            }</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }<span class="keywordflow">else</span> {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            tauler.<a class="code" href="class_tauler.html#aa06ab791d1dc23451170b09f1aa4626c">posarFitxaTauler</a>(<a class="code" href="class_jugador.html#a221c891bd7f14049abe513c2705ac5bc">fitxaActual</a>);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="class_joc.html">Joc</a>.<a class="code" href="class_joc.html#aae62a162e3ae1cae45dea616914fcaba">iniciaNouTorn</a>();</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div><div class="ttc" id="class_joc_html_aae62a162e3ae1cae45dea616914fcaba"><div class="ttname"><a href="class_joc.html#aae62a162e3ae1cae45dea616914fcaba">Joc.iniciaNouTorn</a></div><div class="ttdeci">static void iniciaNouTorn()</div><div class="ttdef"><b>Definition:</b> <a href="_joc_8java_source.html#l00070">Joc.java:70</a></div></div>
+<div class="ttc" id="class_fitxa_html_a63357c2ccc2b283f3b12f4a5aaf50fb0"><div class="ttname"><a href="class_fitxa.html#a63357c2ccc2b283f3b12f4a5aaf50fb0">Fitxa.setPosicio</a></div><div class="ttdeci">void setPosicio(Posicio novaPos)</div><div class="ttdef"><b>Definition:</b> <a href="_fitxa_8java_source.html#l00206">Fitxa.java:206</a></div></div>
+<div class="ttc" id="class_jugador_html"><div class="ttname"><a href="class_jugador.html">Jugador</a></div><div class="ttdoc">Aquesta classe representa a un jugador de la partida. Aquest està gestionat per un sistema de torns i...</div><div class="ttdef"><b>Definition:</b> <a href="_jugador_8java_source.html#l00014">Jugador.java:14</a></div></div>
+<div class="ttc" id="class_posicio_html_a8a1ae0a7865e6edbf0510ebcf2b97061"><div class="ttname"><a href="class_posicio.html#a8a1ae0a7865e6edbf0510ebcf2b97061">Posicio.getPosicioX</a></div><div class="ttdeci">int getPosicioX()</div><div class="ttdef"><b>Definition:</b> <a href="_posicio_8java_source.html#l00052">Posicio.java:52</a></div></div>
+<div class="ttc" id="class_tauler_html"><div class="ttname"><a href="class_tauler.html">Tauler</a></div><div class="ttdoc">Administració d&amp;#39;un Tauler estatic de 10x10, amb gestio de les seves Fitxa/es i de les Possession/s...</div><div class="ttdef"><b>Definition:</b> <a href="_tauler_8java_source.html#l00008">Tauler.java:8</a></div></div>
+<div class="ttc" id="class_gui_html_a34f713e45c926f57aad018e533da18cb"><div class="ttname"><a href="class_gui.html#a34f713e45c926f57aad018e533da18cb">Gui.posaSeleccioDeSeguidors</a></div><div class="ttdeci">static void posaSeleccioDeSeguidors(int x, int y, ArrayList&lt; Character &gt; posicions)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8java_source.html#l00454">Gui.java:454</a></div></div>
+<div class="ttc" id="class_jugador_html_a221c891bd7f14049abe513c2705ac5bc"><div class="ttname"><a href="class_jugador.html#a221c891bd7f14049abe513c2705ac5bc">Jugador.fitxaActual</a></div><div class="ttdeci">Fitxa fitxaActual</div><div class="ttdoc">Fitxa actual dispoible pel jugador. </div><div class="ttdef"><b>Definition:</b> <a href="_jugador_8java_source.html#l00017">Jugador.java:17</a></div></div>
+<div class="ttc" id="class_gui_html_a01b6b7eeba0d0730c6307d58df0cc032"><div class="ttname"><a href="class_gui.html#a01b6b7eeba0d0730c6307d58df0cc032">Gui.posaFitxa</a></div><div class="ttdeci">static void posaFitxa(Fitxa f)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8java_source.html#l00311">Gui.java:311</a></div></div>
+<div class="ttc" id="class_gui_html"><div class="ttname"><a href="class_gui.html">Gui</a></div><div class="ttdoc">Clase main, gestió de la interficie i control del jugador actual en cas de ser controlable. </div><div class="ttdef"><b>Definition:</b> <a href="_gui_8java_source.html#l00053">Gui.java:53</a></div></div>
+<div class="ttc" id="class_tauler_html_aa06ab791d1dc23451170b09f1aa4626c"><div class="ttname"><a href="class_tauler.html#aa06ab791d1dc23451170b09f1aa4626c">Tauler.posarFitxaTauler</a></div><div class="ttdeci">void posarFitxaTauler(Fitxa f)</div><div class="ttdef"><b>Definition:</b> <a href="_tauler_8java_source.html#l00097">Tauler.java:97</a></div></div>
+<div class="ttc" id="class_posicio_html"><div class="ttname"><a href="class_posicio.html">Posicio</a></div><div class="ttdef"><b>Definition:</b> <a href="_posicio_8java_source.html#l00008">Posicio.java:8</a></div></div>
+<div class="ttc" id="class_fitxa_html"><div class="ttname"><a href="class_fitxa.html">Fitxa</a></div><div class="ttdoc">Fitxa que té regions i que forma part de la baralla. </div><div class="ttdef"><b>Definition:</b> <a href="_fitxa_8java_source.html#l00008">Fitxa.java:8</a></div></div>
+<div class="ttc" id="class_tauler_html_a936880dfa43da6f75cdad1edd82495c2"><div class="ttname"><a href="class_tauler.html#a936880dfa43da6f75cdad1edd82495c2">Tauler.onEsPotFicarSeguidor</a></div><div class="ttdeci">ArrayList&lt; Character &gt; onEsPotFicarSeguidor(Fitxa f)</div><div class="ttdef"><b>Definition:</b> <a href="_tauler_8java_source.html#l00467">Tauler.java:467</a></div></div>
+<div class="ttc" id="class_controlable_html"><div class="ttname"><a href="class_controlable.html">Controlable</a></div><div class="ttdoc">Subclasse de la superclasse Jugador. Implementa els mètodes propis d&amp;#39;un jugador Controlable. </div><div class="ttdef"><b>Definition:</b> <a href="_controlable_8java_source.html#l00008">Controlable.java:8</a></div></div>
+<div class="ttc" id="class_joc_html"><div class="ttname"><a href="class_joc.html">Joc</a></div><div class="ttdoc">Gestiona el joc principal, aquet fa el control de Tirada, el Jugador que li toca tirar i del el Taule...</div><div class="ttdef"><b>Definition:</b> <a href="_joc_8java_source.html#l00010">Joc.java:10</a></div></div>
+<div class="ttc" id="class_controlable_html_a17cb7e66755a66f96ab9da07c7e7b0e3"><div class="ttname"><a href="class_controlable.html#a17cb7e66755a66f96ab9da07c7e7b0e3">Controlable.esControlable</a></div><div class="ttdeci">boolean esControlable()</div><div class="ttdef"><b>Definition:</b> <a href="_controlable_8java_source.html#l00019">Controlable.java:19</a></div></div>
+<div class="ttc" id="class_controlable_html_a2b6a322638a64197501904a8a8e8fac3"><div class="ttname"><a href="class_controlable.html#a2b6a322638a64197501904a8a8e8fac3">Controlable.posaFitxa</a></div><div class="ttdeci">void posaFitxa(Posicio pos, Fitxa fitxaActual, Tauler tauler)</div><div class="ttdef"><b>Definition:</b> <a href="_controlable_8java_source.html#l00025">Controlable.java:25</a></div></div>
+<div class="ttc" id="class_posicio_html_ae70d63aa90b935131d122fc1e4b72969"><div class="ttname"><a href="class_posicio.html#ae70d63aa90b935131d122fc1e4b72969">Posicio.getPosicioY</a></div><div class="ttdeci">int getPosicioY()</div><div class="ttdef"><b>Definition:</b> <a href="_posicio_8java_source.html#l00058">Posicio.java:58</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generat per &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

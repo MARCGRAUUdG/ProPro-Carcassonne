@@ -1,0 +1,6 @@
+<map id="Fitxa.nord_igual_sud" name="Fitxa.nord_igual_sud">
+<area shape="rect" id="node2" href="$class_fitxa.html#a7d959d3cdc32495bcf1c2f0f58fe4678" title="Fitxa.fitxaActualEncaixaAmb" alt="" coords="196,13,387,39"/>
+<area shape="rect" id="node3" href="$class_tauler.html#ab373a984846631d85aaab3bee1da1781" title="Tauler.afegeixPosicioSiEncaixa\lFitxa" alt="" coords="435,5,639,47"/>
+<area shape="rect" id="node4" href="$class_tauler.html#a80439ab819e497bca329ee0ac1b0f298" title="Tauler.buscaColocacioFitxes" alt="" coords="687,13,876,39"/>
+<area shape="rect" id="node5" href="$class_tauler.html#af4c6190c83c0a48f83b08f8892fd3413" title="Tauler.getPosDisponibles" alt="" coords="924,13,1093,39"/>
+</map>

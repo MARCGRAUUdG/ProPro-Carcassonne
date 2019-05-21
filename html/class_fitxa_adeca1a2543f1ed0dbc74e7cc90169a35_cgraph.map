@@ -1,0 +1,8 @@
+<map id="Fitxa.rotar" name="Fitxa.rotar">
+<area shape="rect" id="node2" href="$class_posicio.html#ad41dbf5580623be4bfa053825900c9e9" title="Posicio.getRotacio" alt="" coords="135,5,265,32"/>
+<area shape="rect" id="node3" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="151,56,249,83"/>
+<area shape="rect" id="node4" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="151,107,249,133"/>
+<area shape="rect" id="node5" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="151,157,249,184"/>
+<area shape="rect" id="node6" href="$class_posicio.html#a74e21bbf58a371bbd77a6a9d98953de3" title="Posicio.setRotacio" alt="" coords="135,208,265,235"/>
+<area shape="rect" id="node7" href="$class_gui.html#a536efde44f03608985f04155cfb829e4" title="Gui.print" alt="" coords="165,259,235,285"/>
+</map>

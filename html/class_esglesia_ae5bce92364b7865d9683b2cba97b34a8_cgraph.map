@@ -1,0 +1,6 @@
+<map id="Esglesia.punts" name="Esglesia.punts">
+<area shape="rect" id="node2" href="$class_esglesia.html#a9e2478307777515b1bf7a3d138c55e92" title="Esglesia.tancat" alt="" coords="161,31,273,57"/>
+<area shape="rect" id="node3" href="$class_possessio.html#a2e484840944b6f2c5a1fbe7219d39b9c" title="Possessio.getConjunt" alt="" coords="345,5,494,32"/>
+<area shape="rect" id="node4" href="$class_tauler.html#af5a38a09a2f0cfb5f87519f0ec327552" title="Tauler.nFitxesAlVoltantDePos" alt="" coords="321,68,517,95"/>
+<area shape="rect" id="node5" href="$class_tauler.html#aaed75eb94f6022165789d1941aac603c" title="Tauler.getFitxa" alt="" coords="565,68,673,95"/>
+</map>

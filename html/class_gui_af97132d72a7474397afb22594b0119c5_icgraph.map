@@ -1,0 +1,13 @@
+<map id="Gui.treuUltimElement" name="Gui.treuUltimElement">
+<area shape="rect" id="node2" href="$class_gui.html#a6364d40f472084c5d50859159b8c46d4" title="Gui.treuQuadresVerds" alt="" coords="465,71,615,98"/>
+<area shape="rect" id="node5" href="$class_gui.html#a3887b907e40f86fddd2ff2f182342b7c" title="Gui.treuSeguidors" alt="" coords="234,173,361,199"/>
+<area shape="rect" id="node9" href="$class_gui.html#a57472094cd3fe87243415881b6a2f928" title="Gui.mostraNextTirada" alt="" coords="223,122,371,149"/>
+<area shape="rect" id="node10" href="$class_gui.html#a14de8e45496b14e62ca59676d0aae3fe" title="Gui.mostraOpcionsDeRotacio\lEnFitxa" alt="" coords="200,5,395,47"/>
+<area shape="rect" id="node3" href="$class_gui.html#ac731f68776f8bdaf1637d5a448be4b48" title="Gui.posaQuadreVerd" alt="" coords="935,43,1077,70"/>
+<area shape="rect" id="node4" href="$class_gui.html#ad47e710172d53afbd0dfdd410a1c8126" title="Gui.posaQuadresVerds" alt="" coords="1128,43,1285,70"/>
+<area shape="rect" id="node6" href="$class_gui.html#a34f713e45c926f57aad018e533da18cb" title="Gui.posaSeleccioDeSeguidors" alt="" coords="685,173,884,199"/>
+<area shape="rect" id="node8" href="$class_gui.html#af2be44020696cbe2bce2ff4b90d94cc1" title="Gui.configuraImgSeguidor" alt="" coords="455,147,625,174"/>
+<area shape="rect" id="node7" href="$class_controlable.html#a2b6a322638a64197501904a8a8e8fac3" title="Controlable.posaFitxa" alt="" coords="932,173,1080,199"/>
+<area shape="rect" id="node11" href="$class_tirada.html#adb40561c69d716539ea380f64872eb7b" title="Tirada.apretatOpcionsDeFitxa" alt="" coords="443,14,637,41"/>
+<area shape="rect" id="node12" href="$class_joc.html#a90b306ce9d339455a5f6e5d2decf90f1" title="Joc.apretatPerPosarFitxa" alt="" coords="700,15,869,42"/>
+</map>

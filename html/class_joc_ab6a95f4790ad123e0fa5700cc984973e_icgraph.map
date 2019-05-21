@@ -1,0 +1,7 @@
+<map id="Joc.posaFitxaInicial" name="Joc.posaFitxaInicial">
+<area shape="rect" id="node2" href="$class_joc.html#ac38319889956e19c22ffd289ebd39824" title="Joc.IniciJoc" alt="" coords="189,5,279,32"/>
+<area shape="rect" id="node3" href="$class_joc.html#aa164cac0c602f63ff7e8860db7d06649" title="Joc.repNomFitxer" alt="" coords="327,5,451,32"/>
+<area shape="rect" id="node4" href="$class_gui.html#a6bc8d9bda8f813b8d6c303ae798646b5" title="Gui.llegeigNomDelFitxer" alt="" coords="499,5,661,32"/>
+<area shape="rect" id="node5" href="$class_gui.html#a9213a84890405b2cd77441b7f0654318" title="Gui.setupMainTop" alt="" coords="709,5,836,32"/>
+<area shape="rect" id="node6" href="$class_gui.html#a7997885cf723f790c4ec5b2328407023" title="Gui.start" alt="" coords="884,5,956,32"/>
+</map>

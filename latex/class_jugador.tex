@@ -1,0 +1,333 @@
+\hypertarget{class_jugador}{}\section{Referència de la Classe Jugador}
+\label{class_jugador}\index{Jugador@{Jugador}}
+
+
+Aquesta classe representa a un jugador de la partida. Aquest està gestionat per un sistema de torns i per a cada torn agafa una fitxa de la \mbox{\hyperlink{class_baralla}{Baralla}} i la fica al tauler de la manera possible que vulgui. Superclasse de la qual deriven per herència \mbox{\hyperlink{class_controlable}{Controlable}} i \mbox{\hyperlink{class_maquina}{Maquina}}. \mbox{\hyperlink{class_controlable}{Controlable}} representa un jugador humà que indica mitjançant la G\+UI els moviments a realitzar en tot moment. \mbox{\hyperlink{class_maquina}{Maquina}} representa un jugador bot que de manera més intel·ligent o menys juga contra un personatge \mbox{\hyperlink{class_controlable}{Controlable}}.  
+
+
+
+
+Diagrama d\textquotesingle{}Herència per a Jugador\+:
+% FIG 0
+
+
+Diagrama de col·laboració per a Jugador\+:
+% FIG 1
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_jugador_a94e3e666866e80e3a47fead1195de821}{get\+Id}} ()
+\item 
+Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ \mbox{\hyperlink{class_jugador_a911338c762d6a518ec628a6fde94ab5b}{get\+Llista\+Possessions}} ()
+\item 
+boolean \mbox{\hyperlink{class_jugador_ae09056db510ac7461366abd9774754f9}{guanyador}} ()
+\item 
+int \mbox{\hyperlink{class_jugador_a07a0c155b480c9822ae8cf6b8649f688}{get\+Humanets}} ()
+\item 
+void \mbox{\hyperlink{class_jugador_a0fb22c0823337850e57c0efb5dd54aff}{set\+Humanets}} (int n)
+\item 
+void \mbox{\hyperlink{class_jugador_a2338c2d33521058c2d9d2804c2e481f4}{incrementa\+Humanets}} ()
+\item 
+String \mbox{\hyperlink{class_jugador_a69e46d6ddf4397e9325d4cdec5bb4253}{to\+String}} ()
+\item 
+abstract boolean \mbox{\hyperlink{class_jugador_a35b3082524dca77c1a666d31358bf520}{es\+Controlable}} ()
+\item 
+abstract void \mbox{\hyperlink{class_jugador_ae014826953f1629afbf0a19787aadfe0}{posa\+Fitxa}} (\mbox{\hyperlink{class_posicio}{Posicio}} pos, \mbox{\hyperlink{class_fitxa}{Fitxa}} \mbox{\hyperlink{class_jugador_a221c891bd7f14049abe513c2705ac5bc}{fitxa\+Actual}}, \mbox{\hyperlink{class_tauler}{Tauler}} tauler)
+\item 
+int \mbox{\hyperlink{class_jugador_a495f4c17e7ead8bf4be596e6fe28fbe8}{get\+Puntuacio}} ()
+\item 
+void \mbox{\hyperlink{class_jugador_a9b4f91f35c48eda851a622666c1b93d5}{set\+Puntuacio}} (int p)
+\item 
+void \mbox{\hyperlink{class_jugador_a38bda447d8645686d11c49814dd31fe3}{incrementa\+Puntuacio}} (int p)
+\end{DoxyCompactItemize}
+\subsection*{Atributs Privats}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_jugador_aa400235b2aead9a7794fcca3c74f3a1b}{id}}
+\begin{DoxyCompactList}\small\item\em Identificador únic del \mbox{\hyperlink{class_jugador}{Jugador}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_fitxa}{Fitxa}} \mbox{\hyperlink{class_jugador_a221c891bd7f14049abe513c2705ac5bc}{fitxa\+Actual}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_fitxa}{Fitxa}} actual dispoible pel jugador. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_jugador_a4ea2472182548451fce5be41eec23a46}{n\+Humanets}}
+\begin{DoxyCompactList}\small\item\em Nombre d\textquotesingle{}humanets del \mbox{\hyperlink{class_jugador}{Jugador}}. \end{DoxyCompactList}\item 
+Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ \mbox{\hyperlink{class_jugador_aeae26acfb52e206e3fad8e30aca285b8}{llista\+Possessions}} = new Array\+List$<$$>$()
+\begin{DoxyCompactList}\small\item\em Llista de \mbox{\hyperlink{class_possessio}{Possessio}} ns del \mbox{\hyperlink{class_jugador}{Jugador}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_jugador_a08c2ed45358b666b8c41f93f86fc30ad}{puntuacio}} =0
+\begin{DoxyCompactList}\small\item\em Punts totals del \mbox{\hyperlink{class_jugador}{Jugador}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+Aquesta classe representa a un jugador de la partida. Aquest està gestionat per un sistema de torns i per a cada torn agafa una fitxa de la \mbox{\hyperlink{class_baralla}{Baralla}} i la fica al tauler de la manera possible que vulgui. Superclasse de la qual deriven per herència \mbox{\hyperlink{class_controlable}{Controlable}} i \mbox{\hyperlink{class_maquina}{Maquina}}. \mbox{\hyperlink{class_controlable}{Controlable}} representa un jugador humà que indica mitjançant la G\+UI els moviments a realitzar en tot moment. \mbox{\hyperlink{class_maquina}{Maquina}} representa un jugador bot que de manera més intel·ligent o menys juga contra un personatge \mbox{\hyperlink{class_controlable}{Controlable}}. 
+
+Definició a la línia 14 del fitxer Jugador.\+java.
+
+
+
+\subsection{Documentació de les Funcions Membre}
+\mbox{\Hypertarget{class_jugador_a35b3082524dca77c1a666d31358bf520}\label{class_jugador_a35b3082524dca77c1a666d31358bf520}} 
+\index{Jugador@{Jugador}!es\+Controlable@{es\+Controlable}}
+\index{es\+Controlable@{es\+Controlable}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{es\+Controlable()}{esControlable()}}
+{\footnotesize\ttfamily abstract boolean Jugador.\+es\+Controlable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+\begin{DoxyPostcond}{Postcondició}
+--- 
+
+retorna si el jugador actual es controlable 
+\end{DoxyPostcond}
+Gràfic de crides a aquesta funció\+:
+% FIG 2
+\mbox{\Hypertarget{class_jugador_a07a0c155b480c9822ae8cf6b8649f688}\label{class_jugador_a07a0c155b480c9822ae8cf6b8649f688}} 
+\index{Jugador@{Jugador}!get\+Humanets@{get\+Humanets}}
+\index{get\+Humanets@{get\+Humanets}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{get\+Humanets()}{getHumanets()}}
+{\footnotesize\ttfamily int Jugador.\+get\+Humanets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-- /
+
+retorna el nombre d\textquotesingle{}humanets del jugador actual 
+\end{DoxyPrecond}
+
+
+Definició a la línia 60 del fitxer Jugador.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 3
+\mbox{\Hypertarget{class_jugador_a94e3e666866e80e3a47fead1195de821}\label{class_jugador_a94e3e666866e80e3a47fead1195de821}} 
+\index{Jugador@{Jugador}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{get\+Id()}{getId()}}
+{\footnotesize\ttfamily int Jugador.\+get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna la id 
+\end{DoxyPostcond}
+
+
+Definició a la línia 26 del fitxer Jugador.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 4
+\mbox{\Hypertarget{class_jugador_a911338c762d6a518ec628a6fde94ab5b}\label{class_jugador_a911338c762d6a518ec628a6fde94ab5b}} 
+\index{Jugador@{Jugador}!get\+Llista\+Possessions@{get\+Llista\+Possessions}}
+\index{get\+Llista\+Possessions@{get\+Llista\+Possessions}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{get\+Llista\+Possessions()}{getLlistaPossessions()}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_possessio}{Possessio}}$>$ Jugador.\+get\+Llista\+Possessions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna la llista de possessions del jugador actual. 
+\end{DoxyPostcond}
+
+
+Definició a la línia 47 del fitxer Jugador.\+java.
+
+\mbox{\Hypertarget{class_jugador_a495f4c17e7ead8bf4be596e6fe28fbe8}\label{class_jugador_a495f4c17e7ead8bf4be596e6fe28fbe8}} 
+\index{Jugador@{Jugador}!get\+Puntuacio@{get\+Puntuacio}}
+\index{get\+Puntuacio@{get\+Puntuacio}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{get\+Puntuacio()}{getPuntuacio()}}
+{\footnotesize\ttfamily int Jugador.\+get\+Puntuacio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--  retorna la puntuació del \mbox{\hyperlink{class_jugador}{Jugador}} 
+\end{DoxyPrecond}
+
+
+Definició a la línia 95 del fitxer Jugador.\+java.
+
+\mbox{\Hypertarget{class_jugador_ae09056db510ac7461366abd9774754f9}\label{class_jugador_ae09056db510ac7461366abd9774754f9}} 
+\index{Jugador@{Jugador}!guanyador@{guanyador}}
+\index{guanyador@{guanyador}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{guanyador()}{guanyador()}}
+{\footnotesize\ttfamily boolean Jugador.\+guanyador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+indica si un personatge ha guanyat 
+\end{DoxyPostcond}
+
+
+Definició a la línia 54 del fitxer Jugador.\+java.
+
+\mbox{\Hypertarget{class_jugador_a2338c2d33521058c2d9d2804c2e481f4}\label{class_jugador_a2338c2d33521058c2d9d2804c2e481f4}} 
+\index{Jugador@{Jugador}!incrementa\+Humanets@{incrementa\+Humanets}}
+\index{incrementa\+Humanets@{incrementa\+Humanets}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{incrementa\+Humanets()}{incrementaHumanets()}}
+{\footnotesize\ttfamily void Jugador.\+incrementa\+Humanets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+incrementa en un el nombre d\textquotesingle{}humanets del \mbox{\hyperlink{class_jugador}{Jugador}} 
+\end{DoxyPostcond}
+
+
+Definició a la línia 72 del fitxer Jugador.\+java.
+
+\mbox{\Hypertarget{class_jugador_a38bda447d8645686d11c49814dd31fe3}\label{class_jugador_a38bda447d8645686d11c49814dd31fe3}} 
+\index{Jugador@{Jugador}!incrementa\+Puntuacio@{incrementa\+Puntuacio}}
+\index{incrementa\+Puntuacio@{incrementa\+Puntuacio}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{incrementa\+Puntuacio()}{incrementaPuntuacio()}}
+{\footnotesize\ttfamily void Jugador.\+incrementa\+Puntuacio (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+puntuació per incrementar 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+puntuació del \mbox{\hyperlink{class_jugador}{Jugador}} incrementada 
+\end{DoxyPostcond}
+
+
+Definició a la línia 107 del fitxer Jugador.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 5
+\mbox{\Hypertarget{class_jugador_ae014826953f1629afbf0a19787aadfe0}\label{class_jugador_ae014826953f1629afbf0a19787aadfe0}} 
+\index{Jugador@{Jugador}!posa\+Fitxa@{posa\+Fitxa}}
+\index{posa\+Fitxa@{posa\+Fitxa}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{posa\+Fitxa()}{posaFitxa()}}
+{\footnotesize\ttfamily abstract void Jugador.\+posa\+Fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_posicio}{Posicio}}}]{pos,  }\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{fitxa\+Actual,  }\item[{\mbox{\hyperlink{class_tauler}{Tauler}}}]{tauler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+\begin{DoxyPrecond}{Precondició}
+pos inicialitzat i es correcte  posa fitxa\+Actual al tauler i gui en la posicio pos 
+\end{DoxyPrecond}
+Gràfic de crides a aquesta funció\+:
+% FIG 6
+\mbox{\Hypertarget{class_jugador_a0fb22c0823337850e57c0efb5dd54aff}\label{class_jugador_a0fb22c0823337850e57c0efb5dd54aff}} 
+\index{Jugador@{Jugador}!set\+Humanets@{set\+Humanets}}
+\index{set\+Humanets@{set\+Humanets}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{set\+Humanets()}{setHumanets()}}
+{\footnotesize\ttfamily void Jugador.\+set\+Humanets (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+nombre d\textquotesingle{}humanets $>$= 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+nombre d\textquotesingle{}humanets assignat 
+\end{DoxyPostcond}
+
+
+Definició a la línia 66 del fitxer Jugador.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 7
+\mbox{\Hypertarget{class_jugador_a9b4f91f35c48eda851a622666c1b93d5}\label{class_jugador_a9b4f91f35c48eda851a622666c1b93d5}} 
+\index{Jugador@{Jugador}!set\+Puntuacio@{set\+Puntuacio}}
+\index{set\+Puntuacio@{set\+Puntuacio}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{set\+Puntuacio()}{setPuntuacio()}}
+{\footnotesize\ttfamily void Jugador.\+set\+Puntuacio (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+puntuació per assignar 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+puntuació del \mbox{\hyperlink{class_jugador}{Jugador}} assignada 
+\end{DoxyPostcond}
+
+
+Definició a la línia 101 del fitxer Jugador.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 8
+\mbox{\Hypertarget{class_jugador_a69e46d6ddf4397e9325d4cdec5bb4253}\label{class_jugador_a69e46d6ddf4397e9325d4cdec5bb4253}} 
+\index{Jugador@{Jugador}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String Jugador.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna string de l\textquotesingle{}id del \mbox{\hyperlink{class_jugador}{Jugador}} 
+\end{DoxyPostcond}
+
+
+Definició a la línia 79 del fitxer Jugador.\+java.
+
+
+
+\subsection{Documentació de les Dades Membre}
+\mbox{\Hypertarget{class_jugador_a221c891bd7f14049abe513c2705ac5bc}\label{class_jugador_a221c891bd7f14049abe513c2705ac5bc}} 
+\index{Jugador@{Jugador}!fitxa\+Actual@{fitxa\+Actual}}
+\index{fitxa\+Actual@{fitxa\+Actual}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{fitxa\+Actual}{fitxaActual}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_fitxa}{Fitxa}} Jugador.\+fitxa\+Actual\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_fitxa}{Fitxa}} actual dispoible pel jugador. 
+
+
+
+Definició a la línia 17 del fitxer Jugador.\+java.
+
+\mbox{\Hypertarget{class_jugador_aa400235b2aead9a7794fcca3c74f3a1b}\label{class_jugador_aa400235b2aead9a7794fcca3c74f3a1b}} 
+\index{Jugador@{Jugador}!id@{id}}
+\index{id@{id}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Jugador.\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Identificador únic del \mbox{\hyperlink{class_jugador}{Jugador}}. 
+
+
+
+Definició a la línia 16 del fitxer Jugador.\+java.
+
+\mbox{\Hypertarget{class_jugador_aeae26acfb52e206e3fad8e30aca285b8}\label{class_jugador_aeae26acfb52e206e3fad8e30aca285b8}} 
+\index{Jugador@{Jugador}!llista\+Possessions@{llista\+Possessions}}
+\index{llista\+Possessions@{llista\+Possessions}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{llista\+Possessions}{llistaPossessions}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_possessio}{Possessio}}$>$ Jugador.\+llista\+Possessions = new Array\+List$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Llista de \mbox{\hyperlink{class_possessio}{Possessio}} ns del \mbox{\hyperlink{class_jugador}{Jugador}}. 
+
+
+
+Definició a la línia 20 del fitxer Jugador.\+java.
+
+\mbox{\Hypertarget{class_jugador_a4ea2472182548451fce5be41eec23a46}\label{class_jugador_a4ea2472182548451fce5be41eec23a46}} 
+\index{Jugador@{Jugador}!n\+Humanets@{n\+Humanets}}
+\index{n\+Humanets@{n\+Humanets}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{n\+Humanets}{nHumanets}}
+{\footnotesize\ttfamily int Jugador.\+n\+Humanets\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Nombre d\textquotesingle{}humanets del \mbox{\hyperlink{class_jugador}{Jugador}}. 
+
+
+
+Definició a la línia 18 del fitxer Jugador.\+java.
+
+\mbox{\Hypertarget{class_jugador_a08c2ed45358b666b8c41f93f86fc30ad}\label{class_jugador_a08c2ed45358b666b8c41f93f86fc30ad}} 
+\index{Jugador@{Jugador}!puntuacio@{puntuacio}}
+\index{puntuacio@{puntuacio}!Jugador@{Jugador}}
+\subsubsection{\texorpdfstring{puntuacio}{puntuacio}}
+{\footnotesize\ttfamily int Jugador.\+puntuacio =0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Punts totals del \mbox{\hyperlink{class_jugador}{Jugador}}. 
+
+
+
+Definició a la línia 22 del fitxer Jugador.\+java.
+
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+carcassonne/src/\mbox{\hyperlink{_jugador_8java}{Jugador.\+java}}\end{DoxyCompactItemize}

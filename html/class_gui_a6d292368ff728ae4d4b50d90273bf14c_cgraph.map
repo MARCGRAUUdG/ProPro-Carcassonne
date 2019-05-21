@@ -1,0 +1,11 @@
+<map id="Gui.MostraBaralla" name="Gui.MostraBaralla">
+<area shape="rect" id="node2" href="$class_gui.html#a08cce94ed9a31122dadba010c4ebcb1c" title="Gui.getImage" alt="" coords="360,31,459,57"/>
+<area shape="rect" id="node4" href="$class_fitxa.html#af6e05ee97e95b46e754d73d4e6fd8d8c" title="Fitxa.formatNormal" alt="" coords="180,132,312,159"/>
+<area shape="rect" id="node3" href="$class_gui.html#a536efde44f03608985f04155cfb829e4" title="Gui.print" alt="" coords="537,5,607,32"/>
+<area shape="rect" id="node5" href="$class_posicio.html#ad41dbf5580623be4bfa053825900c9e9" title="Posicio.getRotacio" alt="" coords="507,259,637,285"/>
+<area shape="rect" id="node6" href="$class_fitxa.html#adeca1a2543f1ed0dbc74e7cc90169a35" title="Fitxa.rotar" alt="" coords="369,132,450,159"/>
+<area shape="rect" id="node7" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="523,157,621,184"/>
+<area shape="rect" id="node8" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="523,208,621,235"/>
+<area shape="rect" id="node9" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="523,56,621,83"/>
+<area shape="rect" id="node10" href="$class_posicio.html#a74e21bbf58a371bbd77a6a9d98953de3" title="Posicio.setRotacio" alt="" coords="507,107,637,133"/>
+</map>

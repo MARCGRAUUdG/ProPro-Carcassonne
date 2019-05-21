@@ -1,0 +1,177 @@
+\hypertarget{class_cami}{}\section{Referència de la Classe Cami}
+\label{class_cami}\index{Cami@{Cami}}
+
+
+Subtipus de possessio format per fitxes que tenen regions que són C.  
+
+
+
+
+Diagrama d\textquotesingle{}Herència per a Cami\+:
+% FIG 0
+
+
+Diagrama de col·laboració per a Cami\+:
+% FIG 1
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cami_a212b05de3f803472fb27fd121c2fa674}{Cami}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} inici, List$<$ Character $>$ r)
+\item 
+boolean \mbox{\hyperlink{class_cami_a52921b82d752559596aab860d75e6077}{tancat}} ()
+\item 
+void \mbox{\hyperlink{class_cami_abbc38e23b41d673e78f8f9e9fef0890b}{afegir\+\_\+fitxa}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f, List$<$ Character $>$ r)
+\item 
+char \mbox{\hyperlink{class_cami_a223743f7fcdcf421994ce0267e95f98e}{tipus}} ()
+\item 
+List$<$ Integer $>$ \mbox{\hyperlink{class_cami_aae88bb5689726211e87747aeeb6abad0}{propietari}} ()
+\item 
+int \mbox{\hyperlink{class_cami_a8d0a4b74b03239864c2d55217c99ed20}{punts}} ()
+\end{DoxyCompactItemize}
+\subsection*{Mètodes Privats}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_cami_a768f6b93fa51199b1db2806157816685}{afegir\+\_\+propietari}} (List$<$ Integer $>$ p, \mbox{\hyperlink{class_fitxa}{Fitxa}} f, char regio)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+Subtipus de possessio format per fitxes que tenen regions que són C. 
+
+Definició a la línia 11 del fitxer Cami.\+java.
+
+
+
+\subsection{Documentació del Constructor i el Destructor}
+\mbox{\Hypertarget{class_cami_a212b05de3f803472fb27fd121c2fa674}\label{class_cami_a212b05de3f803472fb27fd121c2fa674}} 
+\index{Cami@{Cami}!Cami@{Cami}}
+\index{Cami@{Cami}!Cami@{Cami}}
+\subsubsection{\texorpdfstring{Cami()}{Cami()}}
+{\footnotesize\ttfamily Cami.\+Cami (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{inici,  }\item[{List$<$ Character $>$}]{r }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+crea una possessio de tipus cami amb fitxa inici i regions r 
+\end{DoxyPostcond}
+
+
+Definició a la línia 15 del fitxer Cami.\+java.
+
+
+
+\subsection{Documentació de les Funcions Membre}
+\mbox{\Hypertarget{class_cami_abbc38e23b41d673e78f8f9e9fef0890b}\label{class_cami_abbc38e23b41d673e78f8f9e9fef0890b}} 
+\index{Cami@{Cami}!afegir\+\_\+fitxa@{afegir\+\_\+fitxa}}
+\index{afegir\+\_\+fitxa@{afegir\+\_\+fitxa}!Cami@{Cami}}
+\subsubsection{\texorpdfstring{afegir\+\_\+fitxa()}{afegir\_fitxa()}}
+{\footnotesize\ttfamily void Cami.\+afegir\+\_\+fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{List$<$ Character $>$}]{r }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+guarda una nova fitxa f amb les regions r 
+\end{DoxyPostcond}
+
+
+Definició a la línia 35 del fitxer Cami.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 2
+\mbox{\Hypertarget{class_cami_a768f6b93fa51199b1db2806157816685}\label{class_cami_a768f6b93fa51199b1db2806157816685}} 
+\index{Cami@{Cami}!afegir\+\_\+propietari@{afegir\+\_\+propietari}}
+\index{afegir\+\_\+propietari@{afegir\+\_\+propietari}!Cami@{Cami}}
+\subsubsection{\texorpdfstring{afegir\+\_\+propietari()}{afegir\_propietari()}}
+{\footnotesize\ttfamily void Cami.\+afegir\+\_\+propietari (\begin{DoxyParamCaption}\item[{List$<$ Integer $>$}]{p,  }\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{char}]{regio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+pos $<$ get\+Conjunt.\+size(), regio = C o N o E o S o O 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+propietari de la fitxa que esta a la regio r afegit a la llista p 
+\end{DoxyPostcond}
+
+
+Definició a la línia 55 del fitxer Cami.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 3
+Gràfic de crides a aquesta funció\+:
+% FIG 4
+\mbox{\Hypertarget{class_cami_aae88bb5689726211e87747aeeb6abad0}\label{class_cami_aae88bb5689726211e87747aeeb6abad0}} 
+\index{Cami@{Cami}!propietari@{propietari}}
+\index{propietari@{propietari}!Cami@{Cami}}
+\subsubsection{\texorpdfstring{propietari()}{propietari()}}
+{\footnotesize\ttfamily List$<$Integer$>$ Cami.\+propietari (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el/s propietari/s del cami altrament llista buida 
+\end{DoxyPostcond}
+
+
+Definició a la línia 76 del fitxer Cami.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 5
+\mbox{\Hypertarget{class_cami_a8d0a4b74b03239864c2d55217c99ed20}\label{class_cami_a8d0a4b74b03239864c2d55217c99ed20}} 
+\index{Cami@{Cami}!punts@{punts}}
+\index{punts@{punts}!Cami@{Cami}}
+\subsubsection{\texorpdfstring{punts()}{punts()}}
+{\footnotesize\ttfamily int Cami.\+punts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna punts total del cami 
+\end{DoxyPostcond}
+
+
+Definició a la línia 125 del fitxer Cami.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 6
+\mbox{\Hypertarget{class_cami_a52921b82d752559596aab860d75e6077}\label{class_cami_a52921b82d752559596aab860d75e6077}} 
+\index{Cami@{Cami}!tancat@{tancat}}
+\index{tancat@{tancat}!Cami@{Cami}}
+\subsubsection{\texorpdfstring{tancat()}{tancat()}}
+{\footnotesize\ttfamily boolean Cami.\+tancat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna cert si el cmi esta completa altrament false 
+\end{DoxyPostcond}
+
+
+Definició a la línia 22 del fitxer Cami.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 7
+\mbox{\Hypertarget{class_cami_a223743f7fcdcf421994ce0267e95f98e}\label{class_cami_a223743f7fcdcf421994ce0267e95f98e}} 
+\index{Cami@{Cami}!tipus@{tipus}}
+\index{tipus@{tipus}!Cami@{Cami}}
+\subsubsection{\texorpdfstring{tipus()}{tipus()}}
+{\footnotesize\ttfamily char Cami.\+tipus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el tipus de possessio que és 
+\end{DoxyPostcond}
+
+
+Definició a la línia 49 del fitxer Cami.\+java.
+
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+carcassonne/src/\mbox{\hyperlink{_cami_8java}{Cami.\+java}}\end{DoxyCompactItemize}

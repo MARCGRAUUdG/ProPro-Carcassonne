@@ -1,0 +1,10 @@
+<map id="Fitxa.setPosicio" name="Fitxa.setPosicio">
+<area shape="rect" id="node2" href="$class_controlable.html#a2b6a322638a64197501904a8a8e8fac3" title="Controlable.posaFitxa" alt="" coords="169,5,317,32"/>
+<area shape="rect" id="node3" href="$class_joc.html#ab6a95f4790ad123e0fa5700cc984973e" title="Joc.posaFitxaInicial" alt="" coords="175,56,311,83"/>
+<area shape="rect" id="node9" href="$class_maquina.html#a2e26c9f440fdf09879e0c8434dd02e35" title="Maquina.posaFitxa" alt="" coords="177,107,309,133"/>
+<area shape="rect" id="node4" href="$class_joc.html#ac38319889956e19c22ffd289ebd39824" title="Joc.IniciJoc" alt="" coords="365,56,455,83"/>
+<area shape="rect" id="node5" href="$class_joc.html#aa164cac0c602f63ff7e8860db7d06649" title="Joc.repNomFitxer" alt="" coords="503,56,627,83"/>
+<area shape="rect" id="node6" href="$class_gui.html#a6bc8d9bda8f813b8d6c303ae798646b5" title="Gui.llegeigNomDelFitxer" alt="" coords="675,56,837,83"/>
+<area shape="rect" id="node7" href="$class_gui.html#a9213a84890405b2cd77441b7f0654318" title="Gui.setupMainTop" alt="" coords="885,56,1012,83"/>
+<area shape="rect" id="node8" href="$class_gui.html#a7997885cf723f790c4ec5b2328407023" title="Gui.start" alt="" coords="1060,56,1132,83"/>
+</map>

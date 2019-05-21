@@ -1,0 +1,627 @@
+\hypertarget{class_tauler}{}\section{Referència de la Classe Tauler}
+\label{class_tauler}\index{Tauler@{Tauler}}
+
+
+Administració d\textquotesingle{}un \mbox{\hyperlink{class_tauler}{Tauler}} estatic de 10x10, amb gestio de les seves Fitxa/es i de les Possession/s.  
+
+
+
+
+Diagrama de col·laboració per a Tauler\+:
+% FIG 0
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ \mbox{\hyperlink{class_posicio}{Posicio}} $>$ \mbox{\hyperlink{class_tauler_af4c6190c83c0a48f83b08f8892fd3413}{get\+Pos\+Disponibles}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f)
+\item 
+void \mbox{\hyperlink{class_tauler_aa06ab791d1dc23451170b09f1aa4626c}{posar\+Fitxa\+Tauler}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f)
+\item 
+void \mbox{\hyperlink{class_tauler_ad52694ab07b38f083c68d119701a72c8}{treure\+Fitxa\+Tauler}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f)
+\item 
+void \mbox{\hyperlink{class_tauler_acf7a86eabba38a184bb227e41d1ec447}{remove\+Double}} (Array\+List$<$ \mbox{\hyperlink{class_posicio}{Posicio}} $>$ alp)
+\item 
+Pair$<$ Character, Integer $>$ \mbox{\hyperlink{class_tauler_a0a7e35375e0863e69cbb531232fcc3ce}{simular\+Punts}} (\mbox{\hyperlink{class_posicio}{Posicio}} posicio, \mbox{\hyperlink{class_fitxa}{Fitxa}} fitxa\+Actual, int n\+Humanets)
+\item 
+Array\+List$<$ Character $>$ \mbox{\hyperlink{class_tauler_a936880dfa43da6f75cdad1edd82495c2}{on\+Es\+Pot\+Ficar\+Seguidor}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f)
+\item 
+void \mbox{\hyperlink{class_tauler_aad088ac51b768b7c12b9a9862207f3fb}{assigna\+Punts\+A\+Possessions\+Sense\+Tancar}} ()
+\end{DoxyCompactItemize}
+\subsection*{Mètodes Públics Estàtics}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_tauler_af5a38a09a2f0cfb5f87519f0ec327552}{n\+Fitxes\+Al\+Voltant\+De\+Pos}} (int x, int y)
+\item 
+static \mbox{\hyperlink{class_fitxa}{Fitxa}} \mbox{\hyperlink{class_tauler_aaed75eb94f6022165789d1941aac603c}{get\+Fitxa}} (int x, int y)
+\end{DoxyCompactItemize}
+\subsection*{Mètodes Privats}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ \mbox{\hyperlink{class_posicio}{Posicio}} $>$ \mbox{\hyperlink{class_tauler_a80439ab819e497bca329ee0ac1b0f298}{busca\+Colocacio\+Fitxes}} (int x, int y, \mbox{\hyperlink{class_fitxa}{Fitxa}} f, Array\+List$<$ \mbox{\hyperlink{class_posicio}{Posicio}} $>$ posicions\+Visitades)
+\item 
+void \mbox{\hyperlink{class_tauler_ab373a984846631d85aaab3bee1da1781}{afegeix\+Posicio\+Si\+Encaixa\+Fitxa}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f, int x, int y, Array\+List$<$ \mbox{\hyperlink{class_posicio}{Posicio}} $>$ p)
+\item 
+void \mbox{\hyperlink{class_tauler_af7c318026f6fb05db78e0b1ed2e8d3b6}{assignar\+Possessio}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f)
+\item 
+void \mbox{\hyperlink{class_tauler_acc18f6c54b9a7c0748a20a2090c76252}{unir\+Possessions\+Si\+Cal}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f, Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ p)
+\item 
+Array\+List$<$ Integer $>$ \mbox{\hyperlink{class_tauler_a6281d6d8601653fa74119e9eac3103a2}{on\+Esta\+La\+Fitxa\+En\+Possessions}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f, Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ p)
+\item 
+void \mbox{\hyperlink{class_tauler_a24ec7ef9cbe3edc9d0dbb67d4e87245b}{comprova\+Possessions\+Tancades}} (Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ p)
+\item 
+void \mbox{\hyperlink{class_tauler_ac33b81e0bbd22c04fa99fdc47e72f79e}{posa\+Fitxa\+A\+Possessio\+Si\+No\+Esta\+Posat}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f, Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ p, char lletra)
+\item 
+void \mbox{\hyperlink{class_tauler_a56f985c8ada16eecb5aca521ced42612}{afegir\+Possessio}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f\+Anterior, \mbox{\hyperlink{class_fitxa}{Fitxa}} f\+Nova, char reg, char loc)
+\item 
+List$<$ Character $>$ \mbox{\hyperlink{class_tauler_af80e16c20bca52f2717be44a6242193e}{get\+Posicions\+De\+Possessio}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f, char reg, char loc)
+\item 
+int \mbox{\hyperlink{class_tauler_aa60647e3555961f2796381dab7c7f2f7}{get\+Possessio\+De\+Fitxa}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f, Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ possessio, char loc)
+\item 
+int \mbox{\hyperlink{class_tauler_a39fe2ad5d190905b65b8d86440062ce6}{get\+Punts}} (char regio, \mbox{\hyperlink{class_fitxa}{Fitxa}} fitxa, \mbox{\hyperlink{class_fitxa}{Fitxa}} fitxa\+Actual, char loc, String accio, int n\+Humanets)
+\item 
+int \mbox{\hyperlink{class_tauler_a6e0887ae8dedc793bace05d8b75dfd98}{get\+Punts\+Regio}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} fitxa, \mbox{\hyperlink{class_fitxa}{Fitxa}} fitxa\+Actual, Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ llista\+Pos, char loc, char regio, String accio, int n\+Humanets)
+\item 
+void \mbox{\hyperlink{class_tauler_a4ee1a514621dca60a453851021c4d91b}{elimina\+Posicions\+Incompatibles}} (Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ possessio, int i, char e, \mbox{\hyperlink{class_fitxa}{Fitxa}} f, Array\+List$<$ Character $>$ loc)
+\item 
+Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ \mbox{\hyperlink{class_tauler_afcb2ec44c6e489651e68990a1e65cb49}{get\+Llista\+Tipus\+De\+Possessio}} (char reg)
+\item 
+\mbox{\hyperlink{class_possessio}{Possessio}} \mbox{\hyperlink{class_tauler_a0595f3ec2a8c32c07fb862a9e723eb99}{get\+Tipus\+De\+Possessio}} (char reg, int i)
+\item 
+void \mbox{\hyperlink{class_tauler_aa117114485dce6998f2023a6cc178a28}{reparteix\+Punts\+De\+Possessio}} (Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ p)
+\end{DoxyCompactItemize}
+\subsection*{Atributs Privats Estàtics}
+\begin{DoxyCompactItemize}
+\item 
+static final \mbox{\hyperlink{class_fitxa}{Fitxa}} \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_tauler_a3972f60c667bd7f84968b078795bf3cb}{\+\_\+tauler}} = new \mbox{\hyperlink{class_fitxa}{Fitxa}}\mbox{[}10\mbox{]}\mbox{[}10\mbox{]}
+\begin{DoxyCompactList}\small\item\em Taula de fitxes que es en si el tauler de Fitxa/es. \end{DoxyCompactList}\item 
+static Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ \mbox{\hyperlink{class_tauler_acec61a0661595f4b04a2ea653573b830}{\+\_\+pos\+Cami}} = new Array\+List$<$$>$()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_possessio}{Possessio}} de \mbox{\hyperlink{class_cami}{Cami}}. \end{DoxyCompactList}\item 
+static Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ \mbox{\hyperlink{class_tauler_aabba1a73c429cd83aede59f3f5a19b96}{\+\_\+pos\+Camp}} = new Array\+List$<$$>$()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_possessio}{Possessio}} de \mbox{\hyperlink{class_camp}{Camp}}. \end{DoxyCompactList}\item 
+static Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ \mbox{\hyperlink{class_tauler_ad72c3f886d285bbd4c73afa2e4e4bd46}{\+\_\+pos\+Esglesia}} = new Array\+List$<$$>$()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_possessio}{Possessio}} d\textquotesingle{}\mbox{\hyperlink{class_esglesia}{Esglesia}}. \end{DoxyCompactList}\item 
+static Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$ \mbox{\hyperlink{class_tauler_ac1c8bd3eed1b45e5c839697b5a64a169}{\+\_\+pos\+Ciutat}} = new Array\+List$<$$>$()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_possessio}{Possessio}} de \mbox{\hyperlink{class_ciutat}{Ciutat}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+Administració d\textquotesingle{}un \mbox{\hyperlink{class_tauler}{Tauler}} estatic de 10x10, amb gestio de les seves Fitxa/es i de les Possession/s. 
+
+Definició a la línia 8 del fitxer Tauler.\+java.
+
+
+
+\subsection{Documentació de les Funcions Membre}
+\mbox{\Hypertarget{class_tauler_ab373a984846631d85aaab3bee1da1781}\label{class_tauler_ab373a984846631d85aaab3bee1da1781}} 
+\index{Tauler@{Tauler}!afegeix\+Posicio\+Si\+Encaixa\+Fitxa@{afegeix\+Posicio\+Si\+Encaixa\+Fitxa}}
+\index{afegeix\+Posicio\+Si\+Encaixa\+Fitxa@{afegeix\+Posicio\+Si\+Encaixa\+Fitxa}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{afegeix\+Posicio\+Si\+Encaixa\+Fitxa()}{afegeixPosicioSiEncaixaFitxa()}}
+{\footnotesize\ttfamily void Tauler.\+afegeix\+Posicio\+Si\+Encaixa\+Fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{Array\+List$<$ \mbox{\hyperlink{class_posicio}{Posicio}} $>$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+9$<$=x$>$=0 \&\& 9$<$=y$>$=0, f inicialitzada 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Si encaixa la fitxa f amb la posicio x, y en qualsevol rotacio afageix les posicions (considerant cada rotacio) a la llista p 
+\end{DoxyPostcond}
+
+
+Definició a la línia 67 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 1
+Gràfic de crides a aquesta funció\+:
+% FIG 2
+\mbox{\Hypertarget{class_tauler_a56f985c8ada16eecb5aca521ced42612}\label{class_tauler_a56f985c8ada16eecb5aca521ced42612}} 
+\index{Tauler@{Tauler}!afegir\+Possessio@{afegir\+Possessio}}
+\index{afegir\+Possessio@{afegir\+Possessio}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{afegir\+Possessio()}{afegirPossessio()}}
+{\footnotesize\ttfamily void Tauler.\+afegir\+Possessio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f\+Anterior,  }\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f\+Nova,  }\item[{char}]{reg,  }\item[{char}]{loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+f\+Anterior, f\+Nova inicializats amb posicio, reg==(\textquotesingle{}C\textquotesingle{} o \textquotesingle{}F\textquotesingle{} o \textquotesingle{}V\textquotesingle{} o \textquotesingle{}M\textquotesingle{} o \textquotesingle{}E\textquotesingle{}), loc==(\textquotesingle{}C\textquotesingle{} o \textquotesingle{}N\textquotesingle{} o \textquotesingle{}E\textquotesingle{} o \textquotesingle{}S\textquotesingle{} o \textquotesingle{}O\textquotesingle{}) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Afegeix la fitxa f\+Nova a la mateixa possessio que f\+Anterior del tipus reg en la part de regio loc 
+\end{DoxyPostcond}
+
+
+Definició a la línia 292 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 3
+Gràfic de crides a aquesta funció\+:
+% FIG 4
+\mbox{\Hypertarget{class_tauler_aad088ac51b768b7c12b9a9862207f3fb}\label{class_tauler_aad088ac51b768b7c12b9a9862207f3fb}} 
+\index{Tauler@{Tauler}!assigna\+Punts\+A\+Possessions\+Sense\+Tancar@{assigna\+Punts\+A\+Possessions\+Sense\+Tancar}}
+\index{assigna\+Punts\+A\+Possessions\+Sense\+Tancar@{assigna\+Punts\+A\+Possessions\+Sense\+Tancar}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{assigna\+Punts\+A\+Possessions\+Sense\+Tancar()}{assignaPuntsAPossessionsSenseTancar()}}
+{\footnotesize\ttfamily void Tauler.\+assigna\+Punts\+A\+Possessions\+Sense\+Tancar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Reparteix els punts de les possessions sense tancar als jugadors corresponents 
+\end{DoxyPostcond}
+
+
+Definició a la línia 540 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 5
+Gràfic de crides a aquesta funció\+:
+% FIG 6
+\mbox{\Hypertarget{class_tauler_af7c318026f6fb05db78e0b1ed2e8d3b6}\label{class_tauler_af7c318026f6fb05db78e0b1ed2e8d3b6}} 
+\index{Tauler@{Tauler}!assignar\+Possessio@{assignar\+Possessio}}
+\index{assignar\+Possessio@{assignar\+Possessio}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{assignar\+Possessio()}{assignarPossessio()}}
+{\footnotesize\ttfamily void Tauler.\+assignar\+Possessio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+f inicialitzada amb posicio 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Assigna la fitxa f en alguna/es possessio/s de la llista de tipus de possessions si cal 
+\end{DoxyPostcond}
+
+
+Definició a la línia 124 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 7
+Gràfic de crides a aquesta funció\+:
+% FIG 8
+\mbox{\Hypertarget{class_tauler_a80439ab819e497bca329ee0ac1b0f298}\label{class_tauler_a80439ab819e497bca329ee0ac1b0f298}} 
+\index{Tauler@{Tauler}!busca\+Colocacio\+Fitxes@{busca\+Colocacio\+Fitxes}}
+\index{busca\+Colocacio\+Fitxes@{busca\+Colocacio\+Fitxes}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{busca\+Colocacio\+Fitxes()}{buscaColocacioFitxes()}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_posicio}{Posicio}}$>$ Tauler.\+busca\+Colocacio\+Fitxes (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{Array\+List$<$ \mbox{\hyperlink{class_posicio}{Posicio}} $>$}]{posicions\+Visitades }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+Funcio recursiva de \mbox{\hyperlink{class_tauler_af4c6190c83c0a48f83b08f8892fd3413}{get\+Pos\+Disponibles()}}, 9$<$=x$>$=0 \&\& 9$<$=y$>$=0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retorna la llista de posicions on es pot colocar la fitxa 
+\end{DoxyPostcond}
+
+
+Definició a la línia 29 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 9
+Gràfic de crides a aquesta funció\+:
+% FIG 10
+\mbox{\Hypertarget{class_tauler_a24ec7ef9cbe3edc9d0dbb67d4e87245b}\label{class_tauler_a24ec7ef9cbe3edc9d0dbb67d4e87245b}} 
+\index{Tauler@{Tauler}!comprova\+Possessions\+Tancades@{comprova\+Possessions\+Tancades}}
+\index{comprova\+Possessions\+Tancades@{comprova\+Possessions\+Tancades}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{comprova\+Possessions\+Tancades()}{comprovaPossessionsTancades()}}
+{\footnotesize\ttfamily void Tauler.\+comprova\+Possessions\+Tancades (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Si de la llista p hi ha alguna possessio tancada assigna punts als jugadors, retorna els seguidors, i l\textquotesingle{}elimina de la llista 
+\end{DoxyPostcond}
+
+
+Definició a la línia 198 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 11
+Gràfic de crides a aquesta funció\+:
+% FIG 12
+\mbox{\Hypertarget{class_tauler_a4ee1a514621dca60a453851021c4d91b}\label{class_tauler_a4ee1a514621dca60a453851021c4d91b}} 
+\index{Tauler@{Tauler}!elimina\+Posicions\+Incompatibles@{elimina\+Posicions\+Incompatibles}}
+\index{elimina\+Posicions\+Incompatibles@{elimina\+Posicions\+Incompatibles}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{elimina\+Posicions\+Incompatibles()}{eliminaPosicionsIncompatibles()}}
+{\footnotesize\ttfamily void Tauler.\+elimina\+Posicions\+Incompatibles (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$}]{possessio,  }\item[{int}]{i,  }\item[{char}]{e,  }\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{Array\+List$<$ Character $>$}]{loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+f inicialitzada 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Elimina de loc les possibilitats de ficar seguidor en les regions regions de la fitxa f on la possessio.\+get(i) estan ja ocupades per un jugador 
+\end{DoxyPostcond}
+
+
+Definició a la línia 504 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 13
+Gràfic de crides a aquesta funció\+:
+% FIG 14
+\mbox{\Hypertarget{class_tauler_aaed75eb94f6022165789d1941aac603c}\label{class_tauler_aaed75eb94f6022165789d1941aac603c}} 
+\index{Tauler@{Tauler}!get\+Fitxa@{get\+Fitxa}}
+\index{get\+Fitxa@{get\+Fitxa}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{get\+Fitxa()}{getFitxa()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_fitxa}{Fitxa}} Tauler.\+get\+Fitxa (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retorna la fitxa del tauler de posicio x,y, null si no hi ha cap fitxa o esta fora de rang 
+\end{DoxyPostcond}
+
+
+Definició a la línia 355 del fitxer Tauler.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 15
+\mbox{\Hypertarget{class_tauler_afcb2ec44c6e489651e68990a1e65cb49}\label{class_tauler_afcb2ec44c6e489651e68990a1e65cb49}} 
+\index{Tauler@{Tauler}!get\+Llista\+Tipus\+De\+Possessio@{get\+Llista\+Tipus\+De\+Possessio}}
+\index{get\+Llista\+Tipus\+De\+Possessio@{get\+Llista\+Tipus\+De\+Possessio}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{get\+Llista\+Tipus\+De\+Possessio()}{getLlistaTipusDePossessio()}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_possessio}{Possessio}}$>$ Tauler.\+get\+Llista\+Tipus\+De\+Possessio (\begin{DoxyParamCaption}\item[{char}]{reg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+reg==(\textquotesingle{}C\textquotesingle{} o \textquotesingle{}F\textquotesingle{} o \textquotesingle{}V\textquotesingle{} o \textquotesingle{}M\textquotesingle{} o \textquotesingle{}E\textquotesingle{}) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retorna la llista de possesions del tipus reg 
+\end{DoxyPostcond}
+
+
+Definició a la línia 522 del fitxer Tauler.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 16
+\mbox{\Hypertarget{class_tauler_af4c6190c83c0a48f83b08f8892fd3413}\label{class_tauler_af4c6190c83c0a48f83b08f8892fd3413}} 
+\index{Tauler@{Tauler}!get\+Pos\+Disponibles@{get\+Pos\+Disponibles}}
+\index{get\+Pos\+Disponibles@{get\+Pos\+Disponibles}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{get\+Pos\+Disponibles()}{getPosDisponibles()}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_posicio}{Posicio}}$>$ Tauler.\+get\+Pos\+Disponibles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+Hi ha almenys una fitxa al tauler en la posicio inicial (5,5) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retorna llista de les posicions on es pot ficar la fitxa f 
+\end{DoxyPostcond}
+
+
+Definició a la línia 18 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 17
+\mbox{\Hypertarget{class_tauler_af80e16c20bca52f2717be44a6242193e}\label{class_tauler_af80e16c20bca52f2717be44a6242193e}} 
+\index{Tauler@{Tauler}!get\+Posicions\+De\+Possessio@{get\+Posicions\+De\+Possessio}}
+\index{get\+Posicions\+De\+Possessio@{get\+Posicions\+De\+Possessio}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{get\+Posicions\+De\+Possessio()}{getPosicionsDePossessio()}}
+{\footnotesize\ttfamily List$<$Character$>$ Tauler.\+get\+Posicions\+De\+Possessio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{char}]{reg,  }\item[{char}]{loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+f inicializat amb posicio, reg==(\textquotesingle{}C\textquotesingle{} o \textquotesingle{}F\textquotesingle{} o \textquotesingle{}V\textquotesingle{} o \textquotesingle{}M\textquotesingle{} o \textquotesingle{}E\textquotesingle{}), loc==(\textquotesingle{}C\textquotesingle{} o \textquotesingle{}N\textquotesingle{} o \textquotesingle{}E\textquotesingle{} o \textquotesingle{}S\textquotesingle{} o \textquotesingle{}O\textquotesingle{}) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retorna una llista de posicions on la fitxa f es ve afectada per el tipus de possessio reg en la localitat loc 
+\end{DoxyPostcond}
+
+
+Definició a la línia 323 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 18
+Gràfic de crides a aquesta funció\+:
+% FIG 19
+\mbox{\Hypertarget{class_tauler_aa60647e3555961f2796381dab7c7f2f7}\label{class_tauler_aa60647e3555961f2796381dab7c7f2f7}} 
+\index{Tauler@{Tauler}!get\+Possessio\+De\+Fitxa@{get\+Possessio\+De\+Fitxa}}
+\index{get\+Possessio\+De\+Fitxa@{get\+Possessio\+De\+Fitxa}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{get\+Possessio\+De\+Fitxa()}{getPossessioDeFitxa()}}
+{\footnotesize\ttfamily int Tauler.\+get\+Possessio\+De\+Fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$}]{possessio,  }\item[{char}]{loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+f inicialitzat, loc==(\textquotesingle{}C\textquotesingle{} o \textquotesingle{}N\textquotesingle{} o \textquotesingle{}E\textquotesingle{} o \textquotesingle{}S\textquotesingle{} o \textquotesingle{}O\textquotesingle{}) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retorna la posicio de la llista possessio de on es troba la fitxa f, -\/1 si no hi es en la llista 
+\end{DoxyPostcond}
+
+
+Definició a la línia 338 del fitxer Tauler.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 20
+\mbox{\Hypertarget{class_tauler_a39fe2ad5d190905b65b8d86440062ce6}\label{class_tauler_a39fe2ad5d190905b65b8d86440062ce6}} 
+\index{Tauler@{Tauler}!get\+Punts@{get\+Punts}}
+\index{get\+Punts@{get\+Punts}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{get\+Punts()}{getPunts()}}
+{\footnotesize\ttfamily int Tauler.\+get\+Punts (\begin{DoxyParamCaption}\item[{char}]{regio,  }\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{fitxa,  }\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{fitxa\+Actual,  }\item[{char}]{loc,  }\item[{String}]{accio,  }\item[{int}]{n\+Humanets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definició a la línia 422 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 21
+Gràfic de crides a aquesta funció\+:
+% FIG 22
+\mbox{\Hypertarget{class_tauler_a6e0887ae8dedc793bace05d8b75dfd98}\label{class_tauler_a6e0887ae8dedc793bace05d8b75dfd98}} 
+\index{Tauler@{Tauler}!get\+Punts\+Regio@{get\+Punts\+Regio}}
+\index{get\+Punts\+Regio@{get\+Punts\+Regio}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{get\+Punts\+Regio()}{getPuntsRegio()}}
+{\footnotesize\ttfamily int Tauler.\+get\+Punts\+Regio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{fitxa,  }\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{fitxa\+Actual,  }\item[{Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$}]{llista\+Pos,  }\item[{char}]{loc,  }\item[{char}]{regio,  }\item[{String}]{accio,  }\item[{int}]{n\+Humanets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definició a la línia 435 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 23
+Gràfic de crides a aquesta funció\+:
+% FIG 24
+\mbox{\Hypertarget{class_tauler_a0595f3ec2a8c32c07fb862a9e723eb99}\label{class_tauler_a0595f3ec2a8c32c07fb862a9e723eb99}} 
+\index{Tauler@{Tauler}!get\+Tipus\+De\+Possessio@{get\+Tipus\+De\+Possessio}}
+\index{get\+Tipus\+De\+Possessio@{get\+Tipus\+De\+Possessio}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{get\+Tipus\+De\+Possessio()}{getTipusDePossessio()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_possessio}{Possessio}} Tauler.\+get\+Tipus\+De\+Possessio (\begin{DoxyParamCaption}\item[{char}]{reg,  }\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+reg==(\textquotesingle{}C\textquotesingle{} o \textquotesingle{}F\textquotesingle{} o \textquotesingle{}V\textquotesingle{} o \textquotesingle{}M\textquotesingle{} o \textquotesingle{}E\textquotesingle{}) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retorna la possesio del tipus reg 
+\end{DoxyPostcond}
+
+
+Definició a la línia 531 del fitxer Tauler.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 25
+\mbox{\Hypertarget{class_tauler_af5a38a09a2f0cfb5f87519f0ec327552}\label{class_tauler_af5a38a09a2f0cfb5f87519f0ec327552}} 
+\index{Tauler@{Tauler}!n\+Fitxes\+Al\+Voltant\+De\+Pos@{n\+Fitxes\+Al\+Voltant\+De\+Pos}}
+\index{n\+Fitxes\+Al\+Voltant\+De\+Pos@{n\+Fitxes\+Al\+Voltant\+De\+Pos}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{n\+Fitxes\+Al\+Voltant\+De\+Pos()}{nFitxesAlVoltantDePos()}}
+{\footnotesize\ttfamily static int Tauler.\+n\+Fitxes\+Al\+Voltant\+De\+Pos (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definició a la línia 108 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 26
+Gràfic de crides a aquesta funció\+:
+% FIG 27
+\mbox{\Hypertarget{class_tauler_a936880dfa43da6f75cdad1edd82495c2}\label{class_tauler_a936880dfa43da6f75cdad1edd82495c2}} 
+\index{Tauler@{Tauler}!on\+Es\+Pot\+Ficar\+Seguidor@{on\+Es\+Pot\+Ficar\+Seguidor}}
+\index{on\+Es\+Pot\+Ficar\+Seguidor@{on\+Es\+Pot\+Ficar\+Seguidor}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{on\+Es\+Pot\+Ficar\+Seguidor()}{onEsPotFicarSeguidor()}}
+{\footnotesize\ttfamily Array\+List$<$Character$>$ Tauler.\+on\+Es\+Pot\+Ficar\+Seguidor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+f inicialitzada amb posicio 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna una llista de Caracters en les regions on es pot ficar el seguidor 
+\end{DoxyPostcond}
+
+
+Definició a la línia 467 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 28
+Gràfic de crides a aquesta funció\+:
+% FIG 29
+\mbox{\Hypertarget{class_tauler_a6281d6d8601653fa74119e9eac3103a2}\label{class_tauler_a6281d6d8601653fa74119e9eac3103a2}} 
+\index{Tauler@{Tauler}!on\+Esta\+La\+Fitxa\+En\+Possessions@{on\+Esta\+La\+Fitxa\+En\+Possessions}}
+\index{on\+Esta\+La\+Fitxa\+En\+Possessions@{on\+Esta\+La\+Fitxa\+En\+Possessions}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{on\+Esta\+La\+Fitxa\+En\+Possessions()}{onEstaLaFitxaEnPossessions()}}
+{\footnotesize\ttfamily Array\+List$<$Integer$>$ Tauler.\+on\+Esta\+La\+Fitxa\+En\+Possessions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+f inicialitzada 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retorna una llista de posicions de on pertany la fitxa f de la llista de possessions p 
+\end{DoxyPostcond}
+
+
+Definició a la línia 183 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 30
+Gràfic de crides a aquesta funció\+:
+% FIG 31
+\mbox{\Hypertarget{class_tauler_ac33b81e0bbd22c04fa99fdc47e72f79e}\label{class_tauler_ac33b81e0bbd22c04fa99fdc47e72f79e}} 
+\index{Tauler@{Tauler}!posa\+Fitxa\+A\+Possessio\+Si\+No\+Esta\+Posat@{posa\+Fitxa\+A\+Possessio\+Si\+No\+Esta\+Posat}}
+\index{posa\+Fitxa\+A\+Possessio\+Si\+No\+Esta\+Posat@{posa\+Fitxa\+A\+Possessio\+Si\+No\+Esta\+Posat}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{posa\+Fitxa\+A\+Possessio\+Si\+No\+Esta\+Posat()}{posaFitxaAPossessioSiNoEstaPosat()}}
+{\footnotesize\ttfamily void Tauler.\+posa\+Fitxa\+A\+Possessio\+Si\+No\+Esta\+Posat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$}]{p,  }\item[{char}]{lletra }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+lletra==(\textquotesingle{}C\textquotesingle{} o \textquotesingle{}V\textquotesingle{}) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Posa la fitxa f a la possessio p del tipus lletra si no hi es a la llista p 
+\end{DoxyPostcond}
+
+
+Definició a la línia 231 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 32
+Gràfic de crides a aquesta funció\+:
+% FIG 33
+\mbox{\Hypertarget{class_tauler_aa06ab791d1dc23451170b09f1aa4626c}\label{class_tauler_aa06ab791d1dc23451170b09f1aa4626c}} 
+\index{Tauler@{Tauler}!posar\+Fitxa\+Tauler@{posar\+Fitxa\+Tauler}}
+\index{posar\+Fitxa\+Tauler@{posar\+Fitxa\+Tauler}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{posar\+Fitxa\+Tauler()}{posarFitxaTauler()}}
+{\footnotesize\ttfamily void Tauler.\+posar\+Fitxa\+Tauler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+La posicio de f es correcte in la fitxa encaixa 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}ha colocat la fitxa en el tauler 
+\end{DoxyPostcond}
+
+
+Definició a la línia 97 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 34
+Gràfic de crides a aquesta funció\+:
+% FIG 35
+\mbox{\Hypertarget{class_tauler_acf7a86eabba38a184bb227e41d1ec447}\label{class_tauler_acf7a86eabba38a184bb227e41d1ec447}} 
+\index{Tauler@{Tauler}!remove\+Double@{remove\+Double}}
+\index{remove\+Double@{remove\+Double}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{remove\+Double()}{removeDouble()}}
+{\footnotesize\ttfamily void Tauler.\+remove\+Double (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{class_posicio}{Posicio}} $>$}]{alp }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Elimina les posicions repetides de la llista alp 
+\end{DoxyPostcond}
+
+
+Definició a la línia 365 del fitxer Tauler.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 36
+\mbox{\Hypertarget{class_tauler_aa117114485dce6998f2023a6cc178a28}\label{class_tauler_aa117114485dce6998f2023a6cc178a28}} 
+\index{Tauler@{Tauler}!reparteix\+Punts\+De\+Possessio@{reparteix\+Punts\+De\+Possessio}}
+\index{reparteix\+Punts\+De\+Possessio@{reparteix\+Punts\+De\+Possessio}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{reparteix\+Punts\+De\+Possessio()}{reparteixPuntsDePossessio()}}
+{\footnotesize\ttfamily void Tauler.\+reparteix\+Punts\+De\+Possessio (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Reparteix els punts de la llista de possessions p sense tancar als jugadors corresponents 
+\end{DoxyPostcond}
+
+
+Definició a la línia 549 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 37
+Gràfic de crides a aquesta funció\+:
+% FIG 38
+\mbox{\Hypertarget{class_tauler_a0a7e35375e0863e69cbb531232fcc3ce}\label{class_tauler_a0a7e35375e0863e69cbb531232fcc3ce}} 
+\index{Tauler@{Tauler}!simular\+Punts@{simular\+Punts}}
+\index{simular\+Punts@{simular\+Punts}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{simular\+Punts()}{simularPunts()}}
+{\footnotesize\ttfamily Pair$<$Character, Integer$>$ Tauler.\+simular\+Punts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_posicio}{Posicio}}}]{posicio,  }\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{fitxa\+Actual,  }\item[{int}]{n\+Humanets }\end{DoxyParamCaption})}
+
+
+
+Definició a la línia 376 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 39
+Gràfic de crides a aquesta funció\+:
+% FIG 40
+\mbox{\Hypertarget{class_tauler_ad52694ab07b38f083c68d119701a72c8}\label{class_tauler_ad52694ab07b38f083c68d119701a72c8}} 
+\index{Tauler@{Tauler}!treure\+Fitxa\+Tauler@{treure\+Fitxa\+Tauler}}
+\index{treure\+Fitxa\+Tauler@{treure\+Fitxa\+Tauler}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{treure\+Fitxa\+Tauler()}{treureFitxaTauler()}}
+{\footnotesize\ttfamily void Tauler.\+treure\+Fitxa\+Tauler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f }\end{DoxyParamCaption})}
+
+
+
+Definició a la línia 102 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 41
+\mbox{\Hypertarget{class_tauler_acc18f6c54b9a7c0748a20a2090c76252}\label{class_tauler_acc18f6c54b9a7c0748a20a2090c76252}} 
+\index{Tauler@{Tauler}!unir\+Possessions\+Si\+Cal@{unir\+Possessions\+Si\+Cal}}
+\index{unir\+Possessions\+Si\+Cal@{unir\+Possessions\+Si\+Cal}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{unir\+Possessions\+Si\+Cal()}{unirPossessionsSiCal()}}
+{\footnotesize\ttfamily void Tauler.\+unir\+Possessions\+Si\+Cal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{Array\+List$<$ \mbox{\hyperlink{class_possessio}{Possessio}} $>$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+f inicialitzada 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Uneix les possessions si f pertany en mes d\textquotesingle{}una possessio del mateix tipus de la mateixa regio unida 
+\end{DoxyPostcond}
+
+
+Definició a la línia 156 del fitxer Tauler.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 42
+Gràfic de crides a aquesta funció\+:
+% FIG 43
+
+
+\subsection{Documentació de les Dades Membre}
+\mbox{\Hypertarget{class_tauler_acec61a0661595f4b04a2ea653573b830}\label{class_tauler_acec61a0661595f4b04a2ea653573b830}} 
+\index{Tauler@{Tauler}!\+\_\+pos\+Cami@{\+\_\+pos\+Cami}}
+\index{\+\_\+pos\+Cami@{\+\_\+pos\+Cami}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{\+\_\+pos\+Cami}{\_posCami}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_possessio}{Possessio}}$>$ Tauler.\+\_\+pos\+Cami = new Array\+List$<$$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_possessio}{Possessio}} de \mbox{\hyperlink{class_cami}{Cami}}. 
+
+
+
+Definició a la línia 11 del fitxer Tauler.\+java.
+
+\mbox{\Hypertarget{class_tauler_aabba1a73c429cd83aede59f3f5a19b96}\label{class_tauler_aabba1a73c429cd83aede59f3f5a19b96}} 
+\index{Tauler@{Tauler}!\+\_\+pos\+Camp@{\+\_\+pos\+Camp}}
+\index{\+\_\+pos\+Camp@{\+\_\+pos\+Camp}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{\+\_\+pos\+Camp}{\_posCamp}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_possessio}{Possessio}}$>$ Tauler.\+\_\+pos\+Camp = new Array\+List$<$$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_possessio}{Possessio}} de \mbox{\hyperlink{class_camp}{Camp}}. 
+
+
+
+Definició a la línia 12 del fitxer Tauler.\+java.
+
+\mbox{\Hypertarget{class_tauler_ac1c8bd3eed1b45e5c839697b5a64a169}\label{class_tauler_ac1c8bd3eed1b45e5c839697b5a64a169}} 
+\index{Tauler@{Tauler}!\+\_\+pos\+Ciutat@{\+\_\+pos\+Ciutat}}
+\index{\+\_\+pos\+Ciutat@{\+\_\+pos\+Ciutat}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{\+\_\+pos\+Ciutat}{\_posCiutat}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_possessio}{Possessio}}$>$ Tauler.\+\_\+pos\+Ciutat = new Array\+List$<$$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_possessio}{Possessio}} de \mbox{\hyperlink{class_ciutat}{Ciutat}}. 
+
+
+
+Definició a la línia 14 del fitxer Tauler.\+java.
+
+\mbox{\Hypertarget{class_tauler_ad72c3f886d285bbd4c73afa2e4e4bd46}\label{class_tauler_ad72c3f886d285bbd4c73afa2e4e4bd46}} 
+\index{Tauler@{Tauler}!\+\_\+pos\+Esglesia@{\+\_\+pos\+Esglesia}}
+\index{\+\_\+pos\+Esglesia@{\+\_\+pos\+Esglesia}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{\+\_\+pos\+Esglesia}{\_posEsglesia}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_possessio}{Possessio}}$>$ Tauler.\+\_\+pos\+Esglesia = new Array\+List$<$$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_possessio}{Possessio}} d\textquotesingle{}\mbox{\hyperlink{class_esglesia}{Esglesia}}. 
+
+
+
+Definició a la línia 13 del fitxer Tauler.\+java.
+
+\mbox{\Hypertarget{class_tauler_a3972f60c667bd7f84968b078795bf3cb}\label{class_tauler_a3972f60c667bd7f84968b078795bf3cb}} 
+\index{Tauler@{Tauler}!\+\_\+tauler@{\+\_\+tauler}}
+\index{\+\_\+tauler@{\+\_\+tauler}!Tauler@{Tauler}}
+\subsubsection{\texorpdfstring{\+\_\+tauler}{\_tauler}}
+{\footnotesize\ttfamily final \mbox{\hyperlink{class_fitxa}{Fitxa}} \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} Tauler.\+\_\+tauler = new \mbox{\hyperlink{class_fitxa}{Fitxa}}\mbox{[}10\mbox{]}\mbox{[}10\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Taula de fitxes que es en si el tauler de Fitxa/es. 
+
+
+
+Definició a la línia 10 del fitxer Tauler.\+java.
+
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+carcassonne/src/\mbox{\hyperlink{_tauler_8java}{Tauler.\+java}}\end{DoxyCompactItemize}

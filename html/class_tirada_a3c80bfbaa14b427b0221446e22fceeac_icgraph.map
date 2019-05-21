@@ -1,0 +1,7 @@
+<map id="Tirada.apretatOpcionsDeSeguidor" name="Tirada.apretatOpcionsDeSeguidor">
+<area shape="rect" id="node2" href="$class_joc.html#a72eed3f92b818584d664717fbb05d153" title="Joc.apretatPerPosarSeguidor" alt="" coords="269,5,460,32"/>
+<area shape="rect" id="node6" href="$class_tirada.html#a45701d44ba8daf5236f4cf945ce81c34" title="Tirada.gestionarMaquina" alt="" coords="283,56,446,83"/>
+<area shape="rect" id="node3" href="$class_gui.html#a34f713e45c926f57aad018e533da18cb" title="Gui.posaSeleccioDeSeguidors" alt="" coords="727,5,925,32"/>
+<area shape="rect" id="node5" href="$class_gui.html#af2be44020696cbe2bce2ff4b90d94cc1" title="Gui.configuraImgSeguidor" alt="" coords="508,31,679,57"/>
+<area shape="rect" id="node4" href="$class_controlable.html#a2b6a322638a64197501904a8a8e8fac3" title="Controlable.posaFitxa" alt="" coords="973,5,1121,32"/>
+</map>

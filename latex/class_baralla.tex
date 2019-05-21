@@ -1,0 +1,147 @@
+\hypertarget{class_baralla}{}\section{Referència de la Classe Baralla}
+\label{class_baralla}\index{Baralla@{Baralla}}
+
+
+Classe baralla encarregada de la gestió de les \mbox{\hyperlink{class_fitxa}{Fitxa}} /es.  
+
+
+
+
+Diagrama de col·laboració per a Baralla\+:
+% FIG 0
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_fitxa}{Fitxa}} \mbox{\hyperlink{class_baralla_a08558891cafb3b18b3927fe2a4ac109a}{agafar\+Fitxa}} ()
+\item 
+void \mbox{\hyperlink{class_baralla_a997d3f37894226927d02bfc4044378f2}{afegir\+Fitxa}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f)
+\item 
+boolean \mbox{\hyperlink{class_baralla_ac20fe10e5d263fb9630fd1111f4a9848}{es\+Buida}} ()
+\item 
+int \mbox{\hyperlink{class_baralla_a9fa8e63f2507d81cee48f249fbb14d82}{size}} ()
+\item 
+String \mbox{\hyperlink{class_baralla_a8822859a1184ed228be5cd955f7cbb05}{to\+String}} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributs Privats}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_fitxa}{Fitxa}} $>$ \mbox{\hyperlink{class_baralla_a468bd8fbe440f57370538713b5b147fa}{llista\+Fitxes}}
+\begin{DoxyCompactList}\small\item\em Llista de \mbox{\hyperlink{class_fitxa}{Fitxa}} /es. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+Classe baralla encarregada de la gestió de les \mbox{\hyperlink{class_fitxa}{Fitxa}} /es. 
+
+Definició a la línia 9 del fitxer Baralla.\+java.
+
+
+
+\subsection{Documentació de les Funcions Membre}
+\mbox{\Hypertarget{class_baralla_a997d3f37894226927d02bfc4044378f2}\label{class_baralla_a997d3f37894226927d02bfc4044378f2}} 
+\index{Baralla@{Baralla}!afegir\+Fitxa@{afegir\+Fitxa}}
+\index{afegir\+Fitxa@{afegir\+Fitxa}!Baralla@{Baralla}}
+\subsubsection{\texorpdfstring{afegir\+Fitxa()}{afegirFitxa()}}
+{\footnotesize\ttfamily void Baralla.\+afegir\+Fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+f != N\+U\+LL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+s\textquotesingle{}afageix la fitxa f de forma A\+L\+E\+A\+TÒ\+R\+IA 
+\end{DoxyPostcond}
+
+
+Definició a la línia 36 del fitxer Baralla.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 1
+\mbox{\Hypertarget{class_baralla_a08558891cafb3b18b3927fe2a4ac109a}\label{class_baralla_a08558891cafb3b18b3927fe2a4ac109a}} 
+\index{Baralla@{Baralla}!agafar\+Fitxa@{agafar\+Fitxa}}
+\index{agafar\+Fitxa@{agafar\+Fitxa}!Baralla@{Baralla}}
+\subsubsection{\texorpdfstring{agafar\+Fitxa()}{agafarFitxa()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_fitxa}{Fitxa}} Baralla.\+agafar\+Fitxa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+agafa una fitxa de la baralla de fitxes i la retorna 
+\end{DoxyPostcond}
+
+
+Definició a la línia 22 del fitxer Baralla.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 2
+\mbox{\Hypertarget{class_baralla_ac20fe10e5d263fb9630fd1111f4a9848}\label{class_baralla_ac20fe10e5d263fb9630fd1111f4a9848}} 
+\index{Baralla@{Baralla}!es\+Buida@{es\+Buida}}
+\index{es\+Buida@{es\+Buida}!Baralla@{Baralla}}
+\subsubsection{\texorpdfstring{es\+Buida()}{esBuida()}}
+{\footnotesize\ttfamily boolean Baralla.\+es\+Buida (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna si la baralla s\textquotesingle{}ha quedat sense fitxes 
+\end{DoxyPostcond}
+
+
+Definició a la línia 43 del fitxer Baralla.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 3
+\mbox{\Hypertarget{class_baralla_a9fa8e63f2507d81cee48f249fbb14d82}\label{class_baralla_a9fa8e63f2507d81cee48f249fbb14d82}} 
+\index{Baralla@{Baralla}!size@{size}}
+\index{size@{size}!Baralla@{Baralla}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int Baralla.\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna la quantitat de \mbox{\hyperlink{class_fitxa}{Fitxa}} /es que hi ha a la \mbox{\hyperlink{class_baralla}{Baralla}} 
+\end{DoxyPostcond}
+
+
+Definició a la línia 50 del fitxer Baralla.\+java.
+
+\mbox{\Hypertarget{class_baralla_a8822859a1184ed228be5cd955f7cbb05}\label{class_baralla_a8822859a1184ed228be5cd955f7cbb05}} 
+\index{Baralla@{Baralla}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Baralla@{Baralla}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String Baralla.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna la llista de fitxes de la \mbox{\hyperlink{class_baralla}{Baralla}} 
+\end{DoxyPostcond}
+
+
+Definició a la línia 57 del fitxer Baralla.\+java.
+
+
+
+\subsection{Documentació de les Dades Membre}
+\mbox{\Hypertarget{class_baralla_a468bd8fbe440f57370538713b5b147fa}\label{class_baralla_a468bd8fbe440f57370538713b5b147fa}} 
+\index{Baralla@{Baralla}!llista\+Fitxes@{llista\+Fitxes}}
+\index{llista\+Fitxes@{llista\+Fitxes}!Baralla@{Baralla}}
+\subsubsection{\texorpdfstring{llista\+Fitxes}{llistaFitxes}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_fitxa}{Fitxa}}$>$ Baralla.\+llista\+Fitxes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Llista de \mbox{\hyperlink{class_fitxa}{Fitxa}} /es. 
+
+
+
+Definició a la línia 11 del fitxer Baralla.\+java.
+
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+carcassonne/src/\mbox{\hyperlink{_baralla_8java}{Baralla.\+java}}\end{DoxyCompactItemize}

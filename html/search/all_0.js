@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['_5fbaralla',['_baralla',['../class_joc.html#a9d7c9ceefbdca067a0d82fa5f6806aaa',1,'Joc']]],
+  ['_5fcamperols',['_camperols',['../class_llegir_fitxer.html#a1f155a3c0d9f6df5866f37e2f6e0dd9f',1,'LlegirFitxer']]],
+  ['_5ffinicial',['_fInicial',['../class_joc.html#a9118adfa2c6c65ce5b759ed914801950',1,'Joc']]],
+  ['_5ffitxer',['_fitxer',['../class_joc.html#af07590c09ae2ebda3bf6ca1a4171063b',1,'Joc']]],
+  ['_5finicial',['_inicial',['../class_llegir_fitxer.html#a6e734852134240534b6fd54eb263eaf5',1,'LlegirFitxer']]],
+  ['_5fjugadoractual',['_jugadorActual',['../class_joc.html#a58dad008aa898ed0af6827ef7da50083',1,'Joc']]],
+  ['_5fjugadors',['_jugadors',['../class_joc.html#a30a9ea3f0be1aee222a22fede9130cb8',1,'Joc._jugadors()'],['../class_llegir_fitxer.html#a8009ba77511b60a636adb738cddef7b4',1,'LlegirFitxer._jugadors()']]],
+  ['_5fnjugadors',['_nJugadors',['../class_llegir_fitxer.html#a1095570f847e8cd810965ef23cb9d8c7',1,'LlegirFitxer']]],
+  ['_5fposcami',['_posCami',['../class_tauler.html#acec61a0661595f4b04a2ea653573b830',1,'Tauler']]],
+  ['_5fposcamp',['_posCamp',['../class_tauler.html#aabba1a73c429cd83aede59f3f5a19b96',1,'Tauler']]],
+  ['_5fposciutat',['_posCiutat',['../class_tauler.html#ac1c8bd3eed1b45e5c839697b5a64a169',1,'Tauler']]],
+  ['_5fposesglesia',['_posEsglesia',['../class_tauler.html#ad72c3f886d285bbd4c73afa2e4e4bd46',1,'Tauler']]],
+  ['_5frotacio',['_rotacio',['../class_posicio.html#afd8482e5bb3de8a1ad2da5143f81b3a5',1,'Posicio']]],
+  ['_5ftauler',['_tauler',['../class_joc.html#a0e45f68f18198669176e3f46b05a41ac',1,'Joc._tauler()'],['../class_tauler.html#a3972f60c667bd7f84968b078795bf3cb',1,'Tauler._tauler()']]],
+  ['_5ftiradaactual',['_tiradaActual',['../class_joc.html#a6713774e2d5d01daaef695af3cb55474',1,'Joc']]],
+  ['_5fx',['_x',['../class_posicio.html#ad4630c3ac54fee2bb3f16e8199be8dda',1,'Posicio']]],
+  ['_5fy',['_y',['../class_posicio.html#a95c50cf40b0f7c5570a516d058122543',1,'Posicio']]]
+];

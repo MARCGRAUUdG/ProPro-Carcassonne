@@ -1,0 +1,5 @@
+<map id="Jerarquia Gràfica de la Classe" name="Jerarquia Gràfica de la Classe">
+<area shape="rect" id="node2" href="$class_excepcio.html" title="Descripcio de la clase... " alt="" coords="133,31,209,57"/>
+<area shape="rect" id="node3" href="$class_fitxa.html" title="Fitxa que té regions i que forma part de la baralla. " alt="" coords="259,5,310,32"/>
+<area shape="rect" id="node4" href="$class_regio.html" title="Regio" alt="" coords="257,56,312,83"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="Jugador.posaFitxa" name="Jugador.posaFitxa">
+<area shape="rect" id="node2" href="$class_tirada.html#a45701d44ba8daf5236f4cf945ce81c34" title="Tirada.gestionarMaquina" alt="" coords="181,5,344,32"/>
+<area shape="rect" id="node3" href="$class_tirada.html#adb40561c69d716539ea380f64872eb7b" title="Tirada.apretatOpcionsDeFitxa" alt="" coords="831,85,1025,112"/>
+<area shape="rect" id="node7" href="$class_tirada.html#aa56dab05d4638ad1a340f42cd514d362" title="Tirada.apretatAngleFitxa" alt="" coords="181,111,344,137"/>
+<area shape="rect" id="node4" href="$class_joc.html#a90b306ce9d339455a5f6e5d2decf90f1" title="Joc.apretatPerPosarFitxa" alt="" coords="1073,85,1243,112"/>
+<area shape="rect" id="node5" href="$class_gui.html#ac731f68776f8bdaf1637d5a448be4b48" title="Gui.posaQuadreVerd" alt="" coords="1291,85,1433,112"/>
+<area shape="rect" id="node6" href="$class_gui.html#ad47e710172d53afbd0dfdd410a1c8126" title="Gui.posaQuadresVerds" alt="" coords="1481,85,1639,112"/>
+<area shape="rect" id="node8" href="$class_joc.html#a1a732f8c5fe455e04c76f38259eb00ba" title="Joc.apretatAngleFitxa" alt="" coords="392,113,540,140"/>
+<area shape="rect" id="node9" href="$class_gui.html#a14de8e45496b14e62ca59676d0aae3fe" title="Gui.mostraOpcionsDeRotacio\lEnFitxa" alt="" coords="588,107,783,149"/>
+</map>

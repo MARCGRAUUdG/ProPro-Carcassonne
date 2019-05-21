@@ -1,0 +1,296 @@
+\hypertarget{class_possessio}{}\section{Referència de la Classe Possessio}
+\label{class_possessio}\index{Possessio@{Possessio}}
+
+
+\mbox{\hyperlink{class_possessio}{Possessio}} que té un jugador en el tauler.  
+
+
+
+
+Diagrama d\textquotesingle{}Herència per a Possessio\+:
+% FIG 0
+
+
+Diagrama de col·laboració per a Possessio\+:
+% FIG 1
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+abstract boolean \mbox{\hyperlink{class_possessio_aaf57a4c4c4eb208a7a636c94182023f2}{tancat}} ()
+\begin{DoxyCompactList}\small\item\em Llista de fitxes amb les regions corresponents de la possessio. \end{DoxyCompactList}\item 
+abstract int \mbox{\hyperlink{class_possessio_a8b774652b07b0b5eae3252cf0d7baba1}{punts}} ()
+\item 
+abstract char \mbox{\hyperlink{class_possessio_a3fa7231e1183f1be2882d4977c6a74a7}{tipus}} ()
+\item 
+abstract List$<$ Integer $>$ \mbox{\hyperlink{class_possessio_a514ceb05b8016e230eddbc7e3e43b325}{propietari}} ()
+\item 
+\mbox{\hyperlink{class_possessio_a192dc7a5276bc2d8f18b80c0061a5fe6}{Possessio}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} inici, List$<$ Character $>$ r)
+\item 
+void \mbox{\hyperlink{class_possessio_ac733be14dd5608eef86b00a5bce3a13f}{unir\+\_\+possessions}} (\mbox{\hyperlink{class_possessio}{Possessio}} aux)
+\item 
+boolean \mbox{\hyperlink{class_possessio_a54bf2ddd9e6e2495b43d507df3902c17}{pertany\+La\+Fitxa}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f, Character r)
+\item 
+void \mbox{\hyperlink{class_possessio_a2d34d7e8539eeface62f627f568ee37d}{eliminar\+\_\+fitxa}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f, Character r)
+\item 
+void \mbox{\hyperlink{class_possessio_af662b46bc78afc70a7f874693d518612}{afegir\+\_\+fitxa}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f, List$<$ Character $>$ r)
+\item 
+void \mbox{\hyperlink{class_possessio_a2908495ca9acf15fb6c789e753a0eec8}{eliminar\+\_\+fitxa}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} f, List$<$ Character $>$ r)
+\item 
+List$<$ Integer $>$ \mbox{\hyperlink{class_possessio_a9173269f71b9ac357c33e571f04c84c6}{llista\+Propietari}} (List$<$ Integer $>$ \mbox{\hyperlink{class_possessio_a514ceb05b8016e230eddbc7e3e43b325}{propietari}})
+\item 
+List$<$ Pair$<$ \mbox{\hyperlink{class_fitxa}{Fitxa}}, List$<$ Character $>$ $>$ $>$ \mbox{\hyperlink{class_possessio_a2e484840944b6f2c5a1fbe7219d39b9c}{get\+Conjunt}} ()
+\item 
+String \mbox{\hyperlink{class_possessio_a7e75c5f8c1bfa87d1f22049f1109f855}{to\+String}} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributs Privats}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Pair$<$ \mbox{\hyperlink{class_fitxa}{Fitxa}}, List$<$ Character $>$ $>$ $>$ \mbox{\hyperlink{class_possessio_a4af748d6da87a5f1b68dbff47d84c4a3}{conjunt}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+\mbox{\hyperlink{class_possessio}{Possessio}} que té un jugador en el tauler. 
+
+Definició a la línia 10 del fitxer Possessio.\+java.
+
+
+
+\subsection{Documentació del Constructor i el Destructor}
+\mbox{\Hypertarget{class_possessio_a192dc7a5276bc2d8f18b80c0061a5fe6}\label{class_possessio_a192dc7a5276bc2d8f18b80c0061a5fe6}} 
+\index{Possessio@{Possessio}!Possessio@{Possessio}}
+\index{Possessio@{Possessio}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{Possessio()}{Possessio()}}
+{\footnotesize\ttfamily Possessio.\+Possessio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{inici,  }\item[{List$<$ Character $>$}]{r }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+guardar fitxa inici i regions r 
+\end{DoxyPostcond}
+
+
+Definició a la línia 31 del fitxer Possessio.\+java.
+
+
+
+\subsection{Documentació de les Funcions Membre}
+\mbox{\Hypertarget{class_possessio_af662b46bc78afc70a7f874693d518612}\label{class_possessio_af662b46bc78afc70a7f874693d518612}} 
+\index{Possessio@{Possessio}!afegir\+\_\+fitxa@{afegir\+\_\+fitxa}}
+\index{afegir\+\_\+fitxa@{afegir\+\_\+fitxa}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{afegir\+\_\+fitxa()}{afegir\_fitxa()}}
+{\footnotesize\ttfamily void Possessio.\+afegir\+\_\+fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{List$<$ Character $>$}]{r }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+guarda una nova fitxa 
+\end{DoxyPostcond}
+
+
+Definició a la línia 76 del fitxer Possessio.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 2
+\mbox{\Hypertarget{class_possessio_a2d34d7e8539eeface62f627f568ee37d}\label{class_possessio_a2d34d7e8539eeface62f627f568ee37d}} 
+\index{Possessio@{Possessio}!eliminar\+\_\+fitxa@{eliminar\+\_\+fitxa}}
+\index{eliminar\+\_\+fitxa@{eliminar\+\_\+fitxa}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{eliminar\+\_\+fitxa()}{eliminar\_fitxa()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Possessio.\+eliminar\+\_\+fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{Character}]{r }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+f te posicio 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Elimina la fitxa f si esta en alguna lloc de la llista del conjunt en la regio r 
+\end{DoxyPostcond}
+
+
+Definició a la línia 63 del fitxer Possessio.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 3
+Gràfic de crides a aquesta funció\+:
+% FIG 4
+\mbox{\Hypertarget{class_possessio_a2908495ca9acf15fb6c789e753a0eec8}\label{class_possessio_a2908495ca9acf15fb6c789e753a0eec8}} 
+\index{Possessio@{Possessio}!eliminar\+\_\+fitxa@{eliminar\+\_\+fitxa}}
+\index{eliminar\+\_\+fitxa@{eliminar\+\_\+fitxa}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{eliminar\+\_\+fitxa()}{eliminar\_fitxa()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Possessio.\+eliminar\+\_\+fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{List$<$ Character $>$}]{r }\end{DoxyParamCaption})}
+
+
+
+Definició a la línia 80 del fitxer Possessio.\+java.
+
+\mbox{\Hypertarget{class_possessio_a2e484840944b6f2c5a1fbe7219d39b9c}\label{class_possessio_a2e484840944b6f2c5a1fbe7219d39b9c}} 
+\index{Possessio@{Possessio}!get\+Conjunt@{get\+Conjunt}}
+\index{get\+Conjunt@{get\+Conjunt}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{get\+Conjunt()}{getConjunt()}}
+{\footnotesize\ttfamily List$<$Pair$<$\mbox{\hyperlink{class_fitxa}{Fitxa}},List$<$Character$>$ $>$ $>$ Possessio.\+get\+Conjunt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna la llista de fitxes 
+\end{DoxyPostcond}
+
+
+Definició a la línia 106 del fitxer Possessio.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 5
+\mbox{\Hypertarget{class_possessio_a9173269f71b9ac357c33e571f04c84c6}\label{class_possessio_a9173269f71b9ac357c33e571f04c84c6}} 
+\index{Possessio@{Possessio}!llista\+Propietari@{llista\+Propietari}}
+\index{llista\+Propietari@{llista\+Propietari}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{llista\+Propietari()}{llistaPropietari()}}
+{\footnotesize\ttfamily List$<$Integer$>$ Possessio.\+llista\+Propietari (\begin{DoxyParamCaption}\item[{List$<$ Integer $>$}]{propietari }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+la llista propietari a de tenir el numero de seguidor que te cada jugador a la possessio 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna una llista dels propietaris de la possesio 
+\end{DoxyPostcond}
+
+
+Definició a la línia 86 del fitxer Possessio.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 6
+Gràfic de crides a aquesta funció\+:
+% FIG 7
+\mbox{\Hypertarget{class_possessio_a54bf2ddd9e6e2495b43d507df3902c17}\label{class_possessio_a54bf2ddd9e6e2495b43d507df3902c17}} 
+\index{Possessio@{Possessio}!pertany\+La\+Fitxa@{pertany\+La\+Fitxa}}
+\index{pertany\+La\+Fitxa@{pertany\+La\+Fitxa}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{pertany\+La\+Fitxa()}{pertanyLaFitxa()}}
+{\footnotesize\ttfamily boolean Possessio.\+pertany\+La\+Fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{Character}]{r }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+f te posicio 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna cert si la regio r de la fitxa f esta en aquesta possessio altrament fals 
+\end{DoxyPostcond}
+
+
+Definició a la línia 49 del fitxer Possessio.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 8
+\mbox{\Hypertarget{class_possessio_a514ceb05b8016e230eddbc7e3e43b325}\label{class_possessio_a514ceb05b8016e230eddbc7e3e43b325}} 
+\index{Possessio@{Possessio}!propietari@{propietari}}
+\index{propietari@{propietari}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{propietari()}{propietari()}}
+{\footnotesize\ttfamily abstract List$<$Integer$>$ Possessio.\+propietari (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el/s propietari/s de la possessio altrament llista buida 
+\end{DoxyPostcond}
+Gràfic de crides a aquesta funció\+:
+% FIG 9
+\mbox{\Hypertarget{class_possessio_a8b774652b07b0b5eae3252cf0d7baba1}\label{class_possessio_a8b774652b07b0b5eae3252cf0d7baba1}} 
+\index{Possessio@{Possessio}!punts@{punts}}
+\index{punts@{punts}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{punts()}{punts()}}
+{\footnotesize\ttfamily abstract int Possessio.\+punts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna punts total de la possessio 
+\end{DoxyPostcond}
+Gràfic de crides a aquesta funció\+:
+% FIG 10
+\mbox{\Hypertarget{class_possessio_aaf57a4c4c4eb208a7a636c94182023f2}\label{class_possessio_aaf57a4c4c4eb208a7a636c94182023f2}} 
+\index{Possessio@{Possessio}!tancat@{tancat}}
+\index{tancat@{tancat}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{tancat()}{tancat()}}
+{\footnotesize\ttfamily abstract boolean Possessio.\+tancat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Llista de fitxes amb les regions corresponents de la possessio. 
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna cert si la possessio esta completa altrament false 
+\end{DoxyPostcond}
+Gràfic de crides a aquesta funció\+:
+% FIG 11
+\mbox{\Hypertarget{class_possessio_a3fa7231e1183f1be2882d4977c6a74a7}\label{class_possessio_a3fa7231e1183f1be2882d4977c6a74a7}} 
+\index{Possessio@{Possessio}!tipus@{tipus}}
+\index{tipus@{tipus}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{tipus()}{tipus()}}
+{\footnotesize\ttfamily abstract char Possessio.\+tipus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el tipus de possessio que és 
+\end{DoxyPostcond}
+Gràfic de crides a aquesta funció\+:
+% FIG 12
+\mbox{\Hypertarget{class_possessio_a7e75c5f8c1bfa87d1f22049f1109f855}\label{class_possessio_a7e75c5f8c1bfa87d1f22049f1109f855}} 
+\index{Possessio@{Possessio}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String Possessio.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retora la possessio en format string 
+\end{DoxyPostcond}
+
+
+Definició a la línia 113 del fitxer Possessio.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 13
+\mbox{\Hypertarget{class_possessio_ac733be14dd5608eef86b00a5bce3a13f}\label{class_possessio_ac733be14dd5608eef86b00a5bce3a13f}} 
+\index{Possessio@{Possessio}!unir\+\_\+possessions@{unir\+\_\+possessions}}
+\index{unir\+\_\+possessions@{unir\+\_\+possessions}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{unir\+\_\+possessions()}{unir\_possessions()}}
+{\footnotesize\ttfamily void Possessio.\+unir\+\_\+possessions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_possessio}{Possessio}}}]{aux }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+afegir les fitxes amb la seva regio de aux a la possessio actual 
+\end{DoxyPostcond}
+
+
+Definició a la línia 38 del fitxer Possessio.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 14
+
+
+\subsection{Documentació de les Dades Membre}
+\mbox{\Hypertarget{class_possessio_a4af748d6da87a5f1b68dbff47d84c4a3}\label{class_possessio_a4af748d6da87a5f1b68dbff47d84c4a3}} 
+\index{Possessio@{Possessio}!conjunt@{conjunt}}
+\index{conjunt@{conjunt}!Possessio@{Possessio}}
+\subsubsection{\texorpdfstring{conjunt}{conjunt}}
+{\footnotesize\ttfamily List$<$Pair$<$\mbox{\hyperlink{class_fitxa}{Fitxa}},List$<$Character$>$ $>$ $>$ Possessio.\+conjunt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definició a la línia 11 del fitxer Possessio.\+java.
+
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+carcassonne/src/\mbox{\hyperlink{_possessio_8java}{Possessio.\+java}}\end{DoxyCompactItemize}

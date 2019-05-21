@@ -1,0 +1,7 @@
+<map id="Tauler.getPosicionsDePossessio" name="Tauler.getPosicionsDePossessio">
+<area shape="rect" id="node2" href="$class_fitxa.html#a7cc0281785388d498da748080c42083e" title="Fitxa.regio_c" alt="" coords="267,5,364,32"/>
+<area shape="rect" id="node3" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="267,56,364,83"/>
+<area shape="rect" id="node4" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="267,107,364,133"/>
+<area shape="rect" id="node5" href="$class_fitxa.html#a787f09b27930fedb010afa53ed5b1a29" title="Fitxa.regio_s" alt="" coords="267,157,364,184"/>
+<area shape="rect" id="node6" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="267,208,364,235"/>
+</map>

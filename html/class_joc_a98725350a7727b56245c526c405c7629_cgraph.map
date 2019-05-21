@@ -1,0 +1,9 @@
+<map id="Joc.finalitzaJoc" name="Joc.finalitzaJoc">
+<area shape="rect" id="node2" href="$class_gui.html#a536efde44f03608985f04155cfb829e4" title="Gui.print" alt="" coords="970,56,1041,83"/>
+<area shape="rect" id="node3" href="$class_tauler.html#aad088ac51b768b7c12b9a9862207f3fb" title="Tauler.assignaPuntsAPossessions\lSenseTancar" alt="" coords="164,107,388,149"/>
+<area shape="rect" id="node7" href="$class_gui.html#a561f8d0d185d5dcb133ea83385380d6c" title="Gui.mostraGuanyadors" alt="" coords="469,5,625,32"/>
+<area shape="rect" id="node4" href="$class_tauler.html#aa117114485dce6998f2023a6cc178a28" title="Tauler.reparteixPuntsDePossessio" alt="" coords="436,113,659,140"/>
+<area shape="rect" id="node5" href="$class_joc.html#ae969b3e16360a36ada26dffbb184fc33" title="Joc.AfegeixPuntuacioAJugador" alt="" coords="707,111,908,137"/>
+<area shape="rect" id="node6" href="$class_gui.html#ab7fd6a1b1d5fa17562ceed182a64b7c8" title="Gui.setScore" alt="" coords="956,111,1055,137"/>
+<area shape="rect" id="node8" href="$class_gui.html#a08cce94ed9a31122dadba010c4ebcb1c" title="Gui.getImage" alt="" coords="758,5,857,32"/>
+</map>

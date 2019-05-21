@@ -1,0 +1,356 @@
+\hypertarget{class_llegir_fitxer}{}\section{Referència de la Classe Llegir\+Fitxer}
+\label{class_llegir_fitxer}\index{Llegir\+Fitxer@{Llegir\+Fitxer}}
+
+
+Classe encarregada de llegir el fitxer i retornar la informació necessària al projecte per tal de la realització de la partida.  
+
+
+
+
+Diagrama de col·laboració per a Llegir\+Fitxer\+:
+% FIG 0
+\subsection*{Mètodes Públics Estàtics}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_llegir_fitxer_a821a8ff7021fb5faac6ff4297bb00b61}{llegir\+Fitxer}} ()
+\item 
+static void \mbox{\hyperlink{class_llegir_fitxer_a68f9ae473ab16632116b8c13ed16fff5}{nom\+Fitxer}} (String text)  throws File\+Not\+Found\+Exception 
+\item 
+static Array\+List$<$ \mbox{\hyperlink{class_jugador}{Jugador}} $>$ \mbox{\hyperlink{class_llegir_fitxer_a0917d49b907c21ed5a904ddd818372b9}{get\+Jugadors}} ()
+\item 
+static \mbox{\hyperlink{class_fitxa}{Fitxa}} \mbox{\hyperlink{class_llegir_fitxer_afce4c62bf6cf65bf2e719edee92b15b2}{get\+Inicial}} ()
+\item 
+static boolean \mbox{\hyperlink{class_llegir_fitxer_a72bf8be585313571b794f533c5a6b449}{is\+Camperols}} ()
+\item 
+static boolean \mbox{\hyperlink{class_llegir_fitxer_a3e7c849571e7eeff4b0f9efc2f70b5ac}{lectura\+Correcta}} ()
+\item 
+static \mbox{\hyperlink{class_baralla}{Baralla}} \mbox{\hyperlink{class_llegir_fitxer_a931dfb14e0ddc1fd9b3db85d085ebceb}{get\+Baralla}} ()
+\end{DoxyCompactItemize}
+\subsection*{Mètodes Privats Estàtics}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_llegir_fitxer_adeec6b2bd6754481b94c815b82e5bbce}{llegir\+Dades\+Partida}} (Scanner input)
+\item 
+static void \mbox{\hyperlink{class_llegir_fitxer_ac73d2ac3cbe198bd2ab5c6e1f5b4ead2}{llegir\+Rajoles}} (Scanner input)
+\item 
+static void \mbox{\hyperlink{class_llegir_fitxer_addb0fed99c782e84a9b670f89c3eecd2}{llegir\+Jugadors}} (Scanner input)
+\end{DoxyCompactItemize}
+\subsection*{Atributs Privats Estàtics}
+\begin{DoxyCompactItemize}
+\item 
+static File \mbox{\hyperlink{class_llegir_fitxer_a81ceab1221bd739556c180354469e191}{fitxer}}
+\begin{DoxyCompactList}\small\item\em Fitxer d\textquotesingle{}entrada. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_llegir_fitxer_a1095570f847e8cd810965ef23cb9d8c7}{\+\_\+n\+Jugadors}}
+\begin{DoxyCompactList}\small\item\em Nombre de \mbox{\hyperlink{class_jugador}{Jugador}} s. \end{DoxyCompactList}\item 
+static Array\+List$<$ \mbox{\hyperlink{class_jugador}{Jugador}} $>$ \mbox{\hyperlink{class_llegir_fitxer_a8009ba77511b60a636adb738cddef7b4}{\+\_\+jugadors}}
+\begin{DoxyCompactList}\small\item\em Llista de \mbox{\hyperlink{class_jugador}{Jugador}} s. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_baralla}{Baralla}} \mbox{\hyperlink{class_llegir_fitxer_a4b0573e74fe3c97662eb06322cdd4bae}{baralla}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_baralla}{Baralla}} de la partida. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_fitxa}{Fitxa}} \mbox{\hyperlink{class_llegir_fitxer_a6e734852134240534b6fd54eb263eaf5}{\+\_\+inicial}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_fitxa}{Fitxa}} inicial utilitzada. \end{DoxyCompactList}\item 
+static boolean \mbox{\hyperlink{class_llegir_fitxer_a1f155a3c0d9f6df5866f37e2f6e0dd9f}{\+\_\+camperols}}
+\begin{DoxyCompactList}\small\item\em Retorna true si existeixen camperols. \end{DoxyCompactList}\item 
+static boolean \mbox{\hyperlink{class_llegir_fitxer_a5f1f80e4456840164411de8a5756c716}{fitxer\+OK}} = false
+\begin{DoxyCompactList}\small\item\em Retorna true si ha llegit correctament el fitxer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+Classe encarregada de llegir el fitxer i retornar la informació necessària al projecte per tal de la realització de la partida. 
+
+Definició a la línia 13 del fitxer Llegir\+Fitxer.\+java.
+
+
+
+\subsection{Documentació de les Funcions Membre}
+\mbox{\Hypertarget{class_llegir_fitxer_a931dfb14e0ddc1fd9b3db85d085ebceb}\label{class_llegir_fitxer_a931dfb14e0ddc1fd9b3db85d085ebceb}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!get\+Baralla@{get\+Baralla}}
+\index{get\+Baralla@{get\+Baralla}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{get\+Baralla()}{getBaralla()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_baralla}{Baralla}} Llegir\+Fitxer.\+get\+Baralla (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna la baralla 
+\end{DoxyPostcond}
+
+
+Definició a la línia 172 del fitxer Llegir\+Fitxer.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 1
+\mbox{\Hypertarget{class_llegir_fitxer_afce4c62bf6cf65bf2e719edee92b15b2}\label{class_llegir_fitxer_afce4c62bf6cf65bf2e719edee92b15b2}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!get\+Inicial@{get\+Inicial}}
+\index{get\+Inicial@{get\+Inicial}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{get\+Inicial()}{getInicial()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_fitxa}{Fitxa}} Llegir\+Fitxer.\+get\+Inicial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna la fitxa inicial 
+\end{DoxyPostcond}
+
+
+Definició a la línia 154 del fitxer Llegir\+Fitxer.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 2
+\mbox{\Hypertarget{class_llegir_fitxer_a0917d49b907c21ed5a904ddd818372b9}\label{class_llegir_fitxer_a0917d49b907c21ed5a904ddd818372b9}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!get\+Jugadors@{get\+Jugadors}}
+\index{get\+Jugadors@{get\+Jugadors}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{get\+Jugadors()}{getJugadors()}}
+{\footnotesize\ttfamily static Array\+List$<$\mbox{\hyperlink{class_jugador}{Jugador}}$>$ Llegir\+Fitxer.\+get\+Jugadors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna una llista de quins dels jugadors són controlats per màquina 
+\end{DoxyPostcond}
+
+
+Definició a la línia 148 del fitxer Llegir\+Fitxer.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 3
+\mbox{\Hypertarget{class_llegir_fitxer_a72bf8be585313571b794f533c5a6b449}\label{class_llegir_fitxer_a72bf8be585313571b794f533c5a6b449}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!is\+Camperols@{is\+Camperols}}
+\index{is\+Camperols@{is\+Camperols}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{is\+Camperols()}{isCamperols()}}
+{\footnotesize\ttfamily static boolean Llegir\+Fitxer.\+is\+Camperols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+cert si hi ha camperols 
+\end{DoxyPostcond}
+
+
+Definició a la línia 160 del fitxer Llegir\+Fitxer.\+java.
+
+\mbox{\Hypertarget{class_llegir_fitxer_a3e7c849571e7eeff4b0f9efc2f70b5ac}\label{class_llegir_fitxer_a3e7c849571e7eeff4b0f9efc2f70b5ac}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!lectura\+Correcta@{lectura\+Correcta}}
+\index{lectura\+Correcta@{lectura\+Correcta}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{lectura\+Correcta()}{lecturaCorrecta()}}
+{\footnotesize\ttfamily static boolean Llegir\+Fitxer.\+lectura\+Correcta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+cert si la lectura s\textquotesingle{}ha realitzat satisfactòriament 
+\end{DoxyPostcond}
+
+
+Definició a la línia 166 del fitxer Llegir\+Fitxer.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 4
+\mbox{\Hypertarget{class_llegir_fitxer_adeec6b2bd6754481b94c815b82e5bbce}\label{class_llegir_fitxer_adeec6b2bd6754481b94c815b82e5bbce}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!llegir\+Dades\+Partida@{llegir\+Dades\+Partida}}
+\index{llegir\+Dades\+Partida@{llegir\+Dades\+Partida}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{llegir\+Dades\+Partida()}{llegirDadesPartida()}}
+{\footnotesize\ttfamily static void Llegir\+Fitxer.\+llegir\+Dades\+Partida (\begin{DoxyParamCaption}\item[{Scanner}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+sscanner del fitxer d\textquotesingle{}entrada 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+llegeix i guarda la fitxa inicial i si hi ha camperols 
+\end{DoxyPostcond}
+
+
+Definició a la línia 41 del fitxer Llegir\+Fitxer.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 5
+Gràfic de crides a aquesta funció\+:
+% FIG 6
+\mbox{\Hypertarget{class_llegir_fitxer_a821a8ff7021fb5faac6ff4297bb00b61}\label{class_llegir_fitxer_a821a8ff7021fb5faac6ff4297bb00b61}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!llegir\+Fitxer@{llegir\+Fitxer}}
+\index{llegir\+Fitxer@{llegir\+Fitxer}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{llegir\+Fitxer()}{llegirFitxer()}}
+{\footnotesize\ttfamily static void Llegir\+Fitxer.\+llegir\+Fitxer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+-- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+lectura completa del fitxer 
+\end{DoxyPostcond}
+
+
+Definició a la línia 25 del fitxer Llegir\+Fitxer.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 7
+Gràfic de crides a aquesta funció\+:
+% FIG 8
+\mbox{\Hypertarget{class_llegir_fitxer_addb0fed99c782e84a9b670f89c3eecd2}\label{class_llegir_fitxer_addb0fed99c782e84a9b670f89c3eecd2}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!llegir\+Jugadors@{llegir\+Jugadors}}
+\index{llegir\+Jugadors@{llegir\+Jugadors}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{llegir\+Jugadors()}{llegirJugadors()}}
+{\footnotesize\ttfamily static void Llegir\+Fitxer.\+llegir\+Jugadors (\begin{DoxyParamCaption}\item[{Scanner}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+scanner del fitxer d\textquotesingle{}entrada 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+llegeix i guarda el nombre de jugadors i quins d\textquotesingle{}aquests són màquina 
+\end{DoxyPostcond}
+
+
+Definició a la línia 103 del fitxer Llegir\+Fitxer.\+java.
+
+Gràfic de crides a aquesta funció\+:
+% FIG 9
+\mbox{\Hypertarget{class_llegir_fitxer_ac73d2ac3cbe198bd2ab5c6e1f5b4ead2}\label{class_llegir_fitxer_ac73d2ac3cbe198bd2ab5c6e1f5b4ead2}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!llegir\+Rajoles@{llegir\+Rajoles}}
+\index{llegir\+Rajoles@{llegir\+Rajoles}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{llegir\+Rajoles()}{llegirRajoles()}}
+{\footnotesize\ttfamily static void Llegir\+Fitxer.\+llegir\+Rajoles (\begin{DoxyParamCaption}\item[{Scanner}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+scanner del fitxer d\textquotesingle{}entrada 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+llegeix i guarda les diferents fitxes 
+\end{DoxyPostcond}
+
+
+Definició a la línia 68 del fitxer Llegir\+Fitxer.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 10
+Gràfic de crides a aquesta funció\+:
+% FIG 11
+\mbox{\Hypertarget{class_llegir_fitxer_a68f9ae473ab16632116b8c13ed16fff5}\label{class_llegir_fitxer_a68f9ae473ab16632116b8c13ed16fff5}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!nom\+Fitxer@{nom\+Fitxer}}
+\index{nom\+Fitxer@{nom\+Fitxer}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{nom\+Fitxer()}{nomFitxer()}}
+{\footnotesize\ttfamily static void Llegir\+Fitxer.\+nom\+Fitxer (\begin{DoxyParamCaption}\item[{String}]{text }\end{DoxyParamCaption}) throws File\+Not\+Found\+Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyPrecond}{Precondició}
+nom del fitxer d\textquotesingle{}entrada 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+guarda el nom del fitxer d\textquotesingle{}entrada i crida el mètode per llegir el fitxer 
+\end{DoxyPostcond}
+
+
+Definició a la línia 139 del fitxer Llegir\+Fitxer.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 12
+Gràfic de crides a aquesta funció\+:
+% FIG 13
+
+
+\subsection{Documentació de les Dades Membre}
+\mbox{\Hypertarget{class_llegir_fitxer_a1f155a3c0d9f6df5866f37e2f6e0dd9f}\label{class_llegir_fitxer_a1f155a3c0d9f6df5866f37e2f6e0dd9f}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!\+\_\+camperols@{\+\_\+camperols}}
+\index{\+\_\+camperols@{\+\_\+camperols}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{\+\_\+camperols}{\_camperols}}
+{\footnotesize\ttfamily boolean Llegir\+Fitxer.\+\_\+camperols\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Retorna true si existeixen camperols. 
+
+
+
+Definició a la línia 20 del fitxer Llegir\+Fitxer.\+java.
+
+\mbox{\Hypertarget{class_llegir_fitxer_a6e734852134240534b6fd54eb263eaf5}\label{class_llegir_fitxer_a6e734852134240534b6fd54eb263eaf5}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!\+\_\+inicial@{\+\_\+inicial}}
+\index{\+\_\+inicial@{\+\_\+inicial}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{\+\_\+inicial}{\_inicial}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_fitxa}{Fitxa}} Llegir\+Fitxer.\+\_\+inicial\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_fitxa}{Fitxa}} inicial utilitzada. 
+
+
+
+Definició a la línia 19 del fitxer Llegir\+Fitxer.\+java.
+
+\mbox{\Hypertarget{class_llegir_fitxer_a8009ba77511b60a636adb738cddef7b4}\label{class_llegir_fitxer_a8009ba77511b60a636adb738cddef7b4}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!\+\_\+jugadors@{\+\_\+jugadors}}
+\index{\+\_\+jugadors@{\+\_\+jugadors}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{\+\_\+jugadors}{\_jugadors}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_jugador}{Jugador}}$>$ Llegir\+Fitxer.\+\_\+jugadors\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Llista de \mbox{\hyperlink{class_jugador}{Jugador}} s. 
+
+
+
+Definició a la línia 17 del fitxer Llegir\+Fitxer.\+java.
+
+\mbox{\Hypertarget{class_llegir_fitxer_a1095570f847e8cd810965ef23cb9d8c7}\label{class_llegir_fitxer_a1095570f847e8cd810965ef23cb9d8c7}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!\+\_\+n\+Jugadors@{\+\_\+n\+Jugadors}}
+\index{\+\_\+n\+Jugadors@{\+\_\+n\+Jugadors}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{\+\_\+n\+Jugadors}{\_nJugadors}}
+{\footnotesize\ttfamily int Llegir\+Fitxer.\+\_\+n\+Jugadors\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Nombre de \mbox{\hyperlink{class_jugador}{Jugador}} s. 
+
+
+
+Definició a la línia 16 del fitxer Llegir\+Fitxer.\+java.
+
+\mbox{\Hypertarget{class_llegir_fitxer_a4b0573e74fe3c97662eb06322cdd4bae}\label{class_llegir_fitxer_a4b0573e74fe3c97662eb06322cdd4bae}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!baralla@{baralla}}
+\index{baralla@{baralla}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{baralla}{baralla}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_baralla}{Baralla}} Llegir\+Fitxer.\+baralla\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_baralla}{Baralla}} de la partida. 
+
+
+
+Definició a la línia 18 del fitxer Llegir\+Fitxer.\+java.
+
+\mbox{\Hypertarget{class_llegir_fitxer_a81ceab1221bd739556c180354469e191}\label{class_llegir_fitxer_a81ceab1221bd739556c180354469e191}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!fitxer@{fitxer}}
+\index{fitxer@{fitxer}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{fitxer}{fitxer}}
+{\footnotesize\ttfamily File Llegir\+Fitxer.\+fitxer\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Fitxer d\textquotesingle{}entrada. 
+
+
+
+Definició a la línia 15 del fitxer Llegir\+Fitxer.\+java.
+
+\mbox{\Hypertarget{class_llegir_fitxer_a5f1f80e4456840164411de8a5756c716}\label{class_llegir_fitxer_a5f1f80e4456840164411de8a5756c716}} 
+\index{Llegir\+Fitxer@{Llegir\+Fitxer}!fitxer\+OK@{fitxer\+OK}}
+\index{fitxer\+OK@{fitxer\+OK}!Llegir\+Fitxer@{Llegir\+Fitxer}}
+\subsubsection{\texorpdfstring{fitxer\+OK}{fitxerOK}}
+{\footnotesize\ttfamily boolean Llegir\+Fitxer.\+fitxer\+OK = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Retorna true si ha llegit correctament el fitxer. 
+
+
+
+Definició a la línia 21 del fitxer Llegir\+Fitxer.\+java.
+
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+carcassonne/src/\mbox{\hyperlink{_llegir_fitxer_8java}{Llegir\+Fitxer.\+java}}\end{DoxyCompactItemize}

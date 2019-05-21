@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Carcassonne: Fitxer de Codi carcassonne/src/Baralla.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Carcassonne.gif"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Carcassonne
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Documentació del joc</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generat per Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c137a8bb86006a89d6edcf77ec0fe4d3.html">carcassonne</a></li><li class="navelem"><a class="el" href="dir_d589812e90967f32cd63330a28f24451.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Baralla.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_baralla_8java.html">Veure la documentació d'aquest fitxer.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> java.util.List;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> java.util.concurrent.ThreadLocalRandom;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_baralla.html">    9</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_baralla.html">Baralla</a> {</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_baralla.html#a468bd8fbe440f57370538713b5b147fa">   11</a></span>&#160;    <span class="keyword">private</span> List&lt;Fitxa&gt; <a class="code" href="class_baralla.html#a468bd8fbe440f57370538713b5b147fa">llistaFitxes</a>;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_baralla.html">Baralla</a>()</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_baralla.html#a468bd8fbe440f57370538713b5b147fa">llistaFitxes</a> = <span class="keyword">new</span> ArrayList&lt;Fitxa&gt;();</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_baralla.html#a08558891cafb3b18b3927fe2a4ac109a">   22</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="class_fitxa.html">Fitxa</a> <a class="code" href="class_baralla.html#a08558891cafb3b18b3927fe2a4ac109a">agafarFitxa</a>()</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="class_baralla.html#ac20fe10e5d263fb9630fd1111f4a9848">esBuida</a>()) {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordtype">int</span> aleatori = ThreadLocalRandom.current().nextInt(0, <a class="code" href="class_baralla.html#a468bd8fbe440f57370538713b5b147fa">llistaFitxes</a>.size());</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="class_fitxa.html">Fitxa</a> f = (<a class="code" href="class_fitxa.html">Fitxa</a>) <a class="code" href="class_baralla.html#a468bd8fbe440f57370538713b5b147fa">llistaFitxes</a>.get(aleatori);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="class_baralla.html#a468bd8fbe440f57370538713b5b147fa">llistaFitxes</a>.remove(aleatori);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">return</span> f;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }<span class="keywordflow">else</span> {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_baralla.html#a997d3f37894226927d02bfc4044378f2">   36</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_baralla.html#a997d3f37894226927d02bfc4044378f2">afegirFitxa</a>(<a class="code" href="class_fitxa.html">Fitxa</a> f)</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="class_baralla.html#a468bd8fbe440f57370538713b5b147fa">llistaFitxes</a>.add(f);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_baralla.html#ac20fe10e5d263fb9630fd1111f4a9848">   43</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code" href="class_baralla.html#ac20fe10e5d263fb9630fd1111f4a9848">esBuida</a>()</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_baralla.html#a468bd8fbe440f57370538713b5b147fa">llistaFitxes</a>.isEmpty();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_baralla.html#a9fa8e63f2507d81cee48f249fbb14d82">   50</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="class_baralla.html#a9fa8e63f2507d81cee48f249fbb14d82">size</a>(){</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_baralla.html#a468bd8fbe440f57370538713b5b147fa">llistaFitxes</a>.size();</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    @Override</div><div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_baralla.html#a8822859a1184ed228be5cd955f7cbb05">   57</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="class_baralla.html#a8822859a1184ed228be5cd955f7cbb05">toString</a>() {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_baralla.html#a468bd8fbe440f57370538713b5b147fa">llistaFitxes</a>.toString();</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div><div class="ttc" id="class_baralla_html_a8822859a1184ed228be5cd955f7cbb05"><div class="ttname"><a href="class_baralla.html#a8822859a1184ed228be5cd955f7cbb05">Baralla.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_baralla_8java_source.html#l00057">Baralla.java:57</a></div></div>
+<div class="ttc" id="class_baralla_html_a08558891cafb3b18b3927fe2a4ac109a"><div class="ttname"><a href="class_baralla.html#a08558891cafb3b18b3927fe2a4ac109a">Baralla.agafarFitxa</a></div><div class="ttdeci">Fitxa agafarFitxa()</div><div class="ttdef"><b>Definition:</b> <a href="_baralla_8java_source.html#l00022">Baralla.java:22</a></div></div>
+<div class="ttc" id="class_baralla_html_a997d3f37894226927d02bfc4044378f2"><div class="ttname"><a href="class_baralla.html#a997d3f37894226927d02bfc4044378f2">Baralla.afegirFitxa</a></div><div class="ttdeci">void afegirFitxa(Fitxa f)</div><div class="ttdef"><b>Definition:</b> <a href="_baralla_8java_source.html#l00036">Baralla.java:36</a></div></div>
+<div class="ttc" id="class_baralla_html_a9fa8e63f2507d81cee48f249fbb14d82"><div class="ttname"><a href="class_baralla.html#a9fa8e63f2507d81cee48f249fbb14d82">Baralla.size</a></div><div class="ttdeci">int size()</div><div class="ttdef"><b>Definition:</b> <a href="_baralla_8java_source.html#l00050">Baralla.java:50</a></div></div>
+<div class="ttc" id="class_baralla_html_ac20fe10e5d263fb9630fd1111f4a9848"><div class="ttname"><a href="class_baralla.html#ac20fe10e5d263fb9630fd1111f4a9848">Baralla.esBuida</a></div><div class="ttdeci">boolean esBuida()</div><div class="ttdef"><b>Definition:</b> <a href="_baralla_8java_source.html#l00043">Baralla.java:43</a></div></div>
+<div class="ttc" id="class_fitxa_html"><div class="ttname"><a href="class_fitxa.html">Fitxa</a></div><div class="ttdoc">Fitxa que té regions i que forma part de la baralla. </div><div class="ttdef"><b>Definition:</b> <a href="_fitxa_8java_source.html#l00008">Fitxa.java:8</a></div></div>
+<div class="ttc" id="class_baralla_html_a468bd8fbe440f57370538713b5b147fa"><div class="ttname"><a href="class_baralla.html#a468bd8fbe440f57370538713b5b147fa">Baralla.llistaFitxes</a></div><div class="ttdeci">List&lt; Fitxa &gt; llistaFitxes</div><div class="ttdoc">Llista de Fitxa /es. </div><div class="ttdef"><b>Definition:</b> <a href="_baralla_8java_source.html#l00011">Baralla.java:11</a></div></div>
+<div class="ttc" id="class_baralla_html"><div class="ttname"><a href="class_baralla.html">Baralla</a></div><div class="ttdoc">Classe baralla encarregada de la gestió de les Fitxa /es. </div><div class="ttdef"><b>Definition:</b> <a href="_baralla_8java_source.html#l00009">Baralla.java:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generat per &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<map id="Gui.treuSeguidorsDe" name="Gui.treuSeguidorsDe">
+<area shape="rect" id="node2" href="$class_gui.html#a01b6b7eeba0d0730c6307d58df0cc032" title="Gui.posaFitxa" alt="" coords="196,132,299,159"/>
+<area shape="rect" id="node3" href="$class_fitxa.html#a9f8c54c9bd9dce77ecd4fd47c58687d3" title="Fitxa.getPosicio" alt="" coords="358,5,474,32"/>
+<area shape="rect" id="node4" href="$class_gui.html#a08cce94ed9a31122dadba010c4ebcb1c" title="Gui.getImage" alt="" coords="533,56,632,83"/>
+<area shape="rect" id="node6" href="$class_fitxa.html#af6e05ee97e95b46e754d73d4e6fd8d8c" title="Fitxa.formatNormal" alt="" coords="350,157,482,184"/>
+<area shape="rect" id="node7" href="$class_posicio.html#ad41dbf5580623be4bfa053825900c9e9" title="Posicio.getRotacio" alt="" coords="680,107,811,133"/>
+<area shape="rect" id="node13" href="$class_posicio.html#a8a1ae0a7865e6edbf0510ebcf2b97061" title="Posicio.getPosicioX" alt="" coords="347,208,485,235"/>
+<area shape="rect" id="node14" href="$class_posicio.html#ae70d63aa90b935131d122fc1e4b72969" title="Posicio.getPosicioY" alt="" coords="347,259,485,285"/>
+<area shape="rect" id="node5" href="$class_gui.html#a536efde44f03608985f04155cfb829e4" title="Gui.print" alt="" coords="710,56,781,83"/>
+<area shape="rect" id="node8" href="$class_fitxa.html#adeca1a2543f1ed0dbc74e7cc90169a35" title="Fitxa.rotar" alt="" coords="542,208,623,235"/>
+<area shape="rect" id="node9" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="697,208,794,235"/>
+<area shape="rect" id="node10" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="697,259,794,285"/>
+<area shape="rect" id="node11" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="697,309,794,336"/>
+<area shape="rect" id="node12" href="$class_posicio.html#a74e21bbf58a371bbd77a6a9d98953de3" title="Posicio.setRotacio" alt="" coords="680,157,811,184"/>
+</map>

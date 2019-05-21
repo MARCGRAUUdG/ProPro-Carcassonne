@@ -1,0 +1,24 @@
+<map id="Posicio.getPosicioX" name="Posicio.getPosicioX">
+<area shape="rect" id="node2" href="$class_controlable.html#a2b6a322638a64197501904a8a8e8fac3" title="Controlable.posaFitxa" alt="" coords="2219,278,2367,305"/>
+<area shape="rect" id="node3" href="$class_fitxa.html#a3470f3a172ff316366ad90579ccb7bef" title="Fitxa.envoltada" alt="" coords="215,97,325,123"/>
+<area shape="rect" id="node4" href="$class_tauler.html#a0a7e35375e0863e69cbb531232fcc3ce" title="Tauler.simularPunts" alt="" coords="400,71,537,98"/>
+<area shape="rect" id="node5" href="$class_tirada.html#a45701d44ba8daf5236f4cf945ce81c34" title="Tirada.gestionarMaquina" alt="" coords="1529,71,1691,98"/>
+<area shape="rect" id="node6" href="$class_gui.html#a01b6b7eeba0d0730c6307d58df0cc032" title="Gui.posaFitxa" alt="" coords="219,433,321,459"/>
+<area shape="rect" id="node9" href="$class_tauler.html#af7c318026f6fb05db78e0b1ed2e8d3b6" title="Tauler.assignarPossessio" alt="" coords="827,311,997,338"/>
+<area shape="rect" id="node10" href="$class_tauler.html#aa06ab791d1dc23451170b09f1aa4626c" title="Tauler.posarFitxaTauler" alt="" coords="1045,303,1203,330"/>
+<area shape="rect" id="node22" href="$class_tauler.html#ad52694ab07b38f083c68d119701a72c8" title="Tauler.treureFitxaTauler" alt="" coords="191,366,349,393"/>
+<area shape="rect" id="node23" href="$class_tauler.html#ac33b81e0bbd22c04fa99fdc47e72f79e" title="Tauler.posaFitxaAPossessio\lSiNoEstaPosat" alt="" coords="589,249,777,291"/>
+<area shape="rect" id="node7" href="$class_gui.html#a8e60b9f1428fae6afd4e419d52bc0723" title="Gui.treuSeguidorsDe" alt="" coords="397,378,540,405"/>
+<area shape="rect" id="node11" href="$class_joc.html#ab6a95f4790ad123e0fa5700cc984973e" title="Joc.posaFitxaInicial" alt="" coords="1291,483,1427,510"/>
+<area shape="rect" id="node21" href="$class_maquina.html#a2e26c9f440fdf09879e0c8434dd02e35" title="Maquina.posaFitxa" alt="" coords="403,534,535,561"/>
+<area shape="rect" id="node8" href="$class_tauler.html#a24ec7ef9cbe3edc9d0dbb67d4e87245b" title="Tauler.comprovaPossessions\lTancades" alt="" coords="588,367,779,408"/>
+<area shape="rect" id="node17" href="$class_tirada.html#a3c80bfbaa14b427b0221446e22fceeac" title="Tirada.apretatOpcionsDeSeguidor" alt="" coords="1251,227,1467,254"/>
+<area shape="rect" id="node12" href="$class_joc.html#ac38319889956e19c22ffd289ebd39824" title="Joc.IniciJoc" alt="" coords="1565,483,1655,510"/>
+<area shape="rect" id="node13" href="$class_joc.html#aa164cac0c602f63ff7e8860db7d06649" title="Joc.repNomFitxer" alt="" coords="1777,483,1901,510"/>
+<area shape="rect" id="node14" href="$class_gui.html#a6bc8d9bda8f813b8d6c303ae798646b5" title="Gui.llegeigNomDelFitxer" alt="" coords="1990,483,2153,510"/>
+<area shape="rect" id="node15" href="$class_gui.html#a9213a84890405b2cd77441b7f0654318" title="Gui.setupMainTop" alt="" coords="2229,483,2356,510"/>
+<area shape="rect" id="node16" href="$class_gui.html#a7997885cf723f790c4ec5b2328407023" title="Gui.start" alt="" coords="2415,483,2487,510"/>
+<area shape="rect" id="node18" href="$class_joc.html#a72eed3f92b818584d664717fbb05d153" title="Joc.apretatPerPosarSeguidor" alt="" coords="1515,227,1705,254"/>
+<area shape="rect" id="node19" href="$class_gui.html#a34f713e45c926f57aad018e533da18cb" title="Gui.posaSeleccioDeSeguidors" alt="" coords="1972,253,2171,279"/>
+<area shape="rect" id="node20" href="$class_gui.html#af2be44020696cbe2bce2ff4b90d94cc1" title="Gui.configuraImgSeguidor" alt="" coords="1753,253,1924,279"/>
+</map>

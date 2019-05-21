@@ -1,0 +1,19 @@
+<map id="Gui.posaQuadreVerd" name="Gui.posaQuadreVerd">
+<area shape="rect" id="node2" href="$class_gui.html#a08cce94ed9a31122dadba010c4ebcb1c" title="Gui.getImage" alt="" coords="923,5,1022,32"/>
+<area shape="rect" id="node4" href="$class_gui.html#a6364d40f472084c5d50859159b8c46d4" title="Gui.treuQuadresVerds" alt="" coords="435,295,586,321"/>
+<area shape="rect" id="node6" href="$class_joc.html#a90b306ce9d339455a5f6e5d2decf90f1" title="Joc.apretatPerPosarFitxa" alt="" coords="196,215,365,241"/>
+<area shape="rect" id="node3" href="$class_gui.html#a536efde44f03608985f04155cfb829e4" title="Gui.print" alt="" coords="1335,5,1406,32"/>
+<area shape="rect" id="node5" href="$class_gui.html#af97132d72a7474397afb22594b0119c5" title="Gui.treuUltimElement" alt="" coords="899,309,1046,336"/>
+<area shape="rect" id="node7" href="$class_tirada.html#adb40561c69d716539ea380f64872eb7b" title="Tirada.apretatOpcionsDeFitxa" alt="" coords="413,215,608,241"/>
+<area shape="rect" id="node8" href="$class_jugador.html#ae014826953f1629afbf0a19787aadfe0" title="Jugador.posaFitxa" alt="" coords="1307,309,1435,336"/>
+<area shape="rect" id="node9" href="$class_gui.html#a14de8e45496b14e62ca59676d0aae3fe" title="Gui.mostraOpcionsDeRotacio\lEnFitxa" alt="" coords="656,171,851,213"/>
+<area shape="rect" id="node10" href="$class_fitxa.html#af6e05ee97e95b46e754d73d4e6fd8d8c" title="Fitxa.formatNormal" alt="" coords="907,157,1039,184"/>
+<area shape="rect" id="node17" href="$class_joc.html#a1a732f8c5fe455e04c76f38259eb00ba" title="Joc.apretatAngleFitxa" alt="" coords="899,208,1047,235"/>
+<area shape="rect" id="node11" href="$class_posicio.html#ad41dbf5580623be4bfa053825900c9e9" title="Posicio.getRotacio" alt="" coords="1305,56,1436,83"/>
+<area shape="rect" id="node12" href="$class_fitxa.html#adeca1a2543f1ed0dbc74e7cc90169a35" title="Fitxa.rotar" alt="" coords="1135,157,1217,184"/>
+<area shape="rect" id="node13" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="1322,157,1419,184"/>
+<area shape="rect" id="node14" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="1322,208,1419,235"/>
+<area shape="rect" id="node15" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="1322,259,1419,285"/>
+<area shape="rect" id="node16" href="$class_posicio.html#a74e21bbf58a371bbd77a6a9d98953de3" title="Posicio.setRotacio" alt="" coords="1305,107,1436,133"/>
+<area shape="rect" id="node18" href="$class_tirada.html#aa56dab05d4638ad1a340f42cd514d362" title="Tirada.apretatAngleFitxa" alt="" coords="1095,208,1257,235"/>
+</map>

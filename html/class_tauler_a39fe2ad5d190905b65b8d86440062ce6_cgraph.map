@@ -1,0 +1,18 @@
+<map id="Tauler.getPunts" name="Tauler.getPunts">
+<area shape="rect" id="node2" href="$class_tauler.html#a6e0887ae8dedc793bace05d8b75dfd98" title="Tauler.getPuntsRegio" alt="" coords="167,259,313,285"/>
+<area shape="rect" id="node3" href="$class_tauler.html#aa60647e3555961f2796381dab7c7f2f7" title="Tauler.getPossessioDeFitxa" alt="" coords="375,56,561,83"/>
+<area shape="rect" id="node4" href="$class_tauler.html#af80e16c20bca52f2717be44a6242193e" title="Tauler.getPosicionsDePossessio" alt="" coords="361,107,575,133"/>
+<area shape="rect" id="node10" href="$class_possessio.html#a514ceb05b8016e230eddbc7e3e43b325" title="Possessio.propietari" alt="" coords="398,157,538,184"/>
+<area shape="rect" id="node11" href="$class_possessio.html#af662b46bc78afc70a7f874693d518612" title="Possessio.afegir_fitxa" alt="" coords="393,208,543,235"/>
+<area shape="rect" id="node12" href="$class_possessio.html#aaf57a4c4c4eb208a7a636c94182023f2" title="Llista de fitxes amb les regions corresponents de la possessio. " alt="" coords="407,259,529,285"/>
+<area shape="rect" id="node13" href="$class_possessio.html#a8b774652b07b0b5eae3252cf0d7baba1" title="Possessio.punts" alt="" coords="409,309,527,336"/>
+<area shape="rect" id="node14" href="$class_possessio.html#a2d34d7e8539eeface62f627f568ee37d" title="Possessio.eliminar\l_fitxa" alt="" coords="402,361,534,402"/>
+<area shape="rect" id="node16" href="$class_possessio.html#a2e484840944b6f2c5a1fbe7219d39b9c" title="Possessio.getConjunt" alt="" coords="393,427,543,453"/>
+<area shape="rect" id="node17" href="$class_gui.html#a536efde44f03608985f04155cfb829e4" title="Gui.print" alt="" coords="433,477,503,504"/>
+<area shape="rect" id="node5" href="$class_fitxa.html#a7cc0281785388d498da748080c42083e" title="Fitxa.regio_c" alt="" coords="632,5,729,32"/>
+<area shape="rect" id="node6" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="632,56,729,83"/>
+<area shape="rect" id="node7" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="632,107,729,133"/>
+<area shape="rect" id="node8" href="$class_fitxa.html#a787f09b27930fedb010afa53ed5b1a29" title="Fitxa.regio_s" alt="" coords="632,157,729,184"/>
+<area shape="rect" id="node9" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="632,208,729,235"/>
+<area shape="rect" id="node15" href="$class_fitxa.html#a9f8c54c9bd9dce77ecd4fd47c58687d3" title="Fitxa.getPosicio" alt="" coords="623,368,739,395"/>
+</map>

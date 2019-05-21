@@ -1,0 +1,173 @@
+\hypertarget{class_camp}{}\section{Referència de la Classe Camp}
+\label{class_camp}\index{Camp@{Camp}}
+
+
+Subtipus de possessio format per fitxes que tenen regions que són F.  
+
+
+
+
+Diagrama d\textquotesingle{}Herència per a Camp\+:
+% FIG 0
+
+
+Diagrama de col·laboració per a Camp\+:
+% FIG 1
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_camp_a9d376bd3292221a79dd845139e1f0546}{Camp}} (\mbox{\hyperlink{class_fitxa}{Fitxa}} inici, List$<$ Character $>$ r)
+\item 
+int \mbox{\hyperlink{class_camp_aa62c5e5ffa6084bb8363c5efba469068}{punts}} (Array\+List$<$ \mbox{\hyperlink{class_ciutat}{Ciutat}} $>$ llista)
+\item 
+List$<$ Integer $>$ \mbox{\hyperlink{class_camp_a24ebece7eea1aa266390b8762c0a1aa5}{propietari}} ()
+\item 
+char \mbox{\hyperlink{class_camp_aff9badaa78f13e44821cf267de34f03f}{tipus}} ()
+\item 
+boolean \mbox{\hyperlink{class_camp_a8a3acd8770255a775e505ce1bcb64856}{tancat}} ()
+\item 
+int \mbox{\hyperlink{class_camp_a22023a3a842b831b8b44db10a69afbd7}{punts}} ()
+\end{DoxyCompactItemize}
+\subsection*{Mètodes Privats}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{class_camp_a2bd097873f0c20f7e1ca04cb455ca114}{conte\+Fitxa}} (\mbox{\hyperlink{class_ciutat}{Ciutat}} c, \mbox{\hyperlink{class_fitxa}{Fitxa}} f, List$<$ Character $>$ r)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+Subtipus de possessio format per fitxes que tenen regions que són F. 
+
+Definició a la línia 10 del fitxer Camp.\+java.
+
+
+
+\subsection{Documentació del Constructor i el Destructor}
+\mbox{\Hypertarget{class_camp_a9d376bd3292221a79dd845139e1f0546}\label{class_camp_a9d376bd3292221a79dd845139e1f0546}} 
+\index{Camp@{Camp}!Camp@{Camp}}
+\index{Camp@{Camp}!Camp@{Camp}}
+\subsubsection{\texorpdfstring{Camp()}{Camp()}}
+{\footnotesize\ttfamily Camp.\+Camp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{inici,  }\item[{List$<$ Character $>$}]{r }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+crea una possessio de tipus camp amb fitxa inici i regions r 
+\end{DoxyPostcond}
+
+
+Definició a la línia 14 del fitxer Camp.\+java.
+
+
+
+\subsection{Documentació de les Funcions Membre}
+\mbox{\Hypertarget{class_camp_a2bd097873f0c20f7e1ca04cb455ca114}\label{class_camp_a2bd097873f0c20f7e1ca04cb455ca114}} 
+\index{Camp@{Camp}!conte\+Fitxa@{conte\+Fitxa}}
+\index{conte\+Fitxa@{conte\+Fitxa}!Camp@{Camp}}
+\subsubsection{\texorpdfstring{conte\+Fitxa()}{conteFitxa()}}
+{\footnotesize\ttfamily boolean Camp.\+conte\+Fitxa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ciutat}{Ciutat}}}]{c,  }\item[{\mbox{\hyperlink{class_fitxa}{Fitxa}}}]{f,  }\item[{List$<$ Character $>$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna cert si la fitxa f amb les regions r esta a la ciutat c 
+\end{DoxyPostcond}
+
+
+Definició a la línia 82 del fitxer Camp.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 2
+Gràfic de crides a aquesta funció\+:
+% FIG 3
+\mbox{\Hypertarget{class_camp_a24ebece7eea1aa266390b8762c0a1aa5}\label{class_camp_a24ebece7eea1aa266390b8762c0a1aa5}} 
+\index{Camp@{Camp}!propietari@{propietari}}
+\index{propietari@{propietari}!Camp@{Camp}}
+\subsubsection{\texorpdfstring{propietari()}{propietari()}}
+{\footnotesize\ttfamily List$<$Integer$>$ Camp.\+propietari (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el/s propietari/s del camp altrament llista buida 
+\end{DoxyPostcond}
+
+
+Definició a la línia 47 del fitxer Camp.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 4
+\mbox{\Hypertarget{class_camp_aa62c5e5ffa6084bb8363c5efba469068}\label{class_camp_aa62c5e5ffa6084bb8363c5efba469068}} 
+\index{Camp@{Camp}!punts@{punts}}
+\index{punts@{punts}!Camp@{Camp}}
+\subsubsection{\texorpdfstring{punts()}{punts()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Camp.\+punts (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{class_ciutat}{Ciutat}} $>$}]{llista }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna punts totals del camp 
+\end{DoxyPostcond}
+
+
+Definició a la línia 20 del fitxer Camp.\+java.
+
+Gràfic de crides d\textquotesingle{}aquesta funció\+:
+% FIG 5
+\mbox{\Hypertarget{class_camp_a22023a3a842b831b8b44db10a69afbd7}\label{class_camp_a22023a3a842b831b8b44db10a69afbd7}} 
+\index{Camp@{Camp}!punts@{punts}}
+\index{punts@{punts}!Camp@{Camp}}
+\subsubsection{\texorpdfstring{punts()}{punts()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Camp.\+punts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna punts total de la possessio 
+\end{DoxyPostcond}
+
+
+Definició a la línia 107 del fitxer Camp.\+java.
+
+\mbox{\Hypertarget{class_camp_a8a3acd8770255a775e505ce1bcb64856}\label{class_camp_a8a3acd8770255a775e505ce1bcb64856}} 
+\index{Camp@{Camp}!tancat@{tancat}}
+\index{tancat@{tancat}!Camp@{Camp}}
+\subsubsection{\texorpdfstring{tancat()}{tancat()}}
+{\footnotesize\ttfamily boolean Camp.\+tancat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna false (mai es crida) 
+\end{DoxyPostcond}
+
+
+Definició a la línia 101 del fitxer Camp.\+java.
+
+\mbox{\Hypertarget{class_camp_aff9badaa78f13e44821cf267de34f03f}\label{class_camp_aff9badaa78f13e44821cf267de34f03f}} 
+\index{Camp@{Camp}!tipus@{tipus}}
+\index{tipus@{tipus}!Camp@{Camp}}
+\subsubsection{\texorpdfstring{tipus()}{tipus()}}
+{\footnotesize\ttfamily char Camp.\+tipus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondició}
+--- 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna el tipus de possessio que és 
+\end{DoxyPostcond}
+
+
+Definició a la línia 76 del fitxer Camp.\+java.
+
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+carcassonne/src/\mbox{\hyperlink{_camp_8java}{Camp.\+java}}\end{DoxyCompactItemize}

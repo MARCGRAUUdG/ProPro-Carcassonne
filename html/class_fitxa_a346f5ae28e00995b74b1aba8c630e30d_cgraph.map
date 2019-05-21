@@ -1,0 +1,12 @@
+<map id="Fitxa.elSeguidorEstaEnElSeuTipusDeRegio" name="Fitxa.elSeguidorEstaEnElSeuTipusDeRegio">
+<area shape="rect" id="node2" href="$class_fitxa.html#a37104d196a82d324bedaa4a9294758bc" title="Fitxa.regio_c_seguidor" alt="" coords="224,5,377,32"/>
+<area shape="rect" id="node3" href="$class_fitxa.html#a7cc0281785388d498da748080c42083e" title="Fitxa.regio_c" alt="" coords="252,56,349,83"/>
+<area shape="rect" id="node4" href="$class_fitxa.html#a280bc89f067a6aafd918064caf88333a" title="Fitxa.regio_n_seguidor" alt="" coords="224,107,377,133"/>
+<area shape="rect" id="node5" href="$class_fitxa.html#a624bc5406355ecd57d98a8f88b919d7d" title="Fitxa.regio_n" alt="" coords="252,157,349,184"/>
+<area shape="rect" id="node6" href="$class_fitxa.html#a96ca7466a7c6f305f08b5ee139cd3d6d" title="Fitxa.regio_e_seguidor" alt="" coords="224,208,377,235"/>
+<area shape="rect" id="node7" href="$class_fitxa.html#a929a959f9c3d8f263a44763f404c1f0d" title="Fitxa.regio_e" alt="" coords="252,259,349,285"/>
+<area shape="rect" id="node8" href="$class_fitxa.html#aefba843b22263005650f44992144ff53" title="Fitxa.regio_s_seguidor" alt="" coords="224,309,377,336"/>
+<area shape="rect" id="node9" href="$class_fitxa.html#a787f09b27930fedb010afa53ed5b1a29" title="Fitxa.regio_s" alt="" coords="252,360,349,387"/>
+<area shape="rect" id="node10" href="$class_fitxa.html#a9b57519dc7afcbb734a7073353e62dad" title="Fitxa.regio_o_seguidor" alt="" coords="224,411,377,437"/>
+<area shape="rect" id="node11" href="$class_fitxa.html#a821a56526407eb83f0d83ae091de0474" title="Fitxa.regio_o" alt="" coords="252,461,349,488"/>
+</map>
