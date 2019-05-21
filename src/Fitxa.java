@@ -310,9 +310,10 @@ public class Fitxa extends Excepcio{
         return fitxa;
     }
 
+    ///@pre ---
+    ///@post retorna cert si el voltant de la fitxa actual hi ha fitxes altrament fals
     public boolean envoltada(Tauler tauler) {
-        return tauler.getFitxa(this.pos.getPosicioX(), this.pos.getPosicioY()) != null &&
-                tauler.getFitxa(this.pos.getPosicioX(), this.pos.getPosicioY()+1) != null &&
+        return tauler.getFitxa(this.pos.getPosicioX(), this.pos.getPosicioY()+1) != null &&
                 tauler.getFitxa(this.pos.getPosicioX(), this.pos.getPosicioY()-1) != null &&
                 tauler.getFitxa(this.pos.getPosicioX()+1, this.pos.getPosicioY()) != null &&
                 tauler.getFitxa(this.pos.getPosicioX()-1, this.pos.getPosicioY()) != null &&

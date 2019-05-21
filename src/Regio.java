@@ -1,6 +1,3 @@
-///@class Regio
-
-///@brief Descripcio de la clase...
 
 public class Regio extends Excepcio{
 
