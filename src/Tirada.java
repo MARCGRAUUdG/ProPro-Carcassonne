@@ -88,7 +88,6 @@ public class Tirada {
     {
         ArrayList<Posicio> posDisp= new ArrayList<>();
         for  (int i=0;i<posicionsDisponibles.size();i++) {
-            Gui.print(posicionsDisponibles.get(i).toString());
             if(posicionsDisponibles.get(i).compareTo(pos)!=-1){//Si coincideix x, y (rotacio no cal)
                 posDisp.add(posicionsDisponibles.get(i));
             }
