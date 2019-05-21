@@ -27,7 +27,7 @@ public abstract class Possessio {
     public abstract List<Integer> propietari();
 
     ///@pre ---
-    ///@post  guardar fitxa i regio
+    ///@post  guardar fitxa inici i regions r
     public Possessio(Fitxa inici, List<Character> r){
         conjunt = new ArrayList<>();
         conjunt.add(new Pair<>(inici,r));
@@ -107,7 +107,8 @@ public abstract class Possessio {
         return conjunt;
     }
 
-
+    ///@pre ---
+    ///@post retora la possessio en format string
     @Override
     public String toString() {
         return getConjunt().toString();

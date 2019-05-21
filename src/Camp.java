@@ -8,6 +8,9 @@ import java.util.List;
 ///@brief Subtipus de possessio format per fitxes que tenen regions que són F
 
 public class Camp extends Possessio {
+
+    ///@pre ---
+    ///@post crea una possessio de tipus camp amb fitxa inici i regions r
     public Camp(Fitxa inici,List<Character> r) {
         super(inici,r);
     }

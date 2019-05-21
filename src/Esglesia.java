@@ -8,6 +8,8 @@ import java.util.List;
 
 public class Esglesia extends Estructura {
 
+    ///@pre ---
+    ///@post crea una possessio de tipus esglesia amb fitxa inici i regions r
     public Esglesia(Fitxa inici, List<Character> r) {
         super(inici,r);
     }

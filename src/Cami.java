@@ -10,13 +10,15 @@ import java.util.List;
 
 public class Cami extends Estructura {
 
+    ///@pre ---
+    ///@post crea una possessio de tipus cami amb fitxa inici i regions r
     public Cami(Fitxa inici, List<Character> r) {
         super(inici,r);
     }
 
+    @Override
     ///@pre ---
     ///@post retorna cert si el cmi esta completa altrament false
-    @Override
     public boolean tancat(){
         List<Pair<Fitxa,List<Character>>> llista = getConjunt();
         int ultim = llista.size()-1;

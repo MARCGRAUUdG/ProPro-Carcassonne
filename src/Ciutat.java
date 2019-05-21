@@ -9,6 +9,8 @@ import java.util.List;
 
 public class Ciutat extends Estructura {
 
+    ///@pre ---
+    ///@post crea una possessio de tipus ciutat amb fitxa inici i regions r
     public Ciutat(Fitxa inici, List<Character> r) {
         super(inici,r);
     }

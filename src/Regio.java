@@ -37,6 +37,8 @@ public class Regio extends Excepcio{
         }
     }
 
+    ///@pre ---
+    ///@post retorna la regio en string
     @Override
     public String toString() {
         return "Regio{" +

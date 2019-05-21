@@ -13,7 +13,7 @@ public class Fitxa extends Excepcio{
     private Posicio pos;///Posició que té la fitxa en el tauler
 
     ///@pre  lletres mida = 5
-    ///@post  guarda a regions el format de la fitxa
+    ///@post  guarda a regions el format de la fitxa i posicio inicialitzat per defecte
     public Fitxa(String lletres)throws Excepcio{
         if(lletres.length()==5) {
             regions = new ArrayList<>();
@@ -297,6 +297,8 @@ public class Fitxa extends Excepcio{
         return fitxa;
     }
 
+    ///@pre ---
+    ///@post retorna el format de la fitxa en format string
     @Override
     public String toString(){
         String fitxa = "{";
