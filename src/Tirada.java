@@ -5,26 +5,19 @@ import java.util.List;
 
 ///@class Tirada
 
-///@brief Descripcio de la clase...
-
-/**
- * Classe encarregada de gestionar els torns dels diferents jugadors. Aquesta actua diferent segons si el jugador
- * es controlable o es maquina.
- *
- * En el cas de ser controlable fa crides a Gui per deixar escollir els moviments que el jugador huma vulgui.
- *
- * En el cas de ser maquina fa la tirada la màquina sola amb una certa intel·ligencia per no deixar-se guanyar.
- */
+///@brief Classe encarregada de gestionar els torns dels diferents jugadors. Aquesta actua diferent segons si el jugador
+// * es controlable o es maquina. En el cas de ser controlable fa crides a Gui per deixar escollir els moviments que el jugador huma vulgui.
+// * En el cas de ser maquina fa la tirada la màquina sola amb una certa intel·ligencia per no deixar-se guanyar.
 
 public class Tirada {
 
-    private Jugador jugadorActual;///<Descripcio...
-    private Tauler tauler;///<Descripcio...
-    private Fitxa fitxaActual;///<Descripcio...
-    private ArrayList<Posicio> posicionsDisponibles;///<Descripcio...
+    private Jugador jugadorActual;///<Jugador actual de la Tirada
+    private Tauler tauler;///<Tauler utilitzat per la Tirada
+    private Fitxa fitxaActual;///<Fitxa actual colocada
+    private ArrayList<Posicio> posicionsDisponibles;///<Llista de posicions on es pot ficar la fitxaActual al Tauler
 
-    ///Constructor per defecte de tirada
-
+    ///@pre jugador actual, baralla actual i tauler actual != null per gestionar la tirada
+    ///@post constructor per valor de tirada
     Tirada(Jugador jActual, Baralla bActual, Tauler tActual)
     {
         Gui.print("---------Torn del jugador"+jActual.getId()+"---------");
@@ -56,6 +49,8 @@ public class Tirada {
         }
     }
 
+    ///@pre --
+    ///@post gestiona la tirada d'un Jugador Maquina
     private void gestionarMaquina() {
         int puntsMax = 0;
         char regioMaxPuntsHum = 'X';
@@ -79,7 +74,7 @@ public class Tirada {
             posicioPuntsMax = posicionsDisponibles.get(aleatori);
         }
         jugadorActual.posaFitxa(posicioPuntsMax, fitxaActual, tauler);
-        apretatOpcionsDeSeguidorMaquina(posicioPuntsMax.getPosicioX(),posicioPuntsMax.getPosicioY(),regioMaxPuntsHum);
+        apretatOpcionsDeSeguidor(posicioPuntsMax.getPosicioX(),posicioPuntsMax.getPosicioY(),regioMaxPuntsHum);
     }
 
     ///@pre pos inicialitzat i es correcte
@@ -115,17 +110,6 @@ public class Tirada {
             Gui.setSeguidors(jugadorActual.getHumanets(),jugadorActual.getId());
         }
         tauler.posarFitxaTauler(fitxaActual);
-        Joc.iniciaNouTorn();
-    }
-
-    public void apretatOpcionsDeSeguidorMaquina(int x, int y, char dir){
-        //Gui.print(String.valueOf(dir));
-        if (dir != 'X') {//X vol dir que l'usuari no vol ficar seguidor
-            fitxaActual.assignar_seguidor(dir, jugadorActual.getId());
-            Gui.posaSeguidor(x,y,dir,jugadorActual.getId());
-            jugadorActual.setHumanets(jugadorActual.getHumanets()-1);
-            Gui.setSeguidors(jugadorActual.getHumanets(),jugadorActual.getId());
-        }
-        tauler.posarFitxaTauler(fitxaActual);
+        if (jugadorActual.esControlable()) {Joc.iniciaNouTorn();}
     }
 }
