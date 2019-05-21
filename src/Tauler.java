@@ -348,11 +348,14 @@ public class Tauler
         }
     }
 
-    public Pair<Character, Integer> simularPunts(Posicio posicio, Fitxa fitxaActual) {
+    public Pair<Character, Integer> simularPunts(Posicio posicio, Fitxa fitxaActual, int nHumanets) {
         Fitxa fitxaNord, fitxaSud, fitxaEst, fitxaOest;
         char regioNord = 'N', regioSud = 'N', regioEst = 'N', regioOest = 'N';
         int puntsRotacio = 0, puntsOrigin = 0, puntsMax = 0;
         char regioHumanet = 'X';
+        String accio = "crear";
+        if (nHumanets <= 3){
+            accio = "tancar"; }
 
         fitxaNord = this.getFitxa(posicio.getPosicioX(), posicio.getPosicioY()-1); if (fitxaNord != null) regioNord = fitxaNord.regio_s();
         fitxaSud = this.getFitxa(posicio.getPosicioX(), posicio.getPosicioY()+1); if (fitxaSud != null) regioSud = fitxaSud.regio_n();
@@ -363,54 +366,73 @@ public class Tauler
             if (fitxaActual.envoltada(this)) {
                 puntsRotacio += 9; } }
 
-        ArrayList<Character> posicions=onEsPotFicarSeguidor(fitxaActual);
-        if (posicions.contains('N')) {
-            puntsRotacio += getPunts(regioNord, fitxaNord, fitxaActual, 'S');
-            if ((puntsRotacio-puntsOrigin)>puntsMax) {
-                regioHumanet = 'N'; }
-            puntsOrigin = puntsRotacio; }
-        if (posicions.contains('E')) {
-            puntsRotacio += getPunts(regioEst, fitxaEst,fitxaActual, 'O');
-            if ((puntsRotacio-puntsOrigin)>puntsMax) {
-                regioHumanet = 'E'; }
-            puntsOrigin = puntsRotacio; }
-        if (posicions.contains('S')) {
-            puntsRotacio += getPunts(regioSud, fitxaSud, fitxaActual, 'N');
-            if ((puntsRotacio-puntsOrigin)>puntsMax) {
-                regioHumanet = 'S'; }
-            puntsOrigin = puntsRotacio; }
-        if (posicions.contains('O')) {
-            puntsRotacio += getPunts(regioOest, fitxaOest, fitxaActual, 'E');
-            if ((puntsRotacio-puntsOrigin)>puntsMax) {
-                regioHumanet = 'O'; } }
+        puntsRotacio += getPunts(regioNord, fitxaNord, fitxaActual, 'S', accio, nHumanets);
+        if ((puntsRotacio-puntsOrigin)>puntsMax) {
+            regioHumanet = 'N';
+            puntsMax=puntsRotacio;}
+        puntsOrigin = puntsRotacio;
+
+        puntsRotacio += getPunts(regioEst, fitxaEst,fitxaActual, 'O', accio,nHumanets);
+        if ((puntsRotacio-puntsOrigin)>puntsMax) {
+            regioHumanet = 'E';
+            puntsMax=puntsRotacio; }
+        puntsOrigin = puntsRotacio;
+
+        puntsRotacio += getPunts(regioSud, fitxaSud, fitxaActual, 'N', accio,nHumanets);
+        if ((puntsRotacio-puntsOrigin)>puntsMax) {
+            regioHumanet = 'S';
+            puntsMax=puntsRotacio;}
+        puntsOrigin = puntsRotacio;
+
+        puntsRotacio += getPunts(regioOest, fitxaOest, fitxaActual, 'E', accio,nHumanets);
+        if ((puntsRotacio-puntsOrigin)>puntsMax) {
+            regioHumanet = 'O';
+            puntsMax=puntsRotacio;}
+
+        Gui.print("Accio: "+accio+"Punts: "+puntsMax);
 
         return new Pair<Character, Integer>(regioHumanet, puntsRotacio);
     }
 
-    private int getPunts(char regio, Fitxa fitxa, Fitxa fitxaActual, char loc) {
+    private int getPunts(char regio, Fitxa fitxa, Fitxa fitxaActual, char loc, String accio, int nHumanets) {
         int punts = 0;
         if (regio == 'V') //Village
         {
-            punts = getPuntsRegio(fitxa, fitxaActual, _posCiutat, loc, regio);
+            punts = getPuntsRegio(fitxa, fitxaActual, _posCiutat, loc, regio, accio, nHumanets);
         }
         if (regio == 'C') //Cami
         {
-            punts = getPuntsRegio(fitxa, fitxaActual, _posCami, loc, regio);
+            punts = getPuntsRegio(fitxa, fitxaActual, _posCami, loc, regio, accio, nHumanets);
         }
         return  punts;
     }
 
-    private int getPuntsRegio(Fitxa fitxa, Fitxa fitxaActual, ArrayList<Possessio> llistaPos, char loc, char regio) {
+    private int getPuntsRegio(Fitxa fitxa, Fitxa fitxaActual, ArrayList<Possessio> llistaPos, char loc, char regio, String accio, int nHumanets) {
         int index = getPossessioDeFitxa(fitxa, llistaPos, loc);
         int punts = 0;
         List<Character> regions = getPosicionsDePossessio(fitxaActual,regio,loc);
         if (index != -1) {
             Possessio pos = llistaPos.get(index);//Obtenim la possessió
-            pos.afegir_fitxa(fitxaActual, regions);
-            if (pos.tancat()) {
-                punts = pos.punts();
+            if (pos.propietari().size()==0)
+            {
+                if (accio == "tancar")
+                {
+                    pos.afegir_fitxa(fitxaActual, regions);
+                    if (pos.tancat()) {
+                        punts = pos.punts();
+                    }
+                    pos.eliminar_fitxa(fitxaActual, regions);
+                    if (punts == 0 && nHumanets > 1){ //Si té 3 seguidors o menys però no pot tancar prova de crear (últim recurs)
+                        return pos.getConjunt().size();
+                    }
+                } else if (accio == "crear")
+                {
+                    if (pos.getConjunt().size() == 0){ //Si té més de 3 seguidors però no pot crear, prova de tancar.
+                        getPuntsRegio(fitxa, fitxaActual, llistaPos, loc, regio, "tancar", nHumanets); }
+                    Gui.print("Creo "+ pos.getConjunt().size()+" punts");
+                    return pos.getConjunt().size();
+                }
             }
-            pos.eliminar_fitxa(fitxaActual, regions);
         }
         return punts;
     }

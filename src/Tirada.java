@@ -61,7 +61,7 @@ public class Tirada {
 
         for (Posicio posicio_disponible : posicionsDisponibles)
         {
-            parellaSim = tauler.simularPunts(posicio_disponible, fitxaActual);
+            parellaSim = tauler.simularPunts(posicio_disponible, fitxaActual, jugadorActual.getHumanets());
 
             if (parellaSim.getValue() > puntsMax)
             {
