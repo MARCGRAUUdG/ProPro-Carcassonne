@@ -5,15 +5,26 @@ import java.util.*;
 
 ///@class Possessio
 
-///@brief Descripcio de la clase...
+///@brief Possessio que té un jugador en el tauler
 
 public abstract class Possessio {
-    private List<Pair<Fitxa,List<Character>>> conjunt;
+    private List<Pair<Fitxa,List<Character>>> conjunt; /// Llista de fitxes amb les regions corresponents de la possessio
 
-    public abstract boolean tancat();///<Descripcio...
-    public abstract int punts();///<Descripcio...
-    public abstract char tipus();///<Descripcio...
-    public abstract List<Integer> propietari();///<Descripcio...
+    ///@pre ---
+    ///@post retorna cert si la possessio esta completa altrament false
+    public abstract boolean tancat();
+
+    ///@pre ---
+    ///@post retorna punts total de la possessio
+    public abstract int punts();
+
+    ///@pre ---
+    ///@post  retorna el tipus de possessio que és
+    public abstract char tipus();
+
+    ///@pre ---
+    ///@post  retorna el/s propietari/s de la possessio altrament llista buida
+    public abstract List<Integer> propietari();
 
     ///@pre ---
     ///@post  guardar fitxa i regio

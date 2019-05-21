@@ -5,7 +5,7 @@ import java.util.List;
 
 ///@class Camp
 
-///@brief Descripcio de la clase...
+///@brief Subtipus de possessio format per fitxes que tenen regions que són F
 
 public class Camp extends Possessio {
     public Camp(Fitxa inici,List<Character> r) {
@@ -39,14 +39,6 @@ public class Camp extends Possessio {
         return puntuacio;
     }
 
-    public boolean tancat() {
-        return false;
-    }
-
-    public int punts() {
-        return 0;
-    }
-
     ///@pre ---
     ///@post retorna el/s propietari/s del camp altrament llista buida
     public List<Integer> propietari(){
@@ -76,6 +68,8 @@ public class Camp extends Possessio {
         return llistaPropietari(pro);
     }
 
+    ///@pre ---
+    ///@post  retorna el tipus de possessio que és
     public char tipus(){
         return 'F';
     }
@@ -97,6 +91,18 @@ public class Camp extends Possessio {
         }
 
         return trobat;
+    }
+
+    ///@pre ---
+    ///@post retorna false (mai es crida)
+    public boolean tancat(){
+        return false;
+    }
+
+    ///@pre ---
+    ///@post retorna punts total de la possessio
+    public int punts(){
+        return 0;
     }
 
 }

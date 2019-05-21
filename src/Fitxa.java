@@ -3,20 +3,14 @@ import java.util.List;
 
 ///@class Fitxa
 
-///@brief Descripcio de la clase...
+///@brief Fitxa que té regions i que forma part de la baralla
 
 public class Fitxa extends Excepcio{
 
     //Descripcio: Fitxa fromat per regions C, N, E, S i O;
 
-    private ArrayList<Regio> regions;///<Descripcio...
-    private Posicio pos;///<Descripcio...
-    
-    ///@pre ---
-    ///@post  retorna la llista de regions de la fitxa
-    public ArrayList<Regio> getRegions(){
-        return regions;
-    }
+    private ArrayList<Regio> regions;///Llista de regions que té la fitxa
+    private Posicio pos;///Posició que té la fitxa en el tauler
 
     ///@pre  lletres mida = 5
     ///@post  guarda a regions el format de la fitxa
@@ -288,19 +282,6 @@ public class Fitxa extends Excepcio{
         }
         return num;
     }
-
-    ///@pre ---
-    ///@post  retorna el numero de bandes que son cami
-    public Integer bandes_de_cami(){
-        int num = 0;
-        for(int i = 1; i<regions.size(); i++){
-            if(regions.get(i).lletra()=='C'){
-                num++;
-            }
-        }
-        return num;
-    }
-
     ///@pre ---
     ///@post retorna el format de la fitxa si existeix amb rotacio 0
     public String formatNormal(){
@@ -329,6 +310,8 @@ public class Fitxa extends Excepcio{
         return fitxa;
     }
 
+    ///@pre ---
+    ///@post retorna cert si el seguidor està en una regio que té el format tipus
     public boolean elSeguidorEstaEnElSeuTipusDeRegio(char tipus, List<Character> lc) {
         char regio='X';
         if(lc.contains('C'))if(regio_c_seguidor()!=-1)regio=regio_c();
