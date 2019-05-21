@@ -554,7 +554,6 @@ public class Gui extends Application{
     ///@post Posa la seleccio de rotacio 'posDisp' de la fitxaActual
     public static void mostraOpcionsDeRotacioEnFitxa(ArrayList<Posicio> posDisp, Fitxa fitxaActual) {
         print("Sel·lecciona rotació de la fitxa");
-        if(posDisp.size()<=0)print("Fuck you");
         Image FitxaImg = getImage("src\\images\\"+fitxaActual.formatNormal()+".jpg");
         for(int i=0;i<posDisp.size();i++){
             Posicio posActual=posDisp.get(i);
