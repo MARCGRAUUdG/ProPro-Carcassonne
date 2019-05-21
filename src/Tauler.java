@@ -105,6 +105,20 @@ public class Tauler
 
     }
 
+    public static int nFitxesAlVoltantDePos(int x, int y) {
+        Posicio pos=new Posicio(x,y,0);
+        int cnt=0;
+        if(getFitxa(x-1,y-1)!=null)cnt++;
+        if(getFitxa(x,y-1)!=null)cnt++;
+        if(getFitxa(x+1,y-1)!=null)cnt++;
+        if(getFitxa(x-1,y)!=null)cnt++;
+        if(getFitxa(x+1,y)!=null)cnt++;
+        if(getFitxa(x-1,y+1)!=null)cnt++;
+        if(getFitxa(x,y+1)!=null)cnt++;
+        if(getFitxa(x+1,y+1)!=null)cnt++;
+        return cnt;
+    }
+
     ///@pre  f inicialitzada amb posicio
     ///@post Assigna la fitxa f en alguna/es possessio/s de la llista de tipus de possessions si cal
     private void assignarPossessio(Fitxa f) {
@@ -127,12 +141,14 @@ public class Tauler
 
         posaFitxaAPossessioSiNoEstaPosat(f, _posCami, 'C');
         posaFitxaAPossessioSiNoEstaPosat(f,_posCiutat, 'V');
+        posaFitxaAPossessioSiNoEstaPosat(f,_posEsglesia, 'M');
 
         unirPossessionsSiCal(f,_posCami);
         unirPossessionsSiCal(f,_posCiutat);
 
         comprovaPossessionsTancades(_posCiutat);
         comprovaPossessionsTancades(_posCami);
+        comprovaPossessionsTancades(_posEsglesia);
     }
 
     ///@pre f inicialitzada
@@ -259,8 +275,15 @@ public class Tauler
                     }
                 }
             }
-        } else {
-            //TODO Falta implementar les altres possessions
+        } else if (lletra == 'M'){
+            if(f.regio_c()=='M'){
+                List<Character> pos = new ArrayList<>();pos.add('C');
+                int x =f.getPosicio().getPosicioX();
+                int y =f.getPosicio().getPosicioY();
+                p.add(new Esglesia(f, pos));
+            }
+        }else{
+            //TODO Falta implementar possessió Cami
         }
     }
 
@@ -329,7 +352,7 @@ public class Tauler
 
     ///@pre --
     ///@post Retorna la fitxa del tauler de posicio x,y, null si no hi ha cap fitxa o esta fora de rang
-    public Fitxa getFitxa(int x, int y){
+    public static Fitxa getFitxa(int x, int y){
         try {
             return _tauler[x][y];
         }catch(Exception e) {
