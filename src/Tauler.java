@@ -3,15 +3,15 @@ import java.util.*;
 
 ///@class Tauler
 
-///@brief Descripcio de la clase...
+///@brief Administració d'un Tauler estatic de 10x10, amb gestio de les seves Fitxa/es i de les Possession/s
 
 public class Tauler
 {
-    private static final Fitxa[][] _tauler = new Fitxa[10][10];///<Descripcio...
-    private static ArrayList<Possessio> _posCami= new ArrayList<>();///<Descripcio...
-    private static ArrayList<Possessio> _posCamp= new ArrayList<>();///<Descripcio...
-    private static ArrayList<Possessio> _posEsglesia= new ArrayList<>();///<Descripcio...
-    private static ArrayList<Possessio> _posCiutat= new ArrayList<>();///<Descripcio...
+    private static final Fitxa[][] _tauler = new Fitxa[10][10];///<Taula de fitxes que es en si el tauler de Fitxa/es
+    private static ArrayList<Possessio> _posCami= new ArrayList<>();///<Possessio de Cami
+    private static ArrayList<Possessio> _posCamp= new ArrayList<>();///<Possessio de Camp
+    private static ArrayList<Possessio> _posEsglesia= new ArrayList<>();///<Possessio d'Esglesia
+    private static ArrayList<Possessio> _posCiutat= new ArrayList<>();///<Possessio de Ciutat
 
     ///@pre Hi ha  almenys una fitxa al tauler en la posicio inicial (5,5)
     ///@post Retorna llista de les posicions on es pot ficar la fitxa f
