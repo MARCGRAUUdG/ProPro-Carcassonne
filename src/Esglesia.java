@@ -17,7 +17,11 @@ public class Esglesia extends Estructura {
     ///@pre ---
     ///@post retorna cert si la l'esglesia esta completa altrament false
     public boolean tancat() {
-        return getConjunt().size()==9;
+        if(getConjunt().size()<=0)return false;
+        int x=getConjunt().get(0).getKey().getPosicio().getPosicioX();
+        int y=getConjunt().get(0).getKey().getPosicio().getPosicioY();
+        int i=Tauler.nFitxesAlVoltantDePos(x,y);
+        return i==8;
     }
 
     ///@pre ---
@@ -55,6 +59,8 @@ public class Esglesia extends Estructura {
         if(tancat()){
             return 9;
         }
-        return getConjunt().size()-1;
+        int x=getConjunt().get(0).getKey().getPosicio().getPosicioX();
+        int y=getConjunt().get(0).getKey().getPosicio().getPosicioY();
+        return Tauler.nFitxesAlVoltantDePos(x,y);
     }
 }
