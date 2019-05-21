@@ -7,20 +7,21 @@ import java.util.Scanner;
 
 ///@class LlegirFitxer
 
-///@brief Descripcio de la clase...
+///@brief Classe encarregada de llegir el fitxer i retornar la informació necessària al projecte per tal de la realització
+///de la partida
 
 public class LlegirFitxer {
 
-    private static File fitxer;///<Descripcio...
-    private static int _nJugadors;///<Descripcio...
-    private static ArrayList<Jugador> _jugadors;///<Descripcio...
-    private static Baralla baralla;///<Descripcio...
-    private static Fitxa _inicial;///<Descripcio...
-    private static boolean _camperols;///<Descripcio...
-    private static boolean fitxerOK = false;///<Descripcio...
+    private static File fitxer;///<Fitxer d'entrada
+    private static int _nJugadors;///<Nombre de Jugador s
+    private static ArrayList<Jugador> _jugadors;///<Llista de Jugador s
+    private static Baralla baralla;///<Baralla de la partida
+    private static Fitxa _inicial;///<Fitxa inicial utilitzada
+    private static boolean _camperols;///<Retorna true si existeixen camperols
+    private static boolean fitxerOK = false;///<Retorna true si ha llegit correctament el fitxer
 
-    ///@pre  ---
-    ///@post  lectura completa del fitxer
+    ///@pre --
+    ///@post lectura completa del fitxer
     public static void llegirFitxer() {
         try (Scanner input = new Scanner(fitxer))
         {
@@ -35,8 +36,8 @@ public class LlegirFitxer {
         }
     }
 
-    ///@pre  Scanner del fitxer d'entrada
-    ///@post  Llegeix i guarda la fitxa inicial i si hi ha camperols
+    ///@pre sscanner del fitxer d'entrada
+    ///@post llegeix i guarda la fitxa inicial i si hi ha camperols
     private static void llegirDadesPartida(Scanner input)
     {
         input.next("rajola_inicial"); //saltem String
@@ -62,8 +63,8 @@ public class LlegirFitxer {
         }
     }
 
-    ///@pre  Scanner del fitxer d'entrada
-    ///@post  Llegeix i guarda les diferents fitxes
+    ///@pre scanner del fitxer d'entrada
+    ///@post llegeix i guarda les diferents fitxes
     private static void llegirRajoles(Scanner input)
     {
         baralla = new Baralla();
@@ -97,8 +98,8 @@ public class LlegirFitxer {
         }*/
    }
 
-    ///@pre  Scanner del fitxer d'entrada
-    ///@post  Llegeix i guarda el nombre de jugadors i quins d'aquests són màquina
+    ///@pre scanner del fitxer d'entrada
+    ///@post llegeix i guarda el nombre de jugadors i quins d'aquests són màquina
     private static void llegirJugadors(Scanner input)
     {
         _jugadors = new ArrayList();
@@ -133,8 +134,8 @@ public class LlegirFitxer {
         }*/
    }
 
-    ///@pre  Nom del fitxer d'entrada
-    ///@post  Guarda el nom del fitxer d'entrada i crida el mètode per llegir el fitxer
+    ///@pre nom del fitxer d'entrada
+    ///@post guarda el nom del fitxer d'entrada i crida el mètode per llegir el fitxer
    public static void nomFitxer(String text) throws FileNotFoundException {
         Gui.print("Fitxer '"+text+"' carregant...");
         File f = new File(text);
@@ -142,32 +143,32 @@ public class LlegirFitxer {
         llegirFitxer();
     }
 
-    ///@pre  ---
-    ///@post  Retorna una llista de quins dels jugadors són controlats per màquina
+    ///@pre --
+    ///@post retorna una llista de quins dels jugadors són controlats per màquina
     public static ArrayList<Jugador> getJugadors() {
         return _jugadors;
     }
 
-    ///@pre  ---
-    ///@post  Retorna la fitxa inicial
+    ///@pre --
+    ///@post retorna la fitxa inicial
     public static Fitxa getInicial() {
         return _inicial;
     }
 
-    ///@pre  ---
-    ///@post  Cert si hi ha camperols
+    ///@pre --
+    ///@post cert si hi ha camperols
     public static boolean isCamperols() {
         return _camperols;
     }
 
-    ///@pre
-    ///@post  Cert si la lectura s'ha realitzat satisfactòriament
+    ///@pre --
+    ///@post cert si la lectura s'ha realitzat satisfactòriament
     public static boolean lecturaCorrecta() {
         return fitxerOK;
     }
 
-    ///@pre  ---
-    ///@post  Retorna la baralla
+    ///@pre  --
+    ///@post retorna la baralla
     public static Baralla getBaralla() {//TODO getBaralla no funciona ARREGLAR!
         return baralla;
     }

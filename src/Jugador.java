@@ -13,64 +13,68 @@ import java.util.ArrayList;
 
 public abstract class Jugador {
 
-    private int id;///<Descripcio...
-    private Fitxa fitxaActual;///<Descripcio...
-    private int nHumanets;///<Descripcio...
+    private int id;///<Identificador únic del Jugador
+    private Fitxa fitxaActual;///<Fitxa actual dispoible pel jugador
+    private int nHumanets;///<Nombre d'humanets del Jugador
 
-    private int _punts;
-    private ArrayList<Possessio> llistaPossessions = new ArrayList<>();
+    private ArrayList<Possessio> llistaPossessions = new ArrayList<>();///<Llista de Possessio ns del Jugador
 
-    private int puntuacio=0;///<Descripcio...
+    private int puntuacio=0;///<Punts totals del Jugador
 
+    ///@pre --
+    ///@post retorna la id
     public int getId() {
         return id;
     }
 
-    Jugador(){
-    }
-
+    ///@pre identificador del jugador
+    ///@post constuctor per valor
     Jugador(int jugador){
         nHumanets = 6;
         id = jugador;
-        _punts = 0;
+        puntuacio = 0;
     }
 
-    //Pre: Punts per assignar != 0
-    //Post: Punts assignats al jugador correspoenet
+    ///@pre punts per assignar != 0
+    ///@post punts assignats al jugador correspoenet
     void assignarPunts(int punts)
     {
-        _punts = punts;
+        puntuacio = punts;
     }
 
-    //Pre: ---
-    //Post: Retorna la llista de possessions del jugador actual.
+    ///@pre --
+    ///@post retorna la llista de possessions del jugador actual.
     public ArrayList<Possessio> getLlistaPossessions()
     {
         return llistaPossessions;
     }
 
-    ///@pre  ---
-    ///@post  Indica si un personatge ha guanyat
+    ///@pre --
+    ///@post indica si un personatge ha guanyat
     public boolean guanyador() {
         return false;
     }
 
-    //Pre: ---
-    //Post: Retorna el nombre d'humanets del jugador actual
+    ///@pre --
+    ////@pre retorna el nombre d'humanets del jugador actual
     public int getHumanets(){
         return nHumanets;
     }
 
-    //Pre: Nombre d'humanets >= 0
-    //Post: Nombre d'humanets assignat
+    ///@pre nombre d'humanets >= 0
+    ///@post nombre d'humanets assignat
     public void setHumanets(int n){
         nHumanets=n;
     }
 
+    ///@pre --
+    ///@post incrementa en un el nombre d'humanets del Jugador
     public void incrementaHumanets(){
         nHumanets++;
     }
 
+    ///@pre --
+    ///@post retorna string de l'id del Jugador
     @Override
     public String toString() {
         return "Jugador{" +
@@ -78,22 +82,28 @@ public abstract class Jugador {
                 '}';
     }
 
-    //Pre: ---
-    //Post: retorna si el jugador actual es controlable
+    ///@post ---
+    ///@post retorna si el jugador actual es controlable
     public abstract boolean esControlable();
 
-    ///Pre:pos inicialitzat i es correcte
-    ///Post:Posa fitxaActual al tauler i gui en la posicio pos
+    ///@pre pos inicialitzat i es correcte
+    ///@pos posa fitxaActual al tauler i gui en la posicio pos
     public abstract void posaFitxa(Posicio pos, Fitxa fitxaActual, Tauler tauler);
 
+    ///@pre --
+    ///@prost retorna la puntuació del Jugador
     public int getPuntuacio(){
         return puntuacio;
     }
 
+    ///@pre puntuació per assignar
+    ///@post puntuació del Jugador assignada
     public void setPuntuacio(int p){
         puntuacio=p;
     }
 
+    ///@pre puntuació per incrementar
+    ///@post puntuació del Jugador incrementada
     public void incrementaPuntuacio(int p){
         setPuntuacio(puntuacio+p);
     }
