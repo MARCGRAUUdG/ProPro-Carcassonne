@@ -31,6 +31,7 @@ public class Baralla {
 
     ///@pre  f != NULL
     ///@post  S'afageix la fitxa f de forma ALEATÒRIA
+
     public void afegirFitxa(Fitxa f)
     {
         llistaFitxes.add(f);

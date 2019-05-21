@@ -38,4 +38,10 @@ public class Regio extends Excepcio{
         }
     }
 
+    @Override
+    public String toString() {
+        return "Regio{" +
+                "zona=" + zona +
+                '}';
+    }
 }

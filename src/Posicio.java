@@ -2,6 +2,9 @@
 
 ///@brief Descripcio de la clase...
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Posicio implements Comparable<Posicio>{
     private int _x;///<Descripcio...
     private int _y;///<Descripcio...
