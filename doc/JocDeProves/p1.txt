@@ -1,0 +1,11 @@
+nombre_jugadors 4
+jugadors_cpu 2 3 4
+rajoles
+CFCVC 7
+XCCCC 4
+MFFFF 2
+VVFFV 6
+MFFCF 2
+#
+rajola_inicial VVFFV
+camperols si
