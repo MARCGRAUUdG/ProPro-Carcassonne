@@ -414,7 +414,7 @@ public class Tauler
             regioHumanet = 'O';
             puntsMax=puntsRotacio;}
 
-        Gui.print("Accio: "+accio+"Punts: "+puntsMax);
+        //Gui.print("Accio: "+accio+"Punts: "+puntsMax);
 
         return new Pair<Character, Integer>(regioHumanet, puntsRotacio);
     }
@@ -454,7 +454,7 @@ public class Tauler
                 {
                     if (pos.getConjunt().size() == 0){ //Si té més de 3 seguidors però no pot crear, prova de tancar.
                         getPuntsRegio(fitxa, fitxaActual, llistaPos, loc, regio, "tancar", nHumanets); }
-                    Gui.print("Creo "+ pos.getConjunt().size()+" punts");
+                    //Gui.print("Creo "+ pos.getConjunt().size()+" punts");
                     return pos.getConjunt().size();
                 }
             }

@@ -103,7 +103,7 @@ public class Gui extends Application{
     ///@pre --
     ///@post inicialitza stage
     private void initConfig(Stage primaryStage) {
-        Image logo = getImage("src\\images\\Logo.png");
+        Image logo = getImage("images/Logo.png");
         primaryStage.getIcons().add(logo);
         root = new VBox(5);
         root.setPadding(new Insets(5));
@@ -140,7 +140,6 @@ public class Gui extends Application{
     ///@post Configura part top de la GUI
     private void setupMainTop(){
         textField.setPromptText("Introdueix el nom del fitxer");
-        textField.setText("p1.txt");
         textField.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent t) {
@@ -175,7 +174,7 @@ public class Gui extends Application{
     ///@pre --
     ///@post Configura part mid de la GUI
     private void setupMainMiddle(){
-        Image image = getImage("src\\images\\taulerimg.jpg");
+        Image image = getImage("images/taulerimg.jpg");
         imageView = new ImageView(image);
         imageView.setFitHeight(ample);
         imageView.setFitWidth(ample);
@@ -227,7 +226,7 @@ public class Gui extends Application{
     ///@pre Mid inicialitzat
     ///@post Configura jugadors
     public static void setupJugadors(int nJugadors) {
-        Image playerImg1 = getImage("src\\images\\p1.png");
+        Image playerImg1 = getImage("images/p1.png");
         ImageView jug1=new ImageView();
         jug1 = new ImageView(playerImg1);
         jug1.setFitHeight(40);
@@ -243,7 +242,7 @@ public class Gui extends Application{
         nseguidors[0].setFill(Color.WHITE);
         midRow.getChildren().addAll(jug1,t1,scorej1,nseguidors[0]);
 
-        Image playerImg2 = getImage("src\\images\\p2.png");
+        Image playerImg2 = getImage("images/p2.png");
         ImageView jug2=new ImageView();
         jug2 = new ImageView(playerImg2);
         jug2.setFitHeight(40);
@@ -259,7 +258,7 @@ public class Gui extends Application{
         midRow.getChildren().addAll(jug2,t2,scorej2,nseguidors[1]);
 
         if(nJugadors>2){
-            Image playerImg3 = getImage("src\\images\\p3.png");
+            Image playerImg3 = getImage("images/p3.png");
             ImageView jug3=new ImageView();
             jug3 = new ImageView(playerImg3);
             jug3.setFitHeight(40);
@@ -276,7 +275,7 @@ public class Gui extends Application{
             midRow.getChildren().addAll(jug3,t3,scorej3,nseguidors[2]);
 
             if(nJugadors>3){
-                Image playerImg4 = getImage("src\\images\\p4.png");
+                Image playerImg4 = getImage("images/p4.png");
                 ImageView jug4=new ImageView();
                 jug4 = new ImageView(playerImg4);
                 jug4.setFitHeight(40);
@@ -299,8 +298,8 @@ public class Gui extends Application{
     private static Image getImage(String url){
         Image imgR= null;
         try {
-            imgR = new Image(new FileInputStream(url));
-        } catch (FileNotFoundException e) {
+            imgR = new Image(String.valueOf(Gui.class.getResource(url)));
+        }catch (Exception e) {
             print("Error amb la lecture de l'imatge "+url);
         }
         return imgR;
@@ -310,7 +309,7 @@ public class Gui extends Application{
     ///@post Posa fitxa en el tauler de la Gui
     public static void posaFitxa(Fitxa f){
         Posicio posicio=f.getPosicio();
-        Image fitxaImg = getImage("src\\images\\"+f.formatNormal()+".jpg");
+        Image fitxaImg = getImage("images/"+f.formatNormal()+".jpg");
         ImageView fitxa=new ImageView(fitxaImg);
         fitxa.setLayoutX(pos[posicio.getPosicioX()]);fitxa.setLayoutY(pos[posicio.getPosicioY()]);
         fitxa.setFitHeight(40);
@@ -336,7 +335,7 @@ public class Gui extends Application{
     ///@pre Mid inicialitzat
     ///@post configura el tauler
     public static void iniciaTaulerGui() {
-        Image blackimg = getImage("src\\images\\black.png");
+        Image blackimg = getImage("images/black.png");
         ImageView blackView = new ImageView(blackimg);
         blackView.setFitHeight(ample-150);
         blackView.setFitWidth(ample-150);
@@ -377,8 +376,8 @@ public class Gui extends Application{
     ///@post Mostra el tamany de baralla size ocults i la ultima carta de la baralla f destapada
     public static void MostraBaralla(int size, Fitxa f){
         if(f!=null) {
-            Image backFitxaImg = getImage("src\\images\\back.jpg");
-            Image frontFitxaImg = getImage("src\\images\\" + f.formatNormal() + ".jpg");
+            Image backFitxaImg = getImage("images/back.jpg");
+            Image frontFitxaImg = getImage("images/" + f.formatNormal() + ".jpg");
             ImageView frontFitxa = new ImageView(frontFitxaImg);
             baralla.getChildren().clear();
             int maxsize= 130;
@@ -406,7 +405,7 @@ public class Gui extends Application{
     ///@pre Mid i tauler inicialitzat 9<=x>=0 && 9<=y>=0
     ///@post Posa opcio de posar fitxa en el tauler de la posicio x, y amb rotacio
     private static void posaQuadreVerd(int x, int y, int rot){
-        Image fitxaImg = getImage("src\\images\\green.png");
+        Image fitxaImg = getImage("images/green.png");
         ImageView quadre=new ImageView(fitxaImg);
         quadre.setLayoutX(pos[x]);quadre.setLayoutY(pos[y]);
         quadre.setFitHeight(40);
@@ -453,7 +452,7 @@ public class Gui extends Application{
     ///@post Posa les opcions per colocar seguidor en la posicio x,y
     public static void posaSeleccioDeSeguidors(int x, int y, ArrayList<Character> posicions) {
         print("Sel·lecciona col·locació del seguidor");
-        Image seguidorImg = getImage("src\\images\\pb.png");
+        Image seguidorImg = getImage("images/pb.png");
         ImageView seguidorC=new ImageView(seguidorImg);
         ImageView seguidorN=new ImageView(seguidorImg);
         ImageView seguidorE=new ImageView(seguidorImg);
@@ -467,7 +466,7 @@ public class Gui extends Application{
         if(posicions.contains('S'))configuraImgSeguidor(seguidorS,pos[x]+15,pos[y]+30, 'S',possibilitats);
         if(posicions.contains('O'))configuraImgSeguidor(seguidorO,pos[x],pos[y]+15, 'O',possibilitats);
 
-        Image crossImg = getImage("src\\images\\cross.png");
+        Image crossImg = getImage("images/cross.png");
         ImageView cross=new ImageView(crossImg);
         cross.setLayoutX(pos[x]+30);cross.setLayoutY(pos[y]+2);
         cross.setFitHeight(8);cross.setFitWidth(8);
@@ -518,7 +517,7 @@ public class Gui extends Application{
     ///@pre Mid configurat
     ///@post Posa l'opcio de clickar per avançar nou torn
     public static void mostraNextTirada(){
-        Image nextImg = getImage("src\\images\\next.png");
+        Image nextImg = getImage("images/next.png");
         ImageView next=new ImageView(nextImg);
         next.setFitHeight(40);
         next.setFitWidth(40);
@@ -536,7 +535,7 @@ public class Gui extends Application{
     ///@pre 9<=x>=0, 9<=y>=0, 4<=numbJugador>=1
     ///@post Posa el seguidor en la posicio dir del tauler x,y que pertany al jugador numbJugador
     public static void posaSeguidor(int x, int y, char dir, int numbJugador) {
-        Image seguidorImg = getImage("src\\images\\p"+numbJugador+".png");
+        Image seguidorImg = getImage("images/p"+numbJugador+".png");
         ImageView seguidor=new ImageView(seguidorImg);
         seguidor.setFitHeight(10);
         seguidor.setFitWidth(10);
@@ -559,7 +558,7 @@ public class Gui extends Application{
     ///@post Posa la seleccio de rotacio 'posDisp' de la fitxaActual
     public static void mostraOpcionsDeRotacioEnFitxa(ArrayList<Posicio> posDisp, Fitxa fitxaActual) {
         print("Sel·lecciona rotació de la fitxa");
-        Image FitxaImg = getImage("src\\images\\"+fitxaActual.formatNormal()+".jpg");
+        Image FitxaImg = getImage("images/"+fitxaActual.formatNormal()+".jpg");
         for(int i=0;i<posDisp.size();i++){
             Posicio posActual=posDisp.get(i);
             ImageView fitxa = new ImageView(FitxaImg);
@@ -576,7 +575,7 @@ public class Gui extends Application{
                     Joc.apretatAngleFitxa(posActual);
                 }
             });
-            Image fitxaImg = getImage("src\\images\\green.png");
+            Image fitxaImg = getImage("images/green.png");
             ImageView quadre=new ImageView(fitxaImg);
             quadre.setLayoutX(pos[posDisp.get(0).getPosicioX()]);
             quadre.setLayoutY(pos[posDisp.get(0).getPosicioY()]);
@@ -590,7 +589,7 @@ public class Gui extends Application{
     ///@pre guanyadors.size()>0
     ///@post Mostra per pantalla el guanyador i els punts que ha fet
     public static void mostraGuanyadors(ArrayList<Integer> guanyadors, int punts) {
-        Image winnerImg = getImage("src\\images\\winsplash.png");
+        Image winnerImg = getImage("images/winsplash.png");
         ImageView winner = new ImageView(winnerImg);
         winner.setFitHeight(ample);winner.setFitWidth(ample);
 
